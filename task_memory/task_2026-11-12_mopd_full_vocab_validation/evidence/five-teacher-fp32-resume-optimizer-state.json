@@ -1,0 +1,112 @@
+{
+  "optimizer.distributed.dp_group_idx_0.optimizer/shard_0_1": [
+    {
+      "param_groups": [
+        {
+          "is_expert_parallel": false,
+          "default_config": true,
+          "wd_mult": 1.0,
+          "lr_mult": 1.0,
+          "is_decoupled_lr": false,
+          "max_lr": 1e-06,
+          "min_lr": 1e-06,
+          "lr": 1e-06,
+          "bias_correction": true,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.01,
+          "step": 5
+        },
+        {
+          "is_expert_parallel": false,
+          "default_config": true,
+          "wd_mult": 0.0,
+          "lr_mult": 1.0,
+          "is_decoupled_lr": false,
+          "max_lr": 1e-06,
+          "min_lr": 1e-06,
+          "lr": 1e-06,
+          "bias_correction": true,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.0,
+          "step": 5
+        }
+      ]
+    }
+  ],
+  "common_state/shard_0_1": [
+    {
+      "checkpoint_version": 3.1,
+      "iteration": 0,
+      "optimizer": {
+        "param_state_sharding_type": "dp_reshardable"
+      },
+      "opt_param_scheduler": {
+        "max_lr": 1e-06,
+        "lr_warmup_steps": 0,
+        "num_steps": 160,
+        "lr_decay_style": "constant",
+        "lr_decay_steps": 160,
+        "min_lr": 1e-06,
+        "start_wd": 0.01,
+        "end_wd": 0.01,
+        "wd_incr_style": "constant",
+        "wd_incr_steps": 160
+      },
+      "content_metadata": {
+        "distrib_optim_sharding_type": "dp_reshardable",
+        "singleton_local_shards": false,
+        "chained_optim_avoid_prefix": true
+      }
+    }
+  ],
+  "optimizer.distributed.dp_group_idx_1.optimizer/shard_0_1": [
+    {
+      "param_groups": [
+        {
+          "is_expert_parallel": false,
+          "default_config": true,
+          "wd_mult": 1.0,
+          "lr_mult": 1.0,
+          "is_decoupled_lr": false,
+          "max_lr": 1e-06,
+          "min_lr": 1e-06,
+          "lr": 1e-06,
+          "bias_correction": true,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.01,
+          "step": 5
+        },
+        {
+          "is_expert_parallel": false,
+          "default_config": true,
+          "wd_mult": 0.0,
+          "lr_mult": 1.0,
+          "is_decoupled_lr": false,
+          "max_lr": 1e-06,
+          "min_lr": 1e-06,
+          "lr": 1e-06,
+          "bias_correction": true,
+          "betas": [
+            0.9,
+            0.95
+          ],
+          "eps": 1e-08,
+          "weight_decay": 0.0,
+          "step": 5
+        }
+      ]
+    }
+  ]
+}

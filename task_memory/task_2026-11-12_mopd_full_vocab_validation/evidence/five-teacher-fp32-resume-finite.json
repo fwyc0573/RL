@@ -1,0 +1,12 @@
+{
+  "job": "exp-1112-191947-030955",
+  "checkpoint": "step_5",
+  "files": 8,
+  "chunks": 1801,
+  "elements": 7108614656,
+  "finite": true,
+  "model_elements": 1777088000,
+  "optimizer_elements": 5331526656,
+  "nonfinite_chunks": [],
+  "scan": "Every tensor chunk listed by native checkpoint .metadata, remote read-only torch2.5.1; no cloud write."
+}

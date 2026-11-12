@@ -1,0 +1,158 @@
+{
+  "job": "exp-1112-191947-030955",
+  "issues": [],
+  "samples": 160,
+  "response_tokens": 20480,
+  "overall": {
+    "tokens": 20480,
+    "signed_mean": -3.0334795632836962e-05,
+    "mae": 0.009774653547107904,
+    "p50": 0.0016257725656032562,
+    "p95": 0.04673526287078855,
+    "p99": 0.08889550924301122,
+    "max": 0.44571995735168457,
+    "finite": true
+  },
+  "by_step": {
+    "1": {
+      "samples": 32,
+      "tokens": 4096,
+      "signed_mean": -1.2426964908399118e-05,
+      "mae": 0.010178462044668851,
+      "p50": 0.0017314017750322819,
+      "p95": 0.04762756824493408,
+      "p99": 0.09180316925048836,
+      "max": 0.2366781234741211,
+      "finite": true
+    },
+    "2": {
+      "samples": 32,
+      "tokens": 4096,
+      "signed_mean": 0.0002857072190220952,
+      "mae": 0.008290700038476408,
+      "p50": 0.0008714506402611732,
+      "p95": 0.04263906180858612,
+      "p99": 0.08112543821334839,
+      "max": 0.2986571788787842,
+      "finite": true
+    },
+    "3": {
+      "samples": 32,
+      "tokens": 4096,
+      "signed_mean": -0.0001563599448207477,
+      "mae": 0.00922219633140323,
+      "p50": 0.0014952770434319973,
+      "p95": 0.04405772686004639,
+      "p99": 0.07504516839981082,
+      "max": 0.44571995735168457,
+      "finite": true
+    },
+    "4": {
+      "samples": 32,
+      "tokens": 4096,
+      "signed_mean": -0.00022946937485599818,
+      "mae": 0.010296715970069458,
+      "p50": 0.0019860342144966125,
+      "p95": 0.04898121953010559,
+      "p99": 0.08978158235549928,
+      "max": 0.2403573989868164,
+      "finite": true
+    },
+    "5": {
+      "samples": 32,
+      "tokens": 4096,
+      "signed_mean": -3.912491260113504e-05,
+      "mae": 0.010885193350921571,
+      "p50": 0.002266768366098404,
+      "p95": 0.050620317459106445,
+      "p99": 0.09482591748237612,
+      "max": 0.28509950637817383,
+      "finite": true
+    }
+  },
+  "by_group": {
+    "code": {
+      "samples": 36,
+      "tokens": 4608,
+      "signed_mean": 0.00031752066544285377,
+      "mae": 0.011538069579252437,
+      "p50": 0.0029878877103328705,
+      "p95": 0.04970723390579223,
+      "p99": 0.09426693439483676,
+      "max": 0.28509950637817383,
+      "finite": true
+    },
+    "if": {
+      "samples": 31,
+      "tokens": 3968,
+      "signed_mean": -0.0002950579169381276,
+      "mae": 0.01607742232554182,
+      "p50": 0.006348414346575737,
+      "p95": 0.06616810560226431,
+      "p99": 0.11069088935852034,
+      "max": 0.2986571788787842,
+      "finite": true
+    },
+    "logic": {
+      "samples": 20,
+      "tokens": 2560,
+      "signed_mean": 0.0006365124760159463,
+      "mae": 0.008770527676028202,
+      "p50": 0.0011553801596164703,
+      "p95": 0.04370437860488891,
+      "p99": 0.08222553968429563,
+      "max": 0.44571995735168457,
+      "finite": true
+    },
+    "math": {
+      "samples": 42,
+      "tokens": 5376,
+      "signed_mean": -0.000294906192873698,
+      "mae": 0.005638314060353723,
+      "p50": 0.00023448001593351364,
+      "p95": 0.031701698899269104,
+      "p99": 0.06498712301254272,
+      "max": 0.2403573989868164,
+      "finite": true
+    },
+    "stem": {
+      "samples": 31,
+      "tokens": 3968,
+      "signed_mean": -0.00024134533070123556,
+      "mae": 0.007675942791514838,
+      "p50": 0.0008332203142344952,
+      "p95": 0.03965547531843182,
+      "p99": 0.07399466633796689,
+      "max": 0.2604055404663086,
+      "finite": true
+    }
+  },
+  "comparison": "Independent native scorer minus vLLM generation on identical response tokens; actual training forward not observed in this run.",
+  "parity_verdict": "PASS",
+  "checkpoint_training_info": {
+    "step_1": {
+      "consumed_samples": 32,
+      "current_step": 1,
+      "current_epoch": 0,
+      "total_steps": 1,
+      "total_valid_tokens": 4096.0,
+      "trainer_version": 1,
+      "sampler_name": "in_order",
+      "sampler_dispatch_index": 1,
+      "cur_adaptive_ppo_clip_k": null,
+      "next_nemo_gym_task_index": 64
+    },
+    "step_5": {
+      "consumed_samples": 160,
+      "current_step": 5,
+      "current_epoch": 0,
+      "total_steps": 5,
+      "total_valid_tokens": 20480.0,
+      "trainer_version": 5,
+      "sampler_name": "in_order",
+      "sampler_dispatch_index": 5,
+      "cur_adaptive_ppo_clip_k": null,
+      "next_nemo_gym_task_index": 224
+    }
+  }
+}

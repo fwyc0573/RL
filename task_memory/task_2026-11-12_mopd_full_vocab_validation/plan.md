@@ -6,7 +6,7 @@
 
 # Plan
 
-Status: A/Q/B/C complete. Native five-distinct-teacher short run completed 5/5 successful updates, saved step_5, and demonstrated nontrivial selected BF16 parameter changes. Short overall BF16 parity passes but IF-domain mean remains 0.02242. Corrected FP32 teacher projection is verified. Long CP4/CP1 fixed-token replay succeeded; both fail the unchanged 0.02 parity criterion. CP1 unfused RoPE completed and remains above 0.02. Independent five-teacher FP32 native save/resume diagnostic is Running in initial model setup. FA4 and vLLM prompt-logprob fixed-token controls are submitted. D/E/F remain outstanding.
+Status: A/Q/B/C complete. Five distinct teachers completed short BF16 and FP32 native training. FP32 native save/resume continued from step1 to step5 with 5/5 successful updates, zero skipped, and every group scorer/vLLM mean below0.02. Full checkpoint state/finite audit completed for the short observed recovery boundary. Long-context CP4/CP1, unfused RoPE, FA4 and vLLM prompt replay still fail the unchanged0.02 criterion. Matched2048 prefill does not resolve the internal vLLM gap. Native layer capture completed; eager vLLM probe failed at callable serialization and its existing worker environment omission is being repaired. D/E/F remain outstanding; formal200updates are not submitted.
 
 ## Dependency graph
 

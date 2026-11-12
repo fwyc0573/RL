@@ -87,3 +87,23 @@ Command: `PYTHONPATH=/data/ycfeng/steptron /data/ycfeng/tmp/stepmind-env/bin/pyt
 Switching CP and disabling RoPE fusion do not individually meet the unchanged criterion. FA4 CP1/fused `exp-1112-193156-178680` and vLLM native prompt scoring `exp-1112-193212-322978` are submitted, not measured. Their output prefixes are native-long-fa4-replay and native-long-vllm-prefill-replay. vLLM scores all original65536 tokens and generates one unused new token with engine capacity65537; this capacity is diagnostic only. Exact submission args and wrappers reside under task temporary directory with corresponding names.
 
 Final executable-script verification: `UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync /data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/archive-v0/ZpRSfVMFE7WBmM2b/ruff-0.9.9.data/scripts/ruff check tests/manual/mopd/{replay_logprobs,replay_generation_logprobs,resume_training}.py`, plus `format --check` on the same files. Actual output: All checks passed;3files already formatted. GPU successful CP4 reproduction and CP1 scoring are the functional checks of replay_logprobs.py; no unit test of script settings is added.
+
+
+## FA4 fixed-token result
+
+FA4 CP1/fused `exp-1112-193156-178680` completed the native replay and published matching `finished.json`; launcher exit0. Scorer/vLLMMAE0.1298855153 fails0.02; p950.19516401, p992.84165693, max6.74194527. Per-sample MAEs0.03664838/0.06462016/0.04545669/0.42011610/0.08258625 all fail. All160response logprobs are finite. No filtered positions or threshold changes. Exact command is tasktmp/submit_native_long_fa4_replay.py through personalStepMindPython; exact args native-long-fa4-replay-submit-args.json. Selected evidence/native-long-fa4-replay.json; cloud native-long-fa4-replay/exp-1112-193156-178680/logs/replay-logprobs.json under the task's personal prefix.
+
+The pending vLLM native prompt replay uses synchronous defaults (observed batched-token cap16384) versus original asynchronous default2048. Any gap will require a matched chunk-cap control before exclusively attributing it to prefill/decode history.
+
+
+## FA4 and native vLLM prompt replay results
+
+FA4CP1/fused job `exp-1112-193156-178680` completed business scoring and launcher exit0. Native same-tokenMAE0.1298855153, p950.19516401, p992.84165693, max6.74194527:FAIL0.02. The attention-version setting alone is insufficient. Selected raw output:`evidence/native-long-fa4-replay.json`.
+
+Default vLLM prompt replay `exp-1112-193212-322978` completed5samples/160response positions; prompt-minus-recorded async generationMAE0.0368034811, p990.28300462, max0.99954462:FAIL0.02. Native synchronous scheduling selectedchunk16384 versus originalasync2048, so this is not an isolated prompt/decode comparison. Selected output:`evidence/native-long-vllm-prefill-replay.json`.
+
+Matchedchunk2048 replay `exp-1112-194130-498485` Succeeded2026-11-12T11:45:09Z, launcher58813exit0. Same weights/tokens/mask,TP2/FA3/BF16/prefixcache; MAE0.03742300957, p990.35544111, max0.91518831:FAIL0.02. Chunk matching is not a sufficient remedy. SourceNFS100.96.128.195:/data/ycfeng:/data/ycfeng, creator i-fengyicheng/codesign. Terminal receipt:`evidence/native-long-vllm-prefill-2048-terminal.json`. Native/internal differences still need causal diagnosis.
+
+Commands use `submit_native_long_fa4_replay.py`, `submit_native_long_vllm_prefill_replay.py`, and `submit_native_long_vllm_prefill_2048_replay.py` under `/data/ycfeng/tmp/nemo-mopd-20261112/`, via `PYTHONPATH=/data/ycfeng/steptron /data/ycfeng/tmp/stepmind-env/bin/python -u`. Exact matching `*-submit-args.json` files preserve overrides. Large outputs remain under corresponding personal cloud prefixes.
+
+Layer diagnosis preparation: actual CLI/config checks in tasktmp/check_native_layers_cli.py and check_generation_layers_cli.py pass, including real sequence-packing sharding of32capture positions. PinnedRuff0.9.9check/format and personal dry-runs pass. Two2H800jobs submitted at19:49:49HKT: native`exp-1112-194949-717142` and eager vLLM`exp-1112-194949-673462`. GPU hooks and their numerical results remainUNVERIFIED. The eager engine's logprobs must be compared separately before attributing its states to originalasync behavior.
