@@ -21,6 +21,7 @@ from typing import Any
 import ray
 import torch
 from megatron.core import parallel_state
+from transformer_engine.pytorch.module import layernorm_linear
 
 from nemo_rl.distributed.batched_data_dict import BatchedDataDict
 from nemo_rl.models.policy.utils import get_runtime_env_for_policy_worker
@@ -37,6 +38,7 @@ class LayerOutputWorker(MegatronPolicyWorkerImpl):
         super().__init__(*args, **kwargs)
         self._positions: torch.Tensor | None = None
         self._input_length = 0
+        self._norm_stage: str | None = None
         self._layer_outputs: dict[str, dict[str, torch.Tensor]] = {}
         owner = self._resolve_output_layer_owner()
         owner.embedding.register_forward_hook(partial(self._record_output, "embedding"))
@@ -44,6 +46,17 @@ class LayerOutputWorker(MegatronPolicyWorkerImpl):
             layer.register_forward_hook(partial(self._record_output, f"layer_{index}"))
             if index < 2:
                 attention = layer.self_attention
+                attention.linear_qkv.register_forward_pre_hook(
+                    partial(
+                        self._record_normalization_input, f"layer_{index}_input_norm"
+                    )
+                )
+                layer.mlp.linear_fc1.register_forward_pre_hook(
+                    partial(
+                        self._record_normalization_input,
+                        f"layer_{index}_post_attention_norm",
+                    )
+                )
                 attention.linear_qkv.register_forward_hook(
                     partial(self._record_output, f"layer_{index}_qkv")
                 )
@@ -65,6 +78,17 @@ class LayerOutputWorker(MegatronPolicyWorkerImpl):
                 layer.mlp.linear_fc2.register_forward_hook(
                     partial(self._record_output, f"layer_{index}_mlp_output")
                 )
+        normalize = layernorm_linear.apply_normalization
+
+        def record_normalization(*args: Any, **kwargs: Any) -> tuple[Any, ...]:
+            result = normalize(*args, **kwargs)
+            stage = self._norm_stage
+            self._norm_stage = None
+            if stage is not None:
+                self._record_output(stage, owner, (), result[0].unsqueeze(1))
+            return result
+
+        layernorm_linear.apply_normalization = record_normalization
         owner.rotary_pos_emb.register_forward_hook(
             partial(self._record_attention_output, "rope_angles")
         )
@@ -100,6 +124,13 @@ class LayerOutputWorker(MegatronPolicyWorkerImpl):
             .detach()
             .cpu(),
         }
+
+    def _record_normalization_input(
+        self, stage: str, module: torch.nn.Module, inputs: tuple[Any, ...]
+    ) -> None:
+        if self._positions is not None:
+            self._norm_stage = stage
+            self._record_input(stage + "_input", module, inputs)
 
     def _record_input(
         self, stage: str, module: torch.nn.Module, inputs: tuple[Any, ...]

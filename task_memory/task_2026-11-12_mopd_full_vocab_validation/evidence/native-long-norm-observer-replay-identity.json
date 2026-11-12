@@ -1,0 +1,12 @@
+{
+  "native": {
+    "tokens": 160,
+    "mae": 0.0,
+    "max": 0.0
+  },
+  "generation": {
+    "tokens": 160,
+    "mae": 0.0,
+    "max": 0.0
+  }
+}

@@ -7,7 +7,7 @@
 
 # Plan
 
-Status: A/Q/B/C complete; D/E/F outstanding. Five-teacher short FP32 save/resume passed5/5 updates, zero skipped, all group means≤0.02 and full checkpoint finite audit. The production FP32 RoPE factory fixes the first Q/K divergence at the original rope_theta10000; paired FP32-head eager/compiled long errors remain0.02657703/0.03850816, bothFAIL. Native SwiGLU fusion is insufficient and not promoted. Latest12CPU regressions and Ruff pass; duplicate test-only cache implementation removed. Next Dfrontier is matched FA4 backend capture using existing native/vLLM capabilities; FA3 unavailable in native environment, noFA3job submitted. Fresh rollout/refit and formal200successfulupdates/256fresh/native resume remain outstanding; formalrun notsubmitted.
+Status: A/Q/B/C complete; D/E/F outstanding. Matched eager FA4/TP2/CP1 with production FP32 RoPE and FP32 heads meets the long overall MAE ceiling (0.01905496);3/5samplemeans slightly exceed0.02 and tail propagation remains unproven. Actual norm captures identify sparse BF16 output differences after equal first-layer residual inputs. Compiled FA4 fails0.02 (MAE0.03365744) and will not be used for the selected workflow. Final24/6/56GPU configurations passedCPU/dry-run; next validate actualCP1/DP4 training, freshrollout/refit, long memory and native five-teacher resume in parallel. Formal200successfulupdates/256fresh/65536/native resume remain outstanding and unsubmitted.
 
 ## Dependency graph
 

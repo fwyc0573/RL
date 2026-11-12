@@ -125,13 +125,32 @@ def _record_rope_output(
 
 def _record_norm(
     capture: LayerOutputs,
+    stage: str,
     module: torch.nn.Module,
     inputs: tuple[Any, ...],
-    output: tuple[torch.Tensor, torch.Tensor],
+    output: torch.Tensor | tuple[torch.Tensor, torch.Tensor],
 ) -> None:
     del module, inputs
     assert capture.current_positions is not None
-    _record(capture, "final_norm", capture.current_positions, output[0])
+    hidden = output[0] if isinstance(output, tuple) else output
+    _record(capture, stage, capture.current_positions, hidden)
+    if isinstance(output, tuple):
+        _record(capture, stage + "_residual", capture.current_positions, output[1])
+
+
+def _record_norm_input(
+    capture: LayerOutputs,
+    stage: str,
+    module: torch.nn.Module,
+    inputs: tuple[Any, ...],
+) -> None:
+    del module
+    assert capture.current_positions is not None
+    _record(capture, stage + "_hidden", capture.current_positions, inputs[0])
+    if len(inputs) == 2 and inputs[1] is not None:
+        _record(
+            capture, stage + "_residual_input", capture.current_positions, inputs[1]
+        )
 
 
 def start_capture(
@@ -149,6 +168,21 @@ def start_capture(
         )
         if index < 2:
             attention = layer.self_attn
+            for suffix, norm in [
+                ("input_norm", layer.input_layernorm),
+                ("post_attention_norm", layer.post_attention_layernorm),
+            ]:
+                stage = f"layer_{index}_{suffix}"
+                capture.handles.extend(
+                    [
+                        norm.register_forward_pre_hook(
+                            partial(_record_norm_input, capture, stage)
+                        ),
+                        norm.register_forward_hook(
+                            partial(_record_norm, capture, stage)
+                        ),
+                    ]
+                )
             capture.handles.extend(
                 [
                     attention.qkv_proj.register_forward_hook(
@@ -191,7 +225,9 @@ def start_capture(
             )
         )
     capture.handles.append(
-        model.model.norm.register_forward_hook(partial(_record_norm, capture))
+        model.model.norm.register_forward_hook(
+            partial(_record_norm, capture, "final_norm")
+        )
     )
     _CAPTURE = capture
 

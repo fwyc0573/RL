@@ -1,0 +1,60 @@
+{
+  "job": "exp-1112-210311-532182",
+  "replica": "exp-1112-210311-532182-cfcd2084",
+  "uid": "bf2a238b-1adb-452f-b886-1235ad96c2c0",
+  "platform_terminal": "Failed",
+  "finished_at": "2026-11-12T13:05:00Z",
+  "observed_child_exit": 2,
+  "child_exit_at": "2026-11-12T13:04:57Z",
+  "launcher_cleanup_at": "2026-11-12T13:05:01.782Z",
+  "diagnosis": "Original argument order makes the argparse integer list consume flash_attention_version=4. The same command path reproduced exit2 on the CPU before init_ray. Corrected argument order reaches native init_ray boundary and exits0.",
+  "inference_limit": "Incident logs retain child exit2 and its exact argv, but do not retain the primary argparse error text; that text is observed from exact CPU replay.",
+  "cpu_red": "native-fa4-cli-red.log",
+  "cpu_green": "native-fa4-cli-green.log",
+  "stop_actor": "UNKNOWN",
+  "stop_reason": "UNKNOWN",
+  "stop_request_time": "UNKNOWN",
+  "raw_directory": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-native-fp32-fa4-1",
+  "queries": {
+    "rjob-live-events": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:49.998357+00:00"
+    },
+    "replica-live-events": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:49.999084+00:00"
+    },
+    "rjob-historical-events": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:49.995427+00:00"
+    },
+    "replica-historical-events": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:49.997058+00:00"
+    },
+    "incident-logs": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:49.999933+00:00"
+    },
+    "existing-deepscan": {
+      "ok": true,
+      "started_at": "2026-11-12T13:05:50.004033+00:00"
+    },
+    "rjob-audit": {
+      "ok": false,
+      "error": {
+        "type": "ReadTimeout",
+        "message": "HTTPSConnectionPool(host='platform.shaipower.com', port=443): Read timed out. (read timeout=18.0)"
+      },
+      "started_at": "2026-11-12T13:05:50.001695+00:00"
+    },
+    "replica-audit": {
+      "ok": false,
+      "error": {
+        "type": "ReadTimeout",
+        "message": "HTTPSConnectionPool(host='platform.shaipower.com', port=443): Read timed out. (read timeout=18.0)"
+      },
+      "started_at": "2026-11-12T13:05:50.002630+00:00"
+    }
+  }
+}
