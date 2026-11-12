@@ -508,10 +508,39 @@ def _patch_scalar_field_schema() -> None:
     _md._nrl_scalar_schema_patched = True
 
 
+def _patch_tensor_byte_views() -> None:
+    """Give TQ's byte encoder unit stride for contiguous singleton views."""
+    # TQ is optional; import its serializer only on the adapter path.
+    from transfer_queue.utils.serial_utils import MsgpackEncoder
+
+    if getattr(MsgpackEncoder, "_nrl_byte_views_patched", False):
+        return
+
+    def with_byte_view_layout(encode: Callable[..., Any]) -> Callable[..., Any]:
+        @functools.wraps(encode)
+        def encode_tensor(self: Any, obj: torch.Tensor) -> Any:
+            # contiguous() leaves singleton zero-stride views unchanged, while
+            # view(uint8) requires unit stride when the element sizes differ.
+            if obj.is_contiguous() and obj.flatten().stride(-1) != 1:
+                obj = obj.clone(memory_format=torch.contiguous_format)
+            return encode(self, obj)
+
+        return encode_tensor
+
+    MsgpackEncoder._encode_regular_tensor = with_byte_view_layout(
+        MsgpackEncoder._encode_regular_tensor
+    )
+    MsgpackEncoder._encode_regular_tensor_meta = with_byte_view_layout(
+        MsgpackEncoder._encode_regular_tensor_meta
+    )
+    MsgpackEncoder._nrl_byte_views_patched = True
+
+
 # Installed at import, not from the constructor: a process can unpickle a client
 # without ever running __init__, so import is the earliest point that covers
 # every user of this module.
 _patch_scalar_field_schema()
+_patch_tensor_byte_views()
 
 
 def _with_cached_cpu_count(psutil_module: Any) -> types.SimpleNamespace:
