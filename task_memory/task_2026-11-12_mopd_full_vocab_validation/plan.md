@@ -6,7 +6,7 @@
 
 # Plan
 
-Status: acceptance confirmed by `continue`; B/C in progress. Execution settings are in [design.md](design.md), and explicit user constraints are in [requirements.md](requirements.md).
+Status: acceptance confirmed by `continue`; B/C preparation complete; D TP tensor reference complete; nonpreemptible native diagnostic queued and awaiting execution evidence. Execution settings are in [design.md](design.md), and explicit user constraints are in [requirements.md](requirements.md).
 
 ## Dependency graph
 

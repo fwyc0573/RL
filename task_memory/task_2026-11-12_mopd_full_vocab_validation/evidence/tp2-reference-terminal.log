@@ -1,0 +1,83 @@
+{"@caller":"gitlab.basemind.com/basemind/brainpp/projects/kubebrain/cmd/worker-init/app/options.(*Options).Run","@file":"projects/kubebrain/cmd/worker-init/app/options/options.go:80","@level":"info","@msg":"SSHD not enabled","@timestamp":"2026-11-12T16:23:38.498Z"}
+2026-11-12 16:23:38: DEBUG: Calling worker_init, DISTRIBUTED_JOB_ENVS_INITIALIZED=
+2026-11-12 16:23:38: DEBUG: worker_init() function called
+2026-11-12 16:23:38: DEBUG: SCRIPT_PATH=/jobutils/scripts, BASE_DIR=/jobutils
+SOCKET_IP=10.191.1.5
+0 reranked to 0
+MASTER_NODE_NAME=gpu-h800-0377.host.platform.shaipower.com, LAST_NODE_NAME=gpu-h800-0377.host.platform.shaipower.com
+MASTER_SOCKET_ADDR=10.191.1.5, LAST_SOCKET_ADDR=10.191.1.5
+NODE_NAME=gpu-h800-0377.host.platform.shaipower.com
+GPU_TYPE=H800
+GPU_VENDOR=NVIDIA
+NODE_RANK=0
+NODE_COUNT=1
+MASTER_ADDR=10.191.1.5
+PROC_PER_NODE=2
+JOB_ID=exp-1112-162239-776626
+RDMA_NETWORK_LINK_TYPE=RoCE
+[33mWarning: Not a full machine job, skipped IB HCA auto detection[0m
+NCCL_SOCKET_IFNAME=ens20np0
+NVSHMEM_BOOTSTRAP_UID_SOCK_IFNAME=ens20np0
+NCCL_IB_HCA=
+NCCL_IB_GID_INDEX=
+NVSHMEM_HCA_PE_MAPPING=
+2026-11-12 16:23:43: Ready to go.
+2026/11/12 16:23:43 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server
+name, driver_version, memory.total [MiB]
+NVIDIA H800, 570.124.06, 81559 MiB
+NVIDIA H800, 570.124.06, 81559 MiB
+/data/ycfeng/envs/nemo-mopd-py313/bin/python 3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ] 2.13.0+cu130 13.0
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+2026-11-12 16:24:03,320	INFO worker.py:2015 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+INFO:nemo_rl.distributed.virtual_cluster:virtual_cluster.py:544: Started local cluster with tag 'nrl_tag_ALL': {'memory': 46040327783.0, 'node:10.191.1.5': 1.0, 'GPU': 2.0, 'node:__internal_head__': 1.0, 'object_store_memory': 19731569049.0, 'CPU': 8.0, 'accelerator_type:H800': 1.0, 'nrl_tag_ALL': 1.0}
+Running 4 items in this shard
+Deleted existing results file: /data/ycfeng/sota-engine/RL/tests/unit/unit_results.json
+GPU monitoring started with collection interval=1s, flush interval=infs
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+NCCL version 2.30.7+cuda13.3
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+.NCCL version 2.30.7+cuda13.3
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+.NCCL version 2.30.7+cuda13.3
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py:67: FutureWarning: torch.distributed.nn.functional.all_reduce is deprecated, use torch.distributed._functional_collectives.all_reduce instead.
+  sum_exp_logits = torch.distributed.nn.functional.all_reduce(
+.NCCL version 2.30.7+cuda13.3
+.GPU monitoring stopped
+
+Saving unit test data to /data/ycfeng/sota-engine/RL/tests/unit/unit_results.json
+and saving to /data/ycfeng/sota-engine/RL/tests/unit/unit_results/20261112_162358.json
+
+==================================== PASSES ====================================
+___________ test_student_teacher_divergence_kernels[1-5-reverse_kl] ____________
+------------------------------ Captured log setup ------------------------------
+2026-11-12 16:24:03,320	INFO worker.py:2015 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+2026-11-12 16:24:03,943	INFO virtual_cluster.py:544 -- Started local cluster with tag 'nrl_tag_ALL': {'memory': 46040327783.0, 'node:10.191.1.5': 1.0, 'GPU': 2.0, 'node:__internal_head__': 1.0, 'object_store_memory': 19731569049.0, 'CPU': 8.0, 'accelerator_type:H800': 1.0, 'nrl_tag_ALL': 1.0}
+============================ slowest 100 durations =============================
+12.59s call     tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[1-5-reverse_kl]
+11.99s setup    tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[1-5-reverse_kl]
+9.71s call     tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[1-5-cross_entropy]
+9.03s call     tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[2-4-cross_entropy]
+7.65s call     tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[2-4-reverse_kl]
+1.60s teardown tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[2-4-cross_entropy]
+
+(6 durations < 0.005s hidden.  Use -vv to show these durations.)
+=========================== short test summary info ============================
+PASSED tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[1-5-reverse_kl]
+PASSED tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[1-5-cross_entropy]
+PASSED tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[2-4-reverse_kl]
+PASSED tests/unit/distributed/test_distributed_logprob.py::test_student_teacher_divergence_kernels[2-4-cross_entropy]
+4 passed in 53.52s
+MOPD_TP2_REFERENCE_TESTS_FINISHED /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/distributed-reference/exp-1112-162239-776626

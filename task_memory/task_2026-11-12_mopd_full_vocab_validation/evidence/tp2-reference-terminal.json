@@ -1,0 +1,100 @@
+{
+  "job": {
+    "name": "exp-1112-162239-776626",
+    "uid": "18659e9b-fdef-4aea-b87f-d3cfe49db8b3",
+    "ownerReferences": null,
+    "creator": "i-fengyicheng",
+    "status": {
+      "phase": "Succeeded",
+      "reason": "RJobSucceeded",
+      "message": "RJob succeeded",
+      "taskStatuses": {
+        "default": {
+          "succeeded": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-12T08:24:57Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "replica": {
+    "name": "exp-1112-162239-776626-cfcd2084",
+    "uid": "d60f4842-a9e1-45ed-a093-60f1ca7ecd1c",
+    "ownerReferences": [
+      {
+        "apiVersion": "rjob.brainpp.cn/v1alpha1",
+        "kind": "RJob",
+        "name": "exp-1112-162239-776626",
+        "uid": "18659e9b-fdef-4aea-b87f-d3cfe49db8b3",
+        "controller": true,
+        "blockOwnerDeletion": true
+      }
+    ],
+    "creator": "i-fengyicheng",
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T08:23:18Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T08:24:54Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T08:24:54Z",
+          "reason": "PodCompleted"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T08:23:18Z"
+        }
+      ],
+      "hostIP": "10.191.1.5",
+      "podIP": "10.191.1.5",
+      "podIPs": [
+        {
+          "ip": "10.191.1.5"
+        }
+      ],
+      "startTime": "2026-11-12T08:23:18Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "terminated": {
+              "exitCode": 0,
+              "reason": "Completed",
+              "startedAt": "2026-11-12T08:23:38Z",
+              "finishedAt": "2026-11-12T08:24:54Z",
+              "containerID": "containerd://75bfb4805602c18b85f87503e158ca980295f2f140abdb355f719a10736f07a6"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://75bfb4805602c18b85f87503e158ca980295f2f140abdb355f719a10736f07a6",
+          "started": false
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Succeeded",
+      "nodeName": "gpu-h800-0377.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-12T08:24:56Z"
+    }
+  }
+}
