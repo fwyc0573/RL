@@ -1222,6 +1222,7 @@ class MegatronPolicyWorkerImpl(
         )
         self._opd_full_teacher_lm_heads: dict[int, torch.Tensor] = {}
         self._opd_full_teacher_checkpoint_paths: dict[int, str] = {}
+        self._opd_full_teacher_lm_head_dtypes: dict[int, torch.dtype] = {}
         # Whether the ``evict`` lifecycle has dropped the shards and the next
         # training phase must reload them. Tracked explicitly because the reload
         # resolves the checkpoint through Megatron-Bridge's ``read_train_state``,
@@ -2849,6 +2850,11 @@ class MegatronPolicyWorkerImpl(
             The resolved Megatron checkpoint root of the teacher.
         """
         _, teacher_pretrained_path, _ = validate_model_paths(teacher_path_config)
+        self._opd_full_teacher_lm_head_dtypes[teacher_index] = (
+            torch.float32
+            if teacher_path_config["megatron_cfg"].get("fp32_lm_head")
+            else _STR_TO_DTYPE[teacher_path_config["precision"]]
+        )
         self._load_opd_full_teacher_lm_head_from_path(
             teacher_pretrained_path, teacher_index
         )
@@ -2884,14 +2890,11 @@ class MegatronPolicyWorkerImpl(
             return
 
         output_layer = owner.output_layer
-        output_weight = output_layer.weight
-        if output_weight is None:
-            output_weight = owner.shared_embedding_or_output_weight()
-
         teacher_lm_head = load_teacher_output_layer_weight(
             teacher_pretrained_path=teacher_pretrained_path,
             local_vocab_size=output_layer.output_size_per_partition,
-            dtype=output_weight.dtype,
+            # Reconstruction must retain the teacher's configured output precision.
+            dtype=self._opd_full_teacher_lm_head_dtypes[teacher_index],
         )
         assert teacher_lm_head is not None  # requested a shard, so one comes back
         # Every teacher's hidden states ride the same data-plane column, so a
@@ -2900,7 +2903,7 @@ class MegatronPolicyWorkerImpl(
         # and the run would die assembling a microbatch long after the whole
         # cluster and every teacher came up. Catch it here instead, while the
         # driver is still walking the teachers one RPC at a time. Only V_local
-        # and dtype are safe by construction -- both are the student's.
+        # is safe by construction; precision follows the teacher's output.
         teacher_hidden_size = int(teacher_lm_head.shape[1])
         if self._opd_full_teacher_lm_heads:
             loaded_index = next(iter(self._opd_full_teacher_lm_heads))

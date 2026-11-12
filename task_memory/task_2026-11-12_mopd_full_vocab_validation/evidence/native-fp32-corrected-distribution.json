@@ -1,0 +1,31 @@
+{
+  "rank_records": 1280,
+  "calls": 160,
+  "elements": 10309769216,
+  "maxima": {
+    "max": 0.00011444091796875,
+    "full_logprob_max": 0.00014495849609375,
+    "loss_error_max": 5.573190833274566e-07,
+    "reference_loss_max": 0.0,
+    "reconstructed_loss_max": 5.573190833274566e-07,
+    "gradient_error_max": 1.6684345609974116e-05,
+    "gradient_error_norm": 6.63523533148691e-05,
+    "reference_gradient_norm": 0.0
+  },
+  "mean_full_logprob_error": 3.225162671998556e-05,
+  "relative_gradient_error_undefined": 1280,
+  "loss_absolute_pass": true,
+  "gradient_absolute_pass": false,
+  "native_gradient_normalization": "ClippedPGLossFn token_level_loss=true masks response tokens; finish_train_step scales accumulated gradient by 1/global_valid_toks.",
+  "normalization_counts": [
+    4096.0,
+    4096.0,
+    4096.0,
+    4096.0,
+    4096.0
+  ],
+  "native_logit_gradient_absolute_error_upper_bound": 4.073326564935087e-09,
+  "native_logit_gradient_absolute_pass": true,
+  "native_gradient_upper_bound_is_inference": true,
+  "reference_zero_relative_error_undefined": true
+}

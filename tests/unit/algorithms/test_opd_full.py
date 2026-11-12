@@ -576,6 +576,35 @@ def test_reconstruct_routes_each_row_through_its_own_teachers_lm_head():
     assert not torch.allclose(teacher_logits, payload @ heads[1].t())
 
 
+def test_reconstruct_keeps_each_teachers_output_precision():
+    """Mixed teacher heads preserve BF16 rounding and FP32 outputs per row."""
+    torch.manual_seed(29)
+    payload = torch.randn(3, 4, 3, dtype=torch.bfloat16)
+    heads = {
+        0: torch.randn(5, 3, dtype=torch.bfloat16),
+        1: torch.randn(5, 3, dtype=torch.bfloat16).float(),
+    }
+    teacher_index = torch.tensor([0, 1, 0])
+    reconstructed = reconstruct_opd_full_teacher_logits(
+        payload,
+        teacher_payload="hidden_states",
+        student_logits=torch.zeros(3, 4, 5),
+        vocab_parallel_rank=0,
+        context_parallel_group=None,
+        teacher_output_layer_weight_by_index=heads,
+        teacher_index=teacher_index,
+    )
+    expected = torch.stack(
+        [
+            (
+                payload[row].to(dtype=heads[int(index)].dtype) @ heads[int(index)].t()
+            ).float()
+            for row, index in enumerate(teacher_index)
+        ]
+    )
+    torch.testing.assert_close(reconstructed, expected, rtol=1e-5, atol=1e-6)
+
+
 @pytest.mark.parametrize("teacher_index", [None, torch.tensor([0, 0])])
 def test_reconstruct_uses_the_only_loaded_head_for_a_single_teacher_run(teacher_index):
     """One loaded shard, with the column absent or naming that shard."""

@@ -1,0 +1,310 @@
+{
+  "train/skipped_step": [
+    {
+      "step": 1,
+      "value": 0.0
+    },
+    {
+      "step": 2,
+      "value": 0.0
+    },
+    {
+      "step": 3,
+      "value": 0.0
+    },
+    {
+      "step": 4,
+      "value": 0.0
+    },
+    {
+      "step": 5,
+      "value": 0.0
+    }
+  ],
+  "train/loss": [
+    {
+      "step": 1,
+      "value": 8.524527947884053e-05
+    },
+    {
+      "step": 2,
+      "value": 0.000158820315846242
+    },
+    {
+      "step": 3,
+      "value": 0.0001538273209007457
+    },
+    {
+      "step": 4,
+      "value": 0.00019660414545796812
+    },
+    {
+      "step": 5,
+      "value": 0.00021060732251498848
+    }
+  ],
+  "train/grad_norm": [
+    {
+      "step": 1,
+      "value": 0.02513887919485569
+    },
+    {
+      "step": 2,
+      "value": 0.06578440964221954
+    },
+    {
+      "step": 3,
+      "value": 0.035923801362514496
+    },
+    {
+      "step": 4,
+      "value": 0.06490714102983475
+    },
+    {
+      "step": 5,
+      "value": 0.04086330905556679
+    }
+  ],
+  "train/optimizer_update_successful": [
+    {
+      "step": 1,
+      "value": 1.0
+    },
+    {
+      "step": 2,
+      "value": 1.0
+    },
+    {
+      "step": 3,
+      "value": 1.0
+    },
+    {
+      "step": 4,
+      "value": 1.0
+    },
+    {
+      "step": 5,
+      "value": 1.0
+    }
+  ],
+  "train/opd_full_reverse_kl": [
+    {
+      "step": 1,
+      "value": 8.524527947884053e-05
+    },
+    {
+      "step": 2,
+      "value": 0.000158820315846242
+    },
+    {
+      "step": 3,
+      "value": 0.0001538273209007457
+    },
+    {
+      "step": 4,
+      "value": 0.00019660414545796812
+    },
+    {
+      "step": 5,
+      "value": 0.00021060732251498848
+    }
+  ],
+  "train/opd_full_reverse_kl_min": [
+    {
+      "step": 1,
+      "value": -3.059395794480224e-07
+    },
+    {
+      "step": 2,
+      "value": -2.651215424975817e-07
+    },
+    {
+      "step": 3,
+      "value": -2.352927026549878e-07
+    },
+    {
+      "step": 4,
+      "value": -3.4906852874883043e-07
+    },
+    {
+      "step": 5,
+      "value": -2.8404349450283917e-07
+    }
+  ],
+  "train/opd_full_reverse_kl_max": [
+    {
+      "step": 1,
+      "value": 0.00305524212308228
+    },
+    {
+      "step": 2,
+      "value": 0.016363468021154404
+    },
+    {
+      "step": 3,
+      "value": 0.006582922767847776
+    },
+    {
+      "step": 4,
+      "value": 0.0285931508988142
+    },
+    {
+      "step": 5,
+      "value": 0.00981616135686636
+    }
+  ],
+  "train/opd_full_entropy": [
+    {
+      "step": 1,
+      "value": 0.6642772555351257
+    },
+    {
+      "step": 2,
+      "value": 0.5550865530967712
+    },
+    {
+      "step": 3,
+      "value": 0.550269365310669
+    },
+    {
+      "step": 4,
+      "value": 0.6196064352989197
+    },
+    {
+      "step": 5,
+      "value": 0.7655633687973022
+    }
+  ],
+  "train/opd_full_cross_entropy": [
+    {
+      "step": 1,
+      "value": 0.6643624901771545
+    },
+    {
+      "step": 2,
+      "value": 0.5552453398704529
+    },
+    {
+      "step": 3,
+      "value": 0.5504232048988342
+    },
+    {
+      "step": 4,
+      "value": 0.6198030114173889
+    },
+    {
+      "step": 5,
+      "value": 0.7657739520072937
+    }
+  ],
+  "train/opd_full_decomposition_error": [
+    {
+      "step": 1,
+      "value": 6.814952939748764e-07
+    },
+    {
+      "step": 2,
+      "value": 7.133930921554565e-07
+    },
+    {
+      "step": 3,
+      "value": 1.055654138326645e-06
+    },
+    {
+      "step": 4,
+      "value": 6.192713044583797e-07
+    },
+    {
+      "step": 5,
+      "value": 8.435454219579697e-07
+    }
+  ],
+  "train/global_valid_seqs": [
+    {
+      "step": 1,
+      "value": 32.0
+    },
+    {
+      "step": 2,
+      "value": 32.0
+    },
+    {
+      "step": 3,
+      "value": 32.0
+    },
+    {
+      "step": 4,
+      "value": 32.0
+    },
+    {
+      "step": 5,
+      "value": 32.0
+    }
+  ],
+  "train/global_valid_toks": [
+    {
+      "step": 1,
+      "value": 4096.0
+    },
+    {
+      "step": 2,
+      "value": 4096.0
+    },
+    {
+      "step": 3,
+      "value": 4096.0
+    },
+    {
+      "step": 4,
+      "value": 4096.0
+    },
+    {
+      "step": 5,
+      "value": 4096.0
+    }
+  ],
+  "train/on_policy_distillation/teacher_alias_unique": [
+    {
+      "step": 1,
+      "value": 5.0
+    },
+    {
+      "step": 2,
+      "value": 5.0
+    },
+    {
+      "step": 3,
+      "value": 5.0
+    },
+    {
+      "step": 4,
+      "value": 5.0
+    },
+    {
+      "step": 5,
+      "value": 5.0
+    }
+  ],
+  "train/on_policy_distillation/teacher_model_unique": [
+    {
+      "step": 1,
+      "value": 1.0
+    },
+    {
+      "step": 2,
+      "value": 1.0
+    },
+    {
+      "step": 3,
+      "value": 1.0
+    },
+    {
+      "step": 4,
+      "value": 1.0
+    },
+    {
+      "step": 5,
+      "value": 1.0
+    }
+  ]
+}

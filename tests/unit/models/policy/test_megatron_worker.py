@@ -1018,6 +1018,7 @@ def _disable_opd_full(worker) -> None:
     worker._opd_full_lm_head_lifecycle = None
     worker._opd_full_teacher_lm_heads = {}
     worker._opd_full_teacher_checkpoint_paths = {}
+    worker._opd_full_teacher_lm_head_dtypes = {}
     worker._opd_full_lm_head_evicted = False
 
 
@@ -1031,6 +1032,7 @@ def _worker_with_teachers(lifecycle, heads, paths):
     worker._opd_full_lm_head_lifecycle = lifecycle
     worker._opd_full_teacher_lm_heads = dict(heads)
     worker._opd_full_teacher_checkpoint_paths = dict(paths)
+    worker._opd_full_teacher_lm_head_dtypes = {}
     worker._opd_full_lm_head_evicted = False
     return worker
 
@@ -1123,6 +1125,62 @@ def test_offload_parks_every_teacher_head_not_just_the_first():
     assert worker._opd_full_lm_head_evicted is False
 
 
+@pytest.mark.parametrize("fp32_lm_head", [False, True])
+@pytest.mark.parametrize("lifecycle", ["none", "evict"])
+def test_teacher_head_reconstruction_preserves_logit_precision(
+    monkeypatch, fp32_lm_head, lifecycle
+):
+    """Teacher output precision survives loading and eviction of its head."""
+    from nemo_rl.algorithms.loss.utils import reconstruct_opd_full_teacher_logits
+    from nemo_rl.models.policy.workers import megatron_policy_worker as worker_module
+
+    worker = _worker_with_teachers(lifecycle, {}, {})
+    torch.manual_seed(23)
+    checkpoint_head = torch.randn(5, 3, dtype=torch.bfloat16)
+    hidden_states = torch.randn(1, 4, 3, dtype=torch.bfloat16)
+    owner = SimpleNamespace(
+        output_layer=SimpleNamespace(
+            weight=torch.zeros(5, 3, dtype=torch.bfloat16),
+            output_size_per_partition=5,
+        )
+    )
+    monkeypatch.setattr(worker, "_resolve_output_layer_owner", lambda: owner)
+    monkeypatch.setattr(
+        worker_module, "validate_model_paths", lambda config: (None, "/ckpt/a", None)
+    )
+    loaded_dtypes = []
+
+    def load_head(**kwargs):
+        loaded_dtypes.append(kwargs["dtype"])
+        return checkpoint_head.to(dtype=kwargs["dtype"])
+
+    monkeypatch.setattr(worker_module, "load_teacher_output_layer_weight", load_head)
+    monkeypatch.setattr(worker, "_move_opd_full_teacher_lm_head", lambda device: None)
+    teacher_config = {
+        "precision": "bfloat16",
+        "megatron_cfg": {"fp32_lm_head": fp32_lm_head},
+    }
+    worker.load_opd_full_teacher_lm_head(teacher_config, 0)
+    if lifecycle == "evict":
+        worker._release_opd_full_teacher_lm_head()
+        worker._stage_opd_full_teacher_lm_head_for_training()
+
+    expected_dtype = torch.float32 if fp32_lm_head else torch.bfloat16
+    reconstructed = reconstruct_opd_full_teacher_logits(
+        hidden_states,
+        teacher_payload="hidden_states",
+        student_logits=torch.zeros(1, 4, 5, dtype=torch.float32),
+        vocab_parallel_rank=0,
+        context_parallel_group=None,
+        teacher_output_layer_weight_by_index=worker._opd_full_teacher_lm_heads,
+        teacher_index=torch.tensor([0]),
+    )
+    expected = hidden_states.float() @ checkpoint_head.float().t()
+    expected = expected.to(dtype=expected_dtype)
+    assert loaded_dtypes == [expected_dtype] * (2 if lifecycle == "evict" else 1)
+    torch.testing.assert_close(reconstructed, expected, rtol=1e-5, atol=1e-6)
+
+
 def test_second_teacher_with_another_hidden_size_is_rejected_at_load(monkeypatch):
     from nemo_rl.models.policy.workers import megatron_policy_worker as worker_module
 
@@ -1140,6 +1198,7 @@ def test_second_teacher_with_another_hidden_size_is_rejected_at_load(monkeypatch
     )
     monkeypatch.setattr(worker, "_move_opd_full_teacher_lm_head", lambda device: None)
 
+    worker._opd_full_teacher_lm_head_dtypes[1] = torch.float32
     with pytest.raises(ValueError, match="hidden_size=5, but teacher_index=0 has 3"):
         worker._load_opd_full_teacher_lm_head_from_path("/ckpt/b", 1)
 

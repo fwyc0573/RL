@@ -198,27 +198,24 @@ def _project_hidden_states_per_teacher(
         weight = _weight_for(present[0])
         return torch.matmul(payload.to(dtype=weight.dtype), weight.t())
 
-    # One buffer holds every group, so the groups have to agree on the
-    # vocabulary shard and dtype. They do by construction -- every shard is
-    # requested at the student's own width and dtype -- but say so here, since
-    # the alternative is an opaque RuntimeError out of the masked assignment.
+    # Promote the scatter buffer without changing each teacher's own projection.
     reference_index, reference = next(iter(weight_by_index.items()))
+    output_dtype = reference.dtype
+    for idx in present:
+        output_dtype = torch.promote_types(output_dtype, _weight_for(idx).dtype)
     teacher_logits = torch.empty(
         payload.shape[0],
         payload.shape[1],
         int(reference.shape[0]),
-        dtype=reference.dtype,
+        dtype=output_dtype,
         device=payload.device,
     )
     for idx in present:
         weight = _weight_for(idx)
-        if (int(weight.shape[0]), weight.dtype) != (
-            int(reference.shape[0]),
-            reference.dtype,
-        ):
+        if int(weight.shape[0]) != int(reference.shape[0]):
             raise ValueError(
-                "opd_full teacher LM heads must share one vocabulary shard and "
-                f"dtype to be projected together: teacher_index={idx} is "
+                "opd_full teacher LM heads must share one vocabulary shard "
+                f"to be projected together: teacher_index={idx} is "
                 f"[{weight.shape[0]}, ...] {weight.dtype}, but "
                 f"teacher_index={reference_index} is [{reference.shape[0]}, ...] "
                 f"{reference.dtype}."
@@ -226,7 +223,7 @@ def _project_hidden_states_per_teacher(
         mask = teacher_index == idx
         teacher_logits[mask] = torch.matmul(
             payload[mask].to(dtype=weight.dtype), weight.t()
-        )
+        ).to(dtype=output_dtype)
     return teacher_logits
 
 
