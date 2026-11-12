@@ -21,8 +21,11 @@ from typing import Any, Callable
 import ray
 import torch
 from megatron.core import parallel_state
+from megatron.core.tensor_parallel.layers import _linear_forward
 
 from nemo_rl.algorithms.loss.interfaces import LossFunction, LossInputType
+from nemo_rl.algorithms.loss.loss_functions import ClippedPGLossFn
+from nemo_rl.algorithms.opd import opd_full_payload_field, opd_full_teacher_index_field
 from nemo_rl.algorithms.loss.utils import reconstruct_opd_full_teacher_logits
 from nemo_rl.distributed.model_utils import (
     ChunkedDistributedReverseKLToFixedLogits,
@@ -57,6 +60,8 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
         ) -> tuple[dict[str, Any], dict[str, Any]]:
             prepared = native_prepare(logits, data, loss_fn, **prepare_kwargs)
             if loss_fn.input_type == LossInputType.OPD_FULL:
+                assert isinstance(loss_fn, ClippedPGLossFn)
+                self._observe_objective_gradient(logits, data, loss_fn, prepare_kwargs)
                 with torch.no_grad():
                     logprobs = get_next_token_logprobs_from_logits(
                         input_ids=data["input_ids"],
@@ -116,6 +121,10 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
                             0: weight.detach().to(dtype=output_tensor.dtype)
                         },
                     )
+                    native_gemm_logits = _linear_forward(
+                        hidden, weight.detach(), None, output_tensor.dtype
+                    )
+                    native_gemm_error = native_gemm_logits - output_tensor
                     logprobs_fn = processor._logprobs_post_processor(
                         data_dict=processor_kwargs["data_dict"],
                         input_ids=processor_kwargs["input_ids"],
@@ -149,12 +158,27 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
                             )
                         )
                         reference_gradient = torch.autograd.grad(
-                            reference_loss.sum(), probe_logits
+                            reference_loss.sum(), probe_logits, retain_graph=True
                         )[0]
                         reconstructed_gradient = torch.autograd.grad(
-                            reconstructed_loss.sum(), probe_logits
+                            reconstructed_loss.sum(), probe_logits, retain_graph=True
+                        )[0]
+                        native_gemm_loss = (
+                            ChunkedDistributedReverseKLToFixedLogits.apply(
+                                probe_logits,
+                                native_gemm_logits.detach(),
+                                self.cfg["logprob_chunk_size"],
+                                tp_group,
+                                False,
+                            )
+                        )
+                        native_gemm_gradient = torch.autograd.grad(
+                            native_gemm_loss.sum(), probe_logits, retain_graph=True
                         )[0]
                     gradient_error = reconstructed_gradient - reference_gradient
+                    native_gemm_gradient_error = (
+                        native_gemm_gradient - reference_gradient
+                    )
                     self._write_observation(
                         {
                             "kind": "teacher_logit_shard",
@@ -174,6 +198,17 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
                             .item(),
                             "reference_loss_max": reference_loss.abs().max().item(),
                             "reconstructed_loss_max": reconstructed_loss.abs()
+                            .max()
+                            .item(),
+                            "hidden_dtype": str(hidden.dtype),
+                            "native_head_weight_dtype": str(weight.dtype),
+                            "native_gemm_logit_mae": native_gemm_error.abs()
+                            .mean()
+                            .item(),
+                            "native_gemm_logit_max": native_gemm_error.abs()
+                            .max()
+                            .item(),
+                            "native_gemm_gradient_error_max": native_gemm_gradient_error.abs()
                             .max()
                             .item(),
                             "gradient_error_max": gradient_error.abs().max().item(),
@@ -221,6 +256,82 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
 
         train.prepare_loss_input = observe_training
         train.TeacherFullPayloadPostProcessor.__call__ = observe_teacher
+
+    def _observe_objective_gradient(
+        self,
+        logits: torch.Tensor,
+        data: dict[str, Any],
+        loss_fn: ClippedPGLossFn,
+        prepare_kwargs: dict[str, Any],
+    ) -> None:
+        """Compare native and reconstructed targets with actual training masks."""
+        full_cfg = loss_fn.opd_full
+        payload = data[opd_full_payload_field(full_cfg)]
+        index = data[opd_full_teacher_index_field(full_cfg)]
+        heads = prepare_kwargs["teacher_output_layer_weight_by_index"]
+        tp_group = prepare_kwargs["vocab_parallel_group"]
+        with torch.no_grad():
+            reconstructed = reconstruct_opd_full_teacher_logits(
+                payload,
+                teacher_payload=full_cfg.teacher_payload,
+                student_logits=logits,
+                vocab_parallel_rank=prepare_kwargs["vocab_parallel_rank"],
+                context_parallel_group=prepare_kwargs["context_parallel_group"],
+                teacher_output_layer_weight_by_index=heads,
+                teacher_index=index,
+            )
+            payload = torch.nn.functional.pad(
+                payload, (0, 0, 0, reconstructed.shape[1] - payload.shape[1])
+            )
+            native_target = torch.empty_like(reconstructed)
+            for teacher_index in torch.unique(index).tolist():
+                mask = index == teacher_index
+                native_target[mask] = _linear_forward(
+                    payload[mask].contiguous(),
+                    heads[teacher_index].to(dtype=payload.dtype),
+                    None,
+                    reconstructed.dtype,
+                )
+            valid_tokens = (
+                data["token_mask"][:, 1:] * data["sample_mask"].unsqueeze(-1)
+            ).sum()
+            valid_sequences = data["sample_mask"].sum()
+        next_token_width = data["input_ids"].shape[1] - 1
+        objectives = []
+        gradients = []
+        with torch.enable_grad():
+            probe = logits.detach().float().requires_grad_()
+            for target in (native_target, reconstructed):
+                divergence = ChunkedDistributedReverseKLToFixedLogits.apply(
+                    probe, target.detach(), full_cfg.chunk_size, tp_group, False
+                )
+                objective, _ = loss_fn(
+                    data=data,
+                    global_valid_seqs=valid_sequences,
+                    global_valid_toks=valid_tokens,
+                    opd_full_divergence=divergence[:, :next_token_width],
+                )
+                objectives.append(objective.item())
+                gradients.append(torch.autograd.grad(objective, probe)[0])
+        error = gradients[1] - gradients[0]
+        self._write_observation(
+            {
+                "kind": "training_objective_gradient",
+                "call": self._training_observations + 1,
+                "rank": torch.distributed.get_rank(),
+                "shape": list(logits.shape),
+                "teacher_index": index.cpu().tolist(),
+                "payload_dtype": str(payload.dtype),
+                "reconstructed_dtype": str(reconstructed.dtype),
+                "objective_valid_tokens": valid_tokens.item(),
+                "objective_valid_sequences": valid_sequences.item(),
+                "objective_normalization": "observed microbatch token count",
+                "objective_losses": objectives,
+                "objective_reference_gradient_norm": gradients[0].norm().item(),
+                "objective_reconstructed_gradient_error_max": error.abs().max().item(),
+                "objective_reconstructed_gradient_error_norm": error.norm().item(),
+            }
+        )
 
     def _write_observation(self, record: dict[str, Any]) -> None:
         """Record one detached comparison with a nonblocking I/O soft gate."""
