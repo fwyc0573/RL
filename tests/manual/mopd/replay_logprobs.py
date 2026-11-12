@@ -100,7 +100,9 @@ def main() -> None:
         policy_config = copy.deepcopy(config.policy)
         policy_config["megatron_cfg"]["context_parallel_size"] = cp_size
         world_size = (
-            cp_size * policy_config["megatron_cfg"]["tensor_model_parallel_size"]
+            cp_size
+            * policy_config["megatron_cfg"]["tensor_model_parallel_size"]
+            * policy_config["megatron_cfg"]["pipeline_model_parallel_size"]
         )
         assert 0 < world_size <= config.cluster.gpus_per_node
         cluster = RayVirtualCluster(
@@ -148,6 +150,12 @@ def main() -> None:
                 )
             joined = torch.cat(logprobs)
             variant = {
+                "tensor_model_parallel_size": policy_config["megatron_cfg"][
+                    "tensor_model_parallel_size"
+                ],
+                "pipeline_model_parallel_size": policy_config["megatron_cfg"][
+                    "pipeline_model_parallel_size"
+                ],
                 "context_parallel_size": cp_size,
                 "sequence_packing": policy_config["sequence_packing"]["enabled"],
                 "apply_rope_fusion": policy_config["megatron_cfg"]["apply_rope_fusion"],
