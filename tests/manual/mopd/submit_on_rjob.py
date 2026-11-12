@@ -26,6 +26,7 @@ from steptron.utils.stepmind import spawn_tasks
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--training-entrypoint", type=Path)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--nodes", type=int, required=True)
     parser.add_argument("--gpus-per-node", type=int, required=True)
@@ -94,6 +95,10 @@ def main() -> None:
         str(args.training_timeout),
         *overrides,
     ]
+    if args.training_entrypoint is not None:
+        if not args.training_entrypoint.is_file():
+            raise FileNotFoundError(args.training_entrypoint)
+        argv += ["--training-entrypoint", str(args.training_entrypoint.resolve())]
     shell = "\n".join(
         [
             "set -euo pipefail",

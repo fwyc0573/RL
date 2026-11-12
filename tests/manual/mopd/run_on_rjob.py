@@ -110,6 +110,7 @@ def terminate(signum: int, frame: object) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
+    parser.add_argument("--training-entrypoint", type=Path)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--nodes", type=int, required=True)
     parser.add_argument("--gpus-per-node", type=int, required=True)
@@ -251,7 +252,9 @@ def main() -> None:
                 "--no-sync",
                 "python",
                 "-u",
-                "examples/run_grpo_single_controller.py",
+                str(args.training_entrypoint)
+                if args.training_entrypoint is not None
+                else "examples/run_grpo_single_controller.py",
                 "--config",
                 str(args.config),
                 f"cluster.num_nodes={args.nodes}",
