@@ -15,6 +15,7 @@
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -58,6 +59,8 @@ def main() -> None:
     )
     generation = config["policy"]["generation"]
     vllm_config = generation["vllm_cfg"]
+    if vllm_config.get("env_vars"):
+        os.environ.update(vllm_config["env_vars"])
     _apply_fp32_lm_head(vllm_config, generation["vllm_kwargs"])
     output = Path(config["logger"]["log_dir"]) / "replay-generation-logprobs.json"
     output.relative_to("/mnt/codesign-exp/ycfeng")
