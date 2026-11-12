@@ -1,0 +1,190 @@
+defaults: ../../grpo_math_1B.yaml
+
+grpo:
+  num_prompts_per_step: 256
+  num_generations_per_prompt: 1
+  max_num_steps: 200
+  val_period: 0
+  overlong_filtering: false
+  skip_reference_policy_logprobs_calculation: true
+  async_grpo: null
+  adv_estimator:
+    name: opd
+
+async_rl:
+  sampler:
+    name: in_order
+    max_lookahead_versions: 1
+  min_groups_for_streaming_train: ${grpo.num_prompts_per_step}
+  max_inflight_prompts: ${grpo.num_prompts_per_step}
+  max_buffered_rollouts: 512
+  log_full_train_data: true
+
+data_plane:
+  enabled: true
+
+on_policy_distillation:
+  enabled: true
+  teacher_model_by_agent_name:
+    math: /mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher
+    code: /mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da
+    stem: /mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7
+    logic: /mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50
+    if: /mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba
+  default_teacher_alias: math
+  strict_agent_name_match: true
+  deduplicate_shared_teacher_checkpoints: true
+  non_colocated_teachers:
+    enabled: true
+    default_teacher_cfg:
+      tensor_model_parallel_size: 2
+      pipeline_model_parallel_size: 1
+      context_parallel_size: 4
+      num_nodes: 1
+      gpus_per_node: 8
+      precision: bf16
+      micro_batch_size: 1
+  full:
+    enabled: true
+    teacher_payload: hidden_states
+    divergence: reverse_kl
+    payload_dtype: bfloat16
+    teacher_lm_head_lifecycle: offload
+    chunk_size: 128
+    validate_decomposition: false
+
+loss_fn:
+  reference_policy_kl_penalty: 0.0
+  disable_ppo_ratio: true
+  use_importance_sampling_correction: false
+  truncated_importance_sampling_type: null
+  use_on_policy_kl_approximation: false
+
+policy:
+  model_name: /mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student
+  train_global_batch_size: 256
+  train_micro_batch_size: 1
+  generation_batch_size: 64
+  logprob_batch_size: 1
+  max_total_sequence_length: 65536
+  logprob_chunk_size: 128
+  make_sequence_length_divisible_by: 16
+  max_grad_norm: 1.0
+  automodel_cfg:
+    enabled: false
+  megatron_cfg:
+    enabled: true
+    tensor_model_parallel_size: 2
+    context_parallel_size: 4
+    sequence_parallel: true
+    activation_checkpointing: true
+    bias_activation_fusion: false
+    defer_fp32_logits: true
+    optimizer:
+      lr: 1.0e-6
+      min_lr: 1.0e-6
+      weight_decay: 0.01
+      adam_beta2: 0.95
+    scheduler:
+      lr_decay_iters: null
+      lr_warmup_iters: 0
+    distributed_data_parallel_config:
+      average_in_collective: false
+  optimizer: null
+  scheduler: null
+  generation:
+    temperature: 1.0
+    top_p: 1.0
+    top_k: -1
+    max_new_tokens: 65536
+    vllm_cfg:
+      async_engine: true
+      tensor_parallel_size: 2
+      gpu_memory_utilization: 0.85
+      expose_http_server: true
+      http_server_serving_chat_kwargs:
+        enable_auto_tools: false
+        tool_parser: null
+        reasoning_parser: deepseek_r1
+    colocated:
+      enabled: false
+      resources:
+        gpus_per_node: 8
+        num_nodes: 1
+
+data:
+  max_input_seq_length: null
+  train:
+    dataset_name: NemoGymDataset
+    data_path: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/train.jsonl
+  validation:
+    dataset_name: NemoGymDataset
+    data_path: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/probe.jsonl
+  default:
+    dataset_name: NemoGymDataset
+    env_name: nemo_gym
+    prompt_file: null
+    processor: nemo_gym_data_processor
+
+env:
+  should_use_nemo_gym: true
+  nemo_gym:
+    config_paths:
+    - responses_api_models/vllm_model/configs/vllm_model_for_training.yaml
+    - environment_servers/single_agent_turn/configs/single_agent_turn.yaml
+    environment_server_routes:
+      math: mopd_environment
+      code: mopd_environment
+      stem: mopd_environment
+      logic: mopd_environment
+      if: mopd_environment
+    # Full-vocabulary distillation does not consume a verifier reward.
+    mopd_resources:
+      resources_servers:
+        example_single_tool_call:
+          entrypoint: app.py
+          domain: agent
+          verified: false
+    mopd_agent:
+      responses_api_agents:
+        simple_agent:
+          entrypoint: app.py
+          resources_server:
+            type: resources_servers
+            name: mopd_resources
+          model_server:
+            type: responses_api_models
+            name: policy_model
+          max_steps: 1
+          execute_tools: false
+    mopd_environment:
+      _inherit_from: single_agent_turn
+      environment_servers:
+        single_agent_turn:
+          resources_server:
+            type: resources_servers
+            name: mopd_resources
+          agent_server:
+            type: responses_api_agents
+            name: mopd_agent
+          skip_verification: true
+          skip_verification_reward: 0.0
+
+checkpointing:
+  enabled: true
+  checkpoint_dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/main/checkpoints
+  metric_name: null
+  keep_top_k: 3
+  save_period: 10
+  save_optimizer: true
+  save_data_plane: true
+
+logger:
+  log_dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/main/logs
+  tensorboard_enabled: true
+  wandb_enabled: false
+  mlflow_enabled: false
+
+cluster:
+  num_nodes: 7
+  gpus_per_node: 8

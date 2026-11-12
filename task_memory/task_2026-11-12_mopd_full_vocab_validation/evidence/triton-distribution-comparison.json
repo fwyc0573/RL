@@ -1,0 +1,78 @@
+{
+  "files": 353,
+  "missing": [],
+  "extra": [],
+  "different": {
+    "triton/plugins/libMLIRDialectPlugin.so": {
+      "official": [
+        "sha256=3ixRLa5_6GR95wmrEor2OKAxK9OG5OwN3nnribOtkpI",
+        "2342592"
+      ],
+      "pypi": [
+        "sha256=IYPvVAxixq4hvJMtxzLYFi8c9Zsw-pmi2R1wEsaDg8w",
+        "2342168"
+      ]
+    },
+    "triton/_C/libtriton.so": {
+      "official": [
+        "sha256=yxaEjM89ZWF11fO22SKYyNVuIw6ePaTbf1Pp2wghXgE",
+        "460828264"
+      ],
+      "pypi": [
+        "sha256=Jr6tUoQ02yVNrSWRdeD5b8gF_RXO0a_9vrpliRVGcT8",
+        "461572032"
+      ]
+    },
+    "triton/plugins/libTritonPluginsTestLib.so": {
+      "official": [
+        "sha256=5chAP4Y4dpMF78bFm3_dI9FILBWHOdd2bG4lXepkIew",
+        "651800"
+      ],
+      "pypi": [
+        "sha256=hDwvv5zQ-R8i-gbUdzLmpVDYKMAKSKLY4ut53rqUXRI",
+        "651608"
+      ]
+    },
+    "triton/instrumentation/libGPUInstrumentationTestLib.so": {
+      "official": [
+        "sha256=QqkW4Sn-O5obkjTJFpPcvtbXK18JuU55toVC6Q9Eti0",
+        "7305552"
+      ],
+      "pypi": [
+        "sha256=YghY6_y16S-6AsyygQOqzkdzo9djC_KyOl6oDpsskOk",
+        "7305416"
+      ]
+    },
+    "triton/plugins/libMLIRDialectPlugin.so.23.0git": {
+      "official": [
+        "sha256=3ixRLa5_6GR95wmrEor2OKAxK9OG5OwN3nnribOtkpI",
+        "2342592"
+      ],
+      "pypi": [
+        "sha256=IYPvVAxixq4hvJMtxzLYFi8c9Zsw-pmi2R1wEsaDg8w",
+        "2342168"
+      ]
+    },
+    "triton/_C/libproton.so": {
+      "official": [
+        "sha256=TQXLYohSOYdkegqaf3O4XPrnsW1SZoYcP75xPAwe2wk",
+        "22237664"
+      ],
+      "pypi": [
+        "sha256=7BFhrEf1ilQpR4hZuBMqk256Vwzpvzb7JKzGH7L1Hmo",
+        "22668232"
+      ]
+    },
+    "triton/__init__.py": {
+      "official": [
+        "sha256=rpCMBpxpXmB4i-71EfWNCxbTmXgiVzNbhuRmUD3HTso",
+        "1683"
+      ],
+      "pypi": [
+        "sha256=_I0M51NaR3N2nf3Ns6i3vO4b9Y09A8wxhSkQTB4UMf0",
+        "1683"
+      ]
+    }
+  },
+  "identical_code": false
+}

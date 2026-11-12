@@ -6,7 +6,7 @@
 
 # Plan
 
-Status: scope investigation completed; acceptance confirmation pending. Proposed execution settings are in [design.md](design.md), and explicit user constraints are in [requirements.md](requirements.md).
+Status: acceptance confirmed by `continue`; B/C in progress. Execution settings are in [design.md](design.md), and explicit user constraints are in [requirements.md](requirements.md).
 
 ## Dependency graph
 
@@ -34,7 +34,7 @@ B and C can progress independently after Q, using batched independent reads and 
 | E | Run fresh-rollout MOPD to 200 successful optimizer updates; save native training state and resume it at least once; test refit and final checkpoint inference. | 200 actual successful updates, five-teacher coverage, model/optimizer/scheduler and native sampler/data-plane recovery, continued training after resume, measured post-refit and post-resume parity, finite final parameters, completed artifacts and native terminal status. |
 | F | Analyze per-group curves and anomalies; run affected regressions; archive the exact run. | Required test report with actual values and errors, all required checks resolved, signed scoped code commits, and English summary with exact deliverable/cloud paths and remaining limits. |
 
-## Numerical contract proposed for Q
+## Confirmed numerical contract
 
 - FP32 full-loss arithmetic reference: use the existing test precision (`rtol=1e-5`, `atol=1e-6`) where applicable, and the existing gradient assertions for their covered cases. Report absolute errors as well as relative errors; relative error is undefined when the reference is zero.
 - Real-model self-distillation: retain the existing suite's broad sanity limits, including median absolute loss/RKL below 0.02 and per-token RKL above -1e-3. These are smoke guards, not a substitute for the direct-logit and same-weight comparisons. Keep the suite's maximum-RKL check as additional evidence.

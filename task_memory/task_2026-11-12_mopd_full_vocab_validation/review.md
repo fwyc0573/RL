@@ -2,56 +2,61 @@
 
 | Date | Change |
 | --- | --- |
-| 2026-11-12 | Self-check the completed source/planning phase and route execution to the pending core answer. |
+| 2026-11-12 | Check phase A; refresh after execution confirmation and the input preparation failures. |
+| 2026-11-12 | Reconcile Torch and CPU-test evidence; stop repeated mirror changes and repair the missing-toolkit record. |
 
 ## 1. 规划完成情况
 
-**汇总：** PASS 1｜BLOCKED/FAILED/SKIPPED 0｜TODO 6
+**汇总：** PASS 2｜BLOCKED/FAILED/SKIPPED 0｜TODO 5
 
-检查人：当前主 agent。阶段：A / 执行前方案。依据：requirements.md、plan.md、design.md、progress.md、test_report_2026-11-12_plan_sources.md，以及本轮工具记录。此检查衡量路线和状态，不是代码正确性审查。
+检查人：当前主 agent。阶段：B/C。依据：requirements.md、plan.md、progress.md、提交 843d679b、输入准备成功报告、原生终态及当前安装进程。此检查衡量路线与状态，不是正确性审查。
 
 | 子任务 | 状态 | 简要依据 |
 | --- | --- | --- |
-| A 来源与实现核对 | PASS | 六个模型身份、五组数据、全词表路径和关键验证缺口均有源文件依据。 |
-| Q 核心验收确认 | TODO | 已形成具体建议，尚无用户回答。 |
-| B 环境、资产与 recipe | TODO | 当前 Python 与仓库要求不符；云端资产需重新核验。 |
-| C 数值与指标检查 | TODO | 已定位现有测试和 DebugWriter，尚未实施。 |
-| D 小规模实际验证与修复 | TODO | 未提交 GPU 作业。 |
-| E 正式训练与恢复 | TODO | 未开始 200 次更新及 checkpoint 恢复。 |
-| F 验收交付 | TODO | GPU 证据、修复和最终报告待执行阶段完成。 |
+| A 来源与实现核对 | PASS | 六个模型、五组输入和全词表代码路径已有来源记录。 |
+| Q 核心验收确认 | PASS | 用户 continue 已记录，执行获授权。 |
+| B 环境、资产与 recipe | TODO | 输入和 recipe 校验 PASS；Torch imports PASS；actor 扩展及 toolkit 尚未完成。 |
+| C 数值与指标检查 | TODO | 124 项 CPU 数值/routing 检查通过；实际模型比较尚未执行。 |
+| D 小规模实际验证与修复 | TODO | 未提交 GPU 诊断。 |
+| E 正式训练与恢复 | TODO | 未执行训练。 |
+| F 验收交付 | TODO | 需要实际数值和训练证据。 |
 
 ## 2. 偏离检测
 
-**结论：** 未偏移，正常推进。
-**检测窗口：** 本次新 task 开始至 A 完成｜**当前前沿：** Q；独立的文档证据收尾。
+**结论：** 已偏离：命中 D2；已应用下述纠正。
+**检测窗口：** 输入准备完成后的环境安装至本次 CPU tests 完成｜**当前前沿：** B、C。
 
 | 模式 | 判定 | 依据 |
 | --- | --- | --- |
-| D1 工具打磨 | CLEAR | 只读取现有测试/工具并执行文档一致性检查，没有新增通用工具。 |
-| D2 细节反复重试 | CLEAR | 没有运行失败后的多轮参数修补；文件定位错误已通过实际路径解决。 |
-| D3 支线问题修补 | CLEAR | 未修改原实验、其他模型或无关环境。 |
-| D4 可并行任务停滞 | CLEAR | 独立来源读取已并行；B/C 的执行均等待明确的 grilling 前置确认。 |
-| D5 超范围镀金 | CLEAR | 没有扩成 replay/accuracy 研究或重新实现 trainer。 |
-| D6 分析空转 | CLEAR | 阅读产出了固定模型表、具体验收和可执行阶段，A 已完成；继续广泛搜索将无必要。 |
-| D7 路线违背 | CLEAR | 保留 full-vocabulary、五 teacher、H800 和少提问要求；尚未越过 interview 执行门。 |
+| D1 工具打磨 | CLEAR | 使用既有 Python submitter、RCA collector 和 actor venv registry；新脚本仅转换本任务输入。 |
+| D2 细节反复重试 | HIT | 环境阶段反复试未核实镜像、fallback index 和 URL/hash 格式，B 长时间未完成。后续已读取镜像文档并取得 Torch 程序文件等价证据。 |
+| D3 支线问题修补 | CLEAR | 环境和输入检查是 D 的实际前置条件。 |
+| D4 可并行任务停滞 | CLEAR | 下载、资产准备及 C 的代码检查交错推进；CPU tests 依赖安装完成。 |
+| D5 超范围镀金 | CLEAR | 未新增通用框架、替代 trainer 或历史 accuracy 研究。 |
+| D6 分析空转 | CLEAR | 已形成可运行 recipe、转换脚本、Python 环境及作业证据；下一步转向直接运行。 |
+| D7 路线违背 | CLEAR | 保留五 teacher、全词表、H800 与 200 updates；没有修改验收阈值。 |
 
-**文档检查：** S1–S6 均未发现明显缺陷。重建误差已给出明确参考及误差上限；历史 tokenizer 证据的限制和环境前置工作分别归属 B/D。200 更新验收仍标为建议，未冒充用户决定。
-**归因：** 无。
+**文档检查：** S5：progress.md 旧记录称 CUDA 13.2 nvcc 已存在，当前路径已消失；已补写当前事实及 B 的修复责任。S1–S4、S6 未发现明显缺陷。
+**归因：** D2 为执行偏离；缺失 toolkit 本身归 B，不改变验收范围。
 
 ## 3. 纠正建议
 
-**分支：** A：spec/tickets 合理，无需改动。
+**分支：** B：先修正文档中的当前运行环境，再继续。
 
-**需停止的偏离行为：** 无。
+**文档更新（先执行）：**
+
+1. progress.md：记录 Torch 实际安装、124 项 CPU checks、recipe 校验及 nvcc 当前缺失（可直接执行，已完成）。
+
+**需停止的偏离行为：** D2：停止试探已知缺包的镜像及更换包版本；使用已核实的普通镜像和锁定 URL，继续现有下载，按实际 import 失败构建必要扩展。
 
 **接下去的路线：**
 
-1. Q：仅提出完整的工程验收是否按建议执行这一核心问题；完成标志为收到并记录实际回答。
-2. 并行 B 与 C：准备兼容运行环境和当前资产/recipe，同时复用数值检查及指标输出；完成标志分别见 plan.md，不新增无关基准。
-3. D → E → F：用真实模型和 H800 数据验证，按根因修复，再完成 200 次成功更新、恢复和报告。辅助检查不能中断健康的 32+ GPU 训练，也不能替代缺失的最终验证。
+1. B：补齐持久 CUDA 13.0 toolkit、锁定 Triton、actor 扩展及 Gym 内层环境；完成标志为 imports 与实际输入 schema/tokenization 通过。
+2. 并行 C：复用已通过的 CPU checks，准备实际模型 loss/gradient 和 native debug output 比较；完成标志为可执行参考对照及明确观测字段。
+3. D → E：真实短诊断通过后完成 200 updates 与 checkpoint/resume；异常按证据修复，辅助验证保持 soft gate。
 
 ## 4. 最值得关注的 3 点
 
-1. 全词表路径不输出普通 PG loss 的训推误差指标，必须单独取得同权重对比证据。
-2. 原 tokenizer 报告只比较了一条字符串，且 code teacher 模板不同；不能据此声称全词表完全兼容。
-3. 现在只完成了方案和来源核对；最短路线是获得一次核心回答后推进环境/检查准备，不继续扩展文档或宣称训练已完成。
+1. 124 项 CPU 检查及 recipe 校验通过；真实模型训练与 0.02 nats/token parity 尚无证据。
+2. 环境是当前主线阻塞项；锁定版本及 GPU 启动前预建原则保持不变。
+3. CUDA 编译器当前缺失；按这一实测状态修复，不再依赖旧路径记录。

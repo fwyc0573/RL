@@ -3,6 +3,7 @@
 | Date | Change |
 | --- | --- |
 | 2026-11-12 | Record the new request, explicit constraints, source identity, and pending acceptance decision. |
+| 2026-11-12 | Record user confirmation and authorize execution of the proposed acceptance contract. |
 
 # Requirements
 
@@ -15,7 +16,7 @@
 
 The user supplied `grill-with-docs`, which invokes `grilling` and `domain-modeling`.
 The loaded grilling skill states: “Do not enact the plan until I confirm we have reached a shared understanding.”
-Planning, source inspection, and documentation proceed now. Execution awaits one consolidated acceptance answer. The request already authorizes in-scope training, diagnosis, ordinary fixes, and verification after that interview gate; do not ask for those permissions again.
+The interview gate was satisfied by the user's `continue` after the concrete acceptance question. The request authorizes in-scope training, diagnosis, ordinary fixes, and verification; do not ask for those permissions again.
 
 ## Explicit requirements and decisions
 
@@ -27,11 +28,17 @@ Planning, source inspection, and documentation proceed now. Execution awaits one
 6. Ask only core questions. Resolve routine parallelism, implementation, instrumentation, and environment choices autonomously from evidence.
 7. Keep source assets intact and write new artifacts under this task's personal cloud prefix. Existing unrelated changes in the source worktree are outside this task.
 
-## Pending core decision
+## Confirmed completion contract
 
 Recommended completion contract: five-teacher fresh-rollout training for 200 successful optimizer updates, checkpoint save and resume, full-vocabulary loss/gradient reference checks, same-weight train/inference checks before and after weight synchronization, and a documented diagnosis of all training-health anomalies. Use the existing five training pools and original 256 trajectories/update and 65,536-token sequence ceiling, with shorter diagnostic cases before the full run.
 
-This is an engineering validation task. Historical accuracy gains are context, not an acceptance target. The numerical and workflow criteria are specified in [plan.md](plan.md). User confirmation of this contract is pending; none has been inferred from silence.
+This is an engineering validation task. Historical accuracy gains are context, not an acceptance target. The numerical and workflow criteria are specified in [plan.md](plan.md).
+
+## [Original Request] Execution confirmation, 2026-11-12
+
+> continue
+
+This answers the immediately preceding question about proceeding with 200 successful updates, consistency fixes, and save/resume validation. Proceed with B through F, including ordinary in-scope code/configuration changes and approved H800 submissions. Parallelism remains delegated to the agent.
 
 ## Delivery
 
