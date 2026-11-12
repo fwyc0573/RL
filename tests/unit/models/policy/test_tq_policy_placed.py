@@ -154,7 +154,8 @@ def test_train_placed_microbatches_accepts_producer_packing_shapes() -> None:
 
 
 @pytest.mark.parametrize(
-    "replica_updates, expected", [([True, True], 1), ([True, False], 0)]
+    "replica_updates, expected",
+    [([True, True], 1), ([True, False], 0), ([False, False], 0)],
 )
 def test_finish_train_step_reports_any_failed_replica_update(
     replica_updates: list[bool], expected: int
@@ -164,7 +165,7 @@ def test_finish_train_step_reports_any_failed_replica_update(
         {
             "is_replica_leader": True,
             "global_loss": 0.1,
-            "grad_norm": 0.5,
+            "grad_norm": 0.5 if updated else None,
             "all_mb_metrics": {},
             "optimizer_update_successful": updated,
         }
@@ -174,4 +175,6 @@ def test_finish_train_step_reports_any_failed_replica_update(
         metrics = aggregate_step_metrics(policy.finish_train_step())
 
     assert metrics["optimizer_update_successful"] == expected
+    if not any(replica_updates):
+        assert "grad_norm" not in metrics
     worker_group.run_all_workers_single_data.assert_called_once()

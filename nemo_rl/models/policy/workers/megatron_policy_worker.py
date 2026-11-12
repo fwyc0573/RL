@@ -2624,7 +2624,7 @@ class MegatronPolicyWorkerImpl(
             "gpu_name": torch.cuda.get_device_name(),
             "model_dtype": self.dtype,
             "all_mb_metrics": mb_metrics,
-            "grad_norm": torch.tensor([grad_norm]),
+            "grad_norm": (torch.tensor([grad_norm]) if grad_norm is not None else None),
         }
         if draft_grad_norm is not None:
             metrics["draft_grad_norm"] = torch.tensor([draft_grad_norm])

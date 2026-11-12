@@ -712,7 +712,7 @@ class TestFinish:
         w._first_train_step_param_sync_func = saved_param_sync
         w.model.config.param_sync_func = None
         w.enable_forward_pre_hook = MagicMock()
-        w.optimizer.step.return_value = (False, 0.5, 0)
+        w.optimizer.step.return_value = (False, None, None)
 
         w.finish_train_step()
 
@@ -720,6 +720,17 @@ class TestFinish:
         assert w.model.config.param_sync_func is None
         assert w._first_train_step_param_sync_func is saved_param_sync
         assert w._first_train_step_forward_pre_hook_disabled is True
+
+        w.optimizer.step.return_value = (True, 0.5, 0)
+        w.begin_train_step(loss_fn=w._test_loss_fn)
+        w.train_microbatch(_fake_batch())
+        result = w.finish_train_step()
+
+        assert result["optimizer_update_successful"] is True
+        assert result["grad_norm"].item() == pytest.approx(0.5)
+        w.enable_forward_pre_hook.assert_called_once_with()
+        assert w.model.config.param_sync_func is saved_param_sync
+        assert w._first_train_step_forward_pre_hook_disabled is False
 
     @pytest.mark.parametrize("overlap_grad_reduce", [False, True])
     def test_grad_sync_call_order_after_rescale(
@@ -1055,7 +1066,9 @@ class TestFinish:
         w._first_train_step_forward_pre_hook_disabled = True
         w._first_train_step_param_sync_func = "ORIGINAL_PARAM_SYNC_FUNC"
         w.enable_forward_pre_hook = MagicMock()
-        w.optimizer.step.return_value = (update_successful, 0.5, 0)
+        w.optimizer.step.return_value = (
+            (True, 0.5, 0) if update_successful else (False, None, None)
+        )
 
         with patch(f"{WORKER_MOD}.get_model_config", return_value=w.model.config):
             result = w.finish_train_step()
@@ -1067,6 +1080,7 @@ class TestFinish:
             assert w._first_train_step_forward_pre_hook_disabled is False
             assert w._first_train_step_param_sync_func is None
         else:
+            assert result["grad_norm"] is None
             w.enable_forward_pre_hook.assert_not_called()
             assert w._first_train_step_forward_pre_hook_disabled is True
 
