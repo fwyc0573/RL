@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "rows": 320,
+  "groups": {
+    "math": {
+      "count": 64,
+      "min_prompt_tokens": 42,
+      "max_prompt_tokens": 297
+    },
+    "code": {
+      "count": 64,
+      "min_prompt_tokens": 323,
+      "max_prompt_tokens": 1420
+    },
+    "stem": {
+      "count": 64,
+      "min_prompt_tokens": 31,
+      "max_prompt_tokens": 178
+    },
+    "logic": {
+      "count": 64,
+      "min_prompt_tokens": 22,
+      "max_prompt_tokens": 6663
+    },
+    "if": {
+      "count": 64,
+      "min_prompt_tokens": 18,
+      "max_prompt_tokens": 2684
+    }
+  },
+  "tokenizer": "/data/ycfeng/tmp/nemo-mopd-20261112/student-tokenizer",
+  "limits": "Schema and student prompt tokenization only; no generation or backend parity measured."
+}

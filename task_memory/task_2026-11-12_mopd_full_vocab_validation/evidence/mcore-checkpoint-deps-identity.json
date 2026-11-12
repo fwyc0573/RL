@@ -1,0 +1,10 @@
+{
+  "nvidia-modelopt": {
+    "version": "0.46.0",
+    "direct_url": "{\"url\":\"https://github.com/NVIDIA/Model-Optimizer\",\"vcs_info\":{\"vcs\":\"git\",\"commit_id\":\"43fd41a58d52c4e6e5dec1d1ff5989ecc737ae1a\",\"requested_revision\":\"43fd41a58d52c4e6e5dec1d1ff5989ecc737ae1a\"}}"
+  },
+  "nvidia-resiliency-ext": {
+    "version": "0.7.0",
+    "direct_url": "{\"url\":\"https://github.com/NVIDIA/nvidia-resiliency-ext.git\",\"vcs_info\":{\"vcs\":\"git\",\"commit_id\":\"ebf0352a82ca5699148ea10bec2b8eedd121e382\",\"requested_revision\":\"ebf0352a82ca5699148ea10bec2b8eedd121e382\"}}"
+  }
+}
