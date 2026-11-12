@@ -1,0 +1,46 @@
+{
+  "job": "exp-1112-175309-039353",
+  "initial_checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000",
+  "final_checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000",
+  "torch_version": "2.13.0+cu130",
+  "selected_parameters": {
+    "decoder.layers.self_attention.linear_qkv.bias": {
+      "numel": 57344,
+      "changed": 370,
+      "absolute_change_mean": 3.205630960678718e-08,
+      "absolute_change_max": 7.62939453125e-06,
+      "initial_finite": true,
+      "final_finite": true,
+      "relative_change_max": 1.802197813987732
+    },
+    "decoder.layers.self_attention.linear_qkv.layer_norm_weight": {
+      "numel": 43008,
+      "changed": 9,
+      "absolute_change_mean": 6.929483653550506e-10,
+      "absolute_change_max": 7.62939453125e-06,
+      "initial_finite": true,
+      "final_finite": true,
+      "relative_change_max": 0.06321839243173599
+    },
+    "decoder.layers.mlp.linear_fc1.layer_norm_weight": {
+      "numel": 43008,
+      "changed": 50,
+      "absolute_change_mean": 3.430094208667356e-09,
+      "absolute_change_max": 7.62939453125e-06,
+      "initial_finite": true,
+      "final_finite": true,
+      "relative_change_max": 0.12244898080825806
+    },
+    "decoder.final_layernorm.weight": {
+      "numel": 1536,
+      "changed": 0,
+      "absolute_change_mean": 0.0,
+      "absolute_change_max": 0.0,
+      "initial_finite": true,
+      "final_finite": true,
+      "relative_change_max": 0.0
+    }
+  },
+  "nontrivial_parameter_change": true,
+  "coverage": "Four selected BF16 tensors; not all model parameters or optimizer states."
+}

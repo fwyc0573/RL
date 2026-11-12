@@ -6,7 +6,7 @@
 
 # Plan
 
-Status: A/Q/B/C complete. Three short self controls completed 5/5 successful updates each. Actual trainer/scorer agrees <4e-7. Teacher FP32 reconstruction precision defect repaired; CPU and native GPU verification complete, with native gradient error bounded from its measured unnormalized probe. BF16 65,536-token control completed one update but parity FAILS (MAE 0.13619). FP32 long control also completed one update but parity FAILS (MAE0.13106). Fixed-token CP4/CP1 replay first failed missing train_iters; native config preparation fixed and rerun queued. Original five-distinct-teacher short run is now Running with all7replicas. D/E/F remain outstanding.
+Status: A/Q/B/C complete. Native five-distinct-teacher short run completed 5/5 successful updates, saved step_5, and demonstrated nontrivial selected BF16 parameter changes. Short overall BF16 parity passes but IF-domain mean remains 0.02242. Corrected FP32 teacher projection is verified. Long CP4/CP1 fixed-token replay succeeded; both fail the unchanged 0.02 parity criterion. CP1 unfused RoPE completed and remains above 0.02. Independent five-teacher FP32 native save/resume diagnostic is Running in initial model setup. FA4 and vLLM prompt-logprob fixed-token controls are submitted. D/E/F remain outstanding.
 
 ## Dependency graph
 
@@ -17,7 +17,7 @@ Status: A/Q/B/C complete. Three short self controls completed 5/5 successful upd
 - B: prepare and verify runtime, assets, native dataset conversion, and recipe.
 - C: prepare focused numerical and metric checks by reusing existing tests and debug output.
 - D: execute the small real-model baseline and fix demonstrated defects.
-- E: complete the five-teacher main run, checkpoint/resume, and post-update consistency checks.
+- E: complete the five-teacher main run, checkpoint/resume, and post-update consistency checks. The independent short native save/resume diagnostic can run during D; the formal 200-update run waits for D acceptance.
 - F: reconcile all evidence, commit verified code steps, and deliver the report and archive.
 
 B and C can progress independently after Q, using batched independent reads and checks. D requires their runtime and observability outputs. Read-only planning does not require GPU allocation. No sub-agents are required. Keep each phase's observed failures and corrections in `progress.md` and the test report.

@@ -50,3 +50,40 @@ The8GPU fixed-token replay exp-1112-184750-688596 failed before any scorer forwa
 After reusing the original preparation function, CPU execution of the actual native guard reproduces RED before injection and GREEN for CP4/CP1 afterward. CLI help and Ruff PASS. Exact command uses UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker, PYTHONPATH=/data/ycfeng/sota-engine/RL, CUDA_HOME=/data/ycfeng/toolchain/cuda-13.0.2 and existing cuda-compat LD_LIBRARY_PATH, then uv run --no-sync python tasktmp/check_replay_native_config.py. No persistent unit tests for the manual script were added.
 
 Affected replay rerun exp-1112-185915-382589 uses the identical recorded BF16 long token IDs/mask/checkpoint, sequential CP4/CP1 atDP1, same packing. Launcher53211/monitor73684, new native-long-cp-replay-2 prefix. GPU scoring remains UNVERIFIED until collected. Formal200updates remain unsubmitted.
+
+## Fixed-token CP replay and RoPE initialization repair
+
+Native fixed-token replay `exp-1112-185915-382589` Succeeded. It uses the same initial checkpoint, 5 recorded 65536-token sequences, identical response mask, TP2 and DP1. CP4 uses 8 GPUs; CP1 uses 2 of the same 8-GPU allocation. Optimizer and reference model are disabled; no new generation is involved.
+
+| Comparison | Response tokens | MAE | p95 | p99 | Max | Verdict at 0.02 |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| CP4 minus original scorer | 160 | 0 | 0 | 0 | 0 | PASS |
+| CP4 minus original vLLM | 160 | 0.13618677 | 0.32020245 | 2.77063072 | 6.68006516 | FAIL |
+| CP1 minus original vLLM | 160 | 0.12153486 | 0.12904083 | 2.81014998 | 6.73461437 | FAIL |
+| CP1 minus CP4 | 160 | 0.04371640 | 0.08855095 | 0.44826845 | 0.72641373 | Numerical-control observation |
+
+All observed logprobs are finite. CP affects the numerical result; switching to CP1 alone does not meet acceptance. This excludes the proposed CP-only remedy and keeps long-position attention/RoPE as the next native path to isolate. No tolerance or token filtering changed.
+
+Submit command: `PYTHONPATH=/data/ycfeng/steptron /data/ycfeng/tmp/stepmind-env/bin/python -u /data/ycfeng/tmp/nemo-mopd-20261112/submit_native_long_cp_replay_2.py`. Exact args: task temporary `native-long-cp-replay-2-submit-args.json`. Reusable script: `tests/manual/mopd/replay_logprobs.py`. Selected evidence: `evidence/native-long-cp-replay.json` and `evidence/native-long-cp-replay-terminal.json`. Durable output: `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-cp-replay-2/exp-1112-185915-382589/logs/replay-logprobs.json`.
+
+Unfused RoPE control `exp-1112-190831-616219` failed before model initialization at 11:10:13Z. The actual parser error is `argument --context-parallel-sizes: invalid int value: 'policy.megatron_cfg.apply_rope_fusion=false'`. This is a command-order error, not a RoPE measurement. Reordering the override before `--dump` passes actual native CLI RED/GREEN checks in `check_unfused_replay_cli.py` (`UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 uv run --no-sync python ...`). Personal dry-run passes. One affected 2-H800 rerun `exp-1112-191624-359257` was submitted at 19:16:24 HKT with `submit_native_long_unfused_rope_replay_2.py`; its numerical result remains pending.
+
+Scoped RCA collector retained exact objects, live/historical Events, incident logs and existing DeepScan query. Both all-operation audit requests timed out at 45s; collector exit1 means incomplete query coverage. No returned positive OOM or preemption record establishes such a cause. Manual-stop actor/reason/request-time remain UNKNOWN. Parser/native exit precedes launcher cleanup. Raw RCA: `/data/ycfeng/tmp/nemo-mopd-20261112/rca-unfused-rope-init-1/`.
+
+
+## CP1 unfused RoPE result and pending attention controls
+
+`exp-1112-191624-359257` Succeeded. Identical initial BF16 checkpoint, recorded65536-token sequences and all160 response positions; only existing `apply_rope_fusion=false` differs from CP1/fused.
+
+| Metric | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Overall response-token MAE | ≤0.02 | 0.1005940875 | FAIL |
+| Every sample MAE | ≤0.02 | 0.06673004 /0.08895532 /0.07155938 /0.20877250 /0.06695320 | FAIL |
+| p95 /p99 /max | Report | 0.24005744 /0.51850528 /5.26047039 | Observed |
+| All response logprobs finite | True | True | PASS |
+
+Command: `PYTHONPATH=/data/ycfeng/steptron /data/ycfeng/tmp/stepmind-env/bin/python -u /data/ycfeng/tmp/nemo-mopd-20261112/submit_native_long_unfused_rope_replay_2.py`. GPU output: `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-unfused-rope-replay-2/exp-1112-191624-359257/logs/replay-logprobs.json`. Selected evidence: `evidence/native-long-unfused-rope-replay.json`.
+
+Switching CP and disabling RoPE fusion do not individually meet the unchanged criterion. FA4 CP1/fused `exp-1112-193156-178680` and vLLM native prompt scoring `exp-1112-193212-322978` are submitted, not measured. Their output prefixes are native-long-fa4-replay and native-long-vllm-prefill-replay. vLLM scores all original65536 tokens and generates one unused new token with engine capacity65537; this capacity is diagnostic only. Exact submission args and wrappers reside under task temporary directory with corresponding names.
+
+Final executable-script verification: `UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync /data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/archive-v0/ZpRSfVMFE7WBmM2b/ruff-0.9.9.data/scripts/ruff check tests/manual/mopd/{replay_logprobs,replay_generation_logprobs,resume_training}.py`, plus `format --check` on the same files. Actual output: All checks passed;3files already formatted. GPU successful CP4 reproduction and CP1 scoring are the functional checks of replay_logprobs.py; no unit test of script settings is added.

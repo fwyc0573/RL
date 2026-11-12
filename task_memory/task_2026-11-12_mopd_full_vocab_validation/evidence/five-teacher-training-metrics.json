@@ -1,0 +1,354 @@
+{
+  "train/skipped_step": [
+    {
+      "step": 1,
+      "value": 0.0
+    },
+    {
+      "step": 2,
+      "value": 0.0
+    },
+    {
+      "step": 3,
+      "value": 0.0
+    },
+    {
+      "step": 4,
+      "value": 0.0
+    },
+    {
+      "step": 5,
+      "value": 0.0
+    }
+  ],
+  "train/loss": [
+    {
+      "step": 1,
+      "value": 0.11150328069925308
+    },
+    {
+      "step": 2,
+      "value": 0.1612599790096283
+    },
+    {
+      "step": 3,
+      "value": 0.17110586166381836
+    },
+    {
+      "step": 4,
+      "value": 0.15458256006240845
+    },
+    {
+      "step": 5,
+      "value": 0.16276945173740387
+    }
+  ],
+  "train/grad_norm": [
+    {
+      "step": 1,
+      "value": 1.7776392698287964
+    },
+    {
+      "step": 2,
+      "value": 3.039700984954834
+    },
+    {
+      "step": 3,
+      "value": 2.6079277992248535
+    },
+    {
+      "step": 4,
+      "value": 2.896268606185913
+    },
+    {
+      "step": 5,
+      "value": 2.9597392082214355
+    }
+  ],
+  "train/optimizer_update_successful": [
+    {
+      "step": 1,
+      "value": 1.0
+    },
+    {
+      "step": 2,
+      "value": 1.0
+    },
+    {
+      "step": 3,
+      "value": 1.0
+    },
+    {
+      "step": 4,
+      "value": 1.0
+    },
+    {
+      "step": 5,
+      "value": 1.0
+    }
+  ],
+  "train/opd_full_reverse_kl": [
+    {
+      "step": 1,
+      "value": 0.11150328069925308
+    },
+    {
+      "step": 2,
+      "value": 0.1612599790096283
+    },
+    {
+      "step": 3,
+      "value": 0.17110586166381836
+    },
+    {
+      "step": 4,
+      "value": 0.15458256006240845
+    },
+    {
+      "step": 5,
+      "value": 0.16276945173740387
+    }
+  ],
+  "train/opd_full_reverse_kl_min": [
+    {
+      "step": 1,
+      "value": -2.3512447455686925e-07
+    },
+    {
+      "step": 2,
+      "value": -5.5326992765003524e-08
+    },
+    {
+      "step": 3,
+      "value": -2.4448624458273116e-08
+    },
+    {
+      "step": 4,
+      "value": 3.6846581341620777e-09
+    },
+    {
+      "step": 5,
+      "value": -2.0329055772094762e-08
+    }
+  ],
+  "train/opd_full_reverse_kl_max": [
+    {
+      "step": 1,
+      "value": 3.2694265842437744
+    },
+    {
+      "step": 2,
+      "value": 10.45501708984375
+    },
+    {
+      "step": 3,
+      "value": 7.277791500091553
+    },
+    {
+      "step": 4,
+      "value": 6.095673561096191
+    },
+    {
+      "step": 5,
+      "value": 7.90865421295166
+    }
+  ],
+  "train/opd_full_entropy": [
+    {
+      "step": 1,
+      "value": 0.6167852878570557
+    },
+    {
+      "step": 2,
+      "value": 0.5986565351486206
+    },
+    {
+      "step": 3,
+      "value": 0.5585691928863525
+    },
+    {
+      "step": 4,
+      "value": 0.6063356399536133
+    },
+    {
+      "step": 5,
+      "value": 0.7248966097831726
+    }
+  ],
+  "train/opd_full_cross_entropy": [
+    {
+      "step": 1,
+      "value": 0.7282885909080505
+    },
+    {
+      "step": 2,
+      "value": 0.7599165439605713
+    },
+    {
+      "step": 3,
+      "value": 0.7296750545501709
+    },
+    {
+      "step": 4,
+      "value": 0.7609182000160217
+    },
+    {
+      "step": 5,
+      "value": 0.8876660466194153
+    }
+  ],
+  "train/opd_full_decomposition_error": [
+    {
+      "step": 1,
+      "value": 7.152557373046875e-07
+    },
+    {
+      "step": 2,
+      "value": 1.430511474609375e-06
+    },
+    {
+      "step": 3,
+      "value": 9.5367431640625e-07
+    },
+    {
+      "step": 4,
+      "value": 9.5367431640625e-07
+    },
+    {
+      "step": 5,
+      "value": 9.5367431640625e-07
+    }
+  ],
+  "train/lr": [
+    {
+      "step": 1,
+      "value": 9.999999974752427e-07
+    },
+    {
+      "step": 2,
+      "value": 9.999999974752427e-07
+    },
+    {
+      "step": 3,
+      "value": 9.999999974752427e-07
+    },
+    {
+      "step": 4,
+      "value": 9.999999974752427e-07
+    },
+    {
+      "step": 5,
+      "value": 9.999999974752427e-07
+    }
+  ],
+  "train/global_valid_seqs": [
+    {
+      "step": 1,
+      "value": 32.0
+    },
+    {
+      "step": 2,
+      "value": 32.0
+    },
+    {
+      "step": 3,
+      "value": 32.0
+    },
+    {
+      "step": 4,
+      "value": 32.0
+    },
+    {
+      "step": 5,
+      "value": 32.0
+    }
+  ],
+  "train/global_valid_toks": [
+    {
+      "step": 1,
+      "value": 4096.0
+    },
+    {
+      "step": 2,
+      "value": 4096.0
+    },
+    {
+      "step": 3,
+      "value": 4096.0
+    },
+    {
+      "step": 4,
+      "value": 4096.0
+    },
+    {
+      "step": 5,
+      "value": 4096.0
+    }
+  ],
+  "train/on_policy_distillation/teacher_alias_unique": [
+    {
+      "step": 1,
+      "value": 5.0
+    },
+    {
+      "step": 2,
+      "value": 5.0
+    },
+    {
+      "step": 3,
+      "value": 5.0
+    },
+    {
+      "step": 4,
+      "value": 5.0
+    },
+    {
+      "step": 5,
+      "value": 5.0
+    }
+  ],
+  "train/on_policy_distillation/teacher_model_unique": [
+    {
+      "step": 1,
+      "value": 5.0
+    },
+    {
+      "step": 2,
+      "value": 5.0
+    },
+    {
+      "step": 3,
+      "value": 5.0
+    },
+    {
+      "step": 4,
+      "value": 5.0
+    },
+    {
+      "step": 5,
+      "value": 5.0
+    }
+  ],
+  "train/weight_version_lag": [
+    {
+      "step": 1,
+      "value": 0.0
+    },
+    {
+      "step": 2,
+      "value": 0.0
+    },
+    {
+      "step": 3,
+      "value": 0.0
+    },
+    {
+      "step": 4,
+      "value": 0.0
+    },
+    {
+      "step": 5,
+      "value": 0.0
+    }
+  ]
+}
