@@ -1,0 +1,148 @@
+{
+  "native_and_submission": [
+    {
+      "check": "native-guard-absent",
+      "argv": [
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "run",
+        "--no-sync",
+        "python",
+        "/data/ycfeng/tmp/nemo-mopd-20261112/probe_cuda_arch_guard.py",
+        "absent"
+      ],
+      "expected_exit": 2,
+      "actual_exit": 2,
+      "pass": true
+    },
+    {
+      "check": "native-guard-worker",
+      "argv": [
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "run",
+        "--no-sync",
+        "python",
+        "/data/ycfeng/tmp/nemo-mopd-20261112/probe_cuda_arch_guard.py",
+        "worker"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "check": "native-guard-explicit",
+      "argv": [
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "run",
+        "--no-sync",
+        "python",
+        "/data/ycfeng/tmp/nemo-mopd-20261112/probe_cuda_arch_guard.py",
+        "worker-explicit"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    },
+    {
+      "check": "submission-dry-run",
+      "argv": [
+        "/data/ycfeng/tmp/stepmind-env/bin/python",
+        "-u",
+        "/data/ycfeng/sota-engine/RL/tests/manual/mopd/submit_on_rjob.py",
+        "--config",
+        "/data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-7n8g-megatron-tp2cp4-pack-single-controller-fullvocab.yaml",
+        "--output-root",
+        "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic",
+        "--nodes",
+        "3",
+        "--gpus-per-node",
+        "8",
+        "--cpus-per-node",
+        "32",
+        "--memory-gb-per-node",
+        "192",
+        "--startup-timeout",
+        "1800",
+        "--min-worker-port",
+        "25000",
+        "--max-worker-port",
+        "25999",
+        "--training-timeout",
+        "7200",
+        "--image",
+        "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+        "--credential-dir",
+        "/data/ycfeng/tmp/brainctl-auth-i-fengyicheng",
+        "--base-environment",
+        "/data/ycfeng/envs/nemo-mopd-py313",
+        "--uv",
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "--cuda-toolkit",
+        "/data/ycfeng/toolchain/cuda-13.0.2",
+        "--cuda-compat",
+        "/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat",
+        "--experiment-id",
+        "nemo-mopd-self-diagnostic-20261112",
+        "grpo.max_num_steps=5",
+        "grpo.num_prompts_per_step=32",
+        "policy.train_global_batch_size=32",
+        "async_rl.min_groups_for_streaming_train=32",
+        "async_rl.max_inflight_prompts=32",
+        "async_rl.max_buffered_rollouts=64",
+        "policy.generation_batch_size=16",
+        "policy.max_total_sequence_length=8192",
+        "policy.generation.max_new_tokens=128",
+        "checkpointing.enabled=false",
+        "on_policy_distillation.full.validate_decomposition=true",
+        "on_policy_distillation.teacher_model_by_agent_name.math=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+        "on_policy_distillation.teacher_model_by_agent_name.code=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+        "on_policy_distillation.teacher_model_by_agent_name.stem=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+        "on_policy_distillation.teacher_model_by_agent_name.logic=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+        "on_policy_distillation.teacher_model_by_agent_name.if=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+        "async_rl.rollout_failure.nemo_gym.rollout_timeout_s=300",
+        "async_rl.generation_router.backend_timeout_s=300",
+        "async_rl.stall_watchdog.stall_timeout_s=600",
+        "--dry-run"
+      ],
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true
+    }
+  ],
+  "ruff": [
+    {
+      "check": "check",
+      "argv": [
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "tool",
+        "run",
+        "--offline",
+        "--from",
+        "ruff==0.9.9",
+        "ruff",
+        "check",
+        "tests/manual/mopd/run_on_rjob.py",
+        "tests/manual/mopd/submit_on_rjob.py"
+      ],
+      "UV_DEFAULT_INDEX": "http://mirrors.i.basemind.com/pypi/simple/",
+      "exit": 0
+    },
+    {
+      "check": "format",
+      "argv": [
+        "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+        "tool",
+        "run",
+        "--offline",
+        "--from",
+        "ruff==0.9.9",
+        "ruff",
+        "format",
+        "--check",
+        "tests/manual/mopd/run_on_rjob.py",
+        "tests/manual/mopd/submit_on_rjob.py"
+      ],
+      "UV_DEFAULT_INDEX": "http://mirrors.i.basemind.com/pypi/simple/",
+      "exit": 0
+    }
+  ]
+}

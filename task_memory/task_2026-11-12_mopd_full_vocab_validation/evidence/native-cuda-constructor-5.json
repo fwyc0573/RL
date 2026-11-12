@@ -1,0 +1,20 @@
+{
+  "job": "exp-1112-173036-554443",
+  "job_uid": "e7d21741-1753-4bec-8dd8-70d133f6f998",
+  "log": "/data/ycfeng/tmp/nemo-mopd-20261112/native-job-watch-5/exp-1112-173036-554443-cfcd2084-20261112T093606Z.log",
+  "native_constructor_evidence": [
+    "Initializing lm_policy workers:   0%|          | 0/8 [00:00<?, ?worker/s]\u001b[36m(pid=4956)\u001b[0m INFO:nemo_rl.transformers_compat:transformers_compat.py:70: Installed the Transformers compatibility helper is_torch_fx_available for legacy remote model code",
+    "Initializing lm_policy workers:  12%|\u2588\u258e        | 1/8 [01:06<07:48, 66.86s/worker]",
+    "Initializing lm_policy workers:  25%|\u2588\u2588\u258c       | 2/8 [01:07<02:45, 27.64s/worker]",
+    "Initializing lm_policy workers:  38%|\u2588\u2588\u2588\u258a      | 3/8 [01:07<01:15, 15.10s/worker]",
+    "Initializing lm_policy workers:  50%|\u2588\u2588\u2588\u2588\u2588     | 4/8 [01:07<00:36,  9.20s/worker]",
+    "Initializing lm_policy workers:  62%|\u2588\u2588\u2588\u2588\u2588\u2588\u258e   | 5/8 [01:07<00:17,  5.95s/worker]",
+    "Initializing lm_policy workers:  75%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c  | 6/8 [01:07<00:07,  4.00s/worker]",
+    "Initializing lm_policy workers:  88%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a | 7/8 [01:08<00:02,  2.77s/worker]",
+    "Initializing lm_policy workers: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 8/8 [01:08<00:00,  1.94s/worker]",
+    "Initializing lm_policy workers: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 8/8 [01:08<00:00,  8.52s/worker]",
+    "  \u2713 8 workers initialized in 68.25s"
+  ],
+  "native_successful_updates": 0,
+  "limits": "Actual constructor guard and workers initialized; weight loading/refit/training remain unverified."
+}
