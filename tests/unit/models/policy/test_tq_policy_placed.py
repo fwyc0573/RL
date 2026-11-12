@@ -14,10 +14,11 @@
 
 from __future__ import annotations
 
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
 import pytest
 
+from nemo_rl.algorithms.single_controller_utils.utils import aggregate_step_metrics
 from nemo_rl.data_plane import KVBatchMeta
 from nemo_rl.data_plane.schema import (
     GLOBAL_FORWARD_PAD_SEQLEN,
@@ -150,3 +151,27 @@ def test_train_placed_microbatches_accepts_producer_packing_shapes() -> None:
         24,
     ]
     assert [meta.task_name for meta in dispatched] == ["train", "train"]
+
+
+@pytest.mark.parametrize(
+    "replica_updates, expected", [([True, True], 1), ([True, False], 0)]
+)
+def test_finish_train_step_reports_any_failed_replica_update(
+    replica_updates: list[bool], expected: int
+) -> None:
+    policy, worker_group = _policy()
+    results = [
+        {
+            "is_replica_leader": True,
+            "global_loss": 0.1,
+            "grad_norm": 0.5,
+            "all_mb_metrics": {},
+            "optimizer_update_successful": updated,
+        }
+        for updated in replica_updates
+    ]
+    with patch("nemo_rl.models.policy.tq_policy.ray.get", return_value=results):
+        metrics = aggregate_step_metrics(policy.finish_train_step())
+
+    assert metrics["optimizer_update_successful"] == expected
+    worker_group.run_all_workers_single_data.assert_called_once()
