@@ -1048,8 +1048,9 @@ def fp32_rope_factory(tmp_path, monkeypatch):
     return namespace["get_rope"], copied
 
 
+@pytest.mark.parametrize("dtype", [torch.bfloat16, torch.float16])
 def test_fp32_rope_factory_preserves_precision_and_separates_cached_modules(
-    fp32_rope_factory,
+    fp32_rope_factory, dtype
 ):
     from vllm.config import DeviceConfig, VllmConfig, set_current_vllm_config
 
@@ -1057,27 +1058,25 @@ def test_fp32_rope_factory_preserves_precision_and_separates_cached_modules(
     parameters = {"rope_type": "default", "rope_theta": 1000000.0}
     config = VllmConfig(device_config=DeviceConfig(device="cpu"))
     with set_current_vllm_config(config):
-        ordinary = factory(128, 65536, dtype=torch.bfloat16, rope_parameters=parameters)
+        ordinary = factory(128, 65536, dtype=dtype, rope_parameters=parameters)
         corrected = factory(
             128,
             65536,
-            dtype=torch.bfloat16,
+            dtype=dtype,
             rope_parameters={**parameters, "fp32_rope": True},
         )
         repeated = factory(
             128,
             65536,
-            dtype=torch.bfloat16,
+            dtype=dtype,
             rope_parameters={**parameters, "fp32_rope": True},
         )
     assert repeated is corrected and corrected is not ordinary
-    assert (
-        ordinary.cos_sin_cache.dtype == torch.bfloat16 and not ordinary.use_flashinfer
-    )
+    assert ordinary.cos_sin_cache.dtype == dtype and not ordinary.use_flashinfer
     assert corrected.cos_sin_cache.dtype == torch.float32 and corrected.use_flashinfer
     assert corrected.cos_sin_cache.device == ordinary.cos_sin_cache.device
     torch.testing.assert_close(
-        corrected.cos_sin_cache.bfloat16(), ordinary.cos_sin_cache, rtol=0, atol=0
+        corrected.cos_sin_cache.to(dtype), ordinary.cos_sin_cache, rtol=0, atol=0
     )
     assert (corrected.cos_sin_cache - ordinary.cos_sin_cache.float()).abs().max() > 0
 
@@ -1097,7 +1096,7 @@ def test_fp32_rope_factory_rejects_unsupported_arithmetic(
 
     factory, _ = fp32_rope_factory
     with set_current_vllm_config(VllmConfig(device_config=DeviceConfig(device="cpu"))):
-        with pytest.raises(ValueError, match="default full-head BF16"):
+        with pytest.raises(ValueError, match="default full-head BF16 or FP16"):
             factory(
                 128, 128, dtype=dtype, rope_parameters={**parameters, "fp32_rope": True}
             )

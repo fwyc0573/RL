@@ -188,10 +188,10 @@ def _patch_vllm_fp32_rope(logger) -> None:
         if (
             type(rotary_emb) is not RotaryEmbedding
             or rotary_emb.rotary_dim != rotary_emb.head_size
-            or dtype != torch.bfloat16
+            or dtype not in (torch.bfloat16, torch.float16)
         ):
             raise ValueError(
-                "FP32 RoPE requires default full-head BF16 RotaryEmbedding"
+                "FP32 RoPE requires default full-head BF16 or FP16 RotaryEmbedding"
             )
         with torch.device(rotary_emb.cos_sin_cache.device):
             rotary_emb.cos_sin_cache = rotary_emb._compute_cos_sin_cache().float()
