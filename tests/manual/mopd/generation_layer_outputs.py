@@ -232,6 +232,47 @@ def start_capture(
     _CAPTURE = capture
 
 
+def _save_forward(
+    capture: LayerOutputs,
+    destination: str,
+    module: torch.nn.Module,
+    inputs: tuple[Any, ...],
+    output: torch.Tensor | tuple[torch.Tensor, torch.Tensor],
+) -> None:
+    del module, inputs, output
+    positions = capture.current_positions
+    assert positions is not None
+    if not torch.isin(positions, capture.positions.to(positions.device)).any():
+        return
+    final_positions = capture.stages["final_norm"]["positions"]
+    path = Path(destination)
+    path.relative_to("/mnt/codesign-exp/ycfeng")
+    path.mkdir(parents=True, exist_ok=True)
+    rank = torch.distributed.get_rank()
+    torch.save(
+        {"sample_id": capture.sample_id, "rank": rank, "stages": capture.stages},
+        path
+        / f"{capture.sample_id}-position-{int(final_positions.max())}-rank-{rank}.pt",
+    )
+
+
+def start_forward_capture(
+    model: torch.nn.Module,
+    *,
+    sample_id: str,
+    positions: list[int],
+    destination: str,
+) -> None:
+    """Save each selected eager forward through an importable engine callback."""
+    start_capture(model, sample_id=sample_id, positions=positions)
+    assert _CAPTURE is not None
+    _CAPTURE.handles.append(
+        model.model.norm.register_forward_hook(
+            partial(_save_forward, _CAPTURE, destination)
+        )
+    )
+
+
 def save_capture(model: torch.nn.Module, *, destination: str) -> None:
     """Retain selected states and remove the completed request's hooks."""
     del model

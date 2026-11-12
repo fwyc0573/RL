@@ -1,0 +1,42 @@
+{
+  "status": "native_execution_succeeded",
+  "rank": 0,
+  "job": "exp-1112-234539-001675"
+}
+{
+  "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+  "executable": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "cuda_device_capabilities": [
+    [
+      9,
+      0
+    ]
+  ],
+  "torch_cuda_arch_list": "9.0",
+  "devices": [
+    "NVIDIA H800",
+    "NVIDIA H800"
+  ],
+  "hostname": "gpu-h800-0329.host.platform.shaipower.com",
+  "ip": "10.191.0.34",
+  "platform_nccl": {
+    "NCCL_IB_DISABLE": "0",
+    "NCCL_IB_FIFO_TC": "192",
+    "NCCL_IB_GID_INDEX": "",
+    "NCCL_IB_HCA": "",
+    "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+    "NCCL_IB_QPS_PER_CONNECTION": "8",
+    "NCCL_IB_RETRY_CNT": "7",
+    "NCCL_IB_TC": "186",
+    "NCCL_IB_TIMEOUT": "21",
+    "NCCL_NVLS_ENABLE": "0",
+    "NCCL_PXN_DISABLE": "1",
+    "NCCL_RAS_ADDR": "0.0.0.0:28028",
+    "NCCL_RAS_ENABLE": "1",
+    "NCCL_SET_THREAD_NAME": "1",
+    "NCCL_SOCKET_IFNAME": "ens20np0",
+    "NCCL_VERSION": "2.25.1-1"
+  }
+}
