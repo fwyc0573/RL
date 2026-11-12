@@ -1,0 +1,408 @@
+{
+  "self-native-1": {
+    "objects": {
+      "job": {
+        "kind": "RJob",
+        "apiVersion": "rjob.brainpp.cn/v1alpha1",
+        "metadata": {
+          "name": "exp-1112-153814-140170",
+          "uid": "b2a2fd94-5a66-4023-afc7-d8d5abfb3a63",
+          "creationTimestamp": "2026-11-12T07:38:14Z",
+          "deletionTimestamp": null,
+          "ownerReferences": null
+        },
+        "creator": "i-fengyicheng",
+        "preemptible": "no",
+        "quota_group": "codesign",
+        "stop_annotations": {
+          "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+        },
+        "stop_spec": {
+          "stopTimestamp": "2026-11-12T08:19:22Z"
+        },
+        "status": {
+          "phase": "Failed",
+          "reason": "RJobFailed",
+          "message": "Tasks with failed status: [default]",
+          "taskStatuses": {
+            "default": {
+              "failed": 2,
+              "stopped": 1,
+              "taskStage": "stepmind-task-stage-1"
+            }
+          },
+          "finishTime": "2026-11-12T08:19:22Z",
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "replica": {
+        "kind": "Replica",
+        "apiVersion": "rjob.brainpp.cn/v1alpha1",
+        "metadata": {
+          "name": "exp-1112-153814-140170-cfcd2084",
+          "uid": "73c855f6-fc1c-40d2-9ab7-94f2946fdff4",
+          "creationTimestamp": "2026-11-12T08:18:01Z",
+          "deletionTimestamp": null,
+          "ownerReferences": [
+            {
+              "apiVersion": "rjob.brainpp.cn/v1alpha1",
+              "kind": "RJob",
+              "name": "exp-1112-153814-140170",
+              "uid": "b2a2fd94-5a66-4023-afc7-d8d5abfb3a63",
+              "controller": true,
+              "blockOwnerDeletion": true
+            }
+          ]
+        },
+        "creator": "i-fengyicheng",
+        "preemptible": "no",
+        "quota_group": "codesign",
+        "stop_annotations": {
+          "kubebrain.brainpp.cn/stopped-by": "system:serviceaccount:kubebrain:rjob-controller"
+        },
+        "stop_spec": {
+          "stopTimestamp": "2026-11-12T08:19:22Z"
+        },
+        "status": {
+          "conditions": [
+            {
+              "type": "Initialized",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:18:02Z"
+            },
+            {
+              "type": "Ready",
+              "status": "False",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:19:22Z",
+              "reason": "PodFailed"
+            },
+            {
+              "type": "ContainersReady",
+              "status": "False",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:19:22Z",
+              "reason": "PodFailed"
+            },
+            {
+              "type": "PodScheduled",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:18:02Z"
+            }
+          ],
+          "hostIP": "10.191.5.31",
+          "podIP": "10.191.5.31",
+          "podIPs": [
+            {
+              "ip": "10.191.5.31"
+            }
+          ],
+          "startTime": "2026-11-12T08:18:02Z",
+          "containerStatuses": [
+            {
+              "name": "default",
+              "state": {
+                "terminated": {
+                  "exitCode": 1,
+                  "reason": "Error",
+                  "message": "user command: exit status 1",
+                  "startedAt": "2026-11-12T08:18:33Z",
+                  "finishedAt": "2026-11-12T08:19:21Z",
+                  "containerID": "containerd://40df125fb129703b55fa0c4fe999e536b3fb66ca12ac2309308defd716eb3919"
+                }
+              },
+              "lastState": {},
+              "ready": false,
+              "restartCount": 0,
+              "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+              "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+              "containerID": "containerd://40df125fb129703b55fa0c4fe999e536b3fb66ca12ac2309308defd716eb3919",
+              "started": false
+            }
+          ],
+          "qosClass": "Guaranteed",
+          "phase": "Failed",
+          "nodeName": "gpu-h800-0086.host.platform.shaipower.com",
+          "finishTimestamp": "2026-11-12T08:19:22Z"
+        }
+      }
+    },
+    "query_coverage": {
+      "python": "3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]",
+      "brainpp": "2.8.6",
+      "namespace": "shai-core",
+      "cluster_entry": "https://platform.shaipower.com",
+      "creator": "i-fengyicheng",
+      "log_window": {
+        "start": "2026-11-12T08:18:00+00:00",
+        "end": "2026-11-12T08:21:00+00:00"
+      },
+      "log_limit": 3000,
+      "sources": [
+        {
+          "query": "rjob-historical-events",
+          "ok": true
+        },
+        {
+          "query": "replica-historical-events",
+          "ok": true
+        },
+        {
+          "query": "rjob-live-events",
+          "ok": true
+        },
+        {
+          "query": "replica-live-events",
+          "ok": true
+        },
+        {
+          "query": "incident-logs",
+          "ok": true
+        },
+        {
+          "query": "rjob-audit",
+          "ok": false
+        },
+        {
+          "query": "replica-audit",
+          "ok": false
+        },
+        {
+          "query": "existing-deepscan",
+          "ok": true
+        }
+      ],
+      "limitations": [
+        "Empty or failed queries do not establish absence of an incident.",
+        "A full log-limit response may be truncated; narrow the time window.",
+        "DeepScan findings are returned text, not original Kubernetes Event objects.",
+        "RJob finishTime is not an audited stop-request timestamp.",
+        "Stopped phase alone does not identify the actor or the initiating cause.",
+        "All-operation audit rows may lack changed fields or an initiating reason.",
+        "A controller update after SIGTERM is not an initiating stop request.",
+        "Audit data is arbitrary; inspect workload-specific secrets before archiving."
+      ]
+    },
+    "raw_evidence": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-self-native-1"
+  },
+  "tp2-interrupted-2": {
+    "objects": {
+      "job": {
+        "kind": "RJob",
+        "apiVersion": "rjob.brainpp.cn/v1alpha1",
+        "metadata": {
+          "name": "exp-1112-155645-933258",
+          "uid": "bb8a955f-dc1d-4788-8250-9e41fa6fced9",
+          "creationTimestamp": "2026-11-12T07:56:46Z",
+          "deletionTimestamp": null,
+          "ownerReferences": null
+        },
+        "creator": "i-fengyicheng",
+        "preemptible": "no",
+        "quota_group": "codesign",
+        "stop_annotations": {
+          "kubebrain.brainpp.cn/stopped-by": "i-fengyicheng"
+        },
+        "stop_spec": {
+          "stopTimestamp": "2026-11-12T08:20:26Z"
+        },
+        "status": {
+          "phase": "Stopped",
+          "reason": "RJobStopped",
+          "message": "RJob stopped",
+          "taskStatuses": {
+            "default": {
+              "stopped": 1,
+              "taskStage": "stepmind-task-stage-1"
+            }
+          },
+          "finishTime": "2026-11-12T08:20:30Z",
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "replica": {
+        "kind": "Replica",
+        "apiVersion": "rjob.brainpp.cn/v1alpha1",
+        "metadata": {
+          "name": "exp-1112-155645-933258-cfcd2084",
+          "uid": "104eee3b-e6d5-445e-872e-df47d1ffe0e8",
+          "creationTimestamp": "2026-11-12T08:19:39Z",
+          "deletionTimestamp": null,
+          "ownerReferences": [
+            {
+              "apiVersion": "rjob.brainpp.cn/v1alpha1",
+              "kind": "RJob",
+              "name": "exp-1112-155645-933258",
+              "uid": "bb8a955f-dc1d-4788-8250-9e41fa6fced9",
+              "controller": true,
+              "blockOwnerDeletion": true
+            }
+          ]
+        },
+        "creator": "i-fengyicheng",
+        "preemptible": "no",
+        "quota_group": "codesign",
+        "stop_annotations": {
+          "kubebrain.brainpp.cn/stopped-by": "system:serviceaccount:kubebrain:rjob-controller"
+        },
+        "stop_spec": {
+          "stopTimestamp": "2026-11-12T08:20:26Z"
+        },
+        "status": {
+          "conditions": [
+            {
+              "type": "Initialized",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:19:45Z"
+            },
+            {
+              "type": "Ready",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:20:17Z"
+            },
+            {
+              "type": "ContainersReady",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:20:17Z"
+            },
+            {
+              "type": "PodScheduled",
+              "status": "True",
+              "lastProbeTime": null,
+              "lastTransitionTime": "2026-11-12T08:19:45Z"
+            }
+          ],
+          "hostIP": "10.191.4.17",
+          "podIP": "10.191.4.17",
+          "podIPs": [
+            {
+              "ip": "10.191.4.17"
+            }
+          ],
+          "startTime": "2026-11-12T08:19:45Z",
+          "containerStatuses": [
+            {
+              "name": "default",
+              "state": {
+                "running": {
+                  "startedAt": "2026-11-12T08:20:16Z"
+                }
+              },
+              "lastState": {},
+              "ready": true,
+              "restartCount": 0,
+              "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+              "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+              "containerID": "containerd://6dbe7bb7e7f3e6f650f44291fcb47cf1e6fe6a2dda53667887dc8ab68b7f0255",
+              "started": true
+            }
+          ],
+          "qosClass": "Guaranteed",
+          "phase": "Stopped",
+          "nodeName": "gpu-h800-0401.host.platform.shaipower.com",
+          "finishTimestamp": "2026-11-12T08:20:29Z"
+        }
+      }
+    },
+    "query_coverage": {
+      "python": "3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]",
+      "brainpp": "2.8.6",
+      "namespace": "shai-core",
+      "cluster_entry": "https://platform.shaipower.com",
+      "creator": "i-fengyicheng",
+      "log_window": {
+        "start": "2026-11-12T08:19:00+00:00",
+        "end": "2026-11-12T08:22:00+00:00"
+      },
+      "log_limit": 3000,
+      "sources": [
+        {
+          "query": "rjob-historical-events",
+          "ok": true
+        },
+        {
+          "query": "replica-historical-events",
+          "ok": true
+        },
+        {
+          "query": "rjob-live-events",
+          "ok": true
+        },
+        {
+          "query": "replica-live-events",
+          "ok": true
+        },
+        {
+          "query": "incident-logs",
+          "ok": true
+        },
+        {
+          "query": "rjob-audit",
+          "ok": false
+        },
+        {
+          "query": "replica-audit",
+          "ok": false
+        },
+        {
+          "query": "existing-deepscan",
+          "ok": true
+        }
+      ],
+      "limitations": [
+        "Empty or failed queries do not establish absence of an incident.",
+        "A full log-limit response may be truncated; narrow the time window.",
+        "DeepScan findings are returned text, not original Kubernetes Event objects.",
+        "RJob finishTime is not an audited stop-request timestamp.",
+        "Stopped phase alone does not identify the actor or the initiating cause.",
+        "All-operation audit rows may lack changed fields or an initiating reason.",
+        "A controller update after SIGTERM is not an initiating stop request.",
+        "Audit data is arbitrary; inspect workload-specific secrets before archiving."
+      ]
+    },
+    "raw_evidence": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-tp2-interrupted-2"
+  },
+  "native_failure": {
+    "cause": "Hydra override lacked the append prefix for the absent env.nemo_gym.skip_venv_if_present key",
+    "original_key": "env.nemo_gym.skip_venv_if_present=true",
+    "replacement_key": "+env.nemo_gym.skip_venv_if_present=true",
+    "native_successful_optimizer_updates": 0,
+    "initiating_manual_stop_actor": "UNKNOWN",
+    "initiating_manual_stop_reason": "UNKNOWN",
+    "initiating_manual_stop_request_time": "UNKNOWN"
+  },
+  "tp_stop": {
+    "cause": "The dry-run state guard failed after the jobs left Pending; the shell lacked set -e and continued into rjob_stop.sh, stopping the TP reference at Running",
+    "stop_receipts": [
+      {
+        "time": "2026-11-12T16:20:26",
+        "job": "exp-1112-153814-140170",
+        "action": "already-ended",
+        "reason": "Replace never-started MOPD diagnostics with existing preemptible global queue after sustained codesign GPU quota wait",
+        "phase": "Failed",
+        "creator": "i-fengyicheng",
+        "quota_group": "codesign",
+        "created": "2026-11-12T07:38:14Z"
+      },
+      {
+        "time": "2026-11-12T16:20:26",
+        "job": "exp-1112-155645-933258",
+        "action": "stopped",
+        "reason": "Replace never-started MOPD diagnostics with existing preemptible global queue after sustained codesign GPU quota wait",
+        "phase": "Running",
+        "creator": "i-fengyicheng",
+        "quota_group": "codesign",
+        "created": "2026-11-12T07:56:46Z"
+      }
+    ],
+    "local_command_time_hkt": "2026-11-12T16:20:26+08:00",
+    "initiating_actor": "i-fengyicheng",
+    "reason_source": "local rjob_stop.sh invocation and audit record; no server audit response was available",
+    "numerical_validation": "UNVERIFIED"
+  }
+}

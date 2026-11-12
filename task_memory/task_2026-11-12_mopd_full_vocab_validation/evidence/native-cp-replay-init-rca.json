@@ -1,0 +1,68 @@
+{
+  "job": "exp-1112-184750-688596",
+  "replica": "exp-1112-184750-688596-cfcd2084",
+  "initiating_cause": "Native replay policy initialization lacks train_iters because the script omitted controller config preparation.",
+  "initiating_time": "2026-11-12T10:53:06Z",
+  "worker_exit_code": 1,
+  "native_log_exit_time": "2026-11-12T10:53:10Z",
+  "terminal_phase": "Failed",
+  "terminal_time": "2026-11-12T10:53:14Z",
+  "launcher_cleanup_time": "2026-11-12T10:53:16Z",
+  "manual_stop_actor": "UNKNOWN",
+  "manual_stop_reason": "UNKNOWN",
+  "manual_stop_request_time": "UNKNOWN",
+  "positive_oom_preemption_evidence": false,
+  "existing_deepscan_count": 0,
+  "query_coverage": [
+    {
+      "query": "rjob-historical-events",
+      "ok": true
+    },
+    {
+      "query": "replica-historical-events",
+      "ok": true
+    },
+    {
+      "query": "rjob-live-events",
+      "ok": true
+    },
+    {
+      "query": "replica-live-events",
+      "ok": true
+    },
+    {
+      "query": "incident-logs",
+      "ok": true
+    },
+    {
+      "query": "rjob-audit",
+      "ok": false
+    },
+    {
+      "query": "replica-audit",
+      "ok": false
+    },
+    {
+      "query": "existing-deepscan",
+      "ok": true
+    }
+  ],
+  "limitations": [
+    "Both all-operation audit queries timed out; their contents are unknown.",
+    "No positive OOM/preemption evidence in returned records; this does not establish full coverage.",
+    "Transient ConfigMap waiting at10:50:17Z resolved; container started10:50:29Z and reached the native assertion."
+  ],
+  "raw_evidence": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-cp-replay-init-1",
+  "creator": "i-fengyicheng",
+  "rjob_uid": "e64cd4fa-b9a2-42c8-ad83-3870632936cc",
+  "replica_uid": "fee94f3c-8202-4f67-a2f5-99b0352dceab",
+  "node": "gpu-h800-0368.host.platform.shaipower.com",
+  "container_termination": {
+    "exitCode": 1,
+    "reason": "Error",
+    "message": "user command: exit status 1",
+    "startedAt": "2026-11-12T10:50:29Z",
+    "finishedAt": "2026-11-12T10:53:12Z",
+    "containerID": "containerd://1eb62d561ea798e00da5a574ea567d2ff5eeb42a3d8e8e84ba168c4f571de3c3"
+  }
+}

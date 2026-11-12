@@ -1,0 +1,15 @@
+{
+  "prompt_tokens": 65504,
+  "generation_limit": 32,
+  "total_ceiling": 65536,
+  "repetitions": 32744,
+  "groups": [
+    "math",
+    "code",
+    "stem",
+    "logic",
+    "if"
+  ],
+  "source": "initial student tokenizer and synthetic validation prompt",
+  "production_training_data": false
+}

@@ -1,0 +1,113 @@
+{
+  "job": "exp-1112-183922-688559",
+  "samples": [
+    {
+      "sample_id": "e0988f06-2335-448d-8087-755427c3c761_g0",
+      "prompt_tokens": 65504,
+      "total_tokens": 65536,
+      "response_tokens": 32,
+      "mae": 0.05914441589266062,
+      "max": 0.3485145568847656
+    },
+    {
+      "sample_id": "e067256c-dfd9-4740-b735-9d4e47923efc_g0",
+      "prompt_tokens": 65504,
+      "total_tokens": 65536,
+      "response_tokens": 32,
+      "mae": 0.03955575544387102,
+      "max": 0.3378572463989258
+    },
+    {
+      "sample_id": "c9a1aeba-a411-4e07-b618-14576a877cae_g0",
+      "prompt_tokens": 65504,
+      "total_tokens": 65536,
+      "response_tokens": 32,
+      "mae": 0.047824948094785213,
+      "max": 0.39352524280548096
+    },
+    {
+      "sample_id": "86d0f78f-a9ea-4e14-bc44-e03a0775425e_g0",
+      "prompt_tokens": 65504,
+      "total_tokens": 65536,
+      "response_tokens": 32,
+      "mae": 0.4248209660872817,
+      "max": 6.69283390045166
+    },
+    {
+      "sample_id": "aa0b9523-eb53-4cbe-8b04-a1d0124937c6_g0",
+      "prompt_tokens": 65504,
+      "total_tokens": 65536,
+      "response_tokens": 32,
+      "mae": 0.08392950519919395,
+      "max": 1.2420170307159424
+    }
+  ],
+  "overall": {
+    "tokens": 160,
+    "signed_mean": -0.0907430848106742,
+    "mae": 0.1310551181435585,
+    "p50": 0.027414917945861816,
+    "p95": 0.31538686752319295,
+    "p99": 2.742420682907092,
+    "max": 6.69283390045166
+  },
+  "metrics": {
+    "train/skipped_step": [
+      {
+        "step": 1,
+        "value": 0.0
+      }
+    ],
+    "train/loss": [
+      {
+        "step": 1,
+        "value": 1.5083205795463073e-08
+      }
+    ],
+    "train/grad_norm": [
+      {
+        "step": 1,
+        "value": 0.004063620697706938
+      }
+    ],
+    "train/optimizer_update_successful": [
+      {
+        "step": 1,
+        "value": 1.0
+      }
+    ],
+    "train/opd_full_reverse_kl": [
+      {
+        "step": 1,
+        "value": 1.5083205795463073e-08
+      }
+    ],
+    "train/opd_full_reverse_kl_min": [
+      {
+        "step": 1,
+        "value": -3.0960075037000934e-07
+      }
+    ],
+    "train/opd_full_reverse_kl_max": [
+      {
+        "step": 1,
+        "value": 2.7817469572255504e-07
+      }
+    ],
+    "train/global_valid_seqs": [
+      {
+        "step": 1,
+        "value": 5.0
+      }
+    ],
+    "train/global_valid_toks": [
+      {
+        "step": 1,
+        "value": 160.0
+      }
+    ]
+  },
+  "parity_verdict": "FAIL",
+  "finite_logprobs": true,
+  "comparison": "Independent native scorer versus vLLM on identical recorded response tokens; not actual training forward."
+}

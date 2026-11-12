@@ -1,0 +1,184 @@
+{
+  "job": {
+    "kind": "RJob",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1112-154509-699035",
+      "uid": "8376cb6e-6c38-4816-a96d-6ab6a3683848",
+      "creationTimestamp": "2026-11-12T07:45:09Z",
+      "deletionTimestamp": null,
+      "ownerReferences": null
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "rjob.brainpp.cn/system-stop-reason": "Some critical tasks failed."
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-12T07:46:04Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "RJobFailed",
+      "message": "Tasks with failed status: [default]",
+      "taskStatuses": {
+        "default": {
+          "failed": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-12T07:46:04Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "replica": {
+    "kind": "Replica",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1112-154509-699035-cfcd2084",
+      "uid": "5689247a-b284-488a-93a8-d561a70aa0c8",
+      "creationTimestamp": "2026-11-12T07:45:11Z",
+      "deletionTimestamp": null,
+      "ownerReferences": [
+        {
+          "apiVersion": "rjob.brainpp.cn/v1alpha1",
+          "kind": "RJob",
+          "name": "exp-1112-154509-699035",
+          "uid": "8376cb6e-6c38-4816-a96d-6ab6a3683848",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }
+      ]
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {},
+    "stop_spec": {},
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T07:45:12Z"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T07:46:03Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T07:46:03Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T07:45:12Z"
+        }
+      ],
+      "hostIP": "10.191.4.17",
+      "podIP": "10.191.4.17",
+      "podIPs": [
+        {
+          "ip": "10.191.4.17"
+        }
+      ],
+      "startTime": "2026-11-12T07:45:12Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "terminated": {
+              "exitCode": 1,
+              "reason": "Error",
+              "message": "user command: exit status 1",
+              "startedAt": "2026-11-12T07:45:39Z",
+              "finishedAt": "2026-11-12T07:46:02Z",
+              "containerID": "containerd://b1feb3163417841f9c1f5b7ed1f7198f0500c2e892fe6d213862435a3d89079d"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://b1feb3163417841f9c1f5b7ed1f7198f0500c2e892fe6d213862435a3d89079d",
+          "started": false
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Failed",
+      "nodeName": "gpu-h800-0401.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-12T07:46:04Z"
+    }
+  },
+  "business_error": "OSError: AF_UNIX path length cannot exceed107bytes; pytest setup path was110bytes",
+  "junit": {
+    "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/distributed-reference/exp-1112-154509-699035/pytest.xml",
+    "errors": 1,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 1,
+    "time_seconds": 1.51
+  },
+  "repair": {
+    "change": "Shorten worker TMPDIR prefix to /tmp/nrl-<job>",
+    "cpu_original_worst_pid_bytes": 114,
+    "cpu_repaired_worst_pid_bytes": 99,
+    "native_adapter_worst_pid_bytes": 105,
+    "limit_bytes": 107,
+    "cpu_validation": "Original Ray validator raises; repaired and native adapter paths pass",
+    "native_adapter_changed": false
+  },
+  "rca_coverage": {
+    "sources": [
+      {
+        "query": "rjob-historical-events",
+        "ok": true
+      },
+      {
+        "query": "replica-historical-events",
+        "ok": true
+      },
+      {
+        "query": "rjob-live-events",
+        "ok": true
+      },
+      {
+        "query": "replica-live-events",
+        "ok": true
+      },
+      {
+        "query": "incident-logs",
+        "ok": true
+      },
+      {
+        "query": "rjob-audit",
+        "ok": false
+      },
+      {
+        "query": "replica-audit",
+        "ok": false
+      },
+      {
+        "query": "existing-deepscan",
+        "ok": true
+      }
+    ],
+    "manual_stop_actor": "UNKNOWN",
+    "manual_stop_reason": "UNKNOWN",
+    "manual_stop_request_time": "UNKNOWN",
+    "cleanup": "Replica Error exit1 at07:46:02Z; RJob Failed07:46:04Z; launcher stop07:46:09Z",
+    "historical_configmap_event": "07:45:25Z before successful worker command start07:45:39Z; not the observed pytest setup cause",
+    "raw_directory": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-tp2-reference-1"
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "objects": {
+    "job": {
+      "kind": "RJob",
+      "apiVersion": "rjob.brainpp.cn/v1alpha1",
+      "metadata": {
+        "name": "exp-1112-162239-053672",
+        "uid": "471b56df-0853-426c-a3fb-123557254894",
+        "creationTimestamp": "2026-11-12T08:22:39Z",
+        "deletionTimestamp": null,
+        "ownerReferences": null
+      },
+      "creator": "i-fengyicheng",
+      "preemptible": "yes",
+      "quota_group": "codesign",
+      "stop_annotations": {
+        "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+      },
+      "stop_spec": {
+        "stopTimestamp": "2026-11-12T08:24:12Z"
+      },
+      "status": {
+        "phase": "Failed",
+        "reason": "RJobFailed",
+        "message": "Tasks with failed status: [default]",
+        "taskStatuses": {
+          "default": {
+            "active": 2,
+            "failed": 1,
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "finishTime": "2026-11-12T08:24:12Z",
+        "taskStage": "stepmind-task-stage-1"
+      }
+    },
+    "replica": {
+      "kind": "Replica",
+      "apiVersion": "rjob.brainpp.cn/v1alpha1",
+      "metadata": {
+        "name": "exp-1112-162239-053672-c81e728d",
+        "uid": "c5dc5418-8b70-4a1f-9c90-7cc72462fd50",
+        "creationTimestamp": "2026-11-12T08:23:02Z",
+        "deletionTimestamp": null,
+        "ownerReferences": [
+          {
+            "apiVersion": "rjob.brainpp.cn/v1alpha1",
+            "kind": "RJob",
+            "name": "exp-1112-162239-053672",
+            "uid": "471b56df-0853-426c-a3fb-123557254894",
+            "controller": true,
+            "blockOwnerDeletion": true
+          }
+        ]
+      },
+      "creator": "i-fengyicheng",
+      "preemptible": "yes",
+      "quota_group": "codesign",
+      "stop_annotations": {},
+      "stop_spec": {},
+      "status": {
+        "conditions": [
+          {
+            "type": "Initialized",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-12T08:23:18Z"
+          },
+          {
+            "type": "Ready",
+            "status": "False",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-12T08:24:11Z",
+            "reason": "PodFailed"
+          },
+          {
+            "type": "ContainersReady",
+            "status": "False",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-12T08:24:11Z",
+            "reason": "PodFailed"
+          },
+          {
+            "type": "PodScheduled",
+            "status": "True",
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-12T08:23:18Z"
+          }
+        ],
+        "hostIP": "10.191.0.24",
+        "podIP": "10.191.0.24",
+        "podIPs": [
+          {
+            "ip": "10.191.0.24"
+          }
+        ],
+        "startTime": "2026-11-12T08:23:18Z",
+        "containerStatuses": [
+          {
+            "name": "default",
+            "state": {
+              "terminated": {
+                "exitCode": 143,
+                "reason": "Error",
+                "message": "user command: exit status 143",
+                "startedAt": "2026-11-12T08:23:37Z",
+                "finishedAt": "2026-11-12T08:24:10Z",
+                "containerID": "containerd://142dfa2a796a7c847523fff5f9782c4f9c7c088cbb3a0dcd70a3013efdc33a5c"
+              }
+            },
+            "lastState": {},
+            "ready": false,
+            "restartCount": 0,
+            "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+            "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+            "containerID": "containerd://142dfa2a796a7c847523fff5f9782c4f9c7c088cbb3a0dcd70a3013efdc33a5c",
+            "started": false
+          }
+        ],
+        "qosClass": "Guaranteed",
+        "phase": "Failed",
+        "nodeName": "gpu-h800-0326.host.platform.shaipower.com",
+        "finishTimestamp": "2026-11-12T08:24:12Z"
+      }
+    }
+  },
+  "preemption_event": {
+    "action": null,
+    "api_version": null,
+    "count": 1,
+    "event_time": null,
+    "first_timestamp": "2026-11-12 08:24:09+00:00",
+    "involved_object": {
+      "api_version": "v1",
+      "field_path": null,
+      "kind": "Pod",
+      "name": "exp-1112-162239-053672-c81e728d",
+      "namespace": "shai-core",
+      "resource_version": "45712201397",
+      "uid": "b765dbf4-8e61-433b-bd41-d53e29fc07d4"
+    },
+    "kind": null,
+    "last_timestamp": "2026-11-12 08:24:09+00:00",
+    "message": "Preempted by high priority pod shai-core/exp-1112-082354-535509-client-cfcd2084 after terminating grace period",
+    "metadata": {
+      "annotations": null,
+      "creation_timestamp": "2026-11-12 08:24:09+00:00",
+      "deletion_grace_period_seconds": null,
+      "deletion_timestamp": null,
+      "finalizers": null,
+      "generate_name": null,
+      "generation": null,
+      "labels": null,
+      "managed_fields": [
+        {
+          "api_version": "v1",
+          "fields_type": "FieldsV1",
+          "fields_v1": {
+            "f:count": {},
+            "f:firstTimestamp": {},
+            "f:involvedObject": {},
+            "f:lastTimestamp": {},
+            "f:message": {},
+            "f:reason": {},
+            "f:source": {
+              "f:component": {}
+            },
+            "f:type": {}
+          },
+          "manager": "agent",
+          "operation": "Update",
+          "subresource": null,
+          "time": "2026-11-12 08:24:09+00:00"
+        }
+      ],
+      "name": "exp-1112-162239-053672-c81e728d.18e73ea3b6975c59",
+      "namespace": "shai-core",
+      "owner_references": null,
+      "resource_version": "45712240119",
+      "self_link": null,
+      "uid": "42609438-088a-40ab-91c4-effd3314030c"
+    },
+    "reason": "Preempted",
+    "related": null,
+    "reporting_component": "",
+    "reporting_instance": "",
+    "series": null,
+    "source": {
+      "component": "addon-agent-podfreezer",
+      "host": null
+    },
+    "type": "Normal"
+  },
+  "query_coverage": {
+    "python": "3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]",
+    "brainpp": "2.8.6",
+    "namespace": "shai-core",
+    "cluster_entry": "https://platform.shaipower.com",
+    "creator": "i-fengyicheng",
+    "log_window": {
+      "start": "2026-11-12T08:23:00+00:00",
+      "end": "2026-11-12T08:26:00+00:00"
+    },
+    "log_limit": 3000,
+    "sources": [
+      {
+        "query": "rjob-historical-events",
+        "ok": true
+      },
+      {
+        "query": "replica-historical-events",
+        "ok": true
+      },
+      {
+        "query": "rjob-live-events",
+        "ok": true
+      },
+      {
+        "query": "replica-live-events",
+        "ok": true
+      },
+      {
+        "query": "incident-logs",
+        "ok": true
+      },
+      {
+        "query": "rjob-audit",
+        "ok": false
+      },
+      {
+        "query": "replica-audit",
+        "ok": false
+      },
+      {
+        "query": "existing-deepscan",
+        "ok": true
+      }
+    ],
+    "limitations": [
+      "Empty or failed queries do not establish absence of an incident.",
+      "A full log-limit response may be truncated; narrow the time window.",
+      "DeepScan findings are returned text, not original Kubernetes Event objects.",
+      "RJob finishTime is not an audited stop-request timestamp.",
+      "Stopped phase alone does not identify the actor or the initiating cause.",
+      "All-operation audit rows may lack changed fields or an initiating reason.",
+      "A controller update after SIGTERM is not an initiating stop request.",
+      "Audit data is arbitrary; inspect workload-specific secrets before archiving."
+    ]
+  },
+  "raw_evidence": "/data/ycfeng/tmp/nemo-mopd-20261112/rca-self-native-2-initiator",
+  "root_cause": "Pod preempted by an explicitly named higher-priority Pod before native optimizer execution",
+  "manual_stop_actor": "UNKNOWN",
+  "manual_stop_reason": "UNKNOWN",
+  "manual_stop_request_time": "UNKNOWN",
+  "observation_limits": [
+    "Live Event carries the same-name Pod UID; the full deleted Pod owner object was not returned by these reads.",
+    "Audit queries timed out; absence of rows cannot establish absence of manual actions.",
+    "Preemption is established by the positive incident-bound native Event, not by preemptible=yes or exit143 alone."
+  ]
+}

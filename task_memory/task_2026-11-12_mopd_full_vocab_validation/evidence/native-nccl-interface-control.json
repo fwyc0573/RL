@@ -1,0 +1,481 @@
+{
+  "hostname": "gpu-h800-0187.host.platform.shaipower.com",
+  "interfaces": [
+    [
+      1,
+      "lo"
+    ],
+    [
+      2,
+      "brainpf0"
+    ],
+    [
+      3,
+      "brainpf1"
+    ],
+    [
+      4,
+      "brainpf2"
+    ],
+    [
+      5,
+      "brainpf3"
+    ],
+    [
+      6,
+      "brainpf4"
+    ],
+    [
+      7,
+      "ens22np0"
+    ],
+    [
+      8,
+      "brainpf5"
+    ],
+    [
+      9,
+      "brainpf6"
+    ],
+    [
+      10,
+      "brainpf7"
+    ],
+    [
+      11,
+      "brainvf0"
+    ],
+    [
+      12,
+      "brainvf1"
+    ],
+    [
+      13,
+      "brainvf2"
+    ],
+    [
+      14,
+      "brainvf3"
+    ],
+    [
+      15,
+      "brainvf4"
+    ],
+    [
+      16,
+      "brainvf5"
+    ],
+    [
+      17,
+      "brainvf6"
+    ],
+    [
+      18,
+      "brainvf7"
+    ],
+    [
+      19,
+      "nodelocaldns"
+    ],
+    [
+      21,
+      "kube-ipvs0"
+    ],
+    [
+      27,
+      "ovs-system"
+    ],
+    [
+      28,
+      "br-int"
+    ],
+    [
+      29,
+      "vxlan_sys_4789"
+    ],
+    [
+      30,
+      "host0"
+    ],
+    [
+      41,
+      "tap-all"
+    ],
+    [
+      20017,
+      "dde6fb99715a_h"
+    ],
+    [
+      53,
+      "c02b958385b2_h"
+    ],
+    [
+      55,
+      "e31d4741effa_h"
+    ],
+    [
+      57,
+      "96ef41822e36_h"
+    ],
+    [
+      59,
+      "cfea56a55ccd_h"
+    ],
+    [
+      61,
+      "97b74b50e04e_h"
+    ],
+    [
+      65,
+      "61cb748cb618_h"
+    ],
+    [
+      67,
+      "9b25f567a576_h"
+    ],
+    [
+      22633,
+      "fca10061767a_h"
+    ],
+    [
+      22635,
+      "18d5eade4427_h"
+    ],
+    [
+      19865,
+      "f749b9c9c69a_h"
+    ],
+    [
+      13491,
+      "cc3ebfe47753_h"
+    ],
+    [
+      7373,
+      "769a7f5d40dd_h"
+    ],
+    [
+      7375,
+      "e2b9272d2dd9_h"
+    ]
+  ],
+  "node_nccl": {
+    "NCCL_IB_TC": "186",
+    "NCCL_IB_FIFO_TC": "192",
+    "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+    "NCCL_RAS_ENABLE": "1",
+    "NCCL_VERSION": "2.25.1-1",
+    "NCCL_SOCKET_IFNAME": "ens22np0",
+    "NCCL_NVLS_ENABLE": "0",
+    "NCCL_IB_HCA": "=mlx5_2,mlx5_3,mlx5_1,mlx5_0,mlx5_4,mlx5_6,mlx5_8,mlx5_7",
+    "NCCL_RAS_ADDR": "0.0.0.0:28028",
+    "NCCL_IB_GID_INDEX": "3",
+    "NCCL_PXN_DISABLE": "1",
+    "NCCL_SET_THREAD_NAME": "1",
+    "NCCL_IB_QPS_PER_CONNECTION": "8",
+    "NCCL_IB_TIMEOUT": "21",
+    "NCCL_IB_DISABLE": "0",
+    "NCCL_IB_RETRY_CNT": "7"
+  },
+  "actors": [
+    {
+      "pid": 1518,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1519,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1520,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1521,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1522,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1523,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1524,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 1525,
+      "command": "ray::VllmAsyncGenerationWorker                                                                                                                                                                                                                            ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": "0,1,2,3,4,5,6,7"
+    },
+    {
+      "pid": 2324,
+      "command": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python -B -s -c from multiprocessing.resource_tracker import main;main(143) ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": null
+    },
+    {
+      "pid": 2325,
+      "command": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python -B -s -c from multiprocessing.resource_tracker import main;main(142) ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": null
+    },
+    {
+      "pid": 2326,
+      "command": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python -B -s -c from multiprocessing.resource_tracker import main;main(143) ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": null
+    },
+    {
+      "pid": 2335,
+      "command": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python -B -s -c from multiprocessing.resource_tracker import main;main(143) ",
+      "nccl": {
+        "NCCL_IB_TC": "186",
+        "NCCL_IB_FIFO_TC": "192",
+        "NCCL_IB_PCI_RELAXED_ORDERING": "1",
+        "NCCL_RAS_ENABLE": "1",
+        "NCCL_VERSION": "2.25.1-1",
+        "NCCL_SOCKET_IFNAME": "ens20np0",
+        "NCCL_NVLS_ENABLE": "0",
+        "NCCL_IB_HCA": "=mlx5_0,mlx5_1,mlx5_2,mlx5_3,mlx5_4,mlx5_6,mlx5_7,mlx5_8",
+        "NCCL_RAS_ADDR": "0.0.0.0:28028",
+        "NCCL_IB_GID_INDEX": "3",
+        "NCCL_PXN_DISABLE": "1",
+        "NCCL_SET_THREAD_NAME": "1",
+        "NCCL_IB_QPS_PER_CONNECTION": "8",
+        "NCCL_IB_TIMEOUT": "21",
+        "NCCL_IB_DISABLE": "0",
+        "NCCL_IB_RETRY_CNT": "7",
+        "NCCL_CUMEM_ENABLE": "1"
+      },
+      "cuda_visible_devices": null
+    }
+  ],
+  "unique_id_probes": [
+    {
+      "interface": "ens20np0",
+      "returncode": 1,
+      "output": "nccl 2.30.7\nTraceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    from vllm.distributed.device_communicators.pynccl_wrapper import NCCLLibrary; n=NCCLLibrary(); print(\"nccl\", n.ncclGetVersion(), flush=True); n.ncclGetUniqueId(); print(\"NCCL_UNIQUE_ID_PASS\", flush=True)\n                                                                                                                                                  ~~~~~~~~~~~~~~~~~^^\n  File \"/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/lib/python3.13/site-packages/vllm/distributed/device_communicators/pynccl_wrapper.py\", line 448, in ncclGetUniqueId\n    self.NCCL_CHECK(self._funcs[\"ncclGetUniqueId\"](ctypes.byref(unique_id)))\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/lib/python3.13/site-packages/vllm/distributed/device_communicators/pynccl_wrapper.py\", line 430, in NCCL_CHECK\n    raise RuntimeError(f\"NCCL error: {error_str}\")\nRuntimeError: NCCL error: invalid usage (run with NCCL_DEBUG=WARN for details)\n\n[2026-11-12 16:53:44] gpu-h800-0187:7292:7292 [0] bootstrap.cc:126 (bootstrapNetInit) NCCL WARN Bootstrap : no socket interface found\n"
+    },
+    {
+      "interface": "ens22np0",
+      "returncode": 0,
+      "output": "nccl 2.30.7\nNCCL_UNIQUE_ID_PASS\n"
+    }
+  ]
+}

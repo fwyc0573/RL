@@ -1,0 +1,496 @@
+{
+  "job": {
+    "kind": "RJob",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1112-165702-849504",
+      "uid": "134dafb7-6caa-4a76-96c1-ac0a4ff6e4ef",
+      "creationTimestamp": "2026-11-12T08:57:02Z",
+      "deletionTimestamp": null,
+      "ownerReferences": null
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-12T09:12:54Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "RJobFailed",
+      "message": "Tasks with failed status: [default]",
+      "taskStatuses": {
+        "default": {
+          "failed": 3,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-12T09:12:55Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "replica": {
+    "kind": "Replica",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1112-165702-849504-cfcd2084",
+      "uid": "7fc7f601-7db2-4d70-95f7-2bafde46b61f",
+      "creationTimestamp": "2026-11-12T09:06:27Z",
+      "deletionTimestamp": null,
+      "ownerReferences": [
+        {
+          "apiVersion": "rjob.brainpp.cn/v1alpha1",
+          "kind": "RJob",
+          "name": "exp-1112-165702-849504",
+          "uid": "134dafb7-6caa-4a76-96c1-ac0a4ff6e4ef",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }
+      ]
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {},
+    "stop_spec": {},
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T09:06:58Z"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T09:12:52Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T09:12:52Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-12T09:06:58Z"
+        }
+      ],
+      "hostIP": "10.191.5.19",
+      "podIP": "10.191.5.19",
+      "podIPs": [
+        {
+          "ip": "10.191.5.19"
+        }
+      ],
+      "startTime": "2026-11-12T09:06:58Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "terminated": {
+              "exitCode": 1,
+              "reason": "Error",
+              "message": "user command: exit status 1",
+              "startedAt": "2026-11-12T09:07:30Z",
+              "finishedAt": "2026-11-12T09:12:51Z",
+              "containerID": "containerd://56ede1145faa4f69017213930af359ac7dfbdf4f8371ede49edce72ad7105296"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://56ede1145faa4f69017213930af359ac7dfbdf4f8371ede49edce72ad7105296",
+          "started": false
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Failed",
+      "nodeName": "gpu-h800-0071.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-12T09:12:54Z"
+    }
+  },
+  "traceback": [
+    {
+      "timestamp": "1794474767841064000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py\", line 292, in <module>",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py\", line 292, in <module>"
+    },
+    {
+      "timestamp": "1794474767841080000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     main()",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    main()"
+    },
+    {
+      "timestamp": "1794474767841084000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ~~~~^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ~~~~^^"
+    },
+    {
+      "timestamp": "1794474767841087000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py\", line 202, in main",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py\", line 202, in main"
+    },
+    {
+      "timestamp": "1794474767841091000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     actor_args, setup_timing_metrics = setup_single_controller(",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    actor_args, setup_timing_metrics = setup_single_controller("
+    },
+    {
+      "timestamp": "1794474767841095000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>                                        ~~~~~~~~~~~~~~~~~~~~~~~^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "                                       ~~~~~~~~~~~~~~~~~~~~~~~^"
+    },
+    {
+      "timestamp": "1794474767841098000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         config, tokenizer, processor=processor",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        config, tokenizer, processor=processor"
+    },
+    {
+      "timestamp": "1794474767841101000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "timestamp": "1794474767841104000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     )",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    )"
+    },
+    {
+      "timestamp": "1794474767841107000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ^"
+    },
+    {
+      "timestamp": "1794474767841110000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 2097, in setup_single_controller",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 2097, in setup_single_controller"
+    },
+    {
+      "timestamp": "1794474767841113000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     trainer, value, time_metrics = submitted[\"trainer\"].result()",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    trainer, value, time_metrics = submitted[\"trainer\"].result()"
+    },
+    {
+      "timestamp": "1794474767841116000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^"
+    },
+    {
+      "timestamp": "1794474767841119000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py\", line 453, in result",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py\", line 453, in result"
+    },
+    {
+      "timestamp": "1794474767841121000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     return self.__get_result()",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    return self.__get_result()"
+    },
+    {
+      "timestamp": "1794474767841125000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>            ~~~~~~~~~~~~~~~~~^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "           ~~~~~~~~~~~~~~~~~^^"
+    },
+    {
+      "timestamp": "1794474767841127000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py\", line 402, in __get_result",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py\", line 402, in __get_result"
+    },
+    {
+      "timestamp": "1794474767841130000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     raise self._exception",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    raise self._exception"
+    },
+    {
+      "timestamp": "1794474767841132000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/thread.py\", line 59, in run",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/thread.py\", line 59, in run"
+    },
+    {
+      "timestamp": "1794474767841135000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     result = self.fn(*self.args, **self.kwargs)",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    result = self.fn(*self.args, **self.kwargs)"
+    },
+    {
+      "timestamp": "1794474767841138000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 1811, in _build_trainer_and_value",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 1811, in _build_trainer_and_value"
+    },
+    {
+      "timestamp": "1794474767841140000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     trainer, time_metrics[\"trainer_time\"] = _build_trainer(",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    trainer, time_metrics[\"trainer_time\"] = _build_trainer("
+    },
+    {
+      "timestamp": "1794474767841143000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>                                             ~~~~~~~~~~~~~~^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "                                            ~~~~~~~~~~~~~~^"
+    },
+    {
+      "timestamp": "1794474767841145000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         train_cluster,",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        train_cluster,"
+    },
+    {
+      "timestamp": "1794474767841148000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         ^^^^^^^^^^^^^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        ^^^^^^^^^^^^^^"
+    },
+    {
+      "timestamp": "1794474767841151000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ...<13 lines>...",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ...<13 lines>..."
+    },
+    {
+      "timestamp": "1794474767841153000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         reserved_http_server_ports=reserved_http_server_ports,",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        reserved_http_server_ports=reserved_http_server_ports,"
+    },
+    {
+      "timestamp": "1794474767841156000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "timestamp": "1794474767841158000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     )",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    )"
+    },
+    {
+      "timestamp": "1794474767841161000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ^"
+    },
+    {
+      "timestamp": "1794474767841163000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 743, in _build_trainer",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller_utils/setup.py\", line 743, in _build_trainer"
+    },
+    {
+      "timestamp": "1794474767841166000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     trainer = TQPolicy(",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    trainer = TQPolicy("
+    },
+    {
+      "timestamp": "1794474767841169000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         cluster=train_cluster,",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        cluster=train_cluster,"
+    },
+    {
+      "timestamp": "1794474767841171000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ...<10 lines>...",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ...<10 lines>..."
+    },
+    {
+      "timestamp": "1794474767841175000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>         reserved_http_server_ports=reserved_http_server_ports,",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "        reserved_http_server_ports=reserved_http_server_ports,"
+    },
+    {
+      "timestamp": "1794474767841177000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     )",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    )"
+    },
+    {
+      "timestamp": "1794474767841180000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/tq_policy.py\", line 151, in __init__",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/tq_policy.py\", line 151, in __init__"
+    },
+    {
+      "timestamp": "1794474767841183000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     super().__init__(*args, **kwargs)",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    super().__init__(*args, **kwargs)"
+    },
+    {
+      "timestamp": "1794474767841186000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^"
+    },
+    {
+      "timestamp": "1794474767841188000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>   File \"/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/lm_policy.py\", line 328, in __init__",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "  File \"/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/lm_policy.py\", line 328, in __init__"
+    },
+    {
+      "timestamp": "1794474767841192000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     raise RuntimeError(",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    raise RuntimeError("
+    },
+    {
+      "timestamp": "1794474767841194000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     ...<2 lines>...",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    ...<2 lines>..."
+    },
+    {
+      "timestamp": "1794474767841197000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >>     )",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "    )"
+    },
+    {
+      "timestamp": "1794474767841211000",
+      "line": "[2026-11-12T17:12:47+08:00] exp-1112-165702-849504-cfcd2084 >> RuntimeError: TORCH_CUDA_ARCH_LIST is not set. This is required in Megatron backend. This variable is set in our container, but if you are running a custom container or baremetal, you may need to set this variable manually. Example: export TORCH_CUDA_ARCH_LIST='9.0 10.0'",
+      "pod": "exp-1112-165702-849504-cfcd2084",
+      "node": "gpu-h800-0071.host.platform.shaipower.com",
+      "message": "RuntimeError: TORCH_CUDA_ARCH_LIST is not set. This is required in Megatron backend. This variable is set in our container, but if you are running a custom container or baremetal, you may need to set this variable manually. Example: export TORCH_CUDA_ARCH_LIST='9.0 10.0'"
+    }
+  ],
+  "rca_query_index": {
+    "python": "3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]",
+    "brainpp": "2.8.6",
+    "namespace": "shai-core",
+    "cluster_entry": "https://platform.shaipower.com",
+    "creator": "i-fengyicheng",
+    "log_window": {
+      "start": "2026-11-12T09:11:00+00:00",
+      "end": "2026-11-12T09:14:00+00:00"
+    },
+    "log_limit": 3000,
+    "sources": [
+      {
+        "query": "rjob-historical-events",
+        "ok": true
+      },
+      {
+        "query": "replica-historical-events",
+        "ok": true
+      },
+      {
+        "query": "rjob-live-events",
+        "ok": true
+      },
+      {
+        "query": "replica-live-events",
+        "ok": true
+      },
+      {
+        "query": "incident-logs",
+        "ok": true
+      },
+      {
+        "query": "rjob-audit",
+        "ok": false
+      },
+      {
+        "query": "replica-audit",
+        "ok": false
+      },
+      {
+        "query": "existing-deepscan",
+        "ok": true
+      }
+    ],
+    "limitations": [
+      "Empty or failed queries do not establish absence of an incident.",
+      "A full log-limit response may be truncated; narrow the time window.",
+      "DeepScan findings are returned text, not original Kubernetes Event objects.",
+      "RJob finishTime is not an audited stop-request timestamp.",
+      "Stopped phase alone does not identify the actor or the initiating cause.",
+      "All-operation audit rows may lack changed fields or an initiating reason.",
+      "A controller update after SIGTERM is not an initiating stop request.",
+      "Audit data is arbitrary; inspect workload-specific secrets before archiving."
+    ]
+  },
+  "launcher_cleanup_hkt": "2026-11-12T17:12:56.753+08:00",
+  "initiating_manual_stop_actor": "UNKNOWN",
+  "initiating_manual_stop_reason": "UNKNOWN",
+  "initiating_manual_stop_request_time": "UNKNOWN",
+  "agent_manual_stop_requested": false,
+  "native_successful_updates": 0
+}

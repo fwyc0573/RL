@@ -1,0 +1,86 @@
+{
+  "base": {
+    "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+    "executable": "/data/ycfeng/envs/nemo-mopd-py313/bin/python",
+    "packages": {
+      "torch": "2.13.0",
+      "triton": "3.7.1",
+      "transformers": "5.16.1",
+      "ray": "2.58.0",
+      "vllm": null,
+      "transformer-engine": null,
+      "nvidia-modelopt": null,
+      "nvidia-resiliency-ext": null,
+      "megatron-core": null,
+      "megatron-bridge": null,
+      "nemo-gym": null,
+      "nixl": "1.3.0",
+      "tensorboard": "2.21.0",
+      "TransferQueue": "0.1.11",
+      "nemo-rl": "0.8.0+c2cfe5f0"
+    }
+  },
+  "megatron": {
+    "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+    "executable": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/bin/python",
+    "packages": {
+      "torch": "2.13.0",
+      "triton": "3.7.1",
+      "transformers": "5.16.1",
+      "ray": "2.58.0",
+      "vllm": null,
+      "transformer-engine": "2.18.0",
+      "nvidia-modelopt": "0.46.0",
+      "nvidia-resiliency-ext": "0.7.0",
+      "megatron-core": "0.20.0+3e95097",
+      "megatron-bridge": "0.7.0+7e9dcd6",
+      "nemo-gym": "0.7.0rc0",
+      "nixl": "1.3.0",
+      "tensorboard": "2.21.0",
+      "TransferQueue": "0.1.11",
+      "nemo-rl": "0.8.0+c2cfe5f0"
+    }
+  },
+  "vllm": {
+    "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+    "executable": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.generation.vllm.vllm_worker_async.VllmAsyncGenerationWorker/bin/python",
+    "packages": {
+      "torch": "2.13.0",
+      "triton": "3.7.1",
+      "transformers": "5.12.1",
+      "ray": "2.58.0",
+      "vllm": "0.29.0",
+      "transformer-engine": null,
+      "nvidia-modelopt": null,
+      "nvidia-resiliency-ext": null,
+      "megatron-core": null,
+      "megatron-bridge": null,
+      "nemo-gym": "0.7.0rc0",
+      "nixl": "1.3.0",
+      "tensorboard": "2.21.0",
+      "TransferQueue": "0.1.11",
+      "nemo-rl": "0.8.0+c2cfe5f0"
+    }
+  },
+  "gym": {
+    "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+    "executable": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.environments.nemo_gym.NemoGym/bin/python",
+    "packages": {
+      "torch": "2.13.0",
+      "triton": "3.7.1",
+      "transformers": "5.16.1",
+      "ray": "2.58.0",
+      "vllm": null,
+      "transformer-engine": null,
+      "nvidia-modelopt": null,
+      "nvidia-resiliency-ext": null,
+      "megatron-core": null,
+      "megatron-bridge": null,
+      "nemo-gym": "0.7.0rc0",
+      "nixl": "1.3.0",
+      "tensorboard": "2.21.0",
+      "TransferQueue": "0.1.11",
+      "nemo-rl": "0.8.0+c2cfe5f0"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "status": "native_execution_succeeded",
+  "rank": 0,
+  "job": "exp-1112-181232-890845",
+  "platform": {
+    "name": "exp-1112-181232-890845",
+    "queried_at": "20261112T102258Z",
+    "uid": "1f2a7923-2370-449d-a03d-344b12690313",
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "status": {
+      "phase": "Succeeded",
+      "reason": "RJobSucceeded",
+      "message": "RJob succeeded",
+      "taskStatuses": {
+        "default": {
+          "succeeded": 3,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-12T10:22:46Z",
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "queue": {
+      "rjob.brainpp.cn/rjob-queue-approved": "2026-11-12T10:12:58.358463936Z",
+      "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+      "stepmind.com/queue-elem-ranking": "3",
+      "stepmind.com/queue-name": "codesign-default",
+      "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 3 replicas = 24 GPU (H800). Queue remaining: H800=16."
+    },
+    "source": {
+      "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+    }
+  }
+}

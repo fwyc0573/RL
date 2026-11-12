@@ -1,0 +1,9 @@
+{
+  "name": "exp-1112-173036-554443",
+  "submitted_at_hkt": "2026-11-12T17:30:36.877+08:00",
+  "requested_gpus": 24,
+  "launcher_session": 71916,
+  "phase": "submitted_pending_inspection",
+  "native_successful_updates": 0,
+  "worker_environment_fix": "device-derived TORCH_CUDA_ARCH_LIST"
+}

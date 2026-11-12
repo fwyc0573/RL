@@ -1,0 +1,119 @@
+{
+  "job": "exp-1112-181524-408383",
+  "samples": [
+    {
+      "step": 1,
+      "sample_id": "cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0",
+      "prompt_idx": 4,
+      "prompt_length": 65504,
+      "total_length": 65536,
+      "response_tokens": 32,
+      "teacher_alias": null,
+      "parity_mae": 0.047441634931601584
+    },
+    {
+      "step": 1,
+      "sample_id": "74ab706e-7ebb-44c2-af6f-9da64228e11c_g0",
+      "prompt_idx": 3,
+      "prompt_length": 65504,
+      "total_length": 65536,
+      "response_tokens": 32,
+      "teacher_alias": null,
+      "parity_mae": 0.06472497712820768
+    },
+    {
+      "step": 1,
+      "sample_id": "a59823d2-a593-49fd-9822-ff3af97c5f5f_g0",
+      "prompt_idx": 2,
+      "prompt_length": 65504,
+      "total_length": 65536,
+      "response_tokens": 32,
+      "teacher_alias": null,
+      "parity_mae": 0.05306251998990774
+    },
+    {
+      "step": 1,
+      "sample_id": "884048b5-35f4-4990-bce2-cc840f1c0593_g0",
+      "prompt_idx": 0,
+      "prompt_length": 65504,
+      "total_length": 65536,
+      "response_tokens": 32,
+      "teacher_alias": null,
+      "parity_mae": 0.42868446558713913
+    },
+    {
+      "step": 1,
+      "sample_id": "f4dff239-20de-48a8-9776-d1313c99884b_g0",
+      "prompt_idx": 1,
+      "prompt_length": 65504,
+      "total_length": 65536,
+      "response_tokens": 32,
+      "teacher_alias": null,
+      "parity_mae": 0.08702025795355439
+    }
+  ],
+  "parity": {
+    "tokens": 160,
+    "mae": 0.1361867711180821,
+    "signed_mean": -0.09037679436150939,
+    "p95": 0.3202024459838862,
+    "p99": 2.7706307196617,
+    "max": 6.680065155029297
+  },
+  "finished": {
+    "status": "native_execution_succeeded",
+    "rank": 0,
+    "job": "exp-1112-181524-408383"
+  },
+  "length_pass": true,
+  "update_pass": true,
+  "key_metrics": {
+    "train/skipped_step": [
+      {
+        "step": 1,
+        "value": 0.0
+      }
+    ],
+    "train/loss": [
+      {
+        "step": 1,
+        "value": 0.0
+      }
+    ],
+    "train/grad_norm": [
+      {
+        "step": 1,
+        "value": 0.0
+      }
+    ],
+    "train/optimizer_update_successful": [
+      {
+        "step": 1,
+        "value": 1.0
+      }
+    ],
+    "train/global_valid_seqs": [
+      {
+        "step": 1,
+        "value": 5.0
+      }
+    ],
+    "train/global_valid_toks": [
+      {
+        "step": 1,
+        "value": 160.0
+      }
+    ],
+    "train/num_masked_seqs_by_loss_multiplier": [
+      {
+        "step": 1,
+        "value": 0.0
+      }
+    ]
+  },
+  "key_training_metrics_finite": true,
+  "raw_all_metrics_finite": false,
+  "raw_nonfinite_explanation": "Singleton stddev is intentionally NaN; metric_utils.py:47. This is separate from loss/gradient health.",
+  "parity_pass": false,
+  "mean_ceiling": 0.02
+}

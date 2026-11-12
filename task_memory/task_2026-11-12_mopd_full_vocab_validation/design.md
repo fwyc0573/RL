@@ -3,6 +3,7 @@
 | Date | Change |
 | --- | --- |
 | 2026-11-12 | Pin inspected sources and document the proposed runtime, input mapping, and correctness checks. |
+| 2026-11-12 | Reconcile verified model/input assets and selected native sampling, vocabulary and failure handling. |
 
 # MOPD validation design
 
@@ -27,7 +28,7 @@ Authoritative source files:
 | logic | Huawei-RLVE/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50 | `/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50` |
 | if | Thinking-Space/UltraData-IF-1.5B@be67d8ba | `/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba` |
 
-The historical asset report observed Qwen2, 28 layers, hidden size 1536, 12 attention heads, 2 KV heads, and model vocabulary size 151936 for the four downloaded teachers and student. Its tokenizer test checked one fixed string, not the entire token-to-ID mapping. DeepCoder's rendered chat template differed. Current cloud availability and complete tokenizer equivalence remain unverified.
+The historical asset report observed Qwen2, 28 layers, hidden size 1536, 12 attention heads, 2 KV heads, and model vocabulary size 151936 for the four downloaded teachers and student. Its tokenizer test checked one fixed string, not the entire token-to-ID mapping. DeepCoder's rendered chat template differed. Current cloud assets and complete tokenizer equivalence passed input preparation; all six initial models also passed the HF reconstruction/full-loss/gradient control. The corresponding input and model-reference reports retain exact evidence. Native Megatron/vLLM distributions and training remain unverified.
 
 ## Data and sampling
 
@@ -45,7 +46,9 @@ Use BF16, temperature 1, top-p 1, no top-k truncation, and full-vocabulary rever
 
 Start the optimizer from the historical constant learning rate `1e-6`, Adam beta values `(0.9, 0.95)`, epsilon `1e-8`, weight decay `0.01`, and gradient clipping `1.0`. Preserve global token normalization. These are task configuration values, not new code defaults. The existing full loss rejects policy-gradient importance-sampling and ratio options; do not copy the StepTron TIS configuration into this objective.
 
-Use the original 65,536-token ceiling in the main run. Short diagnostics exercise 8K and shorter sequences first; include an actual long-sequence case before declaring the original ceiling covered. Record prompt/response lengths, truncation and valid-loss-token counts rather than hiding overlong examples. Freeze final sampler/version policy in the resolved config and record generation and learner weight versions separately.
+Use the original 65,536-token ceiling in the main run. Short diagnostics exercise 8K and shorter sequences first; include an actual long-sequence case before declaring the original ceiling covered. Record prompt/response lengths, truncation and valid-loss-token counts rather than hiding overlong examples. The current recipe selects the existing in-order sampler with max_lookahead_versions=0 for same-version initial/refit/resume comparisons; record generation and learner weight versions separately. vLLM uses raw_logprobs. The existing make_vocab_size_divisible_by=64 override for student and teachers makes TP2 vocabulary padding exactly151936; inspect actual GPU dimensions before counting this as verified.
+
+Formal isolated-sample handling uses existing retry/replacement configuration: max_skipped_prompts=128 for data-budget exhaustion, max_consecutive_dropped_prompts=1 for infrastructure-budget exhaustion, on_dropped_prompt=replace, and min_step_batch_fraction=1.0. This preserves 256 fresh trajectories for every accepted update. Formal rollout/router deadlines are7200s and the stall watchdog is9000s; the short diagnostic uses300/300/600s. The263 native failure/timeout/replacement/trace checks passed; actual run accounting must still be reconciled. Native system failures retain their original handling.
 
 ## Checks that determine correctness
 

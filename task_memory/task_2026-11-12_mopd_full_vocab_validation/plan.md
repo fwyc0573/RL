@@ -6,7 +6,7 @@
 
 # Plan
 
-Status: acceptance confirmed by `continue`; B/C preparation complete; D TP tensor reference complete; nonpreemptible native diagnostic queued and awaiting execution evidence. Execution settings are in [design.md](design.md), and explicit user constraints are in [requirements.md](requirements.md).
+Status: A/Q/B/C complete. Three short self controls completed 5/5 successful updates each. Actual trainer/scorer agrees <4e-7. Teacher FP32 reconstruction precision defect repaired; CPU and native GPU verification complete, with native gradient error bounded from its measured unnormalized probe. BF16 65,536-token control completed one update but parity FAILS (MAE 0.13619). FP32 long control also completed one update but parity FAILS (MAE0.13106). Fixed-token CP4/CP1 replay first failed missing train_iters; native config preparation fixed and rerun queued. Original five-distinct-teacher short run is now Running with all7replicas. D/E/F remain outstanding.
 
 ## Dependency graph
 
