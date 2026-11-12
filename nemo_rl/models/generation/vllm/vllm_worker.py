@@ -536,8 +536,13 @@ class BaseVllmGenerationWorker:
         # Store the Python executable being used by this worker
         self.py_executable = sys.executable
 
+        hf_overrides = (self.cfg.get("vllm_kwargs") or {}).get("hf_overrides")
+        rope_parameters = hf_overrides.get("rope_parameters") if hf_overrides else None
         _apply_vllm_patches(
             self.py_executable,
+            require_fp32_rope=bool(
+                rope_parameters and rope_parameters.get("fp32_rope")
+            ),
             extra_env_vars=[
                 *(extra_env_vars or []),
                 *compile_cache.env_overrides("vllm"),

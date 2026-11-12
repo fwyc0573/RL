@@ -1,0 +1,30 @@
+{
+  "name": "exp-1112-205326-305203",
+  "queried_at": "20261112T125630Z",
+  "uid": "a6993063-e5d0-4462-88d8-ec584e86307c",
+  "creator": "i-fengyicheng",
+  "preemptible": "no",
+  "quota_group": "codesign",
+  "status": {
+    "phase": "Succeeded",
+    "reason": "RJobSucceeded",
+    "message": "RJob succeeded",
+    "taskStatuses": {
+      "default": {
+        "succeeded": 1,
+        "taskStage": "stepmind-task-stage-1"
+      }
+    },
+    "finishTime": "2026-11-12T12:56:25Z",
+    "taskStage": "stepmind-task-stage-1"
+  },
+  "queue": {
+    "rjob.brainpp.cn/rjob-queue-approved": "2026-11-12T12:53:29.87301881Z",
+    "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+    "stepmind.com/queue-elem-ranking": "2",
+    "stepmind.com/queue-name": "codesign-default"
+  },
+  "source": {
+    "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+  }
+}

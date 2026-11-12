@@ -22,6 +22,7 @@ import torch
 from omegaconf import OmegaConf
 
 from nemo_rl.models.generation.vllm.patches import _apply_vllm_patches
+from nemo_rl.models.generation.vllm.vllm_worker import _apply_fp32_lm_head
 from nemo_rl.utils.config import (
     load_config,
     parse_hydra_overrides,
@@ -57,13 +58,18 @@ def main() -> None:
     )
     generation = config["policy"]["generation"]
     vllm_config = generation["vllm_cfg"]
-    if vllm_config["fp32_lm_head"]:
-        raise ValueError("This BF16 replay requires the original BF16 generation head")
+    _apply_fp32_lm_head(vllm_config, generation["vllm_kwargs"])
     output = Path(config["logger"]["log_dir"]) / "replay-generation-logprobs.json"
     output.relative_to("/mnt/codesign-exp/ycfeng")
     rows = [json.loads(line) for line in args.dump.read_text().splitlines()]
     maximum_length = max(length for row in rows for length in row["input_lengths"])
-    _apply_vllm_patches(sys.executable, extra_env_vars=[])
+    hf_overrides = generation["vllm_kwargs"].get("hf_overrides")
+    rope_parameters = hf_overrides.get("rope_parameters") if hf_overrides else None
+    _apply_vllm_patches(
+        sys.executable,
+        extra_env_vars=[],
+        require_fp32_rope=bool(rope_parameters and rope_parameters.get("fp32_rope")),
+    )
     # The vLLM engine requires a GPU; CLI and config reads can run on the CPU host.
     from vllm import LLM, SamplingParams
 
@@ -93,6 +99,7 @@ def main() -> None:
         "dump": str(args.dump),
         "model": config["policy"]["model_name"],
         "scored_sequence_length_max": maximum_length,
+        "fp32_lm_head": vllm_config["fp32_lm_head"],
         "engine_max_model_len": maximum_length + 1,
         "comparison": "Synchronous native vLLM prompt scoring versus recorded async generation; the one new output token is unused.",
         "samples": [],

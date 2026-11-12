@@ -3,10 +3,11 @@
 | Date | Change |
 | --- | --- |
 | 2026-11-12 | Draft bounded execution milestones and verification criteria for the core acceptance interview. |
+| 2026-11-12 | Reconcile FP32 RoPE terminal results and retain the remaining long-context failure. |
 
 # Plan
 
-Status: A/Q/B/C complete. Five distinct teachers completed short BF16 and FP32 native training. FP32 native save/resume continued from step1 to step5 with 5/5 successful updates, zero skipped, and every group scorer/vLLM mean below0.02. Full checkpoint state/finite audit completed for the short observed recovery boundary. Long-context CP4/CP1, unfused RoPE, FA4 and vLLM prompt replay still fail the unchanged0.02 criterion. Matched2048 prefill does not resolve the internal vLLM gap. Native layer capture completed; eager vLLM probe failed at callable serialization and its existing worker environment omission is being repaired. D/E/F remain outstanding; formal200updates are not submitted.
+Status: A/Q/B/C complete; D/E/F outstanding. Five-teacher short FP32 save/resume passed5/5 updates, zero skipped, all group means≤0.02 and full checkpoint finite audit. The production FP32 RoPE factory fixes the first Q/K divergence at the original rope_theta10000; paired FP32-head eager/compiled long errors remain0.02657703/0.03850816, bothFAIL. Native SwiGLU fusion is insufficient and not promoted. Latest12CPU regressions and Ruff pass; duplicate test-only cache implementation removed. Next Dfrontier is matched FA4 backend capture using existing native/vLLM capabilities; FA3 unavailable in native environment, noFA3job submitted. Fresh rollout/refit and formal200successfulupdates/256fresh/native resume remain outstanding; formalrun notsubmitted.
 
 ## Dependency graph
 

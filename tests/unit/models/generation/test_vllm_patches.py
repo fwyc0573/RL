@@ -721,9 +721,11 @@ def test_apply_vllm_patches_threads_routed_experts_capture_requirement(
 
 
 @pytest.mark.parametrize("require_capture", [False, True])
+@pytest.mark.parametrize("require_fp32_rope", [False, True])
 def test_vllm_worker_threads_routed_experts_capture_into_source_patches(
     monkeypatch,
     require_capture: bool,
+    require_fp32_rope: bool,
 ):
     from nemo_rl.models.generation.vllm import vllm_worker
 
@@ -731,12 +733,17 @@ def test_vllm_worker_threads_routed_experts_capture_into_source_patches(
     monkeypatch.setattr(
         vllm_worker,
         "_apply_vllm_patches",
-        lambda py, *, extra_env_vars, require_moe_routed_experts_capture: (
+        lambda py,
+        *,
+        extra_env_vars,
+        require_moe_routed_experts_capture,
+        require_fp32_rope: (
             patch_calls.append(
                 {
                     "py": py,
                     "extra_env_vars": extra_env_vars,
                     "require_moe_routed_experts_capture": require_moe_routed_experts_capture,
+                    "require_fp32_rope": require_fp32_rope,
                 }
             )
         ),
@@ -745,7 +752,10 @@ def test_vllm_worker_threads_routed_experts_capture_into_source_patches(
     vllm_worker.BaseVllmGenerationWorker(
         {
             "model_name": "model",
-            "vllm_kwargs": {"enable_return_routed_experts": require_capture},
+            "vllm_kwargs": {
+                "enable_return_routed_experts": require_capture,
+                "hf_overrides": {"rope_parameters": {"fp32_rope": require_fp32_rope}},
+            },
             "vllm_cfg": {
                 "tensor_parallel_size": 1,
                 "pipeline_parallel_size": 1,
@@ -763,6 +773,7 @@ def test_vllm_worker_threads_routed_experts_capture_into_source_patches(
             "py": sys.executable,
             "extra_env_vars": ["EXPLICIT_VAR"],
             "require_moe_routed_experts_capture": require_capture,
+            "require_fp32_rope": require_fp32_rope,
         }
     ]
 
@@ -1008,3 +1019,103 @@ async def test_pinned_vllm_output_loops_match_the_patch() -> None:
     finally:
         socket.close(linger=0)
         context.term()
+
+
+@pytest.fixture
+def fp32_rope_factory(tmp_path, monkeypatch):
+    """Execute the patched installed factory with an isolated module cache."""
+    # Load the optional engine only for its rotary factory checks.
+    from vllm.model_executor.layers import rotary_embedding
+
+    copied = write_unpatched_copy(
+        "model_executor/layers/rotary_embedding/__init__.py",
+        "_patch_vllm_fp32_rope",
+        tmp_path / "rotary_embedding.py",
+    )
+    monkeypatch.setattr(patches, "_get_vllm_file", lambda _relative: str(copied))
+    patches._patch_vllm_fp32_rope(logging.getLogger(__name__))
+    tree = ast.parse(copied.read_text())
+    function = next(
+        node
+        for node in tree.body
+        if isinstance(node, ast.FunctionDef) and node.name == "get_rope"
+    )
+    namespace = dict(vars(rotary_embedding), _ROPE_DICT={})
+    exec(
+        compile(ast.Module(body=[function], type_ignores=[]), str(copied), "exec"),
+        namespace,
+    )
+    return namespace["get_rope"], copied
+
+
+def test_fp32_rope_factory_preserves_precision_and_separates_cached_modules(
+    fp32_rope_factory,
+):
+    from vllm.config import DeviceConfig, VllmConfig, set_current_vllm_config
+
+    factory, _ = fp32_rope_factory
+    parameters = {"rope_type": "default", "rope_theta": 1000000.0}
+    config = VllmConfig(device_config=DeviceConfig(device="cpu"))
+    with set_current_vllm_config(config):
+        ordinary = factory(128, 65536, dtype=torch.bfloat16, rope_parameters=parameters)
+        corrected = factory(
+            128,
+            65536,
+            dtype=torch.bfloat16,
+            rope_parameters={**parameters, "fp32_rope": True},
+        )
+        repeated = factory(
+            128,
+            65536,
+            dtype=torch.bfloat16,
+            rope_parameters={**parameters, "fp32_rope": True},
+        )
+    assert repeated is corrected and corrected is not ordinary
+    assert (
+        ordinary.cos_sin_cache.dtype == torch.bfloat16 and not ordinary.use_flashinfer
+    )
+    assert corrected.cos_sin_cache.dtype == torch.float32 and corrected.use_flashinfer
+    assert corrected.cos_sin_cache.device == ordinary.cos_sin_cache.device
+    torch.testing.assert_close(
+        corrected.cos_sin_cache.bfloat16(), ordinary.cos_sin_cache, rtol=0, atol=0
+    )
+    assert (corrected.cos_sin_cache - ordinary.cos_sin_cache.float()).abs().max() > 0
+
+
+@pytest.mark.parametrize(
+    "parameters,dtype",
+    [
+        ({"rope_type": "linear", "factor": 2.0}, torch.bfloat16),
+        ({"rope_type": "default", "partial_rotary_factor": 0.5}, torch.bfloat16),
+        ({"rope_type": "default"}, torch.float32),
+    ],
+)
+def test_fp32_rope_factory_rejects_unsupported_arithmetic(
+    fp32_rope_factory, parameters, dtype
+):
+    from vllm.config import DeviceConfig, VllmConfig, set_current_vllm_config
+
+    factory, _ = fp32_rope_factory
+    with set_current_vllm_config(VllmConfig(device_config=DeviceConfig(device="cpu"))):
+        with pytest.raises(ValueError, match="default full-head BF16"):
+            factory(
+                128, 128, dtype=dtype, rope_parameters={**parameters, "fp32_rope": True}
+            )
+
+
+def test_fp32_rope_factory_rejects_non_boolean_requests(fp32_rope_factory):
+    from vllm.config import DeviceConfig, VllmConfig, set_current_vllm_config
+
+    factory, _ = fp32_rope_factory
+    with set_current_vllm_config(VllmConfig(device_config=DeviceConfig(device="cpu"))):
+        with pytest.raises(ValueError, match="must be a boolean"):
+            factory(
+                128, 128, dtype=torch.bfloat16, rope_parameters={"fp32_rope": "true"}
+            )
+
+
+def test_fp32_rope_source_patch_is_idempotent(fp32_rope_factory):
+    _, copied = fp32_rope_factory
+    before = copied.read_text()
+    patches._patch_vllm_fp32_rope(logging.getLogger(__name__))
+    assert copied.read_text() == before

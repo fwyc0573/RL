@@ -1,0 +1,17 @@
+{
+  "original_rope_theta": 10000,
+  "comparisons": [
+    {
+      "base": 10000,
+      "native_angle_max_error": 0.000244140625,
+      "generation_cache_mae": 0.8118413686752319,
+      "generation_cache_max_error": 1.9990451335906982
+    },
+    {
+      "base": 1000000.0,
+      "native_angle_max_error": 9689.498046875,
+      "generation_cache_mae": 1.331706471319194e-06,
+      "generation_cache_max_error": 0.00011166930198669434
+    }
+  ]
+}

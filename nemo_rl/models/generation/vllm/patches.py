@@ -175,6 +175,41 @@ def _patch_vllm_compile_cache_relative_artifacts(logger) -> None:
     logger.info("Patched vLLM to load compiled artifacts relative to the cache folder.")
 
 
+def _patch_vllm_fp32_rope(logger) -> None:
+    """Preserve FP32 RoPE cache arithmetic when requested in rope_parameters."""
+    file_to_patch = _get_vllm_file("model_executor/layers/rotary_embedding/__init__.py")
+    marker = "NeMo-RL: FP32 RoPE cache"
+    old_snippet = "    _ROPE_DICT[key] = rotary_emb\n"
+    new_snippet = """    # NeMo-RL: FP32 RoPE cache
+    fp32_rope = rope_parameters.get("fp32_rope")
+    if fp32_rope is not None and not isinstance(fp32_rope, bool):
+        raise ValueError("rope_parameters.fp32_rope must be a boolean")
+    if fp32_rope:
+        if (
+            type(rotary_emb) is not RotaryEmbedding
+            or rotary_emb.rotary_dim != rotary_emb.head_size
+            or dtype != torch.bfloat16
+        ):
+            raise ValueError(
+                "FP32 RoPE requires default full-head BF16 RotaryEmbedding"
+            )
+        with torch.device(rotary_emb.cos_sin_cache.device):
+            rotary_emb.cos_sin_cache = rotary_emb._compute_cos_sin_cache().float()
+        rotary_emb.use_flashinfer = True
+    _ROPE_DICT[key] = rotary_emb
+"""
+    with _locked_file_patch(file_to_patch) as (content, write_back):
+        if marker in content:
+            return
+        if content.count(old_snippet) != 1:
+            raise RuntimeError(
+                "FP32 RoPE requested but the installed rotary factory does not "
+                f"match the source patch: {file_to_patch}"
+            )
+        write_back(content.replace(old_snippet, new_snippet, 1))
+    logger.info("Enabled requested FP32 RoPE caches before vLLM model compilation.")
+
+
 def _patch_vllm_llama_eagle3_own_lm_head(logger) -> None:
     """Patch LlamaEagle3 to keep truncated draft lm_head ownership."""
     try:
@@ -1355,12 +1390,15 @@ def _apply_vllm_patches(
     *,
     extra_env_vars: list[str] | None = None,
     require_moe_routed_experts_capture: bool = False,
+    require_fp32_rope: bool = False,
 ) -> None:
     # Import lazily so importing the worker module does not import vLLM.
     import vllm.envs as envs
     from vllm.logger import init_logger
 
     patch_logger = init_logger("vllm_patch")
+    if require_fp32_rope:
+        _patch_vllm_fp32_rope(patch_logger)
 
     # Whether the v1 patch matters at all depends on which executor vLLM will
     # select. 0.25 defaults this to "1" (RayExecutorV2), which has no

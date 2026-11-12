@@ -1,0 +1,3119 @@
+{
+  "samples": [
+    {
+      "sample_id": "74ab706e-7ebb-44c2-af6f-9da64228e11c_g0",
+      "ranks": [
+        {
+          "rank": 0,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 33.332438545262335,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 5.4633895589407375,
+              "max": 203.5,
+              "rmse": 15.166192341599052,
+              "reference_rms": 10.697124670360138,
+              "relative_rmse": 1.417782143235361
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 40.69822490768274,
+              "max": 810.0,
+              "rmse": 134.59245483266065,
+              "reference_rms": 90.56504686718627,
+              "relative_rmse": 1.4861412817468158
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.04191449469847915,
+              "max": 2.3359375,
+              "rmse": 0.10138737203943865,
+              "reference_rms": 0.3152140362304224,
+              "relative_rmse": 0.32164612100371126
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 10.697041857936636,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 3.104408582051595e-10,
+              "max": 7.62939453125e-06,
+              "rmse": 4.8666988666518094e-08,
+              "reference_rms": 10.69545527701021,
+              "relative_rmse": 4.550249372845994e-09
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 10.697124670360138,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.56324577626313,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.55944145627694,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.56504686718627,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.16785925932742884,
+              "max": 1.685546875,
+              "rmse": 0.23457845595005594,
+              "reference_rms": 4.054979991617786,
+              "relative_rmse": 0.057849473100967844
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.7660871101555434,
+              "max": 21.75,
+              "rmse": 1.4802370050420697,
+              "reference_rms": 1.0569367598948745,
+              "relative_rmse": 1.4004972304958887
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 5.399563174345531,
+              "max": 155.5,
+              "rmse": 18.55504565748622,
+              "reference_rms": 11.162583610246257,
+              "relative_rmse": 1.6622536775853884
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.0867743713533855,
+              "max": 1.0078125,
+              "rmse": 0.13018731735626118,
+              "reference_rms": 0.19848996087527576,
+              "relative_rmse": 0.6558886745817154
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.1703067789070095,
+              "max": 1.685546875,
+              "rmse": 0.23717305199632144,
+              "reference_rms": 1.0570524128693615,
+              "relative_rmse": 0.22437208326549946
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.2126596023639042e-12,
+              "max": 2.9802322387695312e-08,
+              "rmse": 1.901054244785863e-10,
+              "reference_rms": 1.058525747411067,
+              "relative_rmse": 1.7959452091131886e-10
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0569367598948745,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.20681002095352596,
+              "max": 1.5625,
+              "rmse": 0.2790225988474694,
+              "reference_rms": 11.169410129927687,
+              "relative_rmse": 0.024980960999887274
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.161624213144687,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.162583610246257,
+              "relative_rmse": 0.0
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 36.016934680953874,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 2.744426005122174,
+              "max": 96.5,
+              "rmse": 6.592247501324553,
+              "reference_rms": 6.3670171524906864,
+              "relative_rmse": 1.0353745472078333
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 49.08287665108219,
+              "max": 862.0,
+              "rmse": 148.61339646104113,
+              "reference_rms": 100.67346678970047,
+              "relative_rmse": 1.4761922997196835
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.0669322266967356,
+              "max": 2.515625,
+              "rmse": 0.13959191523719813,
+              "reference_rms": 0.23954781014166243,
+              "relative_rmse": 0.5827309177013434
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.3668374699228965,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.366605876995799,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.3670171524906864,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.67004277693468,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.65656414022463,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.67346678970047,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.21067593142470287,
+              "max": 2.5703125,
+              "rmse": 0.2958186896773436,
+              "reference_rms": 1.2598202731778905,
+              "relative_rmse": 0.2348102312492102
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.9623708711005747,
+              "max": 18.0625,
+              "rmse": 1.6461132436501367,
+              "reference_rms": 1.1049987184312182,
+              "relative_rmse": 1.489696970859067
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 1.9018121188273653,
+              "max": 24.1875,
+              "rmse": 3.3033845424357984,
+              "reference_rms": 2.3033217684531198,
+              "relative_rmse": 1.4341828344088927
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.08605922990803568,
+              "max": 1.0751953125,
+              "rmse": 0.13088479993900665,
+              "reference_rms": 0.1677287073948718,
+              "relative_rmse": 0.7803363060020121
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.2118022203746174,
+              "max": 2.5703125,
+              "rmse": 0.2905675011293599,
+              "reference_rms": 1.104850676719548,
+              "relative_rmse": 0.26299255388257026
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.1002898494901772,
+              "relative_rmse": 0.0
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.1049987184312182,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.30968430009670556,
+              "max": 2.19921875,
+              "rmse": 0.4155296901597249,
+              "reference_rms": 2.3032163841758932,
+              "relative_rmse": 0.18041278840086244
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3106846404181427,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3033217684531198,
+              "relative_rmse": 0.0
+            }
+          }
+        }
+      ],
+      "layer_outputs": [
+        {
+          "stage": "embedding",
+          "elements": 49152,
+          "mae": 0.0,
+          "max": 0.0,
+          "rmse": 0.0,
+          "reference_rms": 0.03281165687157168,
+          "relative_rmse": 0.0
+        },
+        {
+          "stage": "layer_0",
+          "elements": 49152,
+          "mae": 0.24705949084212384,
+          "max": 3.375,
+          "rmse": 0.33834077819291275,
+          "reference_rms": 0.7513390873694107,
+          "relative_rmse": 0.4503170191471229
+        },
+        {
+          "stage": "layer_1",
+          "elements": 49152,
+          "mae": 0.9374399467681845,
+          "max": 594.75,
+          "rmse": 7.509611781963831,
+          "reference_rms": 0.9174386159931044,
+          "relative_rmse": 8.185410610643267
+        },
+        {
+          "stage": "layer_2",
+          "elements": 49152,
+          "mae": 3.2906337343156338,
+          "max": 1956.25,
+          "rmse": 35.30709902832073,
+          "reference_rms": 1.0486936234455937,
+          "relative_rmse": 33.66769687443652
+        },
+        {
+          "stage": "layer_3",
+          "elements": 49152,
+          "mae": 3.4818055257201195,
+          "max": 1978.6875,
+          "rmse": 35.457018243165976,
+          "reference_rms": 1.2455893228564228,
+          "relative_rmse": 28.466058268591194
+        },
+        {
+          "stage": "layer_4",
+          "elements": 49152,
+          "mae": 3.6983042980233827,
+          "max": 2031.0,
+          "rmse": 36.52468063690515,
+          "reference_rms": 1.5299246052589026,
+          "relative_rmse": 23.87351671537058
+        },
+        {
+          "stage": "layer_5",
+          "elements": 49152,
+          "mae": 3.8043164586027465,
+          "max": 2057.125,
+          "rmse": 36.68530701897733,
+          "reference_rms": 1.640837752787735,
+          "relative_rmse": 22.35766879245073
+        },
+        {
+          "stage": "layer_6",
+          "elements": 49152,
+          "mae": 3.9590093567967415,
+          "max": 2075.375,
+          "rmse": 36.8807238677798,
+          "reference_rms": 1.9231117111103404,
+          "relative_rmse": 19.177629492197365
+        },
+        {
+          "stage": "layer_7",
+          "elements": 49152,
+          "mae": 4.109868690371513,
+          "max": 2105.625,
+          "rmse": 37.136783856592665,
+          "reference_rms": 2.100537413500396,
+          "relative_rmse": 17.67965836643055
+        },
+        {
+          "stage": "layer_8",
+          "elements": 49152,
+          "mae": 4.206649266183376,
+          "max": 2137.5,
+          "rmse": 37.49054625176678,
+          "reference_rms": 2.193828139890224,
+          "relative_rmse": 17.089098990973262
+        },
+        {
+          "stage": "layer_9",
+          "elements": 49152,
+          "mae": 4.20457806934913,
+          "max": 2161.75,
+          "rmse": 37.688765618420426,
+          "reference_rms": 2.282297106520641,
+          "relative_rmse": 16.5135229373694
+        },
+        {
+          "stage": "layer_10",
+          "elements": 49152,
+          "mae": 4.2428366641203565,
+          "max": 2193.625,
+          "rmse": 37.99608119809992,
+          "reference_rms": 2.347549318731593,
+          "relative_rmse": 16.185424048355937
+        },
+        {
+          "stage": "layer_11",
+          "elements": 49152,
+          "mae": 4.303803538282712,
+          "max": 2223.0,
+          "rmse": 38.31093547292072,
+          "reference_rms": 2.4876198594538144,
+          "relative_rmse": 15.40063901939275
+        },
+        {
+          "stage": "layer_12",
+          "elements": 49152,
+          "mae": 4.375503547489643,
+          "max": 2222.0,
+          "rmse": 38.38341924740741,
+          "reference_rms": 2.786393270305755,
+          "relative_rmse": 13.775305753302922
+        },
+        {
+          "stage": "layer_13",
+          "elements": 49152,
+          "mae": 4.366996957610051,
+          "max": 2258.25,
+          "rmse": 38.721624284218144,
+          "reference_rms": 2.7298465602458566,
+          "relative_rmse": 14.184542401801068
+        },
+        {
+          "stage": "layer_14",
+          "elements": 49152,
+          "mae": 4.417351009945075,
+          "max": 2274.5,
+          "rmse": 38.9676093784855,
+          "reference_rms": 2.7795984697794234,
+          "relative_rmse": 14.019150536364268
+        },
+        {
+          "stage": "layer_15",
+          "elements": 49152,
+          "mae": 4.426268155376117,
+          "max": 2297.5,
+          "rmse": 39.11240248815369,
+          "reference_rms": 2.754577926263376,
+          "relative_rmse": 14.199054641089868
+        },
+        {
+          "stage": "layer_16",
+          "elements": 49152,
+          "mae": 4.438645606239636,
+          "max": 2315.75,
+          "rmse": 39.23923805520042,
+          "reference_rms": 2.752080788031743,
+          "relative_rmse": 14.258025500502795
+        },
+        {
+          "stage": "layer_17",
+          "elements": 49152,
+          "mae": 4.574727187554042,
+          "max": 2313.5,
+          "rmse": 39.23412262425985,
+          "reference_rms": 2.984325850452936,
+          "relative_rmse": 13.146728805872595
+        },
+        {
+          "stage": "layer_18",
+          "elements": 49152,
+          "mae": 4.766616597771645,
+          "max": 2300.5,
+          "rmse": 39.20909421708024,
+          "reference_rms": 3.2821351296166865,
+          "relative_rmse": 11.946215700649532
+        },
+        {
+          "stage": "layer_19",
+          "elements": 49152,
+          "mae": 4.971735050280889,
+          "max": 2303.5,
+          "rmse": 39.30814566601743,
+          "reference_rms": 3.6649672693468673,
+          "relative_rmse": 10.725374274085269
+        },
+        {
+          "stage": "layer_20",
+          "elements": 49152,
+          "mae": 5.134979285299778,
+          "max": 2320.0,
+          "rmse": 39.40121990831612,
+          "reference_rms": 4.074103496333176,
+          "relative_rmse": 9.671138679657618
+        },
+        {
+          "stage": "layer_21",
+          "elements": 49152,
+          "mae": 5.387231941024463,
+          "max": 2312.5,
+          "rmse": 39.21634799006665,
+          "reference_rms": 5.203534956068568,
+          "relative_rmse": 7.536482087879702
+        },
+        {
+          "stage": "layer_22",
+          "elements": 49152,
+          "mae": 5.815472088754177,
+          "max": 2287.0,
+          "rmse": 38.84174474101323,
+          "reference_rms": 6.249050076149032,
+          "relative_rmse": 6.215623857658281
+        },
+        {
+          "stage": "layer_23",
+          "elements": 49152,
+          "mae": 6.1696560978889465,
+          "max": 2216.0,
+          "rmse": 37.932310977879524,
+          "reference_rms": 7.872185048358755,
+          "relative_rmse": 4.818523795472504
+        },
+        {
+          "stage": "layer_24",
+          "elements": 49152,
+          "mae": 6.560990398128827,
+          "max": 2116.0,
+          "rmse": 36.685533411067354,
+          "reference_rms": 9.42881978746515,
+          "relative_rmse": 3.8907874196341927
+        },
+        {
+          "stage": "layer_25",
+          "elements": 49152,
+          "mae": 6.986211468776067,
+          "max": 1886.0,
+          "rmse": 33.77439051155063,
+          "reference_rms": 10.991401712696117,
+          "relative_rmse": 3.0728010306945643
+        },
+        {
+          "stage": "layer_26",
+          "elements": 49152,
+          "mae": 7.01247554520766,
+          "max": 1090.0,
+          "rmse": 17.902644788644828,
+          "reference_rms": 13.551079113895906,
+          "relative_rmse": 1.3211231842257214
+        },
+        {
+          "stage": "layer_27",
+          "elements": 49152,
+          "mae": 8.006179481744766,
+          "max": 456.0,
+          "rmse": 13.155397918576963,
+          "reference_rms": 14.151130578638094,
+          "relative_rmse": 0.9296358227685182
+        },
+        {
+          "stage": "final_norm",
+          "elements": 49152,
+          "mae": 1.1959534716443159,
+          "max": 44.0625,
+          "rmse": 1.9246603215002922,
+          "reference_rms": 2.2533025565183555,
+          "relative_rmse": 0.8541508622233766
+        }
+      ]
+    },
+    {
+      "sample_id": "884048b5-35f4-4990-bce2-cc840f1c0593_g0",
+      "ranks": [
+        {
+          "rank": 0,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 33.34446051998514,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 5.5695310686520925,
+              "max": 203.5,
+              "rmse": 15.091448567641018,
+              "reference_rms": 10.674770386573625,
+              "relative_rmse": 1.413749244351199
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 40.78030055150157,
+              "max": 810.0,
+              "rmse": 134.69069681189163,
+              "reference_rms": 90.61761317325703,
+              "relative_rmse": 1.486363324913102
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.04361143691251831,
+              "max": 2.35546875,
+              "rmse": 0.09948870344669876,
+              "reference_rms": 0.30291453353373876,
+              "relative_rmse": 0.3284381976859412
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 10.67375967511036,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 10.6727284035844,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 10.674770386573625,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.6152689112162,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.62286335253553,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.61761317325703,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.1523244356867508,
+              "max": 1.5625,
+              "rmse": 0.21021380390305883,
+              "reference_rms": 4.052523104879413,
+              "relative_rmse": 0.05187232705717392
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.7564527326188303,
+              "max": 21.3125,
+              "rmse": 1.461965546925784,
+              "reference_rms": 1.051236382108491,
+              "relative_rmse": 1.3907105688194348
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 5.3991463969578035,
+              "max": 155.0,
+              "rmse": 18.545863461418527,
+              "reference_rms": 11.15656884028917,
+              "relative_rmse": 1.662326807364354
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.08820061049633902,
+              "max": 1.0078125,
+              "rmse": 0.13138871321614334,
+              "reference_rms": 0.19442186554370647,
+              "relative_rmse": 0.6757918552458642
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.1556298369638777,
+              "max": 1.47265625,
+              "rmse": 0.21397502761843573,
+              "reference_rms": 1.0513258484082433,
+              "relative_rmse": 0.20352874224713866
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.2126596023639042e-12,
+              "max": 2.9802322387695312e-08,
+              "rmse": 1.901054244785863e-10,
+              "reference_rms": 1.0464162047907182,
+              "relative_rmse": 1.8167285981260882e-10
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.051236382108491,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.18083030194975436,
+              "max": 1.5625,
+              "rmse": 0.24399763338205968,
+              "reference_rms": 11.165710200758136,
+              "relative_rmse": 0.021852406071356984
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.159372095387658,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.15656884028917,
+              "relative_rmse": 0.0
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 36.006911217056995,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 2.70632083475842,
+              "max": 94.75,
+              "rmse": 6.390542125654431,
+              "reference_rms": 6.302940655304533,
+              "relative_rmse": 1.0138985078776164
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 49.09361332701519,
+              "max": 864.0,
+              "rmse": 148.6320014364272,
+              "reference_rms": 100.67383131175538,
+              "relative_rmse": 1.4763717591730505
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.058233731548777236,
+              "max": 1.9765625,
+              "rmse": 0.12462810723617347,
+              "reference_rms": 0.23928259646935146,
+              "relative_rmse": 0.5208406673743884
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.302933610483114,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.302838831346508,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.302940655304533,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.66548429894945,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.67921614215028,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.67383131175538,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.19078623386303661,
+              "max": 2.234375,
+              "rmse": 0.2652395915830881,
+              "reference_rms": 1.2516041735238514,
+              "relative_rmse": 0.2119197084780522
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.9418524334935986,
+              "max": 18.03125,
+              "rmse": 1.636871593868315,
+              "reference_rms": 1.0929448922095812,
+              "relative_rmse": 1.4976707476614763
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 1.9005403446499258,
+              "max": 24.75,
+              "rmse": 3.3105754127282516,
+              "reference_rms": 2.300940919993004,
+              "relative_rmse": 1.4387920106781
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.0812529355322719,
+              "max": 0.982421875,
+              "rmse": 0.1282265125517463,
+              "reference_rms": 0.16441677706591562,
+              "relative_rmse": 0.7798870336713849
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.1937911400940114,
+              "max": 1.734375,
+              "rmse": 0.26146168075629944,
+              "reference_rms": 1.0929916220946263,
+              "relative_rmse": 0.23921654610236645
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 3.97370361800616e-08,
+              "max": 0.00048828125,
+              "rmse": 4.404832987396627e-06,
+              "reference_rms": 1.0929694064074862,
+              "relative_rmse": 4.030152135616497e-06
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0929448922095812,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.2700259084813297,
+              "max": 2.234375,
+              "rmse": 0.3691378495712865,
+              "reference_rms": 2.3007117972229008,
+              "relative_rmse": 0.16044506313952853
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3133914139407636,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.300940919993004,
+              "relative_rmse": 0.0
+            }
+          }
+        }
+      ],
+      "layer_outputs": [
+        {
+          "stage": "embedding",
+          "elements": 49152,
+          "mae": 0.0,
+          "max": 0.0,
+          "rmse": 0.0,
+          "reference_rms": 0.03195713496099919,
+          "relative_rmse": 0.0
+        },
+        {
+          "stage": "layer_0",
+          "elements": 49152,
+          "mae": 0.23034814124306044,
+          "max": 5.234375,
+          "rmse": 0.31983893997560103,
+          "reference_rms": 0.7534392592829274,
+          "relative_rmse": 0.42450527502376517
+        },
+        {
+          "stage": "layer_1",
+          "elements": 49152,
+          "mae": 0.6653835078080496,
+          "max": 286.875,
+          "rmse": 3.579604068836955,
+          "reference_rms": 0.9190377781202368,
+          "relative_rmse": 3.8949476877419933
+        },
+        {
+          "stage": "layer_2",
+          "elements": 49152,
+          "mae": 2.467035104210178,
+          "max": 1444.375,
+          "rmse": 26.57884095014482,
+          "reference_rms": 1.051339997714422,
+          "relative_rmse": 25.280918644707075
+        },
+        {
+          "stage": "layer_3",
+          "elements": 49152,
+          "mae": 2.6783629270891347,
+          "max": 1459.0,
+          "rmse": 26.71974810144429,
+          "reference_rms": 1.2522227982349332,
+          "relative_rmse": 21.33785468457133
+        },
+        {
+          "stage": "layer_4",
+          "elements": 49152,
+          "mae": 2.9153103741506734,
+          "max": 1504.3125,
+          "rmse": 27.716761479248046,
+          "reference_rms": 1.5393361875820912,
+          "relative_rmse": 18.005658349904763
+        },
+        {
+          "stage": "layer_5",
+          "elements": 49152,
+          "mae": 3.0239087541898093,
+          "max": 1523.25,
+          "rmse": 27.841692547254002,
+          "reference_rms": 1.6415135008232475,
+          "relative_rmse": 16.960989070934176
+        },
+        {
+          "stage": "layer_6",
+          "elements": 49152,
+          "mae": 3.1837791999181113,
+          "max": 1550.875,
+          "rmse": 28.045540921540972,
+          "reference_rms": 1.9362504446901607,
+          "relative_rmse": 14.48445938305715
+        },
+        {
+          "stage": "layer_7",
+          "elements": 49152,
+          "mae": 3.3275527637451887,
+          "max": 1573.5,
+          "rmse": 28.270169465024413,
+          "reference_rms": 2.1087990685327833,
+          "relative_rmse": 13.405814658621624
+        },
+        {
+          "stage": "layer_8",
+          "elements": 49152,
+          "mae": 3.411292086044947,
+          "max": 1606.0,
+          "rmse": 28.61284398536973,
+          "reference_rms": 2.2076232197036227,
+          "relative_rmse": 12.960927267838327
+        },
+        {
+          "stage": "layer_9",
+          "elements": 49152,
+          "mae": 3.416507624089718,
+          "max": 1629.25,
+          "rmse": 28.79044240849618,
+          "reference_rms": 2.2968448793103082,
+          "relative_rmse": 12.53477876013173
+        },
+        {
+          "stage": "layer_10",
+          "elements": 49152,
+          "mae": 3.460752530644337,
+          "max": 1661.625,
+          "rmse": 29.08603727763315,
+          "reference_rms": 2.3468359268823336,
+          "relative_rmse": 12.393724224374155
+        },
+        {
+          "stage": "layer_11",
+          "elements": 49152,
+          "mae": 3.526902474462986,
+          "max": 1690.125,
+          "rmse": 29.402682229617103,
+          "reference_rms": 2.470074280180855,
+          "relative_rmse": 11.903561955822754
+        },
+        {
+          "stage": "layer_12",
+          "elements": 49152,
+          "mae": 3.5939477557937303,
+          "max": 1697.0,
+          "rmse": 29.469259108481822,
+          "reference_rms": 2.729057078132676,
+          "relative_rmse": 10.798330069609904
+        },
+        {
+          "stage": "layer_13",
+          "elements": 49152,
+          "mae": 3.5956136348346868,
+          "max": 1733.0,
+          "rmse": 29.779869422659456,
+          "reference_rms": 2.6823881847025004,
+          "relative_rmse": 11.1019984327743
+        },
+        {
+          "stage": "layer_14",
+          "elements": 49152,
+          "mae": 3.634795479476452,
+          "max": 1757.75,
+          "rmse": 30.01384151534016,
+          "reference_rms": 2.717053793520208,
+          "relative_rmse": 11.046465692699556
+        },
+        {
+          "stage": "layer_15",
+          "elements": 49152,
+          "mae": 3.640673494587342,
+          "max": 1771.5,
+          "rmse": 30.10461857232322,
+          "reference_rms": 2.7120756014295693,
+          "relative_rmse": 11.100213635805247
+        },
+        {
+          "stage": "layer_16",
+          "elements": 49152,
+          "mae": 3.667180528243383,
+          "max": 1782.0,
+          "rmse": 30.23539134989394,
+          "reference_rms": 2.722530714752417,
+          "relative_rmse": 11.10561992416071
+        },
+        {
+          "stage": "layer_17",
+          "elements": 49152,
+          "mae": 3.7945250595609346,
+          "max": 1787.0,
+          "rmse": 30.235287330455797,
+          "reference_rms": 2.9480069161920444,
+          "relative_rmse": 10.256179239060563
+        },
+        {
+          "stage": "layer_18",
+          "elements": 49152,
+          "mae": 3.981956815967957,
+          "max": 1783.25,
+          "rmse": 30.242807580143808,
+          "reference_rms": 3.1950281321230047,
+          "relative_rmse": 9.465584129316673
+        },
+        {
+          "stage": "layer_19",
+          "elements": 49152,
+          "mae": 4.162662394344807,
+          "max": 1794.75,
+          "rmse": 30.356491388115668,
+          "reference_rms": 3.530992585439,
+          "relative_rmse": 8.597155234281388
+        },
+        {
+          "stage": "layer_20",
+          "elements": 49152,
+          "mae": 4.317010062436263,
+          "max": 1802.0,
+          "rmse": 30.430960865111263,
+          "reference_rms": 3.9237904287790393,
+          "relative_rmse": 7.755501069046756
+        },
+        {
+          "stage": "layer_21",
+          "elements": 49152,
+          "mae": 4.5626486937205,
+          "max": 1785.5,
+          "rmse": 30.247435425310858,
+          "reference_rms": 5.076359733247228,
+          "relative_rmse": 5.9584893535435635
+        },
+        {
+          "stage": "layer_22",
+          "elements": 49152,
+          "mae": 4.989154110352199,
+          "max": 1751.5,
+          "rmse": 29.923349836039378,
+          "reference_rms": 6.157858688643923,
+          "relative_rmse": 4.859375855964806
+        },
+        {
+          "stage": "layer_23",
+          "elements": 49152,
+          "mae": 5.341325521469116,
+          "max": 1688.0,
+          "rmse": 29.105943644764217,
+          "reference_rms": 7.737803745474092,
+          "relative_rmse": 3.761525182360503
+        },
+        {
+          "stage": "layer_24",
+          "elements": 49152,
+          "mae": 5.73606464266777,
+          "max": 1597.0,
+          "rmse": 28.04401107060356,
+          "reference_rms": 9.257235096480642,
+          "relative_rmse": 3.029415454865693
+        },
+        {
+          "stage": "layer_25",
+          "elements": 49152,
+          "mae": 6.1943599085013075,
+          "max": 1404.0,
+          "rmse": 25.680628747155758,
+          "reference_rms": 10.962498761530755,
+          "relative_rmse": 2.34258897590697
+        },
+        {
+          "stage": "layer_26",
+          "elements": 49152,
+          "mae": 6.384614845116933,
+          "max": 758.0,
+          "rmse": 13.555365184349641,
+          "reference_rms": 13.464041411447644,
+          "relative_rmse": 1.006782790553834
+        },
+        {
+          "stage": "layer_27",
+          "elements": 49152,
+          "mae": 7.759020139773686,
+          "max": 431.0,
+          "rmse": 12.384802142632175,
+          "reference_rms": 13.911629609189973,
+          "relative_rmse": 0.890248122653497
+        },
+        {
+          "stage": "final_norm",
+          "elements": 49152,
+          "mae": 1.1919680060818791,
+          "max": 41.71875,
+          "rmse": 1.9285454355931464,
+          "reference_rms": 2.31068226683467,
+          "relative_rmse": 0.8346216454220682
+        }
+      ]
+    },
+    {
+      "sample_id": "a59823d2-a593-49fd-9822-ff3af97c5f5f_g0",
+      "ranks": [
+        {
+          "rank": 0,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 33.6907668572907,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 6.329034648806555,
+              "max": 212.0,
+              "rmse": 17.326650814377313,
+              "reference_rms": 12.124033732059715,
+              "relative_rmse": 1.4291160184221743
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 40.65984612889588,
+              "max": 810.0,
+              "rmse": 134.5284277304375,
+              "reference_rms": 90.5497011504408,
+              "relative_rmse": 1.4856860488907597
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.036369702645364065,
+              "max": 1.98828125,
+              "rmse": 0.08944696855239405,
+              "reference_rms": 0.3169547897230082,
+              "relative_rmse": 0.2822073414021071
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 12.12508311982704,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 7.761021455128987e-11,
+              "max": 1.9073486328125e-06,
+              "rmse": 1.2166747166629524e-08,
+              "reference_rms": 12.12391166346866,
+              "relative_rmse": 1.0035331421367852e-09
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 12.124033732059715,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.54423585531195,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.53438230982809,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.5497011504408,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.14503817459990387,
+              "max": 1.900634765625,
+              "rmse": 0.2073181922259917,
+              "reference_rms": 4.050750129805964,
+              "relative_rmse": 0.051180197638090924
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.7549192833932162,
+              "max": 21.875,
+              "rmse": 1.4719850853083938,
+              "reference_rms": 1.0547678647882797,
+              "relative_rmse": 1.3955535947275575
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 5.389825032092631,
+              "max": 155.0,
+              "rmse": 18.547440494085787,
+              "reference_rms": 11.15466025717784,
+              "relative_rmse": 1.662752613388724
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.08793543993503287,
+              "max": 1.028076171875,
+              "rmse": 0.13321226104492156,
+              "reference_rms": 0.19854905914466464,
+              "relative_rmse": 0.6709286944938979
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.14680897631236198,
+              "max": 1.900634765625,
+              "rmse": 0.20866930366614383,
+              "reference_rms": 1.054822584440752,
+              "relative_rmse": 0.1978240765263635
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.04738299345653,
+              "relative_rmse": 0.0
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.5158245029548803e-13,
+              "max": 3.725290298461914e-09,
+              "rmse": 2.3763178059823288e-11,
+              "reference_rms": 1.0547678647882797,
+              "relative_rmse": 2.2529296590385977e-11
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.18146025924943388,
+              "max": 1.296875,
+              "rmse": 0.250751908000761,
+              "reference_rms": 11.158252033347146,
+              "relative_rmse": 0.02247232875287034
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.164279573527095,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.15466025717784,
+              "relative_rmse": 0.0
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 36.04815189310361,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 2.8836524607744045,
+              "max": 99.0,
+              "rmse": 7.064326172559557,
+              "reference_rms": 6.541267003953433,
+              "relative_rmse": 1.0799629748013644
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 49.08499536337331,
+              "max": 866.0,
+              "rmse": 148.6810515535489,
+              "reference_rms": 100.69320398645755,
+              "relative_rmse": 1.476574839882395
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.05255217496172312,
+              "max": 1.6953125,
+              "rmse": 0.11734010406586205,
+              "reference_rms": 0.2415945963006887,
+              "relative_rmse": 0.48569010177620253
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.540773800106866,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 2.2131037743141253e-11,
+              "max": 4.76837158203125e-07,
+              "rmse": 3.0716148285795697e-09,
+              "reference_rms": 6.540727030951157,
+              "relative_rmse": 4.696136704749309e-10
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.2126596023639042e-12,
+              "max": 2.9802322387695312e-08,
+              "rmse": 1.901054244785863e-10,
+              "reference_rms": 6.541267003953433,
+              "relative_rmse": 2.906247740134897e-11
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.69253059579422,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.68694704922275,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.69320398645755,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.17767855531837995,
+              "max": 2.43115234375,
+              "rmse": 0.2577534437969963,
+              "reference_rms": 1.2454687482804983,
+              "relative_rmse": 0.20695295980156247
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.9506046811657143,
+              "max": 17.65625,
+              "rmse": 1.6301242830012193,
+              "reference_rms": 1.0893791904221197,
+              "relative_rmse": 1.4963791279779892
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 1.885380951804109,
+              "max": 24.5,
+              "rmse": 3.2741888779129518,
+              "reference_rms": 2.2855537935275065,
+              "relative_rmse": 1.432558221637651
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.0821147999255724,
+              "max": 1.0166015625,
+              "rmse": 0.12741124463429104,
+              "reference_rms": 0.1668455328619233,
+              "relative_rmse": 0.7636479230147146
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.17848786972899688,
+              "max": 2.43115234375,
+              "rmse": 0.25140350107585857,
+              "reference_rms": 1.0894194084476128,
+              "relative_rmse": 0.2307683332299912
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0905743234506347,
+              "relative_rmse": 0.0
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 3.104408582051595e-10,
+              "max": 7.62939453125e-06,
+              "rmse": 4.8666988666518094e-08,
+              "reference_rms": 1.089379190421788,
+              "relative_rmse": 4.467405756821471e-08
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.26457218918949366,
+              "max": 1.892578125,
+              "rmse": 0.37159519428663546,
+              "reference_rms": 2.2856395802456295,
+              "relative_rmse": 0.16257821114854049
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3004659124449054,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.2855537935275065,
+              "relative_rmse": 0.0
+            }
+          }
+        }
+      ],
+      "layer_outputs": [
+        {
+          "stage": "embedding",
+          "elements": 49152,
+          "mae": 0.0,
+          "max": 0.0,
+          "rmse": 0.0,
+          "reference_rms": 0.03133977732736866,
+          "relative_rmse": 0.0
+        },
+        {
+          "stage": "layer_0",
+          "elements": 49152,
+          "mae": 0.2151151600604256,
+          "max": 3.328125,
+          "rmse": 0.30168268433902823,
+          "reference_rms": 0.7678691022578396,
+          "relative_rmse": 0.3928829581135138
+        },
+        {
+          "stage": "layer_1",
+          "elements": 49152,
+          "mae": 0.5113046647359928,
+          "max": 200.5,
+          "rmse": 2.0846542015325458,
+          "reference_rms": 0.9356113199632426,
+          "relative_rmse": 2.2281199009161683
+        },
+        {
+          "stage": "layer_2",
+          "elements": 49152,
+          "mae": 1.1431456363449495,
+          "max": 1500.25,
+          "rmse": 15.63605120505132,
+          "reference_rms": 1.059101813543355,
+          "relative_rmse": 14.763501492589267
+        },
+        {
+          "stage": "layer_3",
+          "elements": 49152,
+          "mae": 1.3262994885444641,
+          "max": 1515.5625,
+          "rmse": 15.722226315139462,
+          "reference_rms": 1.2226069795337717,
+          "relative_rmse": 12.8595914945087
+        },
+        {
+          "stage": "layer_4",
+          "elements": 49152,
+          "mae": 1.458440770705541,
+          "max": 1567.5,
+          "rmse": 16.28868209398003,
+          "reference_rms": 1.504073709820675,
+          "relative_rmse": 10.829709998668926
+        },
+        {
+          "stage": "layer_5",
+          "elements": 49152,
+          "mae": 1.56400965154171,
+          "max": 1586.0,
+          "rmse": 16.356012309661324,
+          "reference_rms": 1.616959536171833,
+          "relative_rmse": 10.115288567074682
+        },
+        {
+          "stage": "layer_6",
+          "elements": 49152,
+          "mae": 1.716008151570956,
+          "max": 1604.125,
+          "rmse": 16.45853228802489,
+          "reference_rms": 1.9078224010628766,
+          "relative_rmse": 8.626868139746968
+        },
+        {
+          "stage": "layer_7",
+          "elements": 49152,
+          "mae": 1.8572870641946793,
+          "max": 1626.5,
+          "rmse": 16.595597171085217,
+          "reference_rms": 2.078392373544583,
+          "relative_rmse": 7.984823935233339
+        },
+        {
+          "stage": "layer_8",
+          "elements": 49152,
+          "mae": 1.9248071511586506,
+          "max": 1659.75,
+          "rmse": 16.79503299574294,
+          "reference_rms": 2.1720863395635397,
+          "relative_rmse": 7.732212430891556
+        },
+        {
+          "stage": "layer_9",
+          "elements": 49152,
+          "mae": 1.915472112596035,
+          "max": 1685.625,
+          "rmse": 16.908059948201398,
+          "reference_rms": 2.2427957733533392,
+          "relative_rmse": 7.538831733627329
+        },
+        {
+          "stage": "layer_10",
+          "elements": 49152,
+          "mae": 1.9633964076638222,
+          "max": 1716.25,
+          "rmse": 17.07537548040956,
+          "reference_rms": 2.3113697257940946,
+          "relative_rmse": 7.387556949394212
+        },
+        {
+          "stage": "layer_11",
+          "elements": 49152,
+          "mae": 2.0531848395864167,
+          "max": 1746.25,
+          "rmse": 17.249518095744182,
+          "reference_rms": 2.4750819223917695,
+          "relative_rmse": 6.969271578322261
+        },
+        {
+          "stage": "layer_12",
+          "elements": 49152,
+          "mae": 2.145229217906793,
+          "max": 1754.0,
+          "rmse": 17.297186382624698,
+          "reference_rms": 2.7809887146798493,
+          "relative_rmse": 6.2197974020243265
+        },
+        {
+          "stage": "layer_13",
+          "elements": 49152,
+          "mae": 2.148499990502993,
+          "max": 1789.5,
+          "rmse": 17.483312883500044,
+          "reference_rms": 2.7272575228816427,
+          "relative_rmse": 6.410583795925158
+        },
+        {
+          "stage": "layer_14",
+          "elements": 49152,
+          "mae": 2.204458070298036,
+          "max": 1813.75,
+          "rmse": 17.6287862129834,
+          "reference_rms": 2.781714810457024,
+          "relative_rmse": 6.337380865469478
+        },
+        {
+          "stage": "layer_15",
+          "elements": 49152,
+          "mae": 2.2135149811704955,
+          "max": 1827.5,
+          "rmse": 17.69991411231563,
+          "reference_rms": 2.7598425961525264,
+          "relative_rmse": 6.413378116922658
+        },
+        {
+          "stage": "layer_16",
+          "elements": 49152,
+          "mae": 2.2139546424150467,
+          "max": 1837.75,
+          "rmse": 17.768316280691653,
+          "reference_rms": 2.7608448414425744,
+          "relative_rmse": 6.435825734925218
+        },
+        {
+          "stage": "layer_17",
+          "elements": 49152,
+          "mae": 2.3569605785111585,
+          "max": 1842.5,
+          "rmse": 17.794137413333047,
+          "reference_rms": 2.9819025718308296,
+          "relative_rmse": 5.967377197843119
+        },
+        {
+          "stage": "layer_18",
+          "elements": 49152,
+          "mae": 2.5740091974536576,
+          "max": 1838.25,
+          "rmse": 17.81649242528322,
+          "reference_rms": 3.297511296537699,
+          "relative_rmse": 5.4030117937700695
+        },
+        {
+          "stage": "layer_19",
+          "elements": 49152,
+          "mae": 2.7755333905418715,
+          "max": 1849.75,
+          "rmse": 17.929064955504757,
+          "reference_rms": 3.61680337011738,
+          "relative_rmse": 4.957157777400237
+        },
+        {
+          "stage": "layer_20",
+          "elements": 49152,
+          "mae": 2.9428737461566925,
+          "max": 1859.0,
+          "rmse": 18.001343602085882,
+          "reference_rms": 4.014296674880019,
+          "relative_rmse": 4.484308226328069
+        },
+        {
+          "stage": "layer_21",
+          "elements": 49152,
+          "mae": 3.1752666980028152,
+          "max": 1845.0,
+          "rmse": 17.943188052510344,
+          "reference_rms": 5.174356894578117,
+          "relative_rmse": 3.467713653712577
+        },
+        {
+          "stage": "layer_22",
+          "elements": 49152,
+          "mae": 3.628490333755811,
+          "max": 1810.0,
+          "rmse": 17.824480566294255,
+          "reference_rms": 6.275155364633783,
+          "relative_rmse": 2.8404843435034994
+        },
+        {
+          "stage": "layer_23",
+          "elements": 49152,
+          "mae": 4.0349936336278915,
+          "max": 1747.0,
+          "rmse": 17.471376149847828,
+          "reference_rms": 7.913178282653828,
+          "relative_rmse": 2.207883548908048
+        },
+        {
+          "stage": "layer_24",
+          "elements": 49152,
+          "mae": 4.492039670546849,
+          "max": 1652.0,
+          "rmse": 16.993212859555197,
+          "reference_rms": 9.557590371793065,
+          "relative_rmse": 1.7779808715915038
+        },
+        {
+          "stage": "layer_25",
+          "elements": 49152,
+          "mae": 5.017646352450053,
+          "max": 1471.0,
+          "rmse": 15.84333961100971,
+          "reference_rms": 11.121535970153246,
+          "relative_rmse": 1.4245639859034147
+        },
+        {
+          "stage": "layer_26",
+          "elements": 49152,
+          "mae": 5.565856794516246,
+          "max": 800.0,
+          "rmse": 9.697650416285752,
+          "reference_rms": 13.739479149818793,
+          "relative_rmse": 0.7058237295999428
+        },
+        {
+          "stage": "layer_27",
+          "elements": 49152,
+          "mae": 6.908294598261516,
+          "max": 416.0,
+          "rmse": 10.010514324367952,
+          "reference_rms": 14.50640377832798,
+          "relative_rmse": 0.6900755333532962
+        },
+        {
+          "stage": "final_norm",
+          "elements": 49152,
+          "mae": 1.0774871302613367,
+          "max": 40.1875,
+          "rmse": 1.6900008373466129,
+          "reference_rms": 2.2082946590325636,
+          "relative_rmse": 0.7652968006031354
+        }
+      ]
+    },
+    {
+      "sample_id": "cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0",
+      "ranks": [
+        {
+          "rank": 0,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 33.57800048265977,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 6.044616982044924,
+              "max": 203.5,
+              "rmse": 16.515454385986327,
+              "reference_rms": 11.618772107204151,
+              "relative_rmse": 1.4214457632529016
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 40.732928913552314,
+              "max": 810.0,
+              "rmse": 134.62265039926288,
+              "reference_rms": 90.60407987350992,
+              "relative_rmse": 1.4858343088656294
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.043556272582842816,
+              "max": 2.390625,
+              "rmse": 0.10204109457060004,
+              "reference_rms": 0.304838294654218,
+              "relative_rmse": 0.33473843791950925
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.620581875268426,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.621305691160291,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.618772107204151,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.60616398122521,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.61095456511512,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.60407987350992,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.1565415963509622,
+              "max": 1.626953125,
+              "rmse": 0.21578918719472215,
+              "reference_rms": 4.052901146676967,
+              "relative_rmse": 0.0532431409958397
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.7522827630333874,
+              "max": 21.9375,
+              "rmse": 1.459356374969161,
+              "reference_rms": 1.0464088852895026,
+              "relative_rmse": 1.3946330115167276
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 5.3803303647018765,
+              "max": 155.5,
+              "rmse": 18.555778275799597,
+              "reference_rms": 11.15643873771659,
+              "relative_rmse": 1.6632349006738187
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.09121214183202635,
+              "max": 1.0263671875,
+              "rmse": 0.13693229762044562,
+              "reference_rms": 0.1940963972810557,
+              "relative_rmse": 0.705486034458253
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.16187326020553883,
+              "max": 1.626953125,
+              "rmse": 0.22243161353230975,
+              "reference_rms": 1.0464073237596523,
+              "relative_rmse": 0.2125669502513915
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 4.967053731282552e-09,
+              "max": 0.0001220703125,
+              "rmse": 7.786718186642895e-07,
+              "reference_rms": 1.0382735364234246,
+              "relative_rmse": 7.499678951142357e-07
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0464088852895026,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.1808192073367536,
+              "max": 1.185546875,
+              "rmse": 0.2406111988748776,
+              "reference_rms": 11.16916784053233,
+              "relative_rmse": 0.02154244634069443
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.17727895153561,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.15643873771659,
+              "relative_rmse": 0.0
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 36.03055743320637,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 2.8354975748128104,
+              "max": 98.75,
+              "rmse": 6.727972443372354,
+              "reference_rms": 6.4275508092163,
+              "relative_rmse": 1.0467396747335374
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 49.079486213158816,
+              "max": 866.0,
+              "rmse": 148.67789069251495,
+              "reference_rms": 100.68842075735581,
+              "relative_rmse": 1.4766135924487944
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.063448825832135,
+              "max": 2.171875,
+              "rmse": 0.135520144955918,
+              "reference_rms": 0.24192144925745662,
+              "relative_rmse": 0.560182428519165
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.427927629291312,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.2715657552083333e-06,
+              "max": 0.03125,
+              "rmse": 0.00019933998557805811,
+              "reference_rms": 6.42763589559824,
+              "relative_rmse": 3.1012955434294236e-05
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.2715657552083333e-06,
+              "max": 0.03125,
+              "rmse": 0.00019933998557805811,
+              "reference_rms": 6.42754992825218,
+              "relative_rmse": 3.10133702271005e-05
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.68573134081748,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.68624102505092,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.68842075735581,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.191528988070786,
+              "max": 2.1796875,
+              "rmse": 0.26527502617977733,
+              "reference_rms": 1.2501853847459186,
+              "relative_rmse": 0.2121885517272228
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.9415670588599218,
+              "max": 18.28125,
+              "rmse": 1.6341923747084626,
+              "reference_rms": 1.0924450438043283,
+              "relative_rmse": 1.495903509267207
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 1.878160199848935,
+              "max": 25.125,
+              "rmse": 3.2860081764153044,
+              "reference_rms": 2.297193619125932,
+              "relative_rmse": 1.4304445864104436
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.0779223799436295,
+              "max": 1.060546875,
+              "rmse": 0.12268062269230787,
+              "reference_rms": 0.16277416808299763,
+              "relative_rmse": 0.7536860678639974
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.19618676199267307,
+              "max": 2.1796875,
+              "rmse": 0.2653538827211274,
+              "reference_rms": 1.0925142461664885,
+              "relative_rmse": 0.24288368197689394
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.087840081240704,
+              "relative_rmse": 0.0
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.5894571940104166e-07,
+              "max": 0.00390625,
+              "rmse": 2.4917498197257264e-05,
+              "reference_rms": 1.0924449684990938,
+              "relative_rmse": 2.2808927603457522e-05
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.26877709943801165,
+              "max": 1.5849609375,
+              "rmse": 0.35707655363903507,
+              "reference_rms": 2.297257591015772,
+              "relative_rmse": 0.15543600989088363
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3057815321541577,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.297193619125932,
+              "relative_rmse": 0.0
+            }
+          }
+        }
+      ],
+      "layer_outputs": [
+        {
+          "stage": "embedding",
+          "elements": 49152,
+          "mae": 0.0,
+          "max": 0.0,
+          "rmse": 0.0,
+          "reference_rms": 0.032242546557702,
+          "relative_rmse": 0.0
+        },
+        {
+          "stage": "layer_0",
+          "elements": 49152,
+          "mae": 0.22885915155832967,
+          "max": 4.34375,
+          "rmse": 0.3137584821878329,
+          "reference_rms": 0.7475119116256597,
+          "relative_rmse": 0.41973710024965794
+        },
+        {
+          "stage": "layer_1",
+          "elements": 49152,
+          "mae": 0.4432486966252327,
+          "max": 35.4375,
+          "rmse": 0.6813381194487148,
+          "reference_rms": 0.9107332616772135,
+          "relative_rmse": 0.7481203861973342
+        },
+        {
+          "stage": "layer_2",
+          "elements": 49152,
+          "mae": 0.7134053769210974,
+          "max": 866.4375,
+          "rmse": 7.7949156358586205,
+          "reference_rms": 1.0319311993399125,
+          "relative_rmse": 7.553716411369996
+        },
+        {
+          "stage": "layer_3",
+          "elements": 49152,
+          "mae": 0.9147191233932972,
+          "max": 880.9375,
+          "rmse": 7.877522603946823,
+          "reference_rms": 1.228191969650608,
+          "relative_rmse": 6.41391801819694
+        },
+        {
+          "stage": "layer_4",
+          "elements": 49152,
+          "mae": 1.0441820559402306,
+          "max": 935.375,
+          "rmse": 8.308621005969174,
+          "reference_rms": 1.5034788498912053,
+          "relative_rmse": 5.526263975426327
+        },
+        {
+          "stage": "layer_5",
+          "elements": 49152,
+          "mae": 1.1392670919497807,
+          "max": 947.5,
+          "rmse": 8.336616667939879,
+          "reference_rms": 1.6174143688504425,
+          "relative_rmse": 5.154286266088403
+        },
+        {
+          "stage": "layer_6",
+          "elements": 49152,
+          "mae": 1.319691111644109,
+          "max": 960.25,
+          "rmse": 8.41309458773699,
+          "reference_rms": 1.933044000870257,
+          "relative_rmse": 4.352251983891424
+        },
+        {
+          "stage": "layer_7",
+          "elements": 49152,
+          "mae": 1.4679914514223735,
+          "max": 980.125,
+          "rmse": 8.529310935432504,
+          "reference_rms": 2.1072204662915164,
+          "relative_rmse": 4.047659498316843
+        },
+        {
+          "stage": "layer_8",
+          "elements": 49152,
+          "mae": 1.545871468881766,
+          "max": 1012.5,
+          "rmse": 8.684629010705992,
+          "reference_rms": 2.19918875921059,
+          "relative_rmse": 3.9490148239132434
+        },
+        {
+          "stage": "layer_9",
+          "elements": 49152,
+          "mae": 1.539192219575246,
+          "max": 1031.5,
+          "rmse": 8.770354445234611,
+          "reference_rms": 2.271093119884524,
+          "relative_rmse": 3.8617326469116984
+        },
+        {
+          "stage": "layer_10",
+          "elements": 49152,
+          "mae": 1.5795543094476063,
+          "max": 1062.75,
+          "rmse": 8.904466003548777,
+          "reference_rms": 2.3014512484519734,
+          "relative_rmse": 3.8690656643447014
+        },
+        {
+          "stage": "layer_11",
+          "elements": 49152,
+          "mae": 1.650536832710107,
+          "max": 1092.25,
+          "rmse": 9.038215392012466,
+          "reference_rms": 2.435144335771424,
+          "relative_rmse": 3.7115727635706115
+        },
+        {
+          "stage": "layer_12",
+          "elements": 49152,
+          "mae": 1.7071961984038353,
+          "max": 1097.0,
+          "rmse": 9.074614985068171,
+          "reference_rms": 2.6892730478071303,
+          "relative_rmse": 3.374374719022204
+        },
+        {
+          "stage": "layer_13",
+          "elements": 49152,
+          "mae": 1.7082284539937973,
+          "max": 1132.75,
+          "rmse": 9.210932310931277,
+          "reference_rms": 2.627984142198395,
+          "relative_rmse": 3.504942120094389
+        },
+        {
+          "stage": "layer_14",
+          "elements": 49152,
+          "mae": 1.7450879861911137,
+          "max": 1157.25,
+          "rmse": 9.323259658618202,
+          "reference_rms": 2.6898000753579887,
+          "relative_rmse": 3.4661533933436885
+        },
+        {
+          "stage": "layer_15",
+          "elements": 49152,
+          "mae": 1.7537039717038472,
+          "max": 1173.0,
+          "rmse": 9.37964396975982,
+          "reference_rms": 2.689530882107551,
+          "relative_rmse": 3.4874646846998876
+        },
+        {
+          "stage": "layer_16",
+          "elements": 49152,
+          "mae": 1.759962140272061,
+          "max": 1184.0,
+          "rmse": 9.435149812568234,
+          "reference_rms": 2.7116718114507874,
+          "relative_rmse": 3.479458602890546
+        },
+        {
+          "stage": "layer_17",
+          "elements": 49152,
+          "mae": 1.9051288564999898,
+          "max": 1190.25,
+          "rmse": 9.476202425078787,
+          "reference_rms": 2.9313354534438534,
+          "relative_rmse": 3.232725348422936
+        },
+        {
+          "stage": "layer_18",
+          "elements": 49152,
+          "mae": 2.119410457710425,
+          "max": 1187.0,
+          "rmse": 9.536317146141398,
+          "reference_rms": 3.1970753180671085,
+          "relative_rmse": 2.9828253004395515
+        },
+        {
+          "stage": "layer_19",
+          "elements": 49152,
+          "mae": 2.29873746385177,
+          "max": 1201.0,
+          "rmse": 9.671611792913637,
+          "reference_rms": 3.506518854778977,
+          "relative_rmse": 2.7581804614375183
+        },
+        {
+          "stage": "layer_20",
+          "elements": 49152,
+          "mae": 2.469176376859347,
+          "max": 1206.5,
+          "rmse": 9.751556782409143,
+          "reference_rms": 3.8688958027591047,
+          "relative_rmse": 2.520501269497828
+        },
+        {
+          "stage": "layer_21",
+          "elements": 49152,
+          "mae": 2.7434676264723143,
+          "max": 1191.0,
+          "rmse": 9.784578485176658,
+          "reference_rms": 5.023998127539553,
+          "relative_rmse": 1.9475680995065472
+        },
+        {
+          "stage": "layer_22",
+          "elements": 49152,
+          "mae": 3.199728600680828,
+          "max": 1168.5,
+          "rmse": 9.863977458024861,
+          "reference_rms": 6.088105977894281,
+          "relative_rmse": 1.6202046242034305
+        },
+        {
+          "stage": "layer_23",
+          "elements": 49152,
+          "mae": 3.582158242662748,
+          "max": 1106.0,
+          "rmse": 9.754742543395405,
+          "reference_rms": 7.588196901611879,
+          "relative_rmse": 1.285515211304455
+        },
+        {
+          "stage": "layer_24",
+          "elements": 49152,
+          "mae": 4.066512584686279,
+          "max": 1029.0,
+          "rmse": 9.68658990830338,
+          "reference_rms": 9.194198049578857,
+          "relative_rmse": 1.0535546282633188
+        },
+        {
+          "stage": "layer_25",
+          "elements": 49152,
+          "mae": 4.646745542685191,
+          "max": 878.0,
+          "rmse": 9.360099949303148,
+          "reference_rms": 10.781970051710479,
+          "relative_rmse": 0.8681252038738726
+        },
+        {
+          "stage": "layer_26",
+          "elements": 49152,
+          "mae": 5.430568531155586,
+          "max": 368.0,
+          "rmse": 7.536150795312078,
+          "reference_rms": 13.398958580553968,
+          "relative_rmse": 0.5624430249563844
+        },
+        {
+          "stage": "layer_27",
+          "elements": 49152,
+          "mae": 7.069813559452693,
+          "max": 384.0,
+          "rmse": 9.947389201564649,
+          "reference_rms": 13.907325151984017,
+          "relative_rmse": 0.7152625751433989
+        },
+        {
+          "stage": "final_norm",
+          "elements": 49152,
+          "mae": 1.1607491813289623,
+          "max": 36.25,
+          "rmse": 1.868564547216838,
+          "reference_rms": 2.2117484201510837,
+          "relative_rmse": 0.8448359362179162
+        }
+      ]
+    },
+    {
+      "sample_id": "f4dff239-20de-48a8-9776-d1313c99884b_g0",
+      "ranks": [
+        {
+          "rank": 0,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 33.540183046666876,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 5.908616825278538,
+              "max": 203.5,
+              "rmse": 16.381013083870158,
+              "reference_rms": 11.51599808033371,
+              "relative_rmse": 1.422457087053932
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 40.66283529152861,
+              "max": 810.0,
+              "rmse": 134.59633874839972,
+              "reference_rms": 90.573798044198,
+              "relative_rmse": 1.4860405730443111
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.038116147848389424,
+              "max": 2.31640625,
+              "rmse": 0.09589677962744668,
+              "reference_rms": 0.31274219436813666,
+              "relative_rmse": 0.30663204823127954
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.517466116910775,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.517622829616753,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 7.962808012962341e-08,
+              "max": 0.001953125,
+              "rmse": 1.245877286178403e-05,
+              "reference_rms": 11.515998082645309,
+              "relative_rmse": 1.0818665279702927e-06
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.57301051373626,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.57663335771129,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 90.573798044198,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.15549847092370328,
+              "max": 1.875,
+              "rmse": 0.2163783465309881,
+              "reference_rms": 4.052820222880949,
+              "relative_rmse": 0.05338957432885475
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.759527833231914,
+              "max": 21.8125,
+              "rmse": 1.4745773251355216,
+              "reference_rms": 1.0480837953438387,
+              "relative_rmse": 1.4069269381765088
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 5.384770370088518,
+              "max": 155.5,
+              "rmse": 18.54889033198968,
+              "reference_rms": 11.16085367110412,
+              "relative_rmse": 1.6619598176449055
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.08691971336156712,
+              "max": 1.0078125,
+              "rmse": 0.1294019593200039,
+              "reference_rms": 0.19587136369343303,
+              "relative_rmse": 0.6606476663047931
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.15773523688403657,
+              "max": 1.875,
+              "rmse": 0.2188388380346771,
+              "reference_rms": 1.0481236239009757,
+              "relative_rmse": 0.2087910557918619
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 4.976755008101463e-09,
+              "max": 0.0001220703125,
+              "rmse": 7.786733038615018e-07,
+              "reference_rms": 1.0492164865282818,
+              "relative_rmse": 7.42147415580581e-07
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0480837953438387,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.19199400121578947,
+              "max": 1.34375,
+              "rmse": 0.2580593901875091,
+              "reference_rms": 11.167844947488293,
+              "relative_rmse": 0.02310735790127065
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.158685197814583,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 11.16085367110412,
+              "relative_rmse": 0.0
+            }
+          }
+        },
+        {
+          "rank": 1,
+          "comparisons": {
+            "rope_cos_sin": {
+              "elements": 4096,
+              "mae": 0.8118422119510456,
+              "max": 1.9990451335906982,
+              "rmse": 1.006167548964637,
+              "reference_rms": 0.7071067867214156,
+              "relative_rmse": 1.4229357826274753
+            },
+            "layer_0_qkv": {
+              "elements": 32768,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 36.042063969441564,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_after_rope": {
+              "elements": 24576,
+              "mae": 2.841806171054486,
+              "max": 98.5,
+              "rmse": 6.8772375689956755,
+              "reference_rms": 6.4708385678362745,
+              "relative_rmse": 1.0628046885884983
+            },
+            "layer_0_k_after_rope": {
+              "elements": 4096,
+              "mae": 49.06021603080444,
+              "max": 866.0,
+              "rmse": 148.67583875350164,
+              "reference_rms": 100.70202870756509,
+              "relative_rmse": 1.4763936800642883
+            },
+            "layer_0_attention": {
+              "elements": 24576,
+              "mae": 0.06350305730025714,
+              "max": 1.688720703125,
+              "rmse": 0.13586016051893965,
+              "reference_rms": 0.23949802945224302,
+              "relative_rmse": 0.5672704732880934
+            },
+            "layer_0_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.471791335700783,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.470990334668771,
+              "relative_rmse": 0.0
+            },
+            "layer_0_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 6.4708385678362745,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.70185258780273,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.69665500119932,
+              "relative_rmse": 0.0
+            },
+            "layer_0_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 100.70202870756509,
+              "relative_rmse": 0.0
+            },
+            "layer_1_qkv": {
+              "elements": 32768,
+              "mae": 0.1943788790022154,
+              "max": 2.0546875,
+              "rmse": 0.27251787154048074,
+              "reference_rms": 1.2603449847733303,
+              "relative_rmse": 0.2162248232292465
+            },
+            "layer_1_q_after_rope": {
+              "elements": 24576,
+              "mae": 0.9562181873819403,
+              "max": 18.03125,
+              "rmse": 1.641260384505014,
+              "reference_rms": 1.1022132328490337,
+              "relative_rmse": 1.4890588641025793
+            },
+            "layer_1_k_after_rope": {
+              "elements": 4096,
+              "mae": 1.9165087300352752,
+              "max": 24.25,
+              "rmse": 3.306667293161759,
+              "reference_rms": 2.3126655725998915,
+              "relative_rmse": 1.4298078080716243
+            },
+            "layer_1_attention": {
+              "elements": 24576,
+              "mae": 0.08131169858461362,
+              "max": 1.0146484375,
+              "rmse": 0.12613271712879773,
+              "reference_rms": 0.1657640587926131,
+              "relative_rmse": 0.7609171617027186
+            },
+            "layer_1_q_before_rope": {
+              "elements": 24576,
+              "mae": 0.19685947876738888,
+              "max": 2.0546875,
+              "rmse": 0.26897568155048196,
+              "reference_rms": 1.1022176961707164,
+              "relative_rmse": 0.24403135831056535
+            },
+            "layer_1_q_native_rotation_formula": {
+              "elements": 24576,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 1.0955448583719127,
+              "relative_rmse": 0.0
+            },
+            "layer_1_q_vllm_rotation_formula": {
+              "elements": 24576,
+              "mae": 1.8820477028687796e-09,
+              "max": 3.0517578125e-05,
+              "rmse": 2.1766664323198114e-07,
+              "reference_rms": 1.1022132328400402,
+              "relative_rmse": 1.974814280455751e-07
+            },
+            "layer_1_k_before_rope": {
+              "elements": 4096,
+              "mae": 0.2783590741455555,
+              "max": 2.00390625,
+              "rmse": 0.37704297960446737,
+              "reference_rms": 2.3129952917845835,
+              "relative_rmse": 0.16301069913270821
+            },
+            "layer_1_k_native_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.314081068017955,
+              "relative_rmse": 0.0
+            },
+            "layer_1_k_vllm_rotation_formula": {
+              "elements": 4096,
+              "mae": 0.0,
+              "max": 0.0,
+              "rmse": 0.0,
+              "reference_rms": 2.3126655725998915,
+              "relative_rmse": 0.0
+            }
+          }
+        }
+      ],
+      "layer_outputs": [
+        {
+          "stage": "embedding",
+          "elements": 49152,
+          "mae": 0.0,
+          "max": 0.0,
+          "rmse": 0.0,
+          "reference_rms": 0.032397722869858446,
+          "relative_rmse": 0.0
+        },
+        {
+          "stage": "layer_0",
+          "elements": 49152,
+          "mae": 0.21946550874660412,
+          "max": 3.15625,
+          "rmse": 0.29918860557129323,
+          "reference_rms": 0.7506221236147859,
+          "relative_rmse": 0.3985875131557337
+        },
+        {
+          "stage": "layer_1",
+          "elements": 49152,
+          "mae": 0.629929312504828,
+          "max": 326.84375,
+          "rmse": 3.88632344421278,
+          "reference_rms": 0.9132615855623566,
+          "relative_rmse": 4.255432951140399
+        },
+        {
+          "stage": "layer_2",
+          "elements": 49152,
+          "mae": 2.0106563195586205,
+          "max": 1676.5625,
+          "rmse": 25.14464321718444,
+          "reference_rms": 1.04068608064089,
+          "relative_rmse": 24.161602316905697
+        },
+        {
+          "stage": "layer_3",
+          "elements": 49152,
+          "mae": 2.2089061240355172,
+          "max": 1690.9375,
+          "rmse": 25.256694099203873,
+          "reference_rms": 1.2267191782370457,
+          "relative_rmse": 20.588814903424772
+        },
+        {
+          "stage": "layer_4",
+          "elements": 49152,
+          "mae": 2.3986324133972325,
+          "max": 1743.875,
+          "rmse": 26.077546145796504,
+          "reference_rms": 1.5060644022734249,
+          "relative_rmse": 17.315027236838006
+        },
+        {
+          "stage": "layer_5",
+          "elements": 49152,
+          "mae": 2.505779484907786,
+          "max": 1770.25,
+          "rmse": 26.186742928991357,
+          "reference_rms": 1.6212840002427553,
+          "relative_rmse": 16.15185428652254
+        },
+        {
+          "stage": "layer_6",
+          "elements": 49152,
+          "mae": 2.6694908340771994,
+          "max": 1797.25,
+          "rmse": 26.364089915101115,
+          "reference_rms": 1.90610451404538,
+          "relative_rmse": 13.831397869756813
+        },
+        {
+          "stage": "layer_7",
+          "elements": 49152,
+          "mae": 2.81154906625549,
+          "max": 1819.375,
+          "rmse": 26.553410267796618,
+          "reference_rms": 2.0826078399892705,
+          "relative_rmse": 12.750076974613433
+        },
+        {
+          "stage": "layer_8",
+          "elements": 49152,
+          "mae": 2.8932292386889458,
+          "max": 1851.75,
+          "rmse": 26.837312315836044,
+          "reference_rms": 2.169034755289863,
+          "relative_rmse": 12.37292867271257
+        },
+        {
+          "stage": "layer_9",
+          "elements": 49152,
+          "mae": 2.896907498439153,
+          "max": 1876.25,
+          "rmse": 26.98175212151658,
+          "reference_rms": 2.2522079953797793,
+          "relative_rmse": 11.980133352189245
+        },
+        {
+          "stage": "layer_10",
+          "elements": 49152,
+          "mae": 2.9468975563844046,
+          "max": 1908.875,
+          "rmse": 27.226118891810017,
+          "reference_rms": 2.314888626942835,
+          "relative_rmse": 11.761308330313186
+        },
+        {
+          "stage": "layer_11",
+          "elements": 49152,
+          "mae": 3.0133048792680106,
+          "max": 1938.0,
+          "rmse": 27.470016501148123,
+          "reference_rms": 2.4521589096117475,
+          "relative_rmse": 11.202380234606196
+        },
+        {
+          "stage": "layer_12",
+          "elements": 49152,
+          "mae": 3.0725980078180632,
+          "max": 1945.25,
+          "rmse": 27.51890312355141,
+          "reference_rms": 2.7122703530722956,
+          "relative_rmse": 10.146076733235558
+        },
+        {
+          "stage": "layer_13",
+          "elements": 49152,
+          "mae": 3.074492283165455,
+          "max": 1980.75,
+          "rmse": 27.789802780272503,
+          "reference_rms": 2.6633764625355654,
+          "relative_rmse": 10.434049850322808
+        },
+        {
+          "stage": "layer_14",
+          "elements": 49152,
+          "mae": 3.1111764001349607,
+          "max": 2004.0,
+          "rmse": 27.98582898028088,
+          "reference_rms": 2.717711777264446,
+          "relative_rmse": 10.297570630705525
+        },
+        {
+          "stage": "layer_15",
+          "elements": 49152,
+          "mae": 3.120219071706136,
+          "max": 2009.75,
+          "rmse": 28.068124267360762,
+          "reference_rms": 2.715329486990086,
+          "relative_rmse": 10.33691285048209
+        },
+        {
+          "stage": "layer_16",
+          "elements": 49152,
+          "mae": 3.144644665221373,
+          "max": 2028.75,
+          "rmse": 28.180628246465776,
+          "reference_rms": 2.734007435008987,
+          "relative_rmse": 10.307443895584411
+        },
+        {
+          "stage": "layer_17",
+          "elements": 49152,
+          "mae": 3.2850187743703523,
+          "max": 2024.0,
+          "rmse": 28.178694106030303,
+          "reference_rms": 2.9693520694285875,
+          "relative_rmse": 9.489846083308308
+        },
+        {
+          "stage": "layer_18",
+          "elements": 49152,
+          "mae": 3.4929681991537413,
+          "max": 2012.5,
+          "rmse": 28.166488670900677,
+          "reference_rms": 3.249727905669151,
+          "relative_rmse": 8.667337539787326
+        },
+        {
+          "stage": "layer_19",
+          "elements": 49152,
+          "mae": 3.671098647018274,
+          "max": 2013.75,
+          "rmse": 28.26092379068426,
+          "reference_rms": 3.556373946757945,
+          "relative_rmse": 7.946555737325494
+        },
+        {
+          "stage": "layer_20",
+          "elements": 49152,
+          "mae": 3.8356902649005256,
+          "max": 2031.0,
+          "rmse": 28.354687862497514,
+          "reference_rms": 3.9465008213578843,
+          "relative_rmse": 7.184766745529635
+        },
+        {
+          "stage": "layer_21",
+          "elements": 49152,
+          "mae": 4.076969000200431,
+          "max": 2022.5,
+          "rmse": 28.21897699351941,
+          "reference_rms": 5.091645692519801,
+          "relative_rmse": 5.542211437645053
+        },
+        {
+          "stage": "layer_22",
+          "elements": 49152,
+          "mae": 4.485913892587026,
+          "max": 1997.0,
+          "rmse": 27.960556885443964,
+          "reference_rms": 6.16261804188931,
+          "relative_rmse": 4.537123134256741
+        },
+        {
+          "stage": "layer_23",
+          "elements": 49152,
+          "mae": 4.819143275419871,
+          "max": 1926.0,
+          "rmse": 27.287375624345188,
+          "reference_rms": 7.7617357772555575,
+          "relative_rmse": 3.5156279996423208
+        },
+        {
+          "stage": "layer_24",
+          "elements": 49152,
+          "mae": 5.210436349113782,
+          "max": 1835.0,
+          "rmse": 26.4265476994451,
+          "reference_rms": 9.34894623530405,
+          "relative_rmse": 2.8266873115230453
+        },
+        {
+          "stage": "layer_25",
+          "elements": 49152,
+          "mae": 5.668644731243451,
+          "max": 1625.0,
+          "rmse": 24.3894581884354,
+          "reference_rms": 10.938130841762076,
+          "relative_rmse": 2.22976471403284
+        },
+        {
+          "stage": "layer_26",
+          "elements": 49152,
+          "mae": 6.006000757217407,
+          "max": 910.0,
+          "rmse": 13.395362461981179,
+          "reference_rms": 13.47950201502292,
+          "relative_rmse": 0.9937579627980346
+        },
+        {
+          "stage": "layer_27",
+          "elements": 49152,
+          "mae": 7.2453466554482775,
+          "max": 444.0,
+          "rmse": 11.302026414488909,
+          "reference_rms": 14.411656690775901,
+          "relative_rmse": 0.7842281187368768
+        },
+        {
+          "stage": "final_norm",
+          "elements": 49152,
+          "mae": 1.1030558154258567,
+          "max": 37.375,
+          "rmse": 1.762856474298958,
+          "reference_rms": 2.203924843112684,
+          "relative_rmse": 0.7998714111363304
+        }
+      ]
+    }
+  ]
+}
