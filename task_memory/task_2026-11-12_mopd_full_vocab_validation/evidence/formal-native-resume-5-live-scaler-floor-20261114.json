@@ -1,0 +1,122 @@
+[
+  {
+    "rank": 0,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 1,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 2,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 3,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 4,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 5,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 6,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  },
+  {
+    "rank": 7,
+    "scalers": [
+      {
+        "used_scale": 1.0,
+        "old_floor": 1.0,
+        "new_floor": 5.960464477539063e-08,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16
+      }
+    ],
+    "open_step": false,
+    "checkpoint_writes": 0,
+    "status": "NATIVE_SCALER_FLOOR_CONFIGURED"
+  }
+]

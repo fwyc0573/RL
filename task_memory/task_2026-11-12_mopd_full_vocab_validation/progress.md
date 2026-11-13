@@ -2,6 +2,8 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify9/200, correct native FP16 scaler floor and replace final waiter with tested count-based continuation. |
+| 2026-11-14 | Record step25 overflow skip and active scale-floor diagnosis; actual successes remain7/200. |
 | 2026-11-14 | Verify7/200, actual72-H800 resume, live statistics, retention and final reader sync. |
 | 2026-11-14 | Verify six saved successes, latest-only step23 and scheduled72-H800 continuation. |
 | 2026-11-14 | Complete pooled rollout-statistic RED/GREEN and actual step18 length replay; keep formal training active. |
@@ -3238,3 +3240,90 @@ Terminated only exact local waiting PID 3756841 after cmdline and no-final-submi
 ### 2026-11-14 — Task-wide latest-only checkpoint inventory (E storage constraint)
 
 At 05:47:56 HKT, a bounded read-only personal SSH query enumerated every current-task `*/exp-*/checkpoints` directory, including staged `tmp_step_*` names. The sole native checkpoint directory is step23 under the original formal writer prefix, with eight tensor shards totaling 24,883,134,685 bytes. No historical smoke/diagnostic checkpoint directory or staged checkpoint remains. This extends the earlier single-namespace observation to the entire task. Source/conversion assets were excluded from the query. No cloud writes or deletion commands were needed. Evidence: evidence/current-task-native-checkpoint-inventory-20261114.json. The local tool trace records the exact `python3 -` / bounded SSH command; exit zero. Physical backend quota reclaim remains unverified.
+
+
+### 2026-11-14 — Step25 native overflow at loss_scale1 (E, in-progress)
+
+At05:56HKT, existing sessions44154(training),1762(reader),48778(monitor),40518(final waiter) remain alive. The exact writer is still Running; no training was resubmitted. Step25 reports finite loss0.17485260963439941, optimizer_update_successful0, loss_scale1,256 valid samples and2,084,198 response tokens. No grad_norm event exists forstep25: the current-summary's most recent norm0.9186215401 belongs tostep24. Formal successes remain7/200. `train/skipped_step=0` is a batch status and does not imply optimizer success. Sampled scorer/vLLM overall MAE0.0013359027 passes; if-group maximum error2.6184369 requires sample-level follow-up.
+
+Observed native mechanism: Megatron optimizer found_inf returns(False,None,None); its dynamic scaler backoff uses max(scale*backoff_factor,min_scale), with current min_scale1. All8 lateststep23 scaler states have scale1,growth_tracker6,hysteresis_tracker−15. This establishes that overflow cannot backoff below the configured floor, but does not establish the failing backward operator or sample. No behavior fix has been applied. Evidence in tasktmp/formal-native-resume-5-step25-native-logs-20261114.json and the exact mounted step25 parity summary; selected evidence will be retained after diagnosis.
+
+Next: observe step26 on the existing writer, build a no-checkpoint targeted reproduction of the overflow, repair final continuation to count actual successful updates instead of asserting steps18–217 all succeeded, and reconcile the next latest native publication with actual Adam counts. The previousstep30/Adam13 prediction is superseded; if this is the only newskip, step30 should beAdam12.
+
+
+### 2026-11-14 — Native FP16 scaler floor corrected; successful-update continuation verified (E/F)
+
+Formal progress is9/200 throughstep27: original56-H800 segment contributes6; current72-H800 segment contributes3 (steps24,26,27), withstep25 retained as an optimizer skip. Step26 loss0.1756095737/norm0.9495472312/2,015,849 response tokens andstep27 loss0.1686267257/norm0.8094019294/1,967,529 response tokens are finite; each has256 samples, scale1 and LR1e−6. Step26 sampled scorer/vLLM MAE0.0012728443,max0.2521480; no mask/version issues. Latest checkpoint remainsstep23/Adam6; recent successes are in memory.
+
+The CPU native RKL reproduction establishes the overflow mechanism of token sums reaching an FP16 boundary before final1/N normalization. In a65536-token,two-vocabulary fixture, normalized loss2.3093283 has finite gradient1.5. Sum loss151344.140625 is finite, but gradient isInf at scale1; nativefloor1 cannot recover in three attempts. With a supported lower floor, nativebackoff changes scale to0.5 and the recovered normalized gradient is exactly1.5. This narrows the observed scale-floor failure but does not locate the original step25 backward operator. The recipe's native optimizer min_loss_scale now uses the existing div/mul resolvers:1/(batch_size*token_ceiling), or5.960464477539063e−8 for256/65536. No manual loss factor, LR change, objective change or fixed scale adjustment was introduced.
+
+The persistent check tests/manual/mopd/check_fp16_sum_scaling.py failed on the original floor and passes on the corrected recipe. It also restores all8 realstep23 scaler metadata through nativeDynamicGradScaler.load_state_dict on CPU, preserves configuredmin_scale and recovers scale0.5 after injectedfound_inf. Exact commands and limits are in test_report_2026-11-14_fp16_scaler_and_success_count.md. The actual native extended-horizon scheduler check218 restores5888 and advances6144 while preserving51200 horizons and LR/WD. Ruffcheck/format pass through the existing gym-server environment; no package was installed.
+
+A bounded Ray job in the already-approved writer allocation reads all8actual scaler states, then applies only the same native scaler/config floor. Before/after scale remains1, all actors are between trainsteps, and no checkpoint is written. Afterwardstep27 succeeds on the existing writer. The initial Ray call exposed wrapped client metadata without its positionalfn parameter; refreshing the local driver signature from the installednativeRay definition enabled the supported __ray_call__ method. This changes driver metadata only, not actor behavior. Selected reads/config receipts are in evidence/formal-native-resume-5-live-{scalers,scaler-floor}-20261114.json. Actual futurebackoff and elimination of original-model overflow remain pending.
+
+The temporary final continuation now reconciles all successful/failed attempts with8nativeAdam groups, checks norms only for actualsuccesses, accepts finitepositive scales below1 and requires200 nativeupdates for finalparity. A terminalwriter with fewer successes prepares horizon=lateststep+(200-nativecount), reuses the sole latestcheckpoint and unchanged72-H800 layout, checks CPUinput/scheduler readiness, submits through the existing personalPythonRJobBackend, and starts a matching0-GPUreader. It never submits a duplicate while thewriter isRunning. Ten CPU cases pass, including realstep23 accounting,199+skip→horizon218,200+skip+scale0.5, missingmetrics/countermismatches, livewriter rejection, and an inert deficit-run/reader launch. No test allocated GPUs or wrote weights. Automatic futureextension remains runtime-unverified.
+
+Only old localwaiterPID3973197/session40518 was retired. A /proc children-path read was unavailable and prevented the initial kill; ps then verified no childlaunchers beforeSIGTERM. The replacement briefly coexisted as a read-only wait loop; the sole remainingwaiter isPID256195/session5548. Traininglauncher44154,reader1762 andmonitor48778 were untouched. Currentmanifest references5548 and the exact dynamic continuation policy.
+
+Step25's largest sampledparity error belongs toif samplea4b734e9-b73c-4893-b8b6-112a42ea9b07_g0,prompt_idx24,weight_version24,length20059. A boundedread of its native207064046-byte dump finds11/19987 response tokens with error>1 and195 with error>0.1, concentrated in a repeatedtoken region at responseposition14182 onward. PromptIDs match and promptmask iszero. Its MAE0.0063376682 is below0.02; the max2.6184369 is an observed tail discrepancy, not proof ofstaleness or theoverflow's cause. No weight-version24 checkpoint exists because onlylatest checkpoints may be saved; exact same-weight reproduction is not yet available.
+
+
+### 2026-11-14 — Resume audit and scaler report completion (E/F)
+
+The existing writer, reader, monitor and final-waiter sessions44154/1762/48778/5548 are alive. The latest personal platform observation is Running with9 worker replicas and restart0. No training submission or checkpoint write was performed. Throughstep27, formal progress remains9/200;step25 is an overflow skip and has no native grad_norm event. The missing focused test report has been created as test_report_2026-11-14_fp16_scaler_and_success_count.md from the measured RED/GREEN, native-state and actual worker evidence. It explicitly keeps original-model overflow/backoff and final actual-training parity unverified.
+
+At06:16:58HKT, a bounded personal read-only inventory again finds onlystep23:31files,8shards,24,884,408,489bytes; publication step23, no staged or obsolete current-task checkpoint. No deletion was needed. Evidence:evidence/current-task-native-checkpoint-inventory-0618-20261114.json. PhysicalOSS quota reclaim remains unverified. The current plan's stale40518 waiter paragraph is replaced with the measured5548/PID256195 and count-based continuation behavior. Historical dated observations remain intact. Scopedruffcheck/format on the new native-scaler check bothPASS through the existing Gymserver tool environment; no package installation.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师与全词表路径已核实。 |
+| Q | PASS | 200 次成功更新已明确授权。 |
+| B | PASS | 原完整输入验证及当前 worker 廉价检查有效。 |
+| C | PASS | 原全词表参考与指标入口已验证。 |
+| D | PASS | 五次实际诊断更新及 native save/resume 完成。 |
+| E | TODO | 正式 9/200，step25 skip；最新保存为 step23/Adam6。 |
+| F | TODO | scaler 报告已补齐；最终权重、三方 parity 和 archive 待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 05:47:56 HKT 最新完整 checkpoint inventory 自检之后至今｜**当前前沿：** E，F 的当前已完成修复记录
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | scaler 复现与计数检查解决 E 的实际 overflow/成功次数问题；十项检查通过后未扩展。 |
+| D2 细节反复重试 | CLEAR | 旧 floor 的三次重现检验明确预测；native backoff 的 GREEN 缩小原因，没有重复 GPU 提交。 |
+| D3 支线问题修补 | CLEAR | native floor、200-success 计数、parity 尾部与 latest-only 都属于原验收。 |
+| D4 可并行任务停滞 | CLEAR | 训练、reader、monitor 持续运行；报告与自检在本机同步完成。 |
+| D5 超范围镀金 | CLEAR | 未改动算法目标、输入身份、接口或保存额外权重。 |
+| D6 分析空转 | CLEAR | 两次新增实际成功、native floor 修正及可执行复现推进 E；原模型具体算子保持未验证。 |
+| D7 路线违背 | CLEAR | 五教师、151936 全词表、256/65536/200-success 与 latest-only 约束保持。 |
+
+**文档检查：** S5：plan.md 当前状态段仍引用退休 waiter40518；progress.md 引用的 scaler 报告缺失。本轮已改为5548/PID256195 并补齐报告。S1–S4/S6 未发现明显缺陷。
+**归因：** 无执行偏离；S5 为记录与实际状态不同。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在状态记录缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md 当前 waiter 段：更新为5548、按实际成功次数接续及完整 reader receipt 前提，已完成。（可直接执行）
+2. test_report_2026-11-14_fp16_scaler_and_success_count.md：补齐 RED/GREEN、真实8-rank floor、计数测试、版本与验证限制，已完成。（可直接执行）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续当前 writer，观察 native backoff 与成功更新 → 完成标志：实际成功 flags 和最新保存 Adam 数一致，累计达到200。
+2. 并行：训练 ‖ 当前样本/metrics 与下一 native publication 观察 → 完成标志：只有最新完整 checkpoint，旧 step23 在新 publication 后删除；parity 异常有定位证据。
+3. E→F：200 成功后执行已有 CPU 全 tensor 有限性检查与关闭 checkpointing 的16 H800 三方 replay → 完成标志：有限状态、MAE≤0.02、完整业务/平台终态、报告和 English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 9/200 是实际 optimizer 成功次数；step25 skip 必须保留，不能用 controller 步数替代。
+2. CPU 原生回归证明旧 floor 阻止 backoff；真实模型在新 floor 下的下一次 backoff 及具体失败算子仍未验证。
+3. 最新完整保存仍为 step23/Adam6；若无更多 skip，step30 应为 Adam12，必须实测并确认旧目录删除。

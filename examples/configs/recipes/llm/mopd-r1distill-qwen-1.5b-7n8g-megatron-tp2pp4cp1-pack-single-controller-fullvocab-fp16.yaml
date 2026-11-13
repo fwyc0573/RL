@@ -8,6 +8,8 @@ policy:
       bf16: false
       fp16: true
       initial_loss_scale: 65536
+      # Split training normalizes token sums after backward; allow native backoff below one.
+      min_loss_scale: ${div:1,${mul:${policy.train_global_batch_size},${policy.max_total_sequence_length}}}
     scheduler:
       lr_decay_iters: 200
       use_checkpoint_opt_param_scheduler: true

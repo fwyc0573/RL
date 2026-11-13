@@ -1,0 +1,67 @@
+{
+  "config": "/data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml",
+  "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+  "torch": "2.13.0+cu130",
+  "reference": {
+    "loss": 2.309328317642212,
+    "finite_loss": true,
+    "finite_gradient": true,
+    "normalized_gradient": 1.5
+  },
+  "old_floor": {
+    "floor": 1.0,
+    "attempts": [
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      },
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      },
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      }
+    ],
+    "next_scale": 1.0
+  },
+  "configured_floor": {
+    "floor": 1.0,
+    "attempts": [
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      },
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      },
+      {
+        "loss": 151344.140625,
+        "finite_loss": true,
+        "finite_gradient": false,
+        "normalized_gradient": null,
+        "scale": 1.0
+      }
+    ],
+    "next_scale": 1.0
+  },
+  "expected_floor": 5.960464477539063e-08,
+  "scope": "Native full RKL on two vocabulary entries, a shared FP16 boundary, and the configured token ceiling; not an original-model replay."
+}

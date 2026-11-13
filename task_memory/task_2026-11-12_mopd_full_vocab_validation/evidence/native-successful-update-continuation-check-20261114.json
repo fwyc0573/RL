@@ -1,0 +1,26 @@
+{
+  "cases": [
+    "199 successes with skipped step lacking grad norm require horizon218",
+    "200 successes with native scale0.5 accepted",
+    "missing successful grad norm rejected",
+    "missing attempted step rejected",
+    "nonbinary update flag rejected",
+    "nonfinite loss rejected",
+    "native counter mismatch rejected",
+    "active writer cannot launch a duplicate GPU job",
+    "terminal199 count creates exactly one native deficit run and matching reader with latest-only retention",
+    "reader sync waits for the exact completion receipt"
+  ],
+  "passed": 10,
+  "real_step23": {
+    "step": 23,
+    "attempts": 6,
+    "successful_updates": 6,
+    "overflow_steps": [],
+    "remaining_updates": 194,
+    "next_controller_horizon": 217,
+    "native_adam_steps": 6
+  },
+  "gpu_jobs_allocated": 0,
+  "checkpoint_writes": 0
+}

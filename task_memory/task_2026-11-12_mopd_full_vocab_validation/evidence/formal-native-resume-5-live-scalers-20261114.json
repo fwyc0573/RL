@@ -1,0 +1,130 @@
+[
+  {
+    "rank": 0,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 1,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 2,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 3,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 4,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 5,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 6,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  },
+  {
+    "rank": 7,
+    "scalers": [
+      {
+        "scale": 1.0,
+        "min_scale": 1.0,
+        "growth_tracker": 1,
+        "hysteresis_tracker": -16,
+        "optimizer": "DistributedOptimizer"
+      }
+    ],
+    "open_step": false,
+    "chunks": null,
+    "valid_tokens": null,
+    "model_dtype": "torch.float16"
+  }
+]

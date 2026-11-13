@@ -1,0 +1,14 @@
+{
+  "job_id": "mopd-native-scaler-floor-20261114-0607",
+  "submission_id": "mopd-native-scaler-floor-20261114-0607",
+  "request": {
+    "entrypoint": "/data/ycfeng/envs/nemo-mopd-py313/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/configure_live_native_scaler_floor_20261114.py",
+    "submission_id": "mopd-native-scaler-floor-20261114-0607",
+    "runtime_env": {
+      "env_vars": {
+        "TMPDIR": "/data/ycfeng/tmp",
+        "PYTHONPATH": "/data/ycfeng/sota-engine/RL"
+      }
+    }
+  }
+}
