@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify six saved successes, latest-only step23 and scheduled72-H800 continuation. |
 | 2026-11-14 | Record three formal successes and prepare latest-only120-H800 native continuation. |
 | 2026-11-14 | Verify native step18 success and pooled rollout-statistic RED/GREEN on real sample lengths. |
 | 2026-11-14 | Record native scheduler RED/GREEN, failure RCA and latest-only retention. |
@@ -11,7 +12,7 @@
 
 # Formal MOPD failure recovery
 
-Current status: corrected resume has **4/200 successful formal optimizer updates** at steps18–21; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
+Current status: corrected resume has **5/200 successful formal optimizer updates** at steps18–22; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
 
 Expected: the original student/five teachers, full151936vocabulary,256fresh trajectories/update,65536ceiling,200successfuloptimizerupdates, native save/resume and final response-logprob MAE≤0.02nats/token.
 
@@ -329,3 +330,32 @@ Step21:success1/skipped0,loss0.18771615624427795,pre-clippinggradnorm1.126503348
 Expected: the existing initial conversioncache, cast to nativeFP16 as during modelload, equals the still-zero-success step17checkpoint on selectednorm/bias elements. Actual:144,896elements,changed0,maxabsolute delta0,allfinite;PASS. Absolute error0; relative error undefined forzero reference. The1MB-limitedsmallchunk reader loaded935,986bytes into remote memory and savedonlyJSONstatistics. This verifies a baseline for future trainedcheckpoint parameterchange without preservingoldweights; it doesnot prove finalall-parameter finiteness.
 
 Two auxiliaryread errors were diagnosed beforeGREEN: remotePythoncannotdeserialize nativePython3.13 pathlibmetadata; use theexisting localmetadata-reader pattern. OriginalcacheBF16 andnativeFP16 require theexact runtimecast before comparison; same-shape assertion identified theprecision difference. No training behavior or environment waschanged. Exactcommand/version/error paths are recorded inprogress.md;receipt:evidence/formal-step17-initial-cache-small-delta-20261114.json. Reuse only after a newnativepublication; healthytraining andautomaticcontinuation do notdepend onthisauxiliaryverdict.
+
+
+## Fifth formal update and finite error tails
+
+Step22:loss0.18089325726032257,pre-clippinggradnorm0.9955323338508606,scale1,success1/skipped0,LR1e−6,256samples/2,155,691response tokens. Formal5/200. Weightversion21 coversfivegroups(code47/math53/stem53/if47/logic56). Sampledscorer/vLLMMAE0.0012718353314980088,p990.009858131408691406,max0.7927513122558594,allfinite,issues0. PASS thisupdate andsampledmean; final200updates/actualtrainingforward remainINCOMPLETE.
+
+Exact tailcounts acrossall2,155,691response tokens:1948above0.02(0.0903655%),13above0.1(0.0006031%),1above0.5(0.0000464%). The largest is an interiorlogic token atresponseposition11328,ID2456, scorer−7.29484748840332/vLLM−6.502096176147461. Its full15906-tokenresponse MAE0.0014313242/p990.0093778372;only10tokensabove0.02. Observed masks/versions arecorrect andno batch-wide token shift is established. The exact cause ofthisisolated numericalspike remainsUNVERIFIED; meanerror passes theunchanged0.02contract,withtails reported separately. Tailmeasurement usedboundedremote read-onlyJSON/NumPy,exit0,withnoGPUallocation/weightcopy/cloudwrite. Exactreport:evidence/formal-step22-tail-characterization-20261114.json.
+
+
+### Formal step23 publication and120-H800 continuation,2026-11-14
+
+| Check | Expectation | Actual | Verdict |
+| --- | --- | --- | --- |
+| Formal optimizer success | Six successful updates since step17, no skips | Steps18–23 success1/skipped0; each of8 native Adam states step6 | PASS for this segment;200-update contract pending |
+| Step23 training health | Finite loss and gradient,256 valid samples | Loss0.1785717756; pre-clipping norm0.9818502069; scale1; LR1e−6;1,945,807 response tokens | PASS |
+| Sampled scorer/vLLM parity | MAE≤0.02; finite; correct masks/versions and five teachers | MAE0.0012762114;p990.0097942352;max0.1695599556;issues0 | PASS for sampled parity;actual-training comparison pending |
+| Native publication/retention | One newest complete checkpoint | Step23,31files/8tensor shards/24,884,408,489bytes;step17 absent | PASS for logical retention;physical quota reclaim unverified |
+| Native recovery counters | Controller/sampler and consumed samples agree | Step23,dispatch23,5888samples,8TQunits;8scalers at1/growth_tracker6 | PASS for saved state;actual new GPU restoration pending |
+| Scheduler restore/next step |5888→6144;original decay settings |5888→6144;lr/wd decay51200;parameter-group LR1e−6 | PASS;absolute count error0,relative error0 |
+| Selected model changes | Nonzero changes;finite;no extra weight files |4298/144896 norm/bias elements changed;max7.62939453125e−6;935986bytes read only into memory | PASS for selected elements;full final scan pending |
+| Corrected continuation check | Native one-element scale tensor accepted at1 | Original scalar assertion FAIL;exact [1.0] assertion PASS across8states | PASS after check-only fix |
+|120-H800 submission identity | Personal creator/current local source/one job |exp-1114-051358-764594;UID031a37db-db4c-4ac1-82cc-2cb608a6ee21;i-fengyicheng;100.96.128.195:/data/ycfeng:/data/ycfeng;Pending | PASS for submission;execution unverified |
+
+Commands and environments are recorded in progress.md's matching entry and the exact argument JSON. The continuation uses the same latest-only checkpoint directory, save_period10, keep_top_k0 and ft_keep_latest_k1; it cannot produce additional diagnostic checkpoints or retained HF exports. The previous RJob is Succeeded and finished.json confirms native_execution_succeeded. Final200 successful updates, complete parameter/optimizer finite scan, final three-way parity and completion archive remain pending.
+
+
+###72-H800 resource continuation replaces unstarted120-H800 request
+
+The120-H800 job stayed Pending with only75 H800 quota, so a prepared72-H800 configuration was selected. CPU native topology/input/scheduler validation and personal dry-run PASS. The exact120-H800 job was stopped while Pending and confirmed Stopped before new submission; no training overlap. Replacementexp-1114-051900-202756 uses9×8H800 and was approved within approximately1.27 seconds of creation. The05:20:12HKT observation verifies9Running replicas,restart0,personal creator,current source and expected image digest. Allocation/identityPASS;actual H800 output,native restoration,subsequent successes,reporting fix and throughput remain unverified. Formal success stays6/200 and step23 remains the only retained checkpoint. Exact args and stop/runtime evidence are under evidence/.

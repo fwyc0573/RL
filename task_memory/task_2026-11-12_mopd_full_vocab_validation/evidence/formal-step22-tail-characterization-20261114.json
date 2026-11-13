@@ -1,0 +1,283 @@
+{
+  "step": 22,
+  "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step22.jsonl",
+  "response_tokens": 2155691,
+  "counts": {
+    "0.02": 1948,
+    "0.1": 13,
+    "0.5": 1
+  },
+  "fractions": {
+    "0.02": 0.0009036545590253891,
+    "0.1": 6.030548905200235e-06,
+    "0.5": 4.63888377323095e-07
+  },
+  "selected_samples": [
+    {
+      "sample_id": "01ea2bf8-22eb-4179-ab52-a816239450b2_g0",
+      "weight_version": 21,
+      "length": 13144,
+      "prompt_length": 121,
+      "counts": {
+        "0.02": 80,
+        "0.1": 2,
+        "0.5": 0
+      },
+      "largest_errors": [
+        {
+          "absolute_position": 4729,
+          "response_position": 4608,
+          "token_id": 17,
+          "scorer_logprob": -8.231658935546875,
+          "generation_logprob": -8.436433792114258,
+          "signed_error": 0.2047748565673828
+        },
+        {
+          "absolute_position": 13050,
+          "response_position": 12929,
+          "token_id": 16,
+          "scorer_logprob": -4.697421550750732,
+          "generation_logprob": -4.589062213897705,
+          "signed_error": -0.10835933685302734
+        },
+        {
+          "absolute_position": 4730,
+          "response_position": 4609,
+          "token_id": 28675,
+          "scorer_logprob": -1.811296820640564,
+          "generation_logprob": -1.7211108207702637,
+          "signed_error": -0.09018599987030029
+        },
+        {
+          "absolute_position": 3946,
+          "response_position": 3825,
+          "token_id": 17377,
+          "scorer_logprob": -4.200404644012451,
+          "generation_logprob": -4.280811786651611,
+          "signed_error": 0.08040714263916016
+        },
+        {
+          "absolute_position": 5576,
+          "response_position": 5455,
+          "token_id": 7546,
+          "scorer_logprob": -1.5105996131896973,
+          "generation_logprob": -1.5875020027160645,
+          "signed_error": 0.07690238952636719
+        }
+      ]
+    },
+    {
+      "sample_id": "9a726431-b77f-4cd7-b74b-e1680c18ce4b_g0",
+      "weight_version": 21,
+      "length": 16095,
+      "prompt_length": 189,
+      "counts": {
+        "0.02": 10,
+        "0.1": 1,
+        "0.5": 1
+      },
+      "largest_errors": [
+        {
+          "absolute_position": 11517,
+          "response_position": 11328,
+          "token_id": 2456,
+          "scorer_logprob": -7.29484748840332,
+          "generation_logprob": -6.502096176147461,
+          "signed_error": -0.7927513122558594
+        },
+        {
+          "absolute_position": 11518,
+          "response_position": 11329,
+          "token_id": 11,
+          "scorer_logprob": -3.171189546585083,
+          "generation_logprob": -3.1084909439086914,
+          "signed_error": -0.0626986026763916
+        },
+        {
+          "absolute_position": 4894,
+          "response_position": 4705,
+          "token_id": 20,
+          "scorer_logprob": -5.27454137802124,
+          "generation_logprob": -5.2349066734313965,
+          "signed_error": -0.03963470458984375
+        },
+        {
+          "absolute_position": 4886,
+          "response_position": 4697,
+          "token_id": 16,
+          "scorer_logprob": -0.5980798006057739,
+          "generation_logprob": -0.6313663125038147,
+          "signed_error": 0.03328651189804077
+        },
+        {
+          "absolute_position": 10498,
+          "response_position": 10309,
+          "token_id": 1045,
+          "scorer_logprob": -4.844967365264893,
+          "generation_logprob": -4.870530605316162,
+          "signed_error": 0.02556324005126953
+        }
+      ]
+    },
+    {
+      "sample_id": "b2e32f7e-450b-40b6-a145-d60c3841eb65_g0",
+      "weight_version": 21,
+      "length": 23791,
+      "prompt_length": 363,
+      "counts": {
+        "0.02": 59,
+        "0.1": 2,
+        "0.5": 0
+      },
+      "largest_errors": [
+        {
+          "absolute_position": 22631,
+          "response_position": 22268,
+          "token_id": 21,
+          "scorer_logprob": -1.2641255855560303,
+          "generation_logprob": -1.0828381776809692,
+          "signed_error": -0.18128740787506104
+        },
+        {
+          "absolute_position": 16893,
+          "response_position": 16530,
+          "token_id": 18,
+          "scorer_logprob": -5.213383674621582,
+          "generation_logprob": -5.096102714538574,
+          "signed_error": -0.11728096008300781
+        },
+        {
+          "absolute_position": 17135,
+          "response_position": 16772,
+          "token_id": 21453,
+          "scorer_logprob": -5.901004314422607,
+          "generation_logprob": -5.814361095428467,
+          "signed_error": -0.08664321899414062
+        },
+        {
+          "absolute_position": 22125,
+          "response_position": 21762,
+          "token_id": 7546,
+          "scorer_logprob": -8.027358055114746,
+          "generation_logprob": -7.955907821655273,
+          "signed_error": -0.07145023345947266
+        },
+        {
+          "absolute_position": 22635,
+          "response_position": 22272,
+          "token_id": 11,
+          "scorer_logprob": -1.8550019264221191,
+          "generation_logprob": -1.9238802194595337,
+          "signed_error": 0.06887829303741455
+        }
+      ]
+    },
+    {
+      "sample_id": "5186a7e7-8bb6-4b66-8886-7c3ca688e7f3_g0",
+      "weight_version": 21,
+      "length": 10546,
+      "prompt_length": 323,
+      "counts": {
+        "0.02": 23,
+        "0.1": 1,
+        "0.5": 0
+      },
+      "largest_errors": [
+        {
+          "absolute_position": 1435,
+          "response_position": 1112,
+          "token_id": 22464,
+          "scorer_logprob": -1.5874264240264893,
+          "generation_logprob": -1.7283141613006592,
+          "signed_error": 0.14088773727416992
+        },
+        {
+          "absolute_position": 3207,
+          "response_position": 2884,
+          "token_id": 4771,
+          "scorer_logprob": -2.020460844039917,
+          "generation_logprob": -1.9443773031234741,
+          "signed_error": -0.07608354091644287
+        },
+        {
+          "absolute_position": 7940,
+          "response_position": 7617,
+          "token_id": 17,
+          "scorer_logprob": -2.06492018699646,
+          "generation_logprob": -1.9982547760009766,
+          "signed_error": -0.0666654109954834
+        },
+        {
+          "absolute_position": 9810,
+          "response_position": 9487,
+          "token_id": 17,
+          "scorer_logprob": -6.862536907196045,
+          "generation_logprob": -6.9108476638793945,
+          "signed_error": 0.04831075668334961
+        },
+        {
+          "absolute_position": 1433,
+          "response_position": 1110,
+          "token_id": 429,
+          "scorer_logprob": -3.6374685764312744,
+          "generation_logprob": -3.5938608646392822,
+          "signed_error": -0.04360771179199219
+        }
+      ]
+    },
+    {
+      "sample_id": "3b6a011d-8e8f-4c82-9247-b129ee345bf0_g0",
+      "weight_version": 21,
+      "length": 18349,
+      "prompt_length": 224,
+      "counts": {
+        "0.02": 13,
+        "0.1": 1,
+        "0.5": 0
+      },
+      "largest_errors": [
+        {
+          "absolute_position": 428,
+          "response_position": 204,
+          "token_id": 11,
+          "scorer_logprob": -3.588278293609619,
+          "generation_logprob": -3.7179489135742188,
+          "signed_error": 0.1296706199645996
+        },
+        {
+          "absolute_position": 17816,
+          "response_position": 17592,
+          "token_id": 5669,
+          "scorer_logprob": -3.4182159900665283,
+          "generation_logprob": -3.3791663646698,
+          "signed_error": -0.039049625396728516
+        },
+        {
+          "absolute_position": 7494,
+          "response_position": 7270,
+          "token_id": 17,
+          "scorer_logprob": -1.9841156005859375,
+          "generation_logprob": -2.0162100791931152,
+          "signed_error": 0.032094478607177734
+        },
+        {
+          "absolute_position": 5074,
+          "response_position": 4850,
+          "token_id": 369,
+          "scorer_logprob": -3.6981825828552246,
+          "generation_logprob": -3.6684622764587402,
+          "signed_error": -0.029720306396484375
+        },
+        {
+          "absolute_position": 2011,
+          "response_position": 1787,
+          "token_id": 31229,
+          "scorer_logprob": -11.025407791137695,
+          "generation_logprob": -11.054645538330078,
+          "signed_error": 0.029237747192382812
+        }
+      ]
+    }
+  ],
+  "scope": "Tail characterization of identical recorded native-scorer/vLLM tokens; thresholds describe the tail and are not per-token acceptance gates."
+}

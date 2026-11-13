@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify six saved successes, latest-only step23 and scheduled72-H800 continuation. |
 | 2026-11-14 | Complete pooled rollout-statistic RED/GREEN and actual step18 length replay; keep formal training active. |
 | 2026-11-14 | Verify corrected resume seven-worker runtime and the sole step17 checkpoint. |
 | 2026-11-14 | Record actual expanded-resume failure, native CPU reproduction and corrected preparation. |
@@ -3014,3 +3015,141 @@ The selected native cache/checkpoint norm/bias tensors have identical shapes, bu
 Commands: UV_PROJECT_ENVIRONMENT=<existing Megatron actorenvironment>;PYTHONPATH=repo;OMP/OPENBLASthreads1;uv run --offline --no-sync python -u tasktmp/compare_latest_formal_native_small_weights_20261114.py. Bounded remote reads use personal SSH,15GiBaddress-space limit,50scommandtimeout. LocalPython3.13.14/Torch2.13.0+cu130 andremoteTorch2.5.1+cu124. EffectiveGREEN exits0; earlier pathlib and precision-assertion errors remain in tasktmp/formal-current-initial-cache-small-delta-{detail,shape-probe}-20261114.log and the tooltrace. Source step17 hasnoactualsuccesses; active training's four successes are still in memory until the next native publication. This baseline doesnot establish complete finalparameter finiteness ortrainedweightdelta.
 
 Reuse the small comparison only after a new complete native checkpoint appears. It is independent of the GPUcontinuation and cannot gate healthytraining orretention. Stop expanding the auxiliary reader now; the shortest route remains actual updates → nativepublication/latest-only →120H800nativecontinuation →200successes/finalparity.
+
+
+### 2026-11-14 — Fifth formal success and exact sampled error-tail characterization (E)
+
+Step22 succeeds at2026-11-13T21:02:18Z: success1/skipped0, loss0.18089325726032257, pre-clipping gradnorm0.9955323338508606, scale1, LR1e−6,256samples/2,155,691response tokens. Formal total5/200; currentsegmentfiveattempts/fivesuccesses/zeroskips. The fifth norm is below clip_grad1.0; the preceding four triggered expected clipping. Freshversion21 coverscode47/math53/stem53/if47/logic56. Scorer/vLLMMAE0.0012718353314980088, signedmean−4.639449503542731e−6, p990.009858131408691406, max0.7927513122558594; allfinite; mask/versionissues0. Exposedgeneration534.3264s, policytraining75.3527s, total629.9390s. Evidence:formal-native-resume-3-step22-{metrics,parity}-20261114.json.
+
+The largest finite error prompted a bounded read-only characterization, not a newGPUprobe. Among2,155,691validresponse tokens,1948exceed0.02(0.0903655%),13exceed0.1(0.0006031%),1exceeds0.5(0.0000464%). These thresholds describe tails; the agreed0.02criterion applies to mean absolute error. Maximum is logic sample9a726431-b77f-4cd7-b74b-e1680c18ce4b_g0, total length16095/prompt189, absolute tokenposition11517/responseposition11328, token2456: scorer−7.29484748840332, generation−6.502096176147461, difference−0.7927513122558594. That sample has only10/15906tokens above0.02 andoneabove0.1; its MAE0.0014313242/p990.0093778372. The maximum is inside the response, rather than atprompt/padding/EOS boundary. Both error signs occur in the other largest samples. This rules out a broad token/mask shift in this inspected batch; the exact cause of the isolated numerical spike is still unverified. Preserve its recorded observation and finalactual-training comparison requirement.
+
+Tailread:localPython3constructs an exact read-only SSH script for the already-published native step22dump; remotegetpassi-fengyicheng/pathguard,50stimeout,JSON/NumPy;exit0. No payloadcopy orcloudwrite. Evidence:formal-step22-tail-characterization-20261114.json. No auxiliaryverdict controls healthytraining, native checkpointdeletion orautomaticcontinuation.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和来源已核实。 |
+| Q | PASS | 200 实际成功更新的合同已授权。 |
+| B | PASS | 输入准备及接续廉价检查通过。 |
+| C | PASS | 全词表参考和指标验证已完成。 |
+| D | PASS | 五次诊断成功和 native save/resume 已验证。 |
+| E | TODO | 正式 5/200；零 skip；下一 native publication 和 120 H800 接续待执行。 |
+| F | TODO | 最终状态、三方 parity 和 English archive 未完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次 3/200 检查至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 参数基线解决 latest-only 下无法保留旧权重的问题；验证后停止扩展，复用现有 final replay。 |
+| D2 细节反复重试 | CLEAR | 两个辅助读取错误分别定位为 Python metadata 与 dtype；真实基线 GREEN，训练同时前进两次。 |
+| D3 支线问题修补 | CLEAR | 参数变化及误差尾部均属于验收要求；没有新 GPU probe。 |
+| D4 可并行任务停滞 | CLEAR | GPU 训练、只读观察及参数基线同时推进；最终比较依赖最终权重。 |
+| D5 超范围镀金 | CLEAR | 未改模型、目标、schema 或接受阈值；没有额外 checkpoint。 |
+| D6 分析空转 | CLEAR | 新增两次实际成功、已验证基线及 step22 精确尾部计数。 |
+| D7 路线违背 | CLEAR | 原始模型、full151936、256/65536/200success 和 latest-only 保持。 |
+
+**文档检查：** S1–S6 均未发现明显缺陷；plan/report 当前计数已更新为5/200，历史条目保留对应时点。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets 合理，无需改动。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：native publication 和旧 checkpoint 删除 → 完成标志：唯一最新完整 checkpoint、Adam/scaler/scheduler/sampler/TQ 状态一致。
+2. 并行：120 H800 native 恢复和成功更新 ‖ 对新最新 checkpoint 复用小参数差值检查；辅助失败不阻断健康训练。
+3. E→F：完成200实际成功，再执行已准备的16GPU三方比较及最终全参数有限性检查 → 完成标志：200success、MAE≤0.02、完整状态/终态和正式报告。
+
+## 4. 最值得关注的 3 点
+
+1. 正式5/200；当前五次成功尚未到下一 checkpoint 保存边界，不能按 controllerstep22 宣称完成。
+2. step22 有一个0.79275的孤立有限误差，已量化尾部；其精确原因及最终 actual-training parity 仍未验证。
+3. 仍只保留step17；基线方法保存统计而非权重，120H800接续仍在等待。
+
+
+### 2026-11-14 — Six formal successes saved; latest-only native continuation submitted (E)
+
+The exact previous RJob exp-1114-035754-642199 reached Succeeded at the 2026-11-13T21:12:23Z personal observation, with native finished.json status native_execution_succeeded. Formal steps18–23 are six successes and zero skips. Step23: loss0.17857177555561066, pre-clipping grad norm0.9818502068519592, scale1, LR1e−6,256 valid samples and1,945,807 response tokens. Its scorer/vLLM MAE0.0012762114054678205, signed mean−4.790857139158842e−6, p990.009794235229492188, max0.16955995559692383; all finite, all five groups present and mask/version issues0. This is sampled scorer/generation parity, not final actual-training parity.
+
+Native latest_checkpoint_status publishes step23. The complete checkpoint has31 files/8 tensor shards/24,884,408,489 bytes, and the checkpoint directory inventory contains only step23; step17 is absent. All8 saved Adam states have step6; all8 scaler tensors serialize as [1.0], growth_tracker6. Native controller/sampler dispatch23, consumed_samples5888=23×256, trainer_version23 and8 positioned TQ storage units agree. Scheduler restore/advance passes from5888 to6144 and retains saved lr_decay_steps=wd_incr_steps=51200. The native train_state.step0 is an internal serialization field and is not used as the successful-update counter. Selected evidence:formal-latest-step23-native-state-20261114.json and formal-native-resume-4-readiness-20261114.json. Only small metadata/counters were read; no checkpoint copy or export was created. Backend physical OSS quota reclaim remains unverified.
+
+The first continuation exited at a strict scaler comparison: [1.0] != 1. The actual tensor-to-JSON serializer uses Tensor.tolist(); each native scale is a one-element tensor. Replaying the eight saved states confirms the old comparison fails and the exact [1.0] comparison passes. Repaired only the task-local temporary continuation assertion and compiled its source. This is a check-only representation defect, with no native state or training changes; it occurred after healthy training completed. Existing logs retain the original AssertionError. The corrected continuation reran native state/scheduler/readiness and submitted exactly one new job.
+
+At2026-11-14 05:13:58HKT, submitted exp-1114-051358-764594, UID031a37db-db4c-4ac1-82cc-2cb608a6ee21. Initial personal API observation:Pending, creator i-fengyicheng, NFS source100.96.128.195:/data/ycfeng:/data/ycfeng. Shape120H800, student8/generation96/teachers10/spare6, TP2/PP4/CP1,8 TQ units, horizon217, native save_period10/latest-only and training timeout172800s. Launcher35365 supersedes completed launcher80619 and failed continuation21342; existing reader77350/monitor59185 continue for the exact new job. No duplicate submission. Actual startup, GPU restoration, reporting fix and throughput are pending.
+
+Reused compare_latest_formal_native_small_weights_20261114.py after publication. Selected144896 norm/bias elements:4298 changed, all finite, maximum absolute difference7.62939453125e−6 after initial BF16 cache is cast to runtime FP16. Reads935986 tensor bytes into remote memory and saves only JSON statistics; no model tensors are copied. The prior step17 baseline had zero changes. This establishes a nontrivial selected-parameter update; final full model/optimizer finiteness still needs the final checkpoint.
+
+Commands: existing actor UV environment, uv run --offline --no-sync python read_formal_native_resume_3_metrics_20261114.py and inspect_latest_formal_native_state_20261114.py; both exit0. Source personal_env_20261113.sh, then Python3.10.6 continue_formal_native_resume_4_20261114.py with append-only continuation log; CPU scheduler and41-file/six-model preflight PASS. UV comparison uses localPython3.13.14/Torch2.13.0+cu130 and bounded read-only remoteTorch2.5.1+cu124; exit0. The exact launch args and small evidence are retained under evidence/. Formal acceptance remains6/200 with E/F incomplete.
+
+
+### 2026-11-14 — Prepared72-H800 continuation schedules after quota-based resize (E)
+
+At05:17:53HKT the120-H800 request was still Pending/rank2, with the platform explicitly reporting remaining H800 quota75. Preparing72H800 is a resource-only change:9 full8-GPU nodes, generation6 nodes/48GPUs, student8/teachers10/spare6 and8 TQ units. Existing config/scheduler preflight and personal dry-run passed; the41-file/six-model and latest step23 checks remained valid. Exact args/resolved config are retained under evidence/formal-native-resume-5-generation48-*.json. Preflight log is tasktmp/formal-native-resume-5-generation48-cpu-preflight-20261114.log. Actual scheduler restore predicts5888→6144 and preserves51200 decay horizons.
+
+Fresh exact-UID/creator API read confirmed120-H800 still Pending. rjob_stop.sh stopped exp-1114-051358-764594 at05:18:34HKT with an explicit queue-resize reason; the subsequent personal API confirmed Stopped before submitting any replacement. No120-H800 worker started. Its obsolete0-GPU reader exp-1114-051425-928559 was stopped at05:19:25HKT through the same script. Original stop/queue evidence is retained; these are intentional stops and are not native failures. The live72-H800 job is exp-1114-051900-202756, UIDae42005f-d314-4c86-bb10-c6f7bc385b92. Submitted05:19:00HKT, quota approved05:19:01.473HKT; initialStarting and thenRunning at05:20:12HKT,9 replicas/restart0. Personal creator,current NFS100.96.128.195:/data/ycfeng:/data/ycfeng and image digestsha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177 match. This verifies allocation, not model startup or restored successful updates.
+
+Current launcher44154 remains alive. The reused exact-job reader1762 submits0-GPU reader exp-1114-051922-692747; monitor48778 writes formal-native-resume-5-live-status/selected-logs/training-metrics/current-summary. Retired120-H800 launcher35365 and monitor59185 may exit with its intentional stop; do not restart them. Generation throughput and the pooled statistics fix still require the next completed batch. Latest native checkpoint remains step23 with6 actual successes; no checkpoint or HF export was added for resizing.
+
+A bounded read-only dump size inventory reports about5.05GB of retained formal JSONL samples across the three formal segments. These are sample/log evidence, not checkpoint copies. No additional inspection or deletion of shared trash was performed; backend physical quota remains unverified. Native latest-only retention was inspected in nemo_rl/utils/checkpoint.py:keep_top_k0 retains no periodic historical checkpoint, and ft_keep_latest_k1 plus latest protection retain only the newest. The observedstep17 deletion afterstep23 confirms this path.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师及来源已核实。 |
+| Q | PASS | 200 次实际成功更新已授权。 |
+| B | PASS | 原输入验证有效，72 H800 接续准备通过。 |
+| C | PASS | 全词表参考与指标入口已验证。 |
+| D | PASS | 五次诊断成功及 native save/resume 已完成。 |
+| E | TODO | 6/200 已保存，唯一 step23；72 H800 已运行，实际恢复待核对。 |
+| F | TODO | 最终全参数状态、三方 parity 和 English archive 待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次5/200检查至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用原 native/参数/launch 检查，只修正真实 scaler 表示错误。 |
+| D2 细节反复重试 | CLEAR | 辅助错误一次修正即通过；资源调整依据明确75卡quota并已调度。 |
+| D3 支线问题修补 | CLEAR | latest-only、恢复计数和参数变化均在验收范围。 |
+| D4 可并行任务停滞 | CLEAR | 参数检查与接续准备并行，最终比较依赖最终权重。 |
+| D5 超范围镀金 | CLEAR | 资源调整保留模型、目标、输入、200成功与保存约束。 |
+| D6 分析空转 | CLEAR | 已新增第6次成功、native publication、参数变化及72GPU实际调度。 |
+| D7 路线违背 | CLEAR | 停止未启动请求后才提交替代，无重复训练或额外checkpoint。 |
+
+**文档检查：** S5：plan.md曾写120H800 Pending，实际已停止并改为72H800 Running；本次已同步。其余S1–S4/S6未发现明显缺陷。
+**归因：** 无执行偏离；S5是状态滞后。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在状态记录缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md、progress.md和报告：同步6/200、step23、120GPU退役与72GPU实际调度，已完成。（可直接执行）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：核对实际H800/native恢复及首个接续成功 → 完成标志：源/设备、恢复step23/Adam6、后续success1、finite及统计修复实测。
+2. E：持续200次实际成功并核对native保存/旧checkpoint删除 → 完成标志：最终Adam计数200、唯一最新完整checkpoint。
+3. E→F：复用最终native有限性检查和16GPU三方比较 → 完成标志：有限状态、MAE≤0.02、完整终态/报告和English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式仅6/200；controller step23和Running不能替代完整验收。
+2. step23唯一保留、8Adam状态均为6；参数变化只保存统计，未复制权重。
+3. 72H800已调度，实际恢复、扩容收益和最终actual-training parity仍需实测。

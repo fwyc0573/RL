@@ -1,0 +1,24 @@
+{
+  "queried_at": "2026-11-13T21:18:55.435399+00:00",
+  "job": "exp-1114-051358-764594",
+  "phase": "Stopped",
+  "status": {
+    "phase": "Stopped",
+    "reason": "RJobStopped",
+    "message": "RJob stopped",
+    "taskStatuses": {
+      "default": {
+        "taskStage": "stepmind-task-stage-1"
+      }
+    },
+    "finishTime": "2026-11-13T21:18:34Z",
+    "taskStage": "stepmind-task-stage-1"
+  },
+  "annotations": {
+    "kubebrain.brainpp.cn/stopped-by": "i-fengyicheng",
+    "rjob.brainpp.cn/rjob-queue-approved": "",
+    "stepmind.com/queue-elem-ranking": "2",
+    "stepmind.com/queue-name": "codesign-default",
+    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 15 replicas = 120 GPU (H800). Queue remaining: H800=75."
+  }
+}

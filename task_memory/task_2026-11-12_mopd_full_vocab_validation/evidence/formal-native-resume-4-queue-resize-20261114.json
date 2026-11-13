@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-11-13T21:18:29.927159+00:00",
+  "job": "exp-1114-051358-764594",
+  "uid": "031a37db-db4c-4ac1-82cc-2cb608a6ee21",
+  "phase_before": "Pending",
+  "queue": {
+    "rjob.brainpp.cn/rjob-queue-approved": "",
+    "stepmind.com/queue-elem-ranking": "2",
+    "stepmind.com/queue-name": "codesign-default",
+    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 15 replicas = 120 GPU (H800). Queue remaining: H800=75."
+  },
+  "reason": "Replace unstarted120-H800 request with prepared72-H800 native continuation within observed75-GPU quota."
+}

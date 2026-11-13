@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-13T21:13:48.759159+00:00",
+  "previous_job": "exp-1114-035754-642199",
+  "previous_uid": "f7b3451c-6b0d-4687-9b0d-91e6f0ec5e10",
+  "previous_terminal_phase": "Succeeded",
+  "latest_checkpoint": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23",
+  "latest_step": 23,
+  "formal_successes": 6,
+  "native_adam_steps": 6,
+  "tensor_payloads_read": 0,
+  "latest_only": true,
+  "next_args": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-4-generation96-submit-args-20261114.json",
+  "status": "READY"
+}
