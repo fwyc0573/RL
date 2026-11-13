@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-13T07:16:07.842998+00:00",
+  "files": 41,
+  "model_roles": [
+    "student",
+    "math",
+    "code",
+    "stem",
+    "logic",
+    "if"
+  ],
+  "changed_identity_detected": true,
+  "full_weight_scan_repeated": false
+}

@@ -1,0 +1,79 @@
+{
+  "name": "exp-1113-150603-564709-cfcd2084",
+  "uid": "4b3a262d-a16d-411c-b085-5aa0f3b00ba1",
+  "creator": "i-fengyicheng",
+  "ownerReferences": [
+    {
+      "apiVersion": "rjob.brainpp.cn/v1alpha1",
+      "kind": "RJob",
+      "name": "exp-1113-150603-564709",
+      "uid": "5d250f1d-0607-44a2-904e-197ceddcc0f8",
+      "controller": true,
+      "blockOwnerDeletion": true
+    }
+  ],
+  "status": {
+    "conditions": [
+      {
+        "type": "Initialized",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-11-13T07:06:52Z",
+        "reason": "PodCompleted"
+      },
+      {
+        "type": "Ready",
+        "status": "False",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-11-13T07:09:39Z",
+        "reason": "PodCompleted"
+      },
+      {
+        "type": "ContainersReady",
+        "status": "False",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-11-13T07:09:39Z",
+        "reason": "PodCompleted"
+      },
+      {
+        "type": "PodScheduled",
+        "status": "True",
+        "lastProbeTime": null,
+        "lastTransitionTime": "2026-11-13T07:06:52Z"
+      }
+    ],
+    "hostIP": "10.191.9.32",
+    "podIP": "10.191.9.32",
+    "podIPs": [
+      {
+        "ip": "10.191.9.32"
+      }
+    ],
+    "startTime": "2026-11-13T07:06:52Z",
+    "containerStatuses": [
+      {
+        "name": "default",
+        "state": {
+          "terminated": {
+            "exitCode": 0,
+            "reason": "Completed",
+            "startedAt": "2026-11-13T07:07:54Z",
+            "finishedAt": "2026-11-13T07:09:38Z",
+            "containerID": "containerd://bc340cc22fab26c8d3a36f711dc7803e8f2805ce0c3c6be8092aca5f44d3daec"
+          }
+        },
+        "lastState": {},
+        "ready": false,
+        "restartCount": 0,
+        "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+        "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+        "containerID": "containerd://bc340cc22fab26c8d3a36f711dc7803e8f2805ce0c3c6be8092aca5f44d3daec",
+        "started": false
+      }
+    ],
+    "qosClass": "Guaranteed",
+    "phase": "Succeeded",
+    "nodeName": "gpu-h800-0221.host.platform.shaipower.com",
+    "finishTimestamp": "2026-11-13T07:10:13Z"
+  }
+}

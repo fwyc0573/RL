@@ -1,0 +1,22 @@
+{
+  "queried_at": "2026-11-13T07:12:05.743802+00:00",
+  "name": "exp-1113-150603-564709",
+  "uid": "5d250f1d-0607-44a2-904e-197ceddcc0f8",
+  "creator": "i-fengyicheng",
+  "status": {
+    "phase": "Succeeded",
+    "reason": "RJobSucceeded",
+    "message": "RJob succeeded",
+    "taskStatuses": {
+      "default": {
+        "succeeded": 1,
+        "taskStage": "stepmind-task-stage-1"
+      }
+    },
+    "finishTime": "2026-11-13T07:10:15Z",
+    "taskStage": "stepmind-task-stage-1"
+  },
+  "mounts": {
+    "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+  }
+}

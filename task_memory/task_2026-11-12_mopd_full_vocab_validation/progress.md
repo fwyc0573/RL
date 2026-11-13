@@ -1633,3 +1633,148 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 3. 16GPU诊断与正式200update计数分开；保留全部既有launcher及清理证据。
 
 - Git save iteration: first scoped git add encountered an index.lock; read-only inspection found it already released. HEAD remains60dc291b and no stagedfiles were present. Retry the scopedadd; no lock deletion or unrelatedGitoperation performed.
+
+
+## 2026-11-13 12:41 HKT: Current handoff state
+
+- HEADa0101fc5, branchmopd-sys. This continuation added signedcommits322c5a5f,60dc291b,a0101fc5. Four affectedmanualPythonfiles and their preparedCPUevidence are committed; unrelatedlayer_output_worker.py/session/andpriorothermodifications remain untouched.
+- Correctedformalexp-1113-121031-998701/UID2003e09a-e896-4ecd-ac29-453b3dcaf327: latest04:40:40Z Pending/ranking2/47H800remaining for56 requested. Formal0attempts/0successfulupdates, no loss/gradnorm or checkpoint yet. Launcher91314 andmountedreaderlauncher81924 were polledalive at12:41HKT; monitor81236 continuespublishingexactjob snapshots. Preserve allthree.
+- D andauthorizedcleanup remaincomplete; do not repeat either. E remainsunfinished: unchanged5teachers/151936fullvocab/256fresh/65536ceiling,750Gi/node memorycorrectionawaitingactualfirstbatch, thennativeearlysave/resume and200successfulupdates. Countdeduplicatedtrain/optimizer_update_successful andcross-checknativeAdamstep. If extensionhorizonexceeds214batches/epoch, native resumegrpo.max_num_epochs=null withconstantlr_decay_iters200,LR=minLR1e-6,WD0.01.
+- Final16H800checkpointreplayCPUpreparationnowcomplete. tests/manual/mopd/replay_checkpoint_logprobs.py includesactualnative trainingforward plusfreshscorer/vLLM comparisons; tests/manual/mopd/check_checkpoint_training_forward.py isthereusableCPUregression. AllcurrentrequiredCPUchecks/Ruff PASS. ActualGPUcheckpointrefit/forwardvalidationhasnotrun. Useactualfinalcheckpointandactualnativeformal-dump/data-identities; independentdiagnosticPGattemptisnotformalOPDprogress.
+- ResumeatE: monitorexistingformaljob ->7runtimes/replicas/imageID/resources andfirstbatchhealth/memory ->earlycheckpoint/resume ->200actualsuccesses ->finalcheckpointfinite/state and16GPUthree-wayreplay ->fulltestreportandEnglishsummaryafterrequirementsreread. Noextraobservertoolingneededwhilequeued.
+
+
+## 2026-11-13: Recover second formal failure
+
+- Corrected formal RJob exp-1113-121031-998701 (UID 2003e09a-e896-4ecd-ac29-453b3dcaf327) is Failed, finishTime 2026-11-13T06:32:26Z. Launcher cleanup stop at 14:32:33 HKT followed the failure; launchers 91314/81924 and monitor 81236 have ended. The mounted reader exp-1113-121235-452668 Succeeded; receipt reports 19 copied files, zero summarized optimizer steps, no reader failures.
+- Executed /data/ycfeng/envs/nemo-mopd-py313/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_fp16_pp4_memory_metrics.py. TensorBoard contains zero optimizer attempt records, zero successful updates, and no train loss/grad metrics. This establishes no recorded update, not merely old queue progress.
+- Native exception in exact head replica log is CUDA OOM during Megatron backward, actor rank7 on 10.191.9.69: allocation18.55GiB, free18.38GiB, Torch allocated42.97GiB/reserved-unallocated14.64GiB, GPU capacity79.19GiB. This is distinct from the prior Ray CPU-memory kill. Full incident/platform collection and checkpoint absence confirmation remain in-progress; initiating platform stop actor/reason/time remain UNKNOWN until inspected.
+- E remains unfinished. Recover exact first-batch token shapes, inspect the existing full-loss allocation path, test an evidence-based memory correction, then run the original five teachers/151936 full vocabulary/256 fresh trajectories/65536 ceiling. Do not repeat completed D or cleanup.
+
+
+## 2026-11-13: Packed backward allocation diagnosis and CPU repair
+
+- E hypotheses recorded before the code change: full-logit gradient allocation, tensors retained over multiple microbatches, allocator fragmentation. Real wrapper RED regression reproduced three full-sized slice-gradient allocations (111024bytes/37008bytes logits) with already-correct numerical loss/gradient. Replace independent narrow calls with one torch.split to concatenate gradients once; preserve the shorter fused-linear-logprob path.
+- GREEN118 CPU checks PASS after formatting (14.92s), including routing, masks, padding, exact reverse-KL loss/gradient and allocation regression. GPU formal backward remains pending. Report: test_report_2026-11-13_packed_loss_memory.md.
+- Exact failed formal batch has256 samples/2157723totaltokens/length303–20185, allfivegroups and2086520response-loss tokens; scorer/vLLM MAE0.0013139912592 PASSmean, max0.22152394 reported. This is an unpublished batch and0successfuloptimizerupdates; it is not formal training acceptance. Cloud has no checkpoint.
+- Latest input-preparation requirement is enforced before reallocation: 0GPU CPU RJob exp-1113-150603-564709, local personal Python submission, validates every source safetensor for integrity/finite values and reproduces the exact prepared training/probe datasets. Native publisher READY evidence is not available/reused. Launcher56785 must remain alive; training submission waits for readiness. Startup checks are cheap nonblocking auxiliary evidence.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和输入身份已记录 |
+| Q | PASS | 用户已确认200次成功更新合同 |
+| B | PASS | 既有输入与环境准备完成；新要求的CPU完整复验由E执行 |
+| C | PASS | 全词表 loss/gradient 参照已验收 |
+| D | PASS | 原始65536诊断和五教师 native save/resume 已通过 |
+| 授权清理 | PASS | 删除回执和保留证据已验收 |
+| E | TODO | 第二次正式作业 CUDA OOM；CPU 修复通过，0-GPU 输入复验进行中 |
+| F | TODO | 最终200-success证据、GPU replay 和 English archive 尚未完成 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次12:40HKT checkpoint 至本次恢复｜**当前前沿：** E 正式第一批 backward 与输入 readiness
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | packed-loss RED/118GREEN直接验证正式OOM修复；CPU完整输入复验来自最新用户要求 |
+| D2 细节反复重试 | CLEAR | 新CUDA失败与旧CPU失败分开取证；一次确定的梯度分配假设、一项修复 |
+| D3 支线问题修补 | CLEAR | 所有新修改服务E训练启动和正式backward |
+| D4 可并行任务停滞 | CLEAR | CPU输入复验同时进行RCA/回归/记录；GPU启动依赖CPUready |
+| D5 超范围镀金 | CLEAR | 保留原始模型、五教师、全词表、256fresh、65536与200success合同 |
+| D6 分析空转 | CLEAR | 实际复现111024/37008bytes额外分配，产生CPU验证的代码修复 |
+| D7 路线违背 | CLEAR | 不重复D、清理和已拒绝BF16/TP4路线 |
+
+**文档检查：** S5旧plan与report仍引用已退出launcher和Pending状态；本次actualFailed/0update证据替换当前状态。S1–S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan.md/current status和preupdate report：明确第二次正式CUDA失败、相关launcher已结束、输入CPU复验及新修复待GPU验证（可直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：0GPU完整输入校验PASS，cheap identity检查和本机dry-run完成 → 才能提交正式GPU复验。
+2. 并行：平台RCA收尾 ‖ scoped code commit；停止扩展已能验证的loss工具。
+3. E：实际正式firstbackward、earlysave/resume、200成功更新 → final finite/state和16H800三方replay。
+4. F：完成实际报告、signed commits、requirements reread和English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式训练仍0成功更新；CPU118PASS不能替代正式GPUbackward。
+2. 新CPU资产复验没有占用GPU，满足最新启动前输入准备规则。
+3. 无checkpoint可续跑本次failed作业；新正式作业从原始student启动并保留nativeearlysave/resume。
+
+
+## 2026-11-13 15:15 HKT: CPU readiness and formal submission preparation
+
+- E full CPU prerequisites PASS: exp-1113-150603-564709 Succeeded at07:10:15Z; launcher56785 exit0. Six original models,2034tensors/10662528000finiteelements, train55000/probe320exactrows; hashes and native identity evidence recorded. No source tensors or data modified and no native READY evidence reused.
+- Prepared-input checker now compares directory file sets plus recorded size/mtime. Submission wraps the auxiliary invocation so interpreter/import failures also remain soft. Missing-report native CLI execution printsUNVERIFIED/exit0. Current-identity check and changed-record negative control run in0GPU exp-1113-151346-746393/launcher56642; await actual PASS before allocating training GPUs.
+- Exact native formal configuration and personal dry-run PASS. Same original6paths/5teachers/151936/TP2PP4CP1/256fresh/65536;32CPU/768GBpernode/7nodes/56H800. Setmax_num_epochs=null to permit native horizon extension after overflow skips while keeping constant schedulerhorizon200. Initial baseenv preflight lackedMegatron; installedactorenv passes. CachedRuff0.9.9lint/formatpasses; noGPUenvironmentinstall.
+- HeadRCAcollectionended: businessOOM06:31:11Z precedesheadexit1/Error06:31:15Z,fail-policy stop06:32:24Z andfinish06:32:26Z. HeadEvents/logs/DeepScanqueriespassed;head2auditqueriesReadTimeout. PreviouslycompletedactorRJobauditsremaincomplete. Initiatingmanualactor/reason/request-timeUNKNOWN. No further platform investigation blocksE.
+- Report:test_report_2026-11-13_formal_input_readiness.md. Frontier remains actualformalGPUbackward -> earlynativecheckpoint/resume ->200successfulupdates -> finalstate/finite/refit/actualforward. Do notrepeatD orcleanup.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student和五教师身份已记录 |
+| Q | PASS | 200实际成功更新合同已确认 |
+| B | PASS | 输入准备已通过新CPU完整复验 |
+| C | PASS | full-loss和gradient参照已验收 |
+| D | PASS | 原始long-context和native短训练已验收 |
+| 清理 | PASS | 用户授权清理已完成 |
+| E | TODO | CPU修复与输入复验通过，正式GPUbackward待复验 |
+| F | TODO | 完整结果、最终checkpoint和archive依赖E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次packed-loss checkpoint至2026-11-13 15:16HKT｜**当前前沿：** E当前输入状态与正式GPUbackward
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 新输入检查满足GPU前置要求，通过后停止扩展 |
+| D2 细节反复重试 | CLEAR | 没有重复提交GPU；CPU环境误选已定位并更正 |
+| D3 支线问题修补 | CLEAR | 修改均对应E readiness和辅助检查软门 |
+| D4 可并行任务停滞 | CLEAR | CPU作业运行时完成配置、提交验证和RCA收尾 |
+| D5 超范围镀金 | CLEAR | 保留原始正式训练合同，没有新增核心机制 |
+| D6 分析空转 | CLEAR | 输入复验实际PASS，后续正式提交配置已具体化 |
+| D7 路线违背 | CLEAR | GPU提交仍等待CPU当前输入检查；没有缩减batch/vocab/length |
+
+**文档检查：** S5旧plan/report把已完成的完整CPU复验记为pending，本轮已更新。S1–S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan/progress/report当前状态：完整CPU复验Succeeded/PASS，当前cheap check身份和正式提交准备（可直接执行，已更新）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：cheap check实际PASS -> signed scopedcommit -> 正式原始配置GPU提交 -> first backward与earlysave/resume。
+2. 并行：现有mounted reader记录loss/grad、sample/group、parity；辅助错误保持nonblocking。
+3. E/F：200成功flags与Adamstate核对 -> 最终state/finite/三方parity -> 完整报告与Englisharchive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式训练仍0成功更新，GPU修复不能由CPU结果推断。
+2. 六模型全量扫描和完整数据重建已通过，不再重复昂贵准备。
+3. 下一步执行正式训练，保留D和清理结果，不扩展已准备好的最终replay工具。
+
+- 15:16HKT currentcheapcheckbusinessPASS:41files/all6modelroles; deliberately changed recordedsize rejected. ActualgeneratedsubmissionshellcontinuesafterinjectedImportError;FAILCPUreportrejectedpre-submission. Stopaddinginputchecks; committhenformalGPUrun.

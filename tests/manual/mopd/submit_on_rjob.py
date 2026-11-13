@@ -27,6 +27,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--training-entrypoint", type=Path)
+    parser.add_argument("--prepared-inputs", type=Path)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--nodes", type=int, required=True)
     parser.add_argument("--gpus-per-node", type=int, required=True)
@@ -57,6 +58,29 @@ def main() -> None:
     ):
         if not path.exists():
             raise FileNotFoundError(path)
+    input_check_command = []
+    if args.prepared_inputs is not None:
+        prepared = json.loads(args.prepared_inputs.read_text())
+        if prepared["status"] != "PASS":
+            raise ValueError("Formal inputs must pass CPU validation before submission")
+        check_command = shlex.join(
+            [
+                str(args.uv),
+                "run",
+                "--no-sync",
+                "python",
+                "-u",
+                str(repo / "tests/manual/mopd/validate_run_inputs.py"),
+                "--check",
+                "--report",
+                str(args.prepared_inputs.resolve()),
+            ]
+        )
+        input_check_command = [
+            f"if ! {check_command}; then",
+            '    echo "MOPD_PREPARED_INPUTS_UNVERIFIED checker exited unsuccessfully"',
+            "fi",
+        ]
     credentials = {
         "BRAINPP_ACCESS_KEY": (args.credential_dir / "accesskey_id")
         .read_text()
@@ -112,6 +136,7 @@ def main() -> None:
             "export LD_LIBRARY_PATH="
             + shlex.quote(str(args.cuda_compat))
             + "${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}",
+            *input_check_command,
             "nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv",
             "exec " + shlex.join(argv),
         ]

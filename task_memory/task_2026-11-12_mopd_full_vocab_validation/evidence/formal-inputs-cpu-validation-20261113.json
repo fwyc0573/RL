@@ -1,0 +1,817 @@
+{
+  "status": "PASS",
+  "validated_at": "2026-11-13T07:09:37.274955+00:00",
+  "validation": "Full CPU safetensor integrity/finite scan and exact dataset reproduction; no native publisher READY evidence was reused.",
+  "models": {
+    "student": {
+      "path": "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 10000,
+        "sliding_window": 4096,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.44.0",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "ByteLevel",
+        "add_prefix_space": false,
+        "trim_offsets": false,
+        "use_regex": false
+      },
+      "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c><think>\\n'}}{% endif %}",
+      "chat_template_file": null,
+      "weight_files": {
+        "model.safetensors": 3554214621
+      }
+    },
+    "math": {
+      "path": "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 10000,
+        "sliding_window": 4096,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "ByteLevel",
+        "add_prefix_space": false,
+        "trim_offsets": false,
+        "use_regex": false
+      },
+      "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c><think>\\n'}}{% endif %}",
+      "chat_template_file": null,
+      "weight_files": {
+        "model.safetensors": 3554214752
+      }
+    },
+    "code": {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da",
+      "config": {
+        "_name_or_path": "agentica-org/DeepCoder-1.5B-Preview",
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151646,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "pad_token_id": 151643,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 10000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "torch_dtype": "float32",
+        "transformers_version": "4.49.0",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "TemplateProcessing",
+        "single": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          }
+        ],
+        "pair": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          },
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 1
+            }
+          },
+          {
+            "Sequence": {
+              "id": "B",
+              "type_id": 1
+            }
+          }
+        ],
+        "special_tokens": {
+          "<\uff5cbegin\u2581of\u2581sentence\uff5c>": {
+            "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+            "ids": [
+              151646
+            ],
+            "tokens": [
+              "<\uff5cbegin\u2581of\u2581sentence\uff5c>"
+            ]
+          }
+        }
+      },
+      "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c>'}}{% endif %}",
+      "chat_template_file": null,
+      "weight_files": {
+        "model-00001-of-00002.safetensors": 4996670464,
+        "model-00002-of-00002.safetensors": 2111719976
+      }
+    },
+    "stem": {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151646,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "pad_token_id": 151643,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 10000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.51.3",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "TemplateProcessing",
+        "single": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          }
+        ],
+        "pair": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          },
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 1
+            }
+          },
+          {
+            "Sequence": {
+              "id": "B",
+              "type_id": 1
+            }
+          }
+        ],
+        "special_tokens": {
+          "<\uff5cbegin\u2581of\u2581sentence\uff5c>": {
+            "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+            "ids": [
+              151646
+            ],
+            "tokens": [
+              "<\uff5cbegin\u2581of\u2581sentence\uff5c>"
+            ]
+          }
+        }
+      },
+      "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c><think>\\n'}}{% endif %}",
+      "chat_template_file": null,
+      "weight_files": {
+        "model-00001-of-00002.safetensors": 4996670464,
+        "model-00002-of-00002.safetensors": 2111719976
+      }
+    },
+    "logic": {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151643,
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "rms_norm_eps": 1e-06,
+        "rope_theta": 10000,
+        "sliding_window": 4096,
+        "tie_word_embeddings": false,
+        "torch_dtype": "bfloat16",
+        "transformers_version": "4.44.0",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "ByteLevel",
+        "add_prefix_space": false,
+        "trim_offsets": false,
+        "use_regex": false
+      },
+      "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c><think>\\n'}}{% endif %}",
+      "chat_template_file": null,
+      "weight_files": {
+        "model-00000-of-00001.safetensors": 3554214720
+      }
+    },
+    "if": {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba",
+      "config": {
+        "architectures": [
+          "Qwen2ForCausalLM"
+        ],
+        "attention_dropout": 0.0,
+        "bos_token_id": 151646,
+        "dtype": "bfloat16",
+        "eos_token_id": 151643,
+        "hidden_act": "silu",
+        "hidden_size": 1536,
+        "initializer_range": 0.02,
+        "intermediate_size": 8960,
+        "layer_types": [
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention",
+          "full_attention"
+        ],
+        "max_position_embeddings": 131072,
+        "max_window_layers": 21,
+        "model_type": "qwen2",
+        "num_attention_heads": 12,
+        "num_hidden_layers": 28,
+        "num_key_value_heads": 2,
+        "pad_token_id": 151643,
+        "rms_norm_eps": 1e-06,
+        "rope_scaling": null,
+        "rope_theta": 10000,
+        "sliding_window": null,
+        "tie_word_embeddings": false,
+        "transformers_version": "4.57.1",
+        "use_cache": true,
+        "use_mrope": false,
+        "use_sliding_window": false,
+        "vocab_size": 151936
+      },
+      "vocabulary_and_bpe_match_student": true,
+      "merges": 151387,
+      "post_processor": {
+        "type": "TemplateProcessing",
+        "single": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          }
+        ],
+        "pair": [
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 0
+            }
+          },
+          {
+            "Sequence": {
+              "id": "A",
+              "type_id": 0
+            }
+          },
+          {
+            "SpecialToken": {
+              "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+              "type_id": 1
+            }
+          },
+          {
+            "Sequence": {
+              "id": "B",
+              "type_id": 1
+            }
+          }
+        ],
+        "special_tokens": {
+          "<\uff5cbegin\u2581of\u2581sentence\uff5c>": {
+            "id": "<\uff5cbegin\u2581of\u2581sentence\uff5c>",
+            "ids": [
+              151646
+            ],
+            "tokens": [
+              "<\uff5cbegin\u2581of\u2581sentence\uff5c>"
+            ]
+          }
+        }
+      },
+      "chat_template": null,
+      "chat_template_file": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<\uff5cUser\uff5c>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<\uff5cAssistant\uff5c><\uff5ctool\u2581calls\u2581begin\uff5c><\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<\uff5ctool\u2581call\u2581begin\uff5c>' + tool['type'] + '<\uff5ctool\u2581sep\uff5c>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<\uff5ctool\u2581call\u2581end\uff5c>'}}{{'<\uff5ctool\u2581calls\u2581end\uff5c><\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>' + message['content'] + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<\uff5cAssistant\uff5c>' + content + '<\uff5cend\u2581of\u2581sentence\uff5c>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<\uff5ctool\u2581outputs\u2581begin\uff5c><\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<\uff5ctool\u2581output\u2581begin\uff5c>' + message['content'] + '<\uff5ctool\u2581output\u2581end\uff5c>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<\uff5ctool\u2581outputs\u2581end\uff5c>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<\uff5cAssistant\uff5c><think>\\n'}}{% endif %}",
+      "weight_files": {
+        "model.safetensors": 3554214752
+      }
+    }
+  },
+  "tensor_count": 2034,
+  "finite_elements": 10662528000,
+  "datasets": {
+    "sources": {
+      "math/train.json": {
+        "sha256": "66d573930452a887ecd6bfa48dfd28f863d7ecac24ec52f824c4110e804e70cb",
+        "rows": 10600
+      },
+      "math/probe.json": {
+        "sha256": "ae96ef6b7b7d09d352ce015baa4f1ca738a095292747176022eef70aab3aec62",
+        "rows": 64
+      },
+      "code/train.json": {
+        "sha256": "011bd29377e7070eeb28914019506fdba7ee33dcd5dee71003d108be6046f740",
+        "rows": 11000
+      },
+      "code/probe.json": {
+        "sha256": "f2d03d19e462c3755705549d3dfb4ca14069615846a0f72b8c735b0aefdb45dd",
+        "rows": 64
+      },
+      "stem/train.json": {
+        "sha256": "a471e462fd3941a3917b9e98a995af542362db26f2189aac7f6e1c8055c5a9c3",
+        "rows": 11000
+      },
+      "stem/probe.json": {
+        "sha256": "88940001dc87d5c4bfa27e2d48e29f9bbb7b27a62cb6ef295f789218d1b31786",
+        "rows": 64
+      },
+      "logic/train.json": {
+        "sha256": "729b34e1117f662197d90a1fa53c08a2338cd7d8e09be749b0bbfdcd3f9ea9a2",
+        "rows": 11000
+      },
+      "logic/probe.json": {
+        "sha256": "1724ee71ca1a97e59a8c8c80d4679cb9d52625d248391e33d6df673ae4895937",
+        "rows": 64
+      },
+      "if/train.json": {
+        "sha256": "4b3edc6709da9cabfa8f35c1c09b3c412843457d319acbfcb06895ed82099c82",
+        "rows": 11000
+      },
+      "if/probe.json": {
+        "sha256": "4e4a8e4cf7295177beef07bb1204273fb0a241973ddb2f8430df760ae3cf843b",
+        "rows": 64
+      },
+      "math/reserve.json": {
+        "sha256": "0a2d147567b08c2121bde11ccd7c578e0817732c17133e0db761273ab65af7f8",
+        "rows": 5244
+      }
+    },
+    "seed": 20260926,
+    "train": {
+      "rows": 55000,
+      "slots_per_group": 11000,
+      "unique_source_rows": {
+        "math": 10600,
+        "code": 11000,
+        "stem": 11000,
+        "logic": 11000,
+        "if": 11000
+      }
+    },
+    "probe": {
+      "rows": 320,
+      "slots_per_group": 64,
+      "unique_source_rows": {
+        "math": 64,
+        "code": 64,
+        "stem": 64,
+        "logic": 64,
+        "if": 64
+      }
+    }
+  },
+  "files": {
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student/config.json": {
+      "identity": {
+        "size": 679,
+        "mtime_ns": 1790173238379294670
+      },
+      "sha256": "37bd455e9679d2959536270fed49d25cc7c290a64f6e52abb97c71345a9cee41"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student/generation_config.json": {
+      "identity": {
+        "size": 181,
+        "mtime_ns": 1790173238424492045
+      },
+      "sha256": "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student/model.safetensors": {
+      "identity": {
+        "size": 3554214621,
+        "mtime_ns": 1790173259016624772
+      },
+      "sha256": "58858233513d76b8703e72eed6ce16807b523328188e13329257fb9594462945"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student/tokenizer.json": {
+      "identity": {
+        "size": 7031660,
+        "mtime_ns": 1790173263410389513
+      },
+      "sha256": "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student/tokenizer_config.json": {
+      "identity": {
+        "size": 3071,
+        "mtime_ns": 1790173263487825153
+      },
+      "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher/config.json": {
+      "identity": {
+        "size": 703,
+        "mtime_ns": 1790173263615096251
+      },
+      "sha256": "f62729adb55c028ee1a59a27279b4c35510211aebf5f987e7080c2312ce71755"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher/generation_config.json": {
+      "identity": {
+        "size": 181,
+        "mtime_ns": 1790173263658529057
+      },
+      "sha256": "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher/model.safetensors": {
+      "identity": {
+        "size": 3554214752,
+        "mtime_ns": 1790173273473273333
+      },
+      "sha256": "1bedcdf243c4e2e633fa04c05617809cf6a1bbc1a07221609035f6347efecffb"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher/tokenizer.json": {
+      "identity": {
+        "size": 7031660,
+        "mtime_ns": 1790173278064217818
+      },
+      "sha256": "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773"
+    },
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher/tokenizer_config.json": {
+      "identity": {
+        "size": 3071,
+        "mtime_ns": 1790173278129715889
+      },
+      "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/config.json": {
+      "identity": {
+        "size": 786,
+        "mtime_ns": 1790362642058087231
+      },
+      "sha256": "b06206e84c910bb6721e802e05adc546e07d991bde3b22ceb8e2958989e318d3"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/generation_config.json": {
+      "identity": {
+        "size": 181,
+        "mtime_ns": 1790362644392610935
+      },
+      "sha256": "8dd737d110cceb8396782d1b0c9196655a4a78fee4de35f056b22d1f9e96bf96"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/model-00001-of-00002.safetensors": {
+      "identity": {
+        "size": 4996670464,
+        "mtime_ns": 1790362454107472354
+      },
+      "sha256": "db6993b17d3fb7ba01052738e99ca44e8515eeec2a7952a7aaaff41885f4d363"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/model-00002-of-00002.safetensors": {
+      "identity": {
+        "size": 2111719976,
+        "mtime_ns": 1790362405103235777
+      },
+      "sha256": "ef94976d8f1fa3e9bb374e2f156a97c7d51fe6f92572e46670bc4caf6b9317ec"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/model.safetensors.index.json": {
+      "identity": {
+        "size": 27751,
+        "mtime_ns": 1790362636558411629
+      },
+      "sha256": "182b576f521e239d797460755941a1e4c8ffb838a83b0a6aa7dc449f942498df"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/special_tokens_map.json": {
+      "identity": {
+        "size": 485,
+        "mtime_ns": 1790362642649246769
+      },
+      "sha256": "59cda48bbe8bab9d61ffb410e6e3c07b6d98bff73cee7c88ff8b51f95f21ab1c"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/tokenizer.json": {
+      "identity": {
+        "size": 11422778,
+        "mtime_ns": 1790362631763161894
+      },
+      "sha256": "e20ddafc659ba90242154b55275402edeca0715e5dbb30f56815a4ce081f4893"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da/tokenizer_config.json": {
+      "identity": {
+        "size": 6758,
+        "mtime_ns": 1790362638572051602
+      },
+      "sha256": "79e0359ba5ec6c335bafb050f0ac2f402c043e3e0fc1e12cfdf0b80a2564a283"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/config.json": {
+      "identity": {
+        "size": 729,
+        "mtime_ns": 1790362642625175454
+      },
+      "sha256": "f1b8eaf06009a58e2c3c75ea903220e6cb936fa4e3bde0f53c47b21799fa134f"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/generation_config.json": {
+      "identity": {
+        "size": 147,
+        "mtime_ns": 1790362644436471139
+      },
+      "sha256": "4bc51410e9895baf4ecb81e76d9fe53196ef5d64dc2c0b1b7bd0a2c747336001"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/model-00001-of-00002.safetensors": {
+      "identity": {
+        "size": 4996670464,
+        "mtime_ns": 1790362439842975088
+      },
+      "sha256": "7dceae630a32102d57f36db0a4ab2f619bd5caf19399a2bc3db79f9b3d13e025"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/model-00002-of-00002.safetensors": {
+      "identity": {
+        "size": 2111719976,
+        "mtime_ns": 1790362429787875174
+      },
+      "sha256": "dae3df30f06f48238c9563b428d598574ff776514475c4bc25a9a94bf416a094"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/model.safetensors.index.json": {
+      "identity": {
+        "size": 27751,
+        "mtime_ns": 1790362636819224216
+      },
+      "sha256": "182b576f521e239d797460755941a1e4c8ffb838a83b0a6aa7dc449f942498df"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/special_tokens_map.json": {
+      "identity": {
+        "size": 485,
+        "mtime_ns": 1790362642991725673
+      },
+      "sha256": "59cda48bbe8bab9d61ffb410e6e3c07b6d98bff73cee7c88ff8b51f95f21ab1c"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/tokenizer.json": {
+      "identity": {
+        "size": 11422778,
+        "mtime_ns": 1790362632343906451
+      },
+      "sha256": "e20ddafc659ba90242154b55275402edeca0715e5dbb30f56815a4ce081f4893"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7/tokenizer_config.json": {
+      "identity": {
+        "size": 6768,
+        "mtime_ns": 1790362638444100431
+      },
+      "sha256": "92a23085bfbd6862f4868df0db8404d8f18f6393225ec5b2bbef0bd1630111fa"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/config.json": {
+      "identity": {
+        "size": 679,
+        "mtime_ns": 1790361550918407470
+      },
+      "sha256": "37bd455e9679d2959536270fed49d25cc7c290a64f6e52abb97c71345a9cee41"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/generation_config.json": {
+      "identity": {
+        "size": 181,
+        "mtime_ns": 1790361552649333496
+      },
+      "sha256": "72cbec1015da9ed03ad025483005cbf6481403abf947adfd54e504d1a66a2126"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/model-00000-of-00001.safetensors": {
+      "identity": {
+        "size": 3554214720,
+        "mtime_ns": 1790361704524273322
+      },
+      "sha256": "4d4fa1c9ee389ed29aa16f0d1b82b8e56ee15901c13cdc0e229537adc6e35f01"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/model.safetensors.index.json": {
+      "identity": {
+        "size": 27750,
+        "mtime_ns": 1790361531195927636
+      },
+      "sha256": "21706ba441af33c3b71bdd88f08bf077c2a5cfd6ff2cec02a8ade841814713b3"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/tokenizer.json": {
+      "identity": {
+        "size": 7031660,
+        "mtime_ns": 1790361526071196591
+      },
+      "sha256": "88145e3c3249adc2546ede277e9819d6e405e19072456e4b521cbc724bd60773"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50/tokenizer_config.json": {
+      "identity": {
+        "size": 3071,
+        "mtime_ns": 1790361540268485948
+      },
+      "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/chat_template.jinja": {
+      "identity": {
+        "size": 2246,
+        "mtime_ns": 1790361543949142436
+      },
+      "sha256": "56a1447ad31926fdc21fb07e56e5642bd9c850c4f52d8c8af7bbe5f079a84f5f"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/config.json": {
+      "identity": {
+        "size": 1362,
+        "mtime_ns": 1790361549347622941
+      },
+      "sha256": "23af32cea19a38ec381ca00e6b701845d6eccbf6c46628549bd5f2b1bd599b9f"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/generation_config.json": {
+      "identity": {
+        "size": 181,
+        "mtime_ns": 1790361554415843335
+      },
+      "sha256": "f5e432959a722c3d3cde9a9c6606ddff8c618c1fe5a67f685f3b5b43d806ee53"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/model.safetensors": {
+      "identity": {
+        "size": 3554214752,
+        "mtime_ns": 1790361732407473931
+      },
+      "sha256": "f11c4eb4a85aafdea10e0956d47b390d5c3ab31d6778d10b650611a5ce478188"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/special_tokens_map.json": {
+      "identity": {
+        "size": 485,
+        "mtime_ns": 1790361551877190212
+      },
+      "sha256": "59cda48bbe8bab9d61ffb410e6e3c07b6d98bff73cee7c88ff8b51f95f21ab1c"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/tokenizer.json": {
+      "identity": {
+        "size": 11422778,
+        "mtime_ns": 1790361524965308315
+      },
+      "sha256": "e20ddafc659ba90242154b55275402edeca0715e5dbb30f56815a4ce081f4893"
+    },
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba/tokenizer_config.json": {
+      "identity": {
+        "size": 4490,
+        "mtime_ns": 1790361538430704857
+      },
+      "sha256": "55edc67ee25d8e0d4b7a13036ee61cdb880b49db4398533cc6a29710d1790ade"
+    },
+    "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/train.jsonl": {
+      "identity": {
+        "size": 76828423,
+        "mtime_ns": 1794423094555456815
+      },
+      "sha256": "eb0b94ee490e31e3d905a65ad4bae6e105d11051a9f9923ff79e5c17f6cb849b"
+    },
+    "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/probe.jsonl": {
+      "identity": {
+        "size": 454801,
+        "mtime_ns": 1794423094707103117
+      },
+      "sha256": "86082e64c48853443a9a7b65336a4748072613372f5be4f118985ff88dddf08e"
+    }
+  }
+}

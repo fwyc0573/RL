@@ -57,6 +57,6 @@ Observed118PASS/47deselected/17warnings/14.92s. The new memory assertion and dir
 
 ## Remaining validation
 
-The new user input-preparation rule requires full validation before allocating training GPUs when native publisher READY evidence is unavailable. RJob exp-1113-150603-564709 is a0GPU CPU validation job for all six original HF sources and complete dataset reproduction. Its result is pending. Worker identity checks are nonblocking auxiliary checks; native training and I/O retain their own errors.
+The new user input-preparation rule requires full validation before allocating training GPUs when native publisher READY evidence is unavailable. RJob exp-1113-150603-564709 is a0GPU CPU validation job for all six original HF sources and complete dataset reproduction. Its result is now PASS:2034tensors/10662528000finiteelements andexact55000train/320proberows; platformSucceeded07:10:15Z. See test_report_2026-11-13_formal_input_readiness.md. Worker identity checks are nonblocking auxiliary checks; native training and I/O retain their own errors.
 
 After CPU input readiness, rerun the unchanged formal scenario with the repaired wrapper, inspect first backward health and native checkpoint/resume, then finish200actualsuccessfulupdates and final-checkpoint three-way parity. Original65536long-context and five-teacher D results remain recorded PASS; this repair still needs the full formal GPU scenario.
