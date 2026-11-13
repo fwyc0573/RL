@@ -119,6 +119,7 @@ from nemo_rl.models.megatron.setup import (
     enable_batch_invariant_mode,
     finalize_megatron_setup,
     handle_model_import,
+    initialize_optimizer_state_for_checkpoint,
     load_teacher_output_layer_weight,
     setup_distributed,
     setup_model_and_optimizer,
@@ -5118,6 +5119,7 @@ class MegatronPolicyWorkerImpl(
             if optimizer_path is not None:
                 if self.optimizer is not None:
                     optimizer_to_save = self.optimizer
+                    initialize_optimizer_state_for_checkpoint(optimizer_to_save)
                 if self.scheduler is not None:
                     scheduler_to_save = self.scheduler
 

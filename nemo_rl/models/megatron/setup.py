@@ -67,6 +67,8 @@ from megatron.core import parallel_state
 from megatron.core.extensions.transformer_engine import TEQuantizationParams
 from megatron.core.inference.shards import build_inference_pg_collection
 from megatron.core.num_microbatches_calculator import update_num_microbatches
+from megatron.core.optimizer.distrib_optimizer import DistributedOptimizer
+from megatron.core.optimizer.optimizer import ChainedOptimizer, MegatronOptimizer
 from megatron.core.process_groups_config import ProcessGroupCollection
 from megatron.core.quantization.quant_config import MatchContext, RecipeConfig
 from megatron.core.quantization.utils import load_quantization_recipe
@@ -76,6 +78,7 @@ from megatron.core.transformer.enums import AttnBackend, InferenceCudaGraphScope
 from megatron.core.transformer.module import Float16Module
 from megatron.core.transformer.transformer_config import TransformerConfig
 from megatron.core.utils import get_model_config
+from transformer_engine.pytorch.optimizers import FusedAdam
 from transformers import PreTrainedTokenizerBase
 
 from nemo_rl.distributed.model_utils import patch_gpt_model_forward_for_linear_ce_fusion
@@ -2892,6 +2895,31 @@ def setup_model_and_optimizer(
         draft_model=draft_model,
         colocated_reshard_plan=colocated_reshard_plan,
     )
+
+
+def initialize_optimizer_state_for_checkpoint(optimizer: MegatronOptimizer) -> None:
+    """Materialize lazy distributed Adam state before checkpoint serialization."""
+    optimizers = (
+        optimizer.chained_optimizers
+        if isinstance(optimizer, ChainedOptimizer)
+        else [optimizer]
+    )
+    for component in optimizers:
+        if not isinstance(component, DistributedOptimizer) or not isinstance(
+            component.optimizer, FusedAdam
+        ):
+            continue
+        adam = component.optimizer
+        for group in adam.param_groups:
+            for parameter in group["params"]:
+                if not adam.state[parameter]:
+                    adam.initialize_state(
+                        parameter,
+                        store_param_remainders=(
+                            adam.store_param_remainders
+                            and parameter.dtype == torch.bfloat16
+                        ),
+                    )
 
 
 def handle_model_import(
