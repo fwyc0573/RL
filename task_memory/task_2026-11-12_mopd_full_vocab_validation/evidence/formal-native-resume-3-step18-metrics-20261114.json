@@ -1,0 +1,190 @@
+{
+  "timing/setup/generation_init_time_s": [],
+  "timing/setup/generation_init_reserve_time_s": [],
+  "timing/setup/generation_init_load_time_s": [],
+  "timing/setup/policy_init_time_s": [],
+  "timing/setup/nemo_gym_init_time_s": [],
+  "timing/setup/collective_init_time_s": [],
+  "timing/setup/teacher_reservation_time_s": [],
+  "timing/setup/teacher_model_init_time_s": [],
+  "timing/setup/teacher_init_time_s": [],
+  "timing/setup/total_setup_time_s": [],
+  "timing/setup/worker_setup_time_s": [],
+  "timing/setup/other_setup_time_s": [],
+  "timing/rollout_recovery/snapshot_resolution_seconds": [],
+  "timing/rollout_recovery/dataloader_load_seconds": [],
+  "timing/rollout_recovery/tq_load_seconds": [],
+  "timing/rollout_recovery/replay_metadata_load_seconds": [],
+  "timing/rollout_recovery/recovery_prepare_seconds": [],
+  "timing/rollout_recovery/total_load_seconds": [],
+  "timing/rollout_recovery/groups_complete_restored": [],
+  "timing/rollout_recovery/train_step": [],
+  "timing/rollout_recovery/telemetry/wall_time_seconds": [],
+  "train/skipped_step": [
+    {
+      "step": 18,
+      "value": 0.0,
+      "wall_time": 1794601221.029596
+    }
+  ],
+  "train/loss": [
+    {
+      "step": 18,
+      "value": 0.19038212299346924,
+      "wall_time": 1794601221.0327995
+    }
+  ],
+  "train/grad_norm": [
+    {
+      "step": 18,
+      "value": 1.1475327014923096,
+      "wall_time": 1794601221.0427382
+    }
+  ],
+  "train/loss_scale": [
+    {
+      "step": 18,
+      "value": 1.0,
+      "wall_time": 1794601221.0496023
+    }
+  ],
+  "train/optimizer_update_successful": [
+    {
+      "step": 18,
+      "value": 1.0,
+      "wall_time": 1794601221.0537407
+    }
+  ],
+  "train/num_valid_samples": [
+    {
+      "step": 18,
+      "value": 256.0,
+      "wall_time": 1794601221.5838857
+    }
+  ],
+  "train/lr": [
+    {
+      "step": 18,
+      "value": 9.999999974752427e-07,
+      "wall_time": 1794601221.6226044
+    }
+  ],
+  "train/global_valid_toks": [
+    {
+      "step": 18,
+      "value": 2019541.0,
+      "wall_time": 1794601221.6361635
+    }
+  ],
+  "train/vllm/generations_ok": [
+    {
+      "step": 18,
+      "value": 256.0,
+      "wall_time": 1794601226.4228868
+    }
+  ],
+  "train/vllm/generations_failed": [
+    {
+      "step": 18,
+      "value": 0.0,
+      "wall_time": 1794601226.4394777
+    }
+  ],
+  "train/on_policy_distillation/teacher_samples": [
+    {
+      "step": 18,
+      "value": 256.0,
+      "wall_time": 1794601226.4986336
+    }
+  ],
+  "train/weight_version_lag": [
+    {
+      "step": 18,
+      "value": 0.0,
+      "wall_time": 1794601227.415751
+    }
+  ],
+  "timing/rollout_recovery/redispatch_schedule_seconds": [],
+  "timing/rollout_recovery/groups_unfinished_found": [],
+  "timing/rollout_recovery/siblings_reused": [],
+  "timing/rollout_recovery/siblings_rerun": [],
+  "timing/rollout_recovery/siblings_continued": [],
+  "timing/rollout_recovery/siblings_restarted": [],
+  "timing/train/prepare_for_generation/sync_policy_params": [
+    {
+      "step": 18,
+      "value": 0.019207056611776352,
+      "wall_time": 1794601227.862121
+    }
+  ],
+  "timing/train/exposed_generation": [
+    {
+      "step": 18,
+      "value": 670.991943359375,
+      "wall_time": 1794601227.8690667
+    }
+  ],
+  "timing/train/logprob_inference_prep": [
+    {
+      "step": 18,
+      "value": 1.3227471113204956,
+      "wall_time": 1794601227.8833654
+    }
+  ],
+  "timing/train/policy_and_reference_logprobs": [
+    {
+      "step": 18,
+      "value": 21.067495346069336,
+      "wall_time": 1794601227.8882065
+    }
+  ],
+  "timing/train/train_data_dump": [
+    {
+      "step": 18,
+      "value": 6.460072994232178,
+      "wall_time": 1794601227.891881
+    }
+  ],
+  "timing/train/advantage_calculation": [
+    {
+      "step": 18,
+      "value": 7.149125099182129,
+      "wall_time": 1794601227.9039924
+    }
+  ],
+  "timing/train/training_prep": [
+    {
+      "step": 18,
+      "value": 2.534893035888672,
+      "wall_time": 1794601227.9126978
+    }
+  ],
+  "timing/train/policy_training": [
+    {
+      "step": 18,
+      "value": 90.13155364990234,
+      "wall_time": 1794601227.9162288
+    }
+  ],
+  "timing/train/weight_sync": [
+    {
+      "step": 18,
+      "value": 0.3146468997001648,
+      "wall_time": 1794601227.9231088
+    }
+  ],
+  "timing/train/total_step_time": [
+    {
+      "step": 18,
+      "value": 796.5733032226562,
+      "wall_time": 1794601227.9321804
+    }
+  ],
+  "timing/train/valid_tokens_per_sec_per_gpu": [
+    {
+      "step": 18,
+      "value": 45.2729606628418,
+      "wall_time": 1794601227.9359457
+    }
+  ]
+}

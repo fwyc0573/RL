@@ -112,6 +112,7 @@ from nemo_rl.experience.interfaces import (
     RETAINED_TASK_INDICES_KEY,
     TRAINED_TASK_INDICES_KEY,
 )
+from nemo_rl.experience.metric_utils import calculate_single_metric
 from nemo_rl.experience.rollouts import calculate_rewards
 from nemo_rl.models.generation import configure_generation_config
 from nemo_rl.models.generation.interfaces import (
@@ -8496,6 +8497,10 @@ class TestComputeAndApplySeqLogprobErrorMasking:
 class TestAggregateRolloutMetrics:
     """Tests for aggregate_rollout_metrics which aggregates per-group metrics by semantic type."""
 
+    @pytest.fixture(autouse=True)
+    def reset_env_calls(self) -> None:
+        """Run scalar aggregation tests independently of remote environments."""
+
     def test_min_metrics_take_minimum(self):
         metrics = {
             "gen_tokens/min": [10, 5, 8],
@@ -8570,6 +8575,35 @@ class TestAggregateRolloutMetrics:
 
         assert result["agent/reward/histogram"] == [0.1, 0.2, 0.3]
         assert result["histogram/gen_tokens_length"] == [10, 20, 30]
+
+    @pytest.mark.parametrize("groups", [[[1], [2], [10]], [[1, 4], [10]]])
+    def test_histogram_statistics_use_pooled_observations(
+        self, groups: list[list[int]]
+    ) -> None:
+        metrics = {}
+        for group in groups:
+            for key, value in calculate_single_metric(
+                group, len(group), "gen_tokens_per_sample"
+            ).items():
+                metrics.setdefault(key, []).append(value)
+        observations = [value for group in groups for value in group]
+        expected = calculate_single_metric(
+            observations, len(observations), "gen_tokens_per_sample"
+        )
+
+        result = aggregate_rollout_metrics(metrics)
+
+        assert (
+            result["gen_tokens_per_sample/median"]
+            == expected["gen_tokens_per_sample/median"]
+        )
+        assert result["gen_tokens_per_sample/stddev"] == pytest.approx(
+            expected["gen_tokens_per_sample/stddev"]
+        )
+        assert result["gen_tokens_per_sample/histogram"] == observations
+        assert result["gen_tokens_per_sample/mean"] == sum(
+            metrics["gen_tokens_per_sample/mean"]
+        ) / len(groups)
 
     def test_histogram_substring_keys_still_average(self):
         """Histogram-like substrings do not identify distributions."""

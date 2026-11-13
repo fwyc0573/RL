@@ -1,0 +1,17 @@
+{
+  "step": 18,
+  "samples": 256,
+  "groups": {
+    "code": 42,
+    "math": 42,
+    "stem": 49,
+    "logic": 57,
+    "if": 66
+  },
+  "weight_versions": [
+    17
+  ],
+  "length_min": 235,
+  "length_max": 30622,
+  "issues": []
+}

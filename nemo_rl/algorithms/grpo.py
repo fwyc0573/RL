@@ -116,7 +116,10 @@ from nemo_rl.experience.interfaces import (
     RETAINED_TASK_INDICES_KEY,
     TRAINED_TASK_INDICES_KEY,
 )
-from nemo_rl.experience.metric_utils import is_histogram_metric
+from nemo_rl.experience.metric_utils import (
+    calculate_single_metric,
+    is_histogram_metric,
+)
 from nemo_rl.experience.rollouts import (
     EffortLevelsConfig,
     attach_initial_nemo_gym_image_payloads,
@@ -5103,6 +5106,7 @@ def aggregate_rollout_metrics(
 
     Different metric types are aggregated according to their semantics:
     - Histogram observations: flattened into one step-level distribution
+    - Median and standard deviation with sibling histograms: calculated from pooled observations
     - Metrics ending with "/std_in_group": summarize the per-group values
     - Metrics ending with "/min" or starting with "min_" (excluding "_rate" suffix): take the minimum
     - Metrics ending with "/max" or starting with "max_" (excluding "_rate" suffix): take the maximum
@@ -5142,6 +5146,14 @@ def aggregate_rollout_metrics(
             )
         else:
             aggregated[k] = sum(v) / len(v)
+    for histogram_key, observations in aggregated.items():
+        if histogram_key.endswith("/histogram") and observations:
+            key_name = histogram_key.removesuffix("/histogram")
+            pooled = calculate_single_metric(observations, len(observations), key_name)
+            for statistic in ("median", "stddev"):
+                statistic_key = f"{key_name}/{statistic}"
+                if statistic_key in aggregated:
+                    aggregated[statistic_key] = pooled[statistic_key]
     return aggregated
 
 

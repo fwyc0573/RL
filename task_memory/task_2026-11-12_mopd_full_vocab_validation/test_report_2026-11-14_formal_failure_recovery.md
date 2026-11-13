@@ -2,12 +2,15 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify native step18 success and pooled rollout-statistic RED/GREEN on real sample lengths. |
 | 2026-11-14 | Record native scheduler RED/GREEN, failure RCA and latest-only retention. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
 | 2026-11-14 | Verify latest-only deletion, native scaler/scheduler state, loss-scale regression, and corrected resume preflight. |
 | 2026-11-14 | Recover formal failure, unsuccessful-update metrics and exact rank3 preemption; native state verification remains in progress. |
 
 # Formal MOPD failure recovery
+
+Current status: corrected resume has **2/200 successful formal optimizer updates** atsteps18–19; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
 
 Expected: the original student/five teachers, full151936vocabulary,256fresh trajectories/update,65536ceiling,200successfuloptimizerupdates, native save/resume and final response-logprob MAE≤0.02nats/token.
 
@@ -268,3 +271,39 @@ At20:03:18Z,the read-only personal namespace inventory confirms only step17,31fi
 ## Actual policy and TQ checkpoint restoration
 
 The20:05:14Z exact head query returns797rows. The native loader confirms successful distributed loading from step17/policy/weights,t0/2,p0/4,iteration0. Native TQ restoration and validation follows,groups0. Teacher initialization then proceeds. Verdict:PASS native policy/TQ load progression and actual recovery beyond the previous scheduler failure. First scale1 gradient/Adam result and successful post-resume updates remain UNVERIFIED. The exact personalPython command and filtered markers are recorded in progress.md and evidence/formal-native-resume-3-restore-selected-logs-20261114.json. Queryexit0;zero new checkpoints or weightcopies.
+
+
+## First successful formal update and pooled rollout statistics
+
+| Check | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Actual post-resume update | Finite loss/gradient, success1/skipped0 | step18:loss0.19038212299346924,pre-clippinggrad1.1475327014923096,scale1,success1/skipped0,LR1e−6 | PASS for this update; formal1/200 |
+| Native sample coverage |256validfreshtrajectories,allfivegroups,finitepositivecoverage |256samples/2,019,541response tokens;code42/math42/stem49/logic57/if66;version17;issues0 | PASS step18 |
+| Same-token scorer/vLLM | MAE≤0.02,finitegroupvalues,correctmasks/versions | MAE0.0013267311125374486,p990.010008955001831077,max0.2572273015975952,allfivegroupsfinite,issues0 | PASS sampled mean; finalactualtrainingforwardpending |
+| Aggregator regression RED | Fail on actual nonlinear summary bug | Native producer→aggregator:[1,2,10] reportsmedian4.333333333333333 instead of2;assertionfailure,exit1 | EXPECTED FAIL |
+| Aggregator regression GREEN | Pooledmedian/stddev correct,othersemantics preserved | Existing TestAggregateRolloutMetrics:15PASS,11.91s,exit0 | PASS CPU |
+| Original actual-batch replay | Correct overall/five-domain total/response statistics |12distributionsPASS;totalmedian7799.5/stddev6180.540175503602;responsemedian7559/stddev6108.047592100288 | PASS CPU |
+| Current workload unaffected | ExistingGPUwriterandlaunchercontinue |20:27:14Z:sevenreplicasRunning/restart0;20:29:13Z:nextbatchTQretrieval | PASS live progression; nextsuccesspending |
+
+The gradnorm is reported before clipping; configuredclip_grad1.0 makes normal clipping of1.1475 expected. No arbitrary loss scaling or scaler reset was applied. The lengthstddevNaN came from averaging singleton sample standarddeviations. Median was also averaged pergroup. The fix reuses native calculate_single_metric on the already flattened histogram and replaces only existing /median and /stddev keys. Mean semantics remain unchanged. The active driver retains its loaded code; subsequentresume loads the fix.
+
+Exact CPU commands (run fromrepo with UV_PROJECT_ENVIRONMENT set to the existing Megatronactorenvironment, TMPDIR=/data/ycfeng/tmp/nemo-mopd-20261112, PYTHONPATH=repo, PYTHONDONTWRITEBYTECODE=1):
+
+```bash
+uv run --no-sync python -m pytest --noconftest tests/unit/algorithms/test_grpo.py::TestAggregateRolloutMetrics::test_histogram_statistics_use_pooled_observations -q --disable-warnings
+uv run --no-sync python -m pytest --noconftest tests/unit/algorithms/test_grpo.py::TestAggregateRolloutMetrics -q --disable-warnings
+uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_pooled_step18_lengths_20261114.py
+```
+
+Python3.13.14/Torch2.13.0+cu130; effectiveRED/aggregationGREEN/actualbatchGREENexit1/0/0. Two earlier invocations failed before assertions at unrelated Rayfixture setup and are not RED evidence. The class-level reset_env_calls override follows the neighboring pure-tensor test precedent, avoiding module-level remote mockfixtures. No local sharedRayservice orGPUjob was stopped. No weights or checkpoints were read/copied/written by these tests.
+
+Evidence:formal-native-resume-3-step18-{metrics,parity,coverage,pooled-statistics}-20261114.json under evidence/. Runtime inspection uses exact personalPython scripts recorded inprogress.md. Logs remain intasktmp. The15testGREEN and12actualdistributionchecks establish this reporting repair onCPU; they do not establish200successfulupdates orfinalactual-trainingparity.
+
+
+## Second successful formal update and post-update refit observation
+
+At2026-11-13T20:29:59Z (November14,2026,04:29:59HKT), step19 reports success1/skipped0,loss0.19377940893173218,pre-clippinggradnorm1.1761640310287476,scale1,LR1e−6,256validsamples and2,237,967response tokens. Two formal optimizer successes are now observed; no new skips occurred in this segment.
+
+The second batch uses weightversion18,after step18's successful update/refit. All256samples coverstem50/logic61/if48/code45/math52. Exactsame-token scorer/vLLM comparison:MAE0.0013295876747451956,signedmean−3.4402633044347716e−6,p500.00042831897735595703,p950.005485057830810547,p990.0099334716796875,max0.29484084248542786;allfinite;mask/versionissues0. Verdict:PASS sampled means after formalupdate/refit;longerstability,finalactualtrainingforward and200-successacceptance remainUNVERIFIED.
+
+Commands:existing read_formal_native_resume_3_metrics_20261114.py under UV/no-sync actorenvironment;the existing independent mountedreader summarized the native published step19samples,with receiptfiles10/steps2/failures0. BothbusinessJSONs are retained as evidence/formal-native-resume-3-step19-{metrics,parity}-20261114.json. Ruff0.9.9checkandformatPASS for grpo.py/test_grpo.py after formattingonlythemodifiedtestfile;gitdiffwhitespacePASS. Thepinnedtoolpath is/data/ycfeng/tmp/uv-cache/archive-v0/4Z7oFB0RosbDJ1nO/bin/ruff, invokedthroughuv run --no-sync. No checkpoint orweightcopy was created.

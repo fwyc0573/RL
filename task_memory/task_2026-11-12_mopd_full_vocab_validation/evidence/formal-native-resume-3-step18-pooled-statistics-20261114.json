@@ -1,0 +1,152 @@
+{
+  "step": 18,
+  "source": "formal-native-resume-3-current-inputs-20261114/parity/exp_001-train_data_step18.json",
+  "checks": [
+    {
+      "metric": "total_tokens_per_sample",
+      "samples": 256,
+      "mean": 8147.59765625,
+      "logged_median": 8147.59765625,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 7799.5,
+      "corrected_stddev": 6180.540175503602,
+      "min": 235,
+      "max": 30622,
+      "result": "PASS"
+    },
+    {
+      "metric": "code/total_tokens_per_sample",
+      "samples": 42,
+      "mean": 12268.666666666666,
+      "logged_median": 12268.6669921875,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 13178.0,
+      "corrected_stddev": 4828.620909346567,
+      "min": 2945,
+      "max": 18676,
+      "result": "PASS"
+    },
+    {
+      "metric": "math/total_tokens_per_sample",
+      "samples": 42,
+      "mean": 9968.785714285714,
+      "logged_median": 9968.7861328125,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 10867.0,
+      "corrected_stddev": 4426.46753140924,
+      "min": 1810,
+      "max": 19555,
+      "result": "PASS"
+    },
+    {
+      "metric": "stem/total_tokens_per_sample",
+      "samples": 49,
+      "mean": 6617.571428571428,
+      "logged_median": 6617.5712890625,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 6066,
+      "corrected_stddev": 3945.11567215293,
+      "min": 494,
+      "max": 17449,
+      "result": "PASS"
+    },
+    {
+      "metric": "logic/total_tokens_per_sample",
+      "samples": 57,
+      "mean": 13109.947368421053,
+      "logged_median": 13109.947265625,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 13805,
+      "corrected_stddev": 5340.993157446912,
+      "min": 349,
+      "max": 30622,
+      "result": "PASS"
+    },
+    {
+      "metric": "if/total_tokens_per_sample",
+      "samples": 66,
+      "mean": 1216.4242424242425,
+      "logged_median": 1216.4241943359375,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 946.0,
+      "corrected_stddev": 1210.9031220934114,
+      "min": 235,
+      "max": 6983,
+      "result": "PASS"
+    },
+    {
+      "metric": "gen_tokens_per_sample",
+      "samples": 256,
+      "mean": 7888.83203125,
+      "logged_median": 7888.83203125,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 7559.0,
+      "corrected_stddev": 6108.047592100288,
+      "min": 149,
+      "max": 30553,
+      "result": "PASS"
+    },
+    {
+      "metric": "code/gen_tokens_per_sample",
+      "samples": 42,
+      "mean": 11629.190476190477,
+      "logged_median": 11629.1904296875,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 12599.0,
+      "corrected_stddev": 4698.558363428216,
+      "min": 2405,
+      "max": 17994,
+      "result": "PASS"
+    },
+    {
+      "metric": "math/gen_tokens_per_sample",
+      "samples": 42,
+      "mean": 9859.357142857143,
+      "logged_median": 9859.357421875,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 10786.5,
+      "corrected_stddev": 4420.351414247009,
+      "min": 1704,
+      "max": 19442,
+      "result": "PASS"
+    },
+    {
+      "metric": "stem/gen_tokens_per_sample",
+      "samples": 49,
+      "mean": 6531.142857142857,
+      "logged_median": 6531.14306640625,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 5891,
+      "corrected_stddev": 3922.1577979049575,
+      "min": 456,
+      "max": 17329,
+      "result": "PASS"
+    },
+    {
+      "metric": "logic/gen_tokens_per_sample",
+      "samples": 57,
+      "mean": 12866.894736842105,
+      "logged_median": 12866.89453125,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 13409,
+      "corrected_stddev": 5326.819369554843,
+      "min": 308,
+      "max": 30553,
+      "result": "PASS"
+    },
+    {
+      "metric": "if/gen_tokens_per_sample",
+      "samples": 66,
+      "mean": 963.3787878787879,
+      "logged_median": 963.3787841796875,
+      "logged_stddev_nonfinite": true,
+      "corrected_median": 642.0,
+      "corrected_stddev": 968.2710803703604,
+      "min": 149,
+      "max": 6816,
+      "result": "PASS"
+    }
+  ],
+  "result": "PASS",
+  "scope": "CPU replay of the actual 256 native sample lengths through the native producer and patched aggregator; the active training driver still uses its loaded code."
+}

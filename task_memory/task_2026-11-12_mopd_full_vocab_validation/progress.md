@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Complete pooled rollout-statistic RED/GREEN and actual step18 length replay; keep formal training active. |
 | 2026-11-14 | Verify corrected resume seven-worker runtime and the sole step17 checkpoint. |
 | 2026-11-14 | Record actual expanded-resume failure, native CPU reproduction and corrected preparation. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
@@ -2839,3 +2840,83 @@ Commands:source tasktmp/personal_env_20261113.sh; personal Python3.10.6 runs ins
 The exact head log query at2026-11-13T20:05:14Z returns797rows, below the1800row request. It confirms loading the step17 distributed policy checkpoint and `successfully loaded checkpoint ... [t0/2,p0/4]`, followed by `Native TQ checkpoint restored and validated:groups=0`. Teacher initialization follows these markers. The previous WD scheduler assertion has not recurred on this actual load. These markers establish native load progression; they do not yet establish a finite scale1 backward or a successful Adam update. Formal successes remain0/200.
 
 Command:personal Python3.10.6 RJobClient.logs_replica('exp-1114-035754-642199-cfcd2084',tail_lines=1800), wrapped in timeout55s after existing personal environment initialization; exit0. Filtered secret-redacted restore markers are retained in evidence/formal-native-resume-3-restore-selected-logs-20261114.json. No weight payload is copied and no new checkpoint is written. Continue existing training and first-update observer; if scale1 overflows, locate the actual backward failure before another unchanged formal submission.
+
+### 2026-11-14 — First successful formal optimizer update and metric-statistic diagnosis (E)
+
+Step18 succeeds at native scale1, optimizer_update_successful1/skipped_step0. Loss0.19038212299346924, pre-clippinggradnorm1.1475327014923096, configuredclip_grad1.0, LR1e-6,256validsamples/2,019,541validresponsetokens. Formal successes are now1/200; no arithmetic/scaler reset was made. Native generation reports256OK/0failed,teacher_samples256,weight_version_lag0. Scorer/vLLM MAE0.0013267311125374486,p990.010008955001831077,max0.2572273015975952,allfivegroups andzero mask/versionissues. Final post-update training/scorer/generation comparison remains pending.
+
+An independent reporting anomaly is observed: token-lengthstddev isNaN andmedian equalsmean. The actual256lengths are finite,235–30622. The native calculate_single_metric explicitly returnsNaN for a singleton's sample standarddeviation; aggregate_rollout_metrics currently averages per-groupmedians/stddevs while already pooling their histograms. This does not imply nonfinite modelgradients. Healthy56GPUtraining continues; this CPU reporting diagnosis cannot gate it.
+
+Before the CPUprobe,the ranked predictions are:(1) averaging per-group nonlinearstatistics causes the anomaly; pooled histogrammedian/stddev will differ from current output;(2) nonfinite inputlengths would make the pooled reference invalid,already ruled out by exactsample lengths;(3) exporterserialization would show correctin-memoryaggregator statistics but wrong TensorBoardvalues,which the nativefunction regression will distinguish. Added a regression in the existing TestAggregateRolloutMetrics seam: real calculate_single_metric→aggregate_rollout_metrics for singleton and unequal-size groups, checking the pooledmedian/stddev,histogram preservation and unchanged mean semantics. Production aggregation is still unchanged at this RED preparation point. The metric fix only changes existing observation summaries; native training arithmetic and checkpoint format remain out of scope for this fix.
+
+
+### 2026-11-14 — Pooled rollout summary fix and continued formal training (E)
+
+The CPU test setup failures were unrelated to the target assertion: the module's autouse reset_env_calls requested remote mock_env/mock_envs even under --noconftest. Reused the existing neighboring class-level fixture override pattern for the pure scalar aggregation class. No shared Ray service or GPU job was controlled. Effective RED now reaches the real calculate_single_metric→aggregate_rollout_metrics path and fails with median4.333333333333333 instead of2 for[1,2,10]. The second parameter case covers unequal group sizes. The earlier Ray startup errors are retained as setup failures, not RED evidence.
+
+Smallest production fix: reuse the already pooled sibling /histogram and native calculate_single_metric to replace only existing /median and /stddev keys. Existing histogram identity, empty distributions, mean denominator semantics, /std_in_group summaries, min/max and scalar legacy behavior remain covered. CPU GREEN:15cases passed in11.91s. The actual step18 replay checks12 distributions (overall plus five domains, both total and generated tokens): all PASS. Overall total length mean8147.59765625,median7799.5,stddev6180.540175503602; generated length mean7888.83203125,median7559,stddev6108.047592100288. All256 input lengths and2,019,541response tokens are finite; this fixes observation summaries and does not modify loss/gradient/scaler arithmetic. The active training driver is not hot-patched; next native resume loads this code.
+
+Commands: UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker;TMPDIR=tasktmp;PYTHONPATH=repo;uv run --no-sync python -m pytest --noconftest tests/unit/algorithms/test_grpo.py::TestAggregateRolloutMetrics[::test_histogram_statistics_use_pooled_observations] -q --disable-warnings (the suffix is used only for RED);uv run --no-sync python tasktmp/check_pooled_step18_lengths_20261114.py. Python3.13.14/Torch2.13.0+cu130. Logs:pooled-rollout-statistics-valid-red-20261114.log,pooled-rollout-statistics-green-20261114.log,pooled-step18-lengths-green-20261114.log. Exact actual-batch receipt:evidence/formal-native-resume-3-step18-pooled-statistics-20261114.json. Initial ruff invocation found no executable in either actor/base environment; use the previously recorded pinned ruff0.9.9 installation instead of installing worker dependencies.
+
+At20:27:14Z,the exact personal API verifies the existing exp-1114-035754-642199 still Running/allsevenreplicas/restart0/currentlocalsource. Traininglauncher80619 and0GPUreader4033 are alive. At20:29:13Z,headlogs show the nextbatch's native TQ sample retrieval,without a returned Pythonerror. Latest summarizedmetrics still show1formal success atstep18. This is progress withinE,not proof that the nextbatch succeeded. No new checkpoint or weightcopy is created by these checks.
+
+#### check-progress — first success and required metric-statistic repair
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student和五教师身份已核实。 |
+| Q | PASS | 200实际成功更新的验收已授权。 |
+| B | PASS | 完整输入准备和CPU环境验证可复用。 |
+| C | PASS | 全词表loss/gradient参考和指标入口已验证。 |
+| D | PASS | 五次诊断成功更新及native save/resume已验证。 |
+| E | TODO | 正式1/200成功；当前七worker Running，CPU统计修复已通过。 |
+| F | TODO | 最终三方parity和English归档依赖E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次native恢复checkpoint至本次实际batch统计GREEN｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用已有聚合测试和batch样本，统计验收后停止扩充。 |
+| D2 细节反复重试 | CLEAR | 检查fixture依赖后有效RED，再按根因修复；没有修理共享Ray环境。 |
+| D3 支线问题修补 | CLEAR | 关键指标异常属于用户明确要求，CPU修复与GPU训练并行。 |
+| D4 可并行任务停滞 | CLEAR | 原训练、只读reader和CPU修复同时推进；最终checkpoint比较有真实权重依赖。 |
+| D5 超范围镀金 | CLEAR | 只重算现有统计键，没有新schema、配置或训练缩放。 |
+| D6 分析空转 | CLEAR | 真实异常→有效RED→最小修复→15项及真实batchGREEN。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表、256/65536/200成功和latest-only约束保持。 |
+
+**文档检查：** S5：plan当前段仍称实际scheduler恢复/首个scale1待查，与step18success1矛盾；已同步。S1–S4/S6未发现明显缺陷。
+**归因：** 无执行偏离；S5是状态滞后。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在状态记录缺陷，先同步再继续。
+
+**文档更新（先执行）：**
+1. plan.md当前状态：记录1/200、实际恢复、统计GREEN和下一native边界。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：监测后续成功更新及版本18以后的refit/scorer证据 → 完成标志：真实success flags、有限grad和明确mask/version状态。
+2. E：核查下一native publication与step17删除 → 完成标志：唯一最新完整checkpoint和保存的Adam/scaler/scheduler/sampler/TQ状态。
+3. E→F：补足200成功更新并运行已有最终三方比较 → 完成标志：200真实成功、MAE≤0.02、最终状态和报告完成。
+
+## 4. 最值得关注的 3 点
+
+1. 只有1次正式成功更新；单批健康不能替代后续稳定性与最终验收。
+2. 统计修复已CPU验证；当前训练继续，下一resume才加载修复。
+3. 唯一checkpoint仍step17，下一publication后必须及时删除旧checkpoint。
+
+
+### 2026-11-14 — Second formal optimizer success and sampled post-update refit parity (E)
+
+Step19 succeeds at20:29:59Z:success1/skipped0,loss0.19377940893173218,pre-clippinggrad1.1761640310287476,scale1,LR1e−6,256samples/2,237,967response tokens. Formaltotal2/200;currentsegment2attempts/2successes/0skips. Freshbatchweightversion18 confirms sampled scorer/vLLM parity afterstep18update/refit:MAE0.0013295876747451956,p990.0099334716796875,max0.29484084248542786,allfinite,issues0;fivegroupsstem50/logic61/if48/code45/math52. Exactsmallmetrics/sample summaries are retained in evidence/formal-native-resume-3-step19-{metrics,parity}-20261114.json. Finalactualtrainingforward and200-updateacceptance remainpending.
+
+Pinnedruff0.9.9 at the previously recordedcachepath successfully checksgrpo.py/test_grpo.py. Initial formatcheck requests only thetestfile;scopedformat applied,thenbothcheckandformatcheckPASS. No behavior changed after15regression/12realdistributionGREEN,so unrelated suites are not repeated. gitdiffwhitespacePASS. Training/readerlaunchers remainalive andnoextraweightswerewritten. Next: nativeboundary/latest-onlyinventory andcontinuedformalupdates.
