@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Verify corrected32GPU capacity and reservation order; advance replacement while preserving formal acceptance. |
 | 2026-11-13 | Reject partial-node GPU proposals after platform documentation and native CPU checks; preserve the exact queued 56-H800 formal run. |
 | 2026-11-13 | Replace stale queue state with second formal CUDA backward OOM and recovered zero-update evidence. |
 | 2026-11-13 | Record formal first-batch CPU OOM and resource correction. |
@@ -20,13 +21,15 @@
 
 Status: A/Q/B/C/D and authorized cleanup are complete; E/F remain outstanding. The retained D diagnostic completed five successful optimizer updates with native save/resume and finite checkpoint state. Those diagnostic updates do not count toward the formal 200.
 
-Formal job `exp-1113-151718-896703` (UID `9f0eb021-6bda-44fa-af2f-5469dd08b02b`) remains Pending at 2026-11-13T08:10:51Z, queue rank 2, with 28 H800 GPUs remaining against 56 requested. Its resource request is 7 nodes × 8 H800, 32 CPU / 768 GB per node. Launcher73918, mounted reader37752 and monitor15510 remain alive. There are zero formal successful updates, no formal loss or gradient result, and no formal checkpoint. Packed backward repair `b66b957f` has 118 CPU checks PASS; formal GPU memory sufficiency remains unverified.
+Formal job `exp-1113-151718-896703` (UID `9f0eb021-6bda-44fa-af2f-5469dd08b02b`) remains Pending at2026-11-13T09:36:34Z/rank2/remaining42 for56H800. It has0formal successful updates and no formal loss/grad/checkpoint. Its launcher and independent reader remain alive.
 
-Full CPU readiness covers 2034 tensors / 10,662,528,000 finite elements and exactly 55,000 training / 320 monitoring rows. Current cheap input identity check `exp-1113-155805-262829` passed 41 files across all six model roles without repeating the tensor scan. It reached Succeeded at08:04:53Z, with container exit0, restart0 and the expected d297 imageID.
+E's resource prerequisite now has a verified4×8H800 alternative. Native GPU-capacity counting and student-before-teacher reservation fix the demonstrated whole-node over-reservation and softPACK fragmentation. CPU RayCluster verifies26CREATED bundles, student8 and generation8 on separate simulated nodes, and five2GPU teachers on the other2nodes. Six affected allocation/order/topology regressions and scoped lint/format pass. This is CPU placement evidence; actualGPUplacement, teacher memory, repairedbackward and numerical behavior remain unverified.
 
-The proposed 8 nodes × 4 H800 layout was rejected: current platform documentation requires 8 GPUs per replica for distributed NVIDIA/RDMA jobs, and server admission changed the requested hard anti-affinity to soft. The 4 nodes × 8 H800 alternative was rejected by native allocation before Ray initialization because five teacher nodes must be reserved. No replacement training job was submitted; the original job was not stopped. The two unverified affinity edits were removed.
+FullCPUreadiness still covers2034tensors/10,662,528,000 finite elements and55,000training/320monitoring rows. Current cheap immutable input check `exp-1113-173227-790743` passed41files/all6roles and changed-identity negative control; Succeeded09:35:48Z, exit0/restart0/exactd297imageID/currentpersonalcreator/localNFS. No repeated full scan.
 
-E owns real formal backward, early native save/resume, 200 successful updates and final three-way parity. F owns final reconciliation and archive.
+The earlier8×4GPU request remains rejected by platform8GPUperreplica rules. The corrected4×8GPU recipe satisfies those rules and now satisfies native allocation; no public schema/interface changed. Next: signed scoped commit → re-read original56GPUjob → if stillPending, stop through requiredscript and confirm no replicasRunning → submit one local32GPU replacement and retain launcher. If original has started, verify it directly instead.
+
+E owns actual formal backward, early native save/resume,200successful updates and finalthree-way parity. F owns final reconciliation and archive.
 
 ## Dependency graph
 

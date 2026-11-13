@@ -399,7 +399,7 @@ def _register_single_controller_partitions(
 
 
 def _non_colocated_teacher_node_count(master_config: MasterConfig) -> int:
-    """Validate teacher GPU geometry and return its deduplicated node count."""
+    """Return physical nodes to reserve for the resolved teacher GPU requests."""
     if not opd_module.is_non_colocated_teachers_enabled(master_config):
         return 0
 
@@ -420,7 +420,12 @@ def _non_colocated_teacher_node_count(master_config: MasterConfig) -> int:
                 f"gpus_per_node={teacher_config.gpus_per_node}, which exceeds "
                 f"cluster.gpus_per_node={cluster_gpus_per_node}."
             )
-    return sum(config.num_nodes for config in teacher_configs)
+    if master_config.cluster.segment_size is not None:
+        return sum(config.num_nodes for config in teacher_configs)
+    teacher_gpus = sum(
+        config.num_nodes * config.gpus_per_node for config in teacher_configs
+    )
+    return (teacher_gpus + cluster_gpus_per_node - 1) // cluster_gpus_per_node
 
 
 def _build_clusters(
@@ -1723,11 +1728,15 @@ def setup_single_controller(
     colocated = generation_config["colocated"]["enabled"]
     segment_size = master_config.cluster.segment_size
 
-    # Claim constrained training nodes before unconstrained inference or Gym
-    # tasks can consume them. This matters when inference topology alignment
-    # falls back while the training cluster remains topology-constrained.
-    if not colocated and segment_size is not None:
+    # Reserve student allocations before partial-node teachers fragment GPUs.
+    # Constrained training nodes must also precede unconstrained services.
+    if not colocated and (
+        segment_size is not None
+        or opd_module.is_non_colocated_teachers_enabled(master_config)
+    ):
         train_cluster.get_placement_groups()
+        if segment_size is None:
+            inference_cluster.get_placement_groups()
 
     # Claim teacher placement groups before deferred generation starts NeMo-Gym,
     # whose resource servers may otherwise opportunistically consume those GPUs.

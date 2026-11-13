@@ -1,0 +1,10 @@
+defaults: mopd-r1distill-qwen-1.5b-7n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml
+
+cluster:
+  num_nodes: 4
+  gpus_per_node: 8
+
+on_policy_distillation:
+  non_colocated_teachers:
+    default_teacher_cfg:
+      gpus_per_node: 2

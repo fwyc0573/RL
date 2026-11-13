@@ -547,6 +547,60 @@ def test_build_clusters_leaves_dedicated_teacher_nodes(monkeypatch):
     assert teacher_topology is None
 
 
+@pytest.mark.parametrize("segment_size, teacher_nodes", [(None, 2), (1, 5)])
+def test_teacher_node_reservation_respects_gpu_bundles_and_topology(
+    segment_size: Optional[int], teacher_nodes: int
+) -> None:
+    """Partial-node teachers share capacity unless topology claims whole nodes."""
+    master_config = _make_master_config(colocated=False)
+    master_config.cluster = ClusterConfig(
+        num_nodes=7, gpus_per_node=8, segment_size=segment_size
+    )
+    master_config.on_policy_distillation = OnPolicyDistillationConfig(
+        enabled=True,
+        teacher_model_by_agent_name={str(i): f"/ckpt/teacher_{i}" for i in range(5)},
+        default_teacher_alias="0",
+        non_colocated_teachers={
+            "enabled": True,
+            "default_teacher_cfg": {"num_nodes": 1, "gpus_per_node": 2},
+        },
+    )
+    assert (
+        sc_setup_mod._non_colocated_teacher_node_count(master_config) == teacher_nodes
+    )
+
+
+def test_build_clusters_fits_partial_node_teachers_on_four_physical_nodes(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    """Teacher bundles leave full student and generation allocations on 32 GPUs."""
+    master_config = _make_master_config(colocated=False)
+    master_config.cluster = ClusterConfig(num_nodes=4, gpus_per_node=8)
+    master_config.policy["generation"]["colocated"]["resources"] = {
+        "gpus_per_node": 8,
+        "num_nodes": 1,
+    }
+    master_config.on_policy_distillation = OnPolicyDistillationConfig(
+        enabled=True,
+        teacher_model_by_agent_name={str(i): f"/ckpt/teacher_{i}" for i in range(5)},
+        default_teacher_alias="0",
+        non_colocated_teachers={
+            "enabled": True,
+            "default_teacher_cfg": {"num_nodes": 1, "gpus_per_node": 2},
+        },
+    )
+    constructed = []
+
+    class FakeCluster:
+        def __init__(self, **kwargs: Any) -> None:
+            constructed.append(kwargs)
+
+    monkeypatch.setattr(sc_setup_mod, "RayVirtualCluster", FakeCluster)
+    _, _, teacher_topology = sc_setup_mod._build_clusters(master_config)
+    assert [cfg["bundle_ct_per_node_list"] for cfg in constructed] == [[8], [8]]
+    assert teacher_topology is None
+
+
 def test_build_clusters_supports_two_node_shared_student_layout(monkeypatch):
     """One student node can split train/inference while node two hosts teacher."""
     master_config = _make_master_config(colocated=False)
@@ -1775,7 +1829,7 @@ class TestSetup:
 
     def test_mopd_reserves_before_models_and_initializes_teacher_last(
         self, patched_factories, monkeypatch
-    ):
+    ) -> None:
         mc = _make_master_config(env={"should_use_nemo_gym": True})
         mc.cluster = ClusterConfig(num_nodes=3, gpus_per_node=8)
         mc.policy["generation"]["vllm_cfg"] = {
@@ -1793,6 +1847,15 @@ class TestSetup:
             non_colocated_teachers={"enabled": True},
         )
         events = []
+        train_cluster, inference_cluster, _ = patched_factories[
+            "_build_clusters"
+        ].return_value
+        train_cluster.get_placement_groups.side_effect = lambda: events.append(
+            "reserve_train"
+        )
+        inference_cluster.get_placement_groups.side_effect = lambda: events.append(
+            "reserve_inference"
+        )
         teacher_cluster = MagicMock(name="teacher_cluster")
         teacher_group = MagicMock(name="teacher_group")
 
@@ -1833,7 +1896,13 @@ class TestSetup:
 
         actor_args, timings = setup_single_controller(mc, MagicMock(pad_token_id=17))
 
-        assert events == ["reserve_teacher", "build_generation", "create_teacher"]
+        assert events == [
+            "reserve_train",
+            "reserve_inference",
+            "reserve_teacher",
+            "build_generation",
+            "create_teacher",
+        ]
         assert actor_args.teacher_worker_groups == {"teacher": teacher_group}
         assert actor_args.alias_to_group_alias == {"teacher": "teacher"}
         teacher_group.setup_data_plane.assert_called_once_with(mc.data_plane)

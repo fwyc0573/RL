@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "simulation": true,
+  "physical_gpu_allocation": false,
+  "nodes": 4,
+  "advertised_gpus": 32,
+  "reserved_gpu_bundles": 26,
+  "remaining_gpu_bundles": 6,
+  "locations": {
+    "student": [
+      {
+        "bundles": 8,
+        "node_ids": [
+          "0e83fb0587f5dc88241f5454a948ea93fc0f1f7ac2324da27d36c72e"
+        ]
+      }
+    ],
+    "generation": [
+      {
+        "bundles": 8,
+        "node_ids": [
+          "147523b462e8cbe09016b1aa1e6a1f1393f277683b0bacf07065aefa"
+        ]
+      }
+    ],
+    "teacher:math": [
+      {
+        "bundles": 2,
+        "node_ids": [
+          "0fd0cc160705692109144826d6ce8ca0d0bd8281b422eae50c1f488a"
+        ]
+      }
+    ],
+    "teacher:code": [
+      {
+        "bundles": 2,
+        "node_ids": [
+          "174f82c9a3b87224c79468d63622e44f839be7fe6e34e25879d18dc7"
+        ]
+      }
+    ],
+    "teacher:stem": [
+      {
+        "bundles": 2,
+        "node_ids": [
+          "174f82c9a3b87224c79468d63622e44f839be7fe6e34e25879d18dc7"
+        ]
+      }
+    ],
+    "teacher:logic": [
+      {
+        "bundles": 2,
+        "node_ids": [
+          "0fd0cc160705692109144826d6ce8ca0d0bd8281b422eae50c1f488a"
+        ]
+      }
+    ],
+    "teacher:if": [
+      {
+        "bundles": 2,
+        "node_ids": [
+          "174f82c9a3b87224c79468d63622e44f839be7fe6e34e25879d18dc7"
+        ]
+      }
+    ]
+  }
+}

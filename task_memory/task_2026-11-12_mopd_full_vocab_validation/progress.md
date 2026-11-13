@@ -1966,3 +1966,75 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 1. 当前 quota28小于请求56；正式 GPU 修复及200成功更新均未验收。
 2. 32卡候选分别被平台8卡规则和 native五教师节点预留前提否决；没有提交替代作业。
 3. 当前输入已通过业务和平台验证，后续直接训练，不重复全量扫描或完成的诊断。
+
+
+## 2026-11-13 17:31 HKT: Diagnose whole-node teacher over-reservation
+
+- **in-progress E:** Original formal job remains Pending at09:27:40Z, rank2, remaining42 H800 against56 requested; original launcher/reader/monitor remain alive, reader0files/0steps/0failures.
+- Inspected native `_non_colocated_teacher_node_count`, `_build_clusters`, `reserve_teacher_clusters` and RayVirtualCluster. With no topology constraint, Ray reserves the configured teacher GPU bundles, not exclusive whole physical nodes. The student allocator nevertheless subtracts one whole node for every teacher logical node. This rejects a GPU-sufficient four-node layout before Ray reservation.
+- Hypothesis before modification: calculate the reserved physical GPU capacity from the summed teacher GPU requests when `cluster.segment_size` is absent. Keep dedicated-node counting for topology-constrained placement. Expected regression: five independent2GPU teachers plus8GPU student and8GPU generation fit4×8GPU; existing full-node and topology-constrained cases retain their allocation.
+- Gain: remove unused whole-node reservations so the requested real five-teacher workflow can use32H800 under the platform8GPUperreplica rule. No public config schema, worker-group interface, loss, model identity, batch, context or scheduler change. GPU placement/memory/numerical acceptance remains pending.
+
+- 17:37HKT CPU Ray diagnosis: clearing inherited OTEL_* removed gRPC metadata abort and registered all four simulated Ray nodes. The60s run then timed out while packaging the entire repository. Inspected installed Ray worker.py: it snapshots RAY_ENABLE_UV_RUN_RUNTIME_ENV when Ray is imported; the probe imported Ray before NeMo-RL disables that feature. Next hypothesis test imports NeMo-RL first, matching the workload environment, and must reach native26-bundle placement rather than package the repository. No formal runtime or host-service changes. Current input business PASS41files/all6roles at09:35:00Z; platform terminal verification pending.
+
+- 17:39HKT actual CPU Ray native teacher-first placement FAIL: all five teacher groups reserve, but a student/generation8-bundle group spans multiple physical simulated nodes. PACK is soft, not a node guarantee. Hypothesis: reserve both full-node student groups before the five2GPU teacher groups; predicted4node/26bundles allocation with one physical node per student group, two physical nodes for teachers, and no shared student/teacher nodes. Test the changed order in the CPU probe before editing native setup or submitting GPU. This changes no model/data/objective/batch/context contract. Current0GPU input job Succeeded09:35:48Z, exit0/restart0/d297imageID/currentpersonalcreator/localNFS verified.
+
+
+## 2026-11-13T17:42:10+08:00: Packed32 CPU/storage readiness complete
+
+- completedEprerequisite: student-first actualRayCluster PASS26bundles/4simulatednodes, no physicalGPUallocation; exact receipt retained. Reservation-order regression first failed on missing studentclaims, then6affected allocation/order/topology checks passed11.80s. Scopedrufflint/format andgitdiffwhitespacePASS. Broadconfigfixture error retained, not counted asPASS.
+- completed: current0GPUinputbusiness andterminalPASS41files/sixroles/negativecontrol, expectedcreator/source/image/exit0/restart0. Nativeconfig200/256/65536/exactidentities/FP16FP32grad/scheduler200 PASS.
+- in-progressE: sign scopedsetup/tests/recipe and selectedevidence → recheckexact56GPUjob → stoponlyifPending andverify → singlelocal32GPUsubmission. ActualGPUmemory/backward,200successes andfinalparity stillunverified. Do not rerunD orcleanup.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student、五教师和数据身份已确认 |
+| Q | PASS |200成功更新合同已确认 |
+| B | PASS | 完整CPU准备和当前41文件身份、终态通过 |
+| C | PASS | 全词表loss/gradient参照已完成 |
+| D | PASS | 五教师诊断、65536和native save/resume已通过 |
+| 清理 | PASS | 授权清理已完成 |
+| E | TODO |32GPU实际Ray预留与CPU检查通过，正式GPU证据仍缺 |
+| F | TODO | 最终checkpoint和archive依赖E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：**16:11HKT checkpoint至当前CPU准备完成｜**当前前沿：**E正式训练资源和启动
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 真实Ray检查发现资源碎片，必要修复后停止准备扩展 |
+| D2 细节反复重试 | CLEAR | OTEL、uvhook和预留顺序各有前置假设与不同结果；未重复GPU提交 |
+| D3 支线问题修补 | CLEAR | 配额与资源分配直接阻碍E |
+| D4 可并行任务停滞 | CLEAR | 输入检查与Ray/CPU检查并行；最终replay无checkpoint |
+| D5 超范围镀金 | CLEAR | 无公共schema/interface或目标变更 |
+| D6 分析空转 | CLEAR | 调查形成最小代码修复和通过的真实资源预留结果 |
+| D7 路线违背 | CLEAR | 保持模型、词表、batch/context、200successes和GPUsoftgate合同 |
+
+**文档检查：** S5 plan顶部仍写4×8已拒绝，与新修复和RayPASS矛盾；已更新实际状态与依赖。S1–S4、S6未发现明显缺陷。
+**归因：** 无执行偏离。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan顶部和现有placement报告：补齐32GPU修复、真实Ray/CPU结果和替换条件（可直接执行，已更新）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：scoped signed commit → re-read原job →若Pending，停止并确认 →本机单次32GPU提交 →实际backward/loss/grad/earlysave-resume。
+2. 并行：现有reader/monitor更新exact新job；GPU辅助检查保持nonblocking。
+3. E/F：200实际successflags与Adamstep →最终finite/state/refit/三方parity →完整报告和Englishsummary。
+
+## 4. 最值得关注的 3 点
+
+1.32GPU方案当前只有CPU/storagePASS，正式更新仍0。
+2. 新预留顺序消除已复现的资源碎片；整体验收标准保持。
+3. 准备完成即训练，不扩大工具或重复已通过的全量扫描。

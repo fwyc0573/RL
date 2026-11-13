@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Verify corrected32GPU bundle allocation, reservation order, CPU regressions and current input terminal state. |
 | 2026-11-13 | Record rejected smaller GPU layouts, current input readiness, and the retained formal queue state. |
 
 # Formal placement and current input readiness
@@ -61,8 +62,42 @@ Read-only Lark commands, using the lark-cli skill:
 
 Responses `ok=true`. Trainingmanual documentMCC8dAui9o6M9rxoZQGcnp3ynCf/revision3668 explicitly requires8GPUperreplica for multi-node NVIDIA/RDMA. Affinitymanual documentZ5Y0daKLgovgxZxMqKYcFY9rnsT/revision261 documents strict versus best-effort affinity but does not explain the observed servermutation. Retained selected request/admission/source evidence: `evidence/formal-32g-admission-rejection.json`. No Lark message or write was performed.
 
-## Decision and limits
+## Decision at16:11 HKT and limits
 
 Keep the existing56GPU nonpreemptible formal job queued with its launcher alive. The per-replicaGPU geometry of the smaller proposal is outside the current platform instructions; changing only affinity does not establish supported startup. The native4×8GPU alternative also fails its necessary allocation condition. The two unverified affinity edits were removed from `submit_on_rjob.py`; `git diff --quiet -- tests/manual/mopd/submit_on_rjob.py` passes.
 
 This does not claim that partial-node jobs can never execute or explain every platform admission mutation. It records why neither proposed replacement is ready for this task. D diagnostic and completed cleanup remain accepted. FormalCUDAbackward, loss/grad norm,200successfulupdates, final finite/state/refit and training/scorer/vLLM parity remain pending.
+
+
+## Corrected32GPU layout, verified before replacement
+
+The native allocator counted every teacher logical node as an exclusive physical node even without topology constraints. RayVirtualCluster actually reserves GPU bundles. `_non_colocated_teacher_node_count()` now rounds the summed GPU capacity up to cluster-node capacity when `segment_size` is absent; topology-constrained teachers retain dedicated-node counting. The replacement recipe requests4×8 H800:8 training,8 generation, five2GPU teachers and6 spare GPUs. Student TP2/PP4/CP1, all model identities,151936 vocabulary entries,256 trajectories,65536 ceiling and200-success target remain unchanged.
+
+The first actual Ray reservation exposed GPU fragmentation: teachers reserved first, and a student8-bundle group could span nodes under the native softPACK strategy. Reserving training and generation placement groups before partial-node teachers removed that observed fragmentation. Native setup now performs that reservation order before any model/Gym startup. No public config schema or model-worker interface changed.
+
+| Check | Expected | Actual | Result |
+| --- | --- | --- | --- |
+| Native config/dtype/objective/model identity |200/256/65536; FP16 with FP32 gradient reduction; scheduler horizon200; exact six roles; valid4×8GPU allocation |All native validator markers present in `formal-packed32-native-config-preflight.log` |PASS CPU |
+| Actual teacher-first Ray allocation |Each logical student node stays on one simulated physical node |Five teachers reserve but a student/generation8-bundle group spans nodes |FAIL; cause identified |
+| Student-first real Ray placement |4 simulated nodes;26 CREATED GPU bundles; single-node student/generation; teachers occupy the other2nodes |Exact native `_build_clusters`, `reserve_teacher_clusters` and Ray placement-group APIs satisfy all assertions;6GPU capacity unused |PASS CPU simulation |
+| Reservation-order regression before fix |Catch native teacher-first behavior |Exact expected reserve_train/reserve_inference events absent |FAIL as intended |
+| Affected allocation/order/topology regressions after fix |No missed or reordered resource claims |6passed,323deselected in11.80s |PASS CPU |
+| Ruff0.14.3 lint/format and Git whitespace |Scoped source/tests clean |All checks passed;2files formatted; diff --check exit0 |PASS |
+| Current immutable input identities |41files/six roles/changed-size negative control; no repeated tensor scan |`exp-1113-173227-790743`, businessPASS09:35:00Z, platformSucceeded09:35:48Z, exit0/restart0, exact d297imageID/personalcreator/localNFS |PASS |
+| Formal GPU result |Healthy actual backward/loss/grad; native save/resume;200successes; finalparity |Original56GPU run stillPending at09:36:34Z/rank2/remaining42; no formal checkpoint |UNVERIFIED |
+
+Commands below run from `/data/ycfeng/sota-engine/RL` with `UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker`, Python3.13.14. CPU probes used `ulimit -v31457280` and `timeout -k10s60s`. Raw logs and scripts remain under `/data/ycfeng/tmp/nemo-mopd-20261112`.
+
+```bash
+uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_fp16_pp4_packed32.py
+RAY_ENABLE_UV_RUN_RUNTIME_ENV=0 uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/preflight_packed32_ray_reservation.py --student-first
+RAY_ENABLE_UV_RUN_RUNTIME_ENV=0 uv run --no-sync pytest --confcutdir=tests/unit/single_controller tests/unit/single_controller/test_setup.py -q -k 'teacher_node or dedicated_teacher or partial_node_teachers or mopd_reserves_before_models or reserves_topology_constrained'
+uv run --no-sync /data/ycfeng/tmp/uv-cache/archive-v0/L1BVEpO2ROvDZA3I/ruff-0.14.3.data/scripts/ruff check nemo_rl/algorithms/single_controller_utils/setup.py tests/unit/single_controller/test_setup.py
+uv run --no-sync /data/ycfeng/tmp/uv-cache/archive-v0/L1BVEpO2ROvDZA3I/ruff-0.14.3.data/scripts/ruff format --check nemo_rl/algorithms/single_controller_utils/setup.py tests/unit/single_controller/test_setup.py
+git diff --check
+/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/inspect_packed32_queue.py
+```
+
+Initial CPU probe failures were environmental: inheritedOTEL_* caused GCS/raylet `GRPC_CALL_ERROR_INVALID_METADATA`; clearing those keys as the formal wrapper already does removed the abort. Explicitly disabling Ray's uv runtime hook before imports removed unwanted repository packaging. A broader config-test attempt failed during the parent Ray fixture; it is not a configPASS. Mocked setup regressions use the existing `--confcutdir` boundary; real-placement evidence comes separately from the four-node RayCluster probe. Shutdown emitted pre-existing `RayVirtualCluster.__del__` interpreter-finalization errors after businessPASS; all explicit cluster shutdowns completed. These CPU results do not establish CUDA memory sufficiency or training parity.
+
+Decision: the corrected4×8GPU request is now CPU/storage ready. Re-read the exact original job before stopping it; replace only while stillPending and verify no duplicate training allocation before local submission. Retain selected receipts in `evidence/formal-packed32-ray-reservation.json`, `evidence/formal-queue-and-packed32-input-terminal-20261113.json` and the exact packed32 argument/configJSONs. Stop extending preparation once GPU submission is possible.
