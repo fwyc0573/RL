@@ -3327,3 +3327,61 @@ At06:16:58HKT, a bounded personal read-only inventory again finds onlystep23:31f
 1. 9/200 是实际 optimizer 成功次数；step25 skip 必须保留，不能用 controller 步数替代。
 2. CPU 原生回归证明旧 floor 阻止 backoff；真实模型在新 floor 下的下一次 backoff 及具体失败算子仍未验证。
 3. 最新完整保存仍为 step23/Adam6；若无更多 skip，step30 应为 Adam12，必须实测并确认旧目录删除。
+
+
+### 2026-11-14 — Tenth successful update after scaler-floor configuration (E/F)
+
+Signed scoped fix0b1cf5db records the native min_loss_scale correction, executable native regression, count-based continuation evidence and focused report. Prior unrelated/uncommitted files were preserved. At06:21:41HKT, step28 succeeds on the same writer. Exact normalized loss/full-RKL mean0.15938352048397064; pre-clippingnorm0.7628392577171326,scale1,LR1e−6,256validsamples/1,963,104response tokens. Full-RKL min−2.2394443e−7/max28.000618 are finite. Formal flags cover every step18–28, with10successes and one skip25. No new overflow or real backoff below1 is observed.
+
+All256samplemasks are1, versions27, coverage math53/code46/stem54/logic47/if56. Scorer/vLLM MAE0.0012310227258951327,signedmean−8.395944826752386e−6,p990.01002645492553711,max0.5445899069309235;allfinite;mask/versionissues0. Everygroupmean≤0.0023026204. Native actual-training forward parity remainspending. Evidence:formal-native-resume-5-step28-{metrics,coverage,parity}-20261114.json. Checks reused the existing metric/parityreader and a localPython3JSON verification; no weight/checkpoint write orGPUsubmission. The next scheduled publication remainsstep30; if no further skip occurs, expectAdam12 and deletion ofstep23.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型与全词表路径已核实。 |
+| Q | PASS | 200 次实际成功更新已授权。 |
+| B | PASS | 同一作业的输入和环境验证有效。 |
+| C | PASS | 全词表参考与指标入口已有验证。 |
+| D | PASS | 五次诊断更新和 native 恢复通过。 |
+| E | TODO | 正式10/200；最新完整保存仍为step23/Adam6。 |
+| F | TODO | scaler 修正已 signed commit；最终权重/三方验证待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 本轮9/200自检至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 只复用现有实际指标/样本检查，没有扩展 observer。 |
+| D2 细节反复重试 | CLEAR | 同一正式 writer 增加一次成功，没有重提或改参数重试。 |
+| D3 支线问题修补 | CLEAR | 指标、计数、parity、retention 都属于 E。 |
+| D4 可并行任务停滞 | CLEAR | 原训练、reader、monitor 与记录更新并行。 |
+| D5 超范围镀金 | CLEAR | 未扩展配置接口、目标或权重产物。 |
+| D6 分析空转 | CLEAR | 实际成功数9→10，并核实全RKL指标和五组样本。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表、256/65536/200-success 和 latest-only 保持。 |
+
+**文档检查：** S1–S6 均未发现明显缺陷；plan/report 已更新10/200及step28，历史9/200记录保留日期。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets 合理，无需改动。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续当前 writer 并核对下一 native publication → 完成标志：Adam 与成功 flags 一致，旧 checkpoint 在新发布后删除。
+2. 并行：训练 ‖ 现有样本/metrics 检查 → 完成标志：累计200次实际成功，异常有证据和处置记录。
+3. E→F：200成功后完成已有 CPU 有限性与关闭 checkpointing 的16H800三方replay → 完成标志：有限权重/优化器、MAE≤0.02、最终业务/平台终态和English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式10/200；step28的 loss/fullRKL、norm、样本及五组平均 parity 已实测。
+2. 真实 native scale 仍为1；原模型 overflow 的具体算子及新 floor 下实际 backoff 尚未验证。
+3. 当前完整 recovery 仍为step23/Adam6；下一publication必须确认新计数和及时删除旧目录。
+
+The step28 documentation commit initially encountered an index.lock held by concurrent git status processes464421/464433. Read-only inspection identified the live owner; the lock released naturally within the bounded wait. No lock was deleted, no other Git process was stopped, and the index remained empty before the scoped retry. This was a local Git race, not a workload failure.

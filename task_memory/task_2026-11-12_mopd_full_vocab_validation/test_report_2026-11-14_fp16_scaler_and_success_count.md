@@ -6,7 +6,7 @@
 
 # FP16 scaler and successful-update validation
 
-The formal MOPD run is incomplete: nine successful optimizer updates have been observed through controller step 27. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and recovery after the next real backoff remain unverified.
+The formal MOPD run is incomplete: ten successful optimizer updates have been observed through controller step 28. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and recovery after the next real backoff remain unverified.
 
 ## Scenario and environment
 
@@ -58,7 +58,7 @@ The live application reused the existing writer Ray allocation, submitting `/dat
 
 ## Actual optimizer updates and training health
 
-The completed steps 18–23 segment contributes six successful updates. The current segment contributes three through step27. Successful-update flags are deduplicated by step and wall time; only flags equal to one count toward the required 200.
+The completed steps 18–23 segment contributes six successful updates. The current segment contributes four through step28. Successful-update flags are deduplicated by step and wall time; only flags equal to one count toward the required 200.
 
 | Controller step | Optimizer success | Normalized loss | Pre-clipping grad norm | Scale | Response tokens | Verdict |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -66,6 +66,7 @@ The completed steps 18–23 segment contributes six successful updates. The curr
 | 25 | 0 | 0.1748526096 | Native optimizer returns None; no event | 1 | 2,084,198 | Overflow skip; original-model RCA open |
 | 26 | 1 | 0.1756095737 | 0.9495472312 | 1 | 2,015,849 | PASS observed update |
 | 27 | 1 | 0.1686267257 | 0.8094019294 | 1 | 1,967,529 | PASS observed update |
+| 28 | 1 | 0.1593835205 | 0.7628392577 | 1 | 1,963,104 | PASS observed update |
 
 Every attempted batch above contains 256 valid samples and LR1e-6. Norms are measured after valid-token normalization and before clipping. A preceding norm must not be assigned to step25. The step23 publication records Adam6 on all eight saved optimizer groups; later successes remain resident until the next native publication. If step25 remains the only new skip, step30 should record Adam12.
 
@@ -83,6 +84,12 @@ The real step23 metadata reconciles to six successes. Ten additional named CPU c
 ```
 
 Native scheduler GREEN restores 5888 consumed samples and advances to 6144, preserving original 51200 LR/WD horizons and constant LR1e-6/WD0.01. Evidence: `evidence/native-successful-update-continuation-check-20261114.json`. Final waiter is session 5548 / local PID256195; it replaces session 40518. Training44154, reader1762, and monitor48778 remain alive. These are tool session IDs, not process IDs.
+
+## Step28 live full-loss and parity observation
+
+At November14,2026,06:21:41 HKT, step28 completes successfully. Formal count is ten successes over eleven measured attempts fromsteps18–28, with the single step25 skip preserved. The full-RKL mean equals the normalized loss exactly:0.15938352048397064. Its minimum−2.2394442567019723e−7 is within the existing negative-roundoff tolerance; its maximum28.00061798095703 is finite and is an observed divergence tail. These bounds are not a monotonic-loss acceptance requirement.
+
+All256 samples have valid masks and weight_version27, with group coverage math53/code46/stem54/logic47/if56. Scorer/vLLM response-token MAE is0.0012310227258951327, signed mean−8.395944826752386e−6, p990.01002645492553711 and max0.5445899069309235. Every group mean is below0.02; range0.0011000982 (math) to0.0023026204 (if). All differences are finite and mask/version issues arezero. This is independent native-scorer/generation evidence after refit; actual training-forward parity remains pending. JSON evidence:`evidence/formal-native-resume-5-step28-{metrics,coverage,parity}-20261114.json`. The existing reader, inline local JSON/count checks, and current platform monitor were reused; no new GPU job, checkpoint, or weight copy was created.
 
 ## Scorer/vLLM discrepancy tail
 
