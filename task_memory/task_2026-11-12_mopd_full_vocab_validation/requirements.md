@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Record explicit authorization to clean current-task large, smoke, and unused artifacts. |
 | 2026-11-12 | Record the new request, explicit constraints, source identity, and pending acceptance decision. |
 | 2026-11-12 | Record user confirmation and authorize execution of the proposed acceptance contract. |
 
@@ -46,3 +47,9 @@ This answers the immediately preceding question about proceeding with 200 succes
 - Any required root-cause fixes, with affected regression checks and signed commits.
 - Exact model/data/config/runtime identities, job identities, artifact paths, metric curves, numerical comparisons, and a test report distinguishing PASS, FAIL, and unverified items.
 - English `summary.md` at overall completion. The task remains incomplete until execution and verification finish.
+
+## [Original Request] Cleanup authorization, 2026-11-13
+
+> 授权，请你清理当前任务的大产物、smoke产物，无用产物，用codex执行清理
+
+Codex is authorized to delete current-task redundant caches, duplicate archives, and obsolete smoke checkpoint tensors. Preserve source models, training data, installed environments, the FP16 conversion caches needed for subsequent verification, and selected business/runtime/terminal/numerical evidence. Cloud deletion runs through a locally submitted personal Python RJobBackend workload. Historical measurements remain valid recorded observations; removed weights cannot be replayed directly. This cleanup does not cancel the unfinished MOPD validation contract.

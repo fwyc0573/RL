@@ -1,0 +1,113 @@
+{
+  "entries": [
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-analysis-inputs.tar",
+      "bytes": 5724160,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-analysis-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-fp32-resume-complete.tar",
+      "bytes": 5806080,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-fp32-resume-complete-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-fp32-resume-step5-state.tar",
+      "bytes": 798720,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/five-teacher-fp32-resume-step5-state",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-artifacts.tar",
+      "bytes": 20480,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-theta-fa4-inputs.tar.gz",
+      "bytes": 4023,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-theta-fa4-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-theta-inputs.tar.gz",
+      "bytes": 4028,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-compiled-theta-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-artifacts.tar",
+      "bytes": 55869440,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-theta-fa4-inputs.tar.gz",
+      "bytes": 43350069,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-theta-fa4-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-theta-inputs.tar.gz",
+      "bytes": 43349061,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-core-fp32-layers-theta-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-matched-fa4-norm-inputs.tar.gz",
+      "bytes": 54288852,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-generation-matched-fa4-norm-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fp32-head-layers-artifacts.tar",
+      "bytes": 37939200,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fp32-head-layers-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fp32-head-layers-fa4-2-inputs.tar.gz",
+      "bytes": 29344105,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fp32-head-layers-fa4-2-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fused-swiglu-artifacts.tar",
+      "bytes": 37939200,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-fused-swiglu-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-layers.tar",
+      "bytes": 15011840,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-layers-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-matched-fa4-norm-inputs.tar.gz",
+      "bytes": 32215459,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/long-native-matched-fa4-norm-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/native-5-analysis-inputs.tar",
+      "bytes": 5263360,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/native-5-analysis-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/native-fp32-corrected-analysis-inputs.tar",
+      "bytes": 13854720,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/native-fp32-corrected-analysis-inputs",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/native-long-fp32-business.tar",
+      "bytes": 22353920,
+      "retained_exact_copy": "/data/ycfeng/tmp/nemo-mopd-20261112/native-long-fp32-analysis-inputs",
+      "status": "deleted"
+    }
+  ],
+  "deleted_bytes": 403136717
+}

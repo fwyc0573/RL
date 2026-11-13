@@ -2,12 +2,15 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
+| 2026-11-13 | Recover actual decode controls, padding RCA, and ordinary native replay frontier. |
 | 2026-11-12 | Recover the live model-reference job and record verified Gym and CUDA environment preparation. |
 | 2026-11-12 | Record planning evidence, environment observations, and the pending core acceptance answer. |
 | 2026-11-12 | Recover execution state; record current cloud assets, dependency setup, and next executable steps. |
 | 2026-11-12 | Resume after input preparation; record parallel actor environment installation and remaining runtime prerequisites. |
 | 2026-11-12 | Verify Torch program-file identity and record 124 passing numerical/routing tests plus recipe validation. |
 | 2026-11-12 | Record verified native preparation and the automatic CPU import/submission chain. |
+| 2026-11-12 | Recover TQ serialization failure and native empty-batch diagnostic. |
 
 # Progress
 
@@ -19,7 +22,7 @@
 | Q | completed | User answered `continue` to the concrete acceptance question. |
 | B | completed | Current assets/data/tokenizers, recipe, exact locked dependencies and four runtime imports verified; see native-runtime-versions.json. |
 | C | completed | CPU/HF references PASS; native token/mask/version fields prepared. Actual native parity remains phase D. |
-| D | in-progress | Short controls and native five-teacher FP32 resume pass. Matched eager FA4/TP2/CP1 long overall MAE0.01905 passes0.02;3samplemeans remain slightly above it. CompiledFA4 MAE0.03366FAIL. Norm observation identifies sparse BF16 remainder. Final actualCP1/fresh/refit/long/resume checks prepared andCPUvalidated. |
+| D | in-progress | Two short workflows passed. TP4 actual long workflow passed one update but scorer/vLLM MAE 0.06853 failed. Identical-token TP2 replay and TP2/PP2 native training are the current checks. |
 | E | pending | Independent FP32 native save/resume completed5successful/0skipped updates; full state/finite verification completed for the short boundary. Formal200updates unsubmitted. |
 | F | pending | Final acceptance and completion archive outstanding. |
 
@@ -492,3 +495,664 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - check-progress invokedafterrecoverymilestone: A/Q/B/CPASS,D/E/FTODO. D1–D7CLEAR: capturednormresultssettlethefirstremainingboundary;compiledfailureselectseager;threeindependentactualworkflowchecks advanceD. S5oldpendingnorm/compiledwordingcorrectedinplan/progress/report/review. No acceptance/scopemodification. Mainline: finalworkflowchecks -> formal200successfulupdates/256fresh/65536 -> finalparity/finite/report.
 
 - Finalworkflowchecks submitted once throughpersonal localRJobBackend at21:34HKT:24GPU exp-1112-213427-594083 launcher61127;6GPU exp-1112-213433-270314 launcher67499;56GPU exp-1112-213439-246833 launcher73755. Keepall3launchersalive. Exactscripts/args/logs final-* under tasktmp. Noformal200-update job yet.
+
+- Dfinal-longtraining exp-1112-213433-270314 Failed before native training:wait_cluster rejectsduplicateNodeManagerAddress; actualreplicas0/2sharegpu-h800-0320. BusinessValueError precedeslauncher cleanup21:37:11HKT;6GPUchecks settle no training criterion. ExactRCAcollector launched(52936),rawfinal-long-training-rca/. Correctonlyresource/layout:3x8GPUs forcesdistinctfullnodes;batch8matchesDP4,source5original65536casesretainedandcycled;sameobjective/precision/tolerance.24GPUaffectedrerunprepared,beforeGPUsubmissionCPUvalidationrequired. Other24/56GPUjobscontinue.
+- Formal200/256/65536recipeprepared butnot submitted. Full native optimizer/data-plane checkpointing and7200/9000deadlines restored,ordinaryresumeentrypoint,48hourouterdeadline,allcheckpoints retained (keep_top_k/ft_keep_latest_k=null). FirstCPUpreflight failedmissingHydra+prefix foroptionalft_keep_latest_k;correctedactualschemausage. Secondcheck failedtestscript dictaccessofGRPOConfig;changedtoactualBaseModelattributes,withnoproductbehaviorchange.
+
+- CorrectedlongCP1/DP4config/dry-runPASS; submittedonce exp-1112-213949-129130 at21:39:49HKT,launcher70958,monitor27627. Existing24/56GPUsremainalive; active requestedallocation104GPUs. Current56GPUreplicasareunscheduled(coschedulingGPUgap24),notafailednativeinit; retainqueue/launcher. Formalconfigpreflight3/dry-run2PASSwith200/256/65536restored,nosubmission. Runtime/fullCLI/evidenceandplacementRCArecordedinfinal_workflowreport.
+- ObservationcoveragepredictionfromNativeForwardWorker:actualtraining/teacher_same_forwardwrittenonlyglobalrank0;atDP4maycoveronlyoneshard. Analyzeobservedsubsethonestlyandretainallglobalindependentscorercomparisons;missingobservationsarenotnumericalfailuresandcannotstophealthy56GPUtraining.
+- Verifiednormalizationcapture/evidencestepcommittedwithsignoffas9826c435;recipesremainunstageduntilselectedruntimeactualverification.
+
+
+## 2026-11-12 — TQ singleton serialization failure recovered
+
+- D self-observed exp-1112-213427-594083 Failed13:43:02Z after fresh rollouts, before any observed successful optimizer update. Actual simple storage put reported `self.stride(-1) must be 1 to view Int as Byte ... got 0` for all three units. Launcher61127 and RCA collector1394 exit1 recovered. Object/owner/creator verified; exact live/historical Events, incident logs and existing DeepScan queries completed; both all-operation audits timed out. Manual stop actor/reason/request time UNKNOWN. Selected evidence: evidence/final-self-observed-storage-rca.json; raw final-self-observed-rca/. Shutdown logs follow the business error.
+- D CPU RED: OMP/MKL/OPENBLAS4, timeout60s, Python3.13.14, Torch2.13.0+cu130, RLIMIT_AS30GiB, real MsgpackEncoder.encode(TensorDict(input_lengths=int32 singleton view with stride0)). Command `/data/ycfeng/envs/nemo-mopd-py313/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/repro_tq_zero_stride.py` deterministically produces the exact RuntimeError in4.25s; tq-zero-stride-original-red.log retained. A scalar and ordinary singleton both encode correctly; cloning the zero-stride singleton with memory_format=contiguous_format yields stride1. Exact failed field/producer still unobserved.
+- Ranked hypotheses recorded before further probes: (1) contiguous singleton broadcast view reaches serializer unchanged; clone at byte-encoding boundary should preserve values and fix it. (2) jagged unbind metadata encoder has the same byte-view defect; corresponding zero-stride row should also reproduce. (3) SSD encoding independently shares the restriction; only relevant if SSD is enabled. Actual runs have SSD disabled, so that optional path does not block this run. No site-packages edits or exception fallback.
+- Existing final-long-training-2 exp-1112-213949-129130 Running13:46:04Z and final-five-teacher-resume exp-1112-213439-246833 Running13:46:37Z. Launchers70958/73755 and monitors27627/19889 remain alive. No duplicate submission; formal200 remains unsubmitted.
+- check-progress resumed milestone: A/Q/B/C PASS4; D/E/F TODO3. D1–D7 CLEAR: deterministic actual encoder RED directly advances D; two independent workflow jobs remain active; no backend installation or new objective. S5 HIT: plan/review still describe final self pending and jobs awaiting placement. BranchB correction: record actual failed TQ path and both Running states; no agreed scope/tolerance changes. Next D root-cause serialization repair + affected regression, in parallel actual long/resume outputs; then formal200/256/65536.
+
+- D TQ root-mechanism fix: existing adapter installs wrappers for both ordinary tensor and nested-row metadata byte encoders. Contiguous tensors whose flattened stride is not1 receive a contiguous-format clone; ordinary unit-stride inputs stay zero-copy. No input values/dtypes/shapes changed, no site-packages edits, no exception suppression. Persistent real-adapter/storage-selector regression created before the fix. Removing only these wrappers in the CPU test process reproduces9FAIL/1PASS; corrected regression10PASS/5.68s; affected scalar-schema/wire-object checks25PASS/12.88s. Ruff0.9.9 check/format2filesPASS. Raw upstream reproduction remains the retained RED; importing the adapter supplies the production repair. Original GPU scenario still pending.
+- D actual long-job reconciliation: exp-1112-213949-129130 Succeeded13:49:57Z, launcher70958/monitor27627exit0, but logs/exp_001 contain no training metrics and rollout trace contains only4setup/sync/restore events. Native source dataloader uses batch_size8/drop_last=True for a5row source. Do not claim a65536 training update. Selected evidence: evidence/final-long-training-no-update.json; raw runtime/command/trace/TB retained in final-long-training-2-artifacts/.
+- D affected long correction uses existing dataset repeat=2 (10rows), shuffle=false and split_validation_size0.0. Native CPU StatefulDataLoader observes1batchof8, all5original inputs plus first3repeated; sourcefileunchanged. No alternate dataset/loader. Existing temporary long-context-training-batch8.jsonl is unused and outside deliverables. Configvalidation2PASS and both personaldry-runsPASS. Formaltraining remains the original five training pools.
+- D submitted once at21:55HKT: self-observed-2 exp-1112-215538-183707,24H800,launcher86892; long-training-3 exp-1112-215539-050439,24H800,launcher19420. Keep both alive. Existing56H800 exp-1112-213439-246833 Running13:55:35Z withlauncher73755/monitor19889 alive; noduplicate. Three nonterminal requests total104GPUs. Formal200 remains unsubmitted.
+
+
+## 2026-11-12 — resumed state and first final-five-teacher result
+
+- Original zero-stride CPU reproduction after importing the actual adapter completed exit0 with ZERO_STRIDE_WIRE_PASS; session99208 collected. Exact script/log: /data/ycfeng/tmp/nemo-mopd-20261112/{repro_tq_zero_stride.py,tq-zero-stride-original-green.log}. GPU original scenario remains pending; no broader acceptance claim.
+- Three launchers73755/86892/19420 and monitors19889/90724 verified alive. Latest inspected2026-11-12T14:00:53Z: five-teacher and self-observed Running; long-training-3 Pending with request24/remaining17H800. Preserve current queue; no resubmission. Personal creator/localNFS100.96.128.195 and codesign retained.
+- Five-teacher step1:32valid samples/4096response tokens; grad_norm1.7595814466, trainer_version1/policy_lag0. Native checkpoint step1 consumed_samples32/current_step1/sampler_dispatch_index1/next_nemo_gym_task_index64. Resume log observes model reload and native TQ restore, but subsequent optimizer updates are not yet verified.
+- Independent scorer minus vLLM generation on identical tokens/versions: MAE0.01001796739, signedmean-0.00041293, p990.09298755/max0.27509165. All five group means<=0.02, no token/mask/version issues. Exact per-sample tail and group counts in evidence/final-five-teacher-step1-parity.json; this is not an actual-training-forward measurement.
+- Read-only artifact collection uses existing exact paths and bounded SSH; temporary collection script initially had shell/string quoting errors and then incorrectly expected an idx field in the source rows. Corrected to source line index as already verified for NemoGymDataset. These were local auxiliary errors and never propagated to or stopped training. Stop extending this collector once the required artifacts are available.
+
+
+## 2026-11-12 — final short native workflows completed
+
+- Five-teacher exp-1112-213439-246833 Succeeded14:05:25Z,7replicas; self exp-1112-215538-183707 Succeeded14:05:19Z,3replicas. Both local launchers73755/86892 exit0 collected. Long exp-1112-215539-050439 now Running14:07:19Z; launcher19420/monitor90724 remain alive. No extra submission.
+- Five-teacher:5successful updates,0skipped,160samples/20480response tokens. Loss[0.114023,0.140388,0.174867,0.160583,0.160291]; gradnorm[1.75958,2.87954,2.66155,2.86080,2.95542]. Native optimizer returns the norm before clipping; clipping1.0 remains active. FP32 entropy/cross-entropy decomposition maximum2.3841858e-6 is a measured per-position arithmetic statistic; full-loss/reference checks retain their existing tolerances. No nonfinite objective/grad observed.
+- Native resume contents: optimizer param-group step1→5; scheduler num_steps32→160 with unchanged decay horizon160. Native step5 counters consumed160/current_step5/trainer_version5/validtokens20480/sampler_dispatch_index5/next_gym_task224. Checkpoint finite scan covers all1801tensorchunks/8files,1777088000model elements+5331526656optimizer elements,allfinite. Read-only scan/inspect exact scripts and logs final-* under tasktmp; remoteTorch2.5.1, timeout60s/file,15GiB/file,2parallel reads.
+- Five-teacher same-version scorer/vLLM MAE0.0096118060,p990.08671216,max0.33361328; every step/group mean<=0.02. Four of160sample means exceed0.02, documented in exact tail table. Saved/reloaded model output comparison is represented by continued scorer/vLLM same-version checks, not a bitwise saved-weight replay.
+- TQ original GPU scenario now passes5successful selfteacherupdates/0skipped. Actualtraining/scorer is exact on90observed samples/11520response tokens; actualtraining/vLLMMAE0.0086732236, everygroup<=0.02. Remaining70samples have no rank0training observation; this is an explicit coverage limit. All160global scorer/vLLM samples independently passoverallMAE0.0096954580;8samplemeans exceed0.02 and remain visible. Initialselfloss-6.6883e-10/gradnorm1.0841e-5; laterfrozen-teacherloss0.000153–0.000206 andgradnorm0.0348–0.0557,allfinite.
+- Fullteacher reconstruction covers160calls/1280shards(all8ranks),logitMAE4.1325452e-6/max1.2207031e-4, sampledLPMAE2.9453349e-6/max6.29425e-5. Distribution/loss/gradient results in evidence/final-self-observed-subset-parity.json. Rawunnormalizedall-positiongradienterror1.6964563e-5 exceeds1e-5,retainedFAIL; native response-mask/token-normalization yields derivedupperbound4.14174e-9<=1e-5. Referencegradient0 meansrelativeerrorundefined; no arbitrary scale, objective or tolerance change. This follows the previously inspected native normalization proof, not an observed parameter-gradient equality.
+- Formal200updates remains unsubmitted until the actual65536trainingupdate passes. TQcode step is nowGPUverified and readyfor signedscopedcommit; selectedCP1recipe still waitsforlongtrainingacceptance.
+
+- TQproduction/test stepcommittedwithsignoffas e8fcef02. Firstcommitattempt met transientindex.lock; inspectionfoundlockalreadyabsentandonlyour2filesstaged; unchangedretrySucceeded. No lockfiledelete/historyrewrite.
+- Native selectedweightdelta initialstudent→step5:144896norm/biaselementsacross113chunks,422elementschangedin85chunks,maxabsdelta7.6293945e-6,allfinite. Selectedevidence final-five-teacher-weight-delta.json. FirstreadonlyremoteanalysiscouldnotunpicklePython3.13PathmetadataonPython3.10(pathlib._local); metadataonly78938bytesfetchedandparsedonmountedPython3.13,thenexacttensorbytechunksreadremotelywithTorch2.5.1. No runtimepackageorproductionchange.
+
+
+## 2026-11-12 — recovered final long-training failure
+
+- Exact job exp-1112-215539-050439 is Failed at14:12:49Z. Launcher19420 exit1 and monitor90724 exit0 collected; terminal inspector25052 exit0 collected. No new submission or stop. Formal200 remains unsubmitted.
+- Head log records Megatron allocation OOM at22:12:04HKT: requested19914555392bytes, available17435197440bytes, total85029158912bytes. This precedes vLLM SIGTERM22:12:10HKT; the shutdown signal is cleanup evidence. Exact operation and business traceback remain under investigation.
+- Five-teacher and selfteacher short run outcomes remain verified as recorded. Selected original-job logs, Ray worker traces, TensorBoard and partial native dump will establish the actual failure stage before any correction.
+- First record-update invocation used tasktmp as cwd and failed before modifying any file; this update uses the absolute task path.
+
+
+## 2026-11-12 — long backward RCA and TP4 correction
+
+- Complete final head platform log now returns the initiating RayTaskError(OutOfMemoryError): native student train_microbatch_presharded -> reverse-KL backward -> model_utils.py:2677 empty_like(student_logits). Request18.55GiB; GPU4free16.36GiB, allocated44.12GiB/reserved-unallocated14.10GiB. This is a full-sequence gradient allocation, not teacher payload or a generation SIGTERM. Raw exp-1112-215539-050439-cfcd2084-final-full.log retained in tasktmp; selected traceback and RCA are in evidence/final-long-training-3-*.
+- Exact-object/live+historicalEvents/incidentlogs/existingDeepScan succeeded. Bothall-operationaudit reads timedout15s; no automaticretry. Manualstopactor/reason/requesttime UNKNOWN. Headcontainerexit1 at14:12:21Z precedes platformFailed14:12:24Z. TBhas0successfulupdates.
+- Existingparallelism correction: trainerTP4/CP1/DP2 on8GPUs, teachersandgenerationretainTP2. Full151936vocabulary,FP32heads,reverseKL,responsemask/token-normalization,originalfive65536inputswithnativerepeat2andbatch8areunchanged. Nativegradientperrank9957277696bytes versus19914555392 atTP2. No coregradient/scaling/fallbackchange.
+- TightCPUallocation fixture reaches the actual empty_like call using meta logits and injects only the incident per-allocation budget. TP2REDexit1 at19914555392bytes; TP4budgetPASSexit0 at9957277696bytes. This verifies allocation shape, not aggregateGPUpeak,numericsortraining. Exact repro_full_kl_grad_allocation.py and full-kl-grad-allocation-{tp2-red,tp4-budget}.log in tasktmp. NativeTP4schema andpersonaldry-runPASS. Actualoriginalbatch8/65536 rerun is required.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 1｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A / Q / B / C | PASS | Source, acceptance, runtime and reference preparation recorded |
+| D | FAILED | Short workflows verified; 65536 backward OOM remains under GPU verification |
+| E | TODO | Formal200updates and independent saved-checkpoint replay outstanding |
+| F | TODO | Final reconciliation and archive require E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** e8fcef02 short-workflow milestone to resumed RCA｜**当前前沿：** D long-training and independent saved-checkpoint replay preparation
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | Bounded original-job collection stopped at actual traceback |
+| D2 细节反复重试 | CLEAR | Placement, empty batch and OOM are distinct measured failures |
+| D3 支线问题修补 | CLEAR | Work addresses original65536acceptance |
+| D4 可并行任务停滞 | CLEAR | Saved-checkpoint replay preparation resumes while GPUlongcheck runs |
+| D5 超范围镀金 | CLEAR | ExistingTPsetting only, no new coreinterface |
+| D6 分析空转 | CLEAR | Traceback produced a concreteTP4verification |
+| D7 路线违背 | CLEAR | Formalrunstillwaitsforactuallongtraining acceptance |
+
+**文档检查：** S5 plan.md/report Running contradicted the terminalFailed; corrected directly. S1/S2/S3/S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：先修正状态文档，随后继续。
+
+**文档更新（先执行）：**
+1. plan.md/report status: record exactFailedjob,0verifiedupdates and RCAinprogress（可直接执行，已完成）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：原batch8/65536在TP4实际训练 → successfulupdate、finiteloss/grad、same-tokenparity。
+2. 并行：保存权重的独立replay准备 ‖ 正式TP4config准备；正式提交仍等待D。
+
+## 4. 最值得关注的 3 点
+
+1. 原失败已定位到studentfull-KLbackward第二张全序列gradient的分配。
+2. TP4只验证了allocation大小和CPU配置；GPU验收仍需真实update。
+3. 正式200update和独立保存输出replay仍未完成。
+
+- TP4original65536training submitted once as exp-1112-222130-343023,24H800,launcher79179. NativeCPUvalidation32985exit0,allocationRED9435exit1 and budgetGREEN1379exit0,personaldry-run52363exit0. Keep launcher alive. FormalTP4 and savedstep1/step2tokensreplay preparation proceed independently.
+
+- Independent native saved-step1 replay submitted once as exp-1112-222427-715476,4H800,launcher89330. ActualCPUentrypoint reaches init_ray after parsing32savedstep2samples; everymetadataweight_version=1. InitialimportmissingprojectPYTHONPATH fixed to the existingworkerprojectpath; thenargparsenargs+requiredcontext-parallel-sizeslastafterallHydraoverrides. FinalactualCLIpreflightandpersonaldry-runPASSbeforeGPUsubmission. No productparserchange.
+- LongTP4jobRunning14:24:03Z; Ray confirms3nodes/24GPUs. Creatorpersonal/codesign/localNFS100.96.128.195verified. FormalTP4nativeCPU200/256/65536checkanddry-runPASS; stillunsubmitted.
+
+## 2026-11-12 — TP4 long workflow complete, consistency rejected
+
+- Completed exp-1112-222130-343023: native execution and platform Succeeded, launcher79179/monitor3799 exit0. Actual8rows each65504prompt+32response=65536tokens.1successfulupdate,0skipped,256validresponse tokens; loss0.0050317468 andpreclipgradnorm70.8461304 arefinite. scorer/vLLMMAE0.0685276996FAIL0.02,p950.15791428,p990.84881840,max3.0723002. All8samplemeansFAIL; original5longcasesareallmath selfteacher. TP4 is not promoted. Evidence final-long-training-4-{parity,training-metrics}.json.
+- Savedstep1 replay exp-1112-222427-715476 Failed during validate_model_paths: step1 was deleted by native retention after step5 save(save_period5/keep_top_k3/noftretention); actual checkpointforward never ran. Native retention code and cloud path absence verified. Containerexit1 14:27:52Z -> Failed14:27:54Z -> launchercleanup14:27:58Z. RCA6primaryqueries succeeded,2allaudits timeout15s;manualstopactor/reason/requesttimeUNKNOWN. Formalretentionnullalreadypreventsdeletion. Exact same-weight savedoutputreplay is E acceptance using retainedformalstep1 andversion1/step2tokens; do not rerun missingpath.
+- Pre-execution predictions for D: (1) TP2/CP1 replay of identical TP4longtokens shouldreduceMAEto<=0.02 ifTP4numerics dominate; (2) TP2/CP2 controls CPshape independently using same tokens; (3) nativeTP2/PP2/CP1 preserves TP2 projection arithmetic and halves laststage decoderactivation/param burden, potentiallyclearing18.55GiBbackwardallocation. ActualPP2support inspectedinexistingMegatronpipeline+fullteacherheadsetup; CPUconfig/nativeboundaryanddryrunrequiredbeforeGPU. IfTP2replaystillFAIL, investigatefreshgeneration/batch/normdifference, retainingceilings. Noformalrunsubmitted.
+
+- CPU preparation passed for the actual TP2 replay CLI (same masks and recorded tokens, stop at init_ray), MasterConfig/SingleController validation, and native Megatron training checks for CP1/CP2 and PP2. First local check accessed dict-valued `native.data` as an attribute; corrected only the preflight. Successful command uses `uv run --no-sync python preflight_final_tp2_parallel.py` in the pinned Megatron actor environment; logs `final-tp2-parallel-preflight-2.log`. Both personal dry-runs exited 0.
+- Submitted once at 22:36 HKT: TP2 replay `exp-1112-223646-775620`, 8 H800, launcher6526; TP2/PP2 long workflow `exp-1112-223647-213583`, 24 H800, launcher63849. Keep both launchers alive. No formal 200-update job exists yet.
+
+- TP4 terminal verification: all three exact replicas Succeeded, container exit0/restart0; creator and current-machine NFS source verified. Native GPU monitor observed trainer memory maxima 43.79–44.91 in `ray/node.0.gpu.*.mem_gb`, teacher 28.05, generation 69.34–69.43. Seven samples at the configured 10-second interval do not guarantee transient peak capture. See evidence/final-long-training-4-observed-memory.json.
+- Formal TP2/PP2 candidate configuration is prepared independently for the unchanged 200/256/65536 contract and full checkpoint retention. It remains unsubmitted until D passes.
+
+- Required PP2 checkpoint replay preparation found a reachable allocation bug: `replay_logprobs.py` computed TP×CP workers and omitted PP. The actual CLI boundary for TP2/PP2 produced RED (`requires4workers; actual[2]`); multiplying the existing PP size now gives GREEN `[4]`. Added TP/PP widths to the existing replay result so the tested mesh is explicit. Ruff0.9.9 lint/format pass. No new flag, trainer, loss, mask or tolerance. GPU verification is the same recorded 65,536-token batch in a separate 4-H800 PP2 replay; commit waits for its actual result. Logs: pp2-replay-allocation-{red,green}.log; script: tasktmp/check_replay_pp2_allocation.py.
+
+- Submitted PP2 replay once: `exp-1112-224238-102778`,4H800,launcher74702. Both prior jobs remain Running; no duplicate submission. PP2 replay uses original TP4 recorded tokens at weight_version0 and initial weights, not the deleted step1.
+
+## 2026-11-12 — TP2/PP2 long workflow and identical-token reconciliation
+
+- Recovered existing launchers without resubmission. exp-1112-223646-775620 Failed after completing CP1 replay; CP2 reaches TE attention and raises no available dot-product backend. Exact six RCA source queries completed, both all-operation audits timed out15s; initiating manual-stop actor/reason/time UNKNOWN. CP1 result is retained, not discarded with the later failure.
+- TP2/PP1/CP1 and TP2/PP2/CP1 replay response outputs are identical on all8original65536 sequences (256response tokens). Both scorer/vLLM MAE0.05935666217FAIL, below TP4's0.06852769961 but still above0.02. PP2 allocation fix exercised real4-worker scoring; platform terminal verification still being reconciled.
+- Native TP2/PP2/CP1 exp-1112-223647-213583 recorded1successfulupdate/0skipped,8validseqs/256validtokens,loss-8.178703936e-9 and preclippinggradnorm0.00336871529, finite. Its scorer outputs/error reproduce the same TP2 result. TP4's70.84613gradnorm is associated with its different studentTP4/teacherTP2 arithmetic; causal attribution requires the forthcoming layer comparisons.
+- Hypotheses before next probes: H1 vLLM incremental decode differs from fixed-token prefill; predict vLLM prompt replay differs from recorded generation and narrows native error. H2 native/vLLM norm/projection kernels differ even for matched prefill; predict first hidden-state divergence before attention despite exact inputs. H3 long-position attention differs with batch/KV-cache layout; predict input/QKV/RoPE boundaries agree until attention output. Use existing two2GPU layer entrypoints on originalTP4tokens, unchanged weights/precision/0.02. These advance D only; formal200 remains unsubmitted.
+
+- Exact terminalobjects: TP2replayFailed/container1; PP2trainingSucceeded/all3containers0; PP2replaySucceeded/container0. Native launchers63849/74702exit0,failed6526exit1. PP2replayallocation/scoring fix signedcommitaf17b989. check-progress: A/Q/B/CPASS,D/E/FTODO; D1–D7CLEAR; S5oldTP4next-action corrected. Nativeprefill2GPUsubmittedonceexp-1112-225028-947427,launcher62305; keepalive. GenerationCPUpreflight encountered root-ownedpatch_lockPermissionError; verify installedRoPEpatch marker and mockonlyfilepatchoperation atCPUboundary, withoutchangingworker path or dependencies.
+
+- GenerationprefillCPU boundary secondcheckPASS after confirmingtheexistinginstalledRoPEpatch; workermodificationpathunchanged. Bothpersonal dry-runsexit0. Generationprefill2GPUsubmittedonceexp-1112-225203-504770,launcher44738; nativeprefill2GPUexp-1112-225028-947427launcher62305 remainsalive. Exactsubmitargs savedinevidence/final-long-{generation,native}-prefill-submit-args.json. Noformalrun yet.
+
+- Nativeprefillexp-1112-225028-947427 Failed at22:53:41HKT with actualRayTaskError(KeyError)MOPD_LAYER_OUTPUT_DIR in LayerOutputWorker.get_logprobs after its scorerforward. Exactincidentlogs confirmthemissingexistingCLIenvsetting; no modelattention/backwardfailure. Six RCA readscompleted; audits unavailable15stimeout. Correctonlyrequiredconfigenvdestination to ${logger.log_dir}/layer-outputs; strengthenCPUpreflightatthePolicyboundarytocheckresolvedactualactorenv. Originalbusinessfailureevidenceretained; existinggenerationprobecontinues.
+- AdditionalH3 controlpreparation: installedvLLMflash_attn.py:587–600 usesadaptiveSplitKV by default and forcesnum_splits1 for VLLM_BATCH_INVARIANT; nativefullprefillusesunpagedselfattention. Ifshape-dependentattentionreductiondriveserror, theexistingbatchinvariantmode shouldreduceprefill/decode/nativeerror. Themodealsochangeslinearmatmul/RMSNorm; attribute onlytheoverallconfiguredmodeuntillayercontrolsettleswhichboundary. No numericalthreshold change.
+- CPUactualengineboundaryRED proved replay_generation_logprobs.py ignored existingvllm_cfg.env_vars. Addedtheexistingmapto os.environ beforevLLMimport/engine; GREEN requiredbeforeGPUvariant. Thisdiagnosticconfigfixdoesnotmodifytheformalworkerimplementation, whichalreadyhonorsthemap.
+
+- Same8tokens vLLMprefill completed: nativeTP2scorer/vLLMprefill MAE0.01883321955overallPASS(max0.12449;3/8samplemeans>0.02). vLLMprefill/recordedactualgeneration MAE0.05840253056FAIL(max1.10977), matchingthelargeobservednative/generationgap. Thisnarrowsprimarydifference to vLLMprefillversus generation, ratherthanPP layout; nofilteringorrawlogprobscalechange.
+- Nativecapturecorrectedconfig/actualPolicyenvboundaryPASSandpersonal dry-runexit0; submittedonce2GPUexp-1112-225719-755352launcher21542. vLLMexistingbatchinvariant config/environmentboundaryGREEN andruff0.9.9check/formatPASS; submittedonce2GPUexp-1112-225732-223406launcher62934. Keeplaunchersalive; monitorscopeexactjobs. Nativeprefillreplaywithcapture mustreproducetheprior0.05935666resultbeforeusinglayerobservations. Formal200unsubmitted.
+
+- Nativecapturesecondprobeexp-1112-225719-755352Failedbeforeforward: actualargparseconsumedtrailingHydraoverrideascontext-parallelint. Launcher21542exit1. Causeis tasklaunchargumentorder,notbackendnumerics. OriginalCPUpreflightusedarebuiltvectorandmissedthisfault; correctedpreflightnowusesactualsubmissiontailthroughPolicyboundary. BothCLIenvandargorderexplicitlyvalidated,thenonce-onlynative2GPUexp-1112-230040-904461submittedlauncher9781. No furthercapturetoolchangesunlessanewobservedfailure requiresit.
+- ActualfreshlongbatchinvariantcontrolCPU nativeconfigPASS andpersonaldry-runPASS,unchanged8/65536/TP2PP2/selfteacher/fullvocabulary. Submittedonce24H800exp-1112-225944-064229launcher51331. Existinginvariantprompt2GPUexp-1112-225732-223406launcher62934continues; noformal200job yet.
+- check-progress keyprefillmilestone: A/Q/B/CPASS,D/E/FTODO. D1HIT: thetwoauxiliarylaunchfailuresconsumedGPUtimewhiletheworkingreplayalreadyestablishedprefill/decodegap. Correctionapplied: useactualCLIvectorbeforeanyfurthercaptureallocation,andadvancefreshnativeinvariantcontrolinparallel. D2–D7CLEAR; S5oldplanfrontierupdatedtoactualfreshinvariantcheck. No scope or acceptancechange.
+
+## 2026-11-12 — resumed invariant result and complete layer capture
+
+- `exp-1112-225732-223406` and `exp-1112-230040-904461` are Succeeded, each replica/container exit0/restart0. Launcher62934exit0; native launcher9781 reached successful terminal. Creator i-fengyicheng and local source verified. The 24H800 `exp-1112-225944-064229` is Starting because gang placement is unschedulable (member gap2); no business artifacts yet. Keep launcher51331 and monitor69544 alive, no resubmission.
+- Existing batch invariance is rejected for promotion: original8sequences/256responsepositions, nativeTP2 versus invariantprefill MAE0.24694790764, p951.2586863, max6.8822734; invariantprefill versus originalgeneration MAE0.25645986102, max6.7738152. Unchanged ceiling0.02FAIL. This is a measured control outcome, not a repair. Script environment fix is validated: configured environment reached actual engine and altered executed arithmetic, despite rejecting this configuration.
+- Native observer exactly reproduces prior TP2/PP1 and PP2 scorer outputs. Captures cover all8samples/twoTP ranks; first-layer QKV, post-RoPEQ/K and attention are exact. Three samples first diverge in post-attention RMSNorm; two others first diverge in second-layer input RMSNorm. Same rounded residual inputs agree. Sparse BF16 normalization differences propagate; no causal full-model intervention yet. Raw selected32positions only, not fullprompt coverage. Layer comparisons use actual Python3.13.14 through uv--no-sync, OMP/MKL/OPENBLAS4, timeout60s.
+
+- Next D hypothesis before execution: native vLLM `SamplingParams.__post_init__` sets skip_reading_prefix_cache=true whenever prompt_logprobs is requested; ordinary generation uses prefix caching. The long inputs share prefixes, and prefix hits alter executed prefill shapes. Predict that setting only existing vllm_cfg.enable_prefix_caching=false in the original8x65536 TP2/PP2/CP1 native training reduces actual scorer/generation MAE to<=0.02. A continuing FAIL rules out prefix reuse as a sufficient repair. Preserve full masks, weights, head/RoPE/FA4, loss and tolerance. Native V1 source rejects trace replay (requires Model Runner V2); do not allocate for that unrelated runner change.
+
+- Native no-prefix long control CPU config initially rejected a missing YAML key; corrected to existing Hydra `+` addition before GPU. MasterConfig/native shape check and personaldryrunPASS, then submitted once24H800 `exp-1112-231515-172060`, launcher2948. Current codesign inventory readHTTP200 covers123machines,25usableGPUrequests/twofullyusable8GPUmachines; this is neither H800type filtering nor verified personalquota. Both24GPUgangjobsremain monitored, no duplicate.
+- Independent D GEMM hypothesis before execution: PyTorch F.linear decode M1 and prefill M2048/65536 may select different BF16 accumulation/reduction paths. On identical captured first-layernorm rows and actual checkpointTP2QKVshards, measure M1/32/2048/65536 against each other, nativecapturedQKV andFP32reference. If disabling allow_bf16_reduced_precision_reduction removes the shapegap, investigate it as a causalprecisionrepair; otherwise reject this switch. OneH800purekernelprobe, no training/objective change; no arbitraryfactors.
+
+## 2026-11-12 — exact current-control recovery and check-progress
+
+- Recovered launchers: invariant 51331 exit1 after actual platform failure; no-prefix launcher2948 remains alive. Previous read-only monitor69544 exit0 after observing Failed. Reused its tasktmp inspector with explicit job names and started no-prefix monitor22111, exact Running at15:18:34Z. No resubmission and no formal200run.
+- Invariant exp-1112-225944-064229 failed before first update during initial refit communicator warmup in StatelessProcessGroup.init_nccl_communicator -> broadcast; actual nccl.bindings.nccl.NCCLError InternalError(3). Launcher cleanup23:16:23.535HKT follows actual23:16:04HKT business traceback. No training dumps/updates or numerical verdict exist. Exact-object incident RCA collector3797 completed six primary reads; both all-operation audits failed on bounded timeout. Initiating manual-stop actor/reason/requesttime remain UNKNOWN. Do not retry rejected invariant numerics solely because this native control failed.
+- Retained final-long-attention-layer-comparison.json, final-long-norm-comparison.json and no-prefix exact args/resolved config in evidence/. Capture coverage remains eight samples, two TP ranks and32responsepredictionpositions per sample, not fullprompt coverage.
+- check-progress: A/Q/B/CPASS, D/E/FTODO; D1–D7CLEAR; S5 stale invariant frontier corrected in plan/review. Current mainline is existing no-prefix actual training plus bounded CPU GEMM-input verification. The previous capture tooling failures remain in history and are not reclassified as product errors.
+- Initial remote Ray-log read had a tasktmp script quoting SyntaxError; corrected raw script returned0 and found no NCCL WARN records in retained Ray stderr/out files. This limited absence is not evidence that NCCL or network is healthy. CPU capture check verifies actual rank1 norm shape32x1536, rank0/1QKV32x1024 and matching sample IDs. GEMM checkpoint identity/layout check is in progress; no GPUprobe submission yet.
+
+- No-prefix long control completed its actual business entrypoint;256response-token comparison MAE0.0605199088604FAIL,p950.2237538993,max1.1958322525. All8samplemeans exceed0.02. Actualengine logs confirm enable_prefix_caching=False.1successfulupdate/0skipped,loss-1.09825278e-8,grad0.00337985158;finite. This rejects prefix reuse as a sufficient correction without asserting paired identical trajectories with the previous run. Native terminalobjects are being collected separately.
+- One-H800 GEMM probe actual checkpoint/shard/capture boundaryPASS (session23845exit0) and personaldryrunPASS (52803exit0); submittedonce23:24:21HKTasexp-1112-232421-248453,launcher74653. Monitor87080 seesStarting; retainlauncher,no duplicate. Exact6QKVweights+bias copied selectively for CPUlayout only,6.3MB tasktmp;CPUFP32rounded/nativenumeric max0.25,meanMAE1.56648e-6 over16records. This observed reference is not a GPU kernel pass. Probe runtime remains actualstudentBF16shards and32capturedrows.
+- Additional ranked D predictions before actual decode instrumentation: H1 batchshapeGEMM first diverges inQKV and disablingBF16reductionremovesit;H2RMSNorm rowshape first diverges after matchingQKV;H3attention/KVreduction firstdiverges inattention aftermatchingQKV/RoPE. Prepare a temporary2GPU actualdecode + samegeneratedtokensprefill observer by reusing nativeLLM.generate and existinglayerhooks; saveoneforward perpredictionposition to preserveall31decode steps despite existingonecallcapture semantics. No fullpromptcaptureexpansion,noformalworkerhooks,and no productionprecisionchange. Preparation only; native samegeneratedtokens replay follows actualoutput if needed.
+
+
+## Resumed completed GEMM milestone and D frontier correction
+
+- Complete GEMM16-record JSON and business/terminal objects read successfully. All256 against-native/full-shape comparisons exact;1H800, creator/local source/runtime verified; Succeeded/exit0/restart0, launcher74653 and monitor87080exit0. Reject first-layer QKV shape/reduced-precision hypothesis; no production precision change. Selected result/business/terminal evidence copied into task evidence.
+- No-prefix-cache actual update/parity FAIL and batch-invariant initial-NCCL failure now reconciled in final workflow test report; terminal objects retained. Plan no longer says these controls are Running.
+- Actual eager decode observer uses original8 long prompts,32 fresh response tokens, then full prefill of those same new tokens. Production capture/backend unchanged. Preparation CPU invocation first lacked project PYTHONPATH; corrected before GPU. Actual outer replay boundary then caught returning new-token output to the original-token replay; restored its existing independent original-token replay call. No GPU allocation occurred for either CPU failure. Actual CLI and serialized callbacks remain under verification.
+- check-progress: A/Q/B/C PASS,D/E/F TODO. D1-D7 CLEAR: each control tested a recorded prediction and narrowed the cause; unsupported trace mode not attempted. S5 HIT: plan/review had stale no-prefix Running; corrected. Mainline frontier is D actual-decode versus same-token-prefill followed by native replay; E continues to wait for numerical acceptance. TP4gradient and raw reference-gradient failures remain unresolved and are not relabeled PASS.
+
+- Actual decode CPU boundary PASS8samples/256response tokens/256decode snapshots/8prefill snapshots/serialized callbacks, Python3.13.14, command in final test report. Pinned Ruff0.9.9format/checkPASS. PersonalPython3.10dry-runPASS exact2H800/codesign/local/data source; submitted once **exp-1112-233623-543941**, launcher45185, read-only monitor50481. Keep launcheralive; no duplicate. Engine remains eager/TP2/FA4/FP32RoPE/head; existing no-prefix setting retained for isolation, maximum32. Newtokens/native replay pending, formal200unsubmitted.
+
+
+## Actual decode callback failure and scoped repair
+
+- Original observer exp-1112-233623-543941 is Failed, container exit1/restart0, with no model forward or numerical result. Model initialization completed. The first apply_model crosses ray_executor_v2 -> multiproc_executor.worker_busy_loop -> shm_broadcast.dequeue -> pickle.loads and raises AttributeError: Can't get attribute 'begin_capture' on worker __main__. Callback provenance is the root cause; NIXL warning is unrelated. Worker failure23:38:18HKT and container finish23:38:23 precede launcher cleanup23:38:40.523. Launcher45185exit1, monitors50481/23050exit0.
+- Exact-job RCA six primary reads succeeded; two all-operation audit reads timed out15s; no existing DeepScan. Manual-stop actor/reason/request time remain UNKNOWN. Evidence final-actual-decode-terminal-objects.json; raw365-line stderr under tasktmp/final-actual-decode-terminal-watch/.
+- Previous CPU preflight exercised cloudpickle only, so its serialization verdict did not cover the actual second plain-pickle worker hop. The minimal independent-process command uv run --no-sync python check_decode_callback_pickle.py --mode original returns exit1 with the identical AttributeError (session94303). Preserve decode-callback-pickle-original-red.log.
+- Scoped repair in progress: importable start_forward_capture in existing generation_layer_outputs.py, observer at tests/manual/mopd/inspect_actual_decode.py; no objective/backend/precision change. CPU preflight now exercises cloudpickle then plain pickle in an independent worker before callback execution. GPU rerun waits for GREEN actual CLI and personal dry-run.
+
+- Corrected plain-pickle independent-worker GREEN (4482exit0), and actual CLI cloudpickle->plainpickle boundary GREEN (61915exit0) on Python3.13.14. Same8samples/256response positions/256decode snapshots/8prefill snapshots; both imported callback identities validated in independent processes. Exact commands use PYTHONPATH=/data/ycfeng/sota-engine/RL, actor UV_PROJECT_ENVIRONMENT, OMP/MKL/OPENBLAS4, CUDAcompat LD_LIBRARY_PATH and timeout60s; scripts check_decode_callback_pickle.py --mode fixed and preflight_actual_decode.py under tasktmp. Logs decode-callback-pickle-fixed-green.log and actual-decode-2-cpu-boundary.log. GPU numerical behavior remains unverified.
+- Pinned Ruff0.9.9lint/format PASS for generation_layer_outputs.py and inspect_actual_decode.py. Personal dry-run82351exit0. Submitted once via submit_final_actual_decode_2.py as exp-1112-234539-001675,2H800/codesign/current-local source; launcher10891 and monitor29400 alive. New cloud output root final-actual-decode-2 preserves the failed job. No formal200job submitted.
+
+
+## Actual eager decode observed; attention is the first mismatch
+
+- Corrected observer exp-1112-234539-001675 completed all8samples and235actual response tokens. Two responses stop at17/26tokens dueEOS; six reach32. Same-token decode/prefill MAE0.02390396525, p950.05624575615,p990.171537323,max0.584892273: FAIL unchanged0.02. All actual tokens/masks retained; 4/8sample means exceed0.02. This is a new trajectory set and is not a paired comparison to prior async training trajectories.
+- All8samples/twoTP ranks: embedding, first input norm, QKV and pre/postRoPE Q/K are exactly equal at every scored position. First mismatched stage is layer_0_attention on both ranks. Firstresponseprediction attention is exact; incremental decode attention differs sparsely (rank0 per-sample MAE2.88e-7–1.58e-6, max0.0009765625–0.015625), then projection/MLP/later layers diverge. This observation narrows the numerical boundary but does not yet prove a causal repair.
+- Auxiliary analysis initially could not use local-only uv path on SSHhost (exit127). Run standalone script via SSH stdin with remote Python3.10/Torch2.5.1 instead. First coverage assertion found one additional unscored forward afterEOS in each17/26token sample. Corrected analysis explicitly retains these unused positions separately and compares every actual235 response-prediction position, no response filtering. Second analysis85972exit0 covers all16sample/rank records. Exact command: ssh shai-ycfeng env OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 OPENBLAS_NUM_THREADS=4 timeout60s python3 - --root <personal cloud root>, stdin analyze_actual_decode_layers.py; raw errors retained separately. Numerical training unaffected.
+- Business finished.json=native_execution_succeeded; platform/replica Succeeded, containerexit0/restart0. H800gpu-h800-0329, Python3.13.14/Torch2.13.0+cu130,personalcreator,codesign,localNFS100.96.128.195verified. Launcher10891/monitor29400exit0. Selected comparison/allstage errors/terminal/business/runtime retainedinevidence/final-actual-decode-2-*.
+- Native same-newtokens replay actualCLI/Policy-boundary55771exit0; independent CPU token/mask/weight_version0 checksPASS8/235. Personaldry-run49180exit0. Submittedonce2H800exp-1112-235130-765032via submit_final_actual_decode_native_2.py,launcher41980/monitor35946alive. No formal200submission.
+
+- Verified imported-callback/GPU step committed with sign-off as8b8b6e7a; branch remains local. Business/runtime receipt now encoded as one JSON object.
+- Ranked remaining attention hypotheses before the next control: H1 FA4 split-KV reduction varies between one-query decode and full prefill; H2 dense/paged attention or score arithmetic differs despite same selectedQ/K; H3 unobserved promptKV differs before selectedpositions. Every selectedfirstlayerQ/K/V/RoPE row is exact, which narrows but does not exclude H3 for the uncaptured prompt. Source flash_attn.py:587–600/1153–1183 exposes eager heuristic num_splits0; the existing split limit applies only to CUDAgraphs. Whole batchinvariant mode was already rejected; do not replay it or add a new core config/interface.
+- Next bounded control uses existing vLLM attention_config.backend=TRITON_ATTN only, with the same8sourceprompts/TP2/no-prefix/eager/FP32head/FP32RoPE/fullvocab and actualdecode followed by samegeneratedtokensprefill. Prediction: if the FA4 attention path dominates the gap, changing only the existing attention selector reduces per-token MAE below0.02 and/or changes first mismatchedstage. A continuingattention-firstFAIL rejects this backend as sufficient; no numericetolerance change. Preserve pairednative replay and originalfixedtoken replay to measure the training-side difference before promotion. CPU actualCLI and personaldry-run precede anyGPUcontrol.
+
+
+## 2026-11-13 — resume and ordinary native replay
+
+- Recovered HEAD8b8b6e7a and existing task requirements/plan/artifacts. TRITON exp-1112-235613-448362 finished Succeeded00:00:51HKT; launcher40958/monitor88351 completed. Complete8samples/241tokens decode-prefill MAE0.02291390176, signedmean0.00022068496, p950.06023598, p990.10800505,max0.18308735: FAIL unchanged0.02.6/8sample means exceed0.02. Do not promote this existing selector as a sufficient fix. Layer/terminal/business reconciliation continues.
+- Native observer exp-1112-235130-765032 Failed on shortEOS sequences65521/65530 padded natively to65536. Embedding/SP hook compared against real input length; physical shard32768 requires padded length65536. Original error retained. CPU hook RED88960exit1 and GREEN85806exit0 verify reading actual embedding input_ids with with_kwargs=True. Padding fix remains uncommitted/unverified on GPU; no complete8sample native result exists from the failed observer. RCA six primary reads successful/two all-operation audits unavailable; initiating manual-stop actor/reason/time UNKNOWN, launch cleanup follows business error.
+- Shortest D route uses ordinary replay_logprobs.py, not further observer extensions. ActualCLI/Policy CPU preflight41724exit0 and personaldryrun65687exit0 already covered unchanged8samples/235tokens/version0/TP2PP1CP1/fullvocab. Submitted once locally00:02:48HKT through personal Python RJobBackend as exp-1113-000248-302886,2H800/codesign,launcher56177,monitor9188. Exact args final-actual-decode-native-3-submit-args.json; dump final-actual-decode-2/exp-1112-234539-001675/logs/actual-decode-tokens.jsonl. Keep launcher alive; no formal200run submitted.
+- Session-memory recovery now loaded and initialized; handoff state stays in this progress record. Preserve unrelated recipe/evidence changes.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 模型、数据、全词表路径已记录 |
+| Q | PASS | 用户已确认工程验收与运行授权 |
+| B | PASS | 原student与五教师短流程、runtime已验证 |
+| C | PASS | 数值观测与参照机制可执行；原梯度FAIL保留 |
+| D | TODO | 长序列update通过，训推一致性仍FAIL |
+| E | TODO | 正式200update与保留checkpoint独立replay未完成 |
+| F | TODO | 最终归档依赖D/E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 8b8b6e7a callback修复至今｜**当前前沿：** D native同tokens核验、attention诊断、原梯度与TP4异常解释
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | padding observer停止扩展，改用已工作的普通replay |
+| D2 细节反复重试 | CLEAR | TRITON是预先记录的单变量attention假设；FAIL不重复 |
+| D3 支线问题修补 | CLEAR | 当前工作均核验D接受条件 |
+| D4 可并行任务停滞 | CLEAR | native replay执行时并行收TRITON证据、检查gradient |
+| D5 超范围镀金 | CLEAR | 无新核心配置或接口 |
+| D6 分析空转 | CLEAR | attention首差异与selector结果已形成路线决定 |
+| D7 路线违背 | CLEAR | 正式run仍等待D；0.02不改变 |
+
+**文档检查：** S5 plan.md旧native observer Running与实际Failed冲突；已更新。S1–S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：先更新状态文档，再继续。
+
+**文档更新（先执行）：**
+1. plan.md当前D：记录observerFailed、TRITONFAIL和普通native新job（可直接执行，已完成）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：普通native replay全部235tokens → 保留总体/样本/尾部误差与完整终态。
+2. 并行：TRITON证据与层边界 ‖ 原gradient reference和TP4异常因果核验。
+3. E：D通过后普通resume入口200/256/65536 → 原生save/exit/resume继续update。
+
+## 4. 最值得关注的 3 点
+
+1. TRITON全量仍FAIL，不能当修复。
+2. 新native job用普通评分入口，不依赖失败observer。
+3. 原raw gradientFAIL与TP4grad70.84613尚未解释；正式200update未提交。
+
+
+## 2026-11-13 — ordinary native replay and next precision control
+
+- exp-1113-000248-302886 completed business replay and platform Succeeded; launcher56177 returned exit0. All235same-weight FA4 response tokens retained. Native minus decode: signed mean0.00062814260, MAE0.02335487433,p950.06115665,p990.13129736,max0.53070211: FAIL0.02. Native minus identical-token prefill: signed mean0.00112446242, MAE0.01920516313,p950.04833212,p990.06405975,max0.17683506: overallPASS;3/8sample meansFAIL. Neither mean is filtered.
+- TRITON reconciliation covers all16sample/rank captures; first difference is layer_0_attention everywhere, same selected embedding/QKV/RoPE inputs. Its original256fixedtoken prefill versus recordedasyncFA4generation MAE0.05341011584FAIL. Business completion, H800/runtime and container exit0/restart0 retained; changing the existing selector is insufficient.
+- Ranked falsifiable hypotheses before the next control: H1 sparse BF16 attention/norm rounding is amplified through the remaining layers; matched FP16 under the same model weights/tokens/FA4/head/RoPE should lower native/prefill and actualdecode/prefill MAEs below0.02. H2 split-KV reduction is sufficient: setting single split should remove first attention mismatch; current eager config has no such existing selector, so this remains untested. H3 earlier prompt KV is already different outside captured positions; a continuing FP16 FAIL would require focused KV-input investigation.
+- Select the existing float16 precision route for one paired control, not a new schema or production patch. First run actual8longpromptdecode+samegeneratedtokenprefill on FP16, and native FP16 replay of the original256fixedtokens in parallel. The originalBF16 weights are still the requested source; precision changes only computation/storage. Keep full151936vocabulary, no filters/scales/tolerance changes. Native optimizer flags must follow fp16/bf16 consistency, FP32 head remains enabled. ActualCPU config/CLI and personaldryrun precede both submissions. No FP16 setting is promoted before actual parity/training/finite evidence.
+
+
+## 2026-11-13 — parallel precision and TP4 gradient controls
+
+- FP16 actual decode CPU boundary 99779 exit0, including actual CLI and cloudpickle/plain-pickle worker hops; native FP16 preflight 81358 exit0 verifies actual Policy config, native precision/optimizer dtype validation and FP32 logits. Personal dry-runs 17826/77093 exited0. Submitted once: actual decode exp-1113-000959-614638 (launcher11189) and original256token native replay exp-1113-001000-063749 (launcher55372), each2H800/codesign/localNFS. Monitor preparation reuses the existing exact-job monitor.
+- TP4 causal hypothesis before execution: the original studentTP4/teacherTP2 arithmetic difference drives the large self-distillation gradient. Changing only the existing teacher TP to4 should reduce loss toward zero and gradient substantially below70.84613; an unchanged large gradient rejects this attribution. Original8longsamples, studentTP4, fullvocabulary, BF16/FP32 head, token normalization, generationTP2 and native optimizer remain unchanged. This control diagnoses D; it does not promote TP4 for formal training. CPUnative/teachergeometry and personaldryrun precede allocation.
+
+
+## 2026-11-13 — FP16 recovery and matched-TP control
+
+- Recovered the two precision jobs and inspected business artifacts independently of launcher exit. Original native FP16 replay exp-1113-001000-063749 retained all 8 samples / 256 response tokens; business succeeded, platform Succeeded, container exit0/restart0. It is not yet a matched-FP16 parity PASS: the stored generation baseline is BF16. Exact replay/runtime/business/terminal records are in evidence/final-original-native-fp16-*.json.
+- FP16 decode exp-1113-000959-614638 failed during Qwen2 rotary factory initialization: `ValueError: FP32 RoPE requires default full-head BF16 RotaryEmbedding`. Native prefill never began. Eight RCA primary queries succeeded, exact RJob/replica UIDs retained; container exit1/restart0. Startup scheduling/preemption messages precede execution and are not evidence of workload preemption. Platform cleanup and launcher Job Stop follow the business exception. Initiating manual stop actor/reason/time are UNKNOWN. Raw collection: /data/ycfeng/tmp/nemo-mopd-20261112/rca-exp-1113-000959-614638/.
+- The original CPU callback preflight mocked engine construction and did not exercise the real factory. Existing factory regression extended to FP16: RED session54187 exit1 (FP16 factory exception; BF16 passed). First broad pytest invocation72723 timed out while parent conftest packaged the repository into Ray; no numerical verdict. Scoped actual factory tests92305 exit0: 7 PASS. Existing RoPE source patch now supports default full-head BF16 or FP16, keeps FP32 cache/FlashInfer and rejects FP32, partial heads and scaled RoPE. Exact previous installed snippet was backed up and reversed, then the normal patch applied; no new compatibility path. CPU installed-factory initial PermissionError was a root-owned patch_lock, repaired with scoped chown; rerun84425 exit0, cache [65537,128] FP32, query dtype FP16. GPU arithmetic remains pending.
+- Submitted corrected same-variable FP16 decode once locally: exp-1113-002107-537824,2H800/codesign, launcher79624. Same model/prompts/FA4/FP32head/FP32RoPE/unchanged0.02 ceiling; only the already-tested dtype support and output directory differ from failed initialization. No precision promotion before full numerical and training results.
+- TP4 matched-teacher preflight83877 failed because the temporary script imported nonexistent nemo_rl.algorithms.on_policy_distillation. Inspected actual opd.py and fixed only that import. Preflight41571 exit0; existing personal dry-run3534 exit0. Submitted locally exp-1113-001611-128499,24H800,launcher37211,ordinary controller, original8x65536 self-distillation and1update. Only teacherTP2→TP4 changes the causal variable. Prediction from preceding entry retained: gradient should decrease substantially if TP mismatch causes70.84613. No TP4 promotion implied.
+- Exact-job monitor51636 covers corrected FP16decode andTP4, with45s interval and7200s ceiling. Both launcher lifetimes are preserved. Formal200/256/65536 run remains unsubmitted; D still requires paired precision results, actual objective gradients and anomaly diagnosis.
+
+
+## 2026-11-13 — head arithmetic and native objective reference hypothesis
+
+- Ranked before the next GPU measurement: H1 mixed-precision native head GEMM (BF16 inputs/weights, FP32 TE output) differs from FP32 torch.matmul reconstruction. Prediction: calling the installed MCore `_linear_forward` on identical captured hidden states and head weight eliminates direct-logit and raw-gradient error. H2 TP layout mismatch drives student gradient (matched-TP run already executing). H3 raw-gradient tail includes non-loss tokens: native scalar loss with actual response/sample masks and observed microbatch token denominator should differ from the raw all-position statistic; this does not erase the original raw FAIL.
+- Extend only the existing diagnostic NativeForwardWorker to retain the current FP32-reconstruction result, a same-native-GEMM control, raw full-vocabulary gradients, and gradients through actual ClippedPGLoss using native data masks. Report the denominator explicitly as observed microbatch tokens; this control is not the global-update gradient or a replacement bound. Proposed short control is8freshsamples/4096ceiling/32responsecap/1update,24H800,original student used as selfteacher,TP2CP1/fullvocabulary. No production head change before this measurement. Preflight verifies the actual task's token-level/no-reference-penalty objective and worker imports.
+
+
+## 2026-11-13 — recovered FP16 three-way results and gradient frontier
+
+- Recovered new exact IDs: ordinary nativeFP16 replay exp-1113-002800-473836 (launcher36813), head/objective-gradient diagnostic exp-1113-002800-492957 (launcher98272). Native replay is now Succeeded with complete8samples/241response tokens, business marker, containerexit0/restart0; corrected decode exp-1113-002107-537824 also Succeeded/containerexit0/restart0, launcher79624 exit0. Head diagnostic is Running with3nodes/24H800 and mounted Python3.13.14/Torch2.13+cu130; TP4 exp-1113-001611-128499 remainsStarting, launcher37211 alive. Exact-job monitor7493 uses watch_final_new_fp16_gradient.py --interval45 --duration7200; originalmonitor51636 is retained.
+- Complete paired numerical result (no token/sample filtering): native minus actualdecode MAE0.00382072871157, signedmean0.00075029103,p950.00904369354,p990.01644172668,max0.17280316353; native minus identical-tokenprefill MAE0.00260485053310,p950.00713109970,p990.00889987946,max0.01182937622; prefill minusdecode MAE0.00337638158769,p950.00783824921,p990.01604747772,max0.17231357098. All three unchanged0.02MAE checks PASS;8/8samplemeansPASS each. Original256fixedresponse-token native/prefillFP16 paired MAE0.00290350709alsoPASS. Evidence final-actual-fp16-three-way-analysis.json preserves all samples,group_id,absolutepositions,tokenIDs,all signederrors and the30largest tails.
+- Largest tail: sample3975f292-6577-4d89-88f0-4ec81b32a364_g0,responseoffset11,token198(newline),position65515. Native-1.42182541 vs decode-1.59462857 vs prefill-1.42231500. Native/prefill at this point differs0.00048959. Complete16rank/sample layer comparisons first differ at layer_0_attention; at the tail prediction position65514, capturedQKV/RoPE are exact,attentionmaxdelta0.00012207031,layer0max0.001953125,layer13max16.625,finalnormmax0.7890625. This localizes the measured decode/prefill residual; selected positions do not prove the entire prompt KV is equal. No tail is excluded and no tolerance changed. All original long synthetic prompts cover math only; five-domain real training still needs its own evidence.
+- Collection commands: python3 collect_final_new_fp16_gradient.py (read-only SSH exact personal cloud roots) and python3 analyze_final_fp16_three_way.py, followed by personalPython inspect_final_new_fp16_terminal.py. Native/vLLM runtime, business and terminalobjects archived in evidence/final-actual-decode-{native-fp16,fp16-2}-*.json. Head/newnative submitargs retained. Initial python command was absent; host read/analysis uses python3, workload probes use pinned uv.
+- Found existingruff0.9.9 at /data/ycfeng/tmp/uv-cache/archive-v0/4Z7oFB0RosbDJ1nO/bin/ruff; priorofflineuvtool attempt had not formatted anything. Scopedformat found2files, then formatted only native_forward_worker.py and test_vllm_patches.py;4filelintPASS. RoPE runtime support has7previous actualfactorytestPASS and successfulFP16 GPUdecode; this code step can now be committed separately. Newhead diagnostics remainunverified/uncommitted.
+- Next independent D measurement is actualFP16 longtraining using nativeTP2/PP2/CP1,8x65536,1update,24H800 and ordinarycontroller. Match student/vLLM/teacher computation and transported hiddenpayload tofloat16; retain FP32logits/full151936vocab/responsemasks. Initialnativeoptimizerloss_scale default2**32 was confirmed on CPU; initialize its unchangeddynamic scaler at installedtorch.amp.GradScaler default65536 instead, retaining unscale/overflow handling. This is optimizer gradient scaling, not a change to the distillation objective. ActualCPUdtype/config andpersonaldryrun mustPASSbefore launch. Prediction: successfulfiniteupdate/0skipped plus<=0.02sameweightparity; fullnorm/gradient diagnosis andfive-teacherFP16save-resume remain required beforeformalrun.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原模型和数据身份已核验 |
+| Q | PASS | 已确认200-update工程合同与GPU授权 |
+| B | PASS | 运行环境和全词表路径已验证 |
+| C | PASS | 现有数值参照可执行 |
+| D | TODO | FP16三方一致性PASS，梯度与实际FP16训练仍待验收 |
+| E | TODO | 正式200updates与正式checkpoint replay未执行 |
+| F | TODO | 全体验收和归档未完成 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次checkpoint至本轮FP16完整配对结果｜**当前前沿：** D梯度参照、FP16长训练与五教师save/resume
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用exact-job monitor/普通replay；分析保留验收所需全量误差 |
+| D2 细节反复重试 | CLEAR | FP16为预先记录的单变量精度假设，配对结果收敛；失败selector不重试 |
+| D3 支线问题修补 | CLEAR | RoPE factory修复直接解除已发生的FP16初始化失败 |
+| D4 可并行任务停滞 | CLEAR | native replay、headgradient、TP4同时推进，FP16长训练独立准备 |
+| D5 超范围镀金 | CLEAR | 无新核心schema或并行框架 |
+| D6 分析空转 | CLEAR | 新241token结果已决定推进真实FP16训练 |
+| D7 路线违背 | CLEAR | 保留原五教师/151936/0.02/200/256/65536；正式run仍待D |
+
+**文档检查：** S5 plan.md/test_report仍记新native pending且缺失FP16PASS，与终态矛盾；本轮更新。S1–S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：先同步最新验收事实，再继续。
+
+**文档更新（先执行）：**
+1. plan.md/progress.md/test_report：记录完整FP16配对PASS、精确终态、新jobIDs和实际训练未验证（可直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：收head同GEMM/实际maskgradient、TP4matchedteacher → 解释原gradientFAIL和70.84613异常。
+2. 并行：原生FP16长训练 ‖ 五教师FP16短训练/save/exit/resume，保留finite/0skipped/参数变化证据。
+3. E：D通过后普通resume入口提交200/256/65536，完成post-refit和checkpointreplay。
+
+## 4. 最值得关注的 3 点
+
+1. FP16实际native/decode全量MAE0.00382073PASS，尾部和所有样本已保留。
+2. 原headgradientFAIL和TP4norm异常仍未解释；不能算D完成。
+3. 正式200updates尚未提交，FP16训练健康与恢复是下一项实际验收。
+
+
+## 2026-11-13 continuation: gradient failures and current training frontier
+
+- The RoPE repair is signed commit `986ec788`; only patches.py and the corresponding unit test were committed. Seven factory/regression checks and real FP16 decode/replay passed. Diagnostic worker changes remain uncommitted pending GPU verification.
+- First gradient probe `exp-1113-002800-492957` Failed with `KeyError: token_mask` in teacher scoring, which does not carry training masks. Launcher98272 exit1; zero verified updates. Move masked objective comparison to the actual prepare_loss_input stage; teacher scoring retains only same-hidden/head GEMM/distribution/raw-gradient checks. CPU reproducer `check_teacher_gradient_stage.py`: RED73733 exit1; GREEN25095 exit0,2validtokens. A 5-token payload with 8-position native logits additionally reproduced a shape error (RED64865 exit1); padding the payload consistently passed (GREEN23878 exit0). These observations are diagnostic correction evidence, not a production-gradient PASS. CP1 remains the supported diagnostic setting.
+- Corrected probe `exp-1113-004508-331543`,3x4H800, Failed on 2026-11-13 00:47:09 HKT before the training command: wait_cluster detected repeated Ray NodeManagerAddress values. Source is `tests/manual/mopd/run_on_rjob.py:92`, where distinct physical nodes are required. Native head replica log shows ValueError; later non-head errors and launcher stop are cleanup. Launcher86699 exit1. No numerical result exists. Six primary RCA queries succeeded; RJob/replica all-operation audit queries timed out. Initiating manual-stop actor/reason/request time remain UNKNOWN. Raw evidence: tasktmp/rca-exp-1113-004508-331543/ and head-gradient-reference-2-rca-collector.log.
+- Placement hypothesis: 4-GPU replicas can share an 8-GPU physical node; submitting full 8-GPU replicas should produce distinct nodes without changing the guard. Prepared2x8H800 configuration keeps student4/generation4 on one node and teacher4 on the other (4allocationGPUs unused). The native setup.py policy_nodes==1 branch explicitly supports that split. CPU native preflight3207 exit1 because this continuation omitted the established CUDA compatibility LD_LIBRARY_PATH; original error preserved. Rerun12029 restores that existing environment, with no dependency edits.
+- Current exact-job monitor observations at approximately00:50HKT: longFP16 exp-1113-003652-303384 Running; TP4matchedteacher exp-1113-001611-128499 Running; five-teacherFP16 exp-1113-004218-029183 Pending. Creator=i-fengyicheng and current-machine source100.96.128.195:/data/ycfeng:/data/ycfeng verified in status receipts. Launcher processes1422146/1051155/1519813 alive, respectively; do not submit duplicates.
+- LongFP16 contract:8freshtrajectories,65536ceiling,32responsecap,1update,nativeTP2/PP2/CP1; five-teacherFP16 short contract:32freshtrajectories,8192ceiling,128responsecap,5updates,native save/exit/resume. Student, vLLM and teacher compute precision=float16; full hidden payload=float16; FP32logits and151936fullvocabulary retained. Native dynamic scaler initialized at installed torch.amp.GradScaler init_scale65536, retaining native unscale/overflow handling. This does not rescale the training objective.
+- Formal CPU preflight30123 exit0: FORMAL_FP16_200_256_65536_NATIVE_CONFIG_PASS,initial_loss_scale65536,loss_scaleNone. Personal dry-run28872 exit0. Commands: uv run--no-sync python tasktmp/preflight_formal_fp16.py in pinned Megatronactor runtime; personalPython tasktmp/submit_formal_200updates_fp16.py--dry-run. Exact args/configs remain tasktmp/formal-200updates-fp16-{submit-args,resolved-config}.json. No formal submission performed.
+- Acceptance remains unchanged: all samples/tails, MAE<=0.02; actual raw/masked objective gradients, norm70.84613 explanation, FP16 long update health, five-teacherFP16 save/resume and post-refit parity must be verified before formal200updates.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原student、五教师和数据身份已核验 |
+| Q | PASS | 200-update合同与H800执行授权已记录 |
+| B | PASS | 全词表和正式FP16配置CPU预检通过 |
+| C | PASS | 数值参照和观察入口可执行 |
+| D | TODO | FP16配对PASS；梯度probe需完成，长训练Running |
+| E | TODO | 五教师FP16save/resume排队；正式200updates未提交 |
+| F | TODO | 完整验收归档待D/E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 前次FP16配对checkpoint至本轮实际状态恢复｜**当前前沿：** D梯度/训练健康与独立短save-resume
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | mask/padding修正直接验证既定梯度条件；placement恢复训练入口 |
+| D2 细节反复重试 | CLEAR | mask和placement是不同已观测故障；本次明确2x8 placement预测 |
+| D3 支线问题修补 | CLEAR | 全部变更服务D的数值与工作流验收 |
+| D4 可并行任务停滞 | CLEAR | longFP16、TP4和五教师save/resume均已提交；继续原job |
+| D5 超范围镀金 | CLEAR | 无新接口、schema或通用框架 |
+| D6 分析空转 | CLEAR | 真实训练已Running；gradientreplacement准备中 |
+| D7 路线违背 | CLEAR | 保留原五教师、151936、0.02与200/256/65536；formal等待D |
+
+**文档检查：** S5 plan/test_report原记headRunning，与Failed终态矛盾；已纠正。S1–S4/S6无明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：先同步文档再继续。
+
+**文档更新（先执行）：**
+1. plan/progress/test_report：保存两次失败、CPU修正、livejob状态与formalpreflight（已直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：完成2x8梯度probe的CPU预检和GPU实测；解释rawgradientFAIL与TP4norm。
+2. 并行：收longFP16实际update/finite/0skipped/parity ‖ 五教师FP16 save/resume/参数变化/状态连续性。
+3. E：D通过后提交ordinaryresume入口200/256/65536，验收实际200successfulupdates和checkpointreplay。
+
+## 4. 最值得关注的 3 点
+
+1. FP16三方配对已PASS，原梯度数值问题仍未验收。
+2. replacementprobe失败原因是物理节点重复，零verifiedupdates；修正placement后才重提。
+3. 三个既有trainingjobs继续运行或排队，正式200updates未提交。
+
+
+## 2026-11-13 00:53 HKT gradient placement resubmission
+
+- Native2x8placement preflight12029 exit0 and personaldryrun84054 exit0. Actual local personal submission launcher50016 created `exp-1113-005256-166805`; keep the launcher alive. Study allocation remains student4/generation4/teacher4; runtime16H800. No corelauncher change. Exactargs/resolvedconfig and priorfailureRCA objects/index retained in evidence/.
+- Command: personalPython tasktmp/submit_final_head_gradient_reference_3.py with companyproxy andPYTHONPATH=/data/ycfeng/steptron; rawlog tasktmp/head-gradient-reference-3-launch.log. Nativegradientresult pending.
+
+
+## 2026-11-13 01:05 HKT: verified gradient and TP4 controls; FP16 optimizer configuration repair
+
+- Gradient probe `exp-1113-005256-166805` Succeeded. Complete32teacher-shard comparisons: native mixed-precision `_linear_forward` vs directnativehead logits and rawgradient both exact0. OriginalFP32reconstruction rawgradient remains1.476183479098836e-5 FAIL at1e-6, now explained by measurednativeGEMM versusFP32GEMM arithmetic; do not relabel it exactPASS. Full-distribution logprobMAEmax3.23359418e-5,max1.25885010e-4; selected-token4117all-positionlogprobMAE5.94749225e-6,max4.57763672e-5. Complete16actualmask/objective shardchecks use32validresponsetokens and1validsequence each: gradientmax3.29035032e-7,normmax6.86279293e-7,16/16PASSat1e-6. Referencegradientnorm0 inallrecords; relativeerrorundefined. This is observedmicrobatchobjectivegradient, notglobaloptimizerparametergradient. Allrecords retained in evidence/final-head-gradient-reference-3-analysis.json. Signed diagnosticcommit `d6dea5bb`, native_forward_worker.py only; actualCPUteacherstage/paddingrepro, nativeGPUrun andscopedRufflint/formatPASS. No productionlosschange.
+- BF16TP4matchedteacher `exp-1113-001611-128499` Succeeded;1successfuloptimizerupdate,0skipped,loss-2.901869411431335e-9,preclipgradnorm0.0027350757736712694. Paired against original `exp-1112-222130-343023`: all8completeinputsequences/responsemasks and256student/generationlogprobs exact. TeacherTP2->TP4 removes originalstudent/teachergapMAE0.04910842158/max3.18075824 toexact0, and originalgradnorm70.84613 collapses to0.00273508. This controlledresult explains the anomalousself-distillationgradient throughteacher/studentforwarddifferences acrossparallelism, withoutobjective/rescalingchanges. Native/vLLMMAEremains0.06852769961FAIL;TP4notpromoted. Exactcompletepairedresponseerrors in evidence/tp4-matched-teacher-paired-analysis.json andalltrainingmetrics in final-tp4-matched-teacher-frontier2-analysis.json. Launcher37211 exit0.
+- First actualFP16longrun `exp-1113-003652-303384` Failed before a successfulupdate, atnativeoptimizer clip_grads.py:173: decoupled_grad.dtype mustbeFP32/BF16, butDDPgrad_reduce_in_fp32=false selectsmodelFP16gradbuffers. Launcher34895 exit1. NativebufferselectionCPUrepro check_fp16_gradient_buffer.py RED67800exit1 reproducesexactassert; existinggrad_reduce_in_fp32=true GREEN92623exit0 selectsFP32andpassesrealclippingdtypeguard. GREENusesCPUoverflowbuffer andnormbelowcliplimit, soGPUfusedclippingstillrequiresactualtrainingverification. Noinstalleddependency/coreoptimizeredit. SixprimaryRCAreadssucceeded;2all-operationauditquerytimeouts remainexplicitUNKNOWNmanualactor/reason/requesttime. Evidence/final-long-training-fp16-rca-{objects,index}.json andtasktmp/rca-exp-1113-003652-303384/ preservecoverage.
+- Five-teacherFP16run `exp-1113-004218-029183` usedtheidenticalincompatibleconfig; stoppedwithrequired rjob_stop.sh at2026-11-1300:58:49HKT,personalcreatorverified,reasonrecordedintasktmp/five-teacher-fp16-gradient-config-stop.log andlocalstopaudit. Thisisintentionalstopbecauseanativeoptimizerfailurewasreproduced, notanauxiliaryvalidatorverdict. Launcher9758exit0doesnotestablishbusinesssuccess. Initialconfiguration remainsnoverifiedsuccessfulupdates.
+- Threecorrectednativepreflights65494exit0 (long/five/formal) andthreepersonaldryruns87938exit0. Preserveinitialdynamicloss_scale65536andnativeunscale/overflowhandling;changeonlyexistingDDPgrad_reduce_in_fp32=true. Configartifactsretained,includingformal-200updates-fp16-fp32grad-{submit-args,resolved-config}.json. Noformalrunsubmitted.
+- Newexactjobs: longFP16 `exp-1113-010116-136916`,24H800,nativeTP2/PP2/CP1,8x65536,1update,launcher45655/monitor87633; five-teacherFP16 `exp-1113-010116-581403`,56H800,32x8192,5updates,nativesave/exit/resume,launcher23922/monitor99707. BothlastobservedStarting,creatori-fengyicheng,currentlocalNFS100.96.128.195:/data/ycfeng:/data/ycfeng. Keepbothlaunchersalive;monitorinterval45s/duration10800s. Completeformal200/256/65536stillwaitsactualFP16training/save-resumeverification.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原模型与五领域身份已核验 |
+| Q | PASS | 合同和执行授权已记录 |
+| B | PASS | correctedFP16原生配置与dryrun通过 |
+| C | PASS | 真实maskedgradient参照完成 |
+| D | TODO | 梯度/norm对照已测；actualFP16training重跑待验收 |
+| E | TODO | corrected五教师save/resume已提交；formal未提交 |
+| F | TODO | 最终200updates验收未完成 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次恢复checkpoint至梯度/TP4控制及原生optimizer配置修正｜**当前前沿：** D actualFP16training与独立短save/resume
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | head诊断完成即提交；复用native配置和monitor |
+| D2 细节反复重试 | CLEAR | placement恢复已Succeeded；新clipping错误以nativebufferCPUloop定位 |
+| D3 支线问题修补 | CLEAR | 原生optimizer错误直接阻止Dsuccessfulupdate |
+| D4 可并行任务停滞 | CLEAR | longFP16和五教师恢复同时重提，两个launcher保持alive |
+| D5 超范围镀金 | CLEAR | 无核心接口或schema扩展 |
+| D6 分析空转 | CLEAR | gradient/norm控制给出数值结论；FP32grad配置执行已提交 |
+| D7 路线违背 | CLEAR | 阈值、原模型和200/256/65536不变；未跳过D提交formal |
+
+**文档检查：** S5 plan/progress旧状态未包含新Failed/intentionalStopped和替代job；本轮已同步。S1–S4/S6无明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：先同步已测事实再继续。
+
+**文档更新（先执行）：**
+1. plan/progress/test_report：记录完整head/TP4测量、nativeclippingRCA和correctedjobIDs（已直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：actualFP16longrun → finite loss/grad、successfulupdate、0skipped、sameweightparity。
+2. 并行：五教师FP16shortsave/resume → 全教师覆盖、模型/optimizer/scheduler/data-plane恢复和参数变化。
+3. E：D通过后formal200/256/65536 → 实际successfulupdates和postcheckpointreplay。
+
+## 4. 最值得关注的 3 点
+
+1. Headmaskedgradient16/16PASS；TP4异常norm有完整tokens匹配的对照解释。
+2. ActualFP16optimizer的梯度buffer配置错误已CPU定位；GPU新run尚待结果。
+3. 两个correctedtrainingjobs已提交；formal200updates仍未提交。
+
+
+## 2026-11-13 01:16 HKT: continuation evidence and PP4 memory control
+
+- Completed head terminal checks: `exp-1113-005256-166805` Succeeded; launcher 50016 and monitor 33434 exit0. Both exact owner-bound replica containers exited0, restart0, finished at 2026-11-12T17:01:24Z. Evidence: `evidence/final-head-gradient-reference-3-terminal-objects.json`.
+- Corrected long FP16 job `exp-1113-010116-136916` Failed, launcher45655 exit1/monitor87633 exit0. Native traceback reaches `_chunked_distributed_student_teacher_backward` at model_utils.py:2677, allocating 18.55 GiB with18.33 GiB free; allocated41.98/reserved-unallocated15.38 GiB. No successful train step or accepted train dump; TB rollout/train_steps=0. Retained finished/runtime/command files identify the exact job, Python3.13.14/Torch2.13.0+cu130/H800 and full65536 scenario.
+- RCA collector uses exact RJob/replica UID and incident17:07–17:10Z. Six primary queries successful, two audit queries time out; initiating manual actor/reason/request time remain UNKNOWN. This is a native PyTorch allocation failure; no auxiliary validator stopped healthy training. Raw RCA remains `tasktmp/rca-exp-1113-010116-136916`; selected objects/index and metrics are in evidence/.
+- Ranked memory hypotheses before the next GPU attempt: H1 FP32 DDP buffers leave insufficient capacity for dense full-vocabulary gradient; reduce student per-stage decoder activations by PP2→PP4, retaining8 student GPUs and all other numerical settings. H2 allocator fragmentation contributes (15.38 GiB reserved but unallocated); H3 pipeline retained activations dominate. The PP4 result can reject sufficiency of the selected capacity correction. GPU allocator behavior cannot be reproduced faithfully on this CPU host; retain the actual required65536 scenario as the red-capable loop rather than claim a CPU memory proof.
+- New sparse PP2 FP16 recipe passes exact resolved-config equivalence to the prepared formal config: removed11 redundant CLI overrides with zero config differences. Existing `test_shipped_config` PASS:1 test,5 subtests,3 not-applicable skips,435 deselected,12.71s. Raw commands/logs: tasktmp/check_fp16_recipe_equivalence.py,fp16-recipe-equivalence.log,fp16-recipe-shipped-config.log. Formal temporary arguments now consume that equivalent recipe; no formal job submitted.
+- PP4 native config preflight passed in the established Megatron actor environment (initial_loss_scale65536, FP32 reduction). First CPU invocation omitted existing cuda-compat LD_LIBRARY_PATH and raised libcuda.so.1 OSError; preserved in long-training-fp16-pp4-preflight.log. Restore the documented CUDA compatibility environment only; no install or core edit. Successful evidence: long-training-fp16-pp4-preflight-2.log. Personal dry-run is in progress.
+- Five-teacher FP16 `exp-1113-010116-581403` remains Starting; launcher23922/monitor99707 alive. Exact scheduling records show a seven-node gang waiting for resources. No duplicate submitted; collect business artifacts only after workers start.
+- check-progress: A/Q/B/C PASS;D/E/F TODO. D1–D7 CLEAR;S5 stale state corrected in plan/review/report. Next route: actual PP4 long training ‖ existing five-teacher save/resume, then formal200 after D acceptance.
+
+- PP4 native preflight session38973 exit0; personal dry-run22360 exit0. Local personal submission launcher99023 created `exp-1113-011736-657255` once,24H800/codesign; monitor92222 interval45s/duration10800s. Output root: `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/exp-1113-011736-657255`. Keep launcher alive. Formal recipe preflight also passed, but D still prevents formal submission.
+
+
+## 2026-11-13 01:28 HKT: native FP16 overflow finalizer repair
+
+- Inspected native optimizer.py step(): a detected overflow returns `(False, None, None)`. The split worker converted native `grad_norm=None` with `torch.tensor([grad_norm])`, raising `RuntimeError: Could not infer dtype of NoneType` before returning its successful-update flag. Existing TQ result aggregation and controller aggregate_step_metrics already accept None and omit an unavailable norm.
+- Tight CPU fault loop modifies the existing first-update lifecycle test to use the native overflow return tuple. RED session65122 exit1:1 failed/1 passed/105 deselected,19.97s; exact failure at worker line2627. Ranked causes before repair: H1 local tensor conversion rejects the standard native overflow result; H2 aggregation rejects optional norms; H3 optimizer returns an unsupported state. Native source and existing aggregation reject H2/H3; the red loop isolates H1.
+- Minimal production fix preserves None in the split worker result instead of constructing a tensor from it. The native loss, scaler, optimizer, scheduler, update-success flag and normal finite-norm path retain their existing behavior. Existing tests now cover native overflow returns, success-flag reduction across replicas, unavailable norm omission, and a subsequent successful update on the same worker.
+- GREEN session23431 exit0:35 TestFinish checks pass (72 deselected,17.36s) and39 TQ/controller checks pass (10.97s). Continuous next-update verification session28336 exit0:1 affected check passed after adding the follow-up assertions. Scoped Ruff0.9.9 check/format and git diff --check PASS.
+- Signed scoped commit `86ad0be771bc0bc9d302a4de6df3e7afd15abb8c`: only megatron_policy_worker.py and the two existing test modules. No push. GPU validation of the ordinary training path remains pending; both exact GPU jobs were still Starting during this fix and will load the locally mounted corrected source when workers start.
+- Prepared existing checkpoint state/optimizer/finite readers for `exp-1113-010116-581403`, using unique local output names. Parameter-delta check compares saved step1 to step5 after native resume, avoiding a comparison that mistakes BF16→FP16 source conversion for optimizer change. These read-only checks are prepared, not executed without checkpoints.
+- check-progress after verified code step: A/Q/B/C PASS;D/E/F TODO. D1–D7 CLEAR. The fault test covers a reachable native FP16 result that can interrupt D; no unrelated worker path or new interface is added. S5 HEAD/source state is synchronized below. Next: actual PP4 long training ‖ existing five-teacher save/resume, then formal200 only after D acceptance.
+
+
+## 2026-11-13 01:34 HKT: continuation and actual GPU runtime recovery
+
+- Recovered exact existing launchers99023/23922 and monitors92222/99707; all alive. No duplicate or formal submission. Long PP4 `exp-1113-011736-657255` Running as of17:31:17Z, three active replicas; five-teacher `exp-1113-010116-581403` Running as of17:31:08Z, seven active replicas. Both are personal creator i-fengyicheng, codesign, non-preemptible, local NFS100.96.128.195:/data/ycfeng:/data/ycfeng.
+- Read-only collectors `python3 tasktmp/collect_long_fp16_pp4.py` and `collect_fp16_five_teacher_2.py` exit0. PP4 has three runtime receipts and initial rollout trace, no accepted update yet. Five-teacher has all seven runtime receipts and command, no accepted update yet. All ten nodes report8 NVIDIA H800, Python3.13.14 in the mounted nemo-mopd-py313 environment, Torch2.13.0+cu130/CUDA13.0. Selected evidence: `evidence/final-fp16-active-training-runtime.json`. Source boundary: recorded local HEAD86ad0be7 and NFS identity; already-started processes did not emit code-file digests.
+- Adapted the existing corrected-long collector and analyzer to the exact PP4 job/root under tasktmp; no new persistent harness. Checkpoint analyzers remain pending until actual checkpoint completion.
+- Inspected ordinary native SingleController: `_train_steps` is the iteration count, and worker `optimizer_update_successful` is logged separately. Formal acceptance will sum the latter, retaining every skipped iteration. Never infer200successfulupdates from current_step200. Final horizon/config will be decided from actual diagnostic results, retaining the approved200successful target.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 4｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原 student、五教师和数据身份已记录 |
+| Q | PASS | 200 次成功更新和执行授权已确认 |
+| B | PASS | 全词表与原生 FP16 配置预检通过 |
+| C | PASS | 三方 parity 和实际 masked-objective gradient 参照完成 |
+| D | TODO | PP4 长上下文和五教师训练实际验收待完成 |
+| E | TODO | 短 save/resume 已 Running；正式训练未提交 |
+| F | TODO | 完成报告和 archive 待 D/E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次 overflow 修复 checkpoint 至恢复现有作业状态｜**当前前沿：** D 长上下文训练与独立五教师 save/resume
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用 collector，只更新现有 PP4 job 身份 |
+| D2 细节反复重试 | CLEAR | PP4 是已记录容量假设；等待原作业实际结果 |
+| D3 支线问题修补 | CLEAR | 本轮工作均用于 D 训练和 E 恢复验收 |
+| D4 可并行任务停滞 | CLEAR | 两个独立作业同时 Running |
+| D5 超范围镀金 | CLEAR | 无额外接口或新机制 |
+| D6 分析空转 | CLEAR | 核对实际 GPU runtime；没有重做已 PASS 数值检查 |
+| D7 路线违背 | CLEAR | 原模型、全词表和 200/256/65536 合同保留；formal 等待 D |
+
+**文档检查：** S5 plan 状态此前为 Starting，与新 Running 回执不符；已同步。S1–S4/S6 未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan.md 当前状态：更新两项 Running 与实际 runtime 回执（已直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. D：PP4 实际 65536-token update → 完成标志：有效 tokens、成功更新、finite loss/grad 和完整 parity。
+2. 并行：五教师 save/resume → 完成标志：教师覆盖、成功更新、参数变化与 native 状态连续性。
+3. E：D 通过后提交正式 run → 完成标志：累计 200 次成功更新及保存/恢复和最终数值验收。
+
+## 4. 最值得关注的 3 点
+
+1. 两个原有作业已 Running，无重复提交。
+2. PP4 的容量假设须由实际 full-vocabulary backward 结果检验。
+3. 200 次成功更新必须单独计数；原生 iteration 计数不能替代。
+
+## 2026-11-13: cleanup authorization and continuation recovery
+
+- User explicitly authorized Codex cleanup of current-task large, smoke and unused artifacts; requirements/plan now preserve that decision. The MOPD contract remains unfinished.
+- Local UV cleanup completed: 94 rebuildable temporary/download/index directories deleted. Available-space delta 1,606,836,224 bytes (1.50 GiB), free-inode delta 29,678. The host already had approximately 113 GiB available before this cleanup; do not attribute that earlier recovery to this task. Installed environments and hardlinked archive-v0 retained. Evidence: evidence/cleanup_2026-11-13_local_cache.json.
+- Session63544 completed: 18 archives deleted only after comparing every regular member's size and complete bytes to extracted copies. Logical archive bytes removed 403,136,717; exact extracted copies retained. Evidence: evidence/cleanup_2026-11-13_duplicate_archives.json.
+- Session12823 exited1 with effective RED: `uv run --no-sync pytest --noconftest tests/unit/models/megatron/test_megatron_setup.py::TestCreateMegatronConfigGradOverflow -m mcore -q -s --tb=short` yields the actual DDP fatal Inf symptom (1 failed, stop after first failure, 26.05s). This CPU seam uses native bucket checks and scaler and does not need autouse Ray setup. Earlier red-4 exit124 is a fixture startup timeout, not a test verdict. Exact log: tasktmp/native-fp16-overflow-regression-red-5.log.
+- Recovered PP4 exp-1113-011736-657255 PASS: 1 successful/0 skipped, 8 sequences, 202 response tokens, 6 sequences length65536 and two65511/65507. Loss1.2871393728630665e-8, grad0.0004988232394680381; independent native scorer/vLLM MAE0.007388088723072912, p950.02813922/p990.05262076/max0.21245265. Three containers exit0/restart0/platformSucceeded. Limitation: independent scorer, not actual training-forward capture; group mapping in the temporary analyzer needs correction.
+- Recovered five-teacher exp-1113-010116-581403 FAIL: 0 verified successful updates, no saved checkpoint/resume. Native first traceback is fatal local bucket Inf before data-parallel communication. Production setup.py is not yet edited. Initiating external stop actor/reason/time remain UNKNOWN; later task-fail cleanup is not the initiating reason.
+- Cloud inventory is273.6957GiB logical. Preparing explicit obsolete-cache/three-smoke-weight candidates; preserve final-five-teacher-fp16-resume and final-long-training-fp16-pp4 caches, source models, data, runtime/terminal/log/metric/sample evidence. Deletion will use local personal 0GPU Python RJobBackend, not remote SSH mutation.
+
+- Cleanup worker exp-1113-094259-836505 completed all41 listed directories at2026-11-13T01:43:45Z; platformSucceeded and local launcher emitted `MOPD_CLEANUP_TERMINAL ... succeeded`. Logical bytes removed263,072,167,440 (245.005GiB); remaining task cloud logical bytes30,806,354,945 (28.690GiB). This is logical removal, not measured backend physical quota reclaim. Preserved18 small native checkpoint metadata files with exact byte verification, both required FP16 caches, all6 original source models and train.jsonl. Receipt/manifest/job states in evidence/cleanup_2026-11-13_cloud_*.json.
+- Also removed7 obsolete downloaded wheels/interrupted download files after verifying no downloader references the path: logical1,486,795,398bytes; actual available-space delta1,044,639,744bytes. Sparse interrupted files explain the difference. Installed environments, UV archive hardlinks and the still-running task Ray service remain intact. Evidence: evidence/cleanup_2026-11-13_local_wheels.json.
+- Effective overflowGREEN4/4 passed21.52s. Actual OptimizerConfig is created once and reused; DDP fatal checks are disabled only when its fp16=True. Native unscale/scaler/global MAX nonfinite check remains responsible for skip/backoff; BF16 and FP32 preserve fatal detection. No manual loss-scale lowering or blanket nonfinite suppression. Affected setup regressions are running.
+- Terminal replica inspection initially used the Kubernetes Pod listing endpoint and received403; this is an inspection endpoint limitation, not cleanup failure. Correct to the existing custom Replica API as used by other task collectors; no job retry. Initial lint invocation found no ruff in the base environment; use the existing installed tool environment.
+
+## 2026-11-13: cleanup milestone and overflow repair checkpoint
+
+- Cleanup receipt and the owner-bound custom Replica API confirm41 deletions,18 retained metadata files, native platform/replicaSucceeded and containerCompleted/exit0/restart0. The cleanup launcher23841 is terminal. Report:test_report_2026-11-13_artifact_cleanup.md.
+- Native original prepared formal policy reproduction passed with Inf then NaN, loss_scale65536→32768 and finite gradient0.25. Effective regression4/4 and affected config14/14 PASS; Ruff0.9.9 check/format and diff whitespace PASS. Report:test_report_2026-11-13_native_fp16_overflow.md.
+- Scoped code staging succeeded, but commit repeatedly encountered index.lock. Initial empty lock was apparently8hours old; /proc and lsof found no holder, and one authorized stale-lock deletion was recorded. Subsequent lock reappearance proves unresolved concurrent index access or visibility; stop deleting or blindly retrying locks. Preserve staged files, advance GPU preflight independently, then retry the ordinary commit only after the lock is absent. No index/HEAD rewrite.
+- Next diagnostic uses unchanged original student and five teachers, full vocabulary,56H800/codesign, studentTP2/PP4/CP1, nativeFP16/FP32gradientreduction and initial_loss_scale65536. Keep16 iterations for scaler backoff and at least5 successful updates; count optimizer_update_successful separately. Initial and resume subprocesses share the same16-iteration scheduler horizon. All five teacher routes and32 fresh trajectories/8192 ceiling remain diagnostic inputs; formal remains200successful/256/65536. Reuse the retained conversion root via native fully_parallel_load rather than creating another six-model cache.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原 student、五教师和数据身份已核验 |
+| Q | PASS | 用户确认合同，并明确授权当前任务清理 |
+| B | PASS | 原生 FP16 配置和运行环境已验证 |
+| C | PASS | 全词表和真实 masked gradient 参照已测 |
+| 清理 | PASS | 云端245.005GiB 删除、保留清单和原生终态已核验 |
+| D | TODO | PP4 长上下文已通过，五教师修复后的 GPU 验收待完成 |
+| E | TODO | 正式200次成功更新尚未提交 |
+| F | TODO | scoped commit 暂受 Git index 访问影响，最终报告待 D/E |
+
+## 2. 偏离检测
+
+**结论：** 已偏离：命中 D2。
+**检测窗口：** 上次01:34 checkpoint 至清理完成和 overflow CPU GREEN｜**当前前沿：** D 五教师 native save/resume
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 清理由用户直接授权；已完成即退出清理工作 |
+| D2 细节反复重试 | HIT | Git index.lock 连续阻止 commit，重复操作尚未产生提交 |
+| D3 支线问题修补 | CLEAR | overflow 直接阻止原生五教师更新 |
+| D4 可并行任务停滞 | CLEAR | 清理 worker 与 CPU 回归并行；GPU preflight 已继续 |
+| D5 超范围镀金 | CLEAR | 只改 DDP 与原生 scaler 的检查顺序，无接口/schema扩展 |
+| D6 分析空转 | CLEAR | 明确 RED/GREEN 与 cleanup 终态已得到 |
+| D7 路线违背 | CLEAR | 原模型、全词表和200/256/65536合同保留，正式 run 未提前提交 |
+
+**文档检查：** S5 plan 中旧 Running/待清理状态与终态、CPU修复矛盾，已直接同步；S1–S4/S6无明显缺陷。
+**归因：** D2 执行偏离。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan/progress/report：同步清理完成、CPU修复通过、Git提交暂未完成（可直接执行，已完成）。
+
+**需停止的偏离行为：**
+- D2：停止盲重试或再次删除 index.lock；独立推进 native GPU preflight，确认锁消失后完成 scoped commit。
+
+**接下去的路线：**
+1. D：运行新五教师 PP4 save/resume → 至少5次成功更新、全教师覆盖、参数变化和 native 状态连续性。
+2. 并行：F scoped commit → 仅提交验证过的两个代码文件与必要任务记录。
+3. E：D通过后正式200/256/65536 → 累计200次实际成功更新和最终 checkpoint 验收。
+
+## 4. 最值得关注的 3 点
+
+1. 清理已完成，未删源模型或后续复测所需缓存。
+2. DDP/scaler 修复已 CPU 验证，实际五教师 GPU 路径仍须复测。
+3. 200次成功更新尚未完成，不能把 iteration 数当作成功更新数。
+
+- Ordinary scoped commit completed after checking the index lock was absent:20173f71bd5f48623e36953f0b778e942e1bfc96, signed-off, only setup.py and test_megatron_setup.py. No push. Stop Git-lock investigation; the code milestone is committed.
+- PP4 per-group analysis corrected using metadata.prompt_idx and the exact8-row repeated source input file. Source groups covermath/code/stem/logic/if; overall MAE0.0073880887230729116 is unchanged apart from displayed final decimal. Group MAEs:math0.00594953/code0.00834931/stem0.00843527/logic0.00584120/if0.00724255; all<=0.02. Observed tail max0.21245265 remains reported. This is source-group coverage in a same-weight control, not five different teacher weight coverage. Selected evidence:final-long-training-fp16-pp4-analysis.json. A temporary archive assertion compared differently rounded decimal floats exactly and failed; changing only that assertion to1e-15 absolute comparison confirmed unchanged numerical content. No healthy training was canceled or gated by it.
+- First PP4 preflight caught obsolete +initial_loss_scale override after switching to the sparse FP16 recipe where the key already exists. Removed that redundant override, preserving inherited65536. Second preflight passed native MasterConfig, dtype/teacher/save-resume validations,FP32 reduction and DDP/scaler ordering. Updated personal dry-run is pending terminal collection; no bad configuration submitted toGPU.
+
+- Final corrected personal dry-run92348 exit0. Local launcher80676 submittedexactlyonce:exp-1113-095147-620678,56H800/codesign,7nodes. Watcher83030 uses45s interval/10800s duration. Output root remains final-five-teacher-fp16-resume to reuse retained initial conversion caches. Keep launcher80676 alive through queue/run; native five-teacher results are pending.
+- check-progress correction applied:Git lock investigation ended after ordinary scoped commit20173f71; cleanup milestone remainsPASS and D is actual five-teacher GPU save/resume. No further cache cleanup or rejected BF16 diagnostics are needed. Formal200/256/65536 remains unsubmitted.

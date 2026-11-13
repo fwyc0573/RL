@@ -1,0 +1,487 @@
+{
+  "authorized_at": "2026-11-13T01:35:10.259686+00:00",
+  "authorization": "User explicitly approved cleanup of current-task large, smoke, and unused artifacts using Codex.",
+  "scope": "/data/ycfeng/tmp/nemo-mopd-20261112",
+  "before": {
+    "available_bytes": 120702279680,
+    "free_inodes": 95696753
+  },
+  "entries": [
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp0KzKEd",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp1AEuRZ",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp58Ov9J",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp65Qxtm",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp6GQinw",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp8PK34t",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp8aZTRL",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp8e9h6u",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmp9MPt9H",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpA5a5gC",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpAEdR8A",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpAWHHZj",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpB7RhND",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpC8P55C",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpDLzGUZ",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpDeIxE6",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpDfRczh",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpE3Cvnp",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpF5x8fU",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpFkM73H",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpFnGkk7",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpG72Frt",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpGWZ6QE",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpGooTcb",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpITHhJO",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpIljTeY",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpJEuOM6",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpJYISbR",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpK9sz19",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpKhgzm4",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpM6neDH",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpMt696c",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpNjMQk7",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpNjmoFO",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpNnplbi",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpPSoJ9B",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpQujxKK",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpRDGyhf",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpRq9cuc",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpSGZI3X",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpSgZVf0",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpTU0zfM",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpUXOHE9",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpW4AzMZ",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpWnIPRw",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpXC8b5J",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpXcljUR",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpYS0HRf",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpYWahBg",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpYtXFl3",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpZ4y5kV",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpaLFoYX",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpaRDRIM",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpc0BiJi",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpcPBQI7",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpcsqtQv",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpd549km",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpdD2ptu",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpdoocMj",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpe1Wsfy",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpePqFO6",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpeZOJiU",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpf4fth9",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmphDoTN2",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmphRmJ8r",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmphSTGki",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpht9r5q",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpikP2VI",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpjfdNJV",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmplhlrsZ",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpne9tKE",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpno9sJW",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpp0aqob",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpp4xgIk",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpqMTpJC",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpqVQohF",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmprL410i",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmprQErBW",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpraEqGZ",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmprcEtmz",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmprnr32t",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmprszzZd",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpsLJfMD",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpua2VAC",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpva5Y5f",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpvmVYP6",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpwd3Xgi",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpy3sL2z",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpy9nF8X",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpzIzhkB",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/.tmpztdHfD",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/simple-v21",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/simple-v27",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/files-v0",
+      "reason": "Rebuildable temporary extraction or download/index cache",
+      "status": "deleted"
+    }
+  ],
+  "after": {
+    "available_bytes": 122309115904,
+    "free_inodes": 95726431
+  },
+  "available_byte_delta": 1606836224,
+  "free_inode_delta": 29678
+}

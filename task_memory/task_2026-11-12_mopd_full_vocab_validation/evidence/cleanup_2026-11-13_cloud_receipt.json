@@ -1,0 +1,395 @@
+{
+  "job": "exp-1113-094259-836505",
+  "started": "2026-11-13T01:43:36.211350+00:00",
+  "root": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
+  "entries": [
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080657,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native-3/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080661,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native-fp16/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080667,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 24884665275,
+      "files": 84
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights",
+      "status": "deleted_and_absent",
+      "bytes": 21329722647,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-head-gradient-reference/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081431,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080655,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080659,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-pp2-replay/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081060,
+      "files": 10
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-tp2-replay/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080647,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081415,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-3/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081415,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-4/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555664508,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081335,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-invariant/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081345,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-no-prefix/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081345,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-pp2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081333,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-original-native-fp16/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080657,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081411,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081415,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-tp4-matched-teacher/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555664516,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 24884665251,
+      "files": 84
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights",
+      "status": "deleted_and_absent",
+      "bytes": 21329722490,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 24884665395,
+      "files": 84
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights",
+      "status": "deleted_and_absent",
+      "bytes": 21329722686,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080661,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080661,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080673,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080653,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080641,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080661,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081413,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081415,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081413,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-context/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081411,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-cp-replay/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081415,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-cp-replay-2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081419,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-fa4-replay/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080649,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-fp32/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081405,
+      "files": 14
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-unfused-rope-replay-2/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555080671,
+      "files": 8
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/initial-megatron-checkpoints",
+      "status": "deleted_and_absent",
+      "bytes": 3555081403,
+      "files": 14
+    }
+  ],
+  "logical_bytes_removed": 263072167440,
+  "metadata_preserved": [
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "bytes": 1
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "bytes": 3461
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "bytes": 611725
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "bytes": 63
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "bytes": 27059
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "bytes": 3461
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "bytes": 1
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "bytes": 3461
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "bytes": 611723
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "bytes": 63
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "bytes": 26904
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "bytes": 3461
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+      "bytes": 1
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/latest_train_state.pt",
+      "bytes": 3461
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+      "bytes": 611735
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+      "bytes": 63
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+      "bytes": 27088
+    },
+    {
+      "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "retained": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-retained-metadata/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+      "bytes": 3461
+    }
+  ],
+  "retained_artifacts": [
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints",
+      "shards": 48,
+      "bytes": 24884022562
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints",
+      "shards": 8,
+      "bytes": 3554974427
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student",
+      "config_exists": true,
+      "safetensors_files": 1
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher",
+      "config_exists": true,
+      "safetensors_files": 1
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da",
+      "config_exists": true,
+      "safetensors_files": 2
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50",
+      "config_exists": true,
+      "safetensors_files": 1
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7",
+      "config_exists": true,
+      "safetensors_files": 2
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba",
+      "config_exists": true,
+      "safetensors_files": 1
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/train.jsonl",
+      "bytes": 76828423
+    }
+  ],
+  "remaining_task_logical_bytes": 30806354945,
+  "finished": "2026-11-13T01:43:45.430284+00:00",
+  "status": "completed"
+}

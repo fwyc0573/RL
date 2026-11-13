@@ -2,12 +2,18 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Record PP4 PASS, five-teacher overflow FAIL, and authorized artifact cleanup. |
+| 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
+| 2026-11-13 | Reconcile complete FP16 three-way parity and remaining training/gradient frontier. |
+| 2026-11-13 | Recover actual decode controls, padding RCA, and ordinary native replay frontier. |
 | 2026-11-12 | Draft bounded execution milestones and verification criteria for the core acceptance interview. |
 | 2026-11-12 | Reconcile FP32 RoPE terminal results and retain the remaining long-context failure. |
+| 2026-11-12 | Recover TQ serialization failure and native empty-batch diagnostic. |
+| 2026-11-12 | Record rejected no-prefix-cache and first-layer GEMM controls; advance actual decode comparison. |
 
 # Plan
 
-Status: A/Q/B/C complete; D/E/F outstanding. Matched eager FA4/TP2/CP1 with production FP32 RoPE and FP32 heads meets the long overall MAE ceiling (0.01905496);3/5samplemeans slightly exceed0.02 and tail propagation remains unproven. Actual norm captures identify sparse BF16 output differences after equal first-layer residual inputs. Compiled FA4 fails0.02 (MAE0.03365744) and will not be used for the selected workflow. Final24/6/56GPU configurations passedCPU/dry-run; next validate actualCP1/DP4 training, freshrollout/refit, long memory and native five-teacher resume in parallel. Formal200successfulupdates/256fresh/65536/native resume remain outstanding and unsubmitted.
+Status: A/Q/B/C complete; D/E/F outstanding. PP4 full-vocabulary FP16 long-context job exp-1113-011736-657255 Succeeded: 1 successful update, 0 skipped, loss 1.2871393728630665e-8, grad norm 0.0004988232394680381, scorer/vLLM MAE 0.007388088723072912. Five-teacher FP16 exp-1113-010116-581403 Failed before a successful update: DDP fatal scaled-gradient Inf check executes before native unscale/scaler. CPU regression RED is verified. The minimal production repair passes4 native overflow cases and14 affected config checks; original-config reproduction also passes (65536→32768, finite gradient0.25). User-authorized cleanup is complete:245.005GiB cloud logical content removed,18 small metadata files retained; local cache/wheels available-space increase2.469GiB plus403MB duplicate archives deleted. Retain the current five-teacher FP16 and PP4 caches. Formal 200 successful updates / 256 fresh trajectories / 65536 remains unsubmitted. Verified repair is committed as signed20173f71; the transient index-lock issue is resolved.
 
 ## Dependency graph
 
@@ -59,3 +65,27 @@ Run `check-progress` after each completed phase or repeated failure threshold. L
 - Task evidence: this directory's `progress.md` and `test_report_YYYY-MM-DD_<phase>.md`.
 - Durable run artifacts: `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/`.
 - Completion: `summary.md` only after overall acceptance is met.
+
+
+## Evidence-based parallelism and remaining numerical diagnosis
+
+TP2/CP1 backward originally requested18.55GiB gradient and OOMed. TP4 reduced that allocation and completed the original65536update, but sameweight scorer/vLLM MAE0.06853FAIL and gradnorm70.85 prohibit its formal promotion. Native TP2/PP2/CP1 subsequently completed the same actual65536scenario with finite loss-8.18e-9/grad0.00337. TP2/PP1 and PP2 replay outputs are identical and nativefreshscorer reproduces both; all have MAE0.05936FAIL. CP2 was attempted and no attentionbackend was available.
+
+The no-prefix-cache TP2/PP2/CP1 control exp-1112-231515-172060 completed 1 update/0 skipped with loss-1.10e-8 and grad0.00338, but MAE0.06052 FAIL. Historical D controls included actual eager decode versus identical newly generated tokens prefill in completed exp-1112-234539-001675 (235tokens,MAE0.02390397FAIL, first layer attention); native same-newtokens observer exp-1112-235130-765032 Failed on EOS padding; ordinary replay exp-1113-000248-302886 subsequently Succeeded; exp-1112-233623-543941 failed before forward at its ordinary-pickle boundary, launcher45185/monitor50481 have exited. The invariant configuration is rejected on its measured prefill result; its training job exp-1112-225944-064229 failed during initial NCCL broadcast and supplies no numerical training verdict. Do not retry that rejected path solely to obtain another verdict.
+
+Matched prefill captures show exact first-layer QKV/RoPE/attention on all 32 response prediction positions of eight samples. Sparse BF16 RMSNorm differences first appear in post-attention normalization or layer-1 input normalization. Captures do not cover every prompt position and do not establish a full-model causal repair. The completed one-H800 GEMM shape probe exp-1112-232421-248453 has 16 full records/256 exact comparisons and rejects first-layer QKV shape/reduced-precision reduction as the cause. Do not alter training precision or expand that rejected probe; actual decode capture targets the remaining normalization/projection/attention boundaries.
+
+Formal FP16 preparation remains CPU evidence only. Submit after D acceptance; retain the original five teachers, full 151936 vocabulary, 256 fresh trajectories, 65536 ceiling, 0.02 limit and ordinary resume entrypoint. The paired teacher control explains TP4 gradient 70.84613; native mixed-precision GEMM explains the raw FP32 reconstruction mismatch. Actual masked-objective gradient comparisons passed. PP4 subsequently passed the actual65536 update and scorer/vLLM mean-error criterion. The remaining D frontier is native five-teacher scaled-overflow repair and save/resume verification.
+
+## Authorized cleanup, 2026-11-13
+
+1. Verify duplicate archives against extracted bytes, then delete redundant local files and rebuildable temporary UV cache.
+2. Inventory obsolete cloud conversion caches and three prior BF16 smoke checkpoints; verify their exact RJobs are terminal. Preserve small checkpoint metadata and historical measurement evidence before deleting tensor shards through a local 0-GPU codesign RJob.
+3. Verify deleted paths are absent and retained data, source assets, active caches and selected evidence remain; record exact paths and logical bytes.
+4. Resume D at the native FP16 overflow repair, then five-teacher save/resume and E.
+
+Acceptance: all manifest-approved obsolete tensor/cache paths absent, required retained artifacts accessible, exact deletion receipts and local space changes recorded. Cloud logical bytes removed are distinct from backend physical storage reclaimed.
+
+Cleanup status: completed and verified by test_report_2026-11-13_artifact_cleanup.md. Proceed at D; no repeat cloud cleanup or rejected BF16/TP4 diagnostic is required.
+
+Next D diagnostic:56H800,TP2/PP4/CP1,16-iteration unchanged scheduler horizon to allow native scaler backoff and verify at least5 successful updates;32 trajectories/update and8192 ceiling remain diagnostic only. Native retained cache resharding is supported by fully_parallel_load. Formal target and dimensions remain unchanged.

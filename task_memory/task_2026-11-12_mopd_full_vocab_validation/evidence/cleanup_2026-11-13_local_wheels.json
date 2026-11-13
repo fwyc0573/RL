@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-11-13T01:43:54.201743+00:00",
+  "authorization": "Explicit current-task cleanup authorization on 2026-11-13",
+  "reason": "One-time wheel downloads and interrupted wheel download; installed environments and UV archive cache retained",
+  "deleted_directory": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels",
+  "entries": [
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/torchvision-0.28.0+cu130-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "bytes": 7674733,
+      "allocated_bytes": 7675904
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "bytes": 197169871,
+      "allocated_bytes": 197201920
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/torch-2.13.0+cu130-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "bytes": 496017408,
+      "allocated_bytes": 53813248
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/torch-2.13.0+cu130-cp313-cp313-manylinux_2_28_x86_64.whl.aria2",
+      "bytes": 401,
+      "allocated_bytes": 4096
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/torch-2.13.0-cp313-cp313-manylinux_2_28_x86_64.whl",
+      "bytes": 526602329,
+      "allocated_bytes": 526606336
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/nvidia_nvvm-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl",
+      "bytes": 61601415,
+      "allocated_bytes": 61603840
+    },
+    {
+      "path": "/data/ycfeng/tmp/nemo-mopd-20261112/wheels/pypi/triton-3.7.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+      "bytes": 197729241,
+      "allocated_bytes": 197730304
+    }
+  ],
+  "logical_bytes_removed": 1486795398,
+  "available_bytes_before": 127090421760,
+  "available_bytes_after": 128135061504,
+  "available_byte_delta": 1044639744,
+  "verified_absent": true
+}

@@ -1,0 +1,6 @@
+{
+  "path": "/data/ycfeng/sota-engine/RL/.git/index.lock",
+  "mtime": "2026-11-12T17:48:18.221948+00:00",
+  "reason": "Empty lock older than 8 hours; lsof and /proc checks found no active Git process or file holder; current-task cleanup authorized",
+  "removed": true
+}
