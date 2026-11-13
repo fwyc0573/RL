@@ -1564,3 +1564,10 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 1. 768GB修正仍排队；不能把CPU配置检查记为GPU修复PASS。
 2. observerCPU漏记录回归已PASS，最终actualtrainingforwardGPU结果仍待执行。
 3. 已完成的清理和D诊断不重复；保持91314/81924存活。
+
+
+## 2026-11-13 12:28 HKT: Preserve verified checkpoint replay preparation
+
+- Completed CPU observer step is signedcommit322c5a5f; no unrelatedfile staged. Preserve nativecheckpoint refit entrypoint tests/manual/mopd/replay_checkpoint_logprobs.py and its existing CPUinput preflight as a separate preparedcode step. The entrypoint loads nativeweights, uses existing create_weight_synchronizer transport, and measures fresh scorer/vLLM response logprobs from one sourceprompt pergroup. Allfive archivedlocators are exercised by CPUselectionpreflight; final formalweights and GPUrefit remain pending. No newtests or broadenedGPUchecks were run.
+- Exact personalAPI at04:27:31Z: correctedjob Pending, queue ranking2, H800 remaining55/request56; reader exp-1113-121235-452668 Running. Formalserializedresources are7replicas,8GPU/32CPU/750Gi each, both RDMAdefaults, and localNFS100.96.128.195:/data/ycfeng:/data/ycfeng. Rawfilteredreceipt: /data/ycfeng/tmp/nemo-mopd-20261112/formal-memory-status-20261113-1230.json.
+- Currentmetrics read through mountedbaseenvironment uv run --no-sync reports0attempts/0successes/0skips and no loss/gradnorm yet. This is queuedstatus, not anothertrainingfailure. Existing formal andreaderlaunchers remain necessary.

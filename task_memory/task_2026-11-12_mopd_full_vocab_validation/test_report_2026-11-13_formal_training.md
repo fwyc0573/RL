@@ -79,3 +79,8 @@ Rayreader: locally submitted /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_f
 CPU regression PASS only. The old OPD_FULL callback selected globalrank0 and omitted finalpipeline-stage logits at rank6 forTP2/PP4/CP1. The revised callback records TP0/CP0 in eachDP replica, includes globalrank, and writes `forward-<hostname>-<pid>.jsonl`. Native loss/optimizer computation is unchanged. The formaljob does not select this observer.
 
 The valid RED logs expected1 versus actual0 at rank6. The formatted GREEN exits0, passes ranks6/0/7/14/12 with expected recordcounts1/1/0/1/0, and passes separatefiles for twohosts with identicalPID1830. Commands, exact mountedactor environment and logpaths are archived in `evidence/pp4-forward-observation-regression.json`. Pinned Ruff0.9.9 check and format --check pass for the observer and checkpoint-replay entrypoint. The earlier fixture-error runs are excluded. No GPU trainingforward acceptance is claimed by this CPUcheck.
+
+
+## Latest resource and progress snapshot
+
+At2026-11-13T04:27:31Z the correctedformaljob remains Pending at queue ranking2,55H800 remaining for56 requested. PersonalAPI confirms7replicas with750Gi memory and both RDMAresource limits, creator i-fengyicheng, and localNFSsource100.96.128.195. The mountedreader is Running. Metricscommand using `/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_fp16_pp4_memory_metrics.py` with `UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313` reports0attempts/0successfulupdates/0skips; no completed formalbatch is available.

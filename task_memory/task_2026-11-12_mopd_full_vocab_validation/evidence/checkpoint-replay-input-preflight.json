@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "samples": [
+    {
+      "source_group": "code",
+      "prompt_idx": 21551,
+      "source_sample_id": "70748647-a8cb-4639-a58d-ab8749e28b10_g0",
+      "source_length": 1022
+    },
+    {
+      "source_group": "if",
+      "prompt_idx": 41654,
+      "source_sample_id": "e784a702-ae91-4a43-95cf-541a95cd605c_g0",
+      "source_length": 317
+    },
+    {
+      "source_group": "logic",
+      "prompt_idx": 2528,
+      "source_sample_id": "23bb8c7c-7d3c-4bc1-86c3-159439b779ae_g0",
+      "source_length": 460
+    },
+    {
+      "source_group": "math",
+      "prompt_idx": 29210,
+      "source_sample_id": "50feaeb5-15b8-47a1-b24e-8b8bdb5fd4f1_g0",
+      "source_length": 263
+    },
+    {
+      "source_group": "stem",
+      "prompt_idx": 16152,
+      "source_sample_id": "05a62a6e-7563-4b4a-acb9-d3712c2799cf_g0",
+      "source_length": 254
+    }
+  ],
+  "cluster": {
+    "nodes": 2,
+    "gpus_per_node": 8
+  },
+  "scope": "Actual archived sample locators and tokens with a metadata-only index fixture; native checkpoint refit is not executed.",
+  "script": "/data/ycfeng/tmp/nemo-mopd-20261112/check_checkpoint_replay_inputs.py",
+  "log": "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-replay-input-preflight.log",
+  "ruff": "Pinned ruff 0.9.9 check and format --check PASS; repeated only with the observer formatting check at 12:24 HKT.",
+  "gpu_validation": "PENDING; final formal checkpoint is not available.",
+  "reproduction_command": "PYTHONPATH=/data/ycfeng/sota-engine/RL PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_checkpoint_replay_inputs.py",
+  "reproduction_command_scope": "Equivalent command for the recorded CPU preflight in the mounted base environment; this continuation did not rerun an already passing input preflight."
+}
