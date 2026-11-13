@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Record native scheduler RED/GREEN, failure RCA and latest-only retention. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
 | 2026-11-14 | Verify latest-only deletion, native scaler/scheduler state, loss-scale regression, and corrected resume preflight. |
 | 2026-11-14 | Recover formal failure, unsuccessful-update metrics and exact rank3 preemption; native state verification remains in progress. |
@@ -219,3 +220,38 @@ source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
 ```
 
 Platform/log inspection uses Python3.10.6/brainpp2.8.6. Local metric inspection uses Python3.13.14/Torch2.13.0+cu130. Commands completed with exit0. Evidence: `evidence/formal-native-resume-2-live-status-20261114.json` and `evidence/formal-native-resume-2-selected-logs-20261114.json`. No model, Adam tensor or new checkpoint was copied. Required training launcher46542 and reader62396 are still active.
+
+
+## Weight-decay scheduler mismatch: native reproduction and correction
+
+Expanded resume exp-1114-034353-134003 failed before any optimizer attempt. Native ConfigContainer computes weight-decay horizon as217×256=55552 while the saved checkpoint has51200. Explicit lr_decay_iters200 preserved only the LR horizon. The native loader rejects that mismatch. The head traceback first appears in the returned incident window at2026-11-13T19:49:04.290258Z; head exits1 at19:49:14Z, platform finishes19:49:16Z. Two replicas Failed and five Stopped. The initiating Python failure precedes native critical-task cleanup. No new checkpoint or optimizer update was produced.
+
+The FP16 recipe now sets the existing native `use_checkpoint_opt_param_scheduler=true`. That selects complete saved scheduler restoration. It preserves the approved LR/WD and counters when the controller extends its attempt horizon; it does not override saved values or reset optimizer/scaler state. Setting scheduler.max_steps200 would fail native validation against train_iters217 and was rejected from source inspection without GPU submission.
+
+| Check | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Native CPU RED | Reproduce actual saved/configured mismatch | Same55552/51200 assertion at native load_state_dict; exit1 | EXPECTED FAIL |
+| Native CPU GREEN | Restore all saved fields and continue | Entire state equals saved; num_steps4352→4608; LR/WD horizons51200; groupLR1e−6 and WD0.01/0 unchanged; exit0 | PASS CPU |
+| Corrected full preflight | Configuration, dtype, model identity, topology, retention and actual scheduler load pass before GPUs | Prior seven markers plus scheduler restore/next-step and final preflight marker; exit0 | PASS CPU |
+| Personal dry-run | Existing company image/localsource/H800codesign/RDMA/latest-only request |7×8H800,32CPU/768GB per node, native source and config; exit0 | PASS preparation |
+| Checkpoint retention after failure | Only latest published boundary |19:55:11Z:step17only,31files/8shards/24,884,408,379bytes | PASS structure; physical quota recovery unverified |
+| Actual GPU continuation | Restore step17, then finite scale1 gradients and successful update | Replacement not yet submitted at this checkpoint | UNVERIFIED |
+
+Both CPU numerical runs use the unchanged Python3.13.14/Torch2.13.0+cu130/UV0.13.7 actor environment, offline/no-sync, CUDA_HOME=/data/ycfeng/toolchain/cuda-13.0.2, existing cuda-compat library path, TMPDIR=/data/ycfeng/tmp, OMP/OPENBLASthreads1:
+
+```bash
+timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python -u tests/manual/mopd/check_native_scheduler_resume.py --config examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml --native-state task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/formal-latest-step17-native-state-20261114.json --train-iters 217
+timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python -u /data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_native_resume_3_generation32_20261114.py
+source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
+/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_native_resume_3_generation32_20261114.py --dry-run
+```
+
+RED ran before the one-line recipe correction; GREEN ran afterwards. They call the real Bridge scheduler calculation/factory and native MCore loader on recorded small state. CPU optimizer groups have no parameter tensors; this is scheduler validation, not a CUDA/Adam update test. No model/Adam tensor payload or new checkpoint is read/written. Ruff0.9.9 check and format checks pass for the new manual script. Logs:`formal-native-scheduler-resume-{red,green}-20261114.log`, `formal-native-resume-3-step17-{native-preflight,dry-run}-20261114.log` under tasktmp. First appended-preflight invocation failed to import tests.manual before reaching the new check; its error is preserved separately, then absolute-script runpy execution passed. That import failure is not scheduler RED evidence.
+
+Exact failure collector command:
+
+```bash
+timeout 60s /data/ycfeng/tmp/stepmind-env/bin/python -u -B /data/ycfeng/stepcode-codex-home/.stepcode/codex/skills/stepmind-gpu-worker/scripts/collect_failure_evidence.py exp-1114-034353-134003 --replica exp-1114-034353-134003-cfcd2084 --expected-creator i-fengyicheng --credential-dir /data/ycfeng/tmp/brainctl-auth-i-fengyicheng --start 2026-11-13T19:48:00Z --end 2026-11-13T19:52:00Z --timeout 20 --output /data/ycfeng/tmp/nemo-mopd-20261112/rca-exp-1114-034353-134003
+```
+
+Collector exit1 means two all-operation audits timed out after20seconds; six other query categories succeeded. Incidentlogs return711rows, belowlimit3000, with four scheduler assertions. Exactobjects/ownerUID/node,live/historicalEvents and zeroexistingDeepScan flows are retained. Manualstop actor/reason/requesttime remainUNKNOWN; no post-start preemption/OOM trigger is established by returned records. The old Running snapshot remains historical; latest terminal evidence is separate. Selected evidence: scheduler-failure-rca, terminal, failure-selected-logs, retention-after-resume-failure and scheduler-red-green JSONs under evidence/.

@@ -1,0 +1,24 @@
+{
+  "native_checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17",
+  "saved_copies": 1,
+  "restored_num_steps": 4352,
+  "next_num_steps": 4608,
+  "lr_decay_steps": 51200,
+  "wd_incr_steps": 51200,
+  "parameter_group_lr_wd": [
+    [
+      1e-06,
+      0.01
+    ],
+    [
+      1e-06,
+      0.0
+    ]
+  ],
+  "tensor_payloads_read": 0,
+  "red_command_exit": 1,
+  "red_error": "OptimizerParamScheduler: class input value 55552 and checkpointvalue 51200 for total number of weight decay iterations do not match",
+  "green_command_exit": 0,
+  "fix": "policy.megatron_cfg.scheduler.use_checkpoint_opt_param_scheduler=true",
+  "scope": "Native CPU scheduler calculation, loading and next step; no CUDA/model/Adam payloads."
+}

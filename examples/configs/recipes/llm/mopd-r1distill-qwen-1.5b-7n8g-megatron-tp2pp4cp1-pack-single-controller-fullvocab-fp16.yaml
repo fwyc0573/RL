@@ -10,6 +10,7 @@ policy:
       initial_loss_scale: 65536
     scheduler:
       lr_decay_iters: 200
+      use_checkpoint_opt_param_scheduler: true
     distributed_data_parallel_config:
       grad_reduce_in_fp32: true
   generation:

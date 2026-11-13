@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Record actual expanded-resume failure, native CPU reproduction and corrected preparation. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
 | 2026-11-14 | Resume with explicit latest-checkpoint-only storage constraint; suspend stale resume arguments until retention is verified. |
 | 2026-11-14 | Recover failed formal terminal state, zero-update business metrics and exact rank3 preemption. |
@@ -2692,3 +2693,19 @@ The current segment is the native test of the previously recorded low-scale pred
 1. 正式成功更新仍为 0/200；有限 loss 不能替代梯度验收。
 2. step17 是唯一保留 checkpoint，24,884,408,379 bytes；没有额外权重副本。
 3. 当前七 worker Running；scale1 的真实结果将决定继续训练或定位 backward。
+
+
+### 2026-11-14 — Expanded resume failed before update; native scheduler restoration corrected (E)
+
+The 19:51:50Z head tail reveals the exact initialization failure: `OptimizerParamScheduler: class input value 55552 and checkpointvalue 51200 for total number of weight decay iterations do not match`. Personal exact-job inspection at19:52:12Z confirms two Failed/five Stopped replicas; head container exit1 at19:49:14Z and RJob finish19:49:16Z. Launcher46542 exits1; reader62396/monitor32590 exit0. Reader has16smallbusinessfiles,zero steps andzero failures. No step18 or formal optimizer update occurred. Formal successes remain0/200, and scale1 backward is still untested.
+
+Cause: `ConfigContainer._calculate_scheduler_steps` derives WD horizon from train_iters217×batch256 even though explicit lr_decay_iters200 keeps LR horizon51200. The native SchedulerConfig default selects strict saved/configured equality. Setting scheduler.max_steps200 is invalid because native validation requires max_steps>=train_iters. The existing `use_checkpoint_opt_param_scheduler` explicitly loads every saved scheduler value and is the smallest supported correction for preserving the approved native continuation. Production loss/scaler/optimizer arithmetic and checkpoint format are unchanged.
+
+Added tests/manual/mopd/check_native_scheduler_resume.py to call the real Bridge horizon calculation, `_get_scheduler`, MCore `load_state_dict`, and the next scheduler step against recorded native small state. Before the recipe edit, the CPU command exits1 at the same51200/55552 assertion. After the one-line FP16 recipe edit, exit0: saved state matches exactly; counter4352→4608; LR/WD horizons51200; LR1e−6 and groupWD0.01/0 stay constant. Ruff check/format pass. No model or Adam tensor payload is read and no checkpoint is written.
+
+Failure collector uses exact head UIDd13727b8-75b6-4662-9bcf-a32f5540599a/nodegpu-h800-0223 and incident window19:48–19:52Z. Objects,live/historicalEvents,incidentlogs and existingDeepScan queries succeed; noexistingDeepScan flow. All-operationRJob/replicaaudits time out after20seconds and remain query failures. The system critical-task cleanup timestamp follows the observed Python failure. Manualstop actor/reason/requesttime remainUNKNOWN. Selected cause and coverage are retained in evidence/formal-native-resume-2-scheduler-failure-rca-20261114.json. Latest-only inventory at19:55:11Z confirms onlystep17,31files/24,884,408,379bytes.
+
+Prepared replacement uses formal-native-resume-3-generation32 arguments and the same approved resources/native saved state. Native scheduler RED/GREEN is now part of CPU preflight. First appended-check import used `tests.manual` from an absolute temporary script and failed before the new check; seven prior preparation checks passed. That import error is retained separately and is not scheduler RED evidence. The runner now uses the existing absolute-script runpy mechanism. Corrected preflight is in progress; personaldry-run already exits0. GPU submission waits for corrected preflight success.
+
+
+Corrected absolute-script preflight exits0 with all seven preparation checks plus native scheduler restore/next-step and final scheduler-preflight markers. Personal dry-run exits0. The only new production/config change is the existing native scheduler selection in the FP16 recipe. The replacement is ready for local personal submission; old writer/reader/monitor are terminal.

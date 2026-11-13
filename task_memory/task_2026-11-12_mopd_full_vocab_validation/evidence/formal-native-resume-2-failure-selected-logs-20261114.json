@@ -1,0 +1,146 @@
+{
+  "queried_at": "2026-11-13T19:51:50.779728+00:00",
+  "job": "exp-1114-034353-134003",
+  "replicas": [
+    {
+      "replica": "exp-1114-034353-134003-c81e728d",
+      "returned_messages": 57,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:45:06 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-c4ca4238",
+      "returned_messages": 58,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:45:04 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-e4da3b7f",
+      "returned_messages": 57,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:45:04 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-1679091c",
+      "returned_messages": 57,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:44:58 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-cfcd2084",
+      "returned_messages": 160,
+      "selected_messages": [
+        "    return _load_checkpoint_from_path(",
+        "  File \"/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/src/megatron/bridge/training/checkpointing.py\", line 3390, in _load_checkpoint_from_path",
+        "AssertionError: OptimizerParamScheduler: class input value 55552 and checkpointvalue 51200 for total number of weight decay iterations do not match",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m Exception raised in creation task: The actor died because of an error raised in its creation task, \u001b[36mray::lm_policy-0-0:MegatronPolicyWorker.__init__()\u001b[39m (pid=2102, ip=10.191.8.55, actor_id=8f77c69d7ff367a85f13b50202000000, repr=MegatronPolicyWorker[rank=0])",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m     load_checkpoint(",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m   File \"/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/src/megatron/bridge/training/checkpointing.py\", line 2546, in load_checkpoint",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m     return _load_checkpoint_from_path(",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m   File \"/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/src/megatron/bridge/training/checkpointing.py\", line 3390, in _load_checkpoint_from_path",
+        "\u001b[36m(MegatronPolicyWorker pid=2102, ip=10.191.8.55)\u001b[0m AssertionError: OptimizerParamScheduler: class input value 55552 and checkpointvalue 51200 for total number of weight decay iterations do not match",
+        "\u001b[33m(raylet, ip=10.191.8.55)\u001b[0m [2026-11-14 03:49:05,367 E 832 832] (raylet) worker.cc:239: Failed to send wait complete: RpcError: RPC error: Cancelling all calls rpc_code: 14",
+        "\u001b[36m(VllmAsyncGenerationWorker pid=1998, ip=10.191.7.21)\u001b[0m (EngineCore pid=2674) \u001b[33m(raylet, ip=10.191.8.55)\u001b[0m [2026-11-14 03:49:05,236 E 832 832] (raylet) worker.cc:239: Failed to send wait complete: RpcError: RPC error: Cancelling all calls rpc_code: 14\u001b[32m [repeated 15x across cluster]\u001b[0m",
+        "Traceback (most recent call last):",
+        "    raise CalledProcessError(retcode, process.args,",
+        "subprocess.CalledProcessError: Command '['uv', 'run', '--no-sync', 'python', '-u', 'examples/run_grpo_single_controller.py', '--config', '/data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml', 'cluster.num_nodes=7', 'cluster.gpus_per_node=8', 'logger.log_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-034353-134003/logs', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-034353-134003/checkpoints', '+env.nemo_gym.skip_venv_if_present=true', 'checkpointing.keep_top_k=0', 'checkpointing.checkpoint_must_save_by=00:01:15:00', 'grpo.max_num_epochs=null', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints', 'checkpointing.ft_keep_latest_k=1', 'policy.generation.colocated.resources.num_nodes=4', 'data_plane.simple.num_storage_units=8', 'grpo.max_num_steps=217', 'checkpointing.save_period=217']' returned non-zero exit status 1."
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-a87ff679",
+      "returned_messages": 57,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:45:01 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    },
+    {
+      "replica": "exp-1114-034353-134003-eccbc87e",
+      "returned_messages": 57,
+      "selected_messages": [
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:45:05 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "Traceback (most recent call last):",
+        "    raise RuntimeError(\"The native MOPD head failed; inspect native logs\")",
+        "RuntimeError: The native MOPD head failed; inspect native logs"
+      ]
+    }
+  ]
+}
