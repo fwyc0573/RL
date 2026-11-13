@@ -1,0 +1,67 @@
+{
+  "rjob-live-events.json": {
+    "query": "rjob-live-events",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.213803+00:00",
+    "finished_at": "2026-11-13T02:39:03.422959+00:00",
+    "ok": true
+  },
+  "replica-live-events.json": {
+    "query": "replica-live-events",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.214749+00:00",
+    "finished_at": "2026-11-13T02:39:03.434417+00:00",
+    "ok": true
+  },
+  "existing-deepscan.json": {
+    "query": "existing-deepscan",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.218872+00:00",
+    "finished_at": "2026-11-13T02:39:04.543488+00:00",
+    "ok": true
+  },
+  "rjob-historical-events.json": {
+    "query": "rjob-historical-events",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.210770+00:00",
+    "finished_at": "2026-11-13T02:39:09.362405+00:00",
+    "ok": true
+  },
+  "replica-historical-events.json": {
+    "query": "replica-historical-events",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.212204+00:00",
+    "finished_at": "2026-11-13T02:39:09.400811+00:00",
+    "ok": true
+  },
+  "rjob-audit.json": {
+    "query": "rjob-audit",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.216342+00:00",
+    "finished_at": "2026-11-13T02:39:49.230454+00:00",
+    "ok": false,
+    "error": {
+      "type": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='platform.shaipower.com', port=443): Read timed out. (read timeout=45.0)"
+    }
+  },
+  "replica-audit.json": {
+    "query": "replica-audit",
+    "job": "exp-1113-095147-620678",
+    "replica": "exp-1113-095147-620678-cfcd2084",
+    "started_at": "2026-11-13T02:39:03.217610+00:00",
+    "finished_at": "2026-11-13T02:39:49.232866+00:00",
+    "ok": false,
+    "error": {
+      "type": "ReadTimeout",
+      "message": "HTTPSConnectionPool(host='platform.shaipower.com', port=443): Read timed out. (read timeout=45.0)"
+    }
+  },
+  "index.json": {}
+}

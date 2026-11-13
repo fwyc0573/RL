@@ -1156,3 +1156,89 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 
 - Final corrected personal dry-run92348 exit0. Local launcher80676 submittedexactlyonce:exp-1113-095147-620678,56H800/codesign,7nodes. Watcher83030 uses45s interval/10800s duration. Output root remains final-five-teacher-fp16-resume to reuse retained initial conversion caches. Keep launcher80676 alive through queue/run; native five-teacher results are pending.
 - check-progress correction applied:Git lock investigation ended after ordinary scoped commit20173f71; cleanup milestone remainsPASS and D is actual five-teacher GPU save/resume. No further cache cleanup or rejected BF16 diagnostics are needed. Formal200/256/65536 remains unsubmitted.
+
+## 2026-11-13 09:54 HKT: durable handoff after completed cleanup
+
+- Cleanup milestone complete. Documentation commit3a33baaa is signed-off and unpushed; source repair20173f71 remains the production code used by the new native workload. Logs remain in persistent evidence despite the repository's *.log ignore rule; no force staging of raw logs.
+- exp-1113-095147-620678 isRunning as of01:53:34Z,7active replicas,creatori-fengyicheng,nonpreemptiblecodesign,localNFS100.96.128.195:/data/ycfeng:/data/ycfeng. All7 runtime receipts show8H800 each,Python3.13.14/Torch2.13.0+cu130/CUDA13.0 and preserved platformNCCL values. Selected receipts:final-five-teacher-fp16-resume-pp4-{latest-runtime-status,worker-runtime}.json. No successful update/checkpoint/resume verdict yet.
+- Live launcher80676 and monitor83030 must remain alive. Native collector:tasktmp/collect_fp16_five_teacher_pp4.py; current extracted root:tasktmp/final-five-teacher-fp16-resume-pp4-current-inputs. Selected state/optimizer/finite/parameter-delta readers have been adapted to this exact job with pp4 filenames; execute only after corresponding checkpoints exist. Last checkpoint may be step15 or16 depending on native final-save behavior; select the actual final checkpoint rather than require an invented path. All auxiliary validators remain non-blocking on this56GPU run.
+- Remaining route:1) observe native overflow/scaler and at least5 successful updates, all five teacher routes, parameter changes and state continuity after save/resume;2) promote the verified PP4 setting to the formal200successful/256fresh/65536run, summing optimizer_update_successful rather than iteration count;3) complete post-update/final-checkpoint parity, finite metric/parameter analysis and final archive. Formal run remains unsubmitted.
+- Requirements reread:cleanup authorization does not cancel the original MOPD contract. No completed overall summary.md is written. No unresolved user decision blocks the next native verification.
+
+## 2026-11-13 10:43 HKT: exact PP4 checkpoint failure recovered
+
+- exp-1113-095147-620678 is Failed (finishTime 02:03:18Z), personal owner UID d09dee5f-b749-41a9-b178-f2da02cc686a. Launcher 80676 and watcher 83030 have exited; no live launcher remains for that terminal run. No formal 200-update job has been submitted.
+- Retained incident logs identify the first native business traceback at 02:03:02Z: MegatronPolicyWorker.save_checkpoint -> Bridge generate_state_dict -> DistributedOptimizer.sharded_state_dict -> get_parameter_state_dp_reshardable -> _get_main_param_and_optimizer_states -> KeyError('master_param'). The earlier DDP repair allowed native scaled-overflow skip (`grad_norm=None`); first requested checkpoint now exposes lazy Adam state. No complete checkpoint or resume is verified.
+- Actual FusedAdam plus native parameter-state checkpoint reader, on CPU with only CUDA allocation redirected, reproduces exactly the missing master_param without offload. Command: actor-environment uv run --no-sync python tasktmp/probe_native_preupdate_checkpoint.py; traceback at distrib_optimizer.py:1233 retained in tasktmp/native-preupdate-checkpoint-red.log. This is an effective native RED, not a mocked exception.
+- Ranked hypotheses before correction: H1 no successful Adam step left lazy state empty (initialization should create exact master weights and zero moments without advancing counters); H2 offload removed state (CPU no-offload reproduction rules it out); H3 native initialization callback is incompatible with current TE initialize_state signature (verify the pinned implementation before use).
+- Exact-job RCA collector completed Events, incident logs and existing DeepScan reads; all-operation audits timed out and remain failed queries, not empty findings. Job fail policy stopTimestamp 02:03:17Z and launcher Job Stop 02:03:19Z follow the business exception. Initiating external stop actor/reason/request time remain UNKNOWN. Evidence: tasktmp/rca-exp-1113-095147-620678 and tasktmp/five-teacher-pp4-business-traceback.txt.
+- Continue at D with a minimal checkpoint-state integration repair; preserve the tested native scaler, source models, full-vocabulary objective, and formal 200/256/65536 contract. Do not resubmit until the new checkpoint RED/GREEN and native preflight pass.
+
+## 2026-11-13 10:49 HKT: pre-update checkpoint repair verified and committed
+
+- Effective checkpoint regression RED reproduces native KeyError(master_param), not a simulated error: 1 failed in21.12s. The NeMo-RL checkpoint entry now initializes empty distributed FusedAdam state with its native method and the installed two-argument API. Existing Adam states and counters remain unchanged; no optimizer step or loss-scale override is added. No third-party checkout was edited.
+- GREEN8/8 in21.01s: FP16/BF16 and chained/direct checkpoint cases4/4, existing overflow cases4/4. Original CPU reproduction is GREEN with exact FP32 master[1.25,-0.5] and zero moments. The first GREEN test-fixture assertion assumed remainder storage while not enabling it; corrected the fixture only, preserving production code. Native recipe preflight, personal dry-run and scoped Ruff0.9.9 check/format PASS.
+- Signed scoped code commit ac26e5a8 contains setup.py, MegatronPolicyWorker save integration and the native regression test. No push. Report: test_report_2026-11-13_preupdate_checkpoint.md.
+- Current codesign node projection at02:48:23Z:123 machines,72 usable GPUs and137 preemptible GPUs; it is not a personal quota or guaranteed H800 placement verdict. A temporary numeric aggregation first rejected string-valued quantities; int conversion corrected that auxiliary read without affecting training.
+- Submitted once after GREEN:exp-1113-104851-054395,56H800,unchangedTP2PP4/FP16/FP32gradreduction/fullvocab/five original teachers,16attempt horizon,32fresh/8192diagnostic. Launcher73501 stays alive; watcher66988 monitors the exact job. Cloud root remains final-five-teacher-fp16-resume to reuse retained model caches. Actual successful updates, checkpoint serialization and resume are pending; formal200/256/65536remains unsubmitted.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原模型和数据身份已核验 |
+| Q | PASS | 用户确认执行合同 |
+| B | PASS | 原生环境及配置预检通过 |
+| C | PASS | 全词表参照和三方 parity 已测 |
+| 清理 | PASS | 授权清理及保留清单验收完成 |
+| D | TODO | 最新 checkpoint 缺陷已 CPU 修复；新 GPU 回归待验收 |
+| E | TODO | 正式200成功更新尚未提交 |
+| F | TODO | 代码修复已提交，最终 archive 待 D/E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 09:54交接至10:49checkpoint修复提交｜**当前前沿：** D五教师原生保存恢复
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | collector只补齐当前失败所缺的业务证据 |
+| D2 细节反复重试 | CLEAR | exact-job traceback和native RED先于修复；无盲目重提 |
+| D3 支线问题修补 | CLEAR | master_param缺陷直接阻止D保存恢复 |
+| D4 可并行任务停滞 | CLEAR | preflight与CPU回归并行，E依赖真实D验收 |
+| D5 超范围镀金 | CLEAR | 一个checkpoint集成函数，无第三方改动或schema扩展 |
+| D6 分析空转 | CLEAR | 已取得native RED/GREEN、scoped commit并提交GPU回归 |
+| D7 路线违背 | CLEAR | 原五教师、全词表和200/256/65536合同保留 |
+
+**文档检查：** S5 plan旧Running与实际Failed矛盾；已同步Failed、首个业务异常和新回归提交。S1–S4/S6无明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan/progress/report：记录旧job终态、CPU验证、新job和活跃launcher（可直接执行，已完成）。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. D：核验exp-1113-104851-054395 → 至少5成功更新、全教师覆盖、保存恢复连续性和数值检查。
+2. E：D通过后正式200/256/65536 → 计实际成功更新，保持native optimizer/scheduler/data-plane恢复。
+3. F：归档实际结果 → 最终报告、scoped commits和English summary。
+
+## 4. 最值得关注的 3 点
+
+1. 原生checkpoint缺陷已有效RED/GREEN验证并提交，GPU验收仍未完成。
+2. 新作业只提交一次，保持launcher活跃并观察exact-job。
+3. 正式200次成功更新尚未完成，不能以iteration计数替代。
+
+## 2026-11-13 10:54 HKT: formal PP4 preparation while the diagnostic queues
+
+- Current diagnostic exp-1113-104851-054395 has creator i-fengyicheng, UID6696f121-e116-4125-b93b-02b78cfae2a2 and current-machine NFS100.96.128.195:/data/ycfeng:/data/ycfeng. Queue reason at02:50:46Z explicitly says request56H800 vs remaining54; rank2. Keep launcher73501 and watcher66988 alive, inspect the existing queued job; no duplicate submission or unrelated-job stop. Native acceptance remains pending.
+- New reusable final recipe: examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-7n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml. It uses the already inspected CP1/FP32-head/FP32-RoPE/FA4 path and original student/five teachers, PP4/FP16/FP32gradreduction/fullvocab. It sets explicit native scheduler.lr_decay_iters=200; LR=min_LR=1e-6 and weight_decay=0.01 are constant, with zero warmup.
+- Native MasterConfig/preflight and personal launcher dry-run PASS for200attempt preparation,256fresh trajectories,65536ceiling/max_new_tokens,fullvocabandoriginal65536loss_scale. These are CPU preparation results, not200successfulupdates. Since native controller iterations and scheduler ticks advance on overflow skips, formal acceptance sums optimizer_update_successful and checks native optimizer state independently; after a completed native segment, resume only the measured missing successful-update count while preserving the explicit constant scheduler settings. Do not equate max_num_steps=200 with acceptance.
+- before-steptron-run loaded for formal preparation. Existing inspected lifecycle metadata and failure/replacement paths are unchanged (design.md and263localchecks in earlier report); approved256group batch, stable prompt_idx/sample_id, weight version, timeout/error references and native data-plane checkpoints remain required. No new profiling or recording framework was added. Formal submission still waits for D's actual checkpoint/resume and health acceptance.
+- Existing state/optimizer/finite/delta/parity readers now target exactjob104851 and pp4-2inputs. Run them only against actual existing checkpoints; final native save path must be observed rather than assumed step16. Readers remain auxiliary soft gates on the56GPUjob.

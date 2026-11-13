@@ -1,0 +1,26 @@
+defaults: mopd-r1distill-qwen-1.5b-7n8g-megatron-tp2cp1-pack-single-controller-fullvocab.yaml
+
+policy:
+  precision: float16
+  megatron_cfg:
+    pipeline_model_parallel_size: 2
+    optimizer:
+      bf16: false
+      fp16: true
+      initial_loss_scale: 65536
+    distributed_data_parallel_config:
+      grad_reduce_in_fp32: true
+  generation:
+    vllm_cfg:
+      precision: float16
+
+on_policy_distillation:
+  non_colocated_teachers:
+    default_teacher_cfg:
+      precision: fp16
+  full:
+    payload_dtype: float16
+
+checkpointing:
+  keep_top_k: null
+  ft_keep_latest_k: null

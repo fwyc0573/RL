@@ -1,0 +1,31 @@
+defaults: mopd-r1distill-qwen-1.5b-7n8g-megatron-tp2cp4-pack-single-controller-fullvocab.yaml
+
+policy:
+  megatron_cfg:
+    context_parallel_size: 1
+    fp32_lm_head: true
+    flash_attention_version: 4
+    attention_backend: flash
+  generation:
+    vllm_cfg:
+      enforce_eager: true
+      fp32_lm_head: true
+    vllm_kwargs:
+      max_num_batched_tokens: 2048
+      hf_overrides:
+        rope_parameters:
+          rope_type: default
+          rope_theta: 10000
+          fp32_rope: true
+      attention_config:
+        backend: FLASH_ATTN
+        flash_attn_version: 4
+
+on_policy_distillation:
+  non_colocated_teachers:
+    default_teacher_cfg:
+      context_parallel_size: 1
+      megatron_cfg_overrides:
+        fp32_lm_head: true
+        flash_attention_version: 4
+        attention_backend: flash

@@ -1,0 +1,107 @@
+Traceback (most recent call last):
+  File "/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py", line 292, in <module>
+    main()
+    ~~~~^^
+  File "/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py", line 212, in main
+    result = _run_with_controller_liveness_watch(sc, config.async_rl.stall_watchdog)
+  File "/data/ycfeng/sota-engine/RL/examples/run_grpo_single_controller.py", line 269, in _run_with_controller_liveness_watch
+    return ray.get(run_ref)
+           ~~~~~~~^^^^^^^^^
+  File "/data/ycfeng/envs/nemo-mopd-py313/lib/python3.13/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/data/ycfeng/envs/nemo-mopd-py313/lib/python3.13/site-packages/ray/_private/client_mode_hook.py", line 134, in wrapper
+    return func(*args, **kwargs)
+  File "/data/ycfeng/envs/nemo-mopd-py313/lib/python3.13/site-packages/ray/_private/worker.py", line 2986, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ~~~~~~~~~~~~~~~~~~^
+        object_refs, timeout, use_object_store=_use_object_store
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/envs/nemo-mopd-py313/lib/python3.13/site-packages/ray/_private/worker.py", line 1050, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(KeyError): ray::SingleControllerActor.run() (pid=8059, ip=10.191.3.43, actor_id=93a6f12a49f0e053dc9ecd8c02000000, repr=<nemo_rl.algorithms.single_controller.SingleControllerActor object at 0x7f19f63f52b0>)
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 851, in run
+    result = await self._run_pumps()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 956, in _run_pumps
+    await train_task
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 3550, in _train_pump
+    await self._save_checkpoint(
+    ...<4 lines>...
+    )
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 4488, in _save_checkpoint
+    await self._save_checkpoint_impl(
+    ...<4 lines>...
+    )
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 4604, in _save_checkpoint_impl
+    await asyncio.to_thread(
+    ...<13 lines>...
+    )
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/asyncio/threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/lm_policy.py", line 1527, in save_checkpoint
+    ray.get(futures)
+    ~~~~~~~^^^^^^^^^
+                                  ~~~~~~~~~~~~~~~~~~^
+        object_refs, timeout, use_object_store=_use_object_store
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+ray.exceptions.RayTaskError(KeyError): ray::MegatronPolicyWorker.save_checkpoint() (pid=1696, ip=10.191.5.52, actor_id=a6870d66b579a4f4c91a64c502000000, repr=MegatronPolicyWorker[rank=7])
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 460, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/workers/megatron_policy_worker.py", line 5146, in save_checkpoint
+    save_checkpoint(
+    ~~~~~~~~~~~~~~~^
+        state=self.mcore_state,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        checkpointing_context=self.checkpointing_context,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/src/megatron/bridge/training/checkpointing.py", line 1409, in save_checkpoint
+    state_dict = generate_state_dict(
+        ckpt_cfg,
+    ...<8 lines>...
+        pg_collection=pg_collection,
+    )
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/src/megatron/bridge/training/checkpointing.py", line 2239, in generate_state_dict
+    state_dict["optimizer"] = optimizer.sharded_state_dict(state_dict, **(optim_sd_kwargs or {}))
+                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/optimizer/optimizer.py", line 1673, in sharded_state_dict
+    return self.chained_optimizers[0].sharded_state_dict(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        model_sharded_state_dict, is_loading, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 1698, in sharded_state_dict
+    param_state = self.sharded_param_state_dp_reshardable(
+        model_sharded_state_dict, is_loading, metadata
+    )
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 2015, in sharded_param_state_dp_reshardable
+    state = self.get_parameter_state_dp_reshardable()
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 1373, in get_parameter_state_dp_reshardable
+    tensors = self._get_main_param_and_optimizer_states(model_param)
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/optimizer/distrib_optimizer.py", line 1233, in _get_main_param_and_optimizer_states
+    tensors["param"] = tensors.pop("master_param")
+                       ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+KeyError: 'master_param'

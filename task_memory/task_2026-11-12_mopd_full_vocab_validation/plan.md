@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Recover latest PP4 checkpoint failure and reproduce uninitialized native Adam state. |
 | 2026-11-13 | Record PP4 PASS, five-teacher overflow FAIL, and authorized artifact cleanup. |
 | 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
 | 2026-11-13 | Reconcile complete FP16 three-way parity and remaining training/gradient frontier. |
@@ -13,7 +14,7 @@
 
 # Plan
 
-Status: A/Q/B/C complete; D/E/F outstanding. PP4 full-vocabulary FP16 long-context job exp-1113-011736-657255 Succeeded: 1 successful update, 0 skipped, loss 1.2871393728630665e-8, grad norm 0.0004988232394680381, scorer/vLLM MAE 0.007388088723072912. Five-teacher FP16 exp-1113-010116-581403 Failed before a successful update: DDP fatal scaled-gradient Inf check executes before native unscale/scaler. CPU regression RED is verified. The minimal production repair passes4 native overflow cases and14 affected config checks; original-config reproduction also passes (65536→32768, finite gradient0.25). User-authorized cleanup is complete:245.005GiB cloud logical content removed,18 small metadata files retained; local cache/wheels available-space increase2.469GiB plus403MB duplicate archives deleted. Retain the current five-teacher FP16 and PP4 caches. Formal 200 successful updates / 256 fresh trajectories / 65536 remains unsubmitted. Verified repair is committed as signed20173f71; the transient index-lock issue is resolved.
+Status: A/Q/B/C complete; D/E/F outstanding. PP4 full-vocabulary FP16 long-context job exp-1113-011736-657255 Succeeded: 1 successful update, 0 skipped, loss 1.2871393728630665e-8, grad norm 0.0004988232394680381, scorer/vLLM MAE 0.007388088723072912. Earlier five-teacher FP16 exp-1113-010116-581403 Failed before a successful update: DDP fatal scaled-gradient Inf check executes before native unscale/scaler. CPU regression RED is verified. The minimal production repair passes4 native overflow cases and14 affected config checks; original-config reproduction also passes (65536→32768, finite gradient0.25). User-authorized cleanup is complete:245.005GiB cloud logical content removed,18 small metadata files retained; local cache/wheels available-space increase2.469GiB plus403MB duplicate archives deleted. Retain the current five-teacher FP16 and PP4 caches. Corrected 56-H800/TP2PP4 native save/resume job exp-1113-095147-620678 Failed at 2026-11-13T02:03:18Z. First native traceback is checkpoint serialization KeyError: master_param after an overflow skipped the first update; no complete checkpoint or resume is verified. Exact native CPU FusedAdam/checkpoint reader reproduces the missing state without offload. Seven runtime receipts remain valid. Launcher and watcher are terminal; their later cleanup is not the initiating failure. Formal 200 successful updates / 256 fresh trajectories / 65536 remains unsubmitted. Verified repair is committed as signed20173f71; the transient index-lock issue is resolved. The checkpoint-state integration repair is now committed as signed ac26e5a8: four native checkpoint cases plus four overflow cases PASS, original native reproduction GREEN, recipe preflight and personal dry-run PASS. Same-config GPU regression exp-1113-104851-054395 is submitted once; actual checkpoint/resume acceptance remains pending.
 
 ## Dependency graph
 
@@ -89,3 +90,5 @@ Acceptance: all manifest-approved obsolete tensor/cache paths absent, required r
 Cleanup status: completed and verified by test_report_2026-11-13_artifact_cleanup.md. Proceed at D; no repeat cloud cleanup or rejected BF16/TP4 diagnostic is required.
 
 Next D diagnostic:56H800,TP2/PP4/CP1,16-iteration unchanged scheduler horizon to allow native scaler backoff and verify at least5 successful updates;32 trajectories/update and8192 ceiling remain diagnostic only. Native retained cache resharding is supported by fully_parallel_load. Formal target and dimensions remain unchanged.
+
+Formal preparation now has a reusable TP2/PP4/CP1 FP16 recipe and successful native CPU preflight/dry-run, retaining200/256/65536. The native optimizer success flag, not the controller or scheduler tick count, settles update acceptance. The configured scheduler is constant (LR=min_LR=1e-6, WD0.01, warmup0); explicit lr_decay_iters200 preserves its settings across measured-deficit native resume segments. This does not promote the formal run before D passes or change the200-successful-update contract.

@@ -14,11 +14,25 @@ grpo:
 async_rl:
   sampler:
     name: in_order
-    max_lookahead_versions: 1
+    max_lookahead_versions: 0
   min_groups_for_streaming_train: ${grpo.num_prompts_per_step}
   max_inflight_prompts: ${grpo.num_prompts_per_step}
   max_buffered_rollouts: 512
   log_full_train_data: true
+  stall_watchdog:
+    stall_timeout_s: 9000
+  generation_router:
+    backend_timeout_s: 7200
+  rollout_failure:
+    max_skipped_prompts: 128
+    max_consecutive_dropped_prompts: 1
+    on_dropped_prompt: replace
+    min_step_batch_fraction: 1.0
+    nemo_gym:
+      rollout_timeout_s: 7200
+
+rollout_checkpointing:
+  trace: true
 
 data_plane:
   enabled: true
@@ -44,6 +58,9 @@ on_policy_distillation:
       gpus_per_node: 8
       precision: bf16
       micro_batch_size: 1
+      megatron_cfg_overrides:
+        model_overrides:
+          make_vocab_size_divisible_by: 64
   full:
     enabled: true
     teacher_payload: hidden_states
@@ -74,6 +91,8 @@ policy:
     enabled: false
   megatron_cfg:
     enabled: true
+    model_overrides:
+      make_vocab_size_divisible_by: 64
     tensor_model_parallel_size: 2
     context_parallel_size: 4
     sequence_parallel: true
@@ -99,6 +118,7 @@ policy:
     max_new_tokens: 65536
     vllm_cfg:
       async_engine: true
+      logprobs_mode: raw_logprobs
       tensor_parallel_size: 2
       gpu_memory_utilization: 0.85
       expose_http_server: true
