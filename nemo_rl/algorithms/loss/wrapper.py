@@ -100,6 +100,26 @@ class SequencePackingLossWrapper:
         padded_cu_seqlens = self.cu_seqlens_q_padded
         seq_starts = padded_cu_seqlens[:-1]
         seq_ends = padded_cu_seqlens[1:]
+        cp_size = (
+            1
+            if self.context_parallel_group is None
+            else torch.distributed.get_world_size(self.context_parallel_group)
+        )
+        fused_linear_logprobs = (
+            hasattr(self.loss_fn, "use_fused_linear_logprobs")
+            and self.loss_fn.use_fused_linear_logprobs
+        )
+        if not fused_linear_logprobs:
+            # Split backward joins sequence gradients once instead of allocating
+            # a full packed-logit gradient for every sequence's narrow backward.
+            sequence_logits = torch.split(
+                next_token_logits,
+                tuple(
+                    end // cp_size - start // cp_size
+                    for start, end in zip(seq_starts, seq_ends)
+                ),
+                dim=1,
+            )
 
         loss_accum = 0
         metrics_accum = {}
@@ -116,16 +136,8 @@ class SequencePackingLossWrapper:
                 else:
                     unpadded_seq_data[k] = v
 
-            cp_size = (
-                1
-                if self.context_parallel_group is None
-                else torch.distributed.get_world_size(self.context_parallel_group)
-            )
             # prepare data for loss function
-            if (
-                hasattr(self.loss_fn, "use_fused_linear_logprobs")
-                and self.loss_fn.use_fused_linear_logprobs
-            ):
+            if fused_linear_logprobs:
                 # Linear CE fusion returns precomputed token logprobs where shape
                 # can be shorter by 1 token than padded sequence metadata.
                 # Use slicing (clamped end) to avoid narrow() OOB on packed tails.
@@ -137,12 +149,7 @@ class SequencePackingLossWrapper:
                 logit_slice_idxs = slice(logit_start, logit_end)
                 next_token_logits_slice = next_token_logits[:, logit_slice_idxs]
             else:
-                logit_start = seq_start // cp_size
-                logit_end = seq_end // cp_size
-                logit_length = logit_end - logit_start
-                next_token_logits_slice = next_token_logits.narrow(
-                    1, logit_start, logit_length
-                )
+                next_token_logits_slice = sequence_logits[seq_idx]
             loss_input, unpadded_seq_data = self.prepare_fn(
                 logits=next_token_logits_slice,
                 data=unpadded_seq_data,

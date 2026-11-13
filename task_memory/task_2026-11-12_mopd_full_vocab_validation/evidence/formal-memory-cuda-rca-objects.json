@@ -1,0 +1,124 @@
+{
+  "job": {
+    "kind": "RJob",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1113-121031-998701",
+      "uid": "2003e09a-e896-4ecd-ac29-453b3dcaf327",
+      "creationTimestamp": "2026-11-13T04:10:32Z",
+      "deletionTimestamp": null,
+      "ownerReferences": null
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-13T06:32:24Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "RJobFailed",
+      "message": "Tasks with failed status: [default]",
+      "taskStatuses": {
+        "default": {
+          "failed": 7,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-13T06:32:26Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "replica": {
+    "kind": "Replica",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1113-121031-998701-1679091c",
+      "uid": "13d66ed5-c4bd-4bf2-bfb8-44fde6890308",
+      "creationTimestamp": "2026-11-13T06:10:33Z",
+      "deletionTimestamp": null,
+      "ownerReferences": [
+        {
+          "apiVersion": "rjob.brainpp.cn/v1alpha1",
+          "kind": "RJob",
+          "name": "exp-1113-121031-998701",
+          "uid": "2003e09a-e896-4ecd-ac29-453b3dcaf327",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }
+      ]
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {},
+    "stop_spec": {},
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T06:12:37Z"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T06:31:17Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T06:31:17Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T06:12:37Z"
+        }
+      ],
+      "hostIP": "10.191.9.69",
+      "podIP": "10.191.9.69",
+      "podIPs": [
+        {
+          "ip": "10.191.9.69"
+        }
+      ],
+      "startTime": "2026-11-13T06:12:37Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "terminated": {
+              "exitCode": 1,
+              "reason": "Error",
+              "message": "user command: exit status 1",
+              "startedAt": "2026-11-13T06:12:55Z",
+              "finishedAt": "2026-11-13T06:31:17Z",
+              "containerID": "containerd://f2f1d082db2470afa9355876ef6e76a0b56862aa37e7a8178b36b3dab7e17010"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://f2f1d082db2470afa9355876ef6e76a0b56862aa37e7a8178b36b3dab7e17010",
+          "started": false
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Failed",
+      "nodeName": "gpu-h800-0200.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-13T06:32:24Z"
+    }
+  }
+}

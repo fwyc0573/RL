@@ -22,6 +22,8 @@ divergence tensor that ``prepare_loss_input`` has already produced.
 
 from __future__ import annotations
 
+from functools import partial
+
 import pytest
 import torch
 
@@ -32,7 +34,11 @@ from nemo_rl.algorithms.loss import (
 )
 from nemo_rl.algorithms.loss.interfaces import LossInputType, MetricNormalizer
 from nemo_rl.algorithms.loss.utils import reconstruct_opd_full_teacher_logits
-from nemo_rl.algorithms.loss.wrapper import _SEQ_METRIC_MAX, _SEQ_METRIC_MIN
+from nemo_rl.algorithms.loss.wrapper import (
+    _SEQ_METRIC_MAX,
+    _SEQ_METRIC_MIN,
+    SequencePackingLossWrapper,
+)
 from nemo_rl.algorithms.opd import (
     OnPolicyDistillationFullConfig,
     get_opd_full_config,
@@ -1082,3 +1088,81 @@ def test_prepare_loss_input_requires_the_index_column_for_two_teachers(
                 1: torch.randn(vocab, hidden),
             },
         )
+
+
+def test_packed_full_loss_avoids_repeated_full_logit_gradients(
+    _single_rank_collectives,
+):
+    """Several packed teachers preserve exact gradients without dense slice buffers."""
+    torch.manual_seed(43)
+    lengths = (7, 11, 14)
+    padded_boundaries = (0, 8, 20, 36)
+    vocab, hidden = 257, 5
+    logits = torch.randn(1, padded_boundaries[-1], vocab, requires_grad=True)
+    payload = torch.randn(len(lengths), max(lengths), hidden)
+    heads = {0: torch.randn(vocab, hidden), 1: torch.randn(vocab, hidden)}
+    indices = torch.tensor([0, 1, 0])
+    mask = torch.zeros(len(lengths), max(lengths))
+    for row, length in enumerate(lengths):
+        mask[row, 1:length] = 1
+    data = BatchedDataDict(
+        {
+            "input_ids": torch.zeros(len(lengths), max(lengths), dtype=torch.long),
+            "input_lengths": torch.tensor(lengths),
+            "token_mask": mask,
+            "sample_mask": torch.ones(len(lengths)),
+            OPD_FULL_HIDDEN_STATES_FIELD: payload,
+            OPD_FULL_TEACHER_INDEX_FIELD: indices,
+        }
+    )
+    loss_fn = _loss_fn(opd_full=_full(chunk_size=4))
+    wrapper = SequencePackingLossWrapper(
+        loss_fn=loss_fn,
+        prepare_fn=partial(
+            prepare_loss_input,
+            teacher_output_layer_weight_by_index=heads,
+        ),
+        cu_seqlens_q=(0, 7, 18, 32),
+        cu_seqlens_q_padded=padded_boundaries,
+        vocab_parallel_rank=0,
+        vocab_parallel_group=object(),
+    )
+    loss, _ = wrapper(
+        next_token_logits=logits,
+        data=data,
+        global_valid_seqs=torch.tensor(float(len(lengths))),
+        global_valid_toks=mask.sum(),
+    )
+    with torch.profiler.profile(
+        activities=[torch.profiler.ProfilerActivity.CPU], profile_memory=True
+    ) as profile:
+        loss.backward()
+
+    reference = logits.detach().clone().requires_grad_()
+    expected_loss = torch.tensor(0.0)
+    for row, length in enumerate(lengths):
+        start = padded_boundaries[row]
+        student_log_probs = reference[:, start : start + length - 1].log_softmax(-1)
+        teacher_log_probs = (
+            payload[row, : length - 1] @ heads[int(indices[row])].t()
+        ).log_softmax(-1)
+        expected_loss = (
+            expected_loss
+            + (student_log_probs.exp() * (student_log_probs - teacher_log_probs)).sum()
+            / mask.sum()
+        )
+    expected_loss.backward()
+    torch.testing.assert_close(loss, expected_loss, rtol=1e-5, atol=1e-6)
+    torch.testing.assert_close(logits.grad, reference.grad, rtol=1e-5, atol=1e-6)
+
+    packed_bytes = logits.numel() * logits.element_size()
+    full_slice_bytes = sum(
+        event.cpu_memory_usage
+        for event in profile.events()
+        if event.name == "aten::slice_backward"
+        and event.cpu_memory_usage >= packed_bytes
+    )
+    assert full_slice_bytes <= packed_bytes, (
+        f"Packed backward allocated {full_slice_bytes} bytes in full-size slice "
+        f"gradients for {packed_bytes} bytes of logits"
+    )
