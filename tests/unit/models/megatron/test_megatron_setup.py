@@ -30,7 +30,7 @@ import pickle
 import warnings
 from dataclasses import dataclass, field, fields
 from pathlib import Path
-from types import SimpleNamespace
+from types import MethodType, SimpleNamespace
 from typing import Any
 from unittest.mock import MagicMock, call, patch
 
@@ -3564,6 +3564,134 @@ def _dist_config_passed_to_container(config: dict[str, Any]) -> Any:
         )
 
     return mock_container.call_args.kwargs["dist"]
+
+
+@pytest.mark.mcore
+class TestCreateMegatronConfigGradOverflow:
+    """Keep scaled overflow under native optimizer control."""
+
+    @pytest.mark.parametrize("nonfinite", [float("inf"), float("nan")])
+    def test_fp16_overflow_reaches_scaler_and_finite_batch_continues(
+        self, nonfinite: float
+    ) -> None:
+        # Megatron is optional outside the mcore test lane.
+        from megatron.core.distributed.param_and_grad_buffer import (
+            _ParamAndGradBucketGroup,
+        )
+        from megatron.core.optimizer.grad_scaler import DynamicGradScaler
+        from megatron.core.optimizer.optimizer import MixedPrecisionOptimizer
+
+        from nemo_rl.models.megatron.setup import _create_megatron_config
+
+        policy_config = _megatron_config()
+        policy_config["megatron_cfg"]["optimizer"].update(fp16=True, bf16=False)
+        with patch("nemo_rl.models.megatron.setup.ConfigContainer") as container:
+            _create_megatron_config(
+                model_cfg=MagicMock(),
+                checkpoint_config=MagicMock(),
+                config=policy_config,
+                hf_model_name="test-model",
+                dtype=torch.float16,
+            )
+        optimizer_config = container.call_args.kwargs["optimizer"]
+        ddp_config = container.call_args.kwargs["ddp"]
+        original_tensor = torch.tensor
+
+        def cpu_tensor(*args, **kwargs):
+            kwargs["device"] = "cpu"
+            return original_tensor(*args, **kwargs)
+
+        with patch("torch.tensor", side_effect=cpu_tensor):
+            scaler = DynamicGradScaler(
+                initial_scale=optimizer_config.initial_loss_scale,
+                min_scale=optimizer_config.min_loss_scale,
+                growth_factor=2.0,
+                backoff_factor=0.5,
+                growth_interval=optimizer_config.loss_scale_window,
+                hysteresis=optimizer_config.hysteresis,
+            )
+        gradient = torch.tensor([nonfinite])
+        bucket_group = SimpleNamespace(buckets=[SimpleNamespace(grad_data=gradient)])
+
+        def validate_result(*, result, rejection_func, message, **kwargs):
+            if bool(rejection_func(result)):
+                raise RuntimeError(message)
+
+        with patch(
+            "megatron.core.distributed.param_and_grad_buffer.get_rerun_state_machine",
+            return_value=SimpleNamespace(validate_result=validate_result),
+        ):
+            _ParamAndGradBucketGroup.check_grads(
+                bucket_group, ddp_config.check_for_nan_in_grad, False
+            )
+
+        optimizer = SimpleNamespace(
+            config=optimizer_config,
+            grad_scaler=scaler,
+            found_inf=torch.zeros(1),
+            is_stub_optimizer=False,
+            _copy_model_grads_to_main_grads=lambda: None,
+            _collect_main_grad_data_for_unscaling=lambda: [gradient],
+            get_grad_stats_parallel_group=lambda: None,
+        )
+        optimizer._unscale_main_grads_and_check_for_nan = MethodType(
+            MixedPrecisionOptimizer._unscale_main_grads_and_check_for_nan, optimizer
+        )
+        with patch("torch.distributed.all_reduce") as reduce:
+            for _ in range(optimizer_config.hysteresis):
+                assert MixedPrecisionOptimizer.prepare_grads(optimizer)
+            assert scaler.scale.item() < optimizer_config.initial_loss_scale
+            gradient.fill_(scaler.scale.item() * 0.25)
+            assert not MixedPrecisionOptimizer.prepare_grads(optimizer)
+        assert gradient.item() == 0.25
+        assert reduce.call_count == optimizer_config.hysteresis + 1
+        assert all(
+            call.kwargs["op"] == torch.distributed.ReduceOp.MAX
+            for call in reduce.call_args_list
+        )
+
+    @pytest.mark.parametrize("dtype", [torch.bfloat16, torch.float32])
+    def test_unscaled_gradient_keeps_fatal_nonfinite_check(
+        self, dtype: torch.dtype
+    ) -> None:
+        # Megatron is optional outside the mcore test lane.
+        from megatron.core.distributed.param_and_grad_buffer import (
+            _ParamAndGradBucketGroup,
+        )
+
+        from nemo_rl.models.megatron.setup import _create_megatron_config
+
+        policy_config = _megatron_config()
+        policy_config["megatron_cfg"]["optimizer"].update(
+            fp16=False, bf16=dtype == torch.bfloat16
+        )
+        with patch("nemo_rl.models.megatron.setup.ConfigContainer") as container:
+            _create_megatron_config(
+                model_cfg=MagicMock(),
+                checkpoint_config=MagicMock(),
+                config=policy_config,
+                hf_model_name="test-model",
+                dtype=dtype,
+            )
+        ddp_config = container.call_args.kwargs["ddp"]
+        bucket_group = SimpleNamespace(
+            buckets=[SimpleNamespace(grad_data=torch.tensor([float("inf")]))]
+        )
+
+        def validate_result(*, result, rejection_func, message, **kwargs):
+            if bool(rejection_func(result)):
+                raise RuntimeError(message)
+
+        with (
+            patch(
+                "megatron.core.distributed.param_and_grad_buffer.get_rerun_state_machine",
+                return_value=SimpleNamespace(validate_result=validate_result),
+            ),
+            pytest.raises(RuntimeError, match="found Inf in local grad norm"),
+        ):
+            _ParamAndGradBucketGroup.check_grads(
+                bucket_group, ddp_config.check_for_nan_in_grad, False
+            )
 
 
 @pytest.mark.mcore

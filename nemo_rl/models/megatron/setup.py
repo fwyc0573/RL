@@ -2263,6 +2263,7 @@ def _create_megatron_config(
         "overlap_param_gather": overlap_param_gather,
         "reuse_grad_buf_for_mxfp8_param_ag": reuse_grad_buf_for_mxfp8_param_ag,
     }
+    optimizer_cfg = OptimizerConfig(**optimizer_kwargs)
     # Fused linear logprobs run the decoder but read output_layer.weight directly
     # instead of calling output_layer.forward(). Megatron's distributed-optimizer
     # overlap_param_gather prefetch chain assumes every param-gather bucket
@@ -2300,9 +2301,10 @@ def _create_megatron_config(
             global_batch_size=config["train_global_batch_size"],  # ignored
             train_iters=config["megatron_cfg"]["train_iters"],
         ),
-        optimizer=OptimizerConfig(**optimizer_kwargs),
+        optimizer=optimizer_cfg,
         ddp=DistributedDataParallelConfig(
-            check_for_nan_in_grad=True,
+            # FP16 scaled overflow must reach the optimizer's unscale and scaler update.
+            check_for_nan_in_grad=not optimizer_cfg.fp16,
             grad_reduce_in_fp32=config["megatron_cfg"][
                 "distributed_data_parallel_config"
             ]["grad_reduce_in_fp32"],
