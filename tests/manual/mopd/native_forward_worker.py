@@ -15,6 +15,7 @@
 
 import json
 import os
+import socket
 from pathlib import Path
 from typing import Any, Callable
 
@@ -73,10 +74,14 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
                         chunk_size=self.cfg["logprob_chunk_size"],
                     )
                     self._training_observations += 1
-                    if torch.distributed.get_rank() == 0:
+                    if (
+                        parallel_state.get_tensor_model_parallel_rank() == 0
+                        and parallel_state.get_context_parallel_rank() == 0
+                    ):
                         self._write_observation(
                             {
                                 "kind": "training_forward",
+                                "rank": torch.distributed.get_rank(),
                                 "call": self._training_observations,
                                 "logits_dtype": str(logits.dtype),
                                 "input_ids": data["input_ids"].cpu().tolist(),
@@ -222,11 +227,15 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
                         }
                     )
                     self._teacher_observations += 1
-                    if torch.distributed.get_rank() == 0:
+                    if (
+                        parallel_state.get_tensor_model_parallel_rank() == 0
+                        and parallel_state.get_context_parallel_rank() == 0
+                    ):
                         data = processor_kwargs["data_dict"]
                         self._write_observation(
                             {
                                 "kind": "teacher_same_forward",
+                                "rank": torch.distributed.get_rank(),
                                 "call": self._teacher_observations,
                                 "head_dtype": str(weight.dtype),
                                 "fp32_lm_head": bool(
@@ -338,7 +347,10 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
         record.update(model=self.cfg["model_name"], pid=os.getpid())
         try:
             self._observation_dir.mkdir(parents=True, exist_ok=True)
-            path = self._observation_dir / f"forward-{os.getpid()}.jsonl"
+            path = (
+                self._observation_dir
+                / f"forward-{socket.gethostname()}-{os.getpid()}.jsonl"
+            )
             with path.open("a") as stream:
                 stream.write(json.dumps(record) + "\n")
         except OSError as error:

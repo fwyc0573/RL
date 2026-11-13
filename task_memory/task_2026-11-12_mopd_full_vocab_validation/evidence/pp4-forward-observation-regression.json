@@ -1,0 +1,47 @@
+{
+  "recorded_at": "2026-11-13T04:26:06.916200+00:00",
+  "component": "tests/manual/mopd/native_forward_worker.py",
+  "scope": "CPU observer callback and output filename regression only; GPU actual-training-forward validation remains pending.",
+  "environment": {
+    "PYTHONPATH": "/data/ycfeng/sota-engine/RL",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NEMO_RL_VENV_DIR": "/data/ycfeng/envs/nemo-mopd-actors",
+    "UV_PROJECT_ENVIRONMENT": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker",
+    "LD_LIBRARY_PATH": "/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}",
+    "TMPDIR": "/data/ycfeng/tmp"
+  },
+  "commands": {
+    "red": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_pp4_forward_observation.py --before",
+    "green": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_pp4_forward_observation.py",
+    "ruff_check": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/archive-v0/kXL4cKhaO5P88NA2/ruff-0.9.9.data/scripts/ruff check tests/manual/mopd/native_forward_worker.py tests/manual/mopd/replay_checkpoint_logprobs.py",
+    "ruff_format": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache/archive-v0/kXL4cKhaO5P88NA2/ruff-0.9.9.data/scripts/ruff format --check tests/manual/mopd/native_forward_worker.py tests/manual/mopd/replay_checkpoint_logprobs.py"
+  },
+  "red": {
+    "verdict": "expected FAIL",
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/pp4-forward-observation-valid-red.log",
+    "failure": "PP4 observer rank=6, tp=0, cp=0: expected 1 record, actual 0"
+  },
+  "green": {
+    "verdict": "PASS",
+    "exit_code": 0,
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/pp4-forward-observation-formatted-green.log",
+    "observed_markers": [
+      "OBSERVER_RANK_PASS 6 0 0 1",
+      "OBSERVER_RANK_PASS 0 0 0 1",
+      "OBSERVER_RANK_PASS 7 1 0 0",
+      "OBSERVER_RANK_PASS 14 0 0 1",
+      "OBSERVER_RANK_PASS 12 0 1 0",
+      "PP4_TRAINING_FORWARD_OBSERVATION_PASS",
+      "CROSS_NODE_OBSERVATION_FILES_PASS"
+    ]
+  },
+  "lint": {
+    "version": "0.9.9",
+    "check": "PASS",
+    "format": "PASS"
+  },
+  "formal_job": "exp-1113-121031-998701",
+  "formal_launcher_session": 91314,
+  "formal_observer_enabled": false
+}

@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Accept completed five-teacher PP4 GPU save/resume, finite checkpoint, and full diagnostic parity. |
 | 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
 | 2026-11-13 | Recover actual decode controls, padding RCA, and ordinary native replay frontier. |
 | 2026-11-12 | Recover the live model-reference job and record verified Gym and CUDA environment preparation. |
@@ -1242,3 +1243,324 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - Native MasterConfig/preflight and personal launcher dry-run PASS for200attempt preparation,256fresh trajectories,65536ceiling/max_new_tokens,fullvocabandoriginal65536loss_scale. These are CPU preparation results, not200successfulupdates. Since native controller iterations and scheduler ticks advance on overflow skips, formal acceptance sums optimizer_update_successful and checks native optimizer state independently; after a completed native segment, resume only the measured missing successful-update count while preserving the explicit constant scheduler settings. Do not equate max_num_steps=200 with acceptance.
 - before-steptron-run loaded for formal preparation. Existing inspected lifecycle metadata and failure/replacement paths are unchanged (design.md and263localchecks in earlier report); approved256group batch, stable prompt_idx/sample_id, weight version, timeout/error references and native data-plane checkpoints remain required. No new profiling or recording framework was added. Formal submission still waits for D's actual checkpoint/resume and health acceptance.
 - Existing state/optimizer/finite/delta/parity readers now target exactjob104851 and pp4-2inputs. Run them only against actual existing checkpoints; final native save path must be observed rather than assumed step16. Readers remain auxiliary soft gates on the56GPUjob.
+
+## 2026-11-13 11:02 HKT: recovered diagnostic is running
+
+- Existing job exp-1113-104851-054395 was inspected, not resubmitted. It transitioned from Pending to Starting after queue approval02:57:52Z and is now Running with7active replicas. The7runtime receipts report56H800 on7distinct nodes, Python3.13.14/Torch2.13.0+cu130/CUDA13.0, personal creator i-fengyicheng and current-machine NFS100.96.128.195:/data/ycfeng:/data/ycfeng. Platform NCCL settings remain retained. Evidence: evidence/final-five-teacher-fp16-resume-pp4-2-runtime-status.json. Launcher73501/PID4037301 and watcher66988/PID4045417 remain alive.
+- The native initial phase has reserved all five teacher clusters. Actual updates/checkpoint serialization/resume are still pending; no process-startup result is counted as D acceptance. Read-only collection confirmed7runtime records and the native command, with no train/checkpoint records yet.
+- Formal output root now reuses final-five-teacher-fp16-resume. Each RJob has its own job-named directory, while the native run_on_rjob.py mechanism uses the common parent's initial-megatron-checkpoints cache. This prevents recreating six initial FP16 conversions after the approved cleanup. The200/256/65536recipe and scheduler remain unchanged. Personal --dry-run PASS; no formal job was created. Exact final arguments: evidence/formal-200updates-fp16-pp4-submit-args.json.
+- Native TQPolicy/SingleController success-metric path is present: megatron_policy_worker.py -> tq_policy.py -> single_controller_utils/utils.py -> train/optimizer_update_successful. LMPolicy's different aggregate path is not used by this selected runtime. Formal acceptance will also check native Adam group steps rather than infer updates from scheduler/controller iterations.
+
+## 2026-11-13 11:09 HKT: independent mounted-volume evidence read
+
+- The previously working SSH collector timed out after65s, and a separate read-only `ssh ... id -un` timed out after15s. No evidence result is inferred from those timeouts. Exact-job personal API monitoring still shows Running; all five teacher inference routes now appear in native logs. The training allocation was not stopped or altered.
+- The source-reading gap is addressed by a separate0GPU/4CPU/16GB codesign personal RJob, exp-1113-110906-631985, submitted once from this machine. Launcher40536 remains alive. It uses the same required cloud volume and local NFS parent and only copies current-job small metadata/metrics/sample records into tasktmp/final-five-teacher-fp16-resume-pp4-2-current-inputs. It does not control the56GPUallocation. Script: tasktmp/collect_fp16_pp4_mounted.py; submitter: tasktmp/submit_mounted_evidence_reader.py; request: tasktmp/mounted-evidence-reader-request.json.
+- The reader is a temporary operational substitute for unavailable SSH reads, not a training gate. Its isolated I/O/JSON errors are logged as unverified; native training proceeds. It polls every30s for at most1hour, exits after the business finished marker, and does not copy large checkpoint tensors. Actual reader execution and current business checkpoint/results remain pending.
+
+## 2026-11-13 11:11 HKT: native early checkpoint completes
+
+- Initial native subprocess in104851 completed its real overflow-skipped `step_1` checkpoint and emitted `MOPD_CHECKPOINT_PHASE resume`; no missing-master exception recurred. The206entry metadata contains model/master/moment/scaler records, and controller/data-plane/dataloader/replacement/recovery records are present. Initial native success flag0, loss0.1536673754 and absent gradient norm agree with overflow skip. Resume initialization remains in progress; D is not complete.
+- Mounted reader110906 executes successfully:20smallfiles,32sampleidentities,zero reported collection failures. CPU native-state reader exit0 and initial scorer/vLLM parity analysis exit0/PASS:32samples/4096tokens, MAE0.00138685256≤0.02, all five group means≤0.002116, no mask/version issues. This is scorer/vLLM evidence, not actual training-forward instrumentation.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 3
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原模型与数据身份已核验 |
+| Q | PASS | 用户已确认执行合同 |
+| B | PASS | 原生环境和配置预检通过 |
+| C | PASS | 已记录全词表、梯度与三方参照 |
+| 清理 | PASS | 授权清理及保留清单已验收 |
+| D | TODO | 实际 early save通过；resume与≥5成功更新待验收 |
+| E | TODO | 正式200成功更新尚未提交 |
+| F | TODO | 最终报告和English archive待D/E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 10:49 checkpoint修复验收到11:11 GPU早期保存｜**当前前沿：** D原生resume与训练健康
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 0GPU reader仅补足SSH读取失败，已取得D所需证据 |
+| D2 细节反复重试 | CLEAR | ac26e5a8的native RED/GREEN已获得真实GPU早期保存结果 |
+| D3 支线问题修补 | CLEAR | checkpoint保存和证据读取均直接服务D |
+| D4 可并行任务停滞 | CLEAR | GPU训练、独立读取及CPU状态/parity分析同时推进；E依赖D |
+| D5 超范围镀金 | CLEAR | 未扩展生产接口或config schema |
+| D6 分析空转 | CLEAR | 从排队推进到early save和初始parity实测 |
+| D7 路线违背 | CLEAR | 保留原五教师、全词表和正式200/256/65536合同 |
+
+**文档检查：** S1–S6均未发现明显缺陷；当前GPU结果已追加到preupdate checkpoint报告。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. D：完成同一104851的native resume → ≥5成功更新、五教师覆盖、finite状态、参数变化和post-update parity。
+2. 并行：在训练继续时读取实际checkpoint/state和样本metrics；辅助读取错误不得停止训练。
+3. E：D通过后正式200/256/65536 → 实际success flag和native Adam steps共同验收，并native resume补足缺额。
+4. F：完成最终指标/一致性报告和signed scoped commits → 所有合同项有实际结果，写English summary。
+
+## 4. 最值得关注的 3 点
+
+1. 当前GPU已越过原来的缺陷位置，首次原生保存返回并进入resume。
+2. 初始scorer/vLLM MAE0.001387通过；≥5实际更新和恢复连续性仍待验证。
+3. 正式200成功更新尚未执行，不能以controller iteration或batch skipped metric替代。
+
+## 2026-11-13 11:30 HKT: D completed; formal E is the frontier
+
+- Personal exact-job inspection confirms104851 Succeeded03:22:50Z;all7containers exit0/restart0. Readers110906 and112131 also Succeeded/exit0. Native complete marker and finalstep_16 are retained. Existing launchers/monitor ended after workload success; do not submit them again.
+-16attempts yield11explained native FP16 overflow skips then5successful updates. Successfulloss0.134770–0.233819;preclipgrad1.979079–3.665760;nativeclip1.0. All8nativeAdam records step5;scaler65536/growth0/hysteresis1 ->64/growth5/hysteresis-9;constant scheduler ticks32->512. Firstoverflow hysteresis explains unchangedstep1scale;no counter restart inferred.
+-512unique samples/prompts/all5groups;complete65536tokenparity MAE0.0013328945,p950.006328,p990.012342,max0.168925,maxsampleMAE0.003638. Weightlag0. This is scorer/vLLM;actualtrainingforward not inserted in this diagnostic. Final1591tensorchunks/7,108,614,656elements finite;3196selectedmodelelements changed. Report and exact evidence paths updated;Daccepted.
+-before-steptron-run rechecked against unchanged selected lifecycle code and prior263localchecks:sampleID/prompt locator,run/step/weight version,timeout/error records,replacement/group validity and native data-plane recovery remain active. Formalreader errors are soft gates;no new blanket exception handling or hardgate. Approved256batch,65536ceiling,fullvocab and native scheduler200 remain unchanged. Formalrun pending immediate submission.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原模型与数据身份已核验 |
+| Q | PASS | 用户确认合同 |
+| B | PASS | 原生环境与recipe预检通过 |
+| C | PASS | 全词表loss/gradient与三方参照已记录 |
+| D | PASS |104851原生保存恢复、5成功更新、finite状态和parity通过 |
+| 清理 | PASS | 授权清理与保留清单已验收 |
+| E | TODO | 正式200成功更新待提交 |
+| F | TODO | 最终验收和Englisharchive依赖E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：**11:11早期保存至11:30终态验收｜**当前前沿：** E正式200更新
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 两个reader取得缺失终态/finite证据后结束 |
+| D2 细节反复重试 | CLEAR | 同一GPU回归跑完，无重复提交 |
+| D3 支线问题修补 | CLEAR | 读取和nativecheckpoint均是D验收项 |
+| D4 可并行任务停滞 | CLEAR | 训练、读取及formal预检同时完成 |
+| D5 超范围镀金 | CLEAR | 未增加生产接口或configschema |
+| D6 分析空转 | CLEAR | D由TODO转PASS，E准备提交 |
+| D7 路线违背 | CLEAR | 保留原5教师、全词表及200/256/65536 |
+
+**文档检查：** S5plan顶部仍写GPUresume待验收，已据最新终态更新；S1–S4/S6无明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1.plan/progress/report：以实际终态、完整parity和nativeAdam计数更新D（可直接执行；已完成）。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1.E：提交preparedPP4formal →200实际成功更新；native初期保存恢复；必要时按缺额resume。
+2.并行：formalmetrics/coverage/parity与GPU监控；辅助错误不停止训练。
+3.F：最终checkpoint和trainingforward一致性验收 → scopedcommits、最终报告和Englishsummary。
+
+## 4. 最值得关注的 3 点
+
+1.D真实保存恢复和5成功更新通过；所有replica正常退出。
+2.FP16早期11次overflow由native降scale解释；formal必须计实际成功更新。
+3.正式200/256/65536尚未提交，下一步立即进入E。
+
+## 2026-11-13 11:30 HKT: E submitted once
+
+- Formaljob exp-1113-112953-201895 created11:29:54HKT through current-machine personal PythonRJobBackend.56H800/codesign,7nodes,TP2/PP4/CP1,FP16,FP32gradreduction,original5teachers,full151936vocab,256fresh/65536ceiling. Native two-phase save/resume entrypoint,constant scheduler200,LR1e-6/WD0.01. Output-root reuses initial conversion caches;newjob owns an independent directory. Launcher session92989 stays alive; do not resubmit.
+- D evidence is archived and JSON/diff-whitespace checks pass. Ordinary scopedgitadd failed with existingindex.lock; no lock inspection/removal or history operation performed. Documentation commit is deferred whileE proceeds.
+
+## 2026-11-13 11:48 HKT: Formal workers started; evidence and final checkpoint replay prepared
+
+- E in-progress: existing exp-1113-112953-201895 moved Pending -> Starting at03:44:57Z -> Running by03:46:02Z. Personal exact-job inspection reports7active replicas, creator i-fengyicheng, codesign/non-preemptible, source100.96.128.195:/data/ycfeng:/data/ycfeng. All7 runtime records report8H800 each, Python3.13.14 from /data/ycfeng/envs/nemo-mopd-py313/bin/python, Torch2.13.0+cu130, CUDA13, architecture9.0. PlatformNCCL values are retained. Native initial phase has started; no completed training update is yet observed.
+- Independent0GPU reader exp-1113-113211-147826 remains active (launcher74102). It copies selected small runtime/events/native state and reduces atomically published training dumps in place on the mounted personal cloud volume; it does not duplicate large trajectories locally. Currentreceipt: 8files, 0steps, 0errors. Auxiliary failures mark evidence unverified and cannot stop or block healthy56GPUtraining.
+- The step reducer was checked against all16 archived short-regression dumps; sample counts and exact per-step MAE/p50/p95/p99/max match independent complete evidence within1e-14. Full-run overall quantiles require joint response-token errors; averaging step quantiles is invalid.
+- Prepared finalcheckpoint entrypoint tests/manual/mopd/replay_checkpoint_logprobs.py uses native Policy weights loading, existing non-colocated vLLM and create_weight_synchronizer; it compares fresh generated responses from one selected prompt in each original group after native checkpoint refit. CPU --help/import, Ruff check/format, actual archived prompt/sample selection and2node MasterConfig preparation passed. Evidence: evidence/checkpoint-replay-input-preflight.json. This is CPU preparation only; GPU execution and actual finalcheckpoint remain pending. It measures native scorer/vLLM, not actualtrainingforward.
+- Ran `PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 /data/ycfeng/envs/nemo-mopd-py313/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_fp16_pp4_metrics.py`. Observed0attempts/0successes/0skips before first completed batch. Later acceptance deduplicates successflags by step and latest walltime and cross-checks final nativeAdam steps. Initialsegment's200attempt horizon does not satisfy200successful updates by itself.
+- Preserved existing launchers92989/74102 and monitor34971; no duplicate submission, cleanup or Gitlock changes. Next: native early save/resume and firstbatchmetrics ->200actualupdates, measured-deficitresume if needed ->finalnativecheckpoint/refit and evidence reconciliation.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student、五教师和数据身份已核验 |
+| Q | PASS | 用户确认200成功更新合同和执行授权 |
+| B | PASS | 持久环境、全词表recipe和原生准备已验收 |
+| C | PASS | 全词表loss/gradient与三方参照已记录 |
+| D | PASS | 五教师5成功更新、save/resume、finite状态和parity通过 |
+| 清理 | PASS | 已授权清理完成，不重复清理共享目录 |
+| E | TODO | 正式56H800已Running；200成功更新和最终checkpoint待完成 |
+| F | TODO | 完整报告、signed scopedcommits和Englisharchive待E验收 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 11:30D验收至2026-11-13 11:49 HKT｜**当前前沿：** E正式训练和最终checkpoint验证
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | reader与replay准备对应E必需证据；开始执行后不再扩大工具范围 |
+| D2 细节反复重试 | CLEAR | 保持同一正式RJob及launcher，没有重复提交 |
+| D3 支线问题修补 | CLEAR | runtime、successflags和checkpoint均在E验收路径 |
+| D4 可并行任务停滞 | CLEAR | 正式训练、独立reader、finalcheckpoint准备同时推进 |
+| D5 超范围镀金 | CLEAR | 未扩展生产接口、数据格式或训练范围 |
+| D6 分析空转 | CLEAR | 已实际从Pending进入56H800Running和nativeinitialphase |
+| D7 路线违背 | CLEAR | 原5教师、151936全词表、200成功/256fresh/65536保留 |
+
+**文档检查：** S1–S4/S6未发现明显缺陷；S5早期表仍写E待提交，而最新记录及真实状态已提交并Running，已更新plan与本checkpoint。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan.md顶部和progress当前状态：更新E已Running、原生initialphase开始；200成功更新仍TODO（可直接执行；已完成）。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：保持正式allocation ->原生earlysave/resume、200实际成功更新；以successflag与Adamstate双重计数，必要时native恢复补足。
+2. 并行：每步loss/grad/coverage/parity与56H800监控；reader错误仅标unverified。
+3. E/F：最终nativecheckpoint完整finite/state检查和refit响应一致性 ->完成最终测试报告、scopedcommits与Englishsummary。
+
+## 4. 最值得关注的 3 点
+
+1. 56H800已Running，运行环境和本机source验证通过，不能把startup当作训练完成。
+2. 200attempts和scheduler ticks不是200成功更新；nativeoverflow必须单独计数并补足。
+3. finalcheckpoint GPU replay尚未执行；保留scorer/vLLM与actualtrainingforward的证据边界。
+
+- E runtime supplement: all7exact replicaobjects owned by formalUID report Running/restart0 and identical imageID `hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177`. Selectedstatusobjects archived. Training dataloader capacity is55000slots/256 ->214batches/epoch; native setup clamps max_num_steps to max_num_epochs*len(dataloader). If measured-deficit resume horizon exceeds214, override `grpo.max_num_epochs=null` in that resume segment to preserve the200success contract. This is a routine execution setting; no active recipe edit or job restart is needed.
+
+
+## 2026-11-13 12:10 HKT: Formal first-batch failure, initiating cause recovered
+
+- E FAILED/in-progress repair. Exact formal RJob exp-1113-112953-201895/UID0d70a68d-1ac2-44ef-9cab-f65be352490c finished Failed04:03:58Z. Initial256rollouts completed; no recorded optimizer attempt/success, loss, gradnorm, native earlycheckpoint or resume. Launcher92989 exited1; do not reuse its Running snapshot.
+- Local personal failure collector session91110 completed exit1 because both all-operation audit queries timed out45s. Objects, live/historical Events, incident logs and existingDeepScan reads succeeded; no existingDeepScan. Query failures are not empty observations. Native head exit1/restart0 and job fail-policy stop are later consequences.
+- Locally submitted0GPUcodesign reader exp-1113-120706-340132/launcher52832 read221archivedRayfiles and selected19. Rank3 raylet establishes initiating CPU-memory pressure at12:03:08HKT and kills12workers12:03:38. Nodeused192257081344B >191260262400Bthreshold; total201326592000B. Final186.44/187.50GiB;8student processes18.99–20.74GiB each;objectstore36324B. Owner exitNODE_OUT_OF_MEMORY explains downstreamteacher deaths and shutdownerrors. This does not establish CUDA OOM, kernel OOMKilled, or preemption.
+- Native data path inspected: tq_policy.py::train_microbatches_from_meta -> shard_meta_for_dp -> worker_mixin.py::train_microbatch_presharded/_fetch -> codec.pad_batch -> MegatronPolicyWorker.train_microbatch. DP1/TP2/PP4 fetches the256-row training slice on all8studentranks before backend internalmicrobatches; jaggedteacherpayload is naturallypadded to batchmaximum. No unbounded queue or objectstore allocation is evidenced. The first formalbatch is the already-run red reproduction; reducing256/65536 to minimize it would not verify the formal acceptance. The GPU-dependent original command is the decisive feedback loop; static inspection alone cannot prove a memory fix.
+- Ranked hypotheses before rerun: H1 configured192GB/node is below normal batchpayload+8rank CPUpeak (increasing only node memory should pass this boundary); H2 a leak will keep growing across updates even with a larger request (check successiveupdate health); H3 an independentGPUallocation error may appear after this CPUboundary (requires its own traceback and diagnosis). Native Raymemorymonitor remains enabled; no threshold/killpolicy workaround.
+- H1 test prepared: only memory request192->768GB/node. At256*65536*1536*2bytes, one denselymaterialized FP16hiddenpayload is48GiB/rank;8ranks384GiB before temporary copies/runtime.768GB request provides750GiB total rather than187.5GiB. Original5teachers/full151936/200success/256fresh/65536/FP16/TP2PP4CP1 and native save/resume remain unchanged. Need dryrun then actualrun to accept correction.
+- Evidence: evidence/formal-200updates-fp16-pp4-failure-rca.json; rawcollector andRaylogs remain in tasktmp. No additional cleanup or modelchanges.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A/Q/B/C/D/清理 | PASS | 已有验收记录保持有效 |
+| E | FAILED | 首个正式batch在CPUmemorypressure下失败，修正后重跑待验收 |
+| F | TODO | 依赖200成功更新及最终checkpoint |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次11:49checkpoint至12:12HKT｜**当前前沿：** E首批失败修复及正式重跑
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 一个0GPUreader补齐首个fatal证据即结束 |
+| D2 细节反复重试 | CLEAR | 本次只进行H1已记录的单变量memory修正 |
+| D3 支线问题修补 | CLEAR | CPUmemorypressure直接阻断E |
+| D4 可并行任务停滞 | CLEAR | RCA读取和formal资源预检并行，finalcheckpoint尚不存在 |
+| D5 超范围镀金 | CLEAR | 无生产schema/接口或训练目标扩展 |
+| D6 分析空转 | CLEAR | 已取得原始Raykill记录并实际重新提交 |
+| D7 路线违背 | CLEAR | 原始200成功/256fresh/65536/5teachers/fullvocab保留 |
+
+**文档检查：** S5plan/progress/report原Running快照已过期；本次已改为Failed和修复中。S1–S4/S6无明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan/progress/report：记录实际Failed、0updates、CPUOOMinitiatingevidence和H1资源重跑（可直接执行；已完成）。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：保持修正memory的正式launcher -> 首批nativeupdate/earlysave/resume ->200实际成功更新。
+2. 并行：独立reader取得metrics/coverage/parity；辅助错误不停止训练。
+3. E/F：finalcheckpoint状态/finite/refit与actualforward证据 -> scopedcommits及completionarchive。
+
+## 4. 最值得关注的 3 点
+
+1. 第一正式jobFailed、0成功更新；短诊断PASS不变。
+2. RayCPU内存峰值已确认；768GB配置的实际验收尚待训练。
+3. 新作业exp-1113-121031-998701/launcher91314已提交一次；不要重复提交。
+
+
+## 2026-11-13 12:26 HKT: Resumed E monitoring and PP4 observer regression
+
+- E in-progress: existing memory-corrected formal RJob exp-1113-121031-998701 remains Pending; latest 04:24:36Z snapshot reports queue ranking2 and H800 remaining46 for request56. Launcher91314, independent mounted reader launcher81924 and monitor81236 are alive. Reader receipt has0files/0steps/0errors because the formal allocation has not started. No resubmission or repeat cleanup.
+- Final actual-training-forward observation preparation uncovered a diagnostic-only PP4 rank-selection defect. Original callback required globalrank0, while full logits exist on the last pipeline stage. Changed recording to TP0/CP0 per DP replica and included globalrank. Filenames now include hostname plusPID to avoid identicalPIDs on different nodes appending to one file. Loss, optimizer and native numerical calls are unchanged; the observer is not loaded by the formaljob.
+- Valid CPU RED uses the actual OPD_FULL-enabled callback from HEAD: rank6/TP0/CP0 fails expected1 versus actual0. Valid GREEN after formatting passes5rankcases (rank6,0,7,14,12), plus cross-node equalPID output isolation. Environment is the mounted MegatronactorPython3.13environment through uv run --no-sync, with the existing CUDAcompat library directory. Exact commands/environment and selected results: evidence/pp4-forward-observation-regression.json. Early fixture/environment-error logs are not numerical validation.
+- Pinned Ruff0.9.9 check and format --check PASS for native_forward_worker.py and replay_checkpoint_logprobs.py. Final checkpoint replay and actualtrainingforward GPU validation remain pending; CPU observation correctness does not establish trained-model parity.
+- Next mainline: keep the already-submitted formalallocation -> firstbatch memory/update acceptance and earlynative save/resume ->200actualsuccessfulupdates ->finalnativecheckpoint/refit/actualforward.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | student、五教师和数据身份已有验收 |
+| Q | PASS | 200实际成功更新合同已获确认 |
+| B | PASS | 持久环境与全词表recipe已有验收 |
+| C | PASS | full-loss/gradient参照已有验收 |
+| D | PASS | 五教师native save/resume短诊断通过 |
+| 清理 | PASS | 授权清理完成，保留后续必需资产 |
+| E | TODO | CPU内存修正的正式job排队；200成功更新和最终checkpoint待验收 |
+| F | TODO | 完整报告与archive依赖E；已通过的observer CPU修正可提交 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 12:12checkpoint至2026-11-13 12:26HKT｜**当前前沿：** E既有正式job及finalactualforward准备
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | observer修改解决PP4漏记录，回归通过后停止扩展 |
+| D2 细节反复重试 | CLEAR | 仅一个memory修正job；未重复提交或再跑D |
+| D3 支线问题修补 | CLEAR | observer记录是E actualtrainingforward所需证据 |
+| D4 可并行任务停滞 | CLEAR | GPUjob排队时完成CPU准备；最终权重尚不存在 |
+| D5 超范围镀金 | CLEAR | 未扩展训练目标或生产接口 |
+| D6 分析空转 | CLEAR | 已实际完成rank漏记录RED/GREEN并保持正式allocation |
+| D7 路线违背 | CLEAR | 5教师/151936/256fresh/65536/200success保持 |
+
+**文档检查：** S5：plan顶部和旧E表只描述失败job，最新修正jobPending与observer回归需补记；本次已更新。S1–S4/S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan/progress/report：补记修正job精确身份、Pending与launcher，以及observerCPU证据边界（可直接执行；已完成）。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：保持现有launcher ->实际首batch、nativeearlysave/resume ->200成功flags与Adamstate一致。
+2. 并行：独立reader观察loss/grad/coverage/parity，辅助失败不控制训练。
+3. E/F：最终checkpointfinite/state、nativecheckpoint refit和actualforward ->最终报告和archive。
+
+## 4. 最值得关注的 3 点
+
+1. 768GB修正仍排队；不能把CPU配置检查记为GPU修复PASS。
+2. observerCPU漏记录回归已PASS，最终actualtrainingforwardGPU结果仍待执行。
+3. 已完成的清理和D诊断不重复；保持91314/81924存活。

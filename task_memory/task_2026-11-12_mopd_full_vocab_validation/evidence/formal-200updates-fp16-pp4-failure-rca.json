@@ -1,0 +1,252 @@
+{
+  "job": {
+    "kind": "RJob",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1113-112953-201895",
+      "uid": "0d70a68d-1ac2-44ef-9cab-f65be352490c",
+      "creationTimestamp": "2026-11-13T03:29:54Z",
+      "deletionTimestamp": null,
+      "ownerReferences": null
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-13T04:03:57Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "RJobFailed",
+      "message": "Tasks with failed status: [default]",
+      "taskStatuses": {
+        "default": {
+          "failed": 6,
+          "stopped": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-13T04:03:58Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "queried_head_replica": {
+    "kind": "Replica",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1113-112953-201895-cfcd2084",
+      "uid": "a0fa5636-7b38-4ca0-99dc-a59245192f22",
+      "creationTimestamp": "2026-11-13T03:44:21Z",
+      "deletionTimestamp": null,
+      "ownerReferences": [
+        {
+          "apiVersion": "rjob.brainpp.cn/v1alpha1",
+          "kind": "RJob",
+          "name": "exp-1113-112953-201895",
+          "uid": "0d70a68d-1ac2-44ef-9cab-f65be352490c",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }
+      ]
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {},
+    "stop_spec": {},
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T03:44:54Z"
+        },
+        {
+          "type": "Ready",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T04:03:55Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "False",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T04:03:55Z",
+          "reason": "PodFailed"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-13T03:44:54Z"
+        }
+      ],
+      "hostIP": "10.191.15.8",
+      "podIP": "10.191.15.8",
+      "podIPs": [
+        {
+          "ip": "10.191.15.8"
+        }
+      ],
+      "startTime": "2026-11-13T03:44:54Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "terminated": {
+              "exitCode": 1,
+              "reason": "Error",
+              "message": "user command: exit status 1",
+              "startedAt": "2026-11-13T03:45:49Z",
+              "finishedAt": "2026-11-13T04:03:55Z",
+              "containerID": "containerd://2c908387af76d171968b5758ac2ea4d64824752ebf87a539852a78ee4b5117f9"
+            }
+          },
+          "lastState": {},
+          "ready": false,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://2c908387af76d171968b5758ac2ea4d64824752ebf87a539852a78ee4b5117f9",
+          "started": false
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Failed",
+      "nodeName": "gpu-h800-0535.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-13T04:03:56Z"
+    }
+  },
+  "incident_rank": 3,
+  "incident_ip": "10.191.3.43",
+  "ray_log_source": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-failure-ray-inputs/ray/rank-3/raylet.out",
+  "ray_log_excerpt": [
+    "[2026-11-13 12:03:38,580 I 839 839] (raylet) node_manager.cc:3211: Killing 12 worker(s), kill details: Memory on the node (IP: 10.191.3.43, ID: 704847b5c1e8d68868f522142ed9ad479dfc40b8f5ccdbdde66990b8) was 186.44GB / 187.50GB (0.994335)",
+    "OOM kill reason: Memory usage 192257081344B exceeded threshold of 191260262400B (95.0% of 201326592000B total)",
+    "Object store memory usage: [- objects spillable: 0",
+    "- bytes spillable: 0",
+    "- objects unsealed: 0",
+    "- bytes unsealed: 0",
+    "- objects in use: 2",
+    "- bytes in use: 36324",
+    "- objects evictable: 0",
+    "- bytes evictable: 0",
+    "",
+    "- objects created by worker: 0",
+    "- bytes created by worker: 0",
+    "- objects restored: 0",
+    "- bytes restored: 0",
+    "- objects received: 2",
+    "- bytes received: 36324",
+    "- objects errored: 0",
+    "- bytes errored: 0",
+    "",
+    "Eviction Stats:",
+    "(global lru) capacity: 60230042419",
+    "(global lru) used: 0%",
+    "(global lru) num objects: 0",
+    "(global lru) num evictions: 0",
+    "(global lru) bytes evicted: 0]",
+    "Ray killed 12 worker(s) based on the killing policy",
+    "Considered workers: [",
+    "Selected to kill: (Worker with no lease granted: pid=1041, actual memory used=0.08GB, worker ID=2b0a9ffed9ebc48035bec8a947319d29823fd79352939d1699899688)",
+    "Selected to kill: (Worker with no lease granted: pid=1159, actual memory used=0.08GB, worker ID=8c0a146b760ea889981ed40568572bfe09807209363da51d4b5ec233)",
+    "Selected to kill: (Worker with no lease granted: pid=1158, actual memory used=0.08GB, worker ID=908ac6390388086ad8290ba971baaf90de997b35e77092abf7874388)",
+    "Selected to kill: (Worker with no lease granted: pid=1157, actual memory used=0.08GB, worker ID=29735264121cab0654af3f103ab7cea0352586dc5fd3d2c70549f559)",
+    "Selected to kill: (Worker with no lease granted: pid=1166, actual memory used=0.08GB, worker ID=d15ac2e0cdbad9ca38011bbb9e8bd04e02de01b271c079f78f6d85a8)",
+    "Selected to kill: (Worker with no lease granted: pid=1042, actual memory used=0.08GB, worker ID=853982cb5482c342f6ef01d7078732b91ca992ef102d3af4f63ba9d9)",
+    "Selected to kill: (Worker with no lease granted: pid=1160, actual memory used=0.08GB, worker ID=f87b554d251bee8ab2553d18a0b74922f7344ab9feadbe942217f09e)",
+    "Selected to kill: (Worker with no lease granted: pid=1164, actual memory used=0.08GB, worker ID=e594f49567409abf80a70ca24b4917a96537fc7ed59e34b9b858fb1c)",
+    "Selected to kill: (Actor(b9c8c1849e57c182eabd84ea02000000): job ID=02000000, lease ID=74000000d3f1ab9f865e1c7cd2da95d466f7a5cec850822a450f2d005d6da23e, task name=IsolatedWorkerInitializer.__init__, required resources={}, pid=4452, actual memory used=1.11GB, worker ID=4c25dcf872a7f3097f88175ec621cf2b64d17733b2a2c99460919a41)",
+    "Selected to kill: (Actor(f4a7df281f0662265105d5b102000000): job ID=02000000, lease ID=3800000099dfa40f63ed8649402973e7cbaea42b02cd420aaca22ffec15a11d1, task name=TransferQueueStorageUnit#9:SimpleStorageUnit.__init__, required resources={CPU: 1}, pid=1168, actual memory used=0.88GB, worker ID=1b1d3c442915aadf93f2a7bff49d36f748f5f5f0dc9114d420eb9616)",
+    "Selected to kill: (Actor(c973dbbc3f9fd290d6a6f0f502000000): job ID=02000000, lease ID=310000007f031ac6017d949d27b2f0ad7ef35dc70e8e47f4cc4b2ed7eb7d76aa, task name=TransferQueueStorageUnit#2:SimpleStorageUnit.__init__, required resources={CPU: 1}, pid=1169, actual memory used=0.91GB, worker ID=33da84b59cafb0d210c7d281e1ca4abb9b17ab9509db08ea99a73669)",
+    "Selected to kill: (Actor(a71c244b025822963d937a5602000000): job ID=02000000, lease ID=2900000061e3cb24da40997878f7540255b74518dd60e02c3666b2ad8fca39d1, task name=lm_policy-0-5:MegatronPolicyWorker.__init__, required resources={CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_5_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_5_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_5_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001}, pid=1829, actual memory used=20.49GB, worker ID=7b9f5c519fd20a3026533a7786cabc93feb287b16b176f9f0abfef16)",
+    "(Actor(f67fbb70744f6ca017a91f9202000000): job ID=02000000, lease ID=21000000e3d3dee66c8ef2c9e8fa9d7f89b7d86b0fdf1df13d9f1a1269086fbd, task name=lm_policy-0-1:MegatronPolicyWorker.__init__, required resources={CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, bundle_group_1_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_1_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_1_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1815, actual memory used=19.82GB, worker ID=4baf903cb488aa41e2e85be7d851db7236228c62665a5673109eb14a)",
+    "(Actor(c5986275137cc24af196b19b02000000): job ID=02000000, lease ID=2b000000cfc1a383ee302d6b7383f5df0062cbb40f57e0209a866e4d8e0923fc, task name=lm_policy-0-6:MegatronPolicyWorker.__init__, required resources={CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_6_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_6_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_6_04a9a25d9e994b78c41682ab7a2602000000: 0.001}, pid=1830, actual memory used=20.74GB, worker ID=0397ea995e1e856877b81905ab85a09936022f6fa1c93764db58c852)",
+    "(Actor(68b3edf1e399866ca820f2d002000000): job ID=02000000, lease ID=2d000000bc0b5f7f07f98ed41b79b2c1a747dfa0ca5db5ebe56fb21154524a56, task name=lm_policy-0-7:MegatronPolicyWorker.__init__, required resources={CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, bundle_group_7_04a9a25d9e994b78c41682ab7a2602000000: 0.001, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, CPU_group_7_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_7_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1831, actual memory used=20.72GB, worker ID=fc9af8ad791f91c0157aa99ff3316df39dceb0d9460ebb83f64d253e)",
+    "(Actor(2a8efe422f2a6f4d6d325bfd02000000): job ID=02000000, lease ID=2300000074608bc21f773396e6bc1e04c780202c617930c92f1b6922add5f629, task name=lm_policy-0-2:MegatronPolicyWorker.__init__, required resources={CPU_group_2_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_2_04a9a25d9e994b78c41682ab7a2602000000: 0.001, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_2_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1816, actual memory used=20.10GB, worker ID=9f4b30899eda605c390e5a3a965f5b24754d38eee8d734759c419800)",
+    "(Actor(a84ea17ad544b9ed9617528202000000): job ID=02000000, lease ID=270000004043edcdc4305a3f3ff5334ad55d5dc348caa8b80bfcdc2971c94d36, task name=lm_policy-0-4:MegatronPolicyWorker.__init__, required resources={bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_4_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_4_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_4_04a9a25d9e994b78c41682ab7a2602000000: 1, CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1822, actual memory used=20.29GB, worker ID=933ea6c780c1738e851fd206272a264c635262deede9859add3d951a)",
+    "(Actor(35fd0f7cdc45b79ee15f9a1d02000000): job ID=02000000, lease ID=1f000000f9ea3dc8ce4e348b5a96586fd1027f0705fed10900841c6cac9dcff4, task name=lm_policy-0-0:MegatronPolicyWorker.__init__, required resources={GPU_group_0_04a9a25d9e994b78c41682ab7a2602000000: 1, CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_0_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_0_04a9a25d9e994b78c41682ab7a2602000000: 0.001, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1814, actual memory used=18.99GB, worker ID=abb2107f94b3fb57baece1395d0d11126a6b4310b836240dddba5f27)",
+    "(Actor(cd405b21fbbfcc399d23489c02000000): job ID=02000000, lease ID=25000000b8955cfd86fe0b2ef48e8d1edb1385c919f8dbc70f51cb22674aa25b, task name=lm_policy-0-3:MegatronPolicyWorker.__init__, required resources={bundle_group_3_04a9a25d9e994b78c41682ab7a2602000000: 0.001, CPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, GPU_group_3_04a9a25d9e994b78c41682ab7a2602000000: 1, bundle_group_04a9a25d9e994b78c41682ab7a2602000000: 0.001, GPU_group_04a9a25d9e994b78c41682ab7a2602000000: 1, CPU_group_3_04a9a25d9e994b78c41682ab7a2602000000: 1}, pid=1821, actual memory used=20.32GB, worker ID=e1e8942ddad3c3a8098803477331030c5bce43feafb54956fb22b5ab)",
+    "]",
+    "Total non-selected idle workers: 2",
+    "Total non-selected idle workers USS bytes: 0.14GB",
+    "To see more information about memory usage on this node, use `ray logs raylet.out -ip 10.191.3.43`",
+    "Top 10 memory users: PID\tMEM(GB)\tCOMMAND",
+    "1830\t20.74\t",
+    "1831\t20.72\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1829\t20.49\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1821\t20.32\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1822\t20.29\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1816\t20.10\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1815\t19.82\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "1814\t18.99\tray::MegatronPolicyWorker.train_microbatch_presharded",
+    "4452\t1.11\tray::IsolatedWorkerInitializer",
+    "1169\t0.91\tray::SimpleStorageUnit"
+  ],
+  "native_attempts_observed": 0,
+  "native_successes_observed": 0,
+  "rollouts_completed": 256,
+  "query_coverage": {
+    "python": "3.10.6 (main, Nov 14 2022, 16:10:14) [GCC 11.3.0]",
+    "brainpp": "2.8.6",
+    "namespace": "shai-core",
+    "cluster_entry": "https://platform.shaipower.com",
+    "creator": "i-fengyicheng",
+    "log_window": {
+      "start": "2026-11-13T04:01:30+00:00",
+      "end": "2026-11-13T04:05:30+00:00"
+    },
+    "log_limit": 3000,
+    "sources": [
+      {
+        "query": "rjob-historical-events",
+        "ok": true
+      },
+      {
+        "query": "replica-historical-events",
+        "ok": true
+      },
+      {
+        "query": "rjob-live-events",
+        "ok": true
+      },
+      {
+        "query": "replica-live-events",
+        "ok": true
+      },
+      {
+        "query": "incident-logs",
+        "ok": true
+      },
+      {
+        "query": "rjob-audit",
+        "ok": false
+      },
+      {
+        "query": "replica-audit",
+        "ok": false
+      },
+      {
+        "query": "existing-deepscan",
+        "ok": true
+      }
+    ],
+    "limitations": [
+      "Empty or failed queries do not establish absence of an incident.",
+      "A full log-limit response may be truncated; narrow the time window.",
+      "DeepScan findings are returned text, not original Kubernetes Event objects.",
+      "RJob finishTime is not an audited stop-request timestamp.",
+      "Stopped phase alone does not identify the actor or the initiating cause.",
+      "All-operation audit rows may lack changed fields or an initiating reason.",
+      "A controller update after SIGTERM is not an initiating stop request.",
+      "Audit data is arbitrary; inspect workload-specific secrets before archiving."
+    ]
+  },
+  "cause": "Ray CPU-memory monitor killed workers during first train_microbatch_presharded; not a CUDA OOM verdict."
+}
