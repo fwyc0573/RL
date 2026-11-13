@@ -2920,3 +2920,71 @@ At20:27:14Z,the exact personal API verifies the existing exp-1114-035754-642199 
 Step19 succeeds at20:29:59Z:success1/skipped0,loss0.19377940893173218,pre-clippinggrad1.1761640310287476,scale1,LR1e−6,256samples/2,237,967response tokens. Formaltotal2/200;currentsegment2attempts/2successes/0skips. Freshbatchweightversion18 confirms sampled scorer/vLLM parity afterstep18update/refit:MAE0.0013295876747451956,p990.0099334716796875,max0.29484084248542786,allfinite,issues0;fivegroupsstem50/logic61/if48/code45/math52. Exactsmallmetrics/sample summaries are retained in evidence/formal-native-resume-3-step19-{metrics,parity}-20261114.json. Finalactualtrainingforward and200-updateacceptance remainpending.
 
 Pinnedruff0.9.9 at the previously recordedcachepath successfully checksgrpo.py/test_grpo.py. Initial formatcheck requests only thetestfile;scopedformat applied,thenbothcheckandformatcheckPASS. No behavior changed after15regression/12realdistributionGREEN,so unrelated suites are not repeated. gitdiffwhitespacePASS. Training/readerlaunchers remainalive andnoextraweightswerewritten. Next: nativeboundary/latest-onlyinventory andcontinuedformalupdates.
+
+
+### 2026-11-14 — Third formal success, retained-checkpoint constraint and prepared120-H800 continuation (E)
+
+At this resumed-session inspection (2026-11-13T20:46:25.640858+00:00), the exact personal API reports exp-1114-035754-642199 Running/seven replicas/restart0/current-machine NFS source100.96.128.195:/data/ycfeng:/data/ycfeng. Existing launcher,0GPU mounted reader, platform monitor and continuation wait processes are alive. No new training job has been submitted. Continuation waits on this exact job/UID, then checks native publication/state and the real scheduler restore before submission. The reader/monitor waiters derive the next exact job name from the launcher log; do not launch duplicates.
+
+Formal successes now3/200:step20 has success1/skipped0,loss0.18652436137199402,pre-clippinggradnorm1.1433717012405396,scale1,LR1e−6,256validsamples and2,190,389response tokens. Freshbatchweightversion19 coversstem47/logic63/code44/math51/if51. Sampled scorer/vLLMMAE0.0013174562888005074,p990.010034031867980964,max0.3331570625305176,signedmean−4.813743656178109e−6;allfinite;mask/versionissues0. Finalactualtrainingforward and200-success acceptance remainpending. Exactstep20metrics/parity are retained under evidence/.
+
+Next approved resource shape is15×8H800=120GPU,student8/generation96/teachers10/spare6,TP2/PP4/CP1,eightTQstorageunits,controllerhorizon217,save_period10,keep_top_k0/ft_keep_latest_k1,checkpoint_must_save_byNone. It reuses the same checkpoint directory and native small state. NativeCPUconfig/schedulerpreflight,personal dry-run and41file/sixmodel cheap identity checkPASS; no repeatedfullHFscan,newcheckpoint,weightcopyorHFexport. Preparationreceipt/args/resolvedconfig are retained under evidence/. Generation accounts for474.10/571.23seconds atstep19 and541.64/640.98seconds atstep20; actual speedup from96generationGPUs isUNVERIFIED until the next segment runs. Input preparation completes before GPUsubmission.
+
+One read-only inventory invocation accidentally selected the historical fixed-step10 script and asserted because step10 has already been removed. This is an auxiliaryinspectionfailure,notatrainingfailure; the error is retained in the tooltrace and noGPUjob wascontrolled. Reuse the already preparedstep17inventory/current publication. Latest-only means only the newest complete native recovery checkpoint; oldcheckpoints must be deleted after nativepublication, and finalparity must use native load plus in-memoryrefit. PhysicalOSSquota reclamation remainsUNVERIFIED.
+
+Commands:personal_env_20261113.sh → timeout55s Python3.10.6 inspect_formal_native_resume_3_20261114.py; existingactorPython3.13.14 read_formal_native_resume_3_metrics_20261114.py; localPython3JSONsample/receipt inspection. Exactsuccessflags,notcontrollerstep,determine completion. Next:currentsegmentpublication/retention → actual120GPUresume andlengthsummaryfix → continued200successes → finalnativecheckpointthree-waycomparison.
+
+Current-task namespace inventory at2026-11-13T20:46:26.010328+00:00:onlystep17,31files/8positive tensor shards/24,884,408,379bytes. Historicalstep10 isabsent. Existingfixedstep17inventory exits0;latest-onlystructurePASS. statvfs reports8399279947776freebytes for the sharedmountedfilesystem; this doesnotprovepersonalOSSquota orphysicaltrashreclamation. Selectedsmallreceipt:evidence/formal-native-resume-3-retention-current-20261114.json. No tensorpayload/newcheckpoint/HFexport wascopied.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师及源任务已核实。 |
+| Q | PASS | 200 次实际成功更新的验收已授权。 |
+| B | PASS | 完整输入准备证据有效，接续廉价身份检查通过。 |
+| C | PASS | 全词表 loss/gradient 参考及指标入口已验证。 |
+| D | PASS | 五次诊断成功更新及 native save/resume 已验证。 |
+| E | TODO | 正式 3/200；当前 56 H800 正常运行，120 H800 接续已准备。 |
+| F | TODO | 最终三方 parity 与 English archive 依赖最终 checkpoint。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次首个成功更新及统计修复 checkpoint 至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用已有状态、样本及 native loader；没有扩展测试体系。 |
+| D2 细节反复重试 | CLEAR | 当前段三次成功；旧库存脚本误用后复用已有当前脚本通过。 |
+| D3 支线问题修补 | CLEAR | 统计修复和 latest-only 核查均属于明确要求。 |
+| D4 可并行任务停滞 | CLEAR | 健康训练、只读观察及下一段 CPU 准备同时推进；最终比较依赖最终权重。 |
+| D5 超范围镀金 | CLEAR | 增加 generation 容量针对实测主耗时，未改模型、数据或训练验收。 |
+| D6 分析空转 | CLEAR | 新增 step20 成功及 parity 实测；准备接续减少重复人工重提。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表、256/65536/200 实际成功及 latest-only 保持。 |
+
+**文档检查：** S5：plan.md 曾保留 2/200 且未记录已准备的 120 H800 接续，与真实 step20 和后台等待进程矛盾；其余 S1–S4/S6 未发现明显缺陷。
+**归因：** 无执行偏离；S5 是状态滞后。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在状态记录缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md 当前状态与 progress/report：同步 3/200、step20 parity、当前唯一 step17 及接续准备；已完成。（可直接执行）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：当前 native publication 与旧 checkpoint 删除 → 完成标志：publication、原生状态和唯一最新完整 checkpoint 一致。
+2. E：120 H800 实际启动与 native 恢复 → 完成标志：personal creator、当前本机 source、15 replicas、H800、恢复后成功更新、统计修复和实测耗时。
+3. E→F：补足 200 实际成功并复用最终 native 三方比较 → 完成标志：200 success、MAE≤0.02、有限最终参数、终态与报告；不写额外权重。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功仅 3/200；准备文件和 Running 状态不能替代完整训练验收。
+2. 当前只保留 step17，下一 publication 后必须及时删除旧 checkpoint；共享 statvfs 不能证明个人 OSS quota 回收。
+3. 120 H800 接续尚未提交；最终 actual-training parity 和扩容收益仍待实测。

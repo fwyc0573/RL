@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "prepared_files_checked": 41,
+  "model_count": 6,
+  "native_latest_step": 17,
+  "native_checkpoint": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17",
+  "native_tensor_shards": 8,
+  "latest_only": true,
+  "tensor_payloads_read": 0
+}

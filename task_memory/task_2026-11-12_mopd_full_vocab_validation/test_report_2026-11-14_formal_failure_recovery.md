@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Record three formal successes and prepare latest-only120-H800 native continuation. |
 | 2026-11-14 | Verify native step18 success and pooled rollout-statistic RED/GREEN on real sample lengths. |
 | 2026-11-14 | Record native scheduler RED/GREEN, failure RCA and latest-only retention. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
@@ -10,7 +11,7 @@
 
 # Formal MOPD failure recovery
 
-Current status: corrected resume has **2/200 successful formal optimizer updates** atsteps18–19; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
+Current status: corrected resume has **3/200 successful formal optimizer updates** at steps18–20; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
 
 Expected: the original student/five teachers, full151936vocabulary,256fresh trajectories/update,65536ceiling,200successfuloptimizerupdates, native save/resume and final response-logprob MAE≤0.02nats/token.
 
@@ -307,3 +308,12 @@ At2026-11-13T20:29:59Z (November14,2026,04:29:59HKT), step19 reports success1/sk
 The second batch uses weightversion18,after step18's successful update/refit. All256samples coverstem50/logic61/if48/code45/math52. Exactsame-token scorer/vLLM comparison:MAE0.0013295876747451956,signedmean−3.4402633044347716e−6,p500.00042831897735595703,p950.005485057830810547,p990.0099334716796875,max0.29484084248542786;allfinite;mask/versionissues0. Verdict:PASS sampled means after formalupdate/refit;longerstability,finalactualtrainingforward and200-successacceptance remainUNVERIFIED.
 
 Commands:existing read_formal_native_resume_3_metrics_20261114.py under UV/no-sync actorenvironment;the existing independent mountedreader summarized the native published step19samples,with receiptfiles10/steps2/failures0. BothbusinessJSONs are retained as evidence/formal-native-resume-3-step19-{metrics,parity}-20261114.json. Ruff0.9.9checkandformatPASS for grpo.py/test_grpo.py after formattingonlythemodifiedtestfile;gitdiffwhitespacePASS. Thepinnedtoolpath is/data/ycfeng/tmp/uv-cache/archive-v0/4Z7oFB0RosbDJ1nO/bin/ruff, invokedthroughuv run --no-sync. No checkpoint orweightcopy was created.
+
+
+## Third formal successful update and next-segment preparation
+
+Step20 succeeds atscale1/success1/skipped0:loss0.18652436137199402,pre-clippinggradnorm1.1433717012405396,LR1e−6,256validsamples/2,190,389response tokens. Formaltotal3/200. All256sampledcomparisons useweightversion19 and coverfivegroups(stem47/logic63/code44/math51/if51). Scorer/vLLMMAE0.0013174562888005074,signedmean−4.813743656178109e−6,p990.010034031867980964,max0.3331570625305176;allfinite,mask/versionissues0. PASS sampledmean afterthe secondformalrefit;finalactualtrainingforward and200updates remainINCOMPLETE.
+
+The next segment is prepared for120H800,student8/generation96/teachers10/spare6,TP2/PP4/CP1,eightTQunits,256/65536/full151936,controllerhorizon217,save_period10,keep_top_k0/ft_keep_latest_k1,samecheckpointdirectory,checkpoint_must_save_byNone. Nativeconfig/schedulerCPUpreflight,personalbackenddry-run and41file/sixmodel cheapidentity checkPASS. No repeatedfullHFscan,no newcheckpoint/weightcopy/HFexport. Actualthroughput andGPUresume areUNVERIFIED. Atstep19/20 exposedgeneration takes474.10/541.64seconds versus571.23/640.98total; addedgenerationcapacity addresses the observed dominant stage. Runtime remainsH800codesign/personalauth/currentlocalNFS.
+
+Inspectioncommands andversions are unchanged and recorded inprogress.md. Artifacts:formal-native-resume-3-step20-{metrics,parity}-20261114.json andformal-native-resume-4-{capacity-preparation,cheap-inputs,generation96-submit-args,generation96-resolved-config}-20261114.json under evidence/. The initially selected historicalstep10inventoryassertion is an auxiliaryinspectionfailure;healthytraining continues. Exactnextjobname andnativepublication remainpending; do not infer successfulsubmission from prepared files or waiterprocesses.

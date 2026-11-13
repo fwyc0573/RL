@@ -1,0 +1,23 @@
+{
+  "observed_at": "2026-11-13T20:35:01.823515+00:00",
+  "returned_nodes": 123,
+  "total_nodes": 123,
+  "usable_gpu_counts": {
+    "0": 103,
+    "3": 1,
+    "4": 5,
+    "5": 1,
+    "6": 1,
+    "8": 12
+  },
+  "scope": "Node resource projection; not a FIFO queue admission gate",
+  "next_request": {
+    "nodes": 15,
+    "gpus": 120,
+    "student": 8,
+    "generation": 96,
+    "teachers": 10,
+    "spare": 6
+  },
+  "submission_prerequisite": "The current writer must finish and publish its latest checkpoint, then CPU native-state/scheduler/readiness checks must pass. No GPU request is submitted by this preparation."
+}
