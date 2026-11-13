@@ -1,0 +1,134 @@
+{
+  "queried_at": "2026-11-13T20:03:59.603676+00:00",
+  "job": "exp-1114-035754-642199",
+  "replicas": [
+    {
+      "replica": "exp-1114-035754-642199-1679091c",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:58:57 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-e4da3b7f",
+      "returned_messages": 50,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:58:56 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-cfcd2084",
+      "returned_messages": 160,
+      "selected_messages": [
+        "\u001b[36m(MegatronPolicyWorker pid=2047, ip=10.191.9.34)\u001b[0m [GPU_DIAG] [MegatronPolicyWorker] [init_start] host=gpu-h800-0223.host.platform.shaipower.com rank=5 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=472MB free=81087MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [none detected]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2047, ip=10.191.9.34)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [MegatronPolicyWorker] [init_start] host=gpu-h800-0223.host.platform.shaipower.com rank=5 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=472MB free=81087MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [none detected]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(VllmAsyncGenerationWorker pid=1875, ip=10.191.8.55)\u001b[0m [GPU_DIAG] [VllmGenerationWorker] [after_engine_create] host=gpu-h800-0173.host.platform.shaipower.com rank=8 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=unset uuid=GPU-f99f859c-3ad0-1339-ac2a-43bd6f803fbc | NVML: total=81559MB used=71432MB free=10127MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=4593: 70954.0 MB]\u001b[32m [repeated 15x across cluster]\u001b[0m",
+        "\u001b[36m(VllmAsyncGenerationWorker pid=1875, ip=10.191.8.55)\u001b[0m [GPU_DIAG] [VllmGenerationWorker] [load_model_complete] host=gpu-h800-0173.host.platform.shaipower.com rank=8 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=unset uuid=GPU-f99f859c-3ad0-1339-ac2a-43bd6f803fbc | NVML: total=81559MB used=71432MB free=10127MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=4593: 70954.0 MB]\u001b[32m [repeated 15x across cluster]\u001b[0m",
+        "\u001b[36m(VllmAsyncGenerationWorker pid=1875, ip=10.191.8.55)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [VllmGenerationWorker] [after_engine_create] host=gpu-h800-0173.host.platform.shaipower.com rank=8 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=unset uuid=GPU-f99f859c-3ad0-1339-ac2a-43bd6f803fbc | NVML: total=81559MB used=71432MB free=10127MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=4593: 70954.0 MB]\u001b[32m [repeated 15x across cluster]\u001b[0m",
+        "\u001b[36m(VllmAsyncGenerationWorker pid=1875, ip=10.191.8.55)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [VllmGenerationWorker] [load_model_complete] host=gpu-h800-0173.host.platform.shaipower.com rank=8 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=unset uuid=GPU-f99f859c-3ad0-1339-ac2a-43bd6f803fbc | NVML: total=81559MB used=71432MB free=10127MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=4593: 70954.0 MB]\u001b[32m [repeated 15x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m [GPU_DIAG] [MegatronPolicyWorker] [after_nccl_init] host=gpu-h800-0223.host.platform.shaipower.com rank=0 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=1000MB free=80559MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=2042 (self): 522.0 MB]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student. Skipping import.\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m [GPU_DIAG] [MegatronPolicyWorker] [after_hf_import] host=gpu-h800-0223.host.platform.shaipower.com rank=0 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=1000MB free=80559MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=2042 (self): 522.0 MB]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [MegatronPolicyWorker] [after_nccl_init] host=gpu-h800-0223.host.platform.shaipower.com rank=0 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=1000MB free=80559MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=2042 (self): 522.0 MB]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [MegatronPolicyWorker] [after_hf_import] host=gpu-h800-0223.host.platform.shaipower.com rank=0 logical_dev=0 physical_dev=0 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-92024144-abc1-40a7-ee57-732bc3e23c9c | NVML: total=81559MB used=1000MB free=80559MB | PyTorch: allocated=0.0MB reserved=0.0MB | GPU procs: [PID=2042 (self): 522.0 MB]\u001b[32m [repeated 7x across cluster]\u001b[0m",
+        "\u001b[36m(MegatronPolicyWorker pid=2043, ip=10.191.9.34)\u001b[0m INFO:nemo_rl.utils.nvml:nvml.py:219: [GPU_DIAG] [MegatronPolicyWorker] [init_complete] host=gpu-h800-0223.host.platform.shaipower.com rank=1 logical_dev=1 physical_dev=1 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-df79b872-0c6e-13fa-b233-470af91b0161 | NVML: total=81559MB used=11064MB free=70496MB | PyTorch: allocated=4819.6MB reserved=8786.0MB | GPU procs: [PID=2043 (self): 10056.0 MB; PID=2883: 524.0 MB]",
+        "\u001b[36m(MegatronPolicyWorker pid=2043, ip=10.191.9.34)\u001b[0m [GPU_DIAG] [MegatronPolicyWorker] [init_complete] host=gpu-h800-0223.host.platform.shaipower.com rank=1 logical_dev=1 physical_dev=1 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 uuid=GPU-df79b872-0c6e-13fa-b233-470af91b0161 | NVML: total=81559MB used=11064MB free=70496MB | PyTorch: allocated=4819.6MB reserved=8786.0MB | GPU procs: [PID=2043 (self): 10056.0 MB; PID=2883: 524.0 MB]"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-a87ff679",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:59:03 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-c81e728d",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:58:58 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-eccbc87e",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:58:54 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-035754-642199-c4ca4238",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 03:59:05 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    }
+  ]
+}

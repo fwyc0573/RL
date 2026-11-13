@@ -1,0 +1,161 @@
+{
+  "queried_at": "2026-11-13T20:05:14.435259+00:00",
+  "job": "exp-1114-035754-642199",
+  "returned_rows": 797,
+  "selected_rows": [
+    {
+      "timestamp": "1794599985762463000",
+      "line": "[2026-11-14T03:59:45+08:00] exp-1114-035754-642199-cfcd2084 >> Overrides: ['cluster.num_nodes=7', 'cluster.gpus_per_node=8', 'logger.log_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/checkpoints', '+env.nemo_gym.skip_venv_if_present=true', 'checkpointing.keep_top_k=0', 'checkpointing.checkpoint_must_save_by=00:01:15:00', 'grpo.max_num_epochs=null', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints', 'checkpointing.ft_keep_latest_k=1', 'policy.generation.colocated.resources.num_nodes=4', 'data_plane.simple.num_storage_units=8', 'grpo.max_num_steps=217', 'checkpointing.save_period=217']",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "Overrides: ['cluster.num_nodes=7', 'cluster.gpus_per_node=8', 'logger.log_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/checkpoints', '+env.nemo_gym.skip_venv_if_present=true', 'checkpointing.keep_top_k=0', 'checkpointing.checkpoint_must_save_by=00:01:15:00', 'grpo.max_num_epochs=null', 'checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints', 'checkpointing.ft_keep_latest_k=1', 'policy.generation.colocated.resources.num_nodes=4', 'data_plane.simple.num_storage_units=8', 'grpo.max_num_steps=217', 'checkpointing.save_period=217']"
+    },
+    {
+      "timestamp": "1794599985799153000",
+      "line": "[2026-11-14T03:59:45+08:00] exp-1114-035754-642199-cfcd2084 >> \ud83d\udcca Using log directory: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\ud83d\udcca Using log directory: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001"
+    },
+    {
+      "timestamp": "1794599985799186000",
+      "line": "[2026-11-14T03:59:45+08:00] exp-1114-035754-642199-cfcd2084 >> \ud83d\udcca Using checkpoint directory: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\ud83d\udcca Using checkpoint directory: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints"
+    },
+    {
+      "timestamp": "1794599991638787000",
+      "line": "[2026-11-14T03:59:51+08:00] exp-1114-035754-642199-cfcd2084 >> \ud83d\udce6 Restoring dataloader state from checkpoint: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\ud83d\udce6 Restoring dataloader state from checkpoint: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17"
+    },
+    {
+      "timestamp": "1794600155318922000",
+      "line": "[2026-11-14T04:02:35+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2046, ip=10.191.9.34)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2046, ip=10.191.9.34)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints"
+    },
+    {
+      "timestamp": "1794600155421472000",
+      "line": "[2026-11-14T04:02:35+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2044, ip=10.191.9.34)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student. Skipping import.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2044, ip=10.191.9.34)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student. Skipping import."
+    },
+    {
+      "timestamp": "1794600160358007000",
+      "line": "[2026-11-14T04:02:40+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints\u001b[32m [repeated 7x across cluster]\u001b[0m",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints\u001b[32m [repeated 7x across cluster]\u001b[0m"
+    },
+    {
+      "timestamp": "1794600161079765000",
+      "line": "[2026-11-14T04:02:41+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student. Skipping import.\u001b[32m [repeated 7x across cluster]\u001b[0m",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student. Skipping import.\u001b[32m [repeated 7x across cluster]\u001b[0m"
+    },
+    {
+      "timestamp": "1794600169486278000",
+      "line": "[2026-11-14T04:02:49+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights/iter_0000000.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights/iter_0000000."
+    },
+    {
+      "timestamp": "1794600169699779000",
+      "line": "[2026-11-14T04:02:49+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights/iter_0000000.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights/iter_0000000."
+    },
+    {
+      "timestamp": "1794600169699916000",
+      "line": "[2026-11-14T04:02:49+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  loading distributed checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights at iteration 0",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m  loading distributed checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights at iteration 0"
+    },
+    {
+      "timestamp": "1794600176876854000",
+      "line": "[2026-11-14T04:02:56+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m   successfully loaded checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights [ t 0/2, p 0/4 ] at iteration 0",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=2042, ip=10.191.9.34)\u001b[0m   successfully loaded checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/policy/weights [ t 0/2, p 0/4 ] at iteration 0"
+    },
+    {
+      "timestamp": "1794600178008362000",
+      "line": "[2026-11-14T04:02:58+08:00] exp-1114-035754-642199-cfcd2084 >> \ud83d\udce6 Restoring native TQ checkpoint: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/data_plane",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\ud83d\udce6 Restoring native TQ checkpoint: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_17/data_plane"
+    },
+    {
+      "timestamp": "1794600178044583000",
+      "line": "[2026-11-14T04:02:58+08:00] exp-1114-035754-642199-cfcd2084 >> \ud83d\udce6 Native TQ checkpoint restored and validated: groups=0",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\ud83d\udce6 Native TQ checkpoint restored and validated: groups=0"
+    },
+    {
+      "timestamp": "1794600270954166000",
+      "line": "[2026-11-14T04:04:30+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Using default megatron checkpoint dir: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints"
+    },
+    {
+      "timestamp": "1794600270954169000",
+      "line": "[2026-11-14T04:04:30+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher. Skipping import.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Checkpoint already exists at /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher. Skipping import."
+    },
+    {
+      "timestamp": "1794600271562794000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Checkpoint file not found in load directory None. Attempting to finetune with checkpoint in /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m Checkpoint file not found in load directory None. Attempting to finetune with checkpoint in /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher"
+    },
+    {
+      "timestamp": "1794600271562798000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher/iter_0000000.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher/iter_0000000."
+    },
+    {
+      "timestamp": "1794600271664472000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m (TP, PP) mismatch after resume ((2, 1) vs (1, 1) from checkpoint): RNG state will be ignored",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m (TP, PP) mismatch after resume ((2, 1) vs (1, 1) from checkpoint): RNG state will be ignored"
+    },
+    {
+      "timestamp": "1794600271664509000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m (TP, PP) mismatch after resume ((2, 1) vs (1, 1) from checkpoint): Rerun state will be ignored",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m (TP, PP) mismatch after resume ((2, 1) vs (1, 1) from checkpoint): Rerun state will be ignored"
+    },
+    {
+      "timestamp": "1794600271664546000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher/iter_0000000.",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher/iter_0000000."
+    },
+    {
+      "timestamp": "1794600271664553000",
+      "line": "[2026-11-14T04:04:31+08:00] exp-1114-035754-642199-cfcd2084 >> \u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  loading distributed checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher at iteration 0",
+      "pod": "exp-1114-035754-642199-cfcd2084",
+      "node": "gpu-h800-0258.host.platform.shaipower.com",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1330, ip=10.191.8.58)\u001b[0m  loading distributed checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher at iteration 0"
+    }
+  ]
+}

@@ -255,3 +255,16 @@ timeout 60s /data/ycfeng/tmp/stepmind-env/bin/python -u -B /data/ycfeng/stepcode
 ```
 
 Collector exit1 means two all-operation audits timed out after20seconds; six other query categories succeeded. Incidentlogs return711rows, belowlimit3000, with four scheduler assertions. Exactobjects/ownerUID/node,live/historicalEvents and zeroexistingDeepScan flows are retained. Manualstop actor/reason/requesttime remainUNKNOWN; no post-start preemption/OOM trigger is established by returned records. The old Running snapshot remains historical; latest terminal evidence is separate. Selected evidence: scheduler-failure-rca, terminal, failure-selected-logs, retention-after-resume-failure and scheduler-red-green JSONs under evidence/.
+
+
+Corrected replacement exp-1114-035754-642199, UIDf7b3451c-6b0d-4687-9b0d-91e6f0ec5e10, was locally submitted at19:57:55Z after the corrected preflight and dry-run passed. At19:58:20Z the exact API reports Starting/sevenreplicas/personalcreator/currentlocalNFS. Traininglauncher80619,reader4033 andmonitor20311 remainalive. ActualGPUrestore/scale1updates remainUNVERIFIED. Launchlog:tasktmp/formal-native-resume-3-step17-launch-20261114.log; arguments/resolvedconfig/live-status/read-onlyreaderrequest under evidence/. No extra weights were written.
+
+## Corrected replacement runtime and checkpoint inventory
+
+At2026-11-13T20:02:12Z,exp-1114-035754-642199 and all seven replicas are Running,restart0. Creator,currentlocalNFS and fullimageID match. Every worker reports H800 and prepared-inputcheckPASS41. Model initialization is observed,zero new optimizer attempts recorded. Actual native GPU restoration and scale1 gradient health remain UNVERIFIED. Startup contains an optional nixl_ep import warning; no terminal workload failure is established by this observation.
+
+At20:03:18Z,the read-only personal namespace inventory confirms only step17,31files,8positive tensor shards,24,884,408,379bytes. Verdict:PASS latest-only structure; physical quota reclamation UNVERIFIED. No tensorchunk,newcheckpoint orHFexport was copied. Exact commands and runtime versions are in the corresponding progress entry; small evidence is under evidence/formal-native-resume-3-{live-status,selected-logs,retention}-20261114.json. All commands exit0. Traininglauncher80619 and independentreader4033/monitor20311 remain alive.
+
+## Actual policy and TQ checkpoint restoration
+
+The20:05:14Z exact head query returns797rows. The native loader confirms successful distributed loading from step17/policy/weights,t0/2,p0/4,iteration0. Native TQ restoration and validation follows,groups0. Teacher initialization then proceeds. Verdict:PASS native policy/TQ load progression and actual recovery beyond the previous scheduler failure. First scale1 gradient/Adam result and successful post-resume updates remain UNVERIFIED. The exact personalPython command and filtered markers are recorded in progress.md and evidence/formal-native-resume-3-restore-selected-logs-20261114.json. Queryexit0;zero new checkpoints or weightcopies.

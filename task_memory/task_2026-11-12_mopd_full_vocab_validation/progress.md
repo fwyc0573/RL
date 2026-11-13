@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify corrected resume seven-worker runtime and the sole step17 checkpoint. |
 | 2026-11-14 | Record actual expanded-resume failure, native CPU reproduction and corrected preparation. |
 | 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
 | 2026-11-14 | Resume with explicit latest-checkpoint-only storage constraint; suspend stale resume arguments until retention is verified. |
@@ -2709,3 +2710,132 @@ Prepared replacement uses formal-native-resume-3-generation32 arguments and the 
 
 
 Corrected absolute-script preflight exits0 with all seven preparation checks plus native scheduler restore/next-step and final scheduler-preflight markers. Personal dry-run exits0. The only new production/config change is the existing native scheduler selection in the FP16 recipe. The replacement is ready for local personal submission; old writer/reader/monitor are terminal.
+
+
+### 2026-11-14 — Corrected formal resume submitted (E)
+
+Scoped signed commit5d3c3304 restores saved scheduler values via the existing native recipe setting and adds the real CPU scheduler check; a3a7216a retains step17/runtime evidence. An initial git commit attempt collided with a concurrent zero-age git-status index lock; no lock was removed. The next scoped commit completed normally. Unrelated files remain unstaged and preserved.
+
+Replacement exp-1114-035754-642199, UIDf7b3451c-6b0d-4687-9b0d-91e6f0ec5e10, was locally submitted at19:57:55Z as i-fengyicheng. Exact API at19:58:20Z reports Starting with seven replicas/currentNFS100.96.128.195:/data/ycfeng:/data/ycfeng. The initial missingConfigMap waiting snapshot is recorded; it does not establish terminal failure. Same7×8H800/codesign/32CPU/768GBpernode, student8/generation32/teachers10/spare6, originalmodels/full151936/256freshtrajectories/65536ceiling/eightTQunits. Native horizon217/latest-only retention unchanged. Traininglauncher80619, independent0GPUreader4033 andmonitor20311 remainactive. No additional checkpoint, model copy orHFexport is created. Actualrestore/scale1gradienthealth pending.
+
+#### check-progress — native scheduler correction and replacement
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型、五教师和全词表路径已核实。 |
+| Q | PASS | 验收与执行已授权。 |
+| B | PASS | CPU 输入和环境前置证据可复用。 |
+| C | PASS | 全词表参考和原生指标已验证。 |
+| D | PASS | 五次诊断成功更新及 save/resume 已完成。 |
+| E | TODO | 正式成功更新0/200；scheduler恢复已在CPU修复，替换作业Starting。 |
+| F | TODO | 最终三方parity和归档依赖E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** a3a7216a 至替换作业提交｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 新检查直达实际scheduler load，可在CPU防止相同GPU恢复失败。 |
+| D2 细节反复重试 | CLEAR | 同一51200/55552断言在CPU复现，现有native设置使完整state恢复；未轮换参数盲重提。 |
+| D3 支线问题修补 | CLEAR | scheduler失败实际阻断E；已修复并提交。 |
+| D4 可并行任务停滞 | CLEAR | 旧writer终态后接续训练与reader；共享checkpoint顺序写入。 |
+| D5 超范围镀金 | CLEAR | 一行recipe配置与直接检查；没有新schema或额外权重。 |
+| D6 分析空转 | CLEAR | 实际失败→CPU RED/GREEN→签名提交→替换运行。 |
+| D7 路线违背 | CLEAR | 原始训练合同和latest-only限制保持。 |
+
+**文档检查：** S5：plan仍为准备状态，与替换作业Starting冲突；已同步。S1–S4/S6未见明显缺陷。
+**归因：** 无执行偏离；S5是状态滞后。
+
+## 3. 纠正建议
+
+**分支：** B：先同步状态文档再继续
+
+**文档更新（先执行）：**
+1. plan.md当前状态：记录旧运行失败、CPU修复及新作业Starting。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：验证GPU真实恢复step17/scaler1/scheduler/TQ → 完成标志：恢复trace和完整batch记录。
+2. E：观察scale1的grad和success → 完成标志：有限grad、success1；若仍overflow则定位真实backward。
+3. E→F：200实际成功更新、latest-only边界与最终三方parity → 完成标志：正式数值/状态验收及English归档。
+
+## 4. 最值得关注的 3 点
+
+1. 原生scheduler mismatch已CPU修复；scale1梯度问题仍未验证。
+2. 当前替换作业已提交，正式成功更新仍0/200。
+3. 唯一checkpoint仍为step17；禁止额外权重保存或exports。
+
+### 2026-11-14 — Corrected resume actual runtime and latest-only inventory (E)
+
+At2026-11-13T20:02:12Z (November14,2026,04:02:12HKT), the exact personal API confirms exp-1114-035754-642199 is Running with all seven replicas, restart0, creator i-fengyicheng, local NFS100.96.128.195:/data/ycfeng:/data/ycfeng, and identical full d29740f4 imageID. Returned worker logs show H800 and MOPD_PREPARED_INPUTS_CHECK_PASS41 on every replica. vLLM model initialization is underway. Its optional nixl_ep import warning appears during startup; no terminal workload failure is established. Do not spend a new GPU run on this warning without a workload failure. Local TensorBoard has zero new attempts; native restoration and scale1 update remain unverified. Required traininglauncher80619,0GPUreader4033,monitor20311 and CPUobserver35082 are alive.
+
+The20:03:18Z task-scoped read-only namespace inventory confirms only the published step17 checkpoint remains:31files,8positive tensor shards,24,884,408,379bytes. No checkpoint, tensorchunk orHFexport was copied or created. The original inventory script still named deleted step10; a temporary exact-step17 adaptation was used before inspection. That stale script was not run and did not produce a false failure. Reader receipts cover eight small files,zero summarizedsteps,zero failures and nofinished.json at this checkpoint. Physical backend quota reclamation remains unverified.
+
+Commands:source tasktmp/personal_env_20261113.sh; personal Python3.10.6 runs inspect_formal_native_resume_3_20261114.py and read_formal_native_resume_3_logs_20261114.py; actor Python3.13.14 runs read_formal_native_resume_3_metrics_20261114.py. All three exit0. Retention:timeout60s ssh -o BatchMode=yes -o ConnectTimeout=10 shai-ycfeng python3 - < tasktmp/inventory_latest_only_step17_20261114.py; exit0. Exact small status/log/retention evidence is retained under evidence/formal-native-resume-3-*-20261114.json.
+
+#### check-progress — recovered live state and storage constraint
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型和五教师身份已有完整记录。 |
+| Q | PASS | 200次实际成功更新与执行已授权。 |
+| B | PASS | 完整输入准备和运行环境证据可复用。 |
+| C | PASS | 全词表参考与原生指标检查完成。 |
+| D | PASS | 五次成功诊断更新和原生save/resume完成。 |
+| E | TODO | 新作业七replicas Running；正式成功0/200，首个scale1结果待查。 |
+| F | TODO | 最终三方比较和归档依赖正式更新完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次scheduler修复checkpoint至20:03:18Z｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用已有reader、指标和精确作业检查；没有扩充框架。 |
+| D2 细节反复重试 | CLEAR | scheduler修复后核对当前实例；没有重复提交或precision试跑。 |
+| D3 支线问题修补 | CLEAR | 只核查原生恢复和用户要求的latest-only保留。 |
+| D4 可并行任务停滞 | CLEAR | 当前training、只读reader、monitor并行；只有一个checkpoint writer。 |
+| D5 超范围镀金 | CLEAR | 本轮没有生产代码或接口变更。 |
+| D6 分析空转 | CLEAR | 最新实测Running与唯一step17已回写，等待实际首批结果。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表、256轨迹、65536上限和禁额外checkpoint保持。 |
+
+**文档检查：** S5：plan仍记Starting，与20:02:12Z实际Running冲突；已直接同步。S1–S4/S6均未发现明显缺陷。
+**归因：** 无执行偏离；状态记录滞后已纠正。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在状态记录缺陷，先同步再继续。
+
+**文档更新（先执行）：**
+1. plan.md当前状态：记录七replicas Running和20:03:18Z唯一step17库存。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：核查实际step17恢复、native scheduler与首个scale1 optimizer结果 → 完成标志：恢复日志、有限grad和success1。
+2. E：若scale1仍overflow，使用真实batch/backward定位第一个非有限操作 → 完成标志：实际CUDA复现、根因修复及原始场景验证。
+3. E→F：补足200实际成功更新，维持唯一最新native checkpoint，再完成最终三方parity和归档。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功更新仍0/200；初始化Running不能算训练验收。
+2. 只有step17完整checkpoint，约24.88GB；没有额外权重副本。
+3. 当前scale1的实际梯度结果决定下一步，禁止继续盲重提相同overflow段。
+
+### 2026-11-14 — Actual native GPU policy and TQ restoration confirmed (E)
+
+The exact head log query at2026-11-13T20:05:14Z returns797rows, below the1800row request. It confirms loading the step17 distributed policy checkpoint and `successfully loaded checkpoint ... [t0/2,p0/4]`, followed by `Native TQ checkpoint restored and validated:groups=0`. Teacher initialization follows these markers. The previous WD scheduler assertion has not recurred on this actual load. These markers establish native load progression; they do not yet establish a finite scale1 backward or a successful Adam update. Formal successes remain0/200.
+
+Command:personal Python3.10.6 RJobClient.logs_replica('exp-1114-035754-642199-cfcd2084',tail_lines=1800), wrapped in timeout55s after existing personal environment initialization; exit0. Filtered secret-redacted restore markers are retained in evidence/formal-native-resume-3-restore-selected-logs-20261114.json. No weight payload is copied and no new checkpoint is written. Continue existing training and first-update observer; if scale1 overflows, locate the actual backward failure before another unchanged formal submission.
