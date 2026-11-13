@@ -1,6 +1,6 @@
 {
   "name": "exp-1113-151718-896703",
-  "queried_at": "20261113T072137Z",
+  "queried_at": "2026-11-13T07:36:09.688366+00:00",
   "uid": "9f0eb021-6bda-44fa-af2f-5469dd08b02b",
   "creator": "i-fengyicheng",
   "status": {
@@ -18,7 +18,7 @@
     "rjob.brainpp.cn/rjob-queue-approved": "",
     "stepmind.com/queue-elem-ranking": "2",
     "stepmind.com/queue-name": "codesign-default",
-    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 7 replicas = 56 GPU (H800). Queue remaining: H800=36."
+    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 7 replicas = 56 GPU (H800). Queue remaining: H800=33."
   },
   "source": {
     "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"

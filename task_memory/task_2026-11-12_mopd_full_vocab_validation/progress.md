@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Recover the existing formal job at15:36HKT and preserve its queued state and unfinished acceptance checks. |
 | 2026-11-13 | Accept completed five-teacher PP4 GPU save/resume, finite checkpoint, and full diagnostic parity. |
 | 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
 | 2026-11-13 | Recover actual decode controls, padding RCA, and ordinary native replay frontier. |
@@ -1840,3 +1841,61 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 3. 3a1fe3e2已提交输入准备；b66b957f内存修复仍待GPU验证。
 
 - 15:21HKT continuation state: formal73918, reader37752 andmonitor15510 were polledalive. Cheap-inputlauncher56642 hasexit0. Keep existingformaljobexp-1113-151718-896703; exactcloudrunprefix /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-151718-896703. Resumebyreadinglatestmonitorstatusandreaderreceipt before anyfurtheraction. NocheckpointorformalmetricsexistwhilePending; GPUfix,200successesandfinalreplayremainunfinished.
+
+
+## 2026-11-13 15:36 HKT: Resume exact queued formal run
+
+- Recovered requirements, plan, latest reports and actual processes. Direct local personal Python RJobClient reads verify exact formal UID9f0eb021-6bda-44fa-af2f-5469dd08b02b and creator i-fengyicheng; Pending/ranking2/33remaining for56H800 requested. Local NFS source is100.96.128.195:/data/ycfeng:/data/ycfeng. Readerexp-1113-151748-639492 isRunning with the same local source.
+- Polled73918formal launcher,37752reader and15510monitor alive. Current reader receipt is0files/0steps/0failures; there is no formal optimizer metric or checkpoint. No new GPU submission, code edit, resource change or cleanup.
+- Inspected existing native resume_training.py: initial must-save-by then ordinary resume with unchanged scheduler settings. Inspected prepared final replay_checkpoint_logprobs.py: native checkpoint loading, non-colocated refit, fresh vLLM/scorer and actual model.train() comparison; independent diagnostic attempt does not count as formal MOPD progress.
+- Next actions: keep the exact queued job and launcher alive; verify all7replicas/runtime when Running, then repaired backward/loss/grad norm/early checkpoint and resume. Complete200deduplicated successful updates with native Adamstep, then final finite/state/refit/three-way parity and English archive. Preserve completed D and cleanup evidence.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student和五教师身份已验收 |
+| Q | PASS | 200成功更新合同已确认 |
+| B | PASS | 六模型全量CPU准备和当前身份检查通过 |
+| C | PASS | 全词表loss与gradient参照已完成 |
+| D | PASS | 五教师短训、65536、native save/resume已有GPU证据 |
+| 清理 | PASS | 用户授权范围清理已完成 |
+| E | TODO | exact formal job等待quota，0正式成功更新 |
+| F | TODO | 最终checkpoint与报告等待E产物 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 15:16CPU准备checkpoint至15:36HKT｜**当前前沿：** E原始正式作业与独立读取
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 准备后未扩展工具；现有reader和monitor持续读取exactjob |
+| D2 细节反复重试 | CLEAR | b66b957f具备具体gradient allocation假设和CPU结果；GPU只提交一次 |
+| D3 支线问题修补 | CLEAR | 未继续已收尾RCA或清理 |
+| D4 可并行任务停滞 | CLEAR | reader与monitor并行；最终检查依赖尚不存在的checkpoint |
+| D5 超范围镀金 | CLEAR | 未新增验收合同以外能力 |
+| D6 分析空转 | CLEAR | 独立状态读取确认实际排队；不重做完成的准备 |
+| D7 路线违背 | CLEAR | 原模型、五教师、151936词表、256batch和65536ceiling保持 |
+
+**文档检查：** S1–S6均未发现明显缺陷；实时排队状态已更新，E/F未被标记完成。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：保持73918及原job → 完成标志：真实backward、正常loss/grad、早期native save/resume。
+2. 并行：37752reader ‖ 15510monitor → 完成标志：持续记录业务和平台证据，辅助错误不停止训练。
+3. E/F：200成功flags与Adamstep → 最终checkpoint finite/state/refit/三方parity → 最终报告与English summary。
+
+## 4. 最值得关注的 3 点
+
+1. 15:36HKT stillPending，remaining33小于请求56，正式GPU修复尚未验证。
+2. 原job与所有长驻launcher存活，保留一次提交，不因排队重复分配。
+3. 最终replay已有CPU准备，等待真实checkpoint；不扩展工具或重跑D。

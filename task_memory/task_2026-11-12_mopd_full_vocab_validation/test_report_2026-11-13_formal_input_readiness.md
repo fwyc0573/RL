@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Recover the existing formal job at15:36HKT and preserve its queued state and unfinished acceptance checks. |
 | 2026-11-13 | Record full CPU input validation, prepared-input checks, and formal submission preparation. |
 
 # Formal MOPD input readiness
@@ -41,4 +42,4 @@ Created `exp-1113-151718-896703`, UID `9f0eb021-6bda-44fa-af2f-5469dd08b02b`, cr
 
 Independent zero-GPU evidence reader `exp-1113-151748-639492`, UID `406c9397-4ba1-4edf-8e51-4a211a9c5217`, uses launcher37752; read-only platform monitor15510 remains active. These auxiliaries do not control the training job. The finalcheap-inputRJob isSucceeded. Exact filtered platform receipts are `evidence/formal-split-submission-receipts.json`.
 
-At07:20:52Z the formaljob remainsPending/ranking2/36H800remaining. Themountedreader publishes0files/0steps/0failures; itslauncher37752andformal73918/monitor15510arealive. Cheap-inputlauncher56642exited0. Latestselectedevidence: `evidence/formal-split-current-status.json` and `evidence/formal-split-mounted-reader-current.json`.
+At2026-11-13T07:36:09Z (15:36 HKT), direct personal Python inspection confirms the formal job is still Pending, queue ranking2, remaining33H800 for56requested. The independent zero-GPU reader is Running. Sessions73918/37752/15510 are alive; its receipt has0files/0steps/0failures and no finished marker. No formal optimizer metrics or checkpoints exist. Exact selected evidence remains in `evidence/formal-split-current-status.json` and `evidence/formal-split-mounted-reader-current.json`. This observation does not validate the GPU memory repair or advance the200-success contract.
