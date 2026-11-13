@@ -179,3 +179,43 @@ The third resumed batch covers lengths 272–23462; total step time was 502.1598
 | Step15 error tails |Investigate localized maximum without loosening mean threshold |Top code/if/if samples have maxima0.8163185120/0.4316844940/0.2824678421; retained tokenpositions andneighbor deltas | OBSERVED; complete causal explanation UNVERIFIED |
 
 Commands reuse the local personal exact-job inspector, mounted reader and actor-environment metricreader listed above. The namespace inventory ran `timeout 60s ssh -o BatchMode=yes -o ConnectTimeout=10 shai-ycfeng python3 - < /data/ycfeng/tmp/nemo-mopd-20261112/inventory_latest_only_checkpoints_20261114.py`, with output retained in tasktmp/formal-native-resume-1-retention-20261114-current.json. All reads were scoped to this task's personal namespace. No production behavior change orGPUsubmission was made for these inspections.
+
+## Step17 native boundary and second formal resume segment
+
+| Check | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Native completion |Publication and terminalstatus agree |exp-1114-021713-015045:step17published;RJob/fourreplicasSucceeded/allcontainerexit0/restart0 at19:42:00Z | PASS native boundary |
+| Formal updates |200actualsuccesses, finite gradients |steps11–17allunsuccessful;step17loss0.1972962320/scale2;totalformal0/200 | INCOMPLETE; gradienthealth unresolved |
+| Batch andscorer/generation |256validsamples/fivegroups/MAE<=0.02 |2,194,353response tokens,maxlength40,481;MAE0.0013301397,p990.0100550652,max1.0676422119;zeroissues | PASS pre-update mean; tailcause/finaltrainingpending |
+| Latest-only retention |Only newestpublishedcheckpoint;oldremovedpromptly |onlystep17,31files/8shards/24,884,408,379bytes;step10absent | PASS structure/publication;backendphysicalreclamationunverified |
+| Native optimizer/scaler/scheduler |Restore actualcontinuationstate |8scalers1/growth0/hysteresis−15;Adamgroupsno successstep;schedulernum_steps4352/constantLR1e−6/decay51200;8TQentries/sampler17 | PASS smallstate inspection;GPUrestorepending |
+| Nextsegment preparation |Exactmodels/full151936/256/65536/latest-only/native scheduler |7nativePASSmarkers;dry-runexit0;controllerhorizon217/schedulerhorizon200;7nodes8student/32generation/10teacherGPUs | PASS CPU preparation |
+| Nextsegment runtime |Personalcreator/localmount/7workers/native restore |exp-1114-034353-134003/UID405b8c82-9752-4a57-9443-b48c1cd32b5e;Starting/7replicas/currentNFS;restore/scale1result not yet observed | IN PROGRESS |
+
+CPUcommands usedPython3.13.14/Torch2.13.0+cu130/UV0.13.7 in theexistingMegatronactorenvironment, withTMPDIR=/data/ycfeng/tmp,offline/no-sync,OMP/OPENBLASthreads1:
+
+```bash
+timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python -u /data/ycfeng/tmp/nemo-mopd-20261112/inspect_latest_formal_native_state_20261114.py
+timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python -u /data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_native_resume_2_generation32_20261114.py
+source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
+/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_native_resume_2_generation32_20261114.py --dry-run
+/data/ycfeng/tmp/stepmind-env/bin/python -u /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_native_resume_2_generation32_20261114.py
+```
+
+State-readerexit0;551,606bytesretrieved,33non-tensor storageitems plus smallnativefiles,0model/Adam tensorchunks. Metadata includesserialized scalar tensors, notweights. No newfullfinite scanorweightcopy wasperformed. Preflight/dry-run/launchlogs:tasktmp/formal-native-resume-2-step17-{native-preflight,dry-run,launch}-20261114.log. PlatformPython3.10.6/brainpp2.8.6. Independent0GPUreader/monitor use existing scripts adapted only to the exact newjob and local output paths; they do not controlhealthytraining.
+
+
+## Current second-resume runtime verification
+
+At 2026-11-13T19:49:08Z (November 14, 2026, 03:49:08 HKT), the personal API confirms the second resume job and seven replicas are Running, restart count 0. Creator, current local NFS source and every full image digest match the request. The 19:49:16Z query returns H800 and `MOPD_PREPARED_INPUTS_CHECK_PASS 41` for all seven replicas. Student NCCL and existing conversion-cache loading are observed; restoration of step17 and the first scale1 update remain UNVERIFIED. Local TensorBoard has zero new scalars; startup does not count as an optimizer update.
+
+Exact inspection commands:
+
+```bash
+source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
+/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/inspect_formal_native_resume_2_20261114.py
+/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_native_resume_2_logs_20261114.py
+/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_native_resume_2_metrics_20261114.py
+```
+
+Platform/log inspection uses Python3.10.6/brainpp2.8.6. Local metric inspection uses Python3.13.14/Torch2.13.0+cu130. Commands completed with exit0. Evidence: `evidence/formal-native-resume-2-live-status-20261114.json` and `evidence/formal-native-resume-2-selected-logs-20261114.json`. No model, Adam tensor or new checkpoint was copied. Required training launcher46542 and reader62396 are still active.

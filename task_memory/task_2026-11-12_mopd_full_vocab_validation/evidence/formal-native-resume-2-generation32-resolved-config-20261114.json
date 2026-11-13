@@ -3,7 +3,7 @@
     "num_prompts_per_step": 256,
     "num_generations_per_prompt": 1,
     "max_num_epochs": null,
-    "max_num_steps": 200,
+    "max_num_steps": 217,
     "max_rollout_turns": 1,
     "normalize_rewards": true,
     "masked_reward_policy": "include",
@@ -355,7 +355,7 @@
       "num_layers_at_start_in_bf16": 1,
       "num_layers_at_end_in_bf16": 1,
       "flash_attention_version": 4,
-      "train_iters": 200
+      "train_iters": 217
     },
     "draft": {
       "speculator_type": "eagle3",
@@ -561,7 +561,7 @@
     "checkpoint_dir": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints",
     "metric_name": null,
     "higher_is_better": true,
-    "save_period": 200,
+    "save_period": 217,
     "keep_top_k": 0,
     "ft_keep_latest_k": 1,
     "checkpoint_must_save_by": "00:01:15:00",

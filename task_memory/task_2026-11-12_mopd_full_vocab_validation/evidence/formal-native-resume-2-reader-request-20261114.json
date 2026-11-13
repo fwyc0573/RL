@@ -1,0 +1,12 @@
+{
+  "command": "bash -lc 'set -euo pipefail\ncd /data/ycfeng/sota-engine/RL\nexport PYTHONPATH=/data/ycfeng/sota-engine/RL\nexport UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313\nexport TMPDIR=/tmp/mopd-evidence-reader-$KUBEBRAIN_RJOB_NAME\nmkdir -p \"$TMPDIR\"\nexport XDG_CACHE_HOME=\"$TMPDIR/cache\"\nexport UV_CACHE_DIR=\"$TMPDIR/uv\"\n/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python -u /data/ycfeng/tmp/nemo-mopd-20261112/collect_formal_native_resume_2_mounted_20261114.py\n'",
+  "cpu": 4,
+  "gpu": 0,
+  "mem_gb": 16,
+  "charged_group": "codesign",
+  "source": "/data/ycfeng",
+  "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+  "mounts": [
+    "juicefs+s3://oss.i.shaipower.com/codesign-exp:/mnt/codesign-exp"
+  ]
+}

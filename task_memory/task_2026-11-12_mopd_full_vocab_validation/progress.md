@@ -2617,3 +2617,78 @@ The current native job remainsRunning withfourreplicas/restart0 at19:28:26Z. Kee
 1. 正式成功更新仍0/200；finite loss不证明gradient正常。
 2. 只有最新step10，24.88GB；未创建额外权重。
 3. 当前launcher保持存活；下一段不与当前作业同时写共享checkpoint。
+
+### 2026-11-14 — Native step17 published, only latest retained, next56H800 segment submitted (E)
+
+The final pending response completed; step17 includes256validsamples/2,194,353response tokens and maximum total length40,481. Native loss0.1972962320/usedscale2/success0; formal successfulupdates0/200. Scorer/vLLM MAE0.0013301397,p990.0100550652,max1.0676422119,allfivegroups andzero mask/weight-version issues. Healthy generation/teacher work progressed; no new systemic trace was observed.
+
+Native publication event namesstep17. Fourreplicas andRJobexp-1114-021713-015045 areSucceeded at19:42:00Z,allcontainerexit0/restart0; traininglauncher60173/reader59190 exited0. Native retention removedstep10 before the19:42:00Z inventory. Onlystep17remains:31files/8shards/24,884,408,379bytes. Noextra checkpoint orHFweight export was written.
+
+Bounded read-only metadata/state inspection uses tasktmp/inspect_latest_formal_native_state_20261114.py through actoruvrun ontheCPUhost and two exactSSHbyte-rangequeries. It reads551,606bytes of metadata/small native items and0model/Adam tensor chunks. All8savedscalers are1/growth0/hysteresis−15; Adamparam_groups stillhave no successfulstep; scheduler num_steps4352/constantLR1e−6/lr_decay_steps51200;8orderedTQstorage positions0–7; samplerdispatch17/consumed4352. Structure/publication/state counters areverified, not a newfulltensorfinite scan. SourcefullCPUreadiness remains reusable; native restore still requires actual worker evidence.
+
+Preparednextsegment parameters nowsetgrpo.max_num_steps217/save_period217, because savedcontroller17has0successes and200are stillrequired. Scheduler horizon remains200. Native config/dtype/optimizer/model-identity/topology/preflight returned sevenPASSmarkers; personaldry-runexit0. No productionloss/scaler behavior orinterfaces changed.
+
+Submittedexp-1114-034353-134003/UID405b8c82-9752-4a57-9443-b48c1cd32b5e through localpersonalPythonRJobBackend:7×8H800,codesign,32CPU/768GBpernode;student8/generation32/fiveteachers10/spare6. SevenreplicasStarting at19:44:12Z;source100.96.128.195:/data/ycfeng:/data/ycfeng;creatori-fengyicheng;samepinnedcompanyimage. Initialcontainer-config waiting reports missingconfigmap beforestartup; thissnapshot is not a terminalfailure. Traininglauncher46542 staysalive. Existingreader/monitor were reused for this exactjob:0GPUreaderlauncher62396,monitor32590. Step17restore/firstscale1update/actualthroughput remainpending.
+
+Next: verifynewworker readiness/native restore and firstscale1optimizerresult; diagnose realbackward ifscale1stillfails; continue native latest-only segments to200actualsuccesses, then finalthree-wayparity. Evidence: formal-latest-step17-native-state, step17metrics/parity, previousterminal, nextsubmitargs/resolvedconfig. Exactcommands/logs are in the current failure-recovery report.
+
+
+### 2026-11-14 — Resumed job runtime reconciled after context recovery (E)
+
+Personal exact-job query at 2026-11-13T19:49:08Z confirms exp-1114-034353-134003, UID 405b8c82-9752-4a57-9443-b48c1cd32b5e, is Running with seven Running replicas and restart count 0. Creator is i-fengyicheng, source is 100.96.128.195:/data/ycfeng:/data/ycfeng, and every replica uses the recorded d29740f4 company image. The 19:49:16Z log query confirms all seven prepared-input checks and H800 runtime. Generation engines initialize; student starts NCCL and reuses the existing initial conversion. Exact step17 restore and step18 optimizer outcome are not yet observed. The local reader contains no new TensorBoard scalar, which is an incomplete observation rather than a workload failure. Launcher sessions 46542 and 62396 remain active.
+
+The current segment is the native test of the previously recorded low-scale prediction. If a full batch remains non-finite at scale1, replay the real backward with module/tensor gradient observations, retaining no new checkpoint; do not submit the same unmodified segment again to obtain another overflow verdict. Training health and 200 actual successful updates remain required.
+
+#### check-progress — current runtime and gradient frontier
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师与全词表路径已确定。 |
+| Q | PASS | 验收及执行授权已记录。 |
+| B | PASS | CPU 输入、环境和 native preflight 完成。 |
+| C | PASS | 全词表参考检查及 loss-scale 指标已验证。 |
+| D | PASS | 五次诊断成功更新及 native save/resume 完成。 |
+| E | TODO | step17 已保存，当前七 worker Running；正式成功更新仍为 0/200。 |
+| F | TODO | 最终训练/scorer/vLLM parity、报告和归档依赖 E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 43d307b4 至本次真实运行核查｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用已有 query、reader 和指标读取；未扩建已通过工具。 |
+| D2 细节反复重试 | CLEAR | 只有一份恢复作业；scale1 是已记录的原生 backoff 检查。若仍失败则进入真实 backward 定位。 |
+| D3 支线问题修补 | CLEAR | runtime、更新数和存储证据均直接服务 E。 |
+| D4 可并行任务停滞 | CLEAR | 训练与零 GPU reader 同时运行；共享 checkpoint writer 必须顺序接续。 |
+| D5 超范围镀金 | CLEAR | 没有额外 checkpoint、权重副本或新的训练机制。 |
+| D6 分析空转 | CLEAR | 有新的 terminal、step17 状态和七 worker runtime 证据；下一判断由实际 scale1 结果决定。 |
+| D7 路线违背 | CLEAR | 原始模型、151936 全词表、256 样本、65536 上限、200 成功更新与 latest-only 保持。 |
+
+**文档检查：** S5：plan.md 的 Starting 与最新七 worker Running 冲突；已同步。S1–S4/S6 未见明显缺陷。
+**归因：** 无执行偏离；S5 是状态记录滞后。
+
+## 3. 纠正建议
+
+**分支：** B：先同步状态文档再继续
+
+**文档更新（先执行）：**
+1. plan.md 当前状态：记录 19:49:08Z 的 Running、七 replicas 与恢复尚未观察。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：核对 step17 真正恢复与 step18 的 scale1 结果 → 完成标志：成功 flag1、有限 unscaled grad norm、五教师覆盖；若失败则获得实际 backward 定位证据。
+2. E：完成 native boundary 与 latest-only 核查 → 完成标志：新恢复状态已发布、旧 checkpoint 已删除且 writer 终态。
+3. E → F：累计 200 次成功更新并完成最终三方 parity → 完成标志：正式数值、状态验收及 English archive 完成。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功更新仍为 0/200；有限 loss 不能替代梯度验收。
+2. step17 是唯一保留 checkpoint，24,884,408,379 bytes；没有额外权重副本。
+3. 当前七 worker Running；scale1 的真实结果将决定继续训练或定位 backward。
