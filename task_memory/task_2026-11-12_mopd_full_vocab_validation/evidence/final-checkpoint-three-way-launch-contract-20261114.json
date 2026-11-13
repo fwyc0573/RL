@@ -1,0 +1,90 @@
+{
+  "prepared_at": "2026-11-13T20:50:18.048920+00:00",
+  "status": "PREPARED_TEMPLATE_NOT_SUBMIT_READY",
+  "submission_preconditions": [
+    "200 deduplicated actual formal optimizer successes and consistent native Adam counters",
+    "Current training writer terminated successfully and latest native checkpoint published",
+    "Latest-only native structure verified and cheap original model identity checks current",
+    "Exact final dump and original training dataset path supplied below"
+  ],
+  "submitter": "/data/ycfeng/sota-engine/RL/tests/manual/mopd/submit_on_rjob.py",
+  "argument_prefix": [
+    "--config",
+    "/data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml",
+    "--output-root",
+    "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-checkpoint-parity",
+    "--nodes",
+    "2",
+    "--gpus-per-node",
+    "8",
+    "--cpus-per-node",
+    "32",
+    "--memory-gb-per-node",
+    "768",
+    "--startup-timeout",
+    "1800",
+    "--min-worker-port",
+    "25000",
+    "--max-worker-port",
+    "25999",
+    "--training-timeout",
+    "14400",
+    "--image",
+    "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+    "--credential-dir",
+    "/data/ycfeng/tmp/brainctl-auth-i-fengyicheng",
+    "--base-environment",
+    "/data/ycfeng/envs/nemo-mopd-py313",
+    "--uv",
+    "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv",
+    "--cuda-toolkit",
+    "/data/ycfeng/toolchain/cuda-13.0.2",
+    "--cuda-compat",
+    "/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat",
+    "--experiment-id",
+    "nemo-mopd-final-checkpoint-three-way-parity",
+    "--training-entrypoint",
+    "/data/ycfeng/sota-engine/RL/tests/manual/mopd/replay_checkpoint_logprobs.py",
+    "--prepared-inputs",
+    "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/formal-inputs-cpu-validation-20261113.json",
+    "checkpointing.enabled=false",
+    "checkpointing.keep_top_k=0",
+    "checkpointing.ft_keep_latest_k=1",
+    "checkpointing.checkpoint_must_save_by=null",
+    "policy.generation.colocated.resources.num_nodes=1"
+  ],
+  "required_final_arguments": [
+    "--checkpoint <latest complete native checkpoint>",
+    "--dump <last formal controller step native train_data_step dump>",
+    "--identities /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/data/train.jsonl"
+  ],
+  "gpu_shape": {
+    "nodes": 2,
+    "gpus_per_node": 8,
+    "policy_tp": 2,
+    "policy_pp": 4,
+    "policy_cp": 1,
+    "generation_tp": 2
+  },
+  "retained_weights": "Only the final native checkpoint; native load and in-memory refit; no checkpoint copies or HF exports",
+  "scope": "Fresh response tokens from one original training prompt per domain, native scorer/vLLM comparison, then actual native training forward on identical tokens and weights",
+  "diagnostic_optimizer_note": "The independent diagnostic ClippedPGLossFn attempt occurs after observed forwards and is not a formal full-vocabulary OPD update; no weights are saved.",
+  "acceptance": {
+    "same_weight_response_logprob_mae_ceiling": 0.02,
+    "required_source_groups": [
+      "math",
+      "code",
+      "stem",
+      "logic",
+      "if"
+    ],
+    "missing_samples": 0,
+    "mask_or_alignment_issues": 0,
+    "finite_logprobs": true
+  },
+  "validation_reused": [
+    "task evidence/checkpoint-replay-input-preflight.json",
+    "task evidence/checkpoint-training-forward-cpu-preflight.json",
+    "signed commits recorded in progress.md; no repeated observer CPU checks"
+  ]
+}

@@ -11,7 +11,7 @@
 
 # Formal MOPD failure recovery
 
-Current status: corrected resume has **3/200 successful formal optimizer updates** at steps18–20; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
+Current status: corrected resume has **4/200 successful formal optimizer updates** at steps18–21; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
 
 Expected: the original student/five teachers, full151936vocabulary,256fresh trajectories/update,65536ceiling,200successfuloptimizerupdates, native save/resume and final response-logprob MAE≤0.02nats/token.
 
@@ -317,3 +317,15 @@ Step20 succeeds atscale1/success1/skipped0:loss0.18652436137199402,pre-clippingg
 The next segment is prepared for120H800,student8/generation96/teachers10/spare6,TP2/PP4/CP1,eightTQunits,256/65536/full151936,controllerhorizon217,save_period10,keep_top_k0/ft_keep_latest_k1,samecheckpointdirectory,checkpoint_must_save_byNone. Nativeconfig/schedulerCPUpreflight,personalbackenddry-run and41file/sixmodel cheapidentity checkPASS. No repeatedfullHFscan,no newcheckpoint/weightcopy/HFexport. Actualthroughput andGPUresume areUNVERIFIED. Atstep19/20 exposedgeneration takes474.10/541.64seconds versus571.23/640.98total; addedgenerationcapacity addresses the observed dominant stage. Runtime remainsH800codesign/personalauth/currentlocalNFS.
 
 Inspectioncommands andversions are unchanged and recorded inprogress.md. Artifacts:formal-native-resume-3-step20-{metrics,parity}-20261114.json andformal-native-resume-4-{capacity-preparation,cheap-inputs,generation96-submit-args,generation96-resolved-config}-20261114.json under evidence/. The initially selected historicalstep10inventoryassertion is an auxiliaryinspectionfailure;healthytraining continues. Exactnextjobname andnativepublication remainpending; do not infer successfulsubmission from prepared files or waiterprocesses.
+
+
+## Fourth formal update and consistency result
+
+Step21:success1/skipped0,loss0.18771615624427795,pre-clippinggradnorm1.126503348350525,scale1,LR1e−6,256samples/2,054,407response tokens. Formaltotal4/200. Weightversion20 coversfivegroups(code66/stem38/if50/logic63/math39); sampledscorer/vLLM MAE0.0013121362624947182,p990.009957306385040277,max0.30077171325683594,allfinite,issues0. PASS this update and sampledrefitmean; final200/actualtrainingparityINCOMPLETE. Existing native metricreader UV/offline/no-sync command exits0; actualbatchmountedreader hasfoursteps/failures0. No checkpoint, weightcopy orHFexport wascreated.
+
+
+## Parameter-change comparison baseline with latest-only retention
+
+Expected: the existing initial conversioncache, cast to nativeFP16 as during modelload, equals the still-zero-success step17checkpoint on selectednorm/bias elements. Actual:144,896elements,changed0,maxabsolute delta0,allfinite;PASS. Absolute error0; relative error undefined forzero reference. The1MB-limitedsmallchunk reader loaded935,986bytes into remote memory and savedonlyJSONstatistics. This verifies a baseline for future trainedcheckpoint parameterchange without preservingoldweights; it doesnot prove finalall-parameter finiteness.
+
+Two auxiliaryread errors were diagnosed beforeGREEN: remotePythoncannotdeserialize nativePython3.13 pathlibmetadata; use theexisting localmetadata-reader pattern. OriginalcacheBF16 andnativeFP16 require theexact runtimecast before comparison; same-shape assertion identified theprecision difference. No training behavior or environment waschanged. Exactcommand/version/error paths are recorded inprogress.md;receipt:evidence/formal-step17-initial-cache-small-delta-20261114.json. Reuse only after a newnativepublication; healthytraining andautomaticcontinuation do notdepend onthisauxiliaryverdict.
