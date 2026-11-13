@@ -1,0 +1,164 @@
+{
+  "queried_at": "2026-11-13T09:53:47.436262+00:00",
+  "job_uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445",
+  "phase": "Starting",
+  "queries": [
+    {
+      "name": "exp-1113-174329-659007",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": 1,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:43:30+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659886600",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:43:30+00:00",
+          "message": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 4 replicas = 32 GPU (H800). Queue remaining: H800=22.",
+          "reason": "QueueWaiting",
+          "source": {
+            "component": "queue-controller",
+            "host": null
+          }
+        },
+        {
+          "count": 3,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:44:30+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659886844",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:46:34+00:00",
+          "message": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 4 replicas = 32 GPU (H800). Queue remaining: H800=30.",
+          "reason": "QueueWaiting",
+          "source": {
+            "component": "queue-controller",
+            "host": null
+          }
+        },
+        {
+          "count": 1,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:47:38+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659917998",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:47:38+00:00",
+          "message": "Start replica/exp-1113-174329-659007-cfcd2084",
+          "reason": "Start replica",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": 1,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:47:38+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659917998",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:47:38+00:00",
+          "message": "Start replica/exp-1113-174329-659007-c81e728d",
+          "reason": "Start replica",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": 1,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:47:38+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659917998",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:47:38+00:00",
+          "message": "Start replica/exp-1113-174329-659007-c4ca4238",
+          "reason": "Start replica",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": 1,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:47:39+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659917998",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:47:39+00:00",
+          "message": "Start replica/exp-1113-174329-659007-eccbc87e",
+          "reason": "Start replica",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174329-659007-eccbc87e",
+      "status": "PASS",
+      "continuation": null,
+      "events": []
+    },
+    {
+      "name": "exp-1113-174329-659007-c4ca4238",
+      "status": "PASS",
+      "continuation": null,
+      "events": []
+    },
+    {
+      "name": "exp-1113-174329-659007-c81e728d",
+      "status": "PASS",
+      "continuation": null,
+      "events": []
+    },
+    {
+      "name": "exp-1113-174329-659007-cfcd2084",
+      "status": "PASS",
+      "continuation": null,
+      "events": []
+    }
+  ]
+}

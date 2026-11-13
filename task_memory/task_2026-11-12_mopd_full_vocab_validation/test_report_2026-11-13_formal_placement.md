@@ -110,3 +110,12 @@ Signedcommit `d1111060` contains the GPU-capacity/reservation-order repair, scop
 Exactsubmission command: after existing `personal_env_20261113.sh` initialization, `/data/ycfeng/tmp/stepmind-env/bin/python -u /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_200updates_fp16_pp4_packed32.py`. Persistentlauncher session82605. Newindependent0GPUreader `exp-1113-174403-962663`, launcher53011; monitor5931. Their commands/scripts are `submit_formal_packed32_mounted_evidence_reader.py` and `watch_formal_fp16_pp4_packed32.py --interval45 --duration172800 --output /data/ycfeng/tmp/nemo-mopd-20261112/formal-packed32-monitor`. Oldreader stop was explicitly requested with the same requiredscript after replacement; terminal confirmation pending. No cleanup or completedD rerun.
 
 Cloudrunprefix: `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007`. CPUreceipt originals/prestop/stopped proof are retained in the currentevidence directory. FormalGPUmemory/backward/loss/grad/save-resume/200successfulupdates/finalparity remainUNVERIFIED whilequeued.
+
+
+## Approved quota and physical startup pending
+
+The exact32GPU job's queue was approved at2026-11-13T09:47:37.481255069Z. Monitorphase becameStarting09:47:48Z. DirectpersonalAPI at09:50:33Z showedfourPendingreplicas with no assignednode/container. The old30GPUremaining queue-reason annotation is historical after approval and must not be treated as currentadmissionfailure.
+
+Exact liveEvents reads at09:53:47Z passed for thejob and each of its fourreplicas, with no continuation. The jobprojection contains fourStart-replica events09:47:38–39Z; all fourreplica projections wereempty. This does not identify the underlying physicalscheduling cause or prove that no nativePoderror exists. No platform/controllerconfiguration was changed. Selectedsources: `evidence/formal-packed32-starting-status.json`, `evidence/formal-packed32-starting-monitor.json`, `evidence/formal-packed32-scheduling-events.json`. Readcommand: existingpersonalinitialization followed by `/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/inspect_formal_packed32_scheduling.py`.
+
+The new0GPUreader wasStarting; the old0GPUreader remainedRJobStopping after the explicit17:44:11HKT stop. Formalruntime/backward/metrics/checkpoint and200actualsuccessfulupdates remainUNVERIFIED. Keep82605/53011/5931 alive and inspect the existingjob whenworkerstartup advances.

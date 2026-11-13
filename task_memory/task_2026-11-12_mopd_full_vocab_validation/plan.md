@@ -21,7 +21,7 @@
 
 Status: A/Q/B/C/D and authorized cleanup are complete; E/F remain outstanding. The retained D diagnostic completed five successful optimizer updates with native save/resume and finite checkpoint state. Those diagnostic updates do not count toward the formal 200.
 
-Formal job `exp-1113-174329-659007` (UID `da3fd441-bc51-4d5b-aa27-ad216d7fe445`) is the sole current training request:4×8H800,32CPU/768GBpernode, personal `i-fengyicheng`, localNFS `100.96.128.195:/data/ycfeng:/data/ycfeng`, expected companyimage andbothRDMArequests. Its latestmonitor at20261113T094702Z is Pending/rank2/remaining30 for32requested. Launcher82605, zeroGPUreader53011 andmonitor5931 remainalive. There are0formal successful updates and no formal loss/grad/checkpoint.
+Formal job `exp-1113-174329-659007` (UID `da3fd441-bc51-4d5b-aa27-ad216d7fe445`) is the sole current training request:4×8H800,32CPU/768GBpernode, personal `i-fengyicheng`, localNFS `100.96.128.195:/data/ycfeng:/data/ycfeng`, expected companyimage andbothRDMArequests. Its queue was approved at2026-11-13T09:47:37Z; personalAPI at09:48:26Z verifiesStarting with fourPending replicas awaitingphysicalnodes. Launcher82605, zeroGPUreader53011 andmonitor5931 remainalive. There are0formal successful updates and no formal loss/grad/checkpoint.
 
 Original56GPUjob `exp-1113-151718-896703` was re-read09:42:53Z asPending, stoppedthroughrequiredscript09:42:57Z, then verifiedStopped/zeroReplicas09:43:25Z before any replacement. Originallauncher73918 andmonitor15510 exited0. Originalreader `exp-1113-151748-639492` receivedexplicitstop2026-11-13T09:44:11Z and waslastRJobStopping; its finalterminalstate remains to beverified. Newreader `exp-1113-174403-962663` (UID `f5341c5d-fc1f-49be-87a6-2650428f1b9f`) hasitsownlauncher53011.
 

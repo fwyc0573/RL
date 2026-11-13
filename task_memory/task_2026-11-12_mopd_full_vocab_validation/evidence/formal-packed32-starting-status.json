@@ -1,0 +1,177 @@
+{
+  "queried_at": "2026-11-13T09:50:33.423974+00:00",
+  "jobs": [
+    {
+      "name": "exp-1113-174329-659007",
+      "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445",
+      "creator": "i-fengyicheng",
+      "status": {
+        "phase": "Starting",
+        "reason": "RJobStarting",
+        "message": "Tasks is starting: [default]",
+        "taskStatuses": {
+          "default": {
+            "pending": 4,
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "taskStage": "stepmind-task-stage-1"
+      },
+      "queue": {
+        "rjob.brainpp.cn/rjob-queue-approved": "2026-11-13T09:47:37.481255069Z",
+        "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+        "stepmind.com/queue-elem-ranking": "2",
+        "stepmind.com/queue-name": "codesign-default",
+        "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 4 replicas = 32 GPU (H800). Queue remaining: H800=30."
+      },
+      "source": {
+        "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+      },
+      "replicas": [
+        {
+          "name": "exp-1113-174329-659007-eccbc87e",
+          "status": {
+            "phase": "Pending"
+          }
+        },
+        {
+          "name": "exp-1113-174329-659007-c4ca4238",
+          "status": {
+            "phase": "Pending"
+          }
+        },
+        {
+          "name": "exp-1113-174329-659007-c81e728d",
+          "status": {
+            "phase": "Pending"
+          }
+        },
+        {
+          "name": "exp-1113-174329-659007-cfcd2084",
+          "status": {
+            "phase": "Pending"
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174403-962663",
+      "uid": "f5341c5d-fc1f-49be-87a6-2650428f1b9f",
+      "creator": "i-fengyicheng",
+      "status": {
+        "phase": "Starting",
+        "reason": "RJobStarting",
+        "message": "Tasks is starting: [default]",
+        "taskStatuses": {
+          "default": {
+            "pending": 1,
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "taskStage": "stepmind-task-stage-1"
+      },
+      "queue": {
+        "rjob.brainpp.cn/rjob-queue-approved": "2026-11-13T09:44:05.388620297Z",
+        "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+        "stepmind.com/queue-name": "codesign-default"
+      },
+      "source": {
+        "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+      },
+      "replicas": [
+        {
+          "name": "exp-1113-174403-962663-cfcd2084",
+          "status": {
+            "phase": "Pending"
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-151748-639492",
+      "uid": "406c9397-4ba1-4edf-8e51-4a211a9c5217",
+      "creator": "i-fengyicheng",
+      "status": {
+        "phase": "Running",
+        "reason": "RJobStopping",
+        "message": "RJob stopping",
+        "taskStatuses": {
+          "default": {
+            "active": 1,
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "taskStage": "stepmind-task-stage-1"
+      },
+      "queue": {
+        "rjob.brainpp.cn/rjob-queue-approved": "2026-11-13T07:17:52.187004661Z",
+        "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+        "stepmind.com/queue-name": "codesign-default"
+      },
+      "source": {
+        "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+      },
+      "replicas": [
+        {
+          "name": "exp-1113-151748-639492-cfcd2084",
+          "status": {
+            "conditions": [
+              {
+                "type": "Initialized",
+                "status": "True",
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-13T07:20:22Z"
+              },
+              {
+                "type": "Ready",
+                "status": "True",
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-13T07:20:54Z"
+              },
+              {
+                "type": "ContainersReady",
+                "status": "True",
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-13T07:20:54Z"
+              },
+              {
+                "type": "PodScheduled",
+                "status": "True",
+                "lastProbeTime": null,
+                "lastTransitionTime": "2026-11-13T07:20:22Z"
+              }
+            ],
+            "hostIP": "10.191.6.29",
+            "podIP": "10.191.6.29",
+            "podIPs": [
+              {
+                "ip": "10.191.6.29"
+              }
+            ],
+            "startTime": "2026-11-13T07:20:22Z",
+            "containerStatuses": [
+              {
+                "name": "default",
+                "state": {
+                  "running": {
+                    "startedAt": "2026-11-13T07:20:53Z"
+                  }
+                },
+                "lastState": {},
+                "ready": true,
+                "restartCount": 0,
+                "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+                "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+                "containerID": "containerd://e5c01e26c133002e83007212dc9b8b6acbb8658d52b7fbb631a8f7935b3e8fff",
+                "started": true
+              }
+            ],
+            "qosClass": "Guaranteed",
+            "phase": "Running",
+            "nodeName": "gpu-h800-0025.host.platform.shaipower.com"
+          }
+        }
+      ]
+    }
+  ]
+}
