@@ -75,6 +75,8 @@ def aggregate_step_metrics(train_result: dict[str, Any]) -> dict[str, Any]:
         metrics["draft_grad_norm"] = draft_grad_norm.detach().mean().item()
     elif draft_grad_norm is not None:
         metrics["draft_grad_norm"] = float(draft_grad_norm)
+    if "loss_scale" in train_result:
+        metrics["loss_scale"] = float(train_result["loss_scale"])
     if "optimizer_update_successful" in train_result:
         metrics["optimizer_update_successful"] = int(
             train_result["optimizer_update_successful"]

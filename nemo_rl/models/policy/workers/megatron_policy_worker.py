@@ -2459,6 +2459,7 @@ class MegatronPolicyWorkerImpl(
 
         # opt.step clips internally (clip_grad config); operates on the
         # already-rescaled grad. Returns (success, grad_norm, num_zeros).
+        loss_scale = float(self.optimizer.get_loss_scale().item())
         update_successful, grad_norm, num_zeros_in_grad = self.optimizer.step()
         mtp_grad_norm = (
             self.optimizer.grad_norms_by_group.get("mtp")
@@ -2620,6 +2621,7 @@ class MegatronPolicyWorkerImpl(
 
         metrics = {
             "global_loss": global_loss.cpu(),
+            "loss_scale": loss_scale,
             "optimizer_update_successful": update_successful,
             "rank": torch.distributed.get_rank(),
             "gpu_name": torch.cuda.get_device_name(),

@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Require only the latest checkpoint to remain, with timely deletion of older checkpoints. |
 | 2026-11-13 | Record explicit authorization to clean current-task large, smoke, and unused artifacts. |
 | 2026-11-12 | Record the new request, explicit constraints, source identity, and pending acceptance decision. |
 | 2026-11-12 | Record user confirmation and authorize execution of the proposed acceptance contract. |
@@ -53,3 +54,9 @@ This answers the immediately preceding question about proceeding with 200 succes
 > 授权，请你清理当前任务的大产物、smoke产物，无用产物，用codex执行清理
 
 Codex is authorized to delete current-task redundant caches, duplicate archives, and obsolete smoke checkpoint tensors. Preserve source models, training data, installed environments, the FP16 conversion caches needed for subsequent verification, and selected business/runtime/terminal/numerical evidence. Cloud deletion runs through a locally submitted personal Python RJobBackend workload. Historical measurements remain valid recorded observations; removed weights cannot be replayed directly. This cleanup does not cancel the unfinished MOPD validation contract.
+
+## [Original Request] Checkpoint storage constraint, 2026-11-14
+
+> 不允许你额外保存ckpt，因为当前oss的磁盘空间不足，只允许你保留最新的ckpt，及时删除不是最新的ckpt
+
+Only the latest complete native recovery checkpoint may be retained for this task. Delete older current-task checkpoints promptly after the latest checkpoint is confirmed published. Do not create additional checkpoint copies, diagnostic checkpoints, or retained HF exports. Reuse native retention (`keep_top_k=0`, `ft_keep_latest_k=1`) after verifying its behavior. Preserve source assets and required conversion inputs. Save only required native recovery/segment/final boundaries; this overrides the earlier all-checkpoint retention and extra five-step save preparation. Any final parity export must be consumed within the latest checkpoint workflow and removed promptly; retained duplicate weights are not authorized.

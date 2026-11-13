@@ -1,7 +1,9 @@
 ## Modification History
 
 | Date | Change |
+| 2026-11-14 | Resume with explicit latest-checkpoint-only storage constraint; suspend stale resume arguments until retention is verified. |
 | --- | --- |
+| 2026-11-14 | Recover failed formal terminal state, zero-update business metrics and exact rank3 preemption. |
 | 2026-11-13 | Reject smaller GPU layouts with platform and native evidence; complete current input identity terminal verification. |
 | 2026-11-13 | Recover the existing formal job at15:36HKT and preserve its queued state and unfinished acceptance checks. |
 | 2026-11-13 | Accept completed five-teacher PP4 GPU save/resume, finite checkpoint, and full diagnostic parity. |
@@ -25,8 +27,8 @@
 | Q | completed | User answered `continue` to the concrete acceptance question. |
 | B | completed | Current assets/data/tokenizers, recipe, exact locked dependencies and four runtime imports verified; see native-runtime-versions.json. |
 | C | completed | CPU/HF references PASS; native token/mask/version fields prepared. Actual native parity remains phase D. |
-| D | in-progress | Two short workflows passed. TP4 actual long workflow passed one update but scorer/vLLM MAE 0.06853 failed. Identical-token TP2 replay and TP2/PP2 native training are the current checks. |
-| E | pending | Independent FP32 native save/resume completed5successful/0skipped updates; full state/finite verification completed for the short boundary. Formal200updates unsubmitted. |
+| D | completed | FP16 TP2/PP4 five-teacher diagnostic: five successful updates, finite native state and save/resume; recorded long-context parity checks PASS. |
+| E | in-progress | Formal exp-1113-174329-659007 Failed after rank3 Preempted. Eleven attempts, zero successful updates; native step10 resume/state/gradient diagnosis pending. |
 | F | pending | Final acceptance and completion archive outstanding. |
 
 ## 2026-11-12 — source and implementation investigation
@@ -2168,3 +2170,184 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 1. 配额批准不等于物理 GPU 已分配；当前 native scheduler 明确报资源不足。
 2. 正式0更新、没有 loss/grad/checkpoint；CPU和D诊断PASS不能替代正式验收。
 3. 现有 launcher 和 reader/monitor 保持；等待外部资源，不重新申请或重跑已完成准备。
+
+## 2026-11-14 01:52 HKT — Formal failure recovered; rank3 preemption established
+
+- completed E state recovery: formal job failed13:38:07Z November13; four actual H800 nodes/runtime receipts exist. Latest personal query17:42:14Z confirms terminal replicas. Previous queue/launcher-alive prose is historical and superseded. Launcher82605 exit1, reader53011 exit0, monitor5931 exit0; reader job Succeeded,32files/11summarizedsteps/no reader failures.
+- completed E business recovery:11optimizer attempts,0successful flags; last finite loss0.1954945773,256samples/2,242,562response tokens. No formalgradnorm/scaler metric yet. Five-group scorer/vLLM MAE0.00128222–0.00135436<0.02, zero issues/finite logprobs, tailmax~0.63457. These comparisons precede every successful update and do not settle final training/scorer/vLLM parity.
+- completed E initiating-event RCA: personal collector exactrank3 replica`exp-1113-174329-659007-eccbc87e`, UID160eb189-67d9-461e-93ce-b808243a4b8f, job UIDda3fd441-bc51-4d5b-aa27-ad216d7fe445. HistoricalEvents7/7rows bind nodegpu-h800-0320 and13:37:14Z `CleanPolicyTriggered`/`Preempted`. Earlier warning13:16:04Z; action at13:37:14Z marked replica preemptible. Requestingpod UNKNOWN. NativeGCS missing-heartbeat death13:37:30Z follows; JobStop13:38:17Z is later cleanup. CUDAallocator warnings are not the demonstrated termination cause.
+- completed bounded RCA queries: live/historicalEvents,exactreplica incidentlog(1row),existingDeepScan(0flows) PASS; RJob/replica audits ReadTimeout15s, preserved as query failures. Sherlock existingprivate session read faileduserinfo; no QR issued. Positive preemption event resolves immediate cause without broad node scanning.
+- in-progress native step1/step10 inspection: current actor `UV_PROJECT_ENVIRONMENT` invocation with `timeout60s uv run--no-sync python-` returned124/no output before a Python record. Preserve this setup failure; next use `uv run--no-project--no-sync` with the exact mounted interpreter to avoid project-environment lock/discovery, then inspect small native state files. No dependency install orGPUallocation.
+- next E: native state/scaler/Adam inspection and targeted fix if needed → currentcheap input checks and one native resume fromstep10 → firstactualsuccessfulupdate/loss/grad →200successfulupdates →final16H800three-waycheckpointverification. Unsavedattempt11 rolls back; keep it in attempt history. No overall completion archive.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 6｜FAILED 1｜TODO 1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师及数据身份已确认 |
+| Q | PASS | 200 次实际成功更新合同已授权 |
+| B | PASS | 完整输入和 CPU 环境准备已通过，可复用 |
+| C | PASS | 全词表 loss/gradient 参照和观测路径已准备 |
+| D | PASS | 五教师诊断、长 context 和 native save/resume 已通过 |
+| 清理 | PASS | 授权清理已完成 |
+| E | FAILED | 正式作业被抢占；11 次尝试、0 次成功，恢复尚未执行 |
+| F | TODO | 最终 checkpoint 验收和 archive 依赖 E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次调度 checkpoint 至当前失败恢复｜**当前前沿：** E 正式恢复和 gradient health
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 精确失败取证和小字节 state 读取直接服务恢复；没有扩展最终 harness |
+| D2 细节反复重试 | CLEAR | rank3 查询取得新 Preempted 原文；未重新提交相同失败作业 |
+| D3 支线问题修补 | CLEAR | 节点失联和零更新均直接影响 E |
+| D4 可并行任务停滞 | CLEAR | 平台 RCA 与 native state 读取均推进 |
+| D5 超范围镀金 | CLEAR | 模型、数据、词表、200 次成功和 0.02 上限保持 |
+| D6 分析空转 | CLEAR | 已确定抢占及 scaler 128，转入原生恢复 |
+| D7 路线违背 | CLEAR | 本机个人 API、精确云路径和辅助 soft gates 保持 |
+
+**文档检查：** S5 plan/progress 顶部仍写排队和 launcher 存活，被 Failed 终态、11 次尝试和退出记录否定；本轮已修正。S1–S4、S6 未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan/progress 当前状态和 failure report：替换过期调度描述，记录 Preempted、0 成功更新和 native scaler 状态（可直接执行，已更新）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：核实 native common scheduler/data recovery，完成最小 loss-scale 指标接线和受影响检查 → 一次原生 step10 恢复。
+2. 并行：当前廉价输入身份核对 ‖ 个人平台当前资源/作业查询；不重复全扫描。
+3. E/F：首个成功更新及 loss/grad → 200 成功 flags 和 Adam step → 最终 finite/state/refit/三方 parity → English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 直接终止原因已确认为 rank3 抢占；原生 loss scale 已回退至 128。
+2. 当前正式成功更新仍为 0，grad health 和最终 parity 仍未验收。
+3. 从 step10 恢复原生 optimizer/scaler/data state；保留未提交 attempt11 的历史，不重置缩放或放宽误差。
+
+### 2026-11-14 — Latest checkpoint storage constraint (in-progress, E)
+
+The user explicitly requires only the latest checkpoint and timely removal of old checkpoints because OSS space is insufficient. The prior resume preparation with unrestricted retention and extra five-step saves must not be submitted. Native retention is a union; candidate `keep_top_k=0` plus `ft_keep_latest_k=1` excludes periodic history and retains only the latest checkpoint. Verify this behavior, inventory only current-task checkpoint directories, protect the complete formal step10 recovery state, and delete older checkpoints using a locally submitted personal zero-GPU RJobBackend workload. No extra checkpoint copies are authorized. Formal successful updates remain0/200; no new GPU training request has been submitted.
+
+### 2026-11-14 — Native retention verified; regression collection RCA (E)
+
+Ten direct native retention checks passed with `keep_top_k=0`, `ft_keep_latest_k=1`, covering synchronous and asynchronous publication at periodic and non-periodic steps1,10,11,20,21. Exact current-task inventory found10 obsolete checkpoint directories (149,303,776,903logicalbytes) and one complete latest formal step10 (24,884,408,375bytes,31files,8tensor shards). Six exact parent jobs are terminal and owned by i-fengyicheng. Local0GPU cleanup jobexp-1114-020444-806306 is submitted; completion is still pending.
+
+The original metric test collected no items because tests/unit/conftest.py excludes mcore markers unless selected. After explicit `-m mcore`, its session fixture connected an unrelated existing Ray cluster and aborted with `GRPC_CALL_ERROR_INVALID_METADATA`; this did not exercise the regression. The module now uses existing pure-CPU fixture precedent fromtests/unit/models/value/test_lm_value.py. The next execution reached real begin_train_step but exposed explicit CUDA scalar allocations on a CPU-only host. The shared mocked-worker fixture now redirects scalar constructors toCPU and mocks CUDA synchronization, using the existing CPU buffer regression's exact approach. These changes isolate state-machine tests; they do not change training or suppress native runtime failures. The next run must reach the loss_scale assertion before any production edit.
+
+#### check-progress self-check — retention milestone and test startup fixes
+
+## 1. 规划完成情况
+
+**汇总：** PASS5｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | Source identities recorded. |
+| Q | PASS | Execution authorized. |
+| B | PASS | Native inputs fully validated previously. |
+| C | PASS | Numerical reference checks recorded. |
+| D | PASS | Five diagnostic updates and parity passed. |
+| E | TODO | Formal0/200; latest-only cleanup and metric repair advance native resume. |
+| F | TODO | Final evidence and completion archive depend onE. |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** previous failure-recovery checkpoint至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | Minimal retention and metric checks settle the current user constraint and missing formal health evidence. |
+| D2 细节反复重试 | CLEAR | Collection filtering, Ray startup abort, and explicit CUDA scalar allocation were identified from each actual traceback; next test isolates these exact causes. |
+| D3 支线问题修补 | CLEAR | Cleanup is explicitly requested; metric loss_scale is needed for formal overflow diagnosis. |
+| D4 可并行任务停滞 | CLEAR | Zero-GPU cleanup andCPUregression checks run concurrently. |
+| D5 超范围镀金 | CLEAR | Existing native retention and test fixture precedents reused; no new training interface. |
+| D6 分析空转 | CLEAR | Inspection produced exact deletion manifest, submitted cleanup, and corrected resume configuration. |
+| D7 路线违背 | CLEAR | New storage instruction is recorded and overrides prior prepared arguments. |
+
+**文档检查：** S1–S6均未发现明显缺陷。
+**归因：** 无
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：确认清理完成且step10未变；得到有效指标回归失败并完成最小接线，随后运行受影响检查。
+2. E：更新nativepreflight与dry-run，提交一次H800恢复并核实首个成功更新、loss_scale、grad_norm和教师覆盖。
+
+## 4. 最值得关注的 3 点
+
+1. Formal training remains0/200 successful updates.
+2. Latest-only retention has10directPASS checks; cloud deletion must still reach terminal completion.
+3. Test startup failures have not validated the metric fix; the actual loss_scale assertion must execute.
+
+### 2026-11-14 — Latest-only cleanup and loss-scale metrics verified (completed E prerequisites)
+
+- Local personal0GPUcleanupjob`exp-1114-020444-806306`, UID`d647985a-bc4a-4cbf-824a-bfcd26f1a18b`, and its replica bothSucceeded; containerexit0/restart0, expected company image digestd29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177, source100.96.128.195:/data/ycfeng:/data/ycfeng. Deleted10current-task checkpoint directories,149,303,776,903logicalbytes. Exactly one checkpoint remains: formalexp-1113-174329-659007/checkpoints/step_10. All31retainedfiles match inventory sizes/mtime, including8shards. This proves namespace deletion and unchanged retained inputs, not backend physical quota reclamation.
+- Actual native scaler state: all8shards atstep1have scale65536/growth0/hysteresis1; atstep10they have scale128/growth0/hysteresis−8. The optimizer contains param_groups but no successfulAdamstep. Common schedulernum_steps2560,constantLR1e−6/WD0.01,lr_decay_steps51200; nativeiteration0. Data-plane/training_info boundary remainscurrent_step10/consumed_samples2560. Reuse this state without resetting the scaler or changing loss normalization.
+- Valid metric RED now reaches the actual worker→TQ→step-aggregation assertion and fails`KeyError: loss_scale`. Minimal production fix captures `float(optimizer.get_loss_scale().item())` beforeoptimizer.step, and passes it through existing aggregation totrain/loss_scale. The test mutates native mockscale128→64duringoverflow and verifies reportedscale128,success0,absentgrad_norm. Actual scaler, optimizer and loss arithmetic are unchanged.
+- Complete mockedCPUstate-machine suite108PASS/33.21s; Python3.13.14/Torch2.13.0+cu130/pytest9.1.1. Ruff0.9.9checkandformat4filesPASS;gitdiffwhitespacePASS. The global Ray/session fixtures were isolated using existing pureCPUtest precedents; explicitCUDA scalar constructors and synchronization are mocked in this state-machine fabric. Early collection/Ray/CUDAstartupfailures remain evidence and do not count as validRED.
+- Formal4node recipe now useskeep_top_k0/ft_keep_latest_k1/save_period200. Additionalfive-step saves are removed; native75minute deadline and finalstep remain required save boundaries. NativeMasterConfig/OptimizerConfig/teacher/topology/model-input/horizon preflightPASS; personaldry-runPASS. Scheduler horizon remains200, original sixmodelpaths/fiveteachers/full151936vocabulary/256freshtrajectories/65536ceiling are unchanged. All41cheappublication/identity checksPASSwithoutrepeating full validation.
+- No new GPU training submitted yet; formal0/200 remains unfinished. Preparedexactargs/config are archived inevidence/formal-native-resume-1-{submit-args,resolved-config}-20261114.json.
+
+#### check-progress self-check — cleanup and instrumentation delivered
+
+## 1. 规划完成情况
+
+**汇总：** PASS5｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | Recorded exact source models and data. |
+| Q | PASS | User authorized execution. |
+| B | PASS | Inputs and runtime previously validated. |
+| C | PASS | Numerical checks and instrumentation available. |
+| D | PASS | Five diagnostic optimizer updates verified. |
+| E | TODO | Cleanup and metrics verified; formal0/200 still requires native resume. |
+| F | TODO | Final parity and archive awaitE. |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** prior retention checkpoint至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | Required108checkspassed; stop extending instrumentation and submit resume. |
+| D2 细节反复重试 | CLEAR | ActualmetricREDfollowedbyGREEN; no unresolved test retry. |
+| D3 支线问题修补 | CLEAR | Only explicit cleanup and formalhealth metric changed. |
+| D4 可并行任务停滞 | CLEAR | Cleanup,CPUregression andpreflightadvancedconcurrently. |
+| D5 超范围镀金 | CLEAR | No newoptimizer/scaler/lossinterface. |
+| D6 分析空转 | CLEAR | Concrete cleanup completion and tested code delivered. |
+| D7 路线违背 | CLEAR | Latest-only storage and originalformalcontractpreserved. |
+
+**文档检查：** S1–S6均未发现明显缺陷。
+**归因：** 无
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：scoped signedcommit并提交一次H800native恢复；确认实际step10恢复和首个成功optimizer更新。
+2. E：持续核实loss、gradnorm、loss_scale、教师覆盖和每次checkpoint发布后仅保留最新。
+
+## 4. 最值得关注的 3 点
+
+1. Formalsuccessfulupdatesremain0/200.
+2. Onlystep10remains; oldcheckpointcleanupandnative retentionareverified.
+3. InstrumentationisCPUverified;GPUoverflow/gradienthealthstillrequiresactualtraining.

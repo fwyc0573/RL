@@ -49,6 +49,7 @@ The bugs these catch:
 from __future__ import annotations
 
 import logging
+from collections.abc import Iterator
 from types import SimpleNamespace
 from typing import Any
 from unittest.mock import MagicMock, patch
@@ -72,6 +73,19 @@ pytestmark = pytest.mark.mcore
 
 # Module path of the worker under test
 WORKER_MOD = "nemo_rl.models.policy.workers.megatron_policy_worker"
+
+
+@pytest.fixture(scope="session", autouse=True)
+def init_ray_cluster() -> Iterator[None]:
+    """Keep the CPU state-machine tests independent of a Ray cluster."""
+    yield
+
+
+@pytest.fixture(scope="session", autouse=True)
+def ray_gpu_monitor() -> Iterator[MagicMock]:
+    monitor = MagicMock()
+    monitor._collect_metrics.return_value = {}
+    yield monitor
 
 
 # ── Mock fabric ──────────────────────────────────────────────────────────
@@ -129,6 +143,7 @@ def _make_worker(loss_type):
     w.optimizer = MagicMock()
     # MegatronOptimizer.step returns (success, grad_norm, num_zeros)
     w.optimizer.step.return_value = (True, 0.5, 0)
+    w.optimizer.get_loss_scale.return_value = torch.tensor([1.0])
     w.optimizer.grad_norms_by_group = {}
     w.optimizer.param_groups = [{"lr": 1e-4, "weight_decay": 0.01}]
     w.scheduler = MagicMock()
@@ -206,6 +221,13 @@ def mock_module_symbols():
     # Make `aggregate_training_statistics` return ({}, scalar) — what the
     # finish path expects.
     agg_ret = ({"loss": [0.0]}, torch.tensor(0.5))
+    original_zeros, original_tensor = torch.zeros, torch.tensor
+
+    def cpu_zeros(*args: Any, **kwargs: Any) -> torch.Tensor:
+        return original_zeros(*args, **{**kwargs, "device": "cpu"})
+
+    def cpu_tensor(*args: Any, **kwargs: Any) -> torch.Tensor:
+        return original_tensor(*args, **{**kwargs, "device": "cpu"})
 
     patches = {
         "megatron_forward_backward": [
@@ -256,6 +278,9 @@ def mock_module_symbols():
         patch(f"{WORKER_MOD}.get_rerun_state_machine") as grsm,
         patch(f"{WORKER_MOD}.parallel_state") as pstate,
         patch("torch.distributed.all_reduce") as ar,
+        patch("torch.zeros", side_effect=cpu_zeros),
+        patch("torch.tensor", side_effect=cpu_tensor),
+        patch("torch.cuda.synchronize"),
         patch("torch.cuda.empty_cache") as cec,
         patch("torch.cuda.get_device_name", return_value="H100"),
         patch("torch.distributed.get_rank", return_value=0),
@@ -700,6 +725,32 @@ class TestFinish:
         assert w.model.config.param_sync_func is saved_param_sync
         assert w._first_train_step_param_sync_func is None
         assert w._first_train_step_forward_pre_hook_disabled is False
+
+    def test_reports_loss_scale_used_before_optimizer_backoff(
+        self, mock_module_symbols
+    ) -> None:
+        from nemo_rl.algorithms.loss.interfaces import LossType
+        from nemo_rl.algorithms.single_controller_utils.utils import (
+            aggregate_step_metrics,
+        )
+        from nemo_rl.models.policy.tq_policy import _aggregate_train_results
+
+        w = self._setup_open_step(mock_module_symbols, LossType.TOKEN_LEVEL)
+        loss_scale = torch.tensor([128.0])
+        w.optimizer.get_loss_scale.return_value = loss_scale
+
+        def overflow_step() -> tuple[bool, None, None]:
+            loss_scale.fill_(64.0)
+            return False, None, None
+
+        w.optimizer.step.side_effect = overflow_step
+        result = w.finish_train_step()
+        metrics = aggregate_step_metrics(_aggregate_train_results([result]))
+
+        assert metrics["loss_scale"] == 128.0
+        assert metrics["optimizer_update_successful"] == 0
+        assert "grad_norm" not in metrics
+        assert w.optimizer.get_loss_scale().item() == 64.0
 
     def test_keeps_first_step_param_sync_disabled_after_failed_update(
         self, mock_module_symbols

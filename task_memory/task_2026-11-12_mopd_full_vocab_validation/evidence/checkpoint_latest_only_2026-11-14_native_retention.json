@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "async_finalization": false,
+      "step": 1,
+      "remaining": [
+        "step_1"
+      ]
+    },
+    {
+      "async_finalization": false,
+      "step": 10,
+      "remaining": [
+        "step_10"
+      ]
+    },
+    {
+      "async_finalization": false,
+      "step": 11,
+      "remaining": [
+        "step_11"
+      ]
+    },
+    {
+      "async_finalization": false,
+      "step": 20,
+      "remaining": [
+        "step_20"
+      ]
+    },
+    {
+      "async_finalization": false,
+      "step": 21,
+      "remaining": [
+        "step_21"
+      ]
+    },
+    {
+      "async_finalization": true,
+      "step": 1,
+      "remaining": [
+        "step_1"
+      ]
+    },
+    {
+      "async_finalization": true,
+      "step": 10,
+      "remaining": [
+        "step_10"
+      ]
+    },
+    {
+      "async_finalization": true,
+      "step": 11,
+      "remaining": [
+        "step_11"
+      ]
+    },
+    {
+      "async_finalization": true,
+      "step": 20,
+      "remaining": [
+        "step_20"
+      ]
+    },
+    {
+      "async_finalization": true,
+      "step": 21,
+      "remaining": [
+        "step_21"
+      ]
+    }
+  ]
+}

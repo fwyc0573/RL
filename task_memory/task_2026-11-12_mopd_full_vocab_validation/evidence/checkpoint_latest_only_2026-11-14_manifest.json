@@ -1,0 +1,1867 @@
+{
+  "checked_at": "2026-11-13T18:02:44.025211+00:00",
+  "root": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
+  "latest": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
+  "latest_structure": "PASS",
+  "filesystem_free_bytes": 8610073255936,
+  "checkpoints": [
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1",
+      "job": "exp-1113-095147-620678",
+      "bytes": 31640,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/config.yaml",
+          "bytes": 20999,
+          "mtime_ns": 1794535370133769700
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/training_info.json",
+          "bytes": 255,
+          "mtime_ns": 1794535370099010064
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794535370150790324
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794535370198678936
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794535370190888963
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_73f43b6b.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794535370167879254
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_f310ec1d.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370173063080
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_182e97c2.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370174887203
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_fa9bfa10.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370170554742
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_2f345300.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370178276569
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_221fd4c3.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370166347810
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_32d5bd35.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370169296623
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_c21ecdf8.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370171168530
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_184fa623.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370169981575
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_f99588bc.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370167540142
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_894c6126.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370173239786
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_60d42456.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370172508937
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_50fb5116.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370172479991
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_b80f3e81.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794535370179259898
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 1,
+        "consumed_samples": 32,
+        "total_valid_tokens": 4096.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1",
+      "job": "exp-1113-104851-054395",
+      "bytes": 24883791741,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/config.yaml",
+          "bytes": 20999,
+          "mtime_ns": 1794539358109898886
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794539364436004784
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794539364448926925
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794539364465292295
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794539364417995814
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/training_info.json",
+          "bytes": 255,
+          "mtime_ns": 1794539358086279914
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794539358125419506
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794539358280833325
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794539358275888588
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_3f0b8659.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794539358148073012
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_c15a2784.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358262252937
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_7461081a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358263381609
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_c180da08.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358264686687
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_c55b545a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358140885082
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_6a308ac5.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358147512697
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_50152b7f.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358144035148
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_bbecb035.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358256633268
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_23c1bbaf.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358261445496
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_50fb9ab2.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358146565330
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_00eb2fb8.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358138679892
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_9d8937d5.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358151701473
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_c96722a9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358150809676
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_038164d1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539358261276075
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794539368806198284
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539368798184530
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/.metadata",
+          "bytes": 497201,
+          "mtime_ns": 1794539368729454801
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794539368606997245
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794539368026926333
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794539365761162178
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794539365742164444
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794539365606657833
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794539365841955041
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794539367880014344
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794539368098414915
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794539368743323868
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 26955,
+          "mtime_ns": 1794539368788504767
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539368751756150
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 1,
+        "consumed_samples": 32,
+        "total_valid_tokens": 4096.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10",
+      "job": "exp-1113-104851-054395",
+      "bytes": 24883792197,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/config.yaml",
+          "bytes": 20992,
+          "mtime_ns": 1794539973648045032
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794539975019764956
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794539975024793632
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794539975036688616
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794539975008871954
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/training_info.json",
+          "bytes": 262,
+          "mtime_ns": 1794539973622336294
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794539973670668231
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/metadata.json",
+          "bytes": 1395,
+          "mtime_ns": 1794539973778001294
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794539973766860616
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_5174aed4.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794539973685047701
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_604a54e9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973686770831
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_a9e7b287.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973684786941
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_04f26bf1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973687219995
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_79b848d5.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794539973682183572
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_b3c4ecd9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973684653383
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_50565896.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973686008300
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_2041e674.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973685097346
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_350e2ea9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973682128863
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d5ba4575.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973684013640
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_597ed259.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973679697828
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_f13e9019.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973688573053
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_b732c680.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973687696528
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_41d9a9b1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539973688822569
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794539979459868015
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539979452232425
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/.metadata",
+          "bytes": 497409,
+          "mtime_ns": 1794539979390757359
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794539978778541898
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794539978739331788
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794539977251351674
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794539977206173266
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794539977281913529
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794539977322065972
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794539978845956176
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794539978853658990
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794539979401235776
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 27069,
+          "mtime_ns": 1794539979443780868
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539979410319033
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 10,
+        "consumed_samples": 320,
+        "total_valid_tokens": 40960.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15",
+      "job": "exp-1113-104851-054395",
+      "bytes": 24883792197,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/config.yaml",
+          "bytes": 20992,
+          "mtime_ns": 1794540030565276112
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794540031968828565
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794540031976628795
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794540031983650050
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794540031956916043
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/training_info.json",
+          "bytes": 262,
+          "mtime_ns": 1794540030528223886
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794540030581857490
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/metadata.json",
+          "bytes": 1395,
+          "mtime_ns": 1794540030960769271
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794540030951897299
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_5174aed4.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794540030941666076
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_604a54e9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030596520825
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_a9e7b287.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030656129789
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_04f26bf1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030599401020
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_79b848d5.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794540030597570303
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_b3c4ecd9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030596967077
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_50565896.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030597077575
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_2041e674.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030599939089
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_350e2ea9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030652890355
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d5ba4575.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030597081574
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_597ed259.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030590757345
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_f13e9019.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030945918225
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_b732c680.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030598838032
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_41d9a9b1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540030600457450
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794540037211042658
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794540037099294674
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/.metadata",
+          "bytes": 497409,
+          "mtime_ns": 1794540037033610083
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794540035787416173
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794540035822246069
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794540034204750748
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794540034268508257
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794540034349665539
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794540034420301322
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794540035889333014
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794540035927324526
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794540037050906213
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 27069,
+          "mtime_ns": 1794540037090322741
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794540037061297606
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 15,
+        "consumed_samples": 480,
+        "total_valid_tokens": 61440.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16",
+      "job": "exp-1113-104851-054395",
+      "bytes": 24883792261,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/config.yaml",
+          "bytes": 20992,
+          "mtime_ns": 1794540039777664913
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794540041079318970
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794540041092478997
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/rollout_recovery.pt",
+          "bytes": 20013,
+          "mtime_ns": 1794540041098463420
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794540041071105912
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/training_info.json",
+          "bytes": 262,
+          "mtime_ns": 1794540039749778120
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794540039798753089
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/metadata.json",
+          "bytes": 1395,
+          "mtime_ns": 1794540039841230310
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794540039833438001
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_5174aed4.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794540039818679116
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_604a54e9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039815908592
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_a9e7b287.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039820454695
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_04f26bf1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039824166504
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_79b848d5.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794540039817914142
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_b3c4ecd9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039812456454
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_50565896.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039816240303
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_2041e674.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039814345456
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_350e2ea9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039816615537
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d5ba4575.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039818920592
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_597ed259.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039815152436
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_f13e9019.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039821003128
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_b732c680.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039815746660
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_41d9a9b1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794540039819419146
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794540046050634995
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794540046043244505
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/.metadata",
+          "bytes": 497409,
+          "mtime_ns": 1794540045986561775
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794540045581073467
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794540045510951062
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794540043369217985
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794540043253817123
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794540043555471312
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794540043625516435
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794540045641009025
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794540045849998107
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794540045999016917
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 27069,
+          "mtime_ns": 1794540046035385392
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794540046004812155
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 16,
+        "consumed_samples": 512,
+        "total_valid_tokens": 65536.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5",
+      "job": "exp-1113-104851-054395",
+      "bytes": 24883791983,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/config.yaml",
+          "bytes": 20992,
+          "mtime_ns": 1794539915561720121
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794539921469508758
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794539921478498315
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794539921486525999
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794539921459060882
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/training_info.json",
+          "bytes": 258,
+          "mtime_ns": 1794539915525441820
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794539915585464330
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794539915621729237
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794539915616564699
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_5174aed4.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794539915603087119
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_604a54e9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915604731919
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_a9e7b287.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915609506433
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_04f26bf1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915608824367
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_79b848d5.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794539915600688898
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_b3c4ecd9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915601388068
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_50565896.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915601736967
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_2041e674.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915602943019
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_350e2ea9.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915603832656
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d5ba4575.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915603632710
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_597ed259.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915598313344
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_f13e9019.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915605473378
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_b732c680.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915602987633
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_41d9a9b1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794539915607891841
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794539926316282108
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539926309651015
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/.metadata",
+          "bytes": 497201,
+          "mtime_ns": 1794539926244032555
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794539925881478810
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794539925375839674
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794539923334739335
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794539923107246528
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794539922941856668
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794539922986506404
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794539925502971276
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794539925174316937
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794539926259812905
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 27069,
+          "mtime_ns": 1794539926301943422
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794539926270507119
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 5,
+        "consumed_samples": 160,
+        "total_valid_tokens": 20480.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1",
+      "job": "exp-1113-174329-659007",
+      "bytes": 24884408258,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/config.yaml",
+          "bytes": 21023,
+          "mtime_ns": 1794570235707726073
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/replacement_reserve.pt",
+          "bytes": 550309,
+          "mtime_ns": 1794570241402578589
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794570241413712995
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/rollout_recovery.pt",
+          "bytes": 149677,
+          "mtime_ns": 1794570241422969622
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794570241350019807
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/training_info.json",
+          "bytes": 260,
+          "mtime_ns": 1794570235682092788
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/controller_state.pkl",
+          "bytes": 6989,
+          "mtime_ns": 1794570235764650067
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/metadata.json",
+          "bytes": 1394,
+          "mtime_ns": 1794570236370667010
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 512,
+          "mtime_ns": 1794570236363436626
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_6584477d.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794570235780454690
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_5d2c8e1a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235784550617
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_0a20b813.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235781902553
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_e046b818.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235777786750
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_f2b10c30.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235782460337
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_e0898bf0.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235787681072
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_fd45d227.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235788416456
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_11fbd1e5.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794570235780530392
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794570246205800164
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794570246187966521
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/.metadata",
+          "bytes": 497201,
+          "mtime_ns": 1794570246091918757
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794570245319258610
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794570245453111687
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794570243092953790
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794570243166299813
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794570243272300304
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794570243292532006
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794570245733591710
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794570245357377951
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794570246110998644
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 26963,
+          "mtime_ns": 1794570246174303378
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794570246121642771
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 1,
+        "consumed_samples": 256,
+        "total_valid_tokens": 2091131.0
+      }
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
+      "job": "exp-1113-174329-659007",
+      "bytes": 24884408375,
+      "files": [
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/config.yaml",
+          "bytes": 21016,
+          "mtime_ns": 1794576341439733191
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/replacement_reserve.pt",
+          "bytes": 550309,
+          "mtime_ns": 1794576346378711368
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794576346389869193
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/rollout_recovery.pt",
+          "bytes": 149677,
+          "mtime_ns": 1794576346397795971
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794576346342390975
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/training_info.json",
+          "bytes": 267,
+          "mtime_ns": 1794576341408928324
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/controller_state.pkl",
+          "bytes": 6989,
+          "mtime_ns": 1794576341502159272
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/metadata.json",
+          "bytes": 1396,
+          "mtime_ns": 1794576341548258922
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 512,
+          "mtime_ns": 1794576341535840589
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_e3976ac1.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794576341512892666
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_c1eab89a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341520611312
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_280e1481.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341522080399
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_999ef94d.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341513883670
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_b9962321.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341515794396
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d3d6dc0c.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341526531539
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_45555263.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341526452470
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_d753cb1a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794576341519616522
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/latest_checkpointed_iteration.txt",
+          "bytes": 1,
+          "mtime_ns": 1794576351275305712
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/latest_train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794576351266898794
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/.metadata",
+          "bytes": 497202,
+          "mtime_ns": 1794576351193694417
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__0_0.distcp",
+          "bytes": 3927251737,
+          "mtime_ns": 1794576350295112198
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__1_0.distcp",
+          "bytes": 3927142514,
+          "mtime_ns": 1794576350509499643
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__2_0.distcp",
+          "bytes": 2293627592,
+          "mtime_ns": 1794576348073025946
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__3_0.distcp",
+          "bytes": 2293520142,
+          "mtime_ns": 1794576348112364474
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__4_0.distcp",
+          "bytes": 2293627720,
+          "mtime_ns": 1794576348122284388
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__5_0.distcp",
+          "bytes": 2293520270,
+          "mtime_ns": 1794576348284619341
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__6_0.distcp",
+          "bytes": 3927279161,
+          "mtime_ns": 1794576350759064414
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/__7_0.distcp",
+          "bytes": 3927165549,
+          "mtime_ns": 1794576350502224964
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/metadata.json",
+          "bytes": 63,
+          "mtime_ns": 1794576351216845669
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/run_config.yaml",
+          "bytes": 27077,
+          "mtime_ns": 1794576351258135301
+        },
+        {
+          "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10/policy/weights/iter_0000000/train_state.pt",
+          "bytes": 3461,
+          "mtime_ns": 1794576351224345822
+        }
+      ],
+      "retain": true,
+      "training_info": {
+        "current_step": 10,
+        "consumed_samples": 2560,
+        "total_valid_tokens": 21103599.0
+      }
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5",
+      "job": "exp-1112-213439-246833",
+      "bytes": 125971,
+      "files": [
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/config.yaml",
+          "bytes": 20921,
+          "mtime_ns": 1794492292895018350
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794492297379889438
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794492297388401939
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794492297420214024
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794492297371432343
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/training_info.json",
+          "bytes": 258,
+          "mtime_ns": 1794492292858227783
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/controller_state.pkl",
+          "bytes": 2389,
+          "mtime_ns": 1794492292915037233
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794492292978431984
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794492292973672334
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_afae5f91.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794492292932499601
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_16950548.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292938113157
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_6bb94061.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292936509036
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_64b13e00.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292939718582
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_7b307dcc.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292941943624
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_fd0cc7f2.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292935013103
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_7eca3f1a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292928906964
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_05160c47.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794492292935343485
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_67a7a5a2.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292936207312
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_54263550.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292936421465
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_9d53d99f.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292934879294
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_2afa7cb5.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292935173556
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_3f7b4580.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292941693031
+        },
+        {
+          "path": "final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_59523883.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794492292931311112
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 5,
+        "consumed_samples": 160,
+        "total_valid_tokens": 20480.0
+      }
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5",
+      "job": "exp-1112-175309-039353",
+      "bytes": 125329,
+      "files": [
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/config.yaml",
+          "bytes": 20677,
+          "mtime_ns": 1794481854063680169
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794481858092662500
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794481858098835197
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/rollout_recovery.pt",
+          "bytes": 20013,
+          "mtime_ns": 1794481858107794499
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794481858078745214
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/training_info.json",
+          "bytes": 258,
+          "mtime_ns": 1794481854035898335
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/controller_state.pkl",
+          "bytes": 2059,
+          "mtime_ns": 1794481854085047036
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794481854110808487
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794481854106847899
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_c9eeb441.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794481854095690779
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_1e93b104.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854100047007
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_d2ba78a1.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854099422819
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_62e57102.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854098681256
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_475db95b.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854100089905
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_2b7ec11a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854097937221
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_52eb7967.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854093786823
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_ad60e7fd.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854095846832
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_8b5b8875.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854097536316
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_091007c0.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854095271116
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_d42cad2a.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854097367469
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_c4063d67.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854098700735
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_b2c9f0e0.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854101618605
+        },
+        {
+          "path": "five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_4267f394.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794481854095629919
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 5,
+        "consumed_samples": 160,
+        "total_valid_tokens": 20480.0
+      }
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5",
+      "job": "exp-1112-191947-030955",
+      "bytes": 125326,
+      "files": [
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/config.yaml",
+          "bytes": 20738,
+          "mtime_ns": 1794483796464437779
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/replacement_reserve.pt",
+          "bytes": 65382,
+          "mtime_ns": 1794483800937255907
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/replay_buffer_metadata.pt",
+          "bytes": 1671,
+          "mtime_ns": 1794483800947344238
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/rollout_recovery.pt",
+          "bytes": 19949,
+          "mtime_ns": 1794483800957091537
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/train_dataloader.pt",
+          "bytes": 7272,
+          "mtime_ns": 1794483800923735617
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/training_info.json",
+          "bytes": 258,
+          "mtime_ns": 1794483796433092248
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/controller_state.pkl",
+          "bytes": 2059,
+          "mtime_ns": 1794483796492199523
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/metadata.json",
+          "bytes": 1393,
+          "mtime_ns": 1794483796536534738
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/storage_unit_info.json",
+          "bytes": 900,
+          "mtime_ns": 1794483796527058902
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_3596c422.pkl",
+          "bytes": 530,
+          "mtime_ns": 1794483796511995353
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_10_TQ_STORAGE_UNIT_a5993ea8.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796516059836
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_11_TQ_STORAGE_UNIT_a5d5a1b3.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796513851469
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_12_TQ_STORAGE_UNIT_fb72f156.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796517442212
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_13_TQ_STORAGE_UNIT_b1819dd2.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796507981163
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_ca34b7ec.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796505494878
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_c73d06df.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796507440423
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_5b56cf35.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796510881247
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_60d6b0c3.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796512099126
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_9314a85d.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796512042777
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_3857dbb8.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796504233827
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_d5e1accc.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796517307992
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_8_TQ_STORAGE_UNIT_8016cb1e.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796511657563
+        },
+        {
+          "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5/data_plane/simple_storage/su_9_TQ_STORAGE_UNIT_e11cff25.pkl",
+          "bytes": 398,
+          "mtime_ns": 1794483796511814921
+        }
+      ],
+      "retain": false,
+      "training_info": {
+        "current_step": 5,
+        "consumed_samples": 160,
+        "total_valid_tokens": 20480.0
+      }
+    }
+  ],
+  "parent_jobs": [
+    {
+      "name": "exp-1112-175309-039353",
+      "uid": "84a2ec3c-9eac-40b4-b0c9-bc88c1810f70",
+      "creator": "i-fengyicheng",
+      "phase": "Succeeded"
+    },
+    {
+      "name": "exp-1112-191947-030955",
+      "uid": "db55afbe-d9fd-480a-bcb9-a0e5f194e25e",
+      "creator": "i-fengyicheng",
+      "phase": "Succeeded"
+    },
+    {
+      "name": "exp-1112-213439-246833",
+      "uid": "26da0245-1e9e-4f37-97e5-877507adf3c1",
+      "creator": "i-fengyicheng",
+      "phase": "Succeeded"
+    },
+    {
+      "name": "exp-1113-095147-620678",
+      "uid": "d09dee5f-b749-41a9-b178-f2da02cc686a",
+      "creator": "i-fengyicheng",
+      "phase": "Stopped"
+    },
+    {
+      "name": "exp-1113-104851-054395",
+      "uid": "6696f121-e116-4125-b93b-02b78cfae2a2",
+      "creator": "i-fengyicheng",
+      "phase": "Succeeded"
+    },
+    {
+      "name": "exp-1113-174329-659007",
+      "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445",
+      "creator": "i-fengyicheng",
+      "phase": "Failed"
+    }
+  ],
+  "authorized_request": "Only retain the latest checkpoint; delete older current-task checkpoints promptly.",
+  "verified_at": "2026-11-13T18:03:13.696182+00:00"
+}

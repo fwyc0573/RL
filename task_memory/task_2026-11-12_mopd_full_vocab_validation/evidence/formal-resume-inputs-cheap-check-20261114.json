@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "files": 41,
+  "roles": [
+    "student",
+    "math",
+    "code",
+    "stem",
+    "logic",
+    "if"
+  ],
+  "full_scan_repeated": false,
+  "remote_identity": "i-fengyicheng",
+  "publication_report": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/formal-inputs-cpu-validation-20261113.json"
+}

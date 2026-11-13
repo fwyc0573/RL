@@ -1,0 +1,33 @@
+{
+  "regression_red": {
+    "status": "EXPECTED_FAIL",
+    "error": "KeyError: 'loss_scale'",
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/loss-scale-red-cpu-isolated-20261114.log"
+  },
+  "regression_green": {
+    "status": "PASS",
+    "tests": 108,
+    "duration_s": 33.21,
+    "warnings": 17,
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/loss-scale-green-20261114.log"
+  },
+  "native_retention": {
+    "status": "PASS",
+    "checks": 10
+  },
+  "native_resume_preflight": {
+    "status": "PASS",
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-1-native-preflight-latest-only-20261114.log"
+  },
+  "personal_submit_dry_run": {
+    "status": "PASS",
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-1-dry-run-latest-only-20261114.log"
+  },
+  "ruff": {
+    "version": "0.9.9",
+    "lint": "PASS",
+    "format": "PASS",
+    "files": 4
+  },
+  "formal_successful_updates": 0
+}

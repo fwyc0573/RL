@@ -1,0 +1,64 @@
+{
+  "job": "exp-1114-020444-806306",
+  "started": "2026-11-13T18:06:00.149256+00:00",
+  "latest": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
+  "entries": [
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-095147-620678/checkpoints/tmp_step_1",
+      "bytes": 31640,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_1",
+      "bytes": 24883791741,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_10",
+      "bytes": 24883792197,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_15",
+      "bytes": 24883792197,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_16",
+      "bytes": 24883792261,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/checkpoints/step_5",
+      "bytes": 24883791983,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_1",
+      "bytes": 24884408258,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/checkpoints/step_5",
+      "bytes": 125971,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/checkpoints/step_5",
+      "bytes": 125329,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/checkpoints/step_5",
+      "bytes": 125326,
+      "status": "deleted_and_absent"
+    }
+  ],
+  "logical_bytes_removed": 149303776903,
+  "status": "completed",
+  "remaining_checkpoints": [
+    "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10"
+  ],
+  "latest_unchanged": "PASS",
+  "finished": "2026-11-13T18:06:02.151810+00:00"
+}

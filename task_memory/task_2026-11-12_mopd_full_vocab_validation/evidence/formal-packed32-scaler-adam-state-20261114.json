@@ -1,0 +1,1014 @@
+{
+  "1": [
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_0.optimizer/shard_0_1",
+      "file": "__0_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_0.grad_scaler/shard_0_1",
+      "file": "__0_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_1.optimizer/shard_0_1",
+      "file": "__1_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_1.grad_scaler/shard_0_1",
+      "file": "__1_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_2.optimizer/shard_0_1",
+      "file": "__2_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_2.grad_scaler/shard_0_1",
+      "file": "__2_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_3.optimizer/shard_0_1",
+      "file": "__3_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_3.grad_scaler/shard_0_1",
+      "file": "__3_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_4.optimizer/shard_0_1",
+      "file": "__4_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_4.grad_scaler/shard_0_1",
+      "file": "__4_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_5.optimizer/shard_0_1",
+      "file": "__5_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_5.grad_scaler/shard_0_1",
+      "file": "__5_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_6.optimizer/shard_0_1",
+      "file": "__6_0.distcp",
+      "offset": 43877,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_6.grad_scaler/shard_0_1",
+      "file": "__6_0.distcp",
+      "offset": 45522,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_7.optimizer/shard_0_1",
+      "file": "__7_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 1,
+      "key": "optimizer.distributed.dp_group_idx_7.grad_scaler/shard_0_1",
+      "file": "__7_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            65536.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": 1
+        }
+      ]
+    }
+  ],
+  "10": [
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_0.optimizer/shard_0_1",
+      "file": "__0_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_0.grad_scaler/shard_0_1",
+      "file": "__0_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_1.optimizer/shard_0_1",
+      "file": "__1_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_1.grad_scaler/shard_0_1",
+      "file": "__1_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_2.optimizer/shard_0_1",
+      "file": "__2_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_2.grad_scaler/shard_0_1",
+      "file": "__2_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_3.optimizer/shard_0_1",
+      "file": "__3_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_3.grad_scaler/shard_0_1",
+      "file": "__3_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_4.optimizer/shard_0_1",
+      "file": "__4_0.distcp",
+      "offset": 42364,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_4.grad_scaler/shard_0_1",
+      "file": "__4_0.distcp",
+      "offset": 44009,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_5.optimizer/shard_0_1",
+      "file": "__5_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_5.grad_scaler/shard_0_1",
+      "file": "__5_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_6.optimizer/shard_0_1",
+      "file": "__6_0.distcp",
+      "offset": 43877,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_6.grad_scaler/shard_0_1",
+      "file": "__6_0.distcp",
+      "offset": 45522,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_7.optimizer/shard_0_1",
+      "file": "__7_0.distcp",
+      "offset": 0,
+      "length": 1645,
+      "state": [
+        {
+          "param_groups": [
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 1.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.01
+            },
+            {
+              "is_expert_parallel": false,
+              "default_config": true,
+              "wd_mult": 0.0,
+              "lr_mult": 1.0,
+              "is_decoupled_lr": false,
+              "max_lr": 1e-06,
+              "min_lr": 1e-06,
+              "lr": 1e-06,
+              "bias_correction": true,
+              "betas": [
+                0.9,
+                0.95
+              ],
+              "eps": 1e-08,
+              "weight_decay": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "step": 10,
+      "key": "optimizer.distributed.dp_group_idx_7.grad_scaler/shard_0_1",
+      "file": "__7_0.distcp",
+      "offset": 1645,
+      "length": 1641,
+      "state": [
+        {
+          "scale": [
+            128.0
+          ],
+          "growth_tracker": 0,
+          "hysteresis_tracker": -8
+        }
+      ]
+    }
+  ]
+}

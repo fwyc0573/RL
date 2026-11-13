@@ -8,3 +8,8 @@ on_policy_distillation:
   non_colocated_teachers:
     default_teacher_cfg:
       gpus_per_node: 2
+
+checkpointing:
+  keep_top_k: 0
+  ft_keep_latest_k: 1
+  save_period: 200

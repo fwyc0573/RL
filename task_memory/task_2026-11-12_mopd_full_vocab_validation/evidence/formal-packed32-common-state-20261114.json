@@ -1,0 +1,26 @@
+[
+  {
+    "checkpoint_version": 3.1,
+    "iteration": 0,
+    "optimizer": {
+      "param_state_sharding_type": "dp_reshardable"
+    },
+    "opt_param_scheduler": {
+      "max_lr": 1e-06,
+      "lr_warmup_steps": 0,
+      "num_steps": 2560,
+      "lr_decay_style": "constant",
+      "lr_decay_steps": 51200,
+      "min_lr": 1e-06,
+      "start_wd": 0.01,
+      "end_wd": 0.01,
+      "wd_incr_style": "constant",
+      "wd_incr_steps": 51200
+    },
+    "content_metadata": {
+      "distrib_optim_sharding_type": "dp_reshardable",
+      "singleton_local_shards": false,
+      "chained_optim_avoid_prefix": true
+    }
+  }
+]

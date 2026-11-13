@@ -83,6 +83,8 @@ def _aggregate_train_results(results: list[dict[str, Any]]) -> dict[str, Any]:
         "loss": results[0]["global_loss"],
         "grad_norm": results[0]["grad_norm"],
     }
+    if "loss_scale" in results[0]:
+        out["loss_scale"] = results[0]["loss_scale"]
     if "optimizer_update_successful" in results[0]:
         out["optimizer_update_successful"] = all(
             result["optimizer_update_successful"] for result in results
