@@ -1,0 +1,12 @@
+{
+  "checked_at": "2026-11-13T21:47:56.848265+00:00",
+  "root": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
+  "native_checkpoint_directories": [
+    {
+      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23",
+      "tensor_shards": 8,
+      "tensor_bytes": 24883134685
+    }
+  ],
+  "cloud_writes": 0
+}

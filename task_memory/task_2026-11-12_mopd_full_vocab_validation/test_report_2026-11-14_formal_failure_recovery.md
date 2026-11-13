@@ -390,3 +390,6 @@ source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
 ```
 
 Current final waiter tool session 40518 replaces 56399. It allocates no GPU while the formal writer runs and cannot stop/control it. Final replay retains checkpointing.enabled=false, native loading and in-memory refit. No extra checkpoint or HF export was written.
+
+
+Task-wide retention follow-up at 05:47:56 HKT: bounded read-only personal SSH inspection of every current-task `*/exp-*/checkpoints` namespace found exactly one native directory, step23, with eight tensor shards / 24,883,134,685 tensor bytes. The query included `tmp_step_*` directories and found none. Historical smoke/diagnostic checkpoint directories are absent. No cloud write or extra checkpoint was created. Evidence: current-task-native-checkpoint-inventory-20261114.json. This proves logical task-wide latest-only retention at that observation, while physical backend quota reclamation remains unverified.

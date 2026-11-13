@@ -3233,3 +3233,8 @@ Terminated only exact local waiting PID 3756841 after cmdline and no-final-submi
 1. 正式 7/200；step24 成功已实测，尚未保存入新 checkpoint。
 2. 当前仍只保留 step23/Adam6；step30 预计对应 Adam13，需确认实际 publication 和旧目录删除。
 3. 末尾指标同步流程已通过五项故障注入，真实最终三方验证仍依赖 200 成功及最新权重。
+
+
+### 2026-11-14 — Task-wide latest-only checkpoint inventory (E storage constraint)
+
+At 05:47:56 HKT, a bounded read-only personal SSH query enumerated every current-task `*/exp-*/checkpoints` directory, including staged `tmp_step_*` names. The sole native checkpoint directory is step23 under the original formal writer prefix, with eight tensor shards totaling 24,883,134,685 bytes. No historical smoke/diagnostic checkpoint directory or staged checkpoint remains. This extends the earlier single-namespace observation to the entire task. Source/conversion assets were excluded from the query. No cloud writes or deletion commands were needed. Evidence: evidence/current-task-native-checkpoint-inventory-20261114.json. The local tool trace records the exact `python3 -` / bounded SSH command; exit zero. Physical backend quota reclaim remains unverified.
