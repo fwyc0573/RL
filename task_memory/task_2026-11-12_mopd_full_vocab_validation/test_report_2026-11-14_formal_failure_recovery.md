@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify seven successes, actual72-H800 restore/statistics and synchronized final continuation. |
 | 2026-11-14 | Verify six saved successes, latest-only step23 and scheduled72-H800 continuation. |
 | 2026-11-14 | Record three formal successes and prepare latest-only120-H800 native continuation. |
 | 2026-11-14 | Verify native step18 success and pooled rollout-statistic RED/GREEN on real sample lengths. |
@@ -12,7 +13,7 @@
 
 # Formal MOPD failure recovery
 
-Current status: corrected resume has **5/200 successful formal optimizer updates** at steps18–22; sevenH800replicas continue Running. Actual native load and the firstscale1update pass. The pooled length-summary fix passesCPU regression and actual sample replay. Final200-update acceptance and three-waycheckpointparity remainUNVERIFIED. Older sections below retain the measurements at their respective recovery checkpoints.
+Current status: **7/200 successful formal optimizer updates** are verified on steps 18–24, with no skips in those successful segments. The 72-H800 continuation is Running with nine replicas and restart count zero. Native checkpoint/TQ load and all five full-vocabulary teacher heads are verified. Step 24 uses 256 samples, 2,051,505 valid response tokens and weight_version 23; loss is 0.1714246124, grad norm 0.9186215401 and scale 1. Sampled scorer/vLLM MAE 0.0012360684 meets 0.02, and all 24 pooled median/stddev checks pass in the resumed worker. The only published checkpoint remains step 23 with native Adam 6; step 24's seventh update remains in live memory until the next native save. Final 200-update acceptance and actual-training/scorer/vLLM parity remain UNVERIFIED. Older sections preserve observations at their respective recovery checkpoints.
 
 Expected: the original student/five teachers, full151936vocabulary,256fresh trajectories/update,65536ceiling,200successfuloptimizerupdates, native save/resume and final response-logprob MAE≤0.02nats/token.
 
@@ -359,3 +360,33 @@ Commands and environments are recorded in progress.md's matching entry and the e
 ###72-H800 resource continuation replaces unstarted120-H800 request
 
 The120-H800 job stayed Pending with only75 H800 quota, so a prepared72-H800 configuration was selected. CPU native topology/input/scheduler validation and personal dry-run PASS. The exact120-H800 job was stopped while Pending and confirmed Stopped before new submission; no training overlap. Replacementexp-1114-051900-202756 uses9×8H800 and was approved within approximately1.27 seconds of creation. The05:20:12HKT observation verifies9Running replicas,restart0,personal creator,current source and expected image digest. Allocation/identityPASS;actual H800 output,native restoration,subsequent successes,reporting fix and throughput remain unverified. Formal success stays6/200 and step23 remains the only retained checkpoint. Exact args and stop/runtime evidence are under evidence/.
+
+
+## First actual 72-H800 resumed update and final evidence synchronization
+
+Observed at November 14, 2026, 05:43 HKT. Current writer is exp-1114-051900-202756 / UID ae42005f-d314-4c86-bb10-c6f7bc385b92. Personal creator, all nine worker runtimes, NFS source 100.96.128.195:/data/ycfeng:/data/ycfeng and full d297 image digest agree with the approved launch. Local/worker actor Python is 3.13.14, Torch 2.13.0+cu130 and CUDA 13.0; personal platform client is Python 3.10.6 / brainpp 2.8.6. No new GPU submission was made for these checks.
+
+| Check | Expected | Actual | Result |
+| --- | --- | --- | --- |
+| Native restoration | Exact step 23 load, native TQ restoration, all five teacher heads | Native successfully loaded TP2/PP4 checkpoint; TQ restored/validated; math/code/logic/stem/if heads loaded | PASS |
+| Successful resumed optimizer | success 1, finite loss/norm, scale 1, 256 valid samples, positive tokens | Step 24 at 21:42:01Z: loss 0.17142461240291595, norm 0.9186215400695801, scale 1, 256 samples, 2,051,505 response tokens | PASS; formal 7/200 |
+| Group/version coverage | All five groups and pre-update weight_version 23 | math 57 / code 48 / stem 49 / logic 53 / if 49; all 256 version 23, mask/version issues zero | PASS |
+| Sampled scorer/vLLM response parity | Finite response-token MAE ≤0.02 | MAE 0.0012360683777012415, signed mean −5.294858375691003e−6, p99 0.00977205276489257, max 0.20928828418254852 | PASS for sampled means; exact isolated-tail cause remains pending |
+| Pooled median/stddev reporting | Independently recomputed sample lengths equal recorded event values | 24/24 global/per-group total/response-length statistics match native FP32 TensorBoard values; no NaNs | PASS |
+| Latest-only native namespace | Only newest complete published checkpoint | 05:43:09 HKT: only step 23, 31 files, eight tensor shards, 24,884,408,489 bytes; step 17 absent | PASS for logical retention; physical OSS quota reclaim UNVERIFIED |
+| First resumed batch time | Record actual costs | Total 779.5671s, exposed generation 653.1280s, policy training 93.0572s | OBSERVATION; steady throughput benefit unverified |
+| Final evidence copy synchronization | Read metrics after exact reader finished with error-free copy receipt | Five CPU fault injections cover delayed reader, failed reader, wrong UID, copy failure and timeout; all PASS; metric reads follow terminal sync | PASS for auxiliary flow; final runtime pending |
+| Final full tensor scan deadline | Permit four sequential two-file waves, each ≤65s | Scanner call permits 300s, above four 65s subprocess bounds; source compiles | PREPARED; final scan has not run |
+
+The reused metric command is the existing monitor's `uv run --offline --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_native_resume_5_metrics_20261114.py`, with UV_PROJECT_ENVIRONMENT set to the existing Megatron actor environment. The zero-GPU collector is `/data/ycfeng/tmp/nemo-mopd-20261112/collect_formal_native_resume_5_mounted_20261114.py`, running under exp-1114-051922-692747 / UID a7f3b178-aaa9-41b4-84c6-3e33576307c2. It reads raw samples on the cloud and writes small parity summaries/selected metadata to local mounted temporary storage. No model weights are copied.
+
+Verification commands are the inline `python3 -` scripts recorded in the tool trace: (1) read exact step 24 metrics and mounted parity, recompute Python statistics median/stddev from 256 sampled lengths, encode the reference with `struct.pack('f',...)` and require exact equality; (2) AST-extract wait_for_reader and inject platform states/identity/copy-receipt errors into a local temporary directory; (3) perform a personal bounded read-only SSH inventory of the exact native checkpoint root. All exited zero. Evidence: formal-native-resume-5-step24-{metrics,parity,pooled-statistics}-20261114.json, formal-native-resume-5-retention-current-20261114.json and final-native-parity-reader-sync-check-20261114.json.
+
+The temporary final waiter now awaits the exact existing reader before reading final metrics. Its full-scan timeout increased from 180s to 300s to cover the scanner's existing four waves of 65s bounded reads. Only previously waiting local PID 3756841 was terminated after confirming its exact cmdline and absence of final submission; no GPU, job controller or training launcher was touched. Restart command:
+
+```bash
+source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
+/data/ycfeng/tmp/stepmind-env/bin/python -u /data/ycfeng/tmp/nemo-mopd-20261112/continue_to_final_native_parity_20261114.py >> /data/ycfeng/tmp/nemo-mopd-20261112/final-native-parity-continuation-20261114.log 2>&1
+```
+
+Current final waiter tool session 40518 replaces 56399. It allocates no GPU while the formal writer runs and cannot stop/control it. Final replay retains checkpointing.enabled=false, native loading and in-memory refit. No extra checkpoint or HF export was written.

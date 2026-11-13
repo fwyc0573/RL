@@ -1,0 +1,249 @@
+{
+  "checked_at": "2026-11-13T21:44:13.358914+00:00",
+  "step": 24,
+  "source": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-5-current-inputs-20261114/parity/exp_001-train_data_step24.json",
+  "checks": [
+    {
+      "tag": "train/total_tokens_per_sample/median",
+      "samples": 256,
+      "expected_double": 8408.5,
+      "expected_tensorboard_float32": 8408.5,
+      "actual": 8408.5,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/total_tokens_per_sample/stddev",
+      "samples": 256,
+      "expected_double": 5864.661998847251,
+      "expected_tensorboard_float32": 5864.662109375,
+      "actual": 5864.662109375,
+      "absolute_error": 0.00011052774880226934,
+      "relative_error": 1.8846397085457696e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/gen_tokens_per_sample/median",
+      "samples": 256,
+      "expected_double": 8176.5,
+      "expected_tensorboard_float32": 8176.5,
+      "actual": 8176.5,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/gen_tokens_per_sample/stddev",
+      "samples": 256,
+      "expected_double": 5837.93340570912,
+      "expected_tensorboard_float32": 5837.93359375,
+      "actual": 5837.93359375,
+      "absolute_error": 0.00018804087994794827,
+      "relative_error": 3.2210178993144475e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/math/total_tokens_per_sample/median",
+      "samples": 57,
+      "expected_double": 8454,
+      "expected_tensorboard_float32": 8454.0,
+      "actual": 8454.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/math/total_tokens_per_sample/stddev",
+      "samples": 57,
+      "expected_double": 4901.177519312531,
+      "expected_tensorboard_float32": 4901.177734375,
+      "actual": 4901.177734375,
+      "absolute_error": 0.00021506246866920264,
+      "relative_error": 4.387975498169032e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/math/gen_tokens_per_sample/median",
+      "samples": 57,
+      "expected_double": 8336,
+      "expected_tensorboard_float32": 8336.0,
+      "actual": 8336.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/math/gen_tokens_per_sample/stddev",
+      "samples": 57,
+      "expected_double": 4883.300434935844,
+      "expected_tensorboard_float32": 4883.30029296875,
+      "actual": 4883.30029296875,
+      "absolute_error": 0.000141967094350548,
+      "relative_error": 2.90719557893458e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/code/total_tokens_per_sample/median",
+      "samples": 48,
+      "expected_double": 12603.5,
+      "expected_tensorboard_float32": 12603.5,
+      "actual": 12603.5,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/code/total_tokens_per_sample/stddev",
+      "samples": 48,
+      "expected_double": 5352.117757385243,
+      "expected_tensorboard_float32": 5352.11767578125,
+      "actual": 5352.11767578125,
+      "absolute_error": 8.160399283951847e-05,
+      "relative_error": 1.5247047344374165e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/code/gen_tokens_per_sample/median",
+      "samples": 48,
+      "expected_double": 12002.0,
+      "expected_tensorboard_float32": 12002.0,
+      "actual": 12002.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/code/gen_tokens_per_sample/stddev",
+      "samples": 48,
+      "expected_double": 5222.311155807109,
+      "expected_tensorboard_float32": 5222.31103515625,
+      "actual": 5222.31103515625,
+      "absolute_error": 0.00012065085866197478,
+      "relative_error": 2.3102962474346894e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/stem/total_tokens_per_sample/median",
+      "samples": 49,
+      "expected_double": 7480,
+      "expected_tensorboard_float32": 7480.0,
+      "actual": 7480.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/stem/total_tokens_per_sample/stddev",
+      "samples": 49,
+      "expected_double": 3491.4902575458254,
+      "expected_tensorboard_float32": 3491.490234375,
+      "actual": 3491.490234375,
+      "absolute_error": 2.317082544323057e-05,
+      "relative_error": 6.6363712151719945e-09,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/stem/gen_tokens_per_sample/median",
+      "samples": 49,
+      "expected_double": 7423,
+      "expected_tensorboard_float32": 7423.0,
+      "actual": 7423.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/stem/gen_tokens_per_sample/stddev",
+      "samples": 49,
+      "expected_double": 3476.0668210231065,
+      "expected_tensorboard_float32": 3476.06689453125,
+      "actual": 3476.06689453125,
+      "absolute_error": 7.350814348683343e-05,
+      "relative_error": 2.1146930502675972e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/logic/total_tokens_per_sample/median",
+      "samples": 53,
+      "expected_double": 12863,
+      "expected_tensorboard_float32": 12863.0,
+      "actual": 12863.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/logic/total_tokens_per_sample/stddev",
+      "samples": 53,
+      "expected_double": 5739.097971279785,
+      "expected_tensorboard_float32": 5739.09814453125,
+      "actual": 5739.09814453125,
+      "absolute_error": 0.00017325146473012865,
+      "relative_error": 3.0187925976718355e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/logic/gen_tokens_per_sample/median",
+      "samples": 53,
+      "expected_double": 12636,
+      "expected_tensorboard_float32": 12636.0,
+      "actual": 12636.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/logic/gen_tokens_per_sample/stddev",
+      "samples": 53,
+      "expected_double": 5751.455210821865,
+      "expected_tensorboard_float32": 5751.455078125,
+      "actual": 5751.455078125,
+      "absolute_error": 0.00013269686496641953,
+      "relative_error": 2.3071876612503004e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/if/total_tokens_per_sample/median",
+      "samples": 49,
+      "expected_double": 1081,
+      "expected_tensorboard_float32": 1081.0,
+      "actual": 1081.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/if/total_tokens_per_sample/stddev",
+      "samples": 49,
+      "expected_double": 1346.440537713656,
+      "expected_tensorboard_float32": 1346.4405517578125,
+      "actual": 1346.4405517578125,
+      "absolute_error": 1.4044156387171824e-05,
+      "relative_error": 1.0430580477783088e-08,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/if/gen_tokens_per_sample/median",
+      "samples": 49,
+      "expected_double": 789,
+      "expected_tensorboard_float32": 789.0,
+      "actual": 789.0,
+      "absolute_error": 0.0,
+      "relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "tag": "train/if/gen_tokens_per_sample/stddev",
+      "samples": 49,
+      "expected_double": 1355.2339739504982,
+      "expected_tensorboard_float32": 1355.2340087890625,
+      "actual": 1355.2340087890625,
+      "absolute_error": 3.483856426100829e-05,
+      "relative_error": 2.5706678647860412e-08,
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS",
+  "verification": "Direct pooled sample lengths and Python statistics match the published TensorBoard float32 values exactly; all 24 observed medians/stddevs are finite."
+}

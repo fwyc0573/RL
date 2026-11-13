@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-13T21:43:09.058425+00:00",
+  "publication": {
+    "last_successful_ckpt_save_completion": 1794604305.5902421,
+    "last_checkpoint_step": 23
+  },
+  "inventory": [
+    {
+      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23",
+      "files": 31,
+      "bytes": 24884408489,
+      "tensor_shards": 8
+    }
+  ],
+  "step17_exists": false,
+  "weight_copies_created": 0,
+  "cloud_writes": 0
+}

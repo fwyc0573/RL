@@ -1,0 +1,66 @@
+{
+  "queried_at": "2026-11-13T21:33:48.132591+00:00",
+  "job": "exp-1114-051900-202756",
+  "params": {
+    "replicas": "exp-1114-051900-202756-cfcd2084",
+    "limit": 1000,
+    "direction": "forward",
+    "start": "1794605040000000000",
+    "end": "1794605340000000000"
+  },
+  "returned_rows": 796,
+  "selected": [
+    {
+      "timestamp": "1794605071789720000",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1740, ip=10.191.6.54)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23/policy/weights/iter_0000000."
+    },
+    {
+      "timestamp": "1794605071999585000",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1740, ip=10.191.6.54)\u001b[0m  Auto-detected checkpoint format as 'torch_dist' from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23/policy/weights/iter_0000000."
+    },
+    {
+      "timestamp": "1794605071999650000",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1740, ip=10.191.6.54)\u001b[0m  loading distributed checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23/policy/weights at iteration 0"
+    },
+    {
+      "timestamp": "1794605087537729000",
+      "message": "\u001b[36m(MegatronPolicyWorker pid=1740, ip=10.191.6.54)\u001b[0m   successfully loaded checkpoint from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23/policy/weights [ t 0/2, p 0/4 ] at iteration 0"
+    },
+    {
+      "timestamp": "1794605088808597000",
+      "message": "\ud83d\udce6 Restoring native TQ checkpoint: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_23/data_plane"
+    },
+    {
+      "timestamp": "1794605088850634000",
+      "message": "\ud83d\udce6 Native TQ checkpoint restored and validated: groups=0"
+    },
+    {
+      "timestamp": "1794605305339122000",
+      "message": "  \u2713 Loaded opd_full teacher LM head [index=0, alias='math'] from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_teacher"
+    },
+    {
+      "timestamp": "1794605307196360000",
+      "message": "  \u2713 Loaded opd_full teacher LM head [index=1, alias='code'] from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_steptron_task_2026-09-24_mopd_medium_step3_2teacher_models_DeepCoder-1.5B-Preview@103033da"
+    },
+    {
+      "timestamp": "1794605308865048000",
+      "message": "  \u2713 Loaded opd_full teacher LM head [index=2, alias='logic'] from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_steptron_task_2026-09-24_mopd_medium_step3_2teacher_models_Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50"
+    },
+    {
+      "timestamp": "1794605310035908000",
+      "message": "  \u2713 Loaded opd_full teacher LM head [index=3, alias='stem'] from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_steptron_task_2026-09-24_mopd_medium_step3_2teacher_models_Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7"
+    },
+    {
+      "timestamp": "1794605311069840000",
+      "message": "  \u2713 Loaded opd_full teacher LM head [index=4, alias='if'] from /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_steptron_task_2026-09-24_mopd_medium_step3_2teacher_models_UltraData-IF-1.5B@be67d8ba"
+    },
+    {
+      "timestamp": "1794605314955029000",
+      "message": "\u001b[36m(MegatronPolicyWorker[rank=6] pid=1746, ip=10.191.6.54)\u001b[0m   refit: collective rendezvous [train] addr=10.191.6.54:1810 rank=6 world_size=56 train_world_size=8 peer=nemo master=False"
+    },
+    {
+      "timestamp": "1794605314959005000",
+      "message": "\u001b[36m(MegatronPolicyWorker[rank=0] pid=1740, ip=10.191.6.54)\u001b[0m   refit: collective rendezvous [train] addr=10.191.6.54:1810 rank=0 world_size=56 train_world_size=8 peer=nemo master=True"
+    }
+  ]
+}

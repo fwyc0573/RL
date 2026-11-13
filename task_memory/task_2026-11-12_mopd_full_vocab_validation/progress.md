@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify7/200, actual72-H800 resume, live statistics, retention and final reader sync. |
 | 2026-11-14 | Verify six saved successes, latest-only step23 and scheduled72-H800 continuation. |
 | 2026-11-14 | Complete pooled rollout-statistic RED/GREEN and actual step18 length replay; keep formal training active. |
 | 2026-11-14 | Verify corrected resume seven-worker runtime and the sole step17 checkpoint. |
@@ -3153,3 +3154,82 @@ A bounded read-only dump size inventory reports about5.05GB of retained formal J
 1. 正式仅6/200；controller step23和Running不能替代完整验收。
 2. step23唯一保留、8Adam状态均为6；参数变化只保存统计，未复制权重。
 3. 72H800已调度，实际恢复、扩容收益和最终actual-training parity仍需实测。
+
+
+### 2026-11-14 — Final CPU/native/parity continuation waits without GPU allocation (E/F)
+
+Prepared and started tool session56399, continue_to_final_native_parity_20261114.py, with append output to tasktmp/final-native-parity-continuation-20261114.log. It observes only exact current exp-1114-051900-202756/UIDae42005f-d314-4c86-bb10-c6f7bc385b92. It submits no GPU job while this training writer runs. After Succeeded it reuses the current TensorBoard readers, deduplicates steps18–217 across the successful56-H800 segment and the current72-H800 segment, requires exactly200successes/finite loss and norm/256 valid samples/positive response coverage, checks all8 native Adam counters200, scale1, sampler/controller and unique latest native publication. A failed readiness check cannot control the healthy current training writer.
+
+The final native full-tensor scan reuses scan_fp16_five_pp4_step16_finite_2.py: native metadata is parsed in the existing localPython3.13 actor environment, exact chunk requests are generated for8files, and bounded two-at-a-time remote memory reads check every tensor. Only JSON counts/dtypes/finite flags are saved. Selected parameter differences reuse the existing small comparison. CPU checks complete before final GPU submission. Prepared finite mapper and controller sources compile; the native scanner/replay behavior is covered by existing verified D evidence and was not rerun prematurely.
+
+When readiness passes, the current final native checkpoint and exact last native dump fill the existing final-checkpoint-three-way-launch-contract-20261114.json. Existing replay_checkpoint_logprobs.py uses2×8H800/codesign, checkpointing.enabled=false, native load and in-memory refit. It generates fresh responses from one original prompt per teacher group and observes identical-token scorer/vLLM/native-training outputs before its unsaved independent PG diagnostic attempt. The waiter checks5expected/observed samples, no missing/mask issues and0.02MAE, retains small business metrics and writes EXECUTION_VERIFIED_AWAITING_FINAL_REVIEW. It does not declare overall task completion or write summary.md; final evidence/RCA/curves and terminal identities still require agent review. No extra checkpoint or export is prepared.
+
+Exact lifecycle/paths/preconditions are in evidence/final-native-parity-auto-continuation-20261114.json. If this waiter exits before the main writer completes, inspect its exact log and state; do not duplicate training or blindly launch the final job. Current72-H800 initialization is active and no new success has yet been recorded. Both helpers are temporary operational sources under the approved local tmp directory, reusing existing verification and submission mechanisms.
+
+
+### 2026-11-14 — First 72-H800 resumed success, live statistics and final reader sync (E/F)
+
+Formal progress is 7/200. The completed 56-H800 segment, steps 18–23, contributes six successes; current 72-H800 step 24 contributes one success and zero skips. At 2026-11-13T21:42:01Z, step 24 records loss 0.17142461240291595, pre-clipping norm 0.9186215400695801, scale 1, LR 1e−6, 256 valid samples and 2,051,505 response tokens. All 256 samples use weight_version 23 and cover math 57 / code 48 / stem 49 / logic 53 / if 49. Sampled native scorer/vLLM MAE is 0.0012360683777012415, signed mean −5.294858375691003e−6, p99 0.00977205276489257 and maximum 0.20928828418254852. All differences are finite; mask/version issues are zero. This is pre-update scorer/generation parity. Final same-weight actual-training parity remains pending.
+
+All nine worker runtimes, full company image d297 and current NFS source 100.96.128.195:/data/ycfeng:/data/ycfeng are verified. Native business logs name the exact step 23 TP2/PP4 load, TQ restore/validation and five full-vocabulary heads. The first resumed batch takes 779.5671s, including exposed generation 653.1280s and policy training 93.0572s. One batch does not establish throughput gains from 48 generation GPUs. The existing training launcher continues; no additional training job was submitted.
+
+The e339f7c8 metric repair is now verified in resumed worker outputs. Independently recomputed global and five-group total/response-length medians and standard deviations match all 24 TensorBoard FP32 events exactly. Global total median/stddev are 8408.5 / 5864.662109375; response median/stddev are 8176.5 / 5837.93359375. All are finite. Evidence: formal-native-resume-5-step24-{metrics,parity,pooled-statistics}-20261114.json. This settles live reporting verification without repeating CPU state-machine tests.
+
+At 05:43:09 HKT, bounded personal read-only inventory confirms one complete native publication: step 23, 31 files, eight shards and 24,884,408,489 bytes; step 17 is absent. Native Adam 6 remains the last saved state; step 24's seventh success is in memory. Await the next native publication, usually step 30, and verify Adam 13 and deletion of old step 23. Physical OSS quota reclamation remains unverified. Evidence: formal-native-resume-5-retention-current-20261114.json.
+
+Final waiter review found a reachable metric-copy race: writer Succeeded can precede the existing zero-GPU reader's final copy. Updated the temporary continuation to wait for exact exp-1114-051922-692747 / UID a7f3b178-aaa9-41b4-84c6-3e33576307c2 to reach Succeeded, then require a complete error-free copy receipt before any final metric read. Five CPU fault injections (delayed reader, failure, wrong UID, copy error and timeout) pass. AST call-order and compile checks pass. The finite scan now allows 300s for four waves of existing 65s bounded remote checks; the earlier 180s limit could truncate valid long reads. Both changes advance E/F readiness. They perform no GPU or weight operations. Exact verification is recorded in the tool trace and final-native-parity-reader-sync-check-20261114.json.
+
+Terminated only exact local waiting PID 3756841 after cmdline and no-final-submission checks. GPU training launcher 44154, reader 1762 and monitor 48778 were untouched. The revised waiter starts as tool session 40518 and appends to final-native-parity-continuation-20261114.log; it observes the current Running writer again. The single current manifest now references 40518 instead of old session 56399. The report records the restart command and versions.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和来源已核实。 |
+| Q | PASS | 200 次实际成功更新已授权。 |
+| B | PASS | 原输入验证有效，72 H800 实际 worker 廉价检查通过。 |
+| C | PASS | 全词表参考和指标入口已验证。 |
+| D | PASS | 五次诊断成功及 native save/resume 已完成。 |
+| E | TODO | 正式 7/200，step24 接续成功；最新保存仍为 step23/Adam6。 |
+| F | TODO | 最终参数检查、三方 parity 和 English archive 待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次 6/200 检查至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 最终 reader 同步修正解决实际可达的末尾指标缺失；五项注入通过后停止扩展。 |
+| D2 细节反复重试 | CLEAR | 无重复训练提交；首个 72 H800 更新成功，无重试循环。 |
+| D3 支线问题修补 | CLEAR | worker 恢复、指标统计和 latest-only 都属于 E 的验收。 |
+| D4 可并行任务停滞 | CLEAR | 训练、reader、观察和最终准备并行；最终权重仍依赖 200 成功。 |
+| D5 超范围镀金 | CLEAR | 未扩展接口、模型、目标或保存产物；只修正临时验收流程。 |
+| D6 分析空转 | CLEAR | 新增一次实际成功及 24 项真实 worker 统计验证。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表、256/65536/200-success 和最新 checkpoint 约束保持。 |
+
+**文档检查：** S5：plan/report 的旧状态为恢复待验及 5/6 成功，已更新为实测恢复成功及 7/200；当前 waiter session 已更新为 40518。S1–S4/S6 未发现明显缺陷。
+**归因：** 无执行偏离；S5 为记录滞后。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在状态记录缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md、progress.md、现有报告和当前接续 manifest：更新 7/200、step24、实际统计验证及 reader 同步，已完成。（可直接执行）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续成功更新并核对下一 native publication → 完成标志：最新保存 Adam 计数与成功 flags 一致，旧 step23 及时删除。
+2. 并行：当前训练 ‖ 现有小指标/样本观察；辅助检查不能控制健康训练。
+3. E→F：200 实际成功后执行现有 CPU 有限性检查和 16 H800 三方比较 → 完成标志：Adam200、有限状态、MAE≤0.02、完整终态/报告及 English archive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式 7/200；step24 成功已实测，尚未保存入新 checkpoint。
+2. 当前仍只保留 step23/Adam6；step30 预计对应 Adam13，需确认实际 publication 和旧目录删除。
+3. 末尾指标同步流程已通过五项故障注入，真实最终三方验证仍依赖 200 成功及最新权重。

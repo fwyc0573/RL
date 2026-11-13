@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-13T21:42:39.864416+00:00",
+  "source": "/data/ycfeng/tmp/nemo-mopd-20261112/continue_to_final_native_parity_20261114.py",
+  "checks": {
+    "delayed_reader": {
+      "api_reads": 2,
+      "simulated_wait_seconds": 30
+    },
+    "failed_reader": {
+      "api_reads": 1,
+      "simulated_wait_seconds": 0
+    },
+    "wrong_uid": {
+      "api_reads": 1,
+      "simulated_wait_seconds": 0
+    },
+    "failed_copy_receipt": {
+      "api_reads": 1,
+      "simulated_wait_seconds": 0
+    },
+    "reader_timeout": {
+      "api_reads": 2,
+      "simulated_wait_seconds": 60
+    }
+  },
+  "metric_reads_after_reader_success": true,
+  "finite_scan_timeout_seconds": 300,
+  "gpu_submissions": 0,
+  "cloud_writes": 0,
+  "status": "PASS",
+  "limit": "Fault injection verifies the auxiliary continuation flow; final 200-update runtime remains pending."
+}
