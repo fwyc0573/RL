@@ -1,0 +1,32 @@
+{
+  "nodes": 4,
+  "gpus_per_node": 8,
+  "cpus_per_node": 32,
+  "memory_gb_per_node": 768,
+  "charged_group": "codesign",
+  "preemptible": false,
+  "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+  "source": "/data/ycfeng",
+  "mounts": [
+    "juicefs+s3://oss.i.shaipower.com/codesign-exp:/mnt/codesign-exp"
+  ],
+  "custom_resources": [
+    "mellanox.com/mlnx_rdma:1",
+    "rdma/mlnx_shared:8"
+  ],
+  "command": "bash -lc 'set -euo pipefail\ncd /data/ycfeng/sota-engine/RL\nexport PYTHONPATH=/data/ycfeng/sota-engine/RL\nexport PATH=/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin:/data/ycfeng/envs/nemo-mopd-py313/bin:/data/ycfeng/toolchain/cuda-13.0.2/bin:\"$PATH\"\nexport LD_LIBRARY_PATH=/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\nif ! /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python -u /data/ycfeng/sota-engine/RL/tests/manual/mopd/validate_run_inputs.py --check --report /data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/formal-inputs-cpu-validation-20261113.json; then\n    echo \"MOPD_PREPARED_INPUTS_UNVERIFIED checker exited unsuccessfully\"\nfi\nnvidia-smi --query-gpu=name,driver_version,memory.total --format=csv\nexec /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python -u /data/ycfeng/sota-engine/RL/tests/manual/mopd/run_on_rjob.py --config /data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml --output-root /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume --nodes 4 --gpus-per-node 8 --cpus-per-node 32 --startup-timeout 1800 --min-worker-port 25000 --max-worker-port 25999 --training-timeout 172800 checkpointing.keep_top_k=null checkpointing.checkpoint_must_save_by=00:00:00:01 grpo.max_num_epochs=null --training-entrypoint /data/ycfeng/sota-engine/RL/tests/manual/mopd/resume_training.py'",
+  "environment_keys": [
+    "BRAINPP_ACCESS_KEY",
+    "BRAINPP_SECRET_KEY",
+    "CUDA_HOME",
+    "CUDA_PATH",
+    "DISTRIBUTED_JOB",
+    "MC_DISABLE_METACACHE",
+    "OMP_NUM_THREADS",
+    "OPENBLAS_NUM_THREADS",
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONNOUSERSITE",
+    "RAY_ENABLE_UV_RUN_RUNTIME_ENV",
+    "UV_PROJECT_ENVIRONMENT"
+  ]
+}

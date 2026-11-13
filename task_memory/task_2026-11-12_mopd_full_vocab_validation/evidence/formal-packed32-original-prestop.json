@@ -1,0 +1,14 @@
+{
+  "queried_at": "2026-11-13T09:42:53.728596+00:00",
+  "name": "exp-1113-151718-896703",
+  "uid": "9f0eb021-6bda-44fa-af2f-5469dd08b02b",
+  "creator": "i-fengyicheng",
+  "phase": "Pending",
+  "queue": {
+    "rjob.brainpp.cn/rjob-queue-approved": "",
+    "stepmind.com/queue-elem-ranking": "2",
+    "stepmind.com/queue-name": "codesign-default",
+    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 7 replicas = 56 GPU (H800). Queue remaining: H800=22."
+  },
+  "replacement_reason": "CPU/storage-verified32H800 layout removes unused teacher node reservations and softPACK fragmentation; original56H800 request is still queued."
+}

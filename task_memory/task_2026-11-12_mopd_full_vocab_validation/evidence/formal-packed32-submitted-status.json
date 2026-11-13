@@ -1,0 +1,26 @@
+{
+  "name": "exp-1113-174329-659007",
+  "queried_at": "20261113T094702Z",
+  "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445",
+  "creator": "i-fengyicheng",
+  "status": {
+    "phase": "Pending",
+    "reason": "RJob is queuing",
+    "message": "RJob is queuing",
+    "taskStatuses": {
+      "default": {
+        "taskStage": "stepmind-task-stage-1"
+      }
+    },
+    "taskStage": "stepmind-task-stage-1"
+  },
+  "queue": {
+    "rjob.brainpp.cn/rjob-queue-approved": "",
+    "stepmind.com/queue-elem-ranking": "2",
+    "stepmind.com/queue-name": "codesign-default",
+    "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 4 replicas = 32 GPU (H800). Queue remaining: H800=30."
+  },
+  "source": {
+    "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+  }
+}

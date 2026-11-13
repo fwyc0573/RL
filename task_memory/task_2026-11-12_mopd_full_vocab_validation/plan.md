@@ -21,13 +21,15 @@
 
 Status: A/Q/B/C/D and authorized cleanup are complete; E/F remain outstanding. The retained D diagnostic completed five successful optimizer updates with native save/resume and finite checkpoint state. Those diagnostic updates do not count toward the formal 200.
 
-Formal job `exp-1113-151718-896703` (UID `9f0eb021-6bda-44fa-af2f-5469dd08b02b`) remains Pending at2026-11-13T09:36:34Z/rank2/remaining42 for56H800. It has0formal successful updates and no formal loss/grad/checkpoint. Its launcher and independent reader remain alive.
+Formal job `exp-1113-174329-659007` (UID `da3fd441-bc51-4d5b-aa27-ad216d7fe445`) is the sole current training request:4×8H800,32CPU/768GBpernode, personal `i-fengyicheng`, localNFS `100.96.128.195:/data/ycfeng:/data/ycfeng`, expected companyimage andbothRDMArequests. Its latestmonitor at20261113T094702Z is Pending/rank2/remaining30 for32requested. Launcher82605, zeroGPUreader53011 andmonitor5931 remainalive. There are0formal successful updates and no formal loss/grad/checkpoint.
+
+Original56GPUjob `exp-1113-151718-896703` was re-read09:42:53Z asPending, stoppedthroughrequiredscript09:42:57Z, then verifiedStopped/zeroReplicas09:43:25Z before any replacement. Originallauncher73918 andmonitor15510 exited0. Originalreader `exp-1113-151748-639492` receivedexplicitstop2026-11-13T09:44:11Z and waslastRJobStopping; its finalterminalstate remains to beverified. Newreader `exp-1113-174403-962663` (UID `f5341c5d-fc1f-49be-87a6-2650428f1b9f`) hasitsownlauncher53011.
 
 E's resource prerequisite now has a verified4×8H800 alternative. Native GPU-capacity counting and student-before-teacher reservation fix the demonstrated whole-node over-reservation and softPACK fragmentation. CPU RayCluster verifies26CREATED bundles, student8 and generation8 on separate simulated nodes, and five2GPU teachers on the other2nodes. Six affected allocation/order/topology regressions and scoped lint/format pass. This is CPU placement evidence; actualGPUplacement, teacher memory, repairedbackward and numerical behavior remain unverified.
 
 FullCPUreadiness still covers2034tensors/10,662,528,000 finite elements and55,000training/320monitoring rows. Current cheap immutable input check `exp-1113-173227-790743` passed41files/all6roles and changed-identity negative control; Succeeded09:35:48Z, exit0/restart0/exactd297imageID/currentpersonalcreator/localNFS. No repeated full scan.
 
-The earlier8×4GPU request remains rejected by platform8GPUperreplica rules. The corrected4×8GPU recipe satisfies those rules and now satisfies native allocation; no public schema/interface changed. Next: signed scoped commit → re-read original56GPUjob → if stillPending, stop through requiredscript and confirm no replicasRunning → submit one local32GPU replacement and retain launcher. If original has started, verify it directly instead.
+The earlier8×4GPU request remains rejected by platform8GPUperreplica rules. The corrected4×8GPU recipe satisfies those rules and now satisfies native allocation; no public schema/interface changed. Signedcommit `d1111060` contains the scoped repair, recipe and CPU/storage evidence. Originaljob was stoppedwhilePending and one32GPUreplacement submitted. Next: retainlauncher82605 and exactjob whilequeued; verifyphysicalreplicas/runtime → actualbackward/loss/grad andearlynativesave/resume →200actualsuccessflags plusAdamstep →finalfinite/state/refit/three-wayparity.
 
 E owns actual formal backward, early native save/resume,200successful updates and finalthree-way parity. F owns final reconciliation and archive.
 

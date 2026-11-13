@@ -2038,3 +2038,67 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 1.32GPU方案当前只有CPU/storagePASS，正式更新仍0。
 2. 新预留顺序消除已复现的资源碎片；整体验收标准保持。
 3. 准备完成即训练，不扩大工具或重复已通过的全量扫描。
+
+
+## 2026-11-13T17:47:07+08:00: Verified32H800 replacement submitted once
+
+- completed: signedscopedcommitd1111060;6CPUregressions/actualRayplacement/nativeconfig/currentinputs/lintPASS.
+- completed: exactold56GPUname/UID/creator re-readPending09:42:53Z, stoppedthroughrequiredscript09:42:57Z, verifiedStopped/noReplicas09:43:25Z. Originallauncher73918 andmonitor15510 nowexit0.
+- in-progressE: newformalexp-1113-174329-659007/UIDda3fd441-bc51-4d5b-aa27-ad216d7fe445;4×8H800/32CPU/768GB/companyimage/localNFS/bothRDMArequests. Latest20261113T094702Z Pending/rank2/remaining30. Launcher82605mustremainalive; noformalupdates/loss/grad/checkpoint.
+- parallel: new0GPUreaderexp-1113-174403-962663/UIDf5341c5d-fc1f-49be-87a6-2650428f1b9f/launcher53011; monitor5931. Exactreader destination tasktmp/formal-200updates-fp16-pp4-packed32-current-inputs. Formalcloudprefix endswithnewjobname. Oldreaderexp-1113-151748-639492 stopinitiated2026-11-13T09:44:11Z; verifyterminalratherthansubmitduplicates.
+- pendingE/F: actualGPUplacement/modelstartup/backward/loss/grad/earlynativesave-resume →200deduplicatedsuccessfuloptimizerflags andnativeAdamstep →finitefinalstate/refit/trainingforward/scorer/vLLMparity →Englishcompletionarchive. resume_training.py onlyrunsinitial/resume;200controllersteps donotprove200successes.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student和五教师输入已确认 |
+| Q | PASS |200成功更新目标已确认 |
+| B | PASS | 完整CPU准备及当前身份、终态通过 |
+| C | PASS | 全词表参照已完成 |
+| D | PASS | 五教师诊断、长context和native save/resume通过 |
+| 清理 | PASS | 授权范围已完成 |
+| E | BLOCKED | 新32H800job排队，0正式成功更新 |
+| F | TODO | 最终checkpoint与archive依赖E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：**32GPU准备完成至当前submissioncheckpoint｜**当前前沿：**E正式GPU运行
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | CPU准备完成后直接提交，没有扩展工具 |
+| D2 细节反复重试 | CLEAR | 单次32GPU替换；排队时保持exactjob |
+| D3 支线问题修补 | CLEAR | 没有启动无关修复或重跑D |
+| D4 可并行任务停滞 | CLEAR | reader与monitor已并行启动，最终验证等待checkpoint |
+| D5 超范围镀金 | CLEAR | 验收范围和训练设定保持 |
+| D6 分析空转 | CLEAR | 已完成真实stop/no-duplicate/submission操作 |
+| D7 路线违背 | CLEAR | CPU/storage前提通过，个人本机提交，GPU辅助softgate保持 |
+
+**文档检查：** S5 plan仍写替换未执行，已更新新job/UID/launcher和实际Pending状态。S1–S4、S6未发现明显缺陷。
+**归因：** 无执行偏离。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan与现有placement报告：原job替换证据、新job与独立reader/monitor身份、当前0更新和接续路径（可直接执行，已更新）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：保持82605/exactjob排队 →物理replicas/runtime/backward/loss/grad/earlynative save-resume。
+2. 并行：53011reader ‖5931monitor；取得业务/平台证据并确认旧reader终态。
+3. E/F：200successflags与Adamstep →finalfinite/state/refit/三方parity →报告与Englisharchive。
+
+## 4. 最值得关注的 3 点
+
+1.32GPU正式作业仍Pending；CPUPASS不能替代GPU修复或训练验收。
+2. 原56GPUjob已Stopped/noReplicas；没有重复训练申请。
+3. Launcher82605必须存活，后续读取新job和新reader路径。
+
+- 17:48HKT final current-state check: personal API queried2026-11-13T09:46:33Z. Newformal exp-1113-174329-659007 remainsPending/rank2/remaining30 for32 requested and0replicas. New0GPUreaderexp-1113-174403-962663 isStarting; oldreaderexp-1113-151748-639492 remainsRJobStopping afterexplicitstop. Launcher82605,reader53011 andmonitor5931 werepolledalive; old73918 and15510exit0. NoformalGPUmetric/checkpoint/acceptance exists. Preserve queuedjob andlaunchers; no duplicate submission, furtherpreparation, completedD rerun orcleanup.
