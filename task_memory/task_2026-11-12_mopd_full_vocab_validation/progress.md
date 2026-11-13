@@ -2547,3 +2547,73 @@ Controller step14 is now observed: scale16, loss0.1901396066, success0,256sample
 1. 正式成功更新仍为0/200，短诊断不能代替正式长响应梯度验收。
 2. 最新 inventory 只有 step10，24,884,408,375bytes；backend物理空间回收仍未证明。
 3. 下一段需等待当前原生保存和结束，保留八个 TQ storage units 和 native optimizer/scaler。
+
+### 2026-11-14 — Fifth resumed attempt and bounded FP16 arithmetic hypothesis
+
+Formal controller step15 used loss scale 8, returned loss 0.1932196021, success flag 0, 256 samples and 2,240,865 valid response tokens. Formal successful updates remain 0/200. Current native training continues. Code inspection confirms that `_train_microbatch_body` passes normalization placeholder 1 and `_finish_train_step_body` divides accumulated gradients by the true token count afterwards. The native scaler minimum is 1; no scaler or objective change was made.
+
+Before the CPU probe, the ranked predictions were: (1) raw token sums can overflow a FP16 backward before finish-time normalization, in which case an early count normalization with exact later compensation will stay finite; (2) a FP16 operator can overflow before its result reaches the configured FP32 grad buffer; (3) a specific long sample can trigger a different backward failure even though the loss is finite. The first probe uses native Torch linear backward with 65,536 tokens, a two-token vocabulary, fixed teacher logits [-1,0], initial student weights [1,0], and native loss scale 8. It allocates no GPU or checkpoint.
+
+Observed: FP32 scaled raw gradient ±206084.234375, normalized ±0.3930744827; FP16 raw gradient Inf/-Inf, still non-finite after late normalization. Early division by the configured batch count 256 and later exact compensation gives finite raw gradient ±805 and normalized ±0.39306640625. Maximum absolute difference from FP32 is 8.0764294e-6; relative difference is 2.0546817e-5. The explicit finite/overflow assertions and rtol1e-3/atol1e-4 comparison pass. This establishes the arithmetic failure pattern and supports prediction1; it does not identify the actual CUDA/TE operator or establish a production repair. Do not replace the prepared formal path solely on this toy verdict.
+
+### 2026-11-14 — Sixth resumed attempt and exact latest-only inventory (E)
+
+Controller step16 records loss0.1900885552, usedscale4, success0,256samples and2,145,439valid response tokens. Formal successful updates remain0/200. Allfivegroups are covered; mask/weight-version issues0; scorer/vLLM MAE0.0013085080,p990.0098823595,max0.3649930954. Generation succeeded for256/256 samples; teacher_alias_unique andteacher_model_unique are5. Latest exact personal inventory at2026-11-13T19:29:45Z still contains onlystep10,31files/8tensor shards/24,884,408,375bytes. No additional checkpoint orHFweight export was written. Backendphysical quota reclamation remainsunverified.
+
+Step15 retained tail analysis covers three worst samples: the maximum0.8163185120-nat error is a code response atpredictionposition10568/token264, with small neighboring differences except a few localized positions; two other retained if-sample maxima are0.4316844940 and0.2824678421. This is evidence of localized sampled error tails, not proof of their complete cause or final actual-training parity. The mean criterion passes.
+
+The current native job remainsRunning withfourreplicas/restart0 at19:28:26Z. Keep the launcher60173alive and wait for the native deadline/saveboundary. If native scale1 still overflows, diagnose actual forward/backward before submitting repeated unchanged segments. Production loss/scaler behavior is unchanged. Evidence: formal-native-resume-1-step16-{metrics,parity}-20261114.json; step15-error-tails; retention-current.
+
+#### check-progress — resumed formal gradient frontier after context recovery
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始student、五教师和全词表路径已确定。 |
+| Q | PASS |200次成功更新及执行获授权；latest-only限制已记录。 |
+| B | PASS | 输入和环境完整CPU验证已有证据。 |
+| C | PASS | 全词表参考及原生loss-scale指标已验证。 |
+| D | PASS | 五次短诊断更新及save/resume完成。 |
+| E | TODO | 正式step16仍overflow，成功更新0/200。 |
+| F | TODO | 最终三方parity和归档依赖E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：**576b6535后至今｜**当前前沿：**E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR |复用已有reader、metricreader和inventory，未扩建工具。 |
+| D2 细节反复重试 | CLEAR |同一原生作业内scale8→4，未重复提交或调参；scale1仍失败时必须转真实backward诊断。 |
+| D3 支线问题修补 | CLEAR |数值和存储检查服务E及用户最新要求。 |
+| D4 可并行任务停滞 | CLEAR |训练与零GPUreader运行；下一段CPU准备已完成，共享checkpoint必须顺序写入。 |
+| D5 超范围镀金 | CLEAR |没有额外checkpoint、权重export或新增训练机制。 |
+| D6 分析空转 | CLEAR |新增step16业务结果和retention证据；CPU算术证据未被当作生产修复。 |
+| D7 路线违背 | CLEAR |原始模型、151936词表、256fresh samples、65536上限和200成功更新保持。 |
+
+**文档检查：**S5：plan当前指标停在step15，实际已到step16；其余S1–S4/S6无明显缺陷。
+**归因：**无执行偏离；S5是状态滞后。
+
+## 3. 纠正建议
+
+**分支：**B：先更新状态文档再继续
+
+**文档更新（先执行）：**
+1. plan.md当前状态：更新step16和19:29:45Z的单checkpointinventory。（可直接执行；已完成）
+
+**需停止的偏离行为：**无
+
+**接下去的路线：**
+1. E：观察原生低scale结果并定位持续overflow → 完成标志：成功flag1、有限unscaled grad norm、五教师覆盖。
+2. E：当前native publication/terminal后确认latest-only并接续56H800 → 完成标志：真实恢复并持续成功更新。
+3. E→F：累计200成功更新，再完成最终training/scorer/vLLMparity → 完成标志：全部正式数值/状态验收及报告完成。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功更新仍0/200；finite loss不证明gradient正常。
+2. 只有最新step10，24.88GB；未创建额外权重。
+3. 当前launcher保持存活；下一段不与当前作业同时写共享checkpoint。

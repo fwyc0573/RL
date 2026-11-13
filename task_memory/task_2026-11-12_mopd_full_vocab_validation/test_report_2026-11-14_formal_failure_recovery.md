@@ -95,13 +95,14 @@ Job `exp-1114-021713-015045`, UID `4637305a-eb69-469e-96a7-9e2002abe37e`, was Ru
 | Second resumed attempt | Observe native backoff and a complete batch | Step12: loss 0.1982083022594452, scale 64, optimizer success 0, 256 samples and 2,009,960 valid tokens | OVERFLOW; no successful update |
 | Third resumed attempt | Observe continued native backoff, five teachers and valid response coverage | Step13: loss 0.1890251785516739, scale 32, success 0, 256 samples, 1,890,880 valid tokens, no returned grad norm | OVERFLOW; no successful update |
 | Fourth resumed attempt | Observe native backoff and complete five-teacher sample coverage | Step14: loss 0.19013960659503937, scale 16, success 0, 256 samples, 2,103,101 valid response tokens, no returned grad norm | OVERFLOW; no successful update |
+| Fifth resumed attempt | Native backoff, finite loss and complete batch | Step15: scale 8, loss 0.1932196021080017, success 0, 256 samples and 2,240,865 valid response tokens | OVERFLOW; no successful update |
 | First batch coverage | 256 valid samples, all five teacher groups, correct masks and weight version | 256 samples, 2,275,836 valid response tokens, all five groups, zero reported issues | PASS |
 | First batch scorer minus vLLM | Finite identical-token differences with MAE <= 0.02 | MAE 0.0013568862733754916; signed mean -3.453098465679549e-6; p95 0.0055446625; p99 0.0099423647; max 0.3230872154 | PASS for the pre-update scorer/generation mean |
 | Second batch scorer minus vLLM | Same criteria and complete group coverage | MAE 0.0013624504824679; p99 0.0100831985; max 0.4857079983; all five groups; zero issues | PASS for the pre-update scorer/generation mean |
 | Third batch scorer minus vLLM | Finite identical-token differences with MAE <= 0.02 | MAE 0.0013389612643139941; signed mean -3.758083974557135e-6; p95 0.0055510998; p99 0.0101517689; max 0.2507520020; all five groups; zero issues | PASS for the pre-update scorer/generation mean |
 | Fourth batch scorer minus vLLM | Finite identical-token differences with MAE <= 0.02 | MAE 0.0013298019411208636; p99 0.0101060867; max 0.4830121994; all five groups; zero issues | PASS for the pre-update scorer/generation mean |
 | Latest-only checkpoint namespace | One complete current-task checkpoint | At 19:05:36Z, only original step10 remains: 31 files and 24,884,408,375 bytes | PASS |
-| Formal successful updates | 200 actual successful optimizer updates | 0/200 after these four resumed attempts | INCOMPLETE |
+| Formal successful updates | 200 actual successful optimizer updates | 0/200 after these five resumed attempts | INCOMPLETE |
 | Final training/scorer/vLLM comparison | Actual training forward and final saved weights meet MAE <= 0.02 | No final checkpoint or formal successful update yet | UNVERIFIED |
 
 Selected evidence is stored under `evidence/` as `formal-native-resume-1-first-attempt-20261114.json`, `formal-native-resume-1-step12-summary-20261114.json`, both `formal-native-resume-1-step11-parity-20261114.json` and `formal-native-resume-1-step12-parity-20261114.json`, the retention receipt, and the exact-job live-status receipt. No checkpoint tensors were copied.
@@ -166,3 +167,15 @@ timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no
 Exit 0; the actual expected RED and GREEN results were printed. Source path and mapping evidence are in `evidence/formal-native-resume-2-tq-count-contract-20261114.json`; native checkpoint structure is in `evidence/formal-native-step10-data-plane-structure-20261114.json`. This correction uses an existing config field; native TQ code, checkpoint format and training arithmetic are unchanged.
 
 The third resumed batch covers lengths 272–23462; total step time was 502.1598 seconds and policy training 60.3622 seconds. Exact selected metrics, all sample/group parity summaries and current checkpoint inventory are retained as `evidence/formal-native-resume-1-step13-metrics-20261114.json`, `formal-native-resume-1-step13-parity-20261114.json` and `formal-native-resume-1-retention-current-20261114.json`. Platform query at 2026-11-13T19:04:47Z confirms four Running replicas and restart count 0. A head-tail snapshot includes an allocator allocation-failed warning; it contains no fatal training traceback and does not establish a failed job.
+
+## Sixth resumed attempt and localized error-tail inspection
+
+| Check | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Native overflow accounting | Record used scale and actual optimizer success | Step16: scale4, loss0.1900885552, success0; formal successful updates0/200 | OVERFLOW / INCOMPLETE |
+| Formal batch and teachers |256valid trajectories; five distinct teachers; positive response mask |256samples,2,145,439valid response tokens,5distinct teacher aliases/models;256/256generation successes;zero reported mask/weight-version issues | PASS for this attempt |
+| Scorer/generation parity | Finite identical-token MAE<=0.02 |MAE0.0013085080,p990.0098823595,max0.3649930954 | PASS pre-update mean; final training comparison pending |
+| Latest-only retention |One complete checkpoint; no additional retained weights |2026-11-13T19:29:45Z:onlystep10,31files/8shards/24,884,408,375bytes | PASS structure; physical quota recovery UNVERIFIED |
+| Step15 error tails |Investigate localized maximum without loosening mean threshold |Top code/if/if samples have maxima0.8163185120/0.4316844940/0.2824678421; retained tokenpositions andneighbor deltas | OBSERVED; complete causal explanation UNVERIFIED |
+
+Commands reuse the local personal exact-job inspector, mounted reader and actor-environment metricreader listed above. The namespace inventory ran `timeout 60s ssh -o BatchMode=yes -o ConnectTimeout=10 shai-ycfeng python3 - < /data/ycfeng/tmp/nemo-mopd-20261112/inventory_latest_only_checkpoints_20261114.py`, with output retained in tasktmp/formal-native-resume-1-retention-20261114-current.json. All reads were scoped to this task's personal namespace. No production behavior change orGPUsubmission was made for these inspections.

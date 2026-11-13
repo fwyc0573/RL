@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-11-13T19:05:36.538602+00:00",
-  "root": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
+  "checked_at": "2026-11-13T19:29:45.515292+00:00",
+  "root": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
   "latest": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
   "latest_structure": "PASS",
-  "filesystem_free_bytes": 8584047611904,
+  "filesystem_free_bytes": 8575584432128,
   "checkpoints": [
     {
       "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
