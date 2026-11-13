@@ -41,6 +41,7 @@
   "log": "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-replay-input-preflight.log",
   "ruff": "Pinned ruff 0.9.9 check and format --check PASS; repeated only with the observer formatting check at 12:24 HKT.",
   "gpu_validation": "PENDING; final formal checkpoint is not available.",
-  "reproduction_command": "PYTHONPATH=/data/ycfeng/sota-engine/RL PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_checkpoint_replay_inputs.py",
-  "reproduction_command_scope": "Equivalent command for the recorded CPU preflight in the mounted base environment; this continuation did not rerun an already passing input preflight."
+  "last_validation_command": "PYTHONPATH=/data/ycfeng/sota-engine/RL PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_checkpoint_replay_inputs.py",
+  "last_validation_log": "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-replay-input-after-training-extension.log",
+  "last_validation_scope": "Executed again after adding the native training-forward phase; five archived group prompts and two-node configuration pass. GPU final-checkpoint validation remains pending."
 }

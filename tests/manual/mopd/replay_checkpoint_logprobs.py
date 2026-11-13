@@ -11,17 +11,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""Reload native checkpoint weights, refit vLLM, and compare fresh response logprobs."""
+"""Compare checkpoint logprobs in vLLM, native scoring, and native training."""
 
 import argparse
 import copy
 import json
+import os
+from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 import torch
 from omegaconf import OmegaConf
 
+from nemo_rl.algorithms.loss.loss_functions import ClippedPGLossConfig, ClippedPGLossFn
 from nemo_rl.algorithms.single_controller_utils.config import MasterConfig
 from nemo_rl.algorithms.single_controller_utils.setup import (
     _maybe_inject_megatron_train_iters,
@@ -38,6 +41,7 @@ from nemo_rl.utils.config import (
     register_omegaconf_resolvers,
 )
 from nemo_rl.weight_sync.factory import create_weight_synchronizer
+from tests.manual.mopd.native_forward_entrypoint import select_observed_workers
 from tests.manual.mopd.replay_logprobs import error_stats
 
 
@@ -66,6 +70,80 @@ def select_prompts(dump: Path, identities: Path) -> list[dict[str, Any]]:
     if not selected:
         raise ValueError("The native dump has no samples")
     return [selected[group] for group in sorted(selected)]
+
+
+def training_forward_report(
+    directory: Path, batch: BatchedDataDict[Any]
+) -> dict[str, Any]:
+    """Match observed native training tokens to the fresh checkpoint responses."""
+    remaining: dict[tuple[int, ...], list[int]] = defaultdict(list)
+    for index, length in enumerate(batch["input_lengths"].tolist()):
+        remaining[tuple(batch["input_ids"][index, :length].tolist())].append(index)
+    samples = []
+    issues = []
+    generation_errors = []
+    scorer_errors = []
+    for path in sorted(directory.glob("forward-*.jsonl")):
+        with path.open() as stream:
+            for line in stream:
+                row = json.loads(line)
+                if row["kind"] != "training_forward":
+                    continue
+                for observed_index, length in enumerate(row["input_lengths"]):
+                    ids = tuple(row["input_ids"][observed_index][:length])
+                    if not remaining[ids]:
+                        issues.append("unexpected_or_duplicate_sequence")
+                        continue
+                    index = remaining[ids].pop(0)
+                    mask = batch["token_mask"][index, 1:length].bool()
+                    observed_mask = torch.tensor(
+                        row["token_mask"][observed_index][1:length]
+                    ).bool()
+                    if not torch.equal(mask, observed_mask) or not mask.any():
+                        issues.append(f"sample_{index}_response_mask_mismatch")
+                        continue
+                    logprobs = torch.tensor(
+                        row["next_token_logprobs"][observed_index][: length - 1]
+                    )
+                    generation_error = (
+                        logprobs - batch["generation_logprobs"][index, 1:length]
+                    )[mask]
+                    scorer_error = (logprobs - batch["prev_logprobs"][index, 1:length])[
+                        mask
+                    ]
+                    if not (
+                        torch.isfinite(generation_error).all()
+                        and torch.isfinite(scorer_error).all()
+                    ):
+                        issues.append(f"sample_{index}_nonfinite_logprobs")
+                        continue
+                    generation_errors.append(generation_error)
+                    scorer_errors.append(scorer_error)
+                    samples.append(
+                        {
+                            "sample_index": index,
+                            "rank": row["rank"],
+                            "length": length,
+                            "logits_dtype": row["logits_dtype"],
+                            "generation_error": error_stats(generation_error),
+                            "scorer_error": error_stats(scorer_error),
+                        }
+                    )
+    missing = [index for indices in remaining.values() for index in indices]
+    report = {
+        "expected_samples": len(batch["input_lengths"]),
+        "observed_samples": len(samples),
+        "missing_samples": missing,
+        "issues": issues,
+        "samples": samples,
+        "verdict": "UNVERIFIED",
+    }
+    if generation_errors:
+        report["generation_error"] = error_stats(torch.cat(generation_errors))
+        report["scorer_error"] = error_stats(torch.cat(scorer_errors))
+        if not missing and not issues:
+            report["verdict"] = "MEASURED"
+    return report
 
 
 def main() -> None:
@@ -106,6 +184,9 @@ def main() -> None:
     samples = select_prompts(args.dump, args.identities)
     output = Path(config.logger.log_dir) / "checkpoint-refit-logprobs.json"
     output.relative_to("/mnt/codesign-exp/ycfeng")
+    observation_dir = output.parent / "checkpoint-training-forward"
+    os.environ["MOPD_OBSERVATION_DIR"] = str(observation_dir)
+    select_observed_workers()
     tokenizer = get_tokenizer(config.policy["tokenizer"])
     generation_config = configure_generation_config(
         copy.deepcopy(generation_config), tokenizer
@@ -128,7 +209,7 @@ def main() -> None:
         tokenizer=tokenizer,
         name_prefix="checkpoint_replay",
         weights_path=str(weights),
-        init_optimizer=False,
+        init_optimizer=True,
         init_reference_model=False,
     )
     generation = VllmGeneration(cluster=generation_cluster, config=generation_config)
@@ -154,6 +235,7 @@ def main() -> None:
             "samples": [],
         }
         errors = []
+        training_rows = []
         for sample in samples:
             prompt = sample["prompt_ids"]
             generated = generation.generate(
@@ -183,6 +265,21 @@ def main() -> None:
                     "The response logprob comparison is empty or non-finite"
                 )
             errors.append(error)
+            token_mask = torch.zeros((1, length), dtype=torch.float32)
+            token_mask[:, len(prompt) :] = 1
+            training_rows.append(
+                BatchedDataDict(
+                    {
+                        "input_ids": ids.unsqueeze(0),
+                        "input_lengths": torch.tensor([length]),
+                        "token_mask": token_mask,
+                        "sample_mask": torch.ones(1),
+                        "advantages": torch.ones((1, length)),
+                        "prev_logprobs": actual.unsqueeze(0),
+                        "generation_logprobs": recorded.unsqueeze(0),
+                    }
+                )
+            )
             report["samples"].append(
                 {
                     **{
@@ -203,6 +300,36 @@ def main() -> None:
                 json.dumps(report["samples"][-1]),
                 flush=True,
             )
+        batch = BatchedDataDict.from_batches(
+            training_rows,
+            pad_value_dict={"input_ids": generation_config["_pad_token_id"]},
+        )
+        policy.prepare_for_training()
+        loss_fn = ClippedPGLossFn(
+            ClippedPGLossConfig(
+                disable_ppo_ratio=True,
+                reference_policy_kl_penalty=0,
+                enable_torch_compile=False,
+            )
+        )
+        native_metrics = policy.train(batch, loss_fn, gbs=len(samples), mbs=1)
+        report["diagnostic_training"] = {
+            "objective": "ClippedPGLossFn used to exercise the native model.train() forward; formal full-vocabulary OPD is validated separately.",
+            "loss": float(native_metrics["loss"]),
+            "grad_norm": None
+            if native_metrics["grad_norm"] is None
+            else float(native_metrics["grad_norm"]),
+            "weights_observed": "All fresh responses and native training forwards use the reloaded checkpoint before this independent diagnostic optimizer attempt.",
+        }
+        report["actual_training_forward"] = training_forward_report(
+            observation_dir, batch
+        )
+        output.write_text(json.dumps(report, indent=2) + "\n")
+        print(
+            "MOPD_CHECKPOINT_TRAINING_FORWARD",
+            json.dumps(report["actual_training_forward"]),
+            flush=True,
+        )
     finally:
         generation.shutdown()
         policy.shutdown()

@@ -1,0 +1,60 @@
+{
+  "recorded_at": "2026-11-13T04:38:53.827537+00:00",
+  "status": "CPU_PREFLIGHT_PASS",
+  "gpu_status": "PENDING",
+  "runtime": {
+    "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+    "executable": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/bin/python",
+    "torch": "2.13.0+cu130",
+    "cuda": "13.0"
+  },
+  "environment": {
+    "PYTHONPATH": "/data/ycfeng/sota-engine/RL",
+    "PYTHONNOUSERSITE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "NEMO_RL_VENV_DIR": "/data/ycfeng/envs/nemo-mopd-actors",
+    "UV_PROJECT_ENVIRONMENT": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker",
+    "LD_LIBRARY_PATH_prefix": "/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat",
+    "TMPDIR": "/data/ycfeng/tmp"
+  },
+  "commands": {
+    "native_callback_and_report": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python tests/manual/mopd/check_checkpoint_training_forward.py",
+    "existing_opd_full_callback": "/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_pp4_forward_observation.py",
+    "archived_prompt_selection": "UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/check_checkpoint_replay_inputs.py",
+    "help": "UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313 /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python tests/manual/mopd/replay_checkpoint_logprobs.py --help"
+  },
+  "logs": [
+    "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-training-forward-reusable-cpu-check.log",
+    "/data/ycfeng/tmp/nemo-mopd-20261112/pp4-forward-observation-with-checkpoint-replay.log",
+    "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-replay-input-after-training-extension.log",
+    "/data/ycfeng/tmp/nemo-mopd-20261112/checkpoint-native-forward-help.log"
+  ],
+  "fixture": {
+    "expected_generation_mae": 0.0175,
+    "actual_generation_mae": 0.01750004291534424,
+    "expected_scorer_mae": 0.015,
+    "actual_scorer_mae": 0.01500004529953003,
+    "expected_tokens": 4,
+    "actual_tokens": 4,
+    "expected_loss": 2.5175,
+    "actual_loss": 2.5174999237060547,
+    "gradient_max_absolute_error": 0.0,
+    "zero_reference_gradient_relative_error": "undefined",
+    "masked_prompt_and_padding_gradients": 0.0
+  },
+  "markers": [
+    "LOGPROB_OBSERVER_USES_NATIVE_RESULT_PASS",
+    "SHIFTED_TOKEN_ALIGNMENT_AND_PADDING_PASS {\"expected_samples\": 2, \"observed_samples\": 2, \"missing_samples\": [], \"issues\": [], \"samples\": [{\"sample_index\": 0, \"rank\": 6, \"length\": 3, \"logits_dtype\": \"torch.float16\", \"generation_error\": {\"tokens\": 2, \"signed_mean\": -0.014999985694885254, \"mae\": 0.014999985694885254, \"p50\": 0.014999985694885254, \"p95\": 0.019499981403350828, \"p99\": 0.0198999810218811, \"max\": 0.019999980926513672}, \"scorer_error\": {\"tokens\": 2, \"signed_mean\": 0.0, \"mae\": 0.009999990463256836, \"p50\": 0.009999990463256836, \"p95\": 0.009999990463256836, \"p99\": 0.009999990463256836, \"max\": 0.009999990463256836}}, {\"sample_index\": 1, \"rank\": 6, \"length\": 4, \"logits_dtype\": \"torch.float16\", \"generation_error\": {\"tokens\": 2, \"signed_mean\": -0.020000100135803223, \"mae\": 0.020000100135803223, \"p50\": 0.020000100135803223, \"p95\": 0.02900019884109497, \"p99\": 0.029800207614898683, \"max\": 0.03000020980834961}, \"scorer_error\": {\"tokens\": 2, \"signed_mean\": -0.020000100135803223, \"mae\": 0.020000100135803223, \"p50\": 0.020000100135803223, \"p95\": 0.02900019884109497, \"p99\": 0.029800207614898683, \"max\": 0.03000020980834961}}], \"verdict\": \"MEASURED\", \"generation_error\": {\"tokens\": 4, \"signed_mean\": -0.01750004291534424, \"mae\": 0.01750004291534424, \"p50\": 0.014999985694885254, \"p95\": 0.028500175476074214, \"p99\": 0.02970020294189453, \"max\": 0.03000020980834961}, \"scorer_error\": {\"tokens\": 4, \"signed_mean\": -0.010000050067901611, \"mae\": 0.01500004529953003, \"p50\": 0.009999990463256836, \"p95\": 0.027000176906585686, \"p99\": 0.029400203227996823, \"max\": 0.03000020980834961}}",
+    "MISSING_OBSERVATION_SOFT_VERDICT_PASS",
+    "INVALID_MASK_SOFT_VERDICT_PASS",
+    "NATIVE_DIAGNOSTIC_LOSS_INPUT_PASS 2.5174999237060547 [[-0.25, -0.25, 0.0], [0.0, -0.25, -0.25]]",
+    "MOUNTED_OBSERVER_REGISTRATION_PASS",
+    "CHECKPOINT_TRAINING_FORWARD_CPU_PREFLIGHT_PASS"
+  ],
+  "scope": "Synthetic CPU callback, token-alignment, loss-input and environment-registration checks only. Final native weights, fresh GPU generations, native training forward and post-refit numerical acceptance have not run. Diagnostic optimizer attempts are independent of the formal 200-update counter.",
+  "ruff": {
+    "version": "0.9.9",
+    "check": "PASS",
+    "format": "PASS"
+  }
+}

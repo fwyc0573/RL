@@ -36,8 +36,8 @@ class NativeForwardWorkerBuilder(worker_groups.RayWorkerBuilder):
         super().__init__(ray_actor_class_fqn, *args, **kwargs)
 
 
-def main() -> None:
-    """Install test-local worker selection and use the ordinary entrypoint."""
+def select_observed_workers() -> None:
+    """Select the observing subclass in the mounted Megatron environment."""
     environment = Path(os.environ["NEMO_RL_VENV_DIR"]) / NATIVE_WORKER / "bin/python"
     if not environment.is_file():
         raise FileNotFoundError(environment)
@@ -46,6 +46,11 @@ def main() -> None:
     )
     worker_groups.RayWorkerBuilder = NativeForwardWorkerBuilder
     lm_policy.RayWorkerBuilder = NativeForwardWorkerBuilder
+
+
+def main() -> None:
+    """Install test-local worker selection and use the ordinary entrypoint."""
+    select_observed_workers()
     run_grpo_single_controller.main()
 
 

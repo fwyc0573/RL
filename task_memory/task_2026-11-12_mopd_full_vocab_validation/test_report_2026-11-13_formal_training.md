@@ -40,7 +40,7 @@ Reader: `/data/ycfeng/tmp/nemo-mopd-20261112/collect_formal_fp16_pp4_mounted.py`
 
 Final replay: `tests/manual/mopd/replay_checkpoint_logprobs.py --config <recipe> --checkpoint <published-step-dir> --dump <native-dump> --identities <train-jsonl> cluster.num_nodes=2`; sourcefullceiling is retained. Five selected originalgroup prompts produce freshresponses after native checkpoint loading and existing weighttransport refit. CPUpreflight used actualarchivedsamplelocators/tokens with metadata-onlyindexfixture; it did not load checkpointtensors or executeCUDA.
 
-Independent scorer/vLLM comparisons are explicitly separate from actualtrainingforward instrumentation. The existing earlierthree-way and maskedobjectivegradient evidence remains retained; formalwhole-run scorerparity alone does not establish bitwise trainingforward identity. No auxiliaryvalidator may terminate healthy56GPUtraining.
+Formal whole-run scorer/vLLM comparisons remain separate from actual training-forward instrumentation. The final checkpoint replay now includes an independent native model.train() diagnostic on the same fresh response batch; its GPU execution is pending. Earlier three-way and masked-objective gradient evidence remains retained. Neither scorer parity nor the synthetic CPU checks establish final trained-model acceptance. No auxiliary validator may terminate healthy56GPUtraining.
 
 
 ## First formal failure and resource correction
@@ -84,3 +84,24 @@ The valid RED logs expected1 versus actual0 at rank6. The formatted GREEN exits0
 ## Latest resource and progress snapshot
 
 At2026-11-13T04:27:31Z the correctedformaljob remains Pending at queue ranking2,55H800 remaining for56 requested. PersonalAPI confirms7replicas with750Gi memory and both RDMAresource limits, creator i-fengyicheng, and localNFSsource100.96.128.195. The mountedreader is Running. Metricscommand using `/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_fp16_pp4_memory_metrics.py` with `UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-py313` reports0attempts/0successfulupdates/0skips; no completed formalbatch is available.
+
+
+## Final actual-training-forward CPU preparation
+
+The checkpoint replay uses the same native weights for allfive fresh vLLM responses, native scorer outputs, and one native trainingforward before an independent diagnostic optimizer attempt. Native Policy.train/MegatronPolicyWorker.train runs with model.train(), the originalTP2/PP4/CP1 and sequencepacking. Diagnostic ClippedPGLossFn exercises that forward; formalfullvocabularyOPD objective and optimizer recovery are verified separately. Diagnostic attempts do not affect the formal200updatecount. The final standalone allocation is2nodes/16H800. GPUreplay is still PENDING.
+
+Reusablecheck: `tests/manual/mopd/check_checkpoint_training_forward.py`. Mountedactorenvironment through uv run --no-sync: Python3.13.14, Torch2.13.0+cu130, CUDA13.0. Full commands/environment/logpaths are archived in `evidence/checkpoint-training-forward-cpu-preflight.json`.
+
+| CPU check | Expected | Actual | Verdict |
+| --- | --- | --- | --- |
+| Prepared native LOGPROB observation | record finalpipeline stage without extra projection or OPDgradient probe | one rank6record; uses nativepreparedtensor | PASS |
+| Shift, masks andpadding |4validresponse tokens; knowninjectederrors |4tokens; generationMAE0.01750004291534424 versus0.0175; scorerMAE0.01500004529953003 versus0.015 | PASS, atol1e-6 |
+| Diagnostic native lossinputs |loss2.5175; derivative-0.25on4validtokens;0onprompt/pad |loss2.5174999237060547; maxgradienterror0; maskedgradients0 | PASS |
+| Missing/invalid observation |UNVERIFIEDwithout acceptedcoverage |missing indices0/1; invalidmask reportedUNVERIFIED | PASS |
+| Mountedworker registration |same persistentnativeactorPython |registry andbuilder match requiredactor | PASS |
+| Existing OPD_FULL PP4 callback |rank6/0/14recorded;TP1/CP1excluded;hostnamefileisolation |all5cases andcrossnodeisolation pass | PASS |
+| Existing archivedprompt/config preflight |math/code/stem/logic/if;2nodes |all5groups and2nodeconfig pass | PASS |
+| CLI andcodechecks |--helpexit0;Ruff0.9.9check/format |exit0/all4files pass | PASS |
+| FinalGPUthree-way comparison |actualcheckpoint;responseMAE<=0.02;finitecompletecoverage |not executed;no finalformalcheckpoint | PENDING |
+
+SyntheticCPUmetric errors are0.00000004291534424absolute/0.0000024523relative for generationMAE and0.00000004529953003absolute/0.0000030200relative for scorerMAE. Lossabsoluteerror is0.0000000762939453. Gradientrelativeerror isundefined for zero-reference prompt/padding entries. These calculations validate tokenalignment and reporting only.

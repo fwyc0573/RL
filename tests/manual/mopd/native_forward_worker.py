@@ -63,16 +63,22 @@ class NativeForwardWorker(MegatronPolicyWorkerImpl):
             if loss_fn.input_type == LossInputType.OPD_FULL:
                 assert isinstance(loss_fn, ClippedPGLossFn)
                 self._observe_objective_gradient(logits, data, loss_fn, prepare_kwargs)
+            if loss_fn.input_type in (LossInputType.OPD_FULL, LossInputType.LOGPROB):
                 with torch.no_grad():
-                    logprobs = get_next_token_logprobs_from_logits(
-                        input_ids=data["input_ids"],
-                        next_token_logits=logits.detach(),
-                        vocab_parallel_rank=prepare_kwargs["vocab_parallel_rank"],
-                        vocab_parallel_group=prepare_kwargs["vocab_parallel_group"],
-                        context_parallel_group=prepare_kwargs["context_parallel_group"],
-                        sampling_params=None,
-                        chunk_size=self.cfg["logprob_chunk_size"],
-                    )
+                    if loss_fn.input_type == LossInputType.LOGPROB:
+                        logprobs = prepared[0]["next_token_logprobs"].detach()
+                    else:
+                        logprobs = get_next_token_logprobs_from_logits(
+                            input_ids=data["input_ids"],
+                            next_token_logits=logits.detach(),
+                            vocab_parallel_rank=prepare_kwargs["vocab_parallel_rank"],
+                            vocab_parallel_group=prepare_kwargs["vocab_parallel_group"],
+                            context_parallel_group=prepare_kwargs[
+                                "context_parallel_group"
+                            ],
+                            sampling_params=None,
+                            chunk_size=self.cfg["logprob_chunk_size"],
+                        )
                     self._training_observations += 1
                     if (
                         parallel_state.get_tensor_model_parallel_rank() == 0

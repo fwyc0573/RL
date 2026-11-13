@@ -1571,3 +1571,65 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - Completed CPU observer step is signedcommit322c5a5f; no unrelatedfile staged. Preserve nativecheckpoint refit entrypoint tests/manual/mopd/replay_checkpoint_logprobs.py and its existing CPUinput preflight as a separate preparedcode step. The entrypoint loads nativeweights, uses existing create_weight_synchronizer transport, and measures fresh scorer/vLLM response logprobs from one sourceprompt pergroup. Allfive archivedlocators are exercised by CPUselectionpreflight; final formalweights and GPUrefit remain pending. No newtests or broadenedGPUchecks were run.
 - Exact personalAPI at04:27:31Z: correctedjob Pending, queue ranking2, H800 remaining55/request56; reader exp-1113-121235-452668 Running. Formalserializedresources are7replicas,8GPU/32CPU/750Gi each, both RDMAdefaults, and localNFS100.96.128.195:/data/ycfeng:/data/ycfeng. Rawfilteredreceipt: /data/ycfeng/tmp/nemo-mopd-20261112/formal-memory-status-20261113-1230.json.
 - Currentmetrics read through mountedbaseenvironment uv run --no-sync reports0attempts/0successes/0skips and no loss/gradnorm yet. This is queuedstatus, not anothertrainingfailure. Existing formal andreaderlaunchers remain necessary.
+
+
+## 2026-11-13 12:40 HKT: Final native training-forward preparation complete on CPU
+
+- E independent preparation completed. The finalcheckpoint replay now collects allfivefresh groupresponses and native scorer outputs before calling Policy.train once on that identicalbatch. MegatronPolicyWorker.train sets model.train() and runs native forward/backward; the existing observer records its prepared next-token logprobs. One diagnostic ClippedPGLossFn optimizer attempt happens after the observedforward and is not counted toward formal200successes. This compares the trainedstudent forward independently of the fullOPD objective; formal full-vocabulary OPD loss/gradient verification remains on its own path. No formaljobinstrumentation, objective or configuration changed.
+- Reused test-local workerselection from native_forward_entrypoint.py; preserved OPD_FULL objectivegradient observation. LOGPROB observations reuse the actual prepared native logprobs and add no recomputation. Final report matches exact tokenIDs/lengths, applies next-token offset and originalresponsemask, reports per-sample/overall train-minus-vLLM and train-minus-scorer errors, and marks missing/invalid records UNVERIFIED. Sourcegroup metadata is joined through report.sample_index. The independent finalreplay uses2nodes/16H800, not the healthy56GPUformalallocation.
+- New reusableCPUcheck tests/manual/mopd/check_checkpoint_training_forward.py PASS. Synthetic4response-token fixture generationMAE expected0.0175/actual0.01750004291534424, scorerMAE expected0.015/actual0.01500004529953003. Native diagnosticloss expected2.5175/actual2.5174999237060547; each valid-token derivative is-0.25, maskedprompt/padding gradients0, maxgradienterror0. Missingrecords and invalidmasks returnUNVERIFIED. Mountedactorregistration PASS. Python3.13.14/Torch2.13.0+cu130/CUDA13.0. Exactcommands/environment/evidence: evidence/checkpoint-training-forward-cpu-preflight.json. These are syntheticCPUvalues, not H800parity measurements.
+- Affected OPD_FULL PP4 rank/file regression, archivedfiveprompt selection/configuration, CLI --help and pinnedRuff0.9.9 check/format allPASS after the extension. Stop extending this tooling; GPUexecution awaits finalformalcheckpoint. Prepared code60dc291b preceded the actualtrainingforward extension, which will receive its own scoped signedcommit.
+- Existing correctedformalRJob exp-1113-121031-998701 remains queued. At04:36:38Z: Pending/ranking2/H800 remaining46/request56;0recordedattempts/updates. Readerexp-1113-121235-452668 remains alive with0files/0steps/0errors. Keep launchers91314/81924 andmonitor81236; no duplicate submission or cleanup.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型与数据身份已验收 |
+| Q | PASS | 200成功更新合同与授权已确认 |
+| B | PASS | 环境与全词表recipe已验收 |
+| C | PASS | full-loss/gradient参照已验收 |
+| D | PASS | 五教师native save/resume短诊断已通过 |
+| 清理 | PASS | 授权清理完成 |
+| E | TODO | 正式job排队；finalactualforward CPU准备完成，GPU结果待执行 |
+| F | TODO | 部分代码步骤已签署提交，overallreport和archive仍依赖E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 12:26checkpoint至2026-11-13 12:40HKT｜**当前前沿：** E正式训练与最终checkpoint验证
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 补齐缺失的实际trainingforward观测；CPU准备通过后停止扩展 |
+| D2 细节反复重试 | CLEAR | 同一memory修正job持续排队，无重复提交和参数试换 |
+| D3 支线问题修补 | CLEAR | 全部修改对应E finalcheckpoint一致性验收 |
+| D4 可并行任务停滞 | CLEAR | 排队时完成CPU准备和signedcommits；final权重尚不存在 |
+| D5 超范围镀金 | CLEAR | 未扩展核心接口、生产目标和数据格式 |
+| D6 分析空转 | CLEAR | 新入口实际完成CPU执行、对齐/梯度检查和观测回归 |
+| D7 路线违背 | CLEAR | 正式5teacher/151936/256/65536/200success保留；诊断单独计数 |
+
+**文档检查：** S1–S6均未发现明显缺陷；plan/report已记录新actualforward准备和GPU证据边界。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：保持91314/81924 ->首batch内存和nativeupdate验收 ->earlysave/resume ->200实际成功更新与Adamstate一致。
+2. 并行：独立reader记录loss/grad/coverage/parity，auxiliary错误只标unverified。
+3. E/F：最终checkpointfinite/state与独立16H800三方replay ->正式测试报告、signedcommits和Englisharchive。
+
+## 4. 最值得关注的 3 点
+
+1. 正式job仍Pending/0成功更新；不能将CPU准备记为训练完成。
+2. finalactualtrainingforward入口CPU准备已完成，不再扩展工具。
+3. 16GPU诊断与正式200update计数分开；保留全部既有launcher及清理证据。
+
+- Git save iteration: first scoped git add encountered an index.lock; read-only inspection found it already released. HEAD remains60dc291b and no stagedfiles were present. Retry the scopedadd; no lock deletion or unrelatedGitoperation performed.
