@@ -1,0 +1,143 @@
+[
+  {
+    "path": "config.yaml",
+    "bytes": 21016
+  },
+  {
+    "path": "replacement_reserve.pt",
+    "bytes": 550309
+  },
+  {
+    "path": "replay_buffer_metadata.pt",
+    "bytes": 1671
+  },
+  {
+    "path": "rollout_recovery.pt",
+    "bytes": 149677
+  },
+  {
+    "path": "train_dataloader.pt",
+    "bytes": 7272
+  },
+  {
+    "path": "training_info.json",
+    "bytes": 267,
+    "contents": {
+      "consumed_samples": 2560,
+      "current_step": 10,
+      "current_epoch": 0,
+      "total_steps": 10,
+      "total_valid_tokens": 21103599.0,
+      "trainer_version": 10,
+      "sampler_name": "in_order",
+      "sampler_dispatch_index": 10,
+      "cur_adaptive_ppo_clip_k": null,
+      "next_nemo_gym_task_index": 3072
+    }
+  },
+  {
+    "path": "data_plane/controller_state.pkl",
+    "bytes": 6989
+  },
+  {
+    "path": "data_plane/metadata.json",
+    "bytes": 1396,
+    "contents": {
+      "storage_saved": true,
+      "user_metadata": {
+        "data_plane_checkpoint_schema_version": 2,
+        "single_controller_train_steps": 10,
+        "single_controller_trainer_version": 10,
+        "single_controller_epoch": 0,
+        "partition_id": "rollout_data",
+        "sampler_name": "in_order",
+        "mode": "authoritative",
+        "forest_training": false,
+        "forest_execution_row_multiple": null,
+        "replay_metadata_schema_version": 1,
+        "replay_manifest_digest": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "replay_group_count": 0,
+        "rollout_recovery_schema_version": 8,
+        "rollout_recovery_payload_sha256": "e18b09bdce4b33fdd7a523c00509214d91214a9bf195d6b3fb797a4afff59e6b",
+        "rollout_recovery_group_count": 512,
+        "opd_full_teacher_checkpoints": [
+          "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher",
+          "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da",
+          "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50",
+          "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7",
+          "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba"
+        ]
+      }
+    }
+  },
+  {
+    "path": "data_plane/simple_storage/storage_unit_info.json",
+    "bytes": 512,
+    "contents": [
+      {
+        "position": 0,
+        "storage_unit_id": "TQ_STORAGE_UNIT_e3976ac1"
+      },
+      {
+        "position": 1,
+        "storage_unit_id": "TQ_STORAGE_UNIT_c1eab89a"
+      },
+      {
+        "position": 2,
+        "storage_unit_id": "TQ_STORAGE_UNIT_280e1481"
+      },
+      {
+        "position": 3,
+        "storage_unit_id": "TQ_STORAGE_UNIT_999ef94d"
+      },
+      {
+        "position": 4,
+        "storage_unit_id": "TQ_STORAGE_UNIT_b9962321"
+      },
+      {
+        "position": 5,
+        "storage_unit_id": "TQ_STORAGE_UNIT_d3d6dc0c"
+      },
+      {
+        "position": 6,
+        "storage_unit_id": "TQ_STORAGE_UNIT_45555263"
+      },
+      {
+        "position": 7,
+        "storage_unit_id": "TQ_STORAGE_UNIT_d753cb1a"
+      }
+    ]
+  },
+  {
+    "path": "data_plane/simple_storage/su_0_TQ_STORAGE_UNIT_e3976ac1.pkl",
+    "bytes": 530
+  },
+  {
+    "path": "data_plane/simple_storage/su_1_TQ_STORAGE_UNIT_c1eab89a.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_2_TQ_STORAGE_UNIT_280e1481.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_3_TQ_STORAGE_UNIT_999ef94d.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_4_TQ_STORAGE_UNIT_b9962321.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_5_TQ_STORAGE_UNIT_d3d6dc0c.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_6_TQ_STORAGE_UNIT_45555263.pkl",
+    "bytes": 398
+  },
+  {
+    "path": "data_plane/simple_storage/su_7_TQ_STORAGE_UNIT_d753cb1a.pkl",
+    "bytes": 398
+  }
+]

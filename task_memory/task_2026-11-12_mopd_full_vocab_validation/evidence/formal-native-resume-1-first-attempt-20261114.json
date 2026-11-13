@@ -1,0 +1,33 @@
+{
+  "attempts": 1,
+  "latest_step": 11,
+  "successful_updates": 0,
+  "overflow_skips": 1,
+  "last_metrics": {
+    "train/loss": {
+      "step": 11,
+      "value": 0.20187801122665405,
+      "wall_time": 1794595174.3682327
+    },
+    "train/loss_scale": {
+      "step": 11,
+      "value": 128.0,
+      "wall_time": 1794595174.3825228
+    },
+    "train/num_valid_samples": {
+      "step": 11,
+      "value": 256.0,
+      "wall_time": 1794595174.4155943
+    },
+    "train/lr": {
+      "step": 11,
+      "value": 9.999999974752427e-07,
+      "wall_time": 1794595174.4595728
+    },
+    "train/global_valid_toks": {
+      "step": 11,
+      "value": 2275836.0,
+      "wall_time": 1794595174.4873521
+    }
+  }
+}

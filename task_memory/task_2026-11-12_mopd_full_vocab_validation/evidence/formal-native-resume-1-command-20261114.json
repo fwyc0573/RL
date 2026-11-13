@@ -1,0 +1,23 @@
+{
+  "argv": [
+    "uv",
+    "run",
+    "--no-sync",
+    "python",
+    "-u",
+    "examples/run_grpo_single_controller.py",
+    "--config",
+    "/data/ycfeng/sota-engine/RL/examples/configs/recipes/llm/mopd-r1distill-qwen-1.5b-4n8g-megatron-tp2pp4cp1-pack-single-controller-fullvocab-fp16.yaml",
+    "cluster.num_nodes=4",
+    "cluster.gpus_per_node=8",
+    "logger.log_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs",
+    "checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/checkpoints",
+    "+env.nemo_gym.skip_venv_if_present=true",
+    "checkpointing.keep_top_k=0",
+    "checkpointing.checkpoint_must_save_by=00:01:15:00",
+    "grpo.max_num_epochs=null",
+    "checkpointing.checkpoint_dir=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints",
+    "checkpointing.save_period=200",
+    "checkpointing.ft_keep_latest_k=1"
+  ]
+}

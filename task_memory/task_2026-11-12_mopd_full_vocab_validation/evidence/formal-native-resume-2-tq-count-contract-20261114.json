@@ -1,0 +1,43 @@
+{
+  "native_source": "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/lib/python3.13/site-packages/transfer_queue/storage/managers/simple_storage_manager.py",
+  "saved_units": 8,
+  "wrong_units": 14,
+  "native_error": "Storage unit count mismatch: checkpoint has 8, current system has 14.",
+  "correct_units": 8,
+  "restore_mapping_calls": [
+    {
+      "path": "su_0_TQ_STORAGE_UNIT_e3976ac1.pkl",
+      "target": "unit_0"
+    },
+    {
+      "path": "su_1_TQ_STORAGE_UNIT_c1eab89a.pkl",
+      "target": "unit_1"
+    },
+    {
+      "path": "su_2_TQ_STORAGE_UNIT_280e1481.pkl",
+      "target": "unit_2"
+    },
+    {
+      "path": "su_3_TQ_STORAGE_UNIT_999ef94d.pkl",
+      "target": "unit_3"
+    },
+    {
+      "path": "su_4_TQ_STORAGE_UNIT_b9962321.pkl",
+      "target": "unit_4"
+    },
+    {
+      "path": "su_5_TQ_STORAGE_UNIT_d3d6dc0c.pkl",
+      "target": "unit_5"
+    },
+    {
+      "path": "su_6_TQ_STORAGE_UNIT_45555263.pkl",
+      "target": "unit_6"
+    },
+    {
+      "path": "su_7_TQ_STORAGE_UNIT_d753cb1a.pkl",
+      "target": "unit_7"
+    }
+  ],
+  "verdict": "PASS",
+  "scope": "Native manifest count and positional mapping; storage RPCs are replaced, no tensors are read or written."
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "field": "cluster.num_nodes",
+    "before": 4,
+    "after": 7
+  },
+  {
+    "field": "policy.generation.colocated.resources.num_nodes",
+    "before": 1,
+    "after": 4
+  }
+]

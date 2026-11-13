@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-11-13T18:40:45.598071+00:00",
+  "checkpoints": [
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_10",
+      "files": 31,
+      "bytes": 24884408375,
+      "training_info": {
+        "consumed_samples": 2560,
+        "current_step": 10,
+        "current_epoch": 0,
+        "total_steps": 10,
+        "total_valid_tokens": 21103599.0,
+        "trainer_version": 10,
+        "sampler_name": "in_order",
+        "sampler_dispatch_index": 10,
+        "cur_adaptive_ppo_clip_k": null,
+        "next_nemo_gym_task_index": 3072
+      }
+    }
+  ]
+}

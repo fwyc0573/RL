@@ -1,0 +1,79 @@
+{
+  "queried_at": "2026-11-13T18:20:32.911955+00:00",
+  "job": "exp-1114-021713-015045",
+  "replicas": [
+    {
+      "replica": "exp-1114-021713-015045-c4ca4238",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 02:18:02 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-021713-015045-cfcd2084",
+      "returned_messages": 47,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 02:17:57 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "MOPD_RAY_READY {\"nodes\": 4, \"gpus\": 32}"
+      ]
+    },
+    {
+      "replica": "exp-1114-021713-015045-eccbc87e",
+      "returned_messages": 43,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 02:17:57 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1114-021713-015045-c81e728d",
+      "returned_messages": 43,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/14 02:18:05 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    }
+  ]
+}

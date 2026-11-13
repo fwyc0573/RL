@@ -1,8 +1,9 @@
 ## Modification History
 
 | Date | Change |
-| 2026-11-14 | Resume with explicit latest-checkpoint-only storage constraint; suspend stale resume arguments until retention is verified. |
 | --- | --- |
+| 2026-11-14 | Record actual resumed overflow attempts and preserve the eight-unit TQ restore layout for expanded generation. |
+| 2026-11-14 | Resume with explicit latest-checkpoint-only storage constraint; suspend stale resume arguments until retention is verified. |
 | 2026-11-14 | Recover failed formal terminal state, zero-update business metrics and exact rank3 preemption. |
 | 2026-11-13 | Reject smaller GPU layouts with platform and native evidence; complete current input identity terminal verification. |
 | 2026-11-13 | Recover the existing formal job at15:36HKT and preserve its queued state and unfinished acceptance checks. |
@@ -2351,3 +2352,139 @@ The original metric test collected no items because tests/unit/conftest.py exclu
 1. Formalsuccessfulupdatesremain0/200.
 2. Onlystep10remains; oldcheckpointcleanupandnative retentionareverified.
 3. InstrumentationisCPUverified;GPUoverflow/gradienthealthstillrequiresactualtraining.
+
+### 2026-11-14 — Formal native resume submitted and runtime verified (in-progress, E)
+
+Signed scoped commit `6674642e` records the loss-scale metric and latest-only retention. Exactly one new training job, `exp-1114-021713-015045`, UID `4637305a-eb69-469e-96a7-9e2002abe37e`, was submitted locally as `i-fengyicheng`; all four replicas are Running, restart0, with the expected company image digest and NFS `100.96.128.195:/data/ycfeng:/data/ycfeng`. Runtime receipts confirm Python3.13.14, Torch2.13.0+cu130, CUDA13.0, and8H800 per worker. All four workers pass41cheap prepared-input checks; head reports `MOPD_RAY_READY {"nodes":4,"gpus":32}`. Native command preserves the final override pointing checkpoint_dir to the original formal job's latest-only recovery directory.
+
+Training launcher session60173 must stay alive. Independent0GPUreader `exp-1114-021833-441442`, launcher59190, observes only this exact job with a two-hour bound and nonblocking error reporting. Its first receipt has5files/0summarized steps/0failures. It reads dataset source-group labels once rather than repeatedly; no full model scan or tensor copy occurs. Exact outputs are under `/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-1-current-inputs-20261114/`.
+
+Latest-only retention is verified, old checkpoints are deleted, and final parity was inspected: `tests/manual/mopd/replay_checkpoint_logprobs.py` uses native weights loading plus the existing in-memory synchronizer and writes no additional checkpoint or HF export. Formal model initialization/resume is still underway; actual scaler restoration, first successful optimizer update, grad norm and final200updates remain unverified. Do not mark this task complete.
+
+Next actions: (1) inspect actual native step10 restore and first optimizer result; (2) reconcile `train/loss_scale`, successful flags, loss, grad norm, and five-group parity from new events; (3) on each native deadline/final publication, verify that only the latest checkpoint remains, then resume until200successful updates; (4) run final16H800three-way parity without checkpoint copies.
+
+#### check-progress — native runtime milestone
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型和数据已确定。 |
+| Q | PASS | 执行已获授权。 |
+| B | PASS | 输入及运行环境准备完成。 |
+| C | PASS | 数值检查与指标记录已验证。 |
+| D | PASS | 五次诊断更新通过。 |
+| E | TODO | 正式恢复已启动，尚无新成功更新。 |
+| F | TODO | 最终三方 parity 和归档未完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** cleanup/instrumentation checkpoint 至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | CPU 检查结束，已提交正式恢复。 |
+| D2 细节反复重试 | CLEAR | 当前原生初始化正在推进，无重复 GPU 提交。 |
+| D3 支线问题修补 | CLEAR | 工作均推进正式恢复和存储约束。 |
+| D4 可并行任务停滞 | CLEAR | 训练与零 GPU evidence reader 同时运行。 |
+| D5 超范围镀金 | CLEAR | 没有新增训练机制或额外 checkpoint。 |
+| D6 分析空转 | CLEAR | 已有真实 worker、Ray、模型加载证据。 |
+| D7 路线违背 | CLEAR | 原始模型、全词表和 200 更新合同保持。 |
+
+**文档检查：** S5：plan.md 仍写“无活跃训练请求”，与新恢复作业 Running 冲突。S1–S4/S6 未见缺陷。
+**归因：** 无执行偏离；S5 是状态文档滞后。
+
+## 3. 纠正建议
+
+**分支：** B：先更新状态文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md 当前状态与下一步：记录恢复 job、四 worker 验证及当前等待首个 optimizer 结果；明确后续继续 latest-only pruning。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：检查真实恢复及第一个 optimizer 结果；确认 loss_scale、loss、grad norm 和成功标记。
+2. E：按原生 deadline 保存并及时删除旧 checkpoint；完成 200 次实际更新后执行最终三方 parity。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功更新仍为 0/200。
+2. 训练 Running；只提交了一份恢复作业，launcher 保持存活。
+3. 启动正在复用转换缓存；没有新增 checkpoint 副本。
+
+### 2026-11-14 — Actual native recovery and resumed attempts (E, in progress)
+
+The trace restores the exact retained step10 and synchronizes weight version 10. Controller step11 records used loss scale 128, loss 0.2018780112, optimizer success 0, 256 samples and 2,275,836 valid response tokens. Step12 records scale 64, loss 0.1982083023, success 0, 256 samples and 2,009,960 valid tokens. This verifies actual saved-scale restoration, native backoff and GPU metric wiring. Formal successful updates remain 0/200; finite unscaled grad norm is still pending. No scaler reset, loss rescaling, checkpoint copy or HF export occurred.
+
+Both published batches exercise math/code/stem/logic/if and have zero mask or weight-version issues. Scorer/vLLM MAE is 0.0013568863 at step11 and 0.0013624505 at step12. Corresponding p99 errors are 0.0099423647 and 0.0100831985, with maxima 0.3230872154 and 0.4857079983. These are pre-update scorer/generation measurements. Final actual-training three-way parity is pending.
+
+Native recovery reports 512 unfinished siblings restarted, with zero reused or continued. `group_discarded` also denotes successful COMMITTED ownership cleanup in the legacy Gym path in rollout_manager.py; the event name alone is not a failure verdict. The head selector omitted normal rollout, teacher and compile messages. A bounded head tail confirms continuing rollout and teacher work without an observed new training error in that snapshot.
+
+At 2026-11-13T18:40:45Z, the task checkpoint namespace contains only the original step10: 31 files and 24,884,408,375 bytes. Latest-only retention remains active. Training launcher 60173, reader 59190 and monitor 79639 remain alive. Observer 39268 reads local metrics with a 30-minute bound and controls no jobs. Exact commands and evidence are in test_report_2026-11-14_formal_failure_recovery.md. The first batch has lengths 300–23103; prior D evidence separately covers actual execution at the sequence ceiling.
+
+### 2026-11-14 — Next native segment prepared with more generation replicas (E)
+
+Historical 11-step measurements of this layout show mean exposed generation time 534.17 seconds, policy training 75.69 seconds and total step time 632.07 seconds. The resumed first and second total times are 583.58 and 527.19 seconds. Prepare 7 × 8 H800 for the next segment: 8 student GPUs at TP2/PP4/CP1, 32 generation GPUs at TP2, five 2-GPU teachers and 6 spare GPUs. Keep the original models, full vocabulary, 256 trajectories, 65536 ceiling, constant scheduler horizon 200 and native optimizer/scaler state.
+
+The node-based TQ resolver initially changed storage units from 8 to 14. Actual step10 metadata sets storage_saved=true and contains eight storage entries. The installed AsyncSimpleStorageManager.load_checkpoint rejects saved 8/current 14 before any storage RPC. With current count 8, the native loader passes all eight positional mapping calls in a CPU check with payload RPCs replaced. The initial test used an incorrect class name and failed at import; its traceback is retained separately and is not valid RED evidence. No tensor payloads were read or copied, and the temporary metadata fixture was removed.
+
+Prepared arguments explicitly set data_plane.simple.num_storage_units=8. The corrected native preflight returns seven PASS markers and passes the count assertion; the corrected personal dry-run exits 0. Final resolved differences are only cluster.num_nodes 4→7 and generation resource num_nodes 1→4. No native code, schema, checkpoint format or training arithmetic changes are needed. New GPU training has not been submitted; the current 32-H800 job continues to its native save and terminal boundary.
+
+Prepared scripts are /data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_native_resume_2_generation32_20261114.py and submit_formal_native_resume_2_generation32_20261114.py. Arguments, resolved configuration, field differences, saved data-plane structure and the count-contract receipt are retained under evidence/. Preflight/dry-run/count-test logs remain under task temporary storage. Expanded generation throughput, native restore and numerical parity remain unverified until actual execution.
+
+Next actions: (1) verify the first successful optimizer update and finite grad norm; (2) reconcile five-teacher coverage and parity after each batch; (3) verify the native publication and latest-only retention before submitting the prepared next segment; (4) continue to 200 actual successful updates, then execute final training/scorer/vLLM parity without weight copies.
+
+#### check-progress — native recovery and next-segment readiness
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和数据已确定。 |
+| Q | PASS | 验收及执行已获授权。 |
+| B | PASS | 输入、环境和 CPU 前置验证已完成。 |
+| C | PASS | 数值检查与 loss-scale 指标已验证。 |
+| D | PASS | 五次诊断成功更新及 parity 已完成。 |
+| E | TODO | 真实原生恢复已观察；正式成功更新 0/200。 |
+| F | TODO | 最终三方 parity 和归档依赖 E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次 native runtime checkpoint 至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用 reader 和 preflight；数量检查直接避免下一段 GPU 恢复失败。 |
+| D2 细节反复重试 | CLEAR | 原生 scaler 自行 backoff；CPU import 失败已按实际类名修正，无重复 GPU 提交。 |
+| D3 支线问题修补 | CLEAR | 状态、梯度、样本、retention 和恢复配置均服务 E。 |
+| D4 可并行任务停滞 | CLEAR | 正式训练与 reader 均运行；下一段 CPU 准备同时推进。 |
+| D5 超范围镀金 | CLEAR | 没有新增训练机制或额外权重产物。 |
+| D6 分析空转 | CLEAR | 已有真实恢复、两次 attempt 和修正后的具体下一段配置。 |
+| D7 路线违背 | CLEAR | 原始验收及 latest-only 限制保持。 |
+
+**文档检查：** S1–S6 均未发现明显缺陷；计划已记录真实状态和下一段准备。
+**归因：** 无
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets 合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续当前原生运行 → 完成标志：首次成功 flag 为 1、grad norm 有限、五教师及样本/parity 证据完整。
+2. E：原生 deadline 保存后确认只剩最新 checkpoint，提交已准备的下一段 → 完成标志：原生恢复继续成功训练。
+3. E → F：按实际成功数推进至 200，然后完成最终三方 parity、报告和签名提交。
+
+## 4. 最值得关注的 3 点
+
+1. 已观察 scale 128→64 的原生 backoff；正式成功更新仍为 0/200。
+2. 前两批的五教师覆盖和 scorer/vLLM 均值 parity 通过；实际训练最终三方 parity 尚未执行。
+3. 只有最新 step10；下一段保留 8 个 TQ storage units，尚未提交重复训练。
