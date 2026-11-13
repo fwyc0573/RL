@@ -1,0 +1,65 @@
+{
+  "job": "exp-1114-021713-015045",
+  "controller_step": 13,
+  "metrics": {
+    "train/loss": [
+      {
+        "step": 13,
+        "value": 0.1890251785516739,
+        "wall_time": 1794596214.140718
+      }
+    ],
+    "train/loss_scale": [
+      {
+        "step": 13,
+        "value": 32.0,
+        "wall_time": 1794596214.1495647
+      }
+    ],
+    "train/optimizer_update_successful": [
+      {
+        "step": 13,
+        "value": 0.0,
+        "wall_time": 1794596214.1570334
+      }
+    ],
+    "train/num_valid_samples": [
+      {
+        "step": 13,
+        "value": 256.0,
+        "wall_time": 1794596214.1868572
+      }
+    ],
+    "train/global_valid_toks": [
+      {
+        "step": 13,
+        "value": 1890880.0,
+        "wall_time": 1794596214.2415018
+      }
+    ],
+    "train/lr": [
+      {
+        "step": 13,
+        "value": 9.999999974752427e-07,
+        "wall_time": 1794596214.2284803
+      }
+    ],
+    "timing/train/total_step_time": [
+      {
+        "step": 13,
+        "value": 502.1598205566406,
+        "wall_time": 1794596218.8532703
+      }
+    ],
+    "timing/train/policy_training": [
+      {
+        "step": 13,
+        "value": 60.36222457885742,
+        "wall_time": 1794596218.828695
+      }
+    ],
+    "timing/train/total_generation_time": []
+  },
+  "formal_successful_updates": 0,
+  "checkpoint_tensors_copied": false
+}

@@ -2488,3 +2488,62 @@ Next actions: (1) verify the first successful optimizer update and finite grad n
 1. 已观察 scale 128→64 的原生 backoff；正式成功更新仍为 0/200。
 2. 前两批的五教师覆盖和 scorer/vLLM 均值 parity 通过；实际训练最终三方 parity 尚未执行。
 3. 只有最新 step10；下一段保留 8 个 TQ storage units，尚未提交重复训练。
+
+### 2026-11-14 — Third resumed attempt and current storage inspection (E)
+
+Controller step13 used the native loss scale32, returned loss0.1890251786, optimizer success0,256samples and1,890,880valid response tokens. Formal successful updates remain0/200. All five teacher groups are present, masks/weight versions have zero issues, and scorer/vLLM MAE0.0013389613 passes the0.02 mean criterion. This measures pre-update scorer/generation only. Exact metrics and full parity summaries are in evidence/formal-native-resume-1-step13-*-20261114.json.
+
+Personal platform query at2026-11-13T19:04:47Z confirms four Running replicas/restart0. The independent reader has no recorded collection failures. Read-only exact namespace inventory at19:05:36Z confirms only the complete step10 remains,31files/8tensor shards/24,884,408,375bytes. The same native latest-only retention remains configured. No new checkpoint, copied weight shard or HF export was created. Continue at E; current native deadline must finish publication and terminal cleanup before the prepared next segment writes this checkpoint directory.
+
+Controller step14 is now observed: scale16, loss0.1901396066, success0,256samples/2,103,101response tokens. Scorer/vLLM MAE0.0013298019,p99 0.0101060867,max0.4830121994; all five groups and zero issues. The formal counter remains0/200. D's short-response diagnostic succeeded at scale64, which does not prove stability for these formal long-response batches. Keep observing the restored native scaler and actual unscaled gradients; no manual scaler reset or objective rescaling is authorized or needed at this stage. Step14 evidence is retained beside step13.
+
+#### check-progress — resumed formal attempts and latest-only storage
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和数据身份已核实。 |
+| Q | PASS | 验收和执行已获授权。 |
+| B | PASS | CPU 输入和环境前置检查完成。 |
+| C | PASS | 全词表参考和 loss-scale 接线已验证。 |
+| D | PASS | 五次短诊断成功更新与 native save/resume 已验证。 |
+| E | TODO | 正式 step14 仍 overflow，成功更新为0/200。 |
+| F | TODO | 最终训练/scorer/vLLM parity 和归档依赖 E。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 340794c2 native-recovery checkpoint 至今｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用实际 reader、平台查询和小范围 namespace inventory。 |
+| D2 细节反复重试 | CLEAR | 没有参数轮换或重复提交；同一作业原生 scaler 从128降到16。 |
+| D3 支线问题修补 | CLEAR | 仅核实 E 的更新、parity 和用户要求的存储约束。 |
+| D4 可并行任务停滞 | CLEAR | 训练和 CPU reader 同时运行；下一段 CPU 准备已完成。 |
+| D5 超范围镀金 | CLEAR | 无新增 checkpoint、HF export 或训练机制。 |
+| D6 分析空转 | CLEAR | step13/14 的实际业务结果已留存，后续动作明确。 |
+| D7 路线违背 | CLEAR | 正式模型、151936词表、256条样本、65536上限和200成功更新合同保持。 |
+
+**文档检查：** S1–S6 均未发现明显缺陷；plan 已同步 step14，后续按实测成功数补足 controller horizon。
+**归因：** 无
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets 合理，无需改动
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：观察当前原生 scaler 和首个成功更新 → 完成标志：successflag1、有限 unscaled grad norm、五教师有效样本。
+2. E：确认 deadline publication 和终态，核实只有最新 checkpoint → 完成标志：完整恢复状态、旧 checkpoint 已删除，随后提交已准备的56H800配置。
+3. E → F：按实际成功数推进至200，然后执行最终三方 parity → 完成标志：全部数值/状态验收和报告完成。
+
+## 4. 最值得关注的 3 点
+
+1. 正式成功更新仍为0/200，短诊断不能代替正式长响应梯度验收。
+2. 最新 inventory 只有 step10，24,884,408,375bytes；backend物理空间回收仍未证明。
+3. 下一段需等待当前原生保存和结束，保留八个 TQ storage units 和 native optimizer/scaler。

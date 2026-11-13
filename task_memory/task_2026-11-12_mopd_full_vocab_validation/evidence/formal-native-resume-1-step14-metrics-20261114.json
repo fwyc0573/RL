@@ -1,0 +1,64 @@
+{
+  "job": "exp-1114-021713-015045",
+  "controller_step": 14,
+  "metrics": {
+    "train/loss": [
+      {
+        "step": 14,
+        "value": 0.19013960659503937,
+        "wall_time": 1794596824.543028
+      }
+    ],
+    "train/loss_scale": [
+      {
+        "step": 14,
+        "value": 16.0,
+        "wall_time": 1794596824.5471046
+      }
+    ],
+    "train/optimizer_update_successful": [
+      {
+        "step": 14,
+        "value": 0.0,
+        "wall_time": 1794596824.5508597
+      }
+    ],
+    "train/grad_norm": [],
+    "train/num_valid_samples": [
+      {
+        "step": 14,
+        "value": 256.0,
+        "wall_time": 1794596824.5716977
+      }
+    ],
+    "train/global_valid_toks": [
+      {
+        "step": 14,
+        "value": 2103101.0,
+        "wall_time": 1794596824.6525655
+      }
+    ],
+    "train/lr": [
+      {
+        "step": 14,
+        "value": 9.999999974752427e-07,
+        "wall_time": 1794596824.634848
+      }
+    ],
+    "timing/train/total_step_time": [
+      {
+        "step": 14,
+        "value": 605.452880859375,
+        "wall_time": 1794596828.1335943
+      }
+    ],
+    "timing/train/policy_training": [
+      {
+        "step": 14,
+        "value": 73.5355453491211,
+        "wall_time": 1794596828.1181474
+      }
+    ]
+  },
+  "formal_successful_updates": 0
+}
