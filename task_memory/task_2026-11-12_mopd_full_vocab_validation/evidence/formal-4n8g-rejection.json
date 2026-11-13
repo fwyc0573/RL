@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "candidate": "4nodes/8H800pernode",
+  "candidate_accepted": false,
+  "teacher_nodes": 5,
+  "error": "cluster.num_nodes must leave at least one node for the student after reserving 5 non-colocated teacher node(s); got cluster.num_nodes=4.",
+  "gpu_allocation": false,
+  "ray_initialization": false
+}

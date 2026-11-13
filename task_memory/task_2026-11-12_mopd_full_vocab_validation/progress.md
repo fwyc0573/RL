@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Reject smaller GPU layouts with platform and native evidence; complete current input identity terminal verification. |
 | 2026-11-13 | Recover the existing formal job at15:36HKT and preserve its queued state and unfinished acceptance checks. |
 | 2026-11-13 | Accept completed five-teacher PP4 GPU save/resume, finite checkpoint, and full diagnostic parity. |
 | 2026-11-13 | Recover failed gradient probes, CPU correction, actual queue state, and formal FP16 preflight. |
@@ -1899,3 +1900,69 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 1. 15:36HKT stillPending，remaining33小于请求56，正式GPU修复尚未验证。
 2. 原job与所有长驻launcher存活，保留一次提交，不因排队重复分配。
 3. 最终replay已有CPU准备，等待真实checkpoint；不扩展工具或重跑D。
+
+
+## 2026-11-13 16:11 HKT: Reject unsupported resource replacements and preserve formal run
+
+- **completed:** Current CPU input check `exp-1113-155805-262829` published business PASS at08:02:00Z:41 files, all six model roles, deliberately changed identity rejected, no repeated tensor scan. Personal API verifies Succeeded at08:04:53Z, container exit0/restart0, expected d297 imageID and current local NFS source. Launcher85510 exited0.
+- **completed:** Recovered the 8×4 H800 candidate's native CPU preflight PASS. Server admission changed required hard anti-affinity to preferred weight10. Direct GET404 confirms `exp-1113-160428-882591` was an unretained dry-run. Current Lark training manual revision3668 requires8GPU per replica for distributed NVIDIA/RDMA jobs; affinity manual revision261 explains the requested semantics but not the mutation. Reject 8×4 and earlier10×2 candidates without GPU submission.
+- **completed:** Tested the ordinary4×8 alternative with native `_build_clusters`. It raises ValueError before Ray initialization because five reserved teacher nodes exceed four total nodes. This is a passing negative control; the candidate is rejected. Existing allocation interfaces were not changed.
+- **completed:** Removed only the two unverified `task_anti_affinities` lines from `submit_on_rjob.py`; that file is back to HEAD. No formal stop, resubmit, preemptible operation or new GPU allocation. Retained source assets, FP16 caches and completed D/cleanup evidence remain intact.
+- **in-progress:** Formal `exp-1113-151718-896703` remains Pending at08:10:51Z, queue rank2, H800 remaining28 against56 requested. Independent reader `exp-1113-151748-639492` is Running. Sessions73918,37752 and15510 remain alive. Formal updates/loss/grad/checkpoints are still absent.
+- **completed:** Selected evidence and exact commands are recorded in `test_report_2026-11-13_formal_placement.md` and its referenced evidence JSON files. The local platform handbook now states the verified multi-node GPU geometry and the limits of this admission result.
+- The first local query failed on an incorrect `brainpp` import before any API request; the corrected query uses inspected `brainpp.rjob` and the documented return type. Systemd scope creation required interactive authentication, so the CPU negative control used the existing30GiB address-space limit and60s timeout. No host authentication or service settings were changed.
+- **pending:** Actual formal GPU backward, memory/loss/grad health and early native save/resume →200 deduplicated success flags plus Adam step →final checkpoint finite/state/refit and actual training forward/scorer/vLLM parity →final report and English summary. The final replay tooling is already prepared and does not need expansion while no formal checkpoint exists.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student 和五教师身份已验收 |
+| Q | PASS | 200次实际成功更新合同已确认 |
+| B | PASS | 完整 CPU 准备及当前41文件身份检查、平台终态通过 |
+| C | PASS | 全词表 loss/gradient 参照检查通过 |
+| D | PASS | 五教师短训、65536 context 和 native save/resume 通过 |
+| 清理 | PASS | 授权范围已清理并验证 |
+| E | BLOCKED | 原56卡正式作业等待 quota，正式更新为0 |
+| F | TODO | 最终 checkpoint 验收及 archive 依赖 E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 15:36 HKT checkpoint 至16:11 HKT｜**当前前沿：** E 正式作业资源及执行
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 候选检查用于判断能否启动 E；取得拒绝证据后停止，没有扩展工具 |
+| D2 细节反复重试 | CLEAR | admission 读取和 native4×8负控分别判断放置保证与已有节点分配；没有反复提交 GPU 作业 |
+| D3 支线问题修补 | CLEAR | 平台规则直接关系到 E 的资源方案；未重跑完成的 D 和清理 |
+| D4 可并行任务停滞 | CLEAR | 原 reader/monitor 持续运行；最终验证缺少正式 checkpoint |
+| D5 超范围镀金 | CLEAR | 保留原始模型、词表、batch/context 和200成功更新目标；撤回无效修改 |
+| D6 分析空转 | CLEAR | 调查已形成明确决定：否决两个较小方案并保留原56卡队列作业 |
+| D7 路线违背 | CLEAR | 未提交未满足前提的 GPU 方案，未重试已失败的 preemptible 路线 |
+
+**文档检查：** S5 `plan.md` 的顶部状态未包含16:04准入失败和资源候选，已在继续执行前更新。S1–S4、S6未发现明显缺陷。
+**归因：** 无执行偏离；缺失的资源调查记录已补齐。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets 存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. `plan.md` 顶部：补齐候选拒绝、当前 CPU 终态、原 job 状态和 E/F 未完成项（已直接执行，未改变验收范围）。
+2. `progress.md` 与本轮测试报告：记录命令、admission 结果、明确资源决定和局限（已直接执行）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：保留73918和原56卡 job；启动后验证真实 backward、loss/grad 及早期 native save/resume。
+2. 并行：保留37752 reader 和15510 monitor；取得业务及平台证据，辅助错误不停止训练。
+3. E/F：200成功 flags 与 Adam step 核对 →最终 finite/state/refit/三方 parity →报告与 English summary。
+
+## 4. 最值得关注的 3 点
+
+1. 当前 quota28小于请求56；正式 GPU 修复及200成功更新均未验收。
+2. 32卡候选分别被平台8卡规则和 native五教师节点预留前提否决；没有提交替代作业。
+3. 当前输入已通过业务和平台验证，后续直接训练，不重复全量扫描或完成的诊断。

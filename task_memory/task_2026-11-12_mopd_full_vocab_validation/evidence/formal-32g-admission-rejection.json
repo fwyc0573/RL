@@ -1,0 +1,61 @@
+{
+  "name": "exp-1113-160428-882591",
+  "submitted": {
+    "podAntiAffinity": {
+      "requiredDuringSchedulingIgnoredDuringExecution": [
+        {
+          "labelSelector": {
+            "matchExpressions": [
+              {
+                "key": "rjob.brainpp.cn/rjob-task-id",
+                "operator": "In",
+                "values": [
+                  "exp-1113-160428-882591-default"
+                ]
+              }
+            ]
+          },
+          "topologyKey": "kubernetes.io/hostname"
+        }
+      ]
+    }
+  },
+  "admitted": {
+    "podAntiAffinity": {
+      "preferredDuringSchedulingIgnoredDuringExecution": [
+        {
+          "weight": 10,
+          "podAffinityTerm": {
+            "labelSelector": {
+              "matchExpressions": [
+                {
+                  "key": "rjob.brainpp.cn/rjob-task-id",
+                  "operator": "In",
+                  "values": [
+                    "exp-1113-160428-882591-default"
+                  ]
+                }
+              ]
+            },
+            "topologyKey": "kubernetes.io/hostname"
+          }
+        }
+      ]
+    }
+  },
+  "candidate_accepted": false,
+  "retained": false,
+  "retention_evidence": "Direct personal API GET returned HTTP404 on 2026-11-13T08:09:39Z.",
+  "documents": [
+    {
+      "url": "https://wvixbzgc0u7.feishu.cn/wiki/Bvl5wyWr2itF15kGmJIcyr0Uneb",
+      "document_id": "MCC8dAui9o6M9rxoZQGcnp3ynCf",
+      "revision_id": 3668
+    },
+    {
+      "url": "https://wvixbzgc0u7.feishu.cn/wiki/T0SMwwCxNiqxToke2qacYU9Sn3g",
+      "document_id": "Z5Y0daKLgovgxZxMqKYcFY9rnsT",
+      "revision_id": 261
+    }
+  ]
+}
