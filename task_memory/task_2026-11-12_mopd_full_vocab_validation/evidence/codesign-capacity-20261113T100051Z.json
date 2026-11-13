@@ -1,0 +1,4329 @@
+{
+  "observed_at": "2026-11-13T10:00:51.180003+00:00",
+  "group": "codesign",
+  "total": 123,
+  "returned": 123,
+  "machines": [
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066044Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "80964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "965619954Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "29",
+        "ephemeral-storage": "0",
+        "memory": "456832Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999876Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "25755258Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "35",
+        "ephemeral-storage": "0",
+        "memory": "390412Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999884Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "94964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "1081585282Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "29",
+        "ephemeral-storage": "0",
+        "memory": "520320Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999864Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "999",
+        "cpu": "66864m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "918269550Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110983436Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "491454018Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "20",
+        "ephemeral-storage": "0",
+        "memory": "453964Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066080Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "27464m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "140968214Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "51",
+        "ephemeral-storage": "0",
+        "memory": "593228Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999944Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "69992126Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "83",
+        "ephemeral-storage": "0",
+        "memory": "859404Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066092Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "82964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "704381218Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "47",
+        "ephemeral-storage": "0",
+        "memory": "611660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999912Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "999",
+        "cpu": "18864m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "1062973086Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "137248Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110895616Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "109274934Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "59",
+        "ephemeral-storage": "0",
+        "memory": "515340Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999912Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "28964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "891453086Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "404812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999888Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "96964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "934751878Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "33",
+        "ephemeral-storage": "0",
+        "memory": "565376Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066104Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "48964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "1074409774Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "5",
+        "ephemeral-storage": "0",
+        "memory": "48Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999900Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "136964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "973418130Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111081092Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "7964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "274807738Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "52",
+        "ephemeral-storage": "0",
+        "memory": "724300Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999888Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "30964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "70884998Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "73",
+        "ephemeral-storage": "0",
+        "memory": "629996Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999908Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "17964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "399146650Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "20",
+        "ephemeral-storage": "0",
+        "memory": "453964Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999936Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "125480630Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "25",
+        "ephemeral-storage": "0",
+        "memory": "288832Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110984280Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "3964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "456110478Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "29",
+        "ephemeral-storage": "0",
+        "memory": "520320Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066096Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "38964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "66650406Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "968"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "150732Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999860Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "165969514Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "101",
+        "ephemeral-storage": "0",
+        "memory": "701676Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999960Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "118964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "1028947662Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "23",
+        "ephemeral-storage": "0",
+        "memory": "494924Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "176",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111047796Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "973466026Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "5",
+        "ephemeral-storage": "0",
+        "memory": "48Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066044Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "30964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "836616434Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "404812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999904Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "48964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "131317398Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "23",
+        "ephemeral-storage": "0",
+        "memory": "203980Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999944Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "12964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "288325310Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "89",
+        "ephemeral-storage": "0",
+        "memory": "638188Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999896Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "80964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "1029123726Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999880Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "78964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "1156558462Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066092Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "66650402Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "96",
+        "ephemeral-storage": "0",
+        "memory": "834828Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999864Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "32964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "120",
+        "memory": "1053929070Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "5",
+        "ephemeral-storage": "0",
+        "memory": "48Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066060Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "262963458Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "73",
+        "ephemeral-storage": "0",
+        "memory": "503020Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999880Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "28671614Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "968"
+      },
+      "preemptible": {
+        "cpu": "88",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "2",
+        "memory": "803756Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066096Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "18919718Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "103",
+        "ephemeral-storage": "0",
+        "memory": "909344Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999904Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "7964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "314605206Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "36",
+        "ephemeral-storage": "0",
+        "memory": "466188Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999952Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "3964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "26541766Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "66",
+        "ephemeral-storage": "0",
+        "memory": "525516Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999888Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "78668732Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "77",
+        "ephemeral-storage": "0",
+        "memory": "890156Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066104Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "120",
+        "memory": "407093550Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "968"
+      },
+      "preemptible": {
+        "cpu": "19",
+        "ephemeral-storage": "0",
+        "memory": "318732Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066076Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "114964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "55193874Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "5",
+        "ephemeral-storage": "0",
+        "memory": "48Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "176",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111047764Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "19964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "39205258Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "59",
+        "ephemeral-storage": "0",
+        "memory": "367820Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066100Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "7110954Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "105",
+        "ephemeral-storage": "0",
+        "memory": "920876Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030396Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "20964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "144258482Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "71",
+        "ephemeral-storage": "0",
+        "memory": "920908Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030452Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "262075882Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "57",
+        "ephemeral-storage": "0",
+        "memory": "367852Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111181968Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "7964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "349586886Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "62",
+        "ephemeral-storage": "0",
+        "memory": "607468Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111065780Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "22964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "740982762Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "404812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999912Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "123502238Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "78",
+        "ephemeral-storage": "0",
+        "memory": "679148Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999900Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "172998290Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "99",
+        "ephemeral-storage": "0",
+        "memory": "748812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110984216Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "294535502Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "57",
+        "ephemeral-storage": "0",
+        "memory": "431340Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030448Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "10964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "16315878Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "43",
+        "ephemeral-storage": "0",
+        "memory": "320716Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999940Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "96964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "1168610288Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "61",
+        "ephemeral-storage": "0",
+        "memory": "600192Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999900Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "9964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "94659528Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "68",
+        "ephemeral-storage": "0",
+        "memory": "605388Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999916Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "10964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "65076898Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "31",
+        "ephemeral-storage": "0",
+        "memory": "230604Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066084Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "139657498Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "71",
+        "ephemeral-storage": "0",
+        "memory": "812364Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999848Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "14964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "120",
+        "memory": "273350238Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "68812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999908Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "333950618Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "72",
+        "ephemeral-storage": "0",
+        "memory": "782432Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110984244Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "100964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "1147662698Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "memory": "217152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999956Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "75964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "135823050Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "68812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "7499379032Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110900524Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "61964m",
+        "ephemeral-storage": "7488762200Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "1133570658Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999968Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "90964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "68202198Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "11",
+        "ephemeral-storage": "0",
+        "memory": "301152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999936Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "41369270Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "83",
+        "ephemeral-storage": "0",
+        "memory": "859404Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030480Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "264222214Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "93",
+        "ephemeral-storage": "0",
+        "memory": "619756Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999932Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "88964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "1073845224Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066080Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "126964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "1157804310Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111001352Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "14364m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "294913086Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "124",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "1085260Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "rdma/mlnx_shared": "8"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999932Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "92339890Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "55",
+        "ephemeral-storage": "0",
+        "memory": "693580Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066068Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "39964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "1051132170Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "2",
+        "ephemeral-storage": "0",
+        "memory": "19660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999908Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "32964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "4603546Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "23",
+        "ephemeral-storage": "0",
+        "memory": "140492Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066020Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "355463386Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "46",
+        "ephemeral-storage": "0",
+        "memory": "536640Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111078188Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "20964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "112832610Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "23",
+        "ephemeral-storage": "0",
+        "memory": "140492Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999908Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "13964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "541372058Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "memory": "217152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066064Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "58964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "745554182Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "51",
+        "ephemeral-storage": "0",
+        "memory": "656716Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111188088Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "3964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "44293550Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "104",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "705420Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999916Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "16081880Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "123",
+        "ephemeral-storage": "0",
+        "memory": "1211660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110998708Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "74964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "1099295210Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066052Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "164964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "627421434Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "memory": "217152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999888Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "32964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "162922118Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "53",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "507084Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999904Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "84964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "947760790Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111043540Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "13964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "414034186Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "60",
+        "ephemeral-storage": "0",
+        "memory": "523468Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999924Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8464m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "574434986Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "29",
+        "ephemeral-storage": "0",
+        "memory": "456832Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066068Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "28964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "63144202Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "79",
+        "ephemeral-storage": "0",
+        "memory": "572620Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110983532Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4464m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "134446754Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "66",
+        "ephemeral-storage": "0",
+        "memory": "648492Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999912Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "367059924Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "73",
+        "ephemeral-storage": "0",
+        "memory": "566508Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "176",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111047764Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "71964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "273148298Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "133152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999908Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "118",
+        "memory": "293076634Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "68812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999928Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "320978606Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "46",
+        "ephemeral-storage": "0",
+        "memory": "472300Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030464Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "17964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "424080886Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "36",
+        "ephemeral-storage": "0",
+        "memory": "525644Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999872Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "219905654Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "35",
+        "ephemeral-storage": "0",
+        "memory": "398604Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066008Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "148964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "486912206Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "25",
+        "ephemeral-storage": "0",
+        "memory": "352320Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066048Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "1081590Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "968"
+      },
+      "preemptible": {
+        "cpu": "75",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "793900Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111188152Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "132964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "1214975470Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "memory": "217152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999912Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "220933790Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "78",
+        "ephemeral-storage": "0",
+        "memory": "680000Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999900Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "55295634Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "984"
+      },
+      "preemptible": {
+        "cpu": "87",
+        "ephemeral-storage": "0",
+        "memory": "726220Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066068Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "326795530Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "41",
+        "ephemeral-storage": "0",
+        "memory": "423148Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110896320Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "120",
+        "memory": "22030838Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "43",
+        "ephemeral-storage": "0",
+        "memory": "357580Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999924Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "127",
+        "memory": "262995626Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "71",
+        "ephemeral-storage": "0",
+        "memory": "609484Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999936Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "7964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "126",
+        "memory": "236138166Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "13",
+        "ephemeral-storage": "0",
+        "memory": "385152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030416Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "124",
+        "memory": "1248660220Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "4",
+        "ephemeral-storage": "0",
+        "memory": "168000Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999948Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "32964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "973418178Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "5",
+        "ephemeral-storage": "0",
+        "memory": "48Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "192",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111080596Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "375876042Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "57",
+        "ephemeral-storage": "0",
+        "memory": "559168Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999936Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "1",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "117",
+        "memory": "745307830Ki",
+        "nvidia.com/gpu": "1",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "976"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "2",
+        "memory": "117964Mi",
+        "nvidia.com/gpu": "1",
+        "nvidia.com/spot-gpu": "1"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999888Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "135642758Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "75",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "771852Mi",
+        "nvidia.com/gpu": "4",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2110999944Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "2",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "67964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "857996990Ki",
+        "nvidia.com/gpu": "2",
+        "nvidia.com/spot-gpu": "1",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "25",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "3",
+        "memory": "568652Mi",
+        "nvidia.com/gpu": "2",
+        "nvidia.com/spot-gpu": "1"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066096Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "94964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "685572390Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "preemptible": {
+        "cpu": "63",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "1",
+        "memory": "868172Mi",
+        "nvidia.com/gpu": "4",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111066000Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "104366278Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "992"
+      },
+      "preemptible": {
+        "cpu": "87",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "2",
+        "memory": "659660Mi",
+        "nvidia.com/gpu": "4",
+        "nvidia.com/spot-gpu": "0",
+        "rdma/mlnx_shared": "8"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "224",
+        "ephemeral-storage": "3748906852Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "2111030476Ki",
+        "nvidia.com/gpu": "8",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "1k"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "10964m",
+        "ephemeral-storage": "3738290020Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "118",
+        "memory": "203355650Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "999"
+      },
+      "preemptible": {
+        "cpu": "105",
+        "ephemeral-storage": "0",
+        "mellanox.com/mlnx_rdma": "5",
+        "memory": "1267660Mi",
+        "nvidia.com/gpu": "6",
+        "nvidia.com/spot-gpu": "0",
+        "rdma/mlnx_shared": "1"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341648Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "692152262Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "0",
+        "ephemeral-storage": "0",
+        "memory": "0",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341648Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "16064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "119",
+        "memory": "37644230Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "21",
+        "ephemeral-storage": "0",
+        "memory": "180Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "114",
+        "memory": "37992386Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "2",
+        "ephemeral-storage": "0",
+        "memory": "19660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1863873660Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "525620260Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "102064m",
+        "ephemeral-storage": "1853387900Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "452656474Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "0",
+        "ephemeral-storage": "0",
+        "memory": "0",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "117",
+        "memory": "40613826Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "68812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "119",
+        "memory": "268572610Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "404812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "527862664Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "998",
+        "cpu": "2364m",
+        "ephemeral-storage": "1672751933040",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "117",
+        "memory": "31863998Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "15",
+        "ephemeral-storage": "0",
+        "memory": "150732Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "117",
+        "memory": "158005186Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "2",
+        "ephemeral-storage": "0",
+        "memory": "19660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4044m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "122",
+        "memory": "302213058Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "11",
+        "ephemeral-storage": "0",
+        "memory": "301152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1054178960Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "108197830Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "16",
+        "ephemeral-storage": "0",
+        "memory": "285964Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "527862664Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2054m",
+        "ephemeral-storage": "1810391676Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "115",
+        "memory": "34160830Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "23",
+        "ephemeral-storage": "0",
+        "memory": "140492Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "527862664Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "6354m",
+        "ephemeral-storage": "1672647075440",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "123",
+        "memory": "23302334Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "12",
+        "ephemeral-storage": "0",
+        "memory": "185580Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "5064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "121",
+        "memory": "328198082Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "9",
+        "ephemeral-storage": "0",
+        "memory": "217152Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "527862664Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "2054m",
+        "ephemeral-storage": "1672751933040",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "119",
+        "memory": "3784894Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "4",
+        "ephemeral-storage": "0",
+        "memory": "44Gi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341652Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "999",
+        "cpu": "4464m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "117",
+        "memory": "24147914Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "2",
+        "ephemeral-storage": "0",
+        "memory": "19660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341652Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "125",
+        "memory": "675096522Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "0",
+        "ephemeral-storage": "0",
+        "memory": "0",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341652Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "8064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "114",
+        "memory": "195557322Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "7",
+        "ephemeral-storage": "0",
+        "memory": "68812Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "1056341644Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "4064m",
+        "ephemeral-storage": "1862820476Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "120",
+        "memory": "130889666Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "27",
+        "ephemeral-storage": "0",
+        "memory": "371980Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    },
+    {
+      "total": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "112",
+        "ephemeral-storage": "1873306236Ki",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "128",
+        "memory": "527862664Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "usable": {
+        "brainpp.cn/auto-port": "1k",
+        "cpu": "23054m",
+        "ephemeral-storage": "1672751933040",
+        "hugepages-1Gi": "0",
+        "hugepages-2Mi": "0",
+        "mellanox.com/mlnx_rdma": "111",
+        "memory": "126816446Ki",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0",
+        "pods": "600",
+        "rdma/mlnx_shared": "0"
+      },
+      "preemptible": {
+        "cpu": "2",
+        "ephemeral-storage": "0",
+        "memory": "19660Mi",
+        "nvidia.com/gpu": "0",
+        "nvidia.com/spot-gpu": "0"
+      }
+    }
+  ],
+  "scope": "Node resource projection; not a FIFO queue admission gate"
+}

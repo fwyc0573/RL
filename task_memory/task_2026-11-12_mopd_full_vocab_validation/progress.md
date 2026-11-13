@@ -2106,3 +2106,65 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - 17:49HKT queue transition: `exp-1113-174329-659007` approved2026-11-13T09:47:37.481255069Z, monitorStarting09:47:48Z; directpersonalAPI09:48:26Z showsfourPendingreplicas, no assignednode/container yet. Queue-reason annotation stillmentions30remaining butisnowhistorical; actualphase isStarting. ContinuephysicalGPU/runtimeverification; noformalmetrics orcheckpoint.
 
 - Currentfrontierupdate: monitor20261113T095506Z isStarting, fourpendingreplicas. LiveEventsread2026-11-13T09:53:47Z passedexactjob/fourreplicas withnocontinuation; jobhasfourStart-replica events09:47:38–39Z, replicaprojections empty. Physicalscheduling cause remainsunidentified; no containerbusinessfailure observed. Savedstartingstatus/monitor/events undercurrentevidence. CurrentE isTODO(startup) ratherthanBLOCKEDonquota: quotaapproved09:47:37Z. Preservelauncher82605,reader53011,monitor5931; firstinspectactualworker/source/GPU/runtime, thenbackward/loss/grad/earlyresume.200successes/finalparity/archive remainpending.
+
+
+## 2026-11-13 18:02 HKT: Native physical scheduling blocker identified
+
+- completed E investigation: existing launcher82605, reader53011 and monitor5931 were polled alive. Personal API09:59:36Z confirms exact32H800 job Starting, four unscheduled replicas, `PodScheduled=False/Unschedulable`; no physical training worker, optimizer attempt or checkpoint.
+- completed E evidence: exact live Events10:00:52Z report `FailedScheduling`, GPU resource gap and zero assigned pods. All five reads PASS without pagination. This replaces the earlier unknown scheduling cause with observed native scheduler evidence; it does not identify the scheduler's internal resource calculation.
+- completed E resource observation: codesign API10:00:51Z returns123/123machines, usableGPUtotal3, no8GPUusablemachine. Preserve approved job/launcher; do not change topology, submit duplicates or repeat full preparation based on a capacity snapshot.
+- completed reader lifecycle: new0GPUreader Running09:59:36Z, expectedcreator/currentNFS/exactimage/restart0; old explicitly stoppedreader jobStopped09:55:26Z/replicaStopped09:55:25Z. Stale container-running field retained and not interpreted as current execution. Currentreader0files/0steps/no failures; localTensorBoard0attempts/0successes/no loss or grad.
+- in-progress E/F: first actual formalbackward/health/earlynative save-resume →200actualsuccessfulupdates andAdamstate →finalfinite/state/refit/three-wayparity. No overallPASS or Englishcompletionarchive. Exact dated snapshots and commands added to existingplacementreport; no implementation change or completedD/cleanup rerun.
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student 与五教师已确认 |
+| Q | PASS | 200 次实际成功更新合同已确认 |
+| B | PASS | 完整 CPU/storage 准备和当前输入身份已通过 |
+| C | PASS | 全词表 loss/gradient 参照已完成 |
+| D | PASS | 五教师诊断、65536 和 native save/resume 已通过 |
+| 清理 | PASS | 授权清理已完成并验证 |
+| E | BLOCKED | quota 已批准，native scheduler 报 GPU resource gap；无正式更新 |
+| F | TODO | 最终 checkpoint 和 archive 依赖 E |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次 Starting checkpoint 至当前原生调度取证｜**当前前沿：** E 正式 GPU 运行
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用已有精确查询和 reader；未扩展 harness |
+| D2 细节反复重试 | CLEAR | 只读查询得到新的 scheduler 原文；没有反复修改或重新提交 |
+| D3 支线问题修补 | CLEAR | 调度直接阻碍 E；未修复无关环境或宿主服务 |
+| D4 可并行任务停滞 | CLEAR | reader 与 monitor 均存活；最终 replay 缺少正式 checkpoint |
+| D5 超范围镀金 | CLEAR | 模型、数据、词表、更新数和误差上限保持 |
+| D6 分析空转 | CLEAR | 从未知原因取得 FailedScheduling 和资源快照，决定保留已批准作业 |
+| D7 路线违背 | CLEAR | 个人本机读平台，soft gates 保持，无重复提交或准备 |
+
+**文档检查：** S5 plan 顶部旧 reader 终态待确认、调度原因未知，已被09:59–10:00Z证据替代；更新当前阻碍与终态。S1–S4、S6未发现明显缺陷。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在缺陷，先更新文档再继续
+
+**文档更新（先执行）：**
+1. plan 顶部与现有 placement 报告：记录 GPU resource gap、新 reader Running、旧 reader Stopped、正式0更新和证据边界（可直接执行，已更新）。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：保持82605和已批准32H800job，待四个物理workers到位 → runtime/Ray32 → backward/loss/grad/teacher routing/earlyresume。
+2. 并行：53011 reader ‖5931 monitor；按实际阶段收集业务和平台证据。
+3. E/F：200 actual success flags与Adamstate → finalfinite/state/refit/三方parity → 完整报告和Englisharchive。
+
+## 4. 最值得关注的 3 点
+
+1. 配额批准不等于物理 GPU 已分配；当前 native scheduler 明确报资源不足。
+2. 正式0更新、没有 loss/grad/checkpoint；CPU和D诊断PASS不能替代正式验收。
+3. 现有 launcher 和 reader/monitor 保持；等待外部资源，不重新申请或重跑已完成准备。

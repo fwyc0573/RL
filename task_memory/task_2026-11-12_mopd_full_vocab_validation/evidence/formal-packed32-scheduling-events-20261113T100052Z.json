@@ -1,0 +1,798 @@
+{
+  "queried_at": "2026-11-13T10:00:52.124451+00:00",
+  "job_uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445",
+  "phase": "Starting",
+  "queries": [
+    {
+      "name": "exp-1113-174329-659007",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 10:00:33+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 10:00:33+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 10:00:02+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 10:00:02+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:19+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659918543",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:56:19+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "RJob",
+            "name": "exp-1113-174329-659007",
+            "namespace": "shai-core",
+            "resource_version": "1659984586",
+            "uid": "da3fd441-bc51-4d5b-aa27-ad216d7fe445"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174329-659007-eccbc87e",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:19+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "1659918458",
+            "uid": "160eb189-67d9-461e-93ce-b808243a4b8f"
+          },
+          "last_timestamp": "2026-11-13 09:56:19+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:19.068113+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "45768895771",
+            "uid": "76dc1396-6f3e-43c0-9e5a-fe59123f6d4a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:52.598601+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "45768895797",
+            "uid": "76dc1396-6f3e-43c0-9e5a-fe59123f6d4a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:57:29.511569+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "45768933348",
+            "uid": "76dc1396-6f3e-43c0-9e5a-fe59123f6d4a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "1659984518",
+            "uid": "160eb189-67d9-461e-93ce-b808243a4b8f"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-eccbc87e",
+            "namespace": "shai-core",
+            "resource_version": "1659984518",
+            "uid": "160eb189-67d9-461e-93ce-b808243a4b8f"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-eccbc87e is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174329-659007-c4ca4238",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "1659984488",
+            "uid": "dd7a509d-4c53-41f9-98e5-8cfb4e2fddc8"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 10:00:33+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "1660002448",
+            "uid": "dd7a509d-4c53-41f9-98e5-8cfb4e2fddc8"
+          },
+          "last_timestamp": "2026-11-13 10:00:33+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:18.855890+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "45768895654",
+            "uid": "50b49fb8-8e22-4edc-ae91-7c83d2b74d64"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: pre-filter pod exp-1113-174329-659007-c4ca4238 cannot find enough sibling pods, current pods number: 3, minMember of group: 4. co-scheduling member not ready, pre-filter pod exp-1113-174329-659007-c4ca4238 cannot find enough sibling pods, current pods number: 3, minMember of group: 4, pre-filter pod exp-1113-174329-659007-c4ca4238 cannot find enough sibling pods, current pods number: 3, minMember of group: 4.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:52.594378+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "45768895661",
+            "uid": "50b49fb8-8e22-4edc-ae91-7c83d2b74d64"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:57:29.511001+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "45768933343",
+            "uid": "50b49fb8-8e22-4edc-ae91-7c83d2b74d64"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 10:00:33.019104+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "45769030822",
+            "uid": "50b49fb8-8e22-4edc-ae91-7c83d2b74d64"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-c4ca4238",
+            "namespace": "shai-core",
+            "resource_version": "1659984488",
+            "uid": "dd7a509d-4c53-41f9-98e5-8cfb4e2fddc8"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c4ca4238 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174329-659007-c81e728d",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:18.850206+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c81e728d",
+            "namespace": "shai-core",
+            "resource_version": "45768895630",
+            "uid": "6ab3db00-2e90-4756-b727-998005129083"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: pre-filter pod exp-1113-174329-659007-c81e728d cannot find enough sibling pods, current pods number: 2, minMember of group: 4. pre-filter pod exp-1113-174329-659007-c81e728d cannot find enough sibling pods, current pods number: 2, minMember of group: 4, co-scheduling member not ready, pre-filter pod exp-1113-174329-659007-c81e728d cannot find enough sibling pods, current pods number: 2, minMember of group: 4.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:52.574221+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c81e728d",
+            "namespace": "shai-core",
+            "resource_version": "45768895653",
+            "uid": "6ab3db00-2e90-4756-b727-998005129083"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:57:29.510490+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-c81e728d",
+            "namespace": "shai-core",
+            "resource_version": "45768933312",
+            "uid": "6ab3db00-2e90-4756-b727-998005129083"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-c81e728d",
+            "namespace": "shai-core",
+            "resource_version": "1659984486",
+            "uid": "1a9e5205-cbf0-4bf1-beef-52c7a5ad8726"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-c81e728d",
+            "namespace": "shai-core",
+            "resource_version": "1659984486",
+            "uid": "1a9e5205-cbf0-4bf1-beef-52c7a5ad8726"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently. co-scheduling post filter, prefilter podGroup shai-core/exp-1113-174329-659007-default failed recently, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-c81e728d is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "exp-1113-174329-659007-cfcd2084",
+      "status": "PASS",
+      "continuation": null,
+      "events": [
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:18.837227+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "45768895626",
+            "uid": "e40d9602-5850-477b-b59f-b40034a5416a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: pre-filter pod exp-1113-174329-659007-cfcd2084 cannot find enough sibling pods, current pods number: 2, minMember of group: 4. co-scheduling member not ready, pre-filter pod exp-1113-174329-659007-cfcd2084 cannot find enough sibling pods, current pods number: 2, minMember of group: 4, pre-filter pod exp-1113-174329-659007-cfcd2084 cannot find enough sibling pods, current pods number: 2, minMember of group: 4.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:56:52.569691+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "45768895639",
+            "uid": "e40d9602-5850-477b-b59f-b40034a5416a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 09:57:29.485768+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "45768933304",
+            "uid": "e40d9602-5850-477b-b59f-b40034a5416a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": "2026-11-13 10:00:02.008527+00:00",
+          "first_timestamp": null,
+          "involved_object": {
+            "api_version": "v1",
+            "field_path": null,
+            "kind": "Pod",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "45769010709",
+            "uid": "e40d9602-5850-477b-b59f-b40034a5416a"
+          },
+          "last_timestamp": null,
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": null,
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:57:29+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "1659984485",
+            "uid": "564bb04c-163d-43bb-ae83-404a604a1311"
+          },
+          "last_timestamp": "2026-11-13 09:57:29+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 10:00:02+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "1660002444",
+            "uid": "564bb04c-163d-43bb-ae83-404a604a1311"
+          },
+          "last_timestamp": "2026-11-13 10:00:02+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4. co-scheduling post filter, coscheduling prefilter resource gap: map[nvidia.com/gpu:{{8 0} {<nil>}  DecimalSI}] member gap 4, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        },
+        {
+          "count": null,
+          "event_time": null,
+          "first_timestamp": "2026-11-13 09:56:52+00:00",
+          "involved_object": {
+            "api_version": "rjob.brainpp.cn/v1alpha1",
+            "field_path": null,
+            "kind": "Replica",
+            "name": "exp-1113-174329-659007-cfcd2084",
+            "namespace": "shai-core",
+            "resource_version": "1659984485",
+            "uid": "564bb04c-163d-43bb-ae83-404a604a1311"
+          },
+          "last_timestamp": "2026-11-13 09:56:52+00:00",
+          "message": "0/4546 nodes are available: coscheduling prefilter resource gap: map[] member gap 2. co-scheduling post filter, coscheduling prefilter resource gap: map[] member gap 2, coscheduling: podGroup shai-core/exp-1113-174329-659007-default gets rejected due to Pod exp-1113-174329-659007-cfcd2084 is unschedulable even after PostFilter, assigned 0.",
+          "reason": "FailedScheduling",
+          "source": {
+            "component": "rjob-controller",
+            "host": null
+          }
+        }
+      ]
+    }
+  ]
+}

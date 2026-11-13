@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-13 | Identify native scheduling failure and current usable GPU shortage; verify new reader runtime and old reader terminal state. |
 | 2026-11-13 | Verify corrected32GPU bundle allocation, reservation order, CPU regressions and current input terminal state. |
 | 2026-11-13 | Record rejected smaller GPU layouts, current input readiness, and the retained formal queue state. |
 
@@ -119,3 +120,36 @@ The exact32GPU job's queue was approved at2026-11-13T09:47:37.481255069Z. Monito
 Exact liveEvents reads at09:53:47Z passed for thejob and each of its fourreplicas, with no continuation. The jobprojection contains fourStart-replica events09:47:38–39Z; all fourreplica projections wereempty. This does not identify the underlying physicalscheduling cause or prove that no nativePoderror exists. No platform/controllerconfiguration was changed. Selectedsources: `evidence/formal-packed32-starting-status.json`, `evidence/formal-packed32-starting-monitor.json`, `evidence/formal-packed32-scheduling-events.json`. Readcommand: existingpersonalinitialization followed by `/data/ycfeng/tmp/stepmind-env/bin/python /data/ycfeng/tmp/nemo-mopd-20261112/inspect_formal_packed32_scheduling.py`.
 
 The new0GPUreader wasStarting; the old0GPUreader remainedRJobStopping after the explicit17:44:11HKT stop. Formalruntime/backward/metrics/checkpoint and200actualsuccessfulupdates remainUNVERIFIED. Keep82605/53011/5931 alive and inspect the existingjob whenworkerstartup advances.
+
+
+## Current scheduling evidence at 2026-11-13T10:00:52Z
+
+The formal job remains Starting and has no assigned training node or running training container. This is a scheduling blocker; it supplies no verdict on the repaired CUDA backward or formal numerical health.
+
+| Check | Expected | Actual | Result |
+| --- | --- | --- | --- |
+| Exact formal identity and phase | Approved current job, creator and local source; four physical training workers | Correct name/UID/creator/NFS; Starting with four unscheduled replicas at 09:59:36Z | Identity PASS; GPU startup BLOCKED |
+| Native scheduling evidence | Identify why physical workers have not started | Five exact job/replica Event reads PASS without continuation; current Pod/Replica `FailedScheduling`, GPU resource gap, zero assigned pods | Evidence PASS; physical resource blocker |
+| codesign resource projection | Bound current observation; do not mistake it for FIFO admission | 123 returned / 123 total machines; usable GPU sum 3, distribution 121×0, 1×1, 1×2; no machine with 8 usable GPUs | Observation recorded; no H800-only claim |
+| New evidence reader runtime | Correct source/creator/image, active reader | Running; `gpu-h800-0200.host.platform.shaipower.com`; container started 09:55:21Z; restart0; image digest d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177 | PASS |
+| Old reader requested-stop completion | Explicitly stopped job and replica terminal | Job Stopped / finish09:55:26Z, replica Stopped / finish09:55:25Z; API retains a stale container-running field | PASS for native terminal phases; physical container disappearance not independently checked |
+| Formal training evidence | Actual optimizer successes, finite loss/grad norm and early native save/resume | Reader0files/0steps/no failures; TensorBoard reader0attempts/0successes and no health scalars | UNVERIFIED |
+
+Commands reused the existing personal initialization and scripts, without GPU submission or dependency installation:
+
+```bash
+source /data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh
+timeout 60s "$STEPMIND_PYTHON" /data/ycfeng/tmp/nemo-mopd-20261112/inspect_formal_packed32.py
+timeout 60s "$STEPMIND_PYTHON" /data/ycfeng/tmp/nemo-mopd-20261112/inspect_formal_packed32_scheduling.py
+timeout 60s "$STEPMIND_PYTHON" /data/ycfeng/tmp/nemo-mopd-20261112/read_codesign_capacity_20261113.py
+export UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker
+export PYTHONNOUSERSITE=1 PYTHONDONTWRITEBYTECODE=1 TMPDIR=/data/ycfeng/tmp
+ulimit -v 31457280
+timeout 60s uv run --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/read_formal_fp16_pp4_packed32_metrics.py
+```
+
+Personal inspection used Python3.10.6; local TensorBoard reading used the persistent actor environment, Python3.13.14. The local shell lacks the bare `python` alias; initial standard-library inspection exited127 before retrying with `python3`. A read referenced nonexistent `tests/manual/mopd/run_in_worker.sh`; inspection continued at the actual `run_on_rjob.py`. Neither error affected a worker or GPU submission. Existing platform imports emitted TripleDES deprecation warnings; all three platform queries exited0. Metric reading exited0.
+
+Selected dated evidence: `evidence/formal-packed32-live-status-20261113T095936Z.json`, `evidence/formal-packed32-scheduling-events-20261113T100052Z.json`, `evidence/codesign-capacity-20261113T100051Z.json`, `evidence/formal-packed32-update-summary-20261113T100051Z.json`, and `evidence/formal-packed32-reader-receipt-20261113T1001Z.json`. Native Events include exact Pod and Replica UIDs; early empty Event projections are historical, not the current finding. The resource snapshot does not establish how the scheduler computes its resource gap, current quota, or future availability.
+
+Next acceptance path: retain launcher82605 and exact approved job → verify four physical workers, runtime and Ray32 readiness → actual formal backward/loss/grad/teacher routing → early native save/resume → 200 successful optimizer flags reconciled with native Adam state → final finite/state/refit/training-forward/scorer/vLLM checks. The main task remains incomplete.
