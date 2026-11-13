@@ -1778,3 +1778,65 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 3. 下一步执行正式训练，保留D和清理结果，不扩展已准备好的最终replay工具。
 
 - 15:16HKT currentcheapcheckbusinessPASS:41files/all6modelroles; deliberately changed recordedsize rejected. ActualgeneratedsubmissionshellcontinuesafterinjectedImportError;FAILCPUreportrejectedpre-submission. Stopaddinginputchecks; committhenformalGPUrun.
+
+
+## 2026-11-13 15:19 HKT: Corrected formal GPU allocation queued
+
+- Signed-offcodecommit3a1fe3e2 preservesfullCPUreadiness/preparedinputchecker/submissionsoftgate. Packedbackwardrepairb66b957f remainsGPUunverified.
+- Formalexp-1113-151718-896703/UID9f0eb021-6bda-44fa-af2f-5469dd08b02b submittedonce locally aspersonal i-fengyicheng. Sevenreplicas/56H800/32CPU/768GBpernode, bothnativeRDMArequests, currentNFS100.96.128.195:/data/ycfeng:/data/ycfeng. Latest07:19:22ZPending/ranking2/H800remaining36for56requested. NoGPUmodelstartup,0formaloptimizerupdates. Launcher73918 mustremainalive.
+- Independent0GPUmountedreaderexp-1113-151748-639492/UID406c9397-4ba1-4edf-8e51-4a211a9c5217/launcher37752 isStarting. Reusedexistingcollectorwithexactnewjob/destination; readerhandleslargecloudsampleswithoutcopyingweights. Read-onlymonitor15510 persistsin tasktmp/formal-split-monitor. Auxiliaryerrorsremainnonblocking.
+- Cheap-inputRJobexp-1113-151346-746393nowSucceeded. ItsbusinessreportPASS41files/negativeidentitycontrol. Fullvalidationworkerexit0/Completed/restart0/imageIDd29740f4 andplatformSucceededarearchived.
+- UnfinishedE/F: actualfirstbackward/loss/grad,memoryandnativeearlysave/resume ->200deduplicatedsuccessflagsandnativeAdamstep -> finalcheckpointfinite/state/refit/actualtrainingforwardandscorer/vLLMparity -> completedreportandEnglisharchive. DandcleanupremainPASS; donotrerunorresubmitwhilequeued.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS6｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 模型、五教师和数据身份已验收 |
+| Q | PASS | 200成功更新合同已确认 |
+| B | PASS | 六模型完整CPU校验和当前文件检查通过 |
+| C | PASS | 全词表loss/gradient参照已验收 |
+| D | PASS | 五教师native诊断、65536和save/resume已通过 |
+| 清理 | PASS | 授权清理已完成 |
+| E | TODO | 修复后正式job已提交，等待56卡quota |
+| F | TODO | 最终训练证据和archive待E完成 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 15:16CPUreadiness checkpoint至15:21HKT｜**当前前沿：** E已提交正式作业和独立结果读取
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | readiness通过即停止扩展，现有reader/monitor仅换exactjob |
+| D2 细节反复重试 | CLEAR | 正式修复只提交一次，没有因quota不足重提 |
+| D3 支线问题修补 | CLEAR | 没有新增不影响训练验收的问题修复 |
+| D4 可并行任务停滞 | CLEAR | reader/monitor并行运行；最终checkpoint尚不存在 |
+| D5 超范围镀金 | CLEAR | 原始模型和正式目标保持 |
+| D6 分析空转 | CLEAR | 已实际提交formaljob并保留launcher |
+| D7 路线违背 | CLEAR | CPU准备先完成，32+GPU辅助检查为softgate |
+
+**文档检查：** S1–S6均未发现明显缺陷，当前Pending和0正式成功更新已记录。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E：保留73918launcher，等待exactjob运行 -> firstbackward/loss/grad、earlysave/resume验收。
+2. 并行：37752reader和15510monitor保留业务和平台结果，辅助错误不控制训练。
+3. E/F：200实际成功flags与Adamstep -> 最终checkpointfinite/state/refit和actualforward/scorer/vLLM三方检查 -> 最终报告和Englisharchive。
+
+## 4. 最值得关注的 3 点
+
+1. 07:20:52ZformalPending/ranking2/36H800remaining，0实际成功更新。
+2. reader已发布0files/0steps/0failures回执；这不是训练通过。
+3. 3a1fe3e2已提交输入准备；b66b957f内存修复仍待GPU验证。
+
+- 15:21HKT continuation state: formal73918, reader37752 andmonitor15510 were polledalive. Cheap-inputlauncher56642 hasexit0. Keep existingformaljobexp-1113-151718-896703; exactcloudrunprefix /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-151718-896703. Resumebyreadinglatestmonitorstatusandreaderreceipt before anyfurtheraction. NocheckpointorformalmetricsexistwhilePending; GPUfix,200successesandfinalreplayremainunfinished.

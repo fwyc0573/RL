@@ -31,3 +31,14 @@ The actual native formal configuration passes in the mounted Megatron actor envi
 Ruff0.9.9 lint and format pass using the cached exact executable through `uv run --no-sync`. The initial public-index Ruff lookup was canceled after discovering the existing cached executable; the first native config probe selected the base environment and reported missing Megatron, then passed using the installed Megatron actor environment. These CPU-host probe errors did not allocate GPUs or change dependencies.
 
 The final zero-GPU current-identity check `exp-1113-151346-746393` reports PASS at2026-11-13T07:16:07Z for41files across all six model roles. A deliberately changed recorded file size is rejected; no source file is modified and no full tensor scan is repeated. Business output is `evidence/formal-inputs-cheap-check-20261113.json`. The actual generated submission shell continues after an injected checker ImportError, and a FAIL CPU report is rejected before submission, recorded in `evidence/formal-prepared-input-submission-checks.json`. The packed backward repair remains CPU-validated only until the corrected formal job executes.
+
+
+## Corrected formal allocation
+
+Submit command: source `/data/ycfeng/tmp/nemo-mopd-20261112/personal_env_20261113.sh`, then `$STEPMIND_PYTHON -u /data/ycfeng/tmp/nemo-mopd-20261112/submit_formal_200updates_fp16_pp4_split.py`. Exact arguments and resolved configuration are committed in `evidence/formal-200updates-fp16-pp4-split-{submit-args,resolved-config}.json`.
+
+Created `exp-1113-151718-896703`, UID `9f0eb021-6bda-44fa-af2f-5469dd08b02b`, creator `i-fengyicheng`, seven replicas/56H800,768GB request per node. Native Python inspection verifies local source and serialized resource/image/mount settings. Latest07:19:22Z observation is Pending/ranking2, codesign-default remaining36H800 for56requested. Formal updates remain0; no GPU backward repair is accepted yet. Keep local launcher73918 alive; no duplicate submission.
+
+Independent zero-GPU evidence reader `exp-1113-151748-639492`, UID `406c9397-4ba1-4edf-8e51-4a211a9c5217`, uses launcher37752; read-only platform monitor15510 remains active. These auxiliaries do not control the training job. The finalcheap-inputRJob isSucceeded. Exact filtered platform receipts are `evidence/formal-split-submission-receipts.json`.
+
+At07:20:52Z the formaljob remainsPending/ranking2/36H800remaining. Themountedreader publishes0files/0steps/0failures; itslauncher37752andformal73918/monitor15510arealive. Cheap-inputlauncher56642exited0. Latestselectedevidence: `evidence/formal-split-current-status.json` and `evidence/formal-split-mounted-reader-current.json`.

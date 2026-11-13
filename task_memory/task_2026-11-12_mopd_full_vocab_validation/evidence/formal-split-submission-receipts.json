@@ -1,0 +1,188 @@
+[
+  {
+    "name": "exp-1113-151718-896703",
+    "uid": "9f0eb021-6bda-44fa-af2f-5469dd08b02b",
+    "creator": "i-fengyicheng",
+    "queried_at": "2026-11-13T07:18:44.028216+00:00",
+    "status": {
+      "phase": "Pending",
+      "reason": "RJob is queuing",
+      "message": "RJob is queuing",
+      "taskStatuses": {
+        "default": {
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "queue": {
+      "rjob.brainpp.cn/rjob-queue-approved": "",
+      "stepmind.com/queue-elem-ranking": "2",
+      "stepmind.com/queue-name": "codesign-default",
+      "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 7 replicas = 56 GPU (H800). Queue remaining: H800=36."
+    },
+    "preemptible": "no",
+    "tasks": {
+      "default": {
+        "replicas": 7,
+        "source": "100.96.128.195:/data/ycfeng:/data/ycfeng",
+        "containers": [
+          {
+            "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+            "resources": {
+              "limits": {
+                "cpu": "32",
+                "mellanox.com/mlnx_rdma": "1",
+                "memory": "750Gi",
+                "nvidia.com/gpu": "8",
+                "rdma/mlnx_shared": "8"
+              },
+              "requests": {
+                "cpu": "32",
+                "memory": "750Gi",
+                "nvidia.com/gpu": "8"
+              }
+            },
+            "mounts": [
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_id",
+                "subPath": "accesskey_id"
+              },
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_secret",
+                "subPath": "accesskey_secret"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "exp-1113-151346-746393",
+    "uid": "d3595d66-540a-422b-a22c-f50d8da1feb0",
+    "creator": "i-fengyicheng",
+    "queried_at": "2026-11-13T07:18:44.046398+00:00",
+    "status": {
+      "phase": "Succeeded",
+      "reason": "RJobSucceeded",
+      "message": "RJob succeeded",
+      "taskStatuses": {
+        "default": {
+          "succeeded": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-13T07:18:18Z",
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "queue": {
+      "rjob.brainpp.cn/rjob-queue-approved": "2026-11-13T07:13:48.792071971Z",
+      "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+      "stepmind.com/queue-name": "codesign-default"
+    },
+    "preemptible": "no",
+    "tasks": {
+      "default": {
+        "replicas": 1,
+        "source": "100.96.128.195:/data/ycfeng:/data/ycfeng",
+        "containers": [
+          {
+            "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+            "resources": {
+              "limits": {
+                "cpu": "8",
+                "memory": "32000Mi",
+                "nvidia.com/gpu": "0"
+              },
+              "requests": {
+                "cpu": "8",
+                "memory": "32000Mi",
+                "nvidia.com/gpu": "0"
+              }
+            },
+            "mounts": [
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_id",
+                "subPath": "accesskey_id"
+              },
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_secret",
+                "subPath": "accesskey_secret"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "exp-1113-151748-639492",
+    "uid": "406c9397-4ba1-4edf-8e51-4a211a9c5217",
+    "creator": "i-fengyicheng",
+    "queried_at": "2026-11-13T07:18:44.021027+00:00",
+    "status": {
+      "phase": "Starting",
+      "reason": "RJobStarting",
+      "message": "Tasks is starting: [default]",
+      "taskStatuses": {
+        "default": {
+          "pending": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "queue": {
+      "rjob.brainpp.cn/rjob-queue-approved": "2026-11-13T07:17:52.187004661Z",
+      "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+      "stepmind.com/queue-name": "codesign-default"
+    },
+    "preemptible": "no",
+    "tasks": {
+      "default": {
+        "replicas": 1,
+        "source": "100.96.128.195:/data/ycfeng:/data/ycfeng",
+        "containers": [
+          {
+            "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176",
+            "resources": {
+              "limits": {
+                "cpu": "4",
+                "memory": "16000Mi",
+                "nvidia.com/gpu": "0"
+              },
+              "requests": {
+                "cpu": "4",
+                "memory": "16000Mi",
+                "nvidia.com/gpu": "0"
+              }
+            },
+            "mounts": [
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_id",
+                "subPath": "accesskey_id"
+              },
+              {
+                "name": "auth-info",
+                "readOnly": true,
+                "mountPath": "/.auth/accesskey_secret",
+                "subPath": "accesskey_secret"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+]
