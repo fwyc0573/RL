@@ -7,7 +7,7 @@
 
 # FP16 scaler and successful-update validation
 
-The formal MOPD run is incomplete. Current progress at November14,2026,13:06HKT is17/200 through controller step35, with12 saved in the sole step30 checkpoint. Current writer `exp-1114-115901-508160` is Running; its five consecutive successful updates are recorded in `test_report_2026-11-14_full_rkl_allocator.md`. The sections below preserve the earlier scaler-run observations through step28; their writer and session IDs are historical. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and actual backoff below1 remain unverified.
+The formal MOPD run is incomplete. Current progress at November14,2026,13:11HKT is18/200 through controller step36, with12 saved in the sole step30 checkpoint. Current writer `exp-1114-115901-508160` is Running; its six consecutive successful updates are recorded in `test_report_2026-11-14_full_rkl_allocator.md`. The sections below preserve the earlier scaler-run observations through step28; their writer and session IDs are historical. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and actual backoff below1 remain unverified.
 
 ## Scenario and environment
 

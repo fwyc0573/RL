@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify step36/formal18/200 and the reusable metric curves; preserve the historical FA4 event timestamp. |
 | 2026-11-14 | Verify17/200 through step35, five consecutive allocator-corrected successes and latest-only step30/Adam12. |
 | 2026-11-14 | Diagnose step31 CUDA OOM, verify step30-only recovery and submit allocator-corrected continuation. |
 | 2026-11-14 | Verify9/200, correct native FP16 scaler floor and replace final waiter with tested count-based continuation. |
@@ -486,7 +487,7 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - BothFA4nativeandvendoredvLLMconfig/importpreflightsPASSandpersonal2GPUdry-runsPASS. Submittedonceat21:03:11HKT: nativeexp-1112-210311-532182(launcher61605), generationexp-1112-210311-662995(launcher94116),2H800each. Keepbothlaunchersalive. Exactwrappers/args/logs:long-native-fp32-head-fa4 andlong-generation-core-fp32-fa4 in tasktmp. NoFA3job,noformal200-update submission.
 
 - NativeFA4 exp-1112-210311-532182 Failed13:05:00Z;childexit2at13:04:57Z precedeslaunchercleanup13:05:01.782Z. Exactincident-boundRCAobject/Events/historical/logs/DeepScanqueriescomplete;bothall-operationauditqueries18stimeout,actor/reason/requesttimeUNKNOWN. Platformretainschildargv/exit2;exactCPUentrypointreproducesargparseinvalidintwhenappendedoverridefollowsnargs+context-parallel-sizes. Moveoverridesbefore--dump/--context-parallel-sizes;CPUoriginalRED(exit2)andcorrectedGREEN(NATIVE_FA4_CLI_CONFIG_PASS,exit0)observed. ReportprimaryparsertextasCPUobservation;platforminitiatingtextunavailable. Noengineorprecisionchange.
-- vLLMFA4 exp-1112-210311-662995 Succeeded13:06:06Zsnapshot;retaincompletedcapture. Submittedonlyaffectednative2GPUrerunusingcorrectedargv wrapper submit_long_native_fp32_head_fa4_2.py (launcher5080),newcloudprefixlong-native-fp32-head-layers-fa4-2. Keepalive;do notduplicatevLLMorformalrun.
+- vLLMFA4 exp-1112-210311-662995 Succeeded13:07:06Zsnapshot;retaincompletedcapture. Submittedonlyaffectednative2GPUrerunusingcorrectedargv wrapper submit_long_native_fp32_head_fa4_2.py (launcher5080),newcloudprefixlong-native-fp32-head-layers-fa4-2. Keepalive;do notduplicatevLLMorformalrun.
 
 - NativecorrectedFA4jobidentity exp-1112-210903-042205 created21:09:03HKT,launcher5080alive. CompletedvLLMFA4capturesretrievedatlong-generation-core-fp32-layers-theta-fa4-inputs. HistoricalnativeFA2vsnewvLLMFA4MAE0.02268349/max0.50479650stillFAIL;thisisnotmatchedFA4result. NativeFA4 comparisonawaited.
 
@@ -3580,3 +3581,60 @@ Reason for record update: the plan still said13/200 while existing artifacts sho
 1. 正式17/200；allocator修正后五次连续成功，200步稳定性尚未完成。
 2. 最新保存仍为step30/Adam12；禁止额外保存resident更新或HFexport。
 3. scorer/vLLM均值通过；实际training三方parity、真实scale低于1的backoff及物理OSS回收尚未验证。
+
+### 2026-11-14 13:11 HKT — Step36 PASS and intermediate curves verified (E/F in-progress)
+
+The same writer completed step36 at13:09:42HKT: loss/full-RKL0.12545131146907806, normalized pre-clipping grad norm0.5041648149490356, scale1,256valid samples/1,840,998response tokens. All281metrics finite; math56/stem60/if37/code50/logic53; allversions35 and masks1;issues0. Scorer/vLLMMAE0.0011611449248818996,p990.0101517475,max0.5201821327;allgroupmeans≤0.0023578676. Inline exact-event/sample assertions PASS. Native flags now yield18successes/19attempts;skip25only. Personal API13:11:22HKT confirms writerRunning; reader has six summaries/no failures and final waiter remainsRunning. Six successes are resident beyond last-inspectedstep30/Adam12. No extracheckpoint,HFexport orGPUsubmission.
+
+Added `tests/manual/mopd/plot_training_health.py` to deliver the required metric curves from existing scalar events and per-step sample summaries. It deduplicates event timestamps, counts actual native flags, and leaves the missing step25norm empty. Real-input command on Python3.13.14/Matplotlib3.11.2/UV0.13.7 produces six plots and exactCSV forsteps18–35. All18rows/90groupmeans match source values,17actual successes and one skip. Image inspected; Ruffcheck/formatPASS. Outputs:`evidence/formal-training-health.{png,csv}`. Exact command, expected/observed results and limits:`test_report_2026-11-14_training_health_curves.md`. Initial systemd scope was denied before Python startup; completed using30GiB ulimit and60s timeout, no privilege change. No functional tests duplicating script settings added.
+
+Observed trend throughstep35: loss0.1903821→0.1349312;norm1.1475327→0.5589148. Different fresh batches prevent fixed-data convergence or accuracy claims. Latest-five generation uses84.52% of step time. The accepted training dimensions remain unchanged. Plot support is now complete for the measured inputs; do not extend it while waiting for native updates. The prior documentation edit accidentally changed the historical FA4 snapshot minute; restored its original13:07:06Z value in this change. Latest step36 evidence is separate from the plot's explicitstep35endpoint.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型、五教师、全词表已验证。 |
+| Q | PASS | 200次实际成功更新授权有效。 |
+| B | PASS | 原输入、环境和配置预检有效。 |
+| C | PASS | 全词表参考和指标路径已验证。 |
+| D | PASS | 诊断训练及原生保存恢复通过。 |
+| E | TODO | 正式18/200，修复后连续六步成功。 |
+| F | TODO | 中期曲线已验证；最终有限性、三方parity和archive待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 13:06HKT检查点至13:11HKT｜**当前前沿：** E，F已产生指标的分析
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 首次补齐F要求的可复用曲线，真实输入验证后停止扩展。 |
+| D2 细节反复重试 | CLEAR | 训练未重提；本机scope权限错误改用资源限制后一次通过。 |
+| D3 支线问题修补 | CLEAR | 新脚本直接交付F规定的指标曲线。 |
+| D4 可并行任务停滞 | CLEAR | 原训练新增一次成功，同时完成CPU曲线和验证。 |
+| D5 超范围镀金 | CLEAR | 只输出已有指标图和CSV，无新训练功能或权重产物。 |
+| D6 分析空转 | CLEAR | 成功数17→18；已有实测图、数值核对及报告。 |
+| D7 路线违背 | CLEAR | 原模型、全词表、256/65536/200-success及latest-only保持。 |
+
+**文档检查：** S1–S6均无未处理缺陷；plan/report已更新18/200，图表明确为step35快照。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续现有writer与monitor → 完成标志：200次实际成功，逐步健康和异常均有证据。
+2. 并行：训练 ‖ 原生step40发布检查 → 完成标志：Adam计数匹配、只有最新完整checkpoint。
+3. E→F：最终有限性、关闭checkpointing的三方replay、更新曲线和archive → 完成标志：最终验收及业务/平台终态齐全。
+
+## 4. 最值得关注的 3 点
+
+1. 正式18/200；当前六次连续成功仍不足以宣称长期稳定。
+2. 仅保留最新checkpoint；下一regularstep40预计Adam22，完整发布后应删除step30。
+3. 曲线已可复用；最终actual-training三方parity和全参数/优化器有限性尚未验证。

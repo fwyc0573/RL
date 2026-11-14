@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify the sixth consecutive resumed update, step36, and formal18/200. |
 | 2026-11-14 | Verify five consecutive resumed updates through step35 and reconcile17 observed versus12 saved successes. |
 | 2026-11-14 | Verify the first successful full-model update after the allocator correction, with13/200 formal successes. |
 | 2026-11-14 | Record resumed startup, latest-only metadata recheck and the non-blocking Ray inspection timeout. |
@@ -9,7 +10,7 @@
 
 # Formal MOPD allocation failure and recovery
 
-Status at November 14, 2026, 13:06 HKT: the native allocator reproduction and five consecutive real-model resumed updates pass. Formal progress is **17/200** through step35; twelve successes are saved in the sole step30 checkpoint and five are resident. The current 72-H800 writer remains Running. The final 200-success requirement, sustained stability and actual-training three-way parity are still incomplete.
+Status at November 14, 2026, 13:11 HKT: the native allocator reproduction and six consecutive real-model resumed updates pass. Formal progress is **18/200** through step36; twelve successes are saved in the sole step30 checkpoint and six are resident. The current72-H800 writer remains Running. The final200-success requirement, sustained stability and actual-training three-way parity are incomplete.
 
 ## Incident and recovery state
 
@@ -126,3 +127,11 @@ The five actual successful flags add to the twelve prior successes:17/200 from18
 All four existing sessions were polled and remained alive. Personal API status at13:03:34 HKT confirms the exact writer UID, current-host mount, nine Running replicas and zero restarts. Reader receipt has five summarized steps and no failures. Selected reproducible inputs and results: `evidence/formal-native-resume-6-step31-step35-health-20261114.json`; raw events and all sample summaries remain under `/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-6-current-inputs-20261114/` and the original cloud job prefix.
 
 Limits: these five batches support the allocator correction but do not complete200-update stability. Real-model scaler backoff below1, final tensor finiteness and final three-way parity remain unverified. The logical inventory does not measure physical OSS quota recovery.
+
+## Sixth consecutive resumed update, step36
+
+Step36 completed November14,2026 at13:09:42HKT with native optimizer_success1, loss/full-RKL0.12545131146907806, pre-clipping norm0.5041648149490356, scale1 and1,840,998valid response tokens. All281 exact-step metrics are finite. Coverage is math56/stem60/if37/code50/logic53, totaling256valid samples; every sample has weight_version35 and sample_loss_mask1. Mask/version issues0. These direct checks PASS.
+
+Independent scorer/vLLM MAE0.0011611449248818996, signed mean−5.15801955e−6, p990.0101517475 and maximum0.5201821327 are finite. Group means range0.0009818181–0.0023578676, all below0.02. This is a PASS for the agreed mean comparison, while final actual-training parity remains pending. Step time605.8222seconds. Evidence:`evidence/formal-native-resume-6-step36-health-20261114.json` includes all metrics and sample summaries.
+
+Merged native flags now cover19attempts/18successes, with historical skip25only. No new checkpoint was triggered; six later successes remain resident beyond the last inspected step30/Adam12 publication. The exact personal writer is Running at13:11:22HKT. The existing native step40 save and latest-only retention remain the next storage check. Intermediate curves throughstep35 are separately recorded in `test_report_2026-11-14_training_health_curves.md`; the figure's endpoint is explicit and must not be confused with this later count.
