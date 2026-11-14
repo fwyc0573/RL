@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify17/200 through step35, five consecutive allocator-corrected successes and latest-only step30/Adam12. |
 | 2026-11-14 | Diagnose step31 CUDA OOM, verify step30-only recovery and submit allocator-corrected continuation. |
 | 2026-11-14 | Verify9/200, correct native FP16 scaler floor and replace final waiter with tested count-based continuation. |
 | 2026-11-14 | Record step25 overflow skip and active scale-floor diagnosis; actual successes remain7/200. |
@@ -485,7 +486,7 @@ Phase-A validation is recorded in `test_report_2026-11-12_plan_sources.md`: sour
 - BothFA4nativeandvendoredvLLMconfig/importpreflightsPASSandpersonal2GPUdry-runsPASS. Submittedonceat21:03:11HKT: nativeexp-1112-210311-532182(launcher61605), generationexp-1112-210311-662995(launcher94116),2H800each. Keepbothlaunchersalive. Exactwrappers/args/logs:long-native-fp32-head-fa4 andlong-generation-core-fp32-fa4 in tasktmp. NoFA3job,noformal200-update submission.
 
 - NativeFA4 exp-1112-210311-532182 Failed13:05:00Z;childexit2at13:04:57Z precedeslaunchercleanup13:05:01.782Z. Exactincident-boundRCAobject/Events/historical/logs/DeepScanqueriescomplete;bothall-operationauditqueries18stimeout,actor/reason/requesttimeUNKNOWN. Platformretainschildargv/exit2;exactCPUentrypointreproducesargparseinvalidintwhenappendedoverridefollowsnargs+context-parallel-sizes. Moveoverridesbefore--dump/--context-parallel-sizes;CPUoriginalRED(exit2)andcorrectedGREEN(NATIVE_FA4_CLI_CONFIG_PASS,exit0)observed. ReportprimaryparsertextasCPUobservation;platforminitiatingtextunavailable. Noengineorprecisionchange.
-- vLLMFA4 exp-1112-210311-662995 Succeeded13:07:06Zsnapshot;retaincompletedcapture. Submittedonlyaffectednative2GPUrerunusingcorrectedargv wrapper submit_long_native_fp32_head_fa4_2.py (launcher5080),newcloudprefixlong-native-fp32-head-layers-fa4-2. Keepalive;do notduplicatevLLMorformalrun.
+- vLLMFA4 exp-1112-210311-662995 Succeeded13:06:06Zsnapshot;retaincompletedcapture. Submittedonlyaffectednative2GPUrerunusingcorrectedargv wrapper submit_long_native_fp32_head_fa4_2.py (launcher5080),newcloudprefixlong-native-fp32-head-layers-fa4-2. Keepalive;do notduplicatevLLMorformalrun.
 
 - NativecorrectedFA4jobidentity exp-1112-210903-042205 created21:09:03HKT,launcher5080alive. CompletedvLLMFA4capturesretrievedatlong-generation-core-fp32-layers-theta-fa4-inputs. HistoricalnativeFA2vsnewvLLMFA4MAE0.02268349/max0.50479650stillFAIL;thisisnotmatchedFA4result. NativeFA4 comparisonawaited.
 
@@ -3518,3 +3519,64 @@ Step31 completed12:18:49HKT with optimizer_update_successful1,loss/fullRKL0.1526
 Fivegroupcoveragecode60/math51/stem51/if49/logic45; all256samplesuseweight_version30 and validmasks. Scorer/vLLMMAE0.0012237102789000166,p990.0099352932,max0.2297739983,allfinite;fivegroupmeans0.0010652592–0.0023398088;issues0. PASSmeancriterion,notfinalactual-trainingparity. Nativestep638.1654s,exposedgeneration517.7575s,policytraining85.4679s. Existingreader/monitor andinlineexact-stepassertionsPASS. Evidence:`evidence/formal-native-resume-6-step31-health-20261114.json`; report:`test_report_2026-11-14_full_rkl_allocator.md`.
 
 The full-model allocator repair now has one successful update. Continue the same writer and verify the next ordinary publication/old-checkpointremoval; do not force an extra save. Remaining187successfulupdates,thenfinalfinitecheck andunsavedthree-wayreplay. Sustainedallocatorstability andreal-modelscalerbackoffbelow1 remainunverified.
+
+### 2026-11-14 13:06 HKT — Five consecutive resumed updates; formal17/200 (E in-progress)
+
+Recovered the existing sessions75774/89756/40884/54975, each still running; no duplicate submission. Native flags from segments3+5+6 cover steps18–35:17 successes/18 attempts, only skip25. Existing reader has five complete summaries and failures[]. Inline Python3 verifies every exact-step event and all256 sample summaries for each of steps31–35:281 finite metrics per step, finite norms, loss==full-RKL mean, positive tokens, five groups, preceding weight version, mask1, issues0, and overall/per-group scorer-vLLM MAE≤0.02. All assertionsPASS. Loss range0.1349312–0.1526285; norm0.5589148–0.6875529; MAE0.0011886–0.0012278. Latest step35 completed12:59:29HKT. Exact evidence:`evidence/formal-native-resume-6-step31-step35-health-20261114.json`.
+
+The13:02HKT native metadata inspection is still step30/Adam12 on eight ranks,31files/24,884,408,499bytes. It read551,606metadata bytes and no model/Adam tensor payload. Five later successes are resident. Latest personal API status13:03:34HKT: exactwriterUID verified,nineRunningreplicas,restart0,current-hostNFS. No checkpoint/HFexport was created. Next regular step40 expectsAdam22 if no new skips and must remove step30 after complete publication. Physical OSS quota recovery remainsunverified.
+
+Reason for record update: the plan still said13/200 while existing artifacts showed17/200. Corrected current plan/report status and explicitly marked prior scaler-writer/session observations historical. No source-code or runtime change. Remaining183successfulupdates; current generation occupies466–557s per measured step and native policy training58–85s, so the run remains a substantial pending workload. Continue it without changing the accepted256/65536 configuration. Final actual-training three-way parity and finite final native tensors remainpending.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和全词表身份已验证。 |
+| Q | PASS | 200次实际成功更新授权有效。 |
+| B | PASS | 既有输入、环境和当前配置检查有效。 |
+| C | PASS | 原生全词表参考和指标入口已验证。 |
+| D | PASS | 诊断训练、保存恢复及对应parity已完成。 |
+| E | TODO | 正式17/200，step31–35连续成功；最新保存step30/Adam12。 |
+| F | TODO | 最终有限性、三方parity、曲线与English archive待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 12:22HKT检查点至13:06HKT｜**当前前沿：** E及已产生结果的F记录
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用reader和metadata检查，未扩展工具。 |
+| D2 细节反复重试 | CLEAR | 同一writer新增四次成功，无重复提交或参数试错。 |
+| D3 支线问题修补 | CLEAR | 检查直接覆盖计数、健康、parity及latest-only。 |
+| D4 可并行任务停滞 | CLEAR | 原训练、reader和monitor持续运行，记录同步更新。 |
+| D5 超范围镀金 | CLEAR | 未增加接口、功能或权重产物。 |
+| D6 分析空转 | CLEAR | 实际成功数13→17，全量批次指标有据。 |
+| D7 路线违背 | CLEAR | 原模型、151936词表、256/65536/200-success与最新checkpoint约束保持。 |
+
+**文档检查：** S5 HIT：plan与allocator报告仍为13/200；scaler报告开头仍称旧writer活跃。已更新当前17/200，并标明历史观察。S1–S4/S6 CLEAR。
+**归因：** 无执行偏离；S5为状态记录过期。
+
+## 3. 纠正建议
+
+**分支：** B：spec/tickets存在状态记录缺陷，先更新文档再继续。
+
+**文档更新（先执行）：**
+1. plan.md当前状态与allocator报告：更新17/200、五次连续成功和12次已保存。（可直接执行，已完成）
+2. scaler报告开头：指向当前writer与新报告，保留旧事件的历史时刻。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续当前writer → 完成标志：累计200次实际成功且指标健康。
+2. 并行：训练 ‖ 常规step40发布检查 → 完成标志：新Adam计数与flags一致，完整发布后旧step30删除。
+3. E→F：既有CPU有限性与关闭checkpointing的三方replay → 完成标志：最终状态有限、MAE≤0.02、终态证据及English archive完整。
+
+## 4. 最值得关注的 3 点
+
+1. 正式17/200；allocator修正后五次连续成功，200步稳定性尚未完成。
+2. 最新保存仍为step30/Adam12；禁止额外保存resident更新或HFexport。
+3. scorer/vLLM均值通过；实际training三方parity、真实scale低于1的backoff及物理OSS回收尚未验证。

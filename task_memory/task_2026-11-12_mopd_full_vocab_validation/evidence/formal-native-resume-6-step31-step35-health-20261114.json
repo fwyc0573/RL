@@ -1,0 +1,310 @@
+{
+  "checked_at": "2026-11-14T05:01:58.521329+00:00",
+  "source_job": "exp-1114-115901-508160",
+  "formal_successful_updates": 17,
+  "formal_attempts": 18,
+  "overflow_steps": [
+    25
+  ],
+  "rows": [
+    {
+      "step": 31,
+      "completed_at": "2026-11-14T04:18:49.605462+00:00",
+      "checks": {
+        "optimizer_success": true,
+        "finite_metrics": true,
+        "loss_equals_full_rkl": true,
+        "256_valid_samples": true,
+        "five_teachers": true,
+        "versions": true,
+        "masks": true,
+        "parity": true,
+        "response_tokens": true
+      },
+      "metrics_count": 281,
+      "loss": 0.15262852609157562,
+      "grad_norm": 0.6875529289245605,
+      "scale": 1.0,
+      "response_tokens": 2031837.0,
+      "coverage": {
+        "logic": 45,
+        "if": 49,
+        "math": 51,
+        "stem": 51,
+        "code": 60
+      },
+      "parity": {
+        "tokens": 2031837,
+        "signed_mean": -3.59357234360626e-06,
+        "mae": 0.0012237102789000166,
+        "p50": 0.0002995617687702179,
+        "p95": 0.005309414863586423,
+        "p99": 0.009935293197631812,
+        "max": 0.22977399826049805,
+        "finite": true
+      },
+      "by_group_mae": {
+        "logic": 0.001137437429281799,
+        "if": 0.0023398088229539863,
+        "math": 0.0010652591877258967,
+        "stem": 0.0011577893643137157,
+        "code": 0.001366705663793278
+      },
+      "step_seconds": 638.1654052734375,
+      "generation_seconds": 517.7575073242188,
+      "policy_seconds": 85.46791076660156,
+      "full_rkl_max": 26.3633975982666,
+      "length_max": 21831
+    },
+    {
+      "step": 32,
+      "completed_at": "2026-11-14T04:29:11.131524+00:00",
+      "checks": {
+        "optimizer_success": true,
+        "finite_metrics": true,
+        "loss_equals_full_rkl": true,
+        "256_valid_samples": true,
+        "five_teachers": true,
+        "versions": true,
+        "masks": true,
+        "parity": true,
+        "response_tokens": true
+      },
+      "metrics_count": 281,
+      "loss": 0.14598344266414642,
+      "grad_norm": 0.680210530757904,
+      "scale": 1.0,
+      "response_tokens": 1874688.0,
+      "coverage": {
+        "math": 61,
+        "logic": 60,
+        "stem": 48,
+        "if": 51,
+        "code": 36
+      },
+      "parity": {
+        "tokens": 1874688,
+        "signed_mean": -6.463825844199905e-06,
+        "mae": 0.0012072795878635423,
+        "p50": 0.00026667118072509766,
+        "p95": 0.00531613826751709,
+        "p99": 0.010097430944442709,
+        "max": 0.2601335048675537,
+        "finite": true
+      },
+      "by_group_mae": {
+        "math": 0.0010963025346187162,
+        "logic": 0.001173056402718785,
+        "stem": 0.0010849770805147223,
+        "if": 0.002105293674690506,
+        "code": 0.0013709779202797623
+      },
+      "step_seconds": 617.2119750976562,
+      "generation_seconds": 528.2202758789062,
+      "policy_seconds": 66.8432846069336,
+      "full_rkl_max": 30.036827087402344,
+      "length_max": 21251
+    },
+    {
+      "step": 33,
+      "completed_at": "2026-11-14T04:40:08.982579+00:00",
+      "checks": {
+        "optimizer_success": true,
+        "finite_metrics": true,
+        "loss_equals_full_rkl": true,
+        "256_valid_samples": true,
+        "five_teachers": true,
+        "versions": true,
+        "masks": true,
+        "parity": true,
+        "response_tokens": true
+      },
+      "metrics_count": 281,
+      "loss": 0.14686983823776245,
+      "grad_norm": 0.6526535153388977,
+      "scale": 1.0,
+      "response_tokens": 2073187.0,
+      "coverage": {
+        "stem": 43,
+        "if": 43,
+        "math": 57,
+        "code": 54,
+        "logic": 59
+      },
+      "parity": {
+        "tokens": 2073187,
+        "signed_mean": -4.583644769383162e-06,
+        "mae": 0.0012191193025782724,
+        "p50": 0.0002759695053100586,
+        "p95": 0.005355358123779297,
+        "p99": 0.010127203464508044,
+        "max": 0.36427104473114014,
+        "finite": true
+      },
+      "by_group_mae": {
+        "stem": 0.0010876692048639764,
+        "if": 0.0023565241735943308,
+        "math": 0.0010664616349744622,
+        "code": 0.0013855316384727796,
+        "logic": 0.0011794825842991882
+      },
+      "step_seconds": 653.0342407226562,
+      "generation_seconds": 557.13427734375,
+      "policy_seconds": 73.51583862304688,
+      "full_rkl_max": 30.532602310180664,
+      "length_max": 26401
+    },
+    {
+      "step": 34,
+      "completed_at": "2026-11-14T04:50:17.394484+00:00",
+      "checks": {
+        "optimizer_success": true,
+        "finite_metrics": true,
+        "loss_equals_full_rkl": true,
+        "256_valid_samples": true,
+        "five_teachers": true,
+        "versions": true,
+        "masks": true,
+        "parity": true,
+        "response_tokens": true
+      },
+      "metrics_count": 281,
+      "loss": 0.1526152640581131,
+      "grad_norm": 0.6450137495994568,
+      "scale": 1.0,
+      "response_tokens": 1966720.0,
+      "coverage": {
+        "code": 58,
+        "if": 53,
+        "math": 51,
+        "logic": 49,
+        "stem": 45
+      },
+      "parity": {
+        "tokens": 1966720,
+        "signed_mean": -5.15998624191055e-06,
+        "mae": 0.0012277931660399735,
+        "p50": 0.0002969084307551384,
+        "p95": 0.005328300595283497,
+        "p99": 0.010047174692153937,
+        "max": 0.6075416803359985,
+        "finite": true
+      },
+      "by_group_mae": {
+        "code": 0.0013135134074197144,
+        "if": 0.0023188530826557248,
+        "math": 0.0010962332746596282,
+        "logic": 0.0011656646637712076,
+        "stem": 0.001143284412206345
+      },
+      "step_seconds": 602.9295043945312,
+      "generation_seconds": 512.95166015625,
+      "policy_seconds": 67.68627166748047,
+      "full_rkl_max": 27.064802169799805,
+      "length_max": 20292
+    },
+    {
+      "step": 35,
+      "completed_at": "2026-11-14T04:59:29.000446+00:00",
+      "checks": {
+        "optimizer_success": true,
+        "finite_metrics": true,
+        "loss_equals_full_rkl": true,
+        "256_valid_samples": true,
+        "five_teachers": true,
+        "versions": true,
+        "masks": true,
+        "parity": true,
+        "response_tokens": true
+      },
+      "metrics_count": 281,
+      "loss": 0.13493120670318604,
+      "grad_norm": 0.5589147806167603,
+      "scale": 1.0,
+      "response_tokens": 1827130.0,
+      "coverage": {
+        "logic": 32,
+        "stem": 46,
+        "code": 59,
+        "math": 63,
+        "if": 56
+      },
+      "parity": {
+        "tokens": 1827130,
+        "signed_mean": -3.4511844982816884e-06,
+        "mae": 0.0011886232171541993,
+        "p50": 0.0002570152282714844,
+        "p95": 0.005258083343505859,
+        "p99": 0.009983539581298828,
+        "max": 0.46803927421569824,
+        "finite": true
+      },
+      "by_group_mae": {
+        "logic": 0.0010988255026782691,
+        "stem": 0.001105455425505711,
+        "code": 0.001327145494448826,
+        "math": 0.0010523307680565515,
+        "if": 0.001867329033581482
+      },
+      "step_seconds": 543.9475708007812,
+      "generation_seconds": 466.2751770019531,
+      "policy_seconds": 58.22801208496094,
+      "full_rkl_max": 26.076147079467773,
+      "length_max": 21683
+    }
+  ],
+  "verified_at": "2026-11-14T05:05:26.411109+00:00",
+  "native_checkpoint": {
+    "checked_at": "2026-11-14T05:02:00.625109+00:00",
+    "step": 30,
+    "checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30",
+    "inventory": [
+      {
+        "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30",
+        "files": 31,
+        "bytes": 24884408499
+      }
+    ],
+    "training_info": {
+      "consumed_samples": 7680,
+      "current_step": 30,
+      "current_epoch": 0,
+      "total_steps": 30,
+      "total_valid_tokens": 62434813.0,
+      "trainer_version": 30,
+      "sampler_name": "in_order",
+      "sampler_dispatch_index": 30,
+      "cur_adaptive_ppo_clip_k": null,
+      "next_nemo_gym_task_index": 8960
+    },
+    "bytes_read": 551606,
+    "tensor_payloads_read": 0
+  },
+  "native_adam_steps": 12,
+  "reader_receipt": {
+    "source_job": "exp-1114-115901-508160",
+    "reader_job": "exp-1114-115909-784580",
+    "files": 12,
+    "steps_summarized": 5,
+    "failures": [],
+    "finished_present": false
+  },
+  "runtime": {
+    "queried_at": "2026-11-14T05:05:22.619743+00:00",
+    "writer": "exp-1114-115901-508160",
+    "uid": "dd6f01b6-50b5-4ee1-8598-17ff32131e93",
+    "phase": "Running",
+    "running_replicas": 9,
+    "restarts": 0,
+    "source": {
+      "default": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+    },
+    "launcher_sessions": [
+      75774,
+      89756,
+      40884,
+      54975
+    ]
+  },
+  "verification": "Exact-step metrics and all sample summaries rechecked on CPU; no new GPU job, checkpoint, or HF export."
+}

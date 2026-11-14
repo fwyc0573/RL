@@ -2,15 +2,16 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Mark the original scaler-run observations historical and link current17/200 recovery evidence. |
 | 2026-11-14 | Record the native FP16 scaler reproduction, live floor configuration, successful-update accounting, and latest-only inventory. |
 
 # FP16 scaler and successful-update validation
 
-The formal MOPD run is incomplete: ten successful optimizer updates have been observed through controller step 28. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and recovery after the next real backoff remain unverified.
+The formal MOPD run is incomplete. Current progress at November14,2026,13:06HKT is17/200 through controller step35, with12 saved in the sole step30 checkpoint. Current writer `exp-1114-115901-508160` is Running; its five consecutive successful updates are recorded in `test_report_2026-11-14_full_rkl_allocator.md`. The sections below preserve the earlier scaler-run observations through step28; their writer and session IDs are historical. The isolated native loss/scaler regression passes after the recipe correction. The original-model overflow operator and actual backoff below1 remain unverified.
 
 ## Scenario and environment
 
-The sole active formal writer is `exp-1114-051900-202756`, UID `ae42005f-d314-4c86-bb10-c6f7bc385b92`, with 72 H800 GPUs on codesign. It uses the initial R1-Distill-Qwen-1.5B student, the original math/code/stem/logic/if teachers, the full 151936 vocabulary, 256 fresh trajectories per attempted update, and the 65536-token sequence ceiling. Student TP2/PP4/CP1 and eight TQ units remain unchanged. The matching zero-GPU reader is `exp-1114-051922-692747`, UID `a7f3b178-aaa9-41b4-84c6-3e33576307c2`.
+The writer used for the historical scaler observations was `exp-1114-051900-202756`, UID `ae42005f-d314-4c86-bb10-c6f7bc385b92`, with 72 H800 GPUs on codesign. It uses the initial R1-Distill-Qwen-1.5B student, the original math/code/stem/logic/if teachers, the full 151936 vocabulary, 256 fresh trajectories per attempted update, and the 65536-token sequence ceiling. Student TP2/PP4/CP1 and eight TQ units remain unchanged. The matching zero-GPU reader is `exp-1114-051922-692747`, UID `a7f3b178-aaa9-41b4-84c6-3e33576307c2`.
 
 The CPU native checks use the existing Megatron actor environment: Python 3.13.14, Torch 2.13.0+cu130, UV 0.13.7. Platform operations use Python 3.10.6 and brainpp 2.8.6. Lint uses an existing Gym server environment; no packages were installed. Existing worker image identity is `hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177`, with source `100.96.128.195:/data/ycfeng:/data/ycfeng`. Selected identity/runtime evidence predates these focused CPU checks and remains valid for the same live allocation.
 

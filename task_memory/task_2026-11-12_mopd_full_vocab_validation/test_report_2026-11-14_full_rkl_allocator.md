@@ -2,13 +2,14 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify five consecutive resumed updates through step35 and reconcile17 observed versus12 saved successes. |
 | 2026-11-14 | Verify the first successful full-model update after the allocator correction, with13/200 formal successes. |
 | 2026-11-14 | Record resumed startup, latest-only metadata recheck and the non-blocking Ray inspection timeout. |
 | 2026-11-14 | Diagnose the formal step31 CUDA allocation failure and verify an allocator configuration with native full-RKL backward. |
 
 # Formal MOPD allocation failure and recovery
 
-Status: the native allocation reproduction and the first real-model resumed update both pass. Formal progress is13/200 afterstep31;12successes remain saved in the sole step30 checkpoint. The72-H800 writer continues. Sustained training, final200-success acceptance and actual-training three-way parity remain pending.
+Status at November 14, 2026, 13:06 HKT: the native allocator reproduction and five consecutive real-model resumed updates pass. Formal progress is **17/200** through step35; twelve successes are saved in the sole step30 checkpoint and five are resident. The current 72-H800 writer remains Running. The final 200-success requirement, sustained stability and actual-training three-way parity are still incomplete.
 
 ## Incident and recovery state
 
@@ -105,3 +106,23 @@ This first resumed batch took638.1654seconds in the native step timer: exposed g
 Exact evidence: `evidence/formal-native-resume-6-step31-health-20261114.json`, including all281exact-step metric events and all256sample summaries. The existing `read_formal_native_resume_6_metrics_20261114.py` and `collect_formal_native_resume_6_mounted_20261114.py` were used; both are under `/data/ycfeng/tmp/nemo-mopd-20261112/`. Inline CPU checks select `step==31`, reconcile native flags fromsegments3+5+6, and assert256samples, full-RKL/loss equality, finite metrics, five routes,weight_version30,zeroissues and the unchanged0.02mean limit. All assertions passed.
 
 Limits: a successful real-model update supports the allocator repair, but one iteration cannot establish long-run allocator stability. This batch does not exercise the65,536maximum; the earlier dedicated native long-context check supplies that evidence. The comparison is independent scorer versus generation; the required final actual-training/scorer/vLLM comparison is still pending. The native checkpoint count remains12until the next ordinary save; no additional checkpoint is created for the thirteenth success.
+
+## Five consecutive resumed updates, November 14, 2026
+
+The existing reader and native TensorBoard metrics verify steps31–35. Inline Python3 checks select events by exact step and latest wall time, merge native optimizer flags from segments3/5/6, and compare every sample summary against its event count, version and objective-token coverage. Expected: binary success flags, finite metrics, equal loss/full-RKL mean, 256 valid samples, five groups, correct weight versions/masks and finite scorer/vLLM MAE≤0.02 overall and per group. All checks PASS.
+
+| Controller step | Completion HKT | Loss / full-RKL | Pre-clipping grad norm | Response tokens | Scorer/vLLM MAE |
+| --- | --- | --- | --- | --- | --- |
+| 31 | 12:18:49 | 0.1526285261 | 0.6875529289 | 2,031,837 | 0.0012237103 |
+| 32 | 12:29:11 | 0.1459834427 | 0.6802105308 | 1,874,688 | 0.0012072796 |
+| 33 | 12:40:08 | 0.1468698382 | 0.6526535153 | 2,073,187 | 0.0012191193 |
+| 34 | 12:50:17 | 0.1526152641 | 0.6450137496 | 1,966,720 | 0.0012277932 |
+| 35 | 12:59:29 | 0.1349312067 | 0.5589147806 | 1,827,130 | 0.0011886232 |
+
+Each step has281 finite metrics and scale1. All1,280 inspected sample summaries have sample_loss_mask1 and expected weight_version30–34; issues0. All five source groups occur in each step. Maximum full-RKL values range26.0761–30.5326; these are finite token-divergence tails. Scorer/vLLM p99 remains0.0099353–0.0101272, while maximum error reaches0.6075417 in step34 and0.4680393 in step35. Mean PASS remains distinct from exact tokenwise equality and from the pending actual-training three-way comparison.
+
+The five actual successful flags add to the twelve prior successes:17/200 from18 measured attempts, with historical skip25 preserved. The 13:02 HKT native inspection uses the exact CPU command above and returns step30 only, Adam12 on all eight ranks,31 files/24,884,408,499 bytes,551,606 metadata bytes read and zero model/Adam tensor payload reads. No extra save, HF export or GPU submission was performed. The next regular step40 should record Adam22 if no intervening update is skipped, then retire step30.
+
+All four existing sessions were polled and remained alive. Personal API status at13:03:34 HKT confirms the exact writer UID, current-host mount, nine Running replicas and zero restarts. Reader receipt has five summarized steps and no failures. Selected reproducible inputs and results: `evidence/formal-native-resume-6-step31-step35-health-20261114.json`; raw events and all sample summaries remain under `/data/ycfeng/tmp/nemo-mopd-20261112/formal-native-resume-6-current-inputs-20261114/` and the original cloud job prefix.
+
+Limits: these five batches support the allocator correction but do not complete200-update stability. Real-model scaler backoff below1, final tensor finiteness and final three-way parity remain unverified. The logical inventory does not measure physical OSS quota recovery.
