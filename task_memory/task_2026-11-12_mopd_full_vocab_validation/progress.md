@@ -3638,3 +3638,5 @@ Observed trend throughstep35: loss0.1903821→0.1349312;norm1.1475327→0.558914
 1. 正式18/200；当前六次连续成功仍不足以宣称长期稳定。
 2. 仅保留最新checkpoint；下一regularstep40预计Adam22，完整发布后应删除step30。
 3. 曲线已可复用；最终actual-training三方parity和全参数/优化器有限性尚未验证。
+
+Plot commit verification found default CSV CRLF terminators flagged by `git diff --check`. Set the writer to LF, regenerated the same step35 snapshot, and checked every CSV field against the prior committed table. No values or training state changed. Scope remains E18/200 and the already verified intermediate F curves.

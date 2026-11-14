@@ -153,7 +153,7 @@ def main() -> None:
     plt.close(figure)
     csv_path = args.output.with_suffix(".csv")
     with csv_path.open("w", newline="") as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(

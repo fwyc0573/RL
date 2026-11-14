@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Emit LF CSV records after the whitespace check identified the default CRLF terminators. |
 | 2026-11-14 | Add reproducible curves and exact CSV values for the first17 formal successes through controller step35. |
 
 # Formal MOPD training health curves
@@ -72,3 +73,5 @@ Overall scorer/vLLM MAE ranges0.0011886–0.0013359. Group mean ranges are math0
 For the latest five steps, mean native step time is611.0577seconds and exposed generation accounts for84.52% of summed step time. Per-step generation takes466.3–557.1seconds and policy training58.2–85.5seconds. These timings identify where the current run spends time; they are not a promise for the remaining183successful updates and do not authorize changing256fresh trajectories or the65536sequence ceiling.
 
 Native metrics do not emit per-group full-vocabulary RKL here. The per-group plots therefore show the measured scorer/vLLM error and response length, without inventing per-group full-loss values. Final tensor finiteness, actual-training/scorer/vLLM parity, all200successful updates and final terminal states remain pending.
+
+The first staged whitespace check flagged the CSV writer's default CRLF line endings. The script now emits LF explicitly. Re-executing the actual input command preserved every CSV field, and scoped Ruff plus `git diff --check` passed after regeneration. This formatting correction does not alter metric values or training.
