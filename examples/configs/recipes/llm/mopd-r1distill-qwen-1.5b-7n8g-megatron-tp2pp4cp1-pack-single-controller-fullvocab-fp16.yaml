@@ -4,6 +4,8 @@ policy:
   precision: float16
   megatron_cfg:
     pipeline_model_parallel_size: 4
+    env_vars:
+      PYTORCH_CUDA_ALLOC_CONF: "expandable_segments:True"
     optimizer:
       bf16: false
       fp16: true

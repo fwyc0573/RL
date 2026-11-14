@@ -1,0 +1,28 @@
+{
+  "query": "replica-audit",
+  "job": "exp-1114-051900-202756",
+  "replica": "exp-1114-051900-202756-e4da3b7f",
+  "rjob_uid": "ae42005f-d314-4c86-bb10-c6f7bc385b92",
+  "replica_uid": "59066c44-ee24-4e3d-acd7-1636969c792a",
+  "started_at": "2026-11-14T03:50:50.880088+00:00",
+  "ok": false,
+  "error": {
+    "type": "ReadTimeout",
+    "message": "HTTPSConnectionPool(host='platform.shaipower.com', port=443): Read timed out. (read timeout=45.0)"
+  },
+  "request": {
+    "method": "GET",
+    "path": "/kapi/auditlogger.kubebrain.io/api/v1alpha1/audit",
+    "parameters": {
+      "resourceType": "replicas",
+      "resourceName": "exp-1114-051900-202756-e4da3b7f",
+      "projectName": "shai-core",
+      "pageType": "shai-core",
+      "page": 1,
+      "pageSize": 100
+    },
+    "timeout_seconds": 45.0,
+    "scope": "/shai/shai-core"
+  },
+  "finished_at": "2026-11-14T03:51:36.849296+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
+  "torch": "2.13.0+cu130",
+  "allocator_config": null,
+  "inputs": {
+    "device": "cpu",
+    "sequence_length": 8,
+    "vocab_size": 32,
+    "chunk_size": 2,
+    "fragment_pairs": 0,
+    "half_block_bytes": 0,
+    "free_bytes": 0,
+    "output": "/data/ycfeng/tmp/nemo-mopd-20261112/allocator-cpu-check-20261114.json"
+  },
+  "limitation": "Synthetic allocation history; uses the failing native backward, not model replay.",
+  "status": "PASS",
+  "max_gradient_error": 0.0
+}

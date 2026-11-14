@@ -1,0 +1,108 @@
+ray.exceptions.RayTaskError(OutOfMemoryError): ray::SingleControllerActor.run() (pid=8910, ip=10.191.9.34, actor_id=bfcba40f404dd260b5bc601202000000, repr=<nemo_rl.algorithms.single_controller.SingleControllerActor object at 0x7fa478311160>)
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 453, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 851, in run
+    result = await self._run_pumps()
+             ^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 956, in _run_pumps
+    await train_task
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/algorithms/single_controller.py", line 3011, in _train_pump
+    await asyncio.to_thread(
+    ...<3 lines>...
+    )
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/asyncio/threads.py", line 26, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/tq_policy.py", line 749, in train_microbatches_from_meta
+    self._dispatch_train_microbatches(dp_metas, timer=timer)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/tq_policy.py", line 852, in _dispatch_train_microbatches
+    self.worker_group.get_all_worker_results(futures)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/distributed/worker_groups.py", line 1288, in get_all_worker_results
+    return future_bundle.get_results(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, return_generators_as_proxies=return_generators_as_proxies
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/distributed/worker_groups.py", line 184, in get_results
+    all_results = ray.get(object_refs)
+                                  ~~~~~~~~~~~~~~~~~~^
+        object_refs, timeout, use_object_store=_use_object_store
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+ray.exceptions.RayTaskError(OutOfMemoryError): ray::MegatronPolicyWorker.train_microbatch_presharded() (pid=1746, ip=10.191.6.54, actor_id=6fdd972367c72ff024e3774e02000000, repr=MegatronPolicyWorker[rank=6])
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 460, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/data/ycfeng/toolchain/python/cpython-3.13.14-linux-x86_64-gnu/lib/python3.13/concurrent/futures/_base.py", line 402, in __get_result
+    raise self._exception
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/telemetry/instrumentation.py", line 665, in wrapper
+    return method(*args, **kwargs)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/utils/nsys.py", line 119, in wrapper
+    ret = func(*args, **kwargs)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/data_plane/worker_mixin.py", line 1306, in train_microbatch_presharded
+    self.train_microbatch(  # type: ignore[attr-defined]
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        data=data,
+        ^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/utils/nsys.py", line 119, in wrapper
+    ret = func(*args, **kwargs)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/workers/megatron_policy_worker.py", line 2118, in train_microbatch
+    self._train_microbatch_body(state, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/policy/workers/megatron_policy_worker.py", line 2257, in _train_microbatch_body
+    losses_reduced = megatron_forward_backward(
+        model=self.model,
+    ...<18 lines>...
+        router_replay_train=True,
+    )
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/models/megatron/train.py", line 582, in megatron_forward_backward
+    return forward_backward_func(
+        forward_step_func=forward_step,
+    ...<6 lines>...
+        forward_only=forward_only,
+    )
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 2476, in forward_backward_pipelining_without_interleaving
+    input_tensor_grad = backward_func(
+        input_tensor, output_tensor, output_tensor_grad, config
+    )
+  File "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/lib/python3.13/site-packages/nemo/lens/helpers.py", line 184, in wrapper
+    return func(*args, **kwargs)
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 580, in backward_step
+    custom_backward(output_tensor[0], output_tensor_grad[0])
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/ycfeng/sota-engine/RL/3rdparty/Megatron-Bridge-workspace/Megatron-Bridge/3rdparty/Megatron-LM/megatron/core/pipeline_parallel/schedules.py", line 226, in custom_backward
+    Variable._execution_engine.run_backward(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        tensors=(output,),
+        ^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        accumulate_grad=True,
+        ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker/lib/python3.13/site-packages/torch/autograd/function.py", line 325, in apply
+    return user_fn(self, *args)
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py", line 2552, in backward
+    grad_input = _chunked_distributed_student_teacher_backward(
+        student_vocab_parallel_logits,
+    ...<4 lines>...
+        weight_fn=_reverse_kl_weight,
+    )
+  File "/data/ycfeng/sota-engine/RL/nemo_rl/distributed/model_utils.py", line 2677, in _chunked_distributed_student_teacher_backward
+    grad_input: torch.Tensor = torch.empty_like(student_vocab_parallel_logits)
+                               ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.59 GiB. GPU 7 has a total capacity of 79.19 GiB of which 2.29 GiB is free. Process 1747 has 522.00 MiB memory in use. Process 1740 has 522.00 MiB memory in use. Process 1741 has 522.00 MiB memory in use. Process 1742 has 522.00 MiB memory in use. Including non-PyTorch memory, this process has 73.25 GiB memory in use. Process 1743 has 522.00 MiB memory in use. Process 2632 has 524.00 MiB memory in use. Process 2683 has 522.00 MiB memory in use. Of the allocated memory 45.71 GiB is allocated by PyTorch, and 23.40 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

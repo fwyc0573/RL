@@ -1,0 +1,12 @@
+{
+  "command": "bash -lc 'set -euo pipefail\ncd /data/ycfeng/sota-engine/RL\nexport PYTHONPATH=/data/ycfeng/sota-engine/RL\nexport PATH=/data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin:/data/ycfeng/envs/nemo-mopd-py313/bin:$PATH\nexport LD_LIBRARY_PATH=/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\nexport TMPDIR=/tmp/nrl-$KUBEBRAIN_RJOB_NAME\nmkdir -p \"$TMPDIR\"\nexport XDG_CACHE_HOME=$TMPDIR/cache\nexport HF_HOME=$TMPDIR/huggingface\nexport TRITON_CACHE_DIR=$TMPDIR/triton\nexport RAY_ENABLE_UV_RUN_RUNTIME_ENV=0\nexport HF_HUB_OFFLINE=1\noutput=/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/allocator-check/$KUBEBRAIN_RJOB_NAME\nmkdir -p \"$output\"\nnvidia-smi --query-gpu=name,driver_version,memory.total --format=csv\nfor mode in False True; do\n  PYTORCH_CUDA_ALLOC_CONF=expandable_segments:$mode uv run --offline --no-sync python -u tests/manual/mopd/check_full_rkl_allocator.py --device cuda --sequence-length 16384 --vocab-size 75968 --chunk-size 128 --fragment-pairs 8 --half-block-bytes 3221225472 --free-bytes 2147483648 --output \"$output/expandable-$mode.json\"\ndone\n\n'",
+  "shape": {
+    "nodes": 1,
+    "gpus_per_node": 1,
+    "cpus_per_node": 8,
+    "memory_gb_per_node": 64
+  },
+  "charged_group": "codesign",
+  "preemptible": false,
+  "source": "/data/ycfeng"
+}

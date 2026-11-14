@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Diagnose step31 CUDA OOM, verify step30-only recovery and submit allocator-corrected continuation. |
 | 2026-11-14 | Verify9/200, correct native FP16 scaler floor and replace final waiter with tested count-based continuation. |
 | 2026-11-14 | Record step25 overflow skip and active scale-floor diagnosis; actual successes remain7/200. |
 | 2026-11-14 | Verify7/200, actual72-H800 resume, live statistics, retention and final reader sync. |
@@ -3385,3 +3386,70 @@ All256samplemasks are1, versions27, coverage math53/code46/stem54/logic47/if56. 
 3. 当前完整 recovery 仍为step23/Adam6；下一publication必须确认新计数和及时删除旧目录。
 
 The step28 documentation commit initially encountered an index.lock held by concurrent git status processes464421/464433. Read-only inspection identified the live owner; the lock released naturally within the bounded wait. No lock was deleted, no other Git process was stopped, and the index remained empty before the scoped retry. This was a local Git race, not a workload failure.
+
+### 2026-11-14 — Resume5 failed; latest-only step30 verified (E in-progress)
+
+Recovered at11:49HKT from a stale10/200 record. Actual writer failed06:51:03HKT; reader succeeded and automatic final waiter exited. Fresh read-only `inspect_latest_formal_native_state_20261114.py` on existing UV Python3.13 runtime confirms step30 only,31files/24,884,408,499bytes,Adam12 across8states,scale1,controller/sampler30,consumed7680,eightTQunits. Read551,606metadata/statebytes and0weighttensorpayloads; no checkpoint write or copy. Step23 is absent. E remains12/200, not complete.
+
+OOM at06:50:14 occurs in native train_microbatch_presharded,rank6,pid1746,nodegpu-h800-0042,replicaexp-1114-051900-202756-e4da3b7f. Requested4.59GiB with2.29GiB free,45.71GiBallocated/23.40GiBreserved-unused. Existing worker stderr shows allocator retries throughout the run; complete failing call stack is being recovered before classifying the cause. Personal collector binds the22:48–22:52UTC incident to the exact job/replica. No replacement submitted before diagnosis.
+
+Check-progress correction: S5 HIT (plan declared the failed job and exited launcher alive). A/Q/B/C/D PASS; E FAILED for this attempt with12/200 cumulative; F TODO. D1–D7 CLEAR for this recovery window: current work advances the E failure and native recovery frontier. Apply BranchB by replacing current plan status, preserving historical observations. Next: exact traceback/reproducer → cause-specific repair and CPU checks → sole native resume →200-success validation.
+
+### 2026-11-14 — Native RKL allocation reproduction and recipe correction (E)
+
+Complete traceback identifies step31 reverse-KL backward `torch.empty_like` as the failing4.59GiB allocation. Ranked hypotheses before probe: fragmentation → true live peak → extra contexts. CPU native/analytic fixturePASS(error0). Personal1H800 exp-1114-115442-387792 runs identical synthetic allocation histories: ordinary segmentsRED with24GiBinactive splits/4.64GiBrequest; expandableGREEN,finite native gradients,maxerror1.8189894e-12,empty_cache succeeds. This verifies the allocation pattern, not exact original model replay. Only JSON receipts written;0checkpointwrites.
+
+Applied existing recipe env_vars allocator configuration; no loss/scaler algorithm change or new exception fallback. Native step30 scheduler restore7680→7936PASS. Source41file/sixmodel cheap checks and latest-only structurePASS during dry-run. Next submit the same72H800 topology once native config validation passes,fromstep30/Adam12 toinitialhorizon218,then attach existing reader/monitor and final waiter with segments3+5+6. Before-run sample tracing/isolation from original validated native path remains unchanged; systemic CUDA failure still propagates.
+
+### 2026-11-14 — One resumed writer and final continuation attached (E)
+
+Native CPU config/scheduler,41file/sixmodel identity/latest-only check and personal dry-runPASS. Submitted writerexp-1114-115901-508160,UIDdd6f01b6-50b5-4ee1-8598-17ff32131e93,11:59:01HKT,72H800,codesign,student8/generation48/teachers10/spare6. Matched readerexp-1114-115909-784580,UID2c0a089e-5945-4411-a0d2-882a8f29ba90. Verifiedcreatori-fengyicheng and current-hostNFS100.96.128.195:/data/ycfeng:/data/ycfeng. Queue approved11:59:02HKT; initial observation isStarting,not yet training success.
+
+Launcher sessions75774(writer),89756(reader),40884(monitor),54975(finalwaiter) remain attached. Final continuation now binds exactnewwriter/reader UIDs and combines metric histories3+5+6. Direct actual-state checkPASS:step30 has13recorded attempts since18,12successes,overflow25,remaining188,horizon218,Adam12. Future deficit extension remains latest-only and final replay checkpointingdisabled. No additional checkpoint orHFexport was written.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始 student、五教师和全词表身份已验证。 |
+| Q | PASS | 200 次实际成功更新授权保持有效。 |
+| B | PASS | 六个模型、41 个文件及 CPU 环境检查通过。 |
+| C | PASS | 原生全词表参考和指标路径有效。 |
+| D | PASS | 原有五次诊断更新和 native 恢复证据保留。 |
+| E | TODO | 12/200 已保存在 step30；分配对照完成，正式恢复已提交。 |
+| F | TODO | 最终权重有限性、三方 parity 和 archive 未完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** step28 后状态恢复至 allocator 对照和正式重提｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 仅补充直接复现 native 分配故障的脚本，对照通过即停止扩展。 |
+| D2 细节反复重试 | CLEAR | 单次 GPU 对照区分碎片与容量；没有盲目缩短样本或重复 smoke。 |
+| D3 支线问题修补 | CLEAR | OOM 阻止 E 完成，修复归属明确。 |
+| D4 可并行任务停滞 | CLEAR | 事故查询与 checkpoint 读取、CPU 预检并行；恢复后 reader 与训练并行。 |
+| D5 超范围镀金 | CLEAR | 只启用现有 allocator 环境设置，没有改动模型接口或 loss。 |
+| D6 分析空转 | CLEAR | 新增完整 traceback、原生红绿对照和一个正式恢复作业。 |
+| D7 路线违背 | CLEAR | 256/65536/151936/200-success 与 latest-only 均保持。 |
+
+**文档检查：** S5 HIT：旧 plan 将失败 writer 和已退出 waiter 记录为存活，已按新终态和新提交修正。S1/S2/S3/S4/S6 CLEAR。
+**归因：** 无执行偏离；S5 为过期状态。
+
+## 3. 纠正建议
+
+**分支：** B：文档缺陷已直接修正，没有改变用户范围或验收标准。
+
+**接下去的路线：**
+1. E：验证新作业从 step30 恢复，实际 worker 使用 expandable segments，并取得下一次成功更新。
+2. E：训练与现有指标 reader 并行，累计 200 次实际成功，逐次核验 native 最新 checkpoint 替换。
+3. E→F：运行既有最终有限性和无保存的三方 replay，完成报告与 English archive。
+
+## 4. 最值得关注的 3 点
+
+1. allocator 对照是实际原生 backward 的合成分配历史；真实训练修复仍须观察。
+2. 当前仅保留 step30/Adam12；不得创建额外 checkpoint 或 HF export。
+3. 计数由 native success flags 与 Adam 决定；controller 到 218 不自动等于验收完成。

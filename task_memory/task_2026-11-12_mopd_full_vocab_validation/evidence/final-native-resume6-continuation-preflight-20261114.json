@@ -1,0 +1,21 @@
+{
+  "progress": {
+    "step": 30,
+    "attempts": 13,
+    "successful_updates": 12,
+    "overflow_steps": [
+      25
+    ],
+    "remaining_updates": 188,
+    "next_controller_horizon": 218,
+    "native_adam_steps": 12
+  },
+  "training_job": "exp-1114-115901-508160",
+  "reader_job": "exp-1114-115909-784580",
+  "metric_files": [
+    "formal-native-resume-3-training-metrics-20261114.json",
+    "formal-native-resume-5-training-metrics-20261114.json",
+    "formal-native-resume-6-training-metrics-20261114.json"
+  ],
+  "status": "PASS"
+}
