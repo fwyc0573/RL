@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Record the batch/FIFO and source-task historical timing follow-up. |
 | 2026-11-14 | Add the requested parallel deployment, bottleneck, co-location, and performance-switch investigation. |
 | 2026-11-14 | Require only the latest checkpoint to remain, with timely deletion of older checkpoints. |
 | 2026-11-13 | Record explicit authorization to clean current-task large, smoke, and unused artifacts. |
@@ -71,3 +72,11 @@ Only the latest complete native recovery checkpoint may be retained for this tas
 > - 是否存在明显的遗漏开关导致了耗时增加？允许你调研社区和repo相关的手册和经验
 
 Deliver the actual role placement and parallelism, measured wall-time attribution with timer semantics, current-entrypoint co-location support, and evidence-ranked performance candidates grounded in repository and primary documentation. This investigation runs alongside the existing formal training. It does not replace the 200-successful-update contract or latest-only checkpoint constraint. The current investigation leaves the running configuration unchanged and distinguishes source-backed candidates from measured speedups.
+
+## [Original Request] Batch semantics and historical performance comparison, 2026-11-14
+
+> 继续深入分析和探讨：
+> 1. 如何理解 “等待完整 rollout 批次就绪”，每次student 训练要等待多少个rollout批次？student一个update的批次是按照fifo取用的吗？
+> 2. yc-mopd-learning-dynamics-s4-branch 下是否留存 当前student+teacher comb的mopd运行记录，是否记录了相关rollout侧耗时？我希望你比较已有的数据记录，找到系统性能耗时差异的关键点。我认为当前架构的单步耗时明显过慢
+
+Extend P with inspected batch/admission/selection semantics and a source-task historical comparison aligned by successful update ordinals. Distinguish the historical fresh-data mode from full-vocabulary loss, exposed consumer waiting from GPU decode time, and observations from causal hypotheses. Preserve E/F and the original dimensions/checkpoint storage decisions.

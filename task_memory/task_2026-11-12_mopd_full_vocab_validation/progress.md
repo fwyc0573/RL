@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Complete batch/FIFO and historical timing comparison; reconcile platform clean-policy failure and step40/Adam22 recovery. |
 | 2026-11-14 | Complete requested deployment/performance investigation in parallel and verify20 formal successes through step38. |
 | 2026-11-14 | Verify step36/formal18/200 and the reusable metric curves; preserve the historical FA4 event timestamp. |
 | 2026-11-14 | Verify17/200 through step35, five consecutive allocator-corrected successes and latest-only step30/Adam12. |
@@ -3709,3 +3710,76 @@ Existingmetadata-onlyinspectionat13:37:06HKTwithUVofflinePython3.13.14/Torch2.13
 1. 近期七步86.4%时间在等待完整rollout；step38的37,996-token尾部对应14.4分钟整步。
 2. 当前SC不支持直接共卡vLLM；graph/eager是优先验证候选，不能声称已提速或已通过当前FP16parity。
 3. 正式20/200；只保留step30/Adam12，下一常规step40后及时删除旧checkpoint，最终验收仍未完成。
+
+### 2026-11-14 — Batch/FIFO history comparison complete; formal writer failed (P completed, E in-progress)
+
+User's two follow-up questions are added verbatim to requirements; P now includes their inspected source/timing answers. Reconstructed September `h800-mprime-v3-0928a` and November `h800-rkl-full-1108b`, each 200 successful updates with the same original student and five teachers, 256 responses/update and65536 ceiling. Full/M-prime is fresh-data mode with sampled-token OPD/PPO feedback, not full-vocabulary KL. Historical November raw rank0 logs, TensorBoard events and sample events were bounded read-only reads from the authorized personal cloud prefix into local tmp; no weight payload or cloud write.
+
+Current update waits for one logical256-response dispatch batch. InOrderSampler selects ready groups stamped for current trainer version, not completion FIFO. Readiness includes generation, data submission and teacher enrichment. Zero lookahead does not admit the next batch until version advances; independent GPU allocation does not produce cross-update overlap. Historical generation completion appends to pre-train, and FIFOTrainBatchPolicy selects256 units from that completed queue while generation is continuously replenished. Historical max_concurrent_rollouts256 is distinct from pending_limit1536 and staleness_max_steps5;1536 does not imply1536 concurrent requests. Version-gap0 can be filled for missing metadata; no unverified on-policy claim is made.
+
+Aligned successful ordinals14–28 (current controller32–46 versus historical native iterations13–27):627.8369s versus54.7420s,11.469 times slower, currentresponse tokens1,851,415.7 versus1,997,369.9 (7.31% lower). Readywait540.1195s versus5.1666s:534.9529s of573.0950s total difference,93.34%. Current student training66.3933s/scoring6.7243s/other14.5999s/sync0.6010s. Teacher53.6812s is a sum of calls, not disjoint critical-path time. Wait versus longestresponse Pearson0.90694; wait versus batchresponse tokens0.09529. Historical51,410 successful call latencies mean48.776s/p5046.007/p95118.011/p99164.112/max521.318. Current163.299s rollout/total has a different boundary; no GPUdecode ratio claim. Observed differences nominate fixed-batch/overlap, graphs, TP/executor and teacher-I/O candidates; their individual causal contributions remain unmeasured.
+
+Executed `python3 /data/ycfeng/tmp/nemo-mopd-20261112/analyze_history_buffers_20261114.py` on local Python3.10.6. PASS: both200-step historical records, correct ordinal windows, finite exact metrics,256valid unique samples per step39–46, allfive groups, priorweightversion,mask1,noissues,overall/group scorer-vLLM MAE≤0.02. Step40 has one additional native checkpoint timer (282metrics versus281), which is explicitly accepted. Latest46 loss/fullRKL0.1016600057,normalizedpreclippinggradnorm0.4149943590,scale1,1,911,766response tokens. Source data and scope limits are in `test_report_2026-11-14_batch_history_comparison.md`; persistent evidence: `evidence/history-current-performance-20261114.json` and `evidence/formal-native-resume-6-step39-step46-health-20261114.json`.
+
+**Systemic failure:** writer exp-1114-115901-508160 / UID dd6f01b6-50b5-4ee1-8598-17ff32131e93 Failed at15:03:59HKT. Exact teacher replica eccbc87e / UID cfd7d707-ad92-44e1-b20a-d0ad37cb8f17 on gpu-h800-0535,IP10.191.15.8 was closed at15:03:17HKT by system:serviceaccount:kubebrain:cleanpolicy. Historical Events explicitly show GPU-utilization1-hour notification06:01:00Z,2-hourpreemptible06:21:44Z,3-hourclose07:03:17Z and poddelete07:03:17Z. Ray node loss/connection refused follows at07:03:28–31Z, then native RolloutRedispatchExhausted and whole-job failure. Later vLLM SIGTERM is cleanup. This incident's initiating policy is confirmed, not an OOM inference. Raw GPU-utilization windows are unavailable; RJob audit fails resource-name validation. Collector86819 exit1 has seven successful queries and one rejected audit query; no repeat collector or Sherlock auth loop is needed to establish the positive cause.
+
+Native metadata at15:22:31HKT: sole step40 / Adam22,31files/24,884,408,532bytes;551,608metadata/scalar bytes read,zero model/Adam tensor payload. Oldstep30 is absent. Formal observations28successes/29attempts (onlystep25skip);22are durable and6unsaved at41–46 arelost. Remainingdurablesuccesses178. Existing sessions75774/89756/40884/54975 terminalexit1/0/0/1. Personal Python API verifies writer Failed and allnine replicasterminal; readerexp-1114-115909-784580 / UID2c0a089e-5945-4411-a0d2-882a8f29ba90 Succeeded at15:04:24HKT. A succeeded reader is not a successful training run. Persistent RCA `evidence/formal-resume6-clean-policy-failure-20261114.json` contains selected object, initiating Event, actor, time and recovery evidence; raw incident queries stay in localtmp.
+
+No production optimizer/configuration change, GPU submission, checkpoint copy, diagnostic checkpoint or HF export in this comparison. Latest-only storage constraint is preserved. Mainline next actions: bounded FP16 graph/eager-backend comparison, inspect/reduce waste in teacher placement, verify exactstep40native resume/preflight, then bind new reader/monitor/finalwaiter and continue to finalAdam200. Same-version streaming and TP1 need controlled evidence; ready_first would change importance/failure contracts and must not be treated as a harmless boolean.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 6｜BLOCKED/FAILED/SKIPPED 1｜TODO 1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原 student、五教师和全词表身份已核实。 |
+| Q | PASS | 200次成功更新及资源选择的授权有效。 |
+| B | PASS | 既有模型、数据和环境准备有效；新恢复配置仍需逐项检查。 |
+| C | PASS | 全词表参考、指标和parity入口已有证据。 |
+| D | PASS | 诊断训练、原生保存恢复及数值修复已完成。 |
+| P | PASS | 两问的batch/FIFO语义、两批历史记录及匹配耗时差异已交付。 |
+| E | FAILED | 当前writer被平台清理；22/200可恢复，6次未保存更新丢失，需继续E。 |
+| F | TODO | 最终权重有限性、三方parity、曲线和archive待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 无执行偏移；状态文档存在S5过期，已纠正。
+**检测窗口：** 上次13:40HKT检查点至本次历史对比报告｜**当前前沿：** E恢复、P追加分析及F已产生结果的记录
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用样本/事件分析和RCAcollector；关键起因取得后停止辅助认证与审计重试。 |
+| D2 细节反复重试 | CLEAR | 一次确切batch/timer调查，没有重复GPU提交；282metrics差异由新增native timer解释。 |
+| D3 支线问题修补 | CLEAR | 两问是用户新增P要求；平台清理是E实际恢复问题。 |
+| D4 可并行任务停滞 | CLEAR | 分析期间原writer持续至46；失败后先取恢复边界，后台研究额度失败后不重试。 |
+| D5 超范围镀金 | CLEAR | 没有新产品接口、backend重构或权重产物。 |
+| D6 分析空转 | CLEAR | P两问已有明确答案和量化差异；E从未知退出收敛到明确clean-policy原因。 |
+| D7 路线违背 | CLEAR | 原模型、全词表、256/65536/200成功与latest-only均保持。 |
+
+**文档检查：** S5 HIT：plan开头仍称writer/monitor运行、20/200与step30；实际writerFailed且仅step40/Adam22可恢复。requirements缺少最新两问。已更新；S1–S4/S6 CLEAR。
+**归因：** 无执行偏离；S5为恢复状态与用户追加要求记录过期。
+
+## 3. 纠正建议
+
+**分支：** B：先更新状态文档再继续。
+
+**文档更新（已执行）：**
+1. requirements.md：保存两问原文。（可直接执行）
+2. plan.md：以22/200durable、28observed、6lost替代过期运行状态，E拥有平台清理及恢复。（可直接执行）
+3. performance报告：保留原快照时刻，链接本次历史对比和当前失败状态。（可直接执行）
+
+**需停止的偏离行为：** 无。后续不要无限重提相同低利用率部署，不把Sherlock或已失败audit查询变成恢复前提。
+
+**接下去的路线：**
+1. E：用相同输入验证FP16graph/eager与既有parity → 完成标志：equal-workload耗时、实际graphcapture、相同token误差有据。
+2. E：检查现有teacher资源分配，准备step40恢复 → 完成标志：CPU输入/native scheduler/optimizer/data-plane/placement检查齐全，恢复配置解决已知浪费。
+3. E→F：继续到200durable成功，finalAdam200，最新checkpoint与final三方parity → 完成标志：主任务数值/业务/平台终态及报告archive齐全。
+
+## 4. 最值得关注的 3 点
+
+1. 当前11.47倍慢，约93.34%时差落在consumer-visible ready wait；不能把该计时直接称为GPUdecode。
+2. 平台clean-policy是本次明确起因；28次观测仅22次可恢复，6次需重算。
+3. P已完成；200次正式成功及最终有限性/parity仍未完成，禁止增加checkpoint副本或重复无效部署。
+
+CPU follow-through: `preflight_formal_step40_graph_candidate_20261114.py` PASS under offline UV0.13.7/Python3.13.14/Torch2.13.0+cu130 (60s timeout). Existing native validator accepts the original256/65536/full-vocabulary/latest-only dimensions with enforce_eager=false and compilation_config.backend=eager. Native step40 scheduler restore/next tick passes10240→10496 samples, LR1e-6 and WD0.01; no checkpoint tensors read. `evidence/formal-step40-graph-candidate-cpu-preflight-20261114.json` records exact command and limits. GPU capture/parity/timing and improved teacher placement remain unverified; no candidate submission was executed. This advances E preparation without replaying the known inefficient deployment.

@@ -4,6 +4,8 @@
 | --- | --- |
 | 2026-11-14 | Reconcile live roles and steps32–38, verify current switches and co-location limits, and record unmeasured performance candidates. |
 
+**Latest status, November14,2026:** the writer failed at15:03:59HKT after a teacher replica was closed by the platform GPU-utilization clean policy. The previous20/200andstep30snapshot below is historical. Current recovery isstep40/Adam22;28successeswereobserved,but6unsavedupdateswerelost. The batch/FIFO and historical comparison is in [the follow-up report](test_report_2026-11-14_batch_history_comparison.md).
+
 # MOPD deployment and performance investigation
 
 The current job allocates72H800 across three GPU role categories. Waiting for complete rollout samples accounts for86.40% of the seven measured steps32–38; student training accounts for10.29%. The current vLLM SingleController workflow cannot become colocated through one flag. The strongest configuration candidate is CUDA graphs with Inductor disabled, but this FP16 combination has not yet passed numerical or performance validation.

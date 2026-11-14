@@ -1,0 +1,240 @@
+{
+  "job": {
+    "kind": "RJob",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1114-115901-508160",
+      "uid": "dd6f01b6-50b5-4ee1-8598-17ff32131e93",
+      "creationTimestamp": "2026-11-14T03:59:01Z",
+      "deletionTimestamp": null,
+      "ownerReferences": null
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "no",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "rjob.brainpp.cn/system-stop-reason": "Task fail policy [any] caused undesired running replicas."
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-14T07:03:59Z"
+    },
+    "status": {
+      "phase": "Failed",
+      "reason": "RJobFailed",
+      "message": "Tasks with failed status: [default]",
+      "taskStatuses": {
+        "default": {
+          "failed": 2,
+          "stopped": 7,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "finishTime": "2026-11-14T07:03:59Z",
+      "taskStage": "stepmind-task-stage-1"
+    }
+  },
+  "replica": {
+    "kind": "Replica",
+    "apiVersion": "rjob.brainpp.cn/v1alpha1",
+    "metadata": {
+      "name": "exp-1114-115901-508160-eccbc87e",
+      "uid": "cfd7d707-ad92-44e1-b20a-d0ad37cb8f17",
+      "creationTimestamp": "2026-11-14T03:59:03Z",
+      "deletionTimestamp": null,
+      "ownerReferences": [
+        {
+          "apiVersion": "rjob.brainpp.cn/v1alpha1",
+          "kind": "RJob",
+          "name": "exp-1114-115901-508160",
+          "uid": "dd6f01b6-50b5-4ee1-8598-17ff32131e93",
+          "controller": true,
+          "blockOwnerDeletion": true
+        }
+      ]
+    },
+    "creator": "i-fengyicheng",
+    "preemptible": "yes",
+    "quota_group": "codesign",
+    "stop_annotations": {
+      "kubebrain.brainpp.cn/stopped-by": "system:serviceaccount:kubebrain:cleanpolicy"
+    },
+    "stop_spec": {
+      "stopTimestamp": "2026-11-14T07:03:17Z"
+    },
+    "status": {
+      "conditions": [
+        {
+          "type": "Initialized",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-14T03:59:14Z"
+        },
+        {
+          "type": "Ready",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-14T03:59:37Z"
+        },
+        {
+          "type": "ContainersReady",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-14T03:59:37Z"
+        },
+        {
+          "type": "PodScheduled",
+          "status": "True",
+          "lastProbeTime": null,
+          "lastTransitionTime": "2026-11-14T03:59:14Z"
+        }
+      ],
+      "hostIP": "10.191.15.8",
+      "podIP": "10.191.15.8",
+      "podIPs": [
+        {
+          "ip": "10.191.15.8"
+        }
+      ],
+      "startTime": "2026-11-14T03:59:14Z",
+      "containerStatuses": [
+        {
+          "name": "default",
+          "state": {
+            "running": {
+              "startedAt": "2026-11-14T03:59:37Z"
+            }
+          },
+          "lastState": {},
+          "ready": true,
+          "restartCount": 0,
+          "image": "hub.i.basemind.com/stepmind/megatron-step:test-optimus-3.24.0-stepccl-0.0.5.post5-vllm-0.11.0.post37-20260817-2733176_nydus",
+          "imageID": "hub.i.basemind.com/stepmind/megatron-step@sha256:d29740f438d49f543989925ccee2e1e0c6a739f2254c9acc7430363a570a6177",
+          "containerID": "containerd://6688d96a102cff955ea79b004800c1bce3889e2b476a4fe374836014073923a8",
+          "started": true
+        }
+      ],
+      "qosClass": "Guaranteed",
+      "phase": "Stopped",
+      "nodeName": "gpu-h800-0535.host.platform.shaipower.com",
+      "finishTimestamp": "2026-11-14T07:03:17Z"
+    }
+  },
+  "historical_events_binding": {
+    "job": "exp-1114-115901-508160",
+    "replica": "exp-1114-115901-508160-eccbc87e",
+    "rjob_uid": "dd6f01b6-50b5-4ee1-8598-17ff32131e93",
+    "replica_uid": "cfd7d707-ad92-44e1-b20a-d0ad37cb8f17",
+    "started_at": "2026-11-14T07:51:02.426509+00:00",
+    "finished_at": "2026-11-14T07:51:17.798944+00:00"
+  },
+  "selected_historical_events": [
+    {
+      "metadata": {
+        "creationTimestamp": null
+      },
+      "involvedObject": {},
+      "reason": "CleanPolicyTriggered",
+      "message": "Clean policy \"GPU浪费3小时关闭\" triggered. Metric gpu utilization; replica exp-1114-115901-508160-eccbc87e; action closed",
+      "source": {},
+      "firstTimestamp": null,
+      "lastTimestamp": "2026-11-14T07:03:17Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "creationTimestamp": null
+      },
+      "involvedObject": {},
+      "reason": "SuccessfulDelete",
+      "message": "Deleted pod: exp-1114-115901-508160-eccbc87e",
+      "source": {},
+      "firstTimestamp": null,
+      "lastTimestamp": "2026-11-14T07:03:17Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "creationTimestamp": null
+      },
+      "involvedObject": {},
+      "reason": "CleanPolicyTriggered",
+      "message": "Clean policy \"GPU浪费2小时可抢占\" triggered. Metric gpu utilization; replica exp-1114-115901-508160-eccbc87e; action marked as preemptible",
+      "source": {},
+      "firstTimestamp": null,
+      "lastTimestamp": "2026-11-14T06:21:44Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    },
+    {
+      "metadata": {
+        "creationTimestamp": null
+      },
+      "involvedObject": {},
+      "reason": "CleanPolicyTriggered",
+      "message": "Clean policy \"GPU浪费1小时提醒\" triggered. Metric gpu utilization; replica exp-1114-115901-508160-eccbc87e; action notify user",
+      "source": {},
+      "firstTimestamp": null,
+      "lastTimestamp": "2026-11-14T06:01:00Z",
+      "eventTime": null,
+      "reportingComponent": "",
+      "reportingInstance": ""
+    }
+  ],
+  "initiating_reason": "GPU utilization clean policy; teacher replica closed before Ray node failure",
+  "stop_actor": "system:serviceaccount:kubebrain:cleanpolicy",
+  "stop_time_utc": "2026-11-14T07:03:17Z",
+  "durable_successful_updates": 22,
+  "observed_successful_updates": 28,
+  "lost_unsaved_successful_updates": 6,
+  "latest_checkpoint": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_40",
+  "latest_checkpoint_files": 31,
+  "latest_checkpoint_bytes": 24884408532,
+  "native_adam_steps": [
+    22
+  ],
+  "collector_sources": [
+    {
+      "query": "rjob-historical-events",
+      "ok": true
+    },
+    {
+      "query": "replica-historical-events",
+      "ok": true
+    },
+    {
+      "query": "rjob-live-events",
+      "ok": true
+    },
+    {
+      "query": "replica-live-events",
+      "ok": true
+    },
+    {
+      "query": "incident-logs",
+      "ok": true
+    },
+    {
+      "query": "rjob-audit",
+      "ok": false
+    },
+    {
+      "query": "replica-audit",
+      "ok": true
+    },
+    {
+      "query": "existing-deepscan",
+      "ok": true
+    }
+  ],
+  "limits": [
+    "Raw GPU utilization window was not obtained; the policy event is direct initiating evidence.",
+    "RJob audit endpoint rejected a different resource name; do not attribute a human stop from that failed query.",
+    "No positive OOM record establishes OOM as the initiating cause of this incident.",
+    "Checkpoint metadata/scalars were read; full tensor finite validation remains pending."
+  ]
+}

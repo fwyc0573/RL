@@ -1,0 +1,31 @@
+{
+  "status": "PASS_CPU_ONLY",
+  "config": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-step40-graph-candidate-resolved-config-20261114.json",
+  "command": "env TMPDIR=/data/ycfeng/tmp UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker PYTHONPATH=/data/ycfeng/sota-engine/RL OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 LD_LIBRARY_PATH=/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat timeout 60s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python /data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_step40_graph_candidate_20261114.py",
+  "python": "3.13.14",
+  "uv": "0.13.7",
+  "torch": "2.13.0+cu130",
+  "generation_enforce_eager": false,
+  "compilation_config": {
+    "backend": "eager"
+  },
+  "native_checkpoint_step": 40,
+  "native_adam_steps": 22,
+  "checkpoint_tensor_payloads_read": 0,
+  "passed_checks": [
+    "native_single_controller_config",
+    "FP16_FP32_head_grad_reduce",
+    "original_model_identity",
+    "256_65536_full_vocab",
+    "latest_only_retention",
+    "eight_TQ_units",
+    "constant_scheduler_restore_and_next_tick",
+    "expandable_allocator",
+    "graph_eager_backend_config"
+  ],
+  "limits": [
+    "No GPU graph capture or parity/timing was executed.",
+    "Teacher placement remains the known inefficient baseline; this is a candidate preflight, not an approved completed recovery.",
+    "No submitter was executed and no new checkpoint or HF export was saved."
+  ]
+}
