@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Verify20/200 through step38 and complete the requested parallel deployment/performance investigation. |
 | 2026-11-14 | Verify18/200 through step36 and add the reproducible intermediate metric curves. |
 | 2026-11-14 | Verify five consecutive allocator-corrected updates through step35, formal17/200, and latest-only step30/Adam12. |
 | 2026-11-14 | Verify step31 as the first successful allocator-corrected update; record13/200 and latest-only step30. |
@@ -36,25 +37,25 @@
 
 # Plan
 
-Status: A/Q/B/C/D and authorized cleanup are complete; E/F remain outstanding. D's five successful diagnostic updates do not count toward the formal 200.
+Status: A/Q/B/C/D, authorized cleanup, and requested performance investigation P are complete; E/F remain outstanding. Diagnostic successes do not count toward the formal200.
 
-Formal successful optimizer updates are **18/200**, from 19 observed attempts through controller step36 (completed November 14, 2026 at 13:09:42 HKT). Twelve successes are saved in the sole complete `step_30`; the latest six remain resident until the next ordinary save. Writer `exp-1114-115901-508160` (UID `dd6f01b6-50b5-4ee1-8598-17ff32131e93`) continues on 72 H800 with student8/generation48/teachers10/spare6, TP2/PP4/CP1, eight TQ units, horizon218 and save_period10. Its matched reader `exp-1114-115909-784580` (UID `2c0a089e-5945-4411-a0d2-882a8f29ba90`) and existing monitor/final waiter remain attached. The four sessions 75774/89756/40884/54975 were confirmed live at 13:05 HKT. Personal API observation at 13:11:22 HKT shows all nine writer replicas Running with restart0.
+Formal successful optimizer updates are **20/200**, from21 observed attempts through controller step38 (completed November14,2026 at13:35:25HKT). Twelve successes are saved in the sole complete `step_30`; the latest eight remain resident until the next ordinary save. Writer `exp-1114-115901-508160` (UID `dd6f01b6-50b5-4ee1-8598-17ff32131e93`) continues on72H800 with student8/generation48/teachers10/unassigned6, TP2/PP4/CP1, eight TQ units, horizon218 and save_period10. Its matched0GPU reader `exp-1114-115909-784580` (UID `2c0a089e-5945-4411-a0d2-882a8f29ba90`) and existing monitor/final waiter remain attached. Reuse sessions75774/89756/40884/54975; do not submit duplicates.
 
-The allocator correction has passed six consecutive real-model updates (steps31–36), each with 281 finite metrics, 256 valid samples, all five teachers, correct preceding weight version, and zero mask/version issues. Loss/full-RKL ranges 0.1254513115–0.1526285261; normalized pre-clipping grad norm ranges 0.5041648149–0.6875529289. Each batch has 1,827,130–2,073,187 response tokens. Independent scorer/vLLM MAE ranges 0.0011611449–0.0012277932; every group mean also passes 0.02. The largest individual error is 0.6075417, so mean PASS does not establish tokenwise equality. Final actual-training three-way parity and 200-update stability remain pending. The prior writer's exact full-RKL allocation failure and synthetic allocator control are recorded in `test_report_2026-11-14_full_rkl_allocator.md`.
+The allocator correction has passed eight consecutive real-model updates (steps31–38). New exact checks onsteps37–38 pass281 finite metrics and256 unique valid samples per step, all five teachers, preceding weight version, and zero mask/version issues. Latest step38: loss/full-RKL0.1235070825, normalized pre-clipping gradnorm0.5368999839, scale1,1,858,111response tokens, scorer/vLLMMAE0.0011346195 andmax0.4286568. All group means pass0.02. Mean PASS is not tokenwise equality; final actual-training three-way parity and200-update stability remain pending. Evidence: `evidence/formal-native-resume-6-step37-step38-health-20261114.json`.
 
-The two completed segments contribute six successes each; the current segment contributes six. Step25 remains the only measured overflow skip. Native scale remains1; real-model backoff below1 is still unobserved.
+The two completed segments contribute six successes each; the current segment contributes eight. Step25 remains the only observed overflow skip. Native scale remains1; real-model backoff below1 is still unobserved.
 
-A read-only native-state inspection at 13:02 HKT confirms only `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30`: 31 files, eight shards, 24,884,408,499 bytes. All eight Adam counters equal12; controller/sampler dispatch30, consumed_samples7680 and eight TQ units agree. It read551,606 metadata/scalar bytes and zero model/Adam tensor payloads. Physical OSS reclamation remains unverified. Selected evidence: `evidence/formal-native-resume-6-step31-step35-health-20261114.json`.
+Read-only native metadata inspection at13:37:06HKT confirms only `/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30`:31files,eight shards,24,884,408,499bytes andAdam12. It read551,606metadata/scalar bytes and zero model/Adam tensor payloads. Physical OSS reclamation remains unverified. No extra checkpoint orHFexport was created.
 
-Next E frontier: continue the current writer; inspect the next ordinary step40 publication, expecting Adam22 if there are no further skips, and confirm step30 is removed after the new publication completes. Do not force a save for resident updates. Preserve the original models, full151936 vocabulary, 256 fresh trajectories/update and65536 ceiling. There are182 successful updates remaining; the no-further-skip horizon218 is unchanged. Reuse the existing reader/monitor and count-based continuation across segments3+5+6.
+Next E frontier: continue the current writer; inspect the next ordinary step40 publication, expecting Adam22 if there are no further skips, and confirm step30 is removed after complete publication. Do not force a save for resident updates. Preserve original models, full151936 vocabulary,256fresh trajectories/update and65536ceiling. There are180successful updates remaining; horizon218 is unchanged. Reuse the existing reader/monitor and count-based continuation across segments3+5+6.
 
-Final E→F remains200 actual successes → existing CPU full-tensor finite check → unsaved16-H800 native training/scorer/vLLM replay → reports and English completion archive. Reuse completed inputs and diagnostic evidence; no repeated smoke runs are required.
+P completed in parallel: one Ray deployment has threeGPUrole categories and seven logical model worker groups. Steps32–38 average650.30s, including561.85s(86.40%)waiting for ready rollouts and66.93s(10.29%)training. Step38's37,996-token longest response accompanies770.92s wait and866.20s total. Current vLLM logs prove chunked prefill/prefix cache/FA4 enabled and compile/graphs disabled. Eager was deliberate after BF16 parity failures; the official graph-with-eager-backend option is unverified in currentFP16. TP2 selects a Ray executor without internal async scheduling. CurrentSC rejects colocatedvLLM and requires independentteachers; Megatrontrainer/generation co-location is a migration candidate, not a current-run change. Exact distinctions, source/version evidence and priorities: `test_report_2026-11-14_performance_deployment.md` and `performance_official_sources.md`. No runtime optimization or measured speedup is claimed.
 
-Reusable current-metric plotting is verified in `tests/manual/mopd/plot_training_health.py`; `evidence/formal-training-health.png` and its CSV contain the intermediate snapshot through step35. The latest step36 is independently verified in `evidence/formal-native-resume-6-step36-health-20261114.json`. The curve report records raw event/count checks and snapshot limitations. F still requires refreshing these outputs after final completion and the final native parity result.
+Final E→F remains200actual successes → existingCPUfull-tensor finite check → unsaved16-H800native training/scorer/vLLM replay → reports andEnglishcompletion archive. No repeated smoke is required. Reusable curve script `tests/manual/mopd/plot_training_health.py` and existing plot/CSV remain the explicit step35 snapshot; later verified health evidence is separate. Refresh after final completion.
 
 ## Dependency graph
 
-`A -> Q -> {B, C} -> D -> E -> F`
+`A -> Q -> {B, C} -> D -> E -> F`; the user-requested read-only performance investigation P runs alongside E.
 
 - A: inspect original model/data sources and current implementation; document the proposal.
 - Q: one user answer confirms the engineering completion contract or redirects it.
@@ -64,7 +65,7 @@ Reusable current-metric plotting is verified in `tests/manual/mopd/plot_training
 - E: complete the five-teacher main run, checkpoint/resume, and post-update consistency checks. The independent short native save/resume diagnostic can run during D; the formal 200-update run waits for D acceptance.
 - F: reconcile all evidence, commit verified code steps, and deliver the report and archive.
 
-B and C can progress independently after Q, using batched independent reads and checks. D requires their runtime and observability outputs. Read-only planning does not require GPU allocation. No sub-agents are required. Keep each phase's observed failures and corrections in `progress.md` and the test report.
+B and C can progress independently after Q, using batched independent reads and checks. D requires their runtime and observability outputs. Read-only planning does not require GPU allocation. The explicitly invoked research skill delegates primary-source reading for P to one background agent; training and runtime decisions remain with the primary agent. Keep each phase's observed failures and corrections in `progress.md` and the test report.
 
 ## Milestones and acceptance
 
@@ -131,3 +132,7 @@ Formal preparation now has a reusable TP2/PP4/CP1 FP16 recipe and successful nat
 
 
 Final checkpoint verification preparation: replay_checkpoint_logprobs.py now uses2nodes/16H800 for allfivefresh sourceprompt responses, nativecheckpoint refit, scorerlogprobs and an independent native model.train() diagnostic on those exacttokens before its singleoptimizerattempt. The observer reuses prepared native LOGPROB results; existingOPD_FULL gradientreference behavior remains. Diagnostic attempts are excluded from formal200success accounting. CPU callback/tokenoffset/mask/lossinputs/mountedregistration checks pass; finalGPUvalidation awaits the finalformalcheckpoint. Do not extend the preparedharness while the existing formaljob is queued.
+
+## P: Requested parallel performance investigation
+
+P is complete; its read-only investigation ran alongside E. Acceptance: current job/actor/config role counts reconcile; recent complete steps have measured wall-time attribution; timer overlap and missing GPU profiling are explicit; current SingleController co-location guards are inspected; performance-switch findings distinguish current logs, historical parity constraints, source-derived behavior and untested changes. A single performance test report references selected evidence and the official-source research. No production configuration change or extra checkpoint is required to complete P.

@@ -1,0 +1,803 @@
+{
+  "checked_at": "2026-11-14T05:38:21.689137+00:00",
+  "job": "exp-1114-115901-508160",
+  "role_gpus": {
+    "student": 8,
+    "rollout": 48,
+    "teachers": 10,
+    "unassigned": 6
+  },
+  "placement_observed_at": "2026-11-14T05:30:18.628152+00:00",
+  "placement": [
+    {
+      "hostname": "gpu-h800-0032.host.platform.shaipower.com",
+      "ip": "10.191.6.23",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp21-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp20-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp21-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp23-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp20-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp22-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp23-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp22-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0535.host.platform.shaipower.com",
+      "ip": "10.191.15.8",
+      "model_actors": [
+        {
+          "name": "teacher_if-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_logic-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_logic-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_math-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_if-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_math-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0474.host.platform.shaipower.com",
+      "ip": "10.191.19.5",
+      "model_actors": [
+        {
+          "name": "teacher_code-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_stem-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_stem-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "teacher_code-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0074.host.platform.shaipower.com",
+      "ip": "10.191.5.29",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp5-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp6-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp5-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp7-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp7-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp6-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp4-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp4-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0620.host.platform.shaipower.com",
+      "ip": "10.191.12.56",
+      "model_actors": [
+        {
+          "name": "lm_policy-0-0",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-1",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-3",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-4",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-7",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-5",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-2",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "lm_policy-0-6",
+          "class_name": "MegatronPolicyWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0256.host.platform.shaipower.com",
+      "ip": "10.191.7.16",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp2-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp2-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp1-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp3-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp0-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp0-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp1-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp3-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0223.host.platform.shaipower.com",
+      "ip": "10.191.9.34",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp18-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp17-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp17-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp18-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp16-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp19-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp16-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp19-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0457.host.platform.shaipower.com",
+      "ip": "10.191.1.46",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp15-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp12-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp14-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp15-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp12-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp13-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp14-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp13-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    },
+    {
+      "hostname": "gpu-h800-0071.host.platform.shaipower.com",
+      "ip": "10.191.5.19",
+      "model_actors": [
+        {
+          "name": "vllm_policy-grp9-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp11-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp10-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp11-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp10-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp8-0",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp9-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        },
+        {
+          "name": "vllm_policy-grp8-1",
+          "class_name": "VllmAsyncGenerationWorker",
+          "state": "ALIVE"
+        }
+      ]
+    }
+  ],
+  "dynamic_node_stats_rejected": "Dashboard node now timestamps are stale; no current GPU utilization claim.",
+  "baseline_32_37": {
+    "train/gen_tokens_per_sample/mean": 7405.824869791667,
+    "train/gen_tokens_per_sample/max": 22956.666666666668,
+    "train/timing/rollout/shard/nemo_gym/await_results": 170.8245061238607,
+    "train/vllm/prompt_tokens": 73820.83333333333,
+    "train/vllm/generation_tokens": 1895891.1666666667,
+    "train/vllm/generations_ok": 256.0,
+    "train/vllm/generations_failed": 0.0,
+    "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.13850845023989677,
+    "train/on_policy_distillation/teacher_batches": 256.0,
+    "train/on_policy_distillation/teacher_samples": 256.0,
+    "train/on_policy_distillation/teacher_logprob_time_s": 59.39024289449056,
+    "train/on_policy_distillation/teacher_inference_time_s": 55.96698824564616,
+    "train/on_policy_distillation/teacher_lock_wait_time_s": 2.951747636000315,
+    "train/on_policy_distillation/teacher_full_payload_tokens": 1969712.0,
+    "train/on_policy_distillation/teacher_alias_unique": 5.0,
+    "train/on_policy_distillation/teacher_model_unique": 5.0,
+    "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+    "timing/train/prepare_for_generation/sync_policy_params": 0.00619857261578242,
+    "timing/train/exposed_generation": 527.0105539957682,
+    "timing/train/logprob_inference_prep": 1.4738823970158894,
+    "timing/train/policy_and_reference_logprobs": 6.886940320332845,
+    "timing/train/train_data_dump": 8.210187514623007,
+    "timing/train/advantage_calculation": 8.05710252126058,
+    "timing/train/training_prep": 0.35537634789943695,
+    "timing/train/policy_training": 65.94035085042317,
+    "timing/train/weight_sync": 0.6284375985463461,
+    "timing/train/total_step_time": 614.3164774576823,
+    "timing/train/valid_tokens_per_sec_per_gpu": 42.99964205423991,
+    "disjoint_buckets": {
+      "generation_ready_wait": {
+        "seconds": 527.0105539957682,
+        "percent": 85.78811953356269
+      },
+      "policy_training": {
+        "seconds": 65.94035085042317,
+        "percent": 10.733938168696694
+      },
+      "student_scoring": {
+        "seconds": 6.886940320332845,
+        "percent": 1.1210736766876415
+      },
+      "other": {
+        "seconds": 14.478632291158046,
+        "percent": 2.3568686210529686
+      }
+    },
+    "steps": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37
+    ],
+    "total_step_min_s": 543.9475708007812,
+    "total_step_max_s": 662.953369140625,
+    "effective_response_tokens_s": 3086.17990276399,
+    "generation_wait_response_tokens_s": 3597.44440086088
+  },
+  "current_32_38": {
+    "train/gen_tokens_per_sample/mean": 7384.7421875,
+    "train/gen_tokens_per_sample/max": 25105.14285714286,
+    "train/timing/rollout/shard/nemo_gym/await_results": 168.39331272670202,
+    "train/vllm/prompt_tokens": 73410.28571428571,
+    "train/vllm/generation_tokens": 1890494.0,
+    "train/vllm/generations_ok": 256.0,
+    "train/vllm/generations_failed": 0.0,
+    "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.13638335359948023,
+    "train/on_policy_distillation/teacher_batches": 256.0,
+    "train/on_policy_distillation/teacher_samples": 256.0,
+    "train/on_policy_distillation/teacher_logprob_time_s": 58.52890287126814,
+    "train/on_policy_distillation/teacher_inference_time_s": 55.32206344604492,
+    "train/on_policy_distillation/teacher_lock_wait_time_s": 2.755221281732832,
+    "train/on_policy_distillation/teacher_full_payload_tokens": 1963904.2857142857,
+    "train/on_policy_distillation/teacher_alias_unique": 5.0,
+    "train/on_policy_distillation/teacher_model_unique": 5.0,
+    "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+    "timing/train/prepare_for_generation/sync_policy_params": 0.006123311817646027,
+    "timing/train/exposed_generation": 561.8543395996094,
+    "timing/train/logprob_inference_prep": 1.4294896125793457,
+    "timing/train/policy_and_reference_logprobs": 6.8625649724687845,
+    "timing/train/train_data_dump": 8.257523877280098,
+    "timing/train/advantage_calculation": 8.212701525006976,
+    "timing/train/training_prep": 0.36056848083223614,
+    "timing/train/policy_training": 66.92576490129743,
+    "timing/train/weight_sync": 0.6224318998200553,
+    "timing/train/total_step_time": 650.3001273018973,
+    "timing/train/valid_tokens_per_sec_per_gpu": 41.11303492954799,
+    "disjoint_buckets": {
+      "generation_ready_wait": {
+        "seconds": 561.8543395996094,
+        "percent": 86.39923567764771
+      },
+      "policy_training": {
+        "seconds": 66.92576490129743,
+        "percent": 10.291519575580155
+      },
+      "student_scoring": {
+        "seconds": 6.8625649724687845,
+        "percent": 1.055291962027079
+      },
+      "other": {
+        "seconds": 14.657457828521718,
+        "percent": 2.25395278474505
+      }
+    },
+    "steps": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38
+    ],
+    "total_step_min_s": 543.9475708007812,
+    "total_step_max_s": 866.2020263671875,
+    "effective_response_tokens_s": 2907.109995262774,
+    "generation_wait_response_tokens_s": 3364.740408247466
+  },
+  "per_step": [
+    {
+      "train/gen_tokens_per_sample/mean": 7323.0,
+      "train/gen_tokens_per_sample/max": 20917.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 177.6701202392578,
+      "train/vllm/prompt_tokens": 65694.0,
+      "train/vllm/generation_tokens": 1874688.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.14587359130382538,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 62.08306884765625,
+      "train/on_policy_distillation/teacher_inference_time_s": 59.39522933959961,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 2.3235459327697754,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 1940382.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.006180927157402039,
+      "timing/train/exposed_generation": 528.2202758789062,
+      "timing/train/logprob_inference_prep": 2.3943583965301514,
+      "timing/train/policy_and_reference_logprobs": 6.890681743621826,
+      "timing/train/train_data_dump": 7.769216060638428,
+      "timing/train/advantage_calculation": 7.654082775115967,
+      "timing/train/training_prep": 0.33364906907081604,
+      "timing/train/policy_training": 66.8432846069336,
+      "timing/train/weight_sync": 0.8119876980781555,
+      "timing/train/total_step_time": 617.2119750976562,
+      "timing/train/valid_tokens_per_sec_per_gpu": 42.18539810180664,
+      "step": 32
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 8098.38671875,
+      "train/gen_tokens_per_sample/max": 26109.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 193.224609375,
+      "train/vllm/prompt_tokens": 80411.0,
+      "train/vllm/generation_tokens": 2073187.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.14683592319488525,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 63.00092315673828,
+      "train/on_policy_distillation/teacher_inference_time_s": 60.55805969238281,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 1.8328806161880493,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 2153598.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.007464751601219177,
+      "timing/train/exposed_generation": 557.13427734375,
+      "timing/train/logprob_inference_prep": 1.2375249862670898,
+      "timing/train/policy_and_reference_logprobs": 7.280378341674805,
+      "timing/train/train_data_dump": 8.552955627441406,
+      "timing/train/advantage_calculation": 8.565630912780762,
+      "timing/train/training_prep": 0.32382166385650635,
+      "timing/train/policy_training": 73.51583862304688,
+      "timing/train/weight_sync": 0.5856813192367554,
+      "timing/train/total_step_time": 653.0342407226562,
+      "timing/train/valid_tokens_per_sec_per_gpu": 44.093040466308594,
+      "step": 33
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 7682.5,
+      "train/gen_tokens_per_sample/max": 20106.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 187.6944122314453,
+      "train/vllm/prompt_tokens": 81302.0,
+      "train/vllm/generation_tokens": 1966720.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.15279239416122437,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 59.123023986816406,
+      "train/on_policy_distillation/teacher_inference_time_s": 55.538150787353516,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 2.5121328830718994,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 2048022.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.0045902058482170105,
+      "timing/train/exposed_generation": 512.95166015625,
+      "timing/train/logprob_inference_prep": 1.521641731262207,
+      "timing/train/policy_and_reference_logprobs": 7.479325294494629,
+      "timing/train/train_data_dump": 8.273263931274414,
+      "timing/train/advantage_calculation": 8.42959976196289,
+      "timing/train/training_prep": 0.43955689668655396,
+      "timing/train/policy_training": 67.68627166748047,
+      "timing/train/weight_sync": 0.6135660409927368,
+      "timing/train/total_step_time": 602.9295043945312,
+      "timing/train/valid_tokens_per_sec_per_gpu": 45.304725646972656,
+      "step": 34
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 7137.2265625,
+      "train/gen_tokens_per_sample/max": 20993.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 160.8001251220703,
+      "train/vllm/prompt_tokens": 67254.0,
+      "train/vllm/generation_tokens": 1827130.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.13494913280010223,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 63.667537689208984,
+      "train/on_policy_distillation/teacher_inference_time_s": 58.16554641723633,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 5.274043560028076,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 1894384.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.006196223199367523,
+      "timing/train/exposed_generation": 466.2751770019531,
+      "timing/train/logprob_inference_prep": 1.2823083400726318,
+      "timing/train/policy_and_reference_logprobs": 6.149526119232178,
+      "timing/train/train_data_dump": 7.974698543548584,
+      "timing/train/advantage_calculation": 7.989466190338135,
+      "timing/train/training_prep": 0.3297833502292633,
+      "timing/train/policy_training": 58.22801208496094,
+      "timing/train/weight_sync": 0.5716587901115417,
+      "timing/train/total_step_time": 543.9475708007812,
+      "timing/train/valid_tokens_per_sec_per_gpu": 46.65303421020508,
+      "step": 35
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 7191.3984375,
+      "train/gen_tokens_per_sample/max": 23589.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 157.92218017578125,
+      "train/vllm/prompt_tokens": 77439.0,
+      "train/vllm/generation_tokens": 1840998.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.12482575327157974,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 52.544986724853516,
+      "train/on_policy_distillation/teacher_inference_time_s": 49.91683578491211,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 2.3327877521514893,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 1918437.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.006073325872421265,
+      "timing/train/exposed_generation": 521.4411010742188,
+      "timing/train/logprob_inference_prep": 1.2116307020187378,
+      "timing/train/policy_and_reference_logprobs": 6.657955646514893,
+      "timing/train/train_data_dump": 9.499021530151367,
+      "timing/train/advantage_calculation": 8.153063774108887,
+      "timing/train/training_prep": 0.33910831809043884,
+      "timing/train/policy_training": 62.48353576660156,
+      "timing/train/weight_sync": 0.588112473487854,
+      "timing/train/total_step_time": 605.8222045898438,
+      "timing/train/valid_tokens_per_sec_per_gpu": 42.206138610839844,
+      "step": 36
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 7002.4375,
+      "train/gen_tokens_per_sample/max": 26026.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 147.63558959960938,
+      "train/vllm/prompt_tokens": 70825.0,
+      "train/vllm/generation_tokens": 1792624.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.12577390670776367,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 55.92191696166992,
+      "train/on_policy_distillation/teacher_inference_time_s": 52.22810745239258,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 3.4350950717926025,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 1863449.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.006686002016067505,
+      "timing/train/exposed_generation": 576.0408325195312,
+      "timing/train/logprob_inference_prep": 1.195830225944519,
+      "timing/train/policy_and_reference_logprobs": 6.86377477645874,
+      "timing/train/train_data_dump": 7.191969394683838,
+      "timing/train/advantage_calculation": 7.550771713256836,
+      "timing/train/training_prep": 0.3663387894630432,
+      "timing/train/policy_training": 66.88516235351562,
+      "timing/train/weight_sync": 0.5996192693710327,
+      "timing/train/total_step_time": 662.953369140625,
+      "timing/train/valid_tokens_per_sec_per_gpu": 37.55551528930664,
+      "step": 37
+    },
+    {
+      "train/gen_tokens_per_sample/mean": 7258.24609375,
+      "train/gen_tokens_per_sample/max": 37996.0,
+      "train/timing/rollout/shard/nemo_gym/await_results": 153.80615234375,
+      "train/vllm/prompt_tokens": 70947.0,
+      "train/vllm/generation_tokens": 1858111.0,
+      "train/vllm/generations_ok": 256.0,
+      "train/vllm/generations_failed": 0.0,
+      "train/on_policy_distillation/teacher_student_logprob_gap_mean": -0.1236327737569809,
+      "train/on_policy_distillation/teacher_batches": 256.0,
+      "train/on_policy_distillation/teacher_samples": 256.0,
+      "train/on_policy_distillation/teacher_logprob_time_s": 53.360862731933594,
+      "train/on_policy_distillation/teacher_inference_time_s": 51.4525146484375,
+      "train/on_policy_distillation/teacher_lock_wait_time_s": 1.5760631561279297,
+      "train/on_policy_distillation/teacher_full_payload_tokens": 1929058.0,
+      "train/on_policy_distillation/teacher_alias_unique": 5.0,
+      "train/on_policy_distillation/teacher_model_unique": 5.0,
+      "train/on_policy_distillation/teacher_alias_to_model_compression": 1.0,
+      "timing/train/prepare_for_generation/sync_policy_params": 0.005671747028827667,
+      "timing/train/exposed_generation": 770.9170532226562,
+      "timing/train/logprob_inference_prep": 1.163132905960083,
+      "timing/train/policy_and_reference_logprobs": 6.716312885284424,
+      "timing/train/train_data_dump": 8.541542053222656,
+      "timing/train/advantage_calculation": 9.146295547485352,
+      "timing/train/training_prep": 0.39172127842903137,
+      "timing/train/policy_training": 72.83824920654297,
+      "timing/train/weight_sync": 0.5863977074623108,
+      "timing/train/total_step_time": 866.2020263671875,
+      "timing/train/valid_tokens_per_sec_per_gpu": 29.793392181396484,
+      "step": 38
+    }
+  ],
+  "engine_startup_selected": [
+    "INFO 11-14 12:01:58 [scheduler.py:277] Chunked prefill is enabled with max_num_batched_tokens=2048.",
+    "WARNING 11-14 12:01:58 [vllm.py:1371] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+    "(EngineCore pid=2755) INFO 11-14 12:02:14 [core.py:123] Initializing a V1 LLM engine (v0.29.0) with config: model='/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student', speculative_config=None, tokenizer='/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.float16, max_seq_len=65536, download_dir=None, load_format=dummy, tensor_parallel_size=2, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, per_request_spec_decode_metrics='none', kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/student, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': True, 'enable_qk_norm_rope_fusion': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False, 'fuse_qk_norm_rope_kvcache': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, enable_jit_warmup=True, enable_bf16x3_router_gemm=False, moe_backend='auto', linear_backend='auto')",
+    "(EngineCore pid=2755) (RayWorkerProc pid=4789) (Worker_TP0 pid=4789) INFO 11-14 12:02:39 [flash_attn.py:897] Using FlashAttention version 4",
+    "(EngineCore pid=2755) (RayWorkerProc pid=4789) (Worker_TP0 pid=4789) INFO 11-14 12:02:44 [gpu_worker.py:625] Available KV cache memory: 64.64 GiB",
+    "(EngineCore pid=2755) INFO 11-14 12:02:44 [kv_cache_utils.py:2032] GPU KV cache size: 4,841,312 tokens, Maximum concurrency for 65,536 tokens per request: 73.87x",
+    "(EngineCore pid=2755) WARNING 11-14 12:03:04 [vllm.py:1371] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none",
+    "Starting server on http://10.191.7.16:41681/v1",
+    "(EngineCore pid=2755) (RayWorkerProc pid=4789) (Worker_TP0 pid=4789) WARNING 11-14 12:08:13 [jit_monitor.py:141] CuTeDSL JIT compilation during inference: FlashAttentionForwardSm90. This causes a latency spike; consider extending warmup to cover this shape/config.",
+    "(EngineCore pid=2755) (RayWorkerProc pid=4789) (Worker_TP0 pid=4789) WARNING 11-14 12:08:16 [jit_monitor.py:141] CuTeDSL JIT compilation during inference: FlashAttentionForwardCombine. This causes a latency spike; consider extending warmup to cover this shape/config."
+  ],
+  "native_checkpoint": [
+    {
+      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30",
+      "files": 31,
+      "bytes": 24884408499
+    }
+  ],
+  "limits": [
+    "exposed_generation includes the readiness chain, not just GPU kernels",
+    "teacher times sum calls with overlap",
+    "train_data_dump overlaps advantage_calculation and must not be added twice",
+    "no graph or parallelism A/B was run"
+  ],
+  "checkpoint_metadata_receipt": {
+    "checked_at": "2026-11-14T05:37:06.190781+00:00",
+    "step": 30,
+    "bytes_read": 551606,
+    "tensor_payloads_read": 0,
+    "adam_steps": {
+      "optimizer.distributed.dp_group_idx_0.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_1.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_2.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_3.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_4.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_5.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_6.optimizer/shard_0_1": [
+        12,
+        12
+      ],
+      "optimizer.distributed.dp_group_idx_7.optimizer/shard_0_1": [
+        12,
+        12
+      ]
+    }
+  }
+}

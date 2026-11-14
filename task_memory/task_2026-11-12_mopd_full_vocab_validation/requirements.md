@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Add the requested parallel deployment, bottleneck, co-location, and performance-switch investigation. |
 | 2026-11-14 | Require only the latest checkpoint to remain, with timely deletion of older checkpoints. |
 | 2026-11-13 | Record explicit authorization to clean current-task large, smoke, and unused artifacts. |
 | 2026-11-12 | Record the new request, explicit constraints, source identity, and pending acceptance decision. |
@@ -60,3 +61,13 @@ Codex is authorized to delete current-task redundant caches, duplicate archives,
 > 不允许你额外保存ckpt，因为当前oss的磁盘空间不足，只允许你保留最新的ckpt，及时删除不是最新的ckpt
 
 Only the latest complete native recovery checkpoint may be retained for this task. Delete older current-task checkpoints promptly after the latest checkpoint is confirmed published. Do not create additional checkpoint copies, diagnostic checkpoints, or retained HF exports. Reuse native retention (`keep_top_k=0`, `ft_keep_latest_k=1`) after verifying its behavior. Preserve source assets and required conversion inputs. Save only required native recovery/segment/final boundaries; this overrides the earlier all-checkpoint retention and extra five-step save preparation. Final parity uses the existing native checkpoint loader and in-memory weight synchronizer; it must not write additional checkpoint copies or HF weight exports.
+
+## [Original Request] Parallel performance investigation, 2026-11-14
+
+> 【并行确认】我认为每一步 9–11 分钟明显超过了预期。请你确认：
+> - 当前的集群的部署分配是怎么样的？存在多少个分离的集群角色（按照角色分，例如rollout集群、teacher集群），分配的gpus比例，对应的并行度
+> - 当前的主要耗时bottleneck是什么？占据了多少耗时？
+> - 当前架构是否存在切换为 co-located模式？即时分复用共卡策略。
+> - 是否存在明显的遗漏开关导致了耗时增加？允许你调研社区和repo相关的手册和经验
+
+Deliver the actual role placement and parallelism, measured wall-time attribution with timer semantics, current-entrypoint co-location support, and evidence-ranked performance candidates grounded in repository and primary documentation. This investigation runs alongside the existing formal training. It does not replace the 200-successful-update contract or latest-only checkpoint constraint. The current investigation leaves the running configuration unchanged and distinguishes source-backed candidates from measured speedups.

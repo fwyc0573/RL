@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-14 | Complete requested deployment/performance investigation in parallel and verify20 formal successes through step38. |
 | 2026-11-14 | Verify step36/formal18/200 and the reusable metric curves; preserve the historical FA4 event timestamp. |
 | 2026-11-14 | Verify17/200 through step35, five consecutive allocator-corrected successes and latest-only step30/Adam12. |
 | 2026-11-14 | Diagnose step31 CUDA OOM, verify step30-only recovery and submit allocator-corrected continuation. |
@@ -3640,3 +3641,71 @@ Observed trend throughstep35: loss0.1903821→0.1349312;norm1.1475327→0.558914
 3. 曲线已可复用；最终actual-training三方parity和全参数/优化器有限性尚未验证。
 
 Plot commit verification found default CSV CRLF terminators flagged by `git diff --check`. Set the writer to LF, regenerated the same step35 snapshot, and checked every CSV field against the prior committed table. No values or training state changed. Scope remains E18/200 and the already verified intermediate F curves.
+
+
+### 2026-11-14 13:40 HKT — Performance investigation P complete; formal20/200 (E/F in-progress)
+
+User requested actual role allocation/parallelism, bottleneck fractions, co-location feasibility and missing performance settings. Added raw request to requirements and independent P to plan. Applied diagnosing-bugs performance branch (measure first), then research skill's explicitly required background agent for primary-source reading. The source agent wrote only `performance_official_sources.md`; main agent reconciled live actor/config/log evidence and timing. No production code/configuration change, GPU submission, job stop or extra weight artifact.
+
+One72H800writer has student8(TP2/PP4/CP1/DP1), generation48(24TP2vLLM replicas), teachers10(fiveTP2/PP1/CP1/DP1 groups), and6unassigned teacher-node GPUs. Three role categories, seven logical model groups; separate0GPUreader. Actor snapshot13:30:18HKT reconciles66model workers; vLLM internalRayWorkerProc must not be counted again. Dashboarddynamicnode timestamps are stale, so GPUutilization is unverified. Bounded exact-actor log reads succeed; optionalcustomHTTPmetrics/server_info404,health200. No Rayinit retry or auxiliary endpoint repair.
+
+Existing steps32–37 mean614.3165s, with527.0106s ready-batch waiting(85.79%) and65.9404s training(10.73%). New step38 takes866.2020s,770.9171s waiting(89.0%) and72.8382s training. Its maxresponse37996 rises while batchresponse tokens1,858,111 are below earlier mean1,895,891. Seven-step32–38 mean650.3001s:561.8543s waiting86.399%,66.9258s training10.292%,6.8626s studentscoring1.055%,14.6575s other2.254%. Teacher55.3221s inference is summed calls, not critical-path time; train_data_dump overlapsadvantage timing;0.6224s weightsync isminor. Source timers and limited inference are explained in report; no kernelprofile or speedup claimed.
+
+Actualgenerationlogs provevLLM0.29.0/FP16/TP2/FA4, chunkedprefill=true,max_num_batched_tokens2048,prefixcache=true,compile/graphsdisabled,KVcapacity4,841,312tokens/engine. HistoricalBF16compiledMAE0.033657FAIL explains deliberateeager. Officialrepo recommendation `enforce_eager=false` + `compilation_config.backend=eager` is the first unverifiedFP16candidate. Installed/taggedRayexecutor inheritsasync-scheduling=false; forcing ittrue isunsupported. CurrentSCvalidator rejectscolocatedvLLM andrequiresnoncolocatedteachers; Megatrongenerationofferspartialtrainer/rolloutco-location requiringmigrationverification. Preserve256fresh/65536/fullvocab; no increasedlookahead,truncationorbackendchange.
+
+Reproducibleone-offanalysis:`python3 /data/ycfeng/tmp/nemo-mopd-20261112/analyze_formal_performance_20261114.py` (localPython3.10.12),PASS. Exactsteps37–38 eachpass281finitemetrics/256uniquesamples,fivegroups,correctweightversion,mask1,noissues,overall/groupMAE≤0.02. Nativeflagssegments3+5+6yield20successes/21attempts,skip25only. Step38completed13:35:25HKT,loss0.1235070825,norm0.5368999839,scale1,MAE0.0011346195,max0.4286568. Normisnormalizedpre-clipping; meanparitydoesnotestablishtokenwiseoractualtrainingparity. Evidence:`evidence/formal-native-resume-6-step37-step38-health-20261114.json` and `evidence/formal-performance-20261114.json`.
+
+Existingmetadata-onlyinspectionat13:37:06HKTwithUVofflinePython3.13.14/Torch2.13.0confirmssole step30,31files,24,884,408,499bytes,8Adamcountersetsall12;551,606metadata/scalarbytesread,0weight/Adamtensorpayloads. Latest-onlyPASS;physicalOSSreclaimunverified. Eightlaterupdatesresident;donotforcesave.Nextordinarystep40expectsAdam22ifnofurtherskip,thenoldstep30mustdisappear. Existingwriter/reader/monitor/finalwaitercontinue;180successesandfinalCPUfinite/unsavedthreewayparityremain.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 6｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型、五教师和全词表身份已验证。 |
+| Q | PASS | 200次成功更新的授权与验收约束有效。 |
+| B | PASS | 正式输入、环境及配置已通过预检。 |
+| C | PASS | 全词表参考和指标路径已验证。 |
+| D | PASS | 诊断训练、原生保存恢复和相应parity通过。 |
+| P | PASS | 四项性能问题已用当前角色、七步计时、源码和官方资料回答。 |
+| E | TODO | 正式20/200；修复后连续八次成功，最新保存仍为step30/Adam12。 |
+| F | TODO | 中期曲线与性能报告有据；最终有限性、三方parity和archive待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 无执行偏移；恢复时发现的状态文档过期已纠正。
+**检测窗口：** 13:11HKT检查点至本次性能报告｜**当前前沿：** E、已产生结果的F与用户新增P
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用现有事件、reader和日志；辅助HTTP404后停止该入口，不修监控框架。 |
+| D2 细节反复重试 | CLEAR | 无训练重提或参数试错；计时覆盖七个已完成批次。 |
+| D3 支线问题修补 | CLEAR | 性能调查为用户明确追加要求，P独立记录。 |
+| D4 可并行任务停滞 | CLEAR | P调查期间E新增两次成功；官方阅读与本机测量并行。 |
+| D5 超范围镀金 | CLEAR | 仅调查报告与选定证据，无新训练功能或权重产物。 |
+| D6 分析空转 | CLEAR | 四问均有明确结论、边界与优化顺序，P已完成。 |
+| D7 路线违背 | CLEAR | 200-success、256fresh/65536、全词表及latest-only保持。 |
+
+**文档检查：** S5 HIT：恢复时plan仍为18/200且未记录用户新增P；已补requirements/plan并更新20/200。S1–S4/S6 CLEAR。图表仍明确为step35快照，无伪装更新。
+**归因：** 状态记录过期，无执行路线偏移。
+
+## 3. 纠正建议
+
+**分支：** B：先修正文档状态，已完成。
+
+**文档更新（已执行）：** requirements保留性能四问原文；plan添加并完成P，更新20/200、8resident/12saved；performance报告区分实测、推断及未执行A/B。
+
+**需停止的偏离行为：** 无。不要把可选telemetry修复、全量共卡迁移或未经验证的性能开关变成当前训练的阻断项。
+
+**接下去的路线：**
+1. E：继续当前writer → 完成标志：累计200次真实成功，健康/异常有据。
+2. 并行：持续训练 ‖ 常规step40发布检查 → 完成标志：Adam计数匹配、完整发布后仅最新checkpoint。
+3. 优化候选：先用现有parity入口评估FP16graph/eager组合，再按证据决定TP1/TP2对照；所有候选不得额外保存checkpoint，也不得把辅助检查变为健康大作业hardgate。
+4. E→F：最终CPU有限性和关闭checkpointing的三方replay → 完成标志：最终检查与终态记录、曲线和Englisharchive齐全。
+
+## 4. 最值得关注的 3 点
+
+1. 近期七步86.4%时间在等待完整rollout；step38的37,996-token尾部对应14.4分钟整步。
+2. 当前SC不支持直接共卡vLLM；graph/eager是优先验证候选，不能声称已提速或已通过当前FP16parity。
+3. 正式20/200；只保留step30/Adam12，下一常规step40后及时删除旧checkpoint，最终验收仍未完成。
