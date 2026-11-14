@@ -3453,3 +3453,68 @@ Launcher sessions75774(writer),89756(reader),40884(monitor),54975(finalwaiter) r
 1. allocator 对照是实际原生 backward 的合成分配历史；真实训练修复仍须观察。
 2. 当前仅保留 step30/Adam12；不得创建额外 checkpoint 或 HF export。
 3. 计数由 native success flags 与 Adam 决定；controller 到 218 不自动等于验收完成。
+
+### 2026-11-14 12:13 HKT — Resume6 restored and sampling (E in-progress)
+
+Verified both exact personal jobs Running via local RJobClient at 12:11 HKT. All four existing launcher/reader/monitor/final-waiter sessions remain live. Dashboard read at 12:11:57 HKT reports eight ALIVE student actors with `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. Native trace records weights_synced/version30 and restore_finished. Head replica logs show completed rollouts and teacher inference in all five groups. No new optimizer success is emitted yet; formal count remains 12/200. Reuse the current writer; no new GPU submission.
+
+Fresh existing `inspect_latest_formal_native_state_20261114.py` run with offline UV/Python3.13 verifies only step30, 31 files/24,884,408,499 bytes, and Adam12 across eight optimizer states. Read551,606 metadata/scalar bytes and zero model/Adam tensor payloads. No checkpoint or HF export written. Physical OSS quota reclamation remains unverified.
+
+The preceding local Ray native-scaler inspection timed out in `ray.init` after60s (exit124), before actor inspection. It yielded no live memory/scaler counters and did not affect training. Do not repair that optional connection: the dashboard verifies configuration propagation, and the actual next update will test execution. Selected startup/restore/native evidence: `evidence/formal-native-resume-6-startup-verified-20261114.json`. Source actor/runtime identities and latest-only checks are observations; allocator success in the full model remains pending.
+
+## 1. 规划完成情况
+
+**汇总：** PASS 5｜BLOCKED/FAILED/SKIPPED 0｜TODO 2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原始模型、五教师和全词表身份已验证。 |
+| Q | PASS | 原200次实际成功更新授权有效。 |
+| B | PASS | 输入、CPU环境与运行配置已通过检查。 |
+| C | PASS | 全词表参考与指标路径已验证。 |
+| D | PASS | 诊断训练、原生保存恢复和诊断parity已完成。 |
+| E | TODO | 正式13/200；分配器修正后的step31成功，step30保存12次。 |
+| F | TODO | 最终有限性、三方parity、曲线和English archive待完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 11:59恢复提交检查点至12:22HKT｜**当前前沿：** E
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 可选Ray连接失败后停止重试，复用Dashboard和既有reader。 |
+| D2 细节反复重试 | CLEAR | 单一正式作业完成step31，无重复提交或调参。 |
+| D3 支线问题修补 | CLEAR | 检查均针对恢复、计数、健康、parity和latest-only。 |
+| D4 可并行任务停滞 | CLEAR | 训练、reader、monitor和最终waiter并行；最终replay依赖200成功。 |
+| D5 超范围镀金 | CLEAR | 无新配置接口、训练功能或权重产物。 |
+| D6 分析空转 | CLEAR | 实际成功数12→13，取得全量样本和281项指标证据。 |
+| D7 路线违背 | CLEAR | 原模型、151936词表、256/65536及最新checkpoint约束保持。 |
+
+**文档检查：** S1–S6均未发现未处理缺陷；过期session索引已修正，plan/report明确区分13次已观察与12次已保存。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/tickets合理，无需改动。
+
+**需停止的偏离行为：** 无
+
+**接下去的路线：**
+1. E：继续当前writer及原监测 → 完成标志：累计200次实际成功，各步健康及五组parity有据。
+2. 并行：后续更新 ‖ 下一次原生checkpoint发布检查 → 完成标志：新Adam计数与flags一致，发布完整后删除旧checkpoint。
+3. E→F：既有有限性和关闭checkpointing的三方replay → 完成标志：最终权重/优化器有限、三方MAE≤0.02、报告与English archive完整。
+
+## 4. 最值得关注的 3 点
+
+1. 真实step31成功支持本次allocator修正，但长期稳定性仍需后续训练。
+2. 正式13/200；唯一checkpoint仍为step30/Adam12，不额外保存step31。
+3. 当前scorer/vLLM均值通过，最终actual-training三方parity待完成。
+
+### 2026-11-14 12:21 HKT — First resumed update PASS, formal13/200 (E in-progress)
+
+Step31 completed12:18:49HKT with optimizer_update_successful1,loss/fullRKL0.15262852609157562,normalized pre-clippinggradnorm0.6875529289245605,scale1,256validsamples and2,031,837response tokens. All281exact-step metric values are finite; masked/filtered counts0. Current segment1success/0skips; merged segments3+5+6 give13successes,14attempts,skip25only. Latest completecheckpoint remainsstep30/Adam12;step31isresident. No newcheckpoint,HFexport orGPUsubmission.
+
+Fivegroupcoveragecode60/math51/stem51/if49/logic45; all256samplesuseweight_version30 and validmasks. Scorer/vLLMMAE0.0012237102789000166,p990.0099352932,max0.2297739983,allfinite;fivegroupmeans0.0010652592–0.0023398088;issues0. PASSmeancriterion,notfinalactual-trainingparity. Nativestep638.1654s,exposedgeneration517.7575s,policytraining85.4679s. Existingreader/monitor andinlineexact-stepassertionsPASS. Evidence:`evidence/formal-native-resume-6-step31-health-20261114.json`; report:`test_report_2026-11-14_full_rkl_allocator.md`.
+
+The full-model allocator repair now has one successful update. Continue the same writer and verify the next ordinary publication/old-checkpointremoval; do not force an extra save. Remaining187successfulupdates,thenfinalfinitecheck andunsavedthree-wayreplay. Sustainedallocatorstability andreal-modelscalerbackoffbelow1 remainunverified.

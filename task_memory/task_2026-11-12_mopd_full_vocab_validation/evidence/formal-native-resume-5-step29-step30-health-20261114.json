@@ -1,0 +1,178 @@
+[
+  {
+    "step": 29,
+    "metrics": {
+      "train/loss": 0.1514309048652649,
+      "train/grad_norm": 0.7063075304031372,
+      "train/loss_scale": 1.0,
+      "train/optimizer_update_successful": 1.0,
+      "train/num_valid_samples": 256.0,
+      "train/opd_full_reverse_kl": 0.1514309048652649,
+      "train/opd_full_reverse_kl_min": -4.318944206715969e-07,
+      "train/opd_full_reverse_kl_max": 29.953243255615234,
+      "train/global_valid_toks": 1877609.0
+    },
+    "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step29.jsonl",
+    "overall": {
+      "tokens": 1877609,
+      "signed_mean": -8.019469377897788e-06,
+      "mae": 0.0012270625337784807,
+      "p50": 0.0002835988998413086,
+      "p95": 0.005348324775695801,
+      "p99": 0.010176162719726545,
+      "max": 0.6848462820053101,
+      "finite": true
+    },
+    "by_group": {
+      "code": {
+        "tokens": 552016,
+        "signed_mean": -2.981843018008098e-06,
+        "mae": 0.001359839583454298,
+        "p50": 0.000513613224029541,
+        "p95": 0.005432605743408203,
+        "p99": 0.009627711772918685,
+        "max": 0.08104908466339111,
+        "finite": true
+      },
+      "stem": {
+        "tokens": 244262,
+        "signed_mean": -1.782978964101991e-06,
+        "mae": 0.0010741324100217032,
+        "p50": 0.00019589997828006744,
+        "p95": 0.004887092113494869,
+        "p99": 0.009056754112243645,
+        "max": 0.08789801597595215,
+        "finite": true
+      },
+      "math": {
+        "tokens": 469286,
+        "signed_mean": -9.467555146406122e-06,
+        "mae": 0.0010804575204305402,
+        "p50": 0.00019824877381324768,
+        "p95": 0.004882514476776123,
+        "p99": 0.009140968322753906,
+        "max": 0.2875380516052246,
+        "finite": true
+      },
+      "if": {
+        "tokens": 69009,
+        "signed_mean": -5.586221090955621e-05,
+        "mae": 0.0021291653534657243,
+        "p50": 0.0005626678466796875,
+        "p95": 0.009047460556030272,
+        "p99": 0.01746761322021482,
+        "max": 0.16475486755371094,
+        "finite": true
+      },
+      "logic": {
+        "tokens": 543036,
+        "signed_mean": -8.614350464634282e-06,
+        "mae": 0.0011729343154751575,
+        "p50": 0.00016426481306552887,
+        "p95": 0.005410224199295044,
+        "p99": 0.010837793350219727,
+        "max": 0.6848462820053101,
+        "finite": true
+      }
+    },
+    "sample_counts": {
+      "code": 53,
+      "stem": 42,
+      "math": 57,
+      "if": 61,
+      "logic": 43
+    },
+    "samples": 256,
+    "weight_version": 28,
+    "mask_version_issues": 0,
+    "comparison": "Independent native scorer minus vLLM on identical response tokens; actual training forward is not instrumented."
+  },
+  {
+    "step": 30,
+    "metrics": {
+      "train/loss": 0.16220274567604065,
+      "train/grad_norm": 0.7467541098594666,
+      "train/loss_scale": 1.0,
+      "train/optimizer_update_successful": 1.0,
+      "train/num_valid_samples": 256.0,
+      "train/opd_full_reverse_kl": 0.16220274567604065,
+      "train/opd_full_reverse_kl_min": -2.5805374548326654e-07,
+      "train/opd_full_reverse_kl_max": 31.697811126708984,
+      "train/global_valid_toks": 1907184.0
+    },
+    "source": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step30.jsonl",
+    "overall": {
+      "tokens": 1907184,
+      "signed_mean": -1.6754214815101268e-06,
+      "mae": 0.0012516937116609573,
+      "p50": 0.0003025531768798828,
+      "p95": 0.0054318904876708984,
+      "p99": 0.010265152454376203,
+      "max": 0.337512731552124,
+      "finite": true
+    },
+    "by_group": {
+      "if": {
+        "tokens": 79555,
+        "signed_mean": -1.3880614048743047e-06,
+        "mae": 0.0021342264479139172,
+        "p50": 0.0006147623062133789,
+        "p95": 0.0088923454284668,
+        "p99": 0.01737372756004337,
+        "max": 0.2047891616821289,
+        "finite": true
+      },
+      "math": {
+        "tokens": 332871,
+        "signed_mean": -2.682015191523753e-06,
+        "mae": 0.0010874704608231523,
+        "p50": 0.00021485239267349243,
+        "p95": 0.004878208041191101,
+        "p99": 0.009088516235351562,
+        "max": 0.16949892044067383,
+        "finite": true
+      },
+      "code": {
+        "tokens": 511213,
+        "signed_mean": -1.4991817118537358e-06,
+        "mae": 0.001380387162332561,
+        "p50": 0.0005488395690917969,
+        "p95": 0.005453586578369141,
+        "p99": 0.009566040039062501,
+        "max": 0.147078275680542,
+        "finite": true
+      },
+      "logic": {
+        "tokens": 676869,
+        "signed_mean": -3.1480037429188008e-06,
+        "mae": 0.0011982555170591941,
+        "p50": 0.00019402895122766495,
+        "p95": 0.005470347404479978,
+        "p99": 0.010732498168945184,
+        "max": 0.16678833961486816,
+        "finite": true
+      },
+      "stem": {
+        "tokens": 306676,
+        "signed_mean": 2.2989819451722932e-06,
+        "mae": 0.00110442479671732,
+        "p50": 0.0002051033079624176,
+        "p95": 0.004987776279449463,
+        "p99": 0.00923117995262146,
+        "max": 0.337512731552124,
+        "finite": true
+      }
+    },
+    "sample_counts": {
+      "if": 64,
+      "math": 38,
+      "code": 44,
+      "logic": 58,
+      "stem": 52
+    },
+    "samples": 256,
+    "weight_version": 29,
+    "mask_version_issues": 0,
+    "comparison": "Independent native scorer minus vLLM on identical response tokens; actual training forward is not instrumented."
+  }
+]

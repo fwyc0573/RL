@@ -1,0 +1,122 @@
+{
+  "checked_at": "2026-11-14T04:13:46.726222+00:00",
+  "writer": "exp-1114-115901-508160",
+  "reader": "exp-1114-115909-784580",
+  "actor_config": {
+    "queried_at": "2026-11-14T04:11:57.484357+00:00",
+    "writer": "exp-1114-115901-508160",
+    "head": {
+      "ip": "10.191.6.23",
+      "port": 9204,
+      "dashboard_port": 9254
+    },
+    "policy_actors": [
+      {
+        "name": "lm_policy-0-0",
+        "state": "ALIVE",
+        "pid": 1792,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-1",
+        "state": "ALIVE",
+        "pid": 1793,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-3",
+        "state": "ALIVE",
+        "pid": 1795,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-4",
+        "state": "ALIVE",
+        "pid": 1796,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-7",
+        "state": "ALIVE",
+        "pid": 1799,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-5",
+        "state": "ALIVE",
+        "pid": 1797,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-2",
+        "state": "ALIVE",
+        "pid": 1794,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      },
+      {
+        "name": "lm_policy-0-6",
+        "state": "ALIVE",
+        "pid": 1798,
+        "ray_namespace": "a438eb71-0e4a-4b3e-9433-e5d46780df85",
+        "node_id": "a187677941426efeccd21f3c9898d787a93532257d62adb193a7d170",
+        "allocator_config": "expandable_segments:True"
+      }
+    ]
+  },
+  "restore_events": [
+    {
+      "t": 1794629289.825052,
+      "run": "bfa71ace95c84f30bbc8c08322fe4cfc",
+      "event": "weights_synced",
+      "weight_version": 30
+    },
+    {
+      "t": 1794629289.825115,
+      "run": "bfa71ace95c84f30bbc8c08322fe4cfc",
+      "event": "restore_started",
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30",
+      "from_rollout_snapshot": false
+    },
+    {
+      "t": 1794629290.1979246,
+      "run": "bfa71ace95c84f30bbc8c08322fe4cfc",
+      "event": "restore_finished",
+      "replay_groups": 0,
+      "unfinished_group_count": 512
+    }
+  ],
+  "native_state_checked_at": "2026-11-14T04:12:19.852171+00:00",
+  "native_step": 30,
+  "saved_successful_updates": 12,
+  "inventory": [
+    {
+      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_30",
+      "files": 31,
+      "bytes": 24884408499
+    }
+  ],
+  "native_bytes_read": 551606,
+  "native_tensor_payloads_read": 0,
+  "local_ray_inspection": {
+    "status": "UNVERIFIED",
+    "stage": "ray.init",
+    "exit_code": 124,
+    "timeout_seconds": 60,
+    "effect_on_training": "none"
+  },
+  "new_optimizer_success_observed": false
+}
