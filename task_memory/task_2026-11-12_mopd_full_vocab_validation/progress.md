@@ -3924,3 +3924,10 @@ E 的 FIFO 修改已实现并通过 CPU 验证。新增 windowed.selection_order
 1. FIFO凑数和最多5版本年龄已CPU验证，仍需H800实测端到端耗时。
 2. 真实step40仅一份且没有pending-shortfall阻断；512项recovery-ledger的GPU实际redispatch待验证。
 3. 主任务22/200durable，不能把本轮FIFO PASS视为正式训练和最终检查完成。
+
+
+### 2026-11-15 — FIFO implementation committed and pushed
+
+Implementation signed commit: `2f828a9525322b066b6eca5a0431a70fd0469cbe` (`feat(async): consume training-ready trajectories in completion FIFO`). `git push origin HEAD:refs/heads/mopd-sys` succeeded and created the remote branch; `git ls-remote --heads origin refs/heads/mopd-sys` returned the identical full SHA. Nineteen scoped code/config/doc/evidence files are committed. Five previously modified tracked files and unrelated untracked artifacts remain untouched. No PR or external message was published.
+
+FIFO step is completed. requirements.md was reread against final behavior and verification: completion FIFO across target/version cohorts, full256, explicit age5, ownership/digest/legacy restore, actualstep40 metadata and latest-only preservation all match. Main E/F remain open. Next actions: (1) actual FP16 graph/eager parity and timing; (2) revise teacher/rollout GPU placement and finish CPU readiness before submission; (3) resume step40/Adam22 to nativeAdam200 and complete final finite/parity/curves/archive. This receipt update will be signed and pushed separately; the implementation SHA above remains the code reference.

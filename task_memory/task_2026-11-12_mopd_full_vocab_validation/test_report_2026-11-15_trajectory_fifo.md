@@ -112,3 +112,8 @@ Prepared artifacts:
 The candidate remains `gpu_submission_ready=false`: it still carries the former72-H800 role placement. Graph capture/parity, improved teacher placement, actual TQ/model/optimizer resume and same-workload timing must be checked before promotion. Native durable progress remains22/200; 178 further successful updates remain, and final Adam must be200. A controller limit of218 is a continuation attempt horizon, not proof of178 future successes.
 
 NeMo-Gym does not currently cancel old in-flight work at refit. The existing age window excludes those results and evicts their ready rows after they finish; this can still waste rollout/teacher work. Legacy nonempty replay checkpoints cannot reconstruct historical completion ordering. No runtime speedup, final parameter finite check, final parity or overall completion is claimed here.
+
+
+## Git delivery
+
+Implementation signed commit: `2f828a9525322b066b6eca5a0431a70fd0469cbe`. `git push origin HEAD:refs/heads/mopd-sys` succeeded; the remote branch's full SHA was verified with `git ls-remote --heads origin refs/heads/mopd-sys`. The later documentation receipt commit does not alter the tested implementation. Formal E/F acceptance remains outstanding.
