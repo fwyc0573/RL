@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Record completion-FIFO trajectory selection, explicit staleness, and GitHub push authorization. |
 | 2026-11-15 | Add exact comparison against the wyx/full_vocab hidden-state and full-vocabulary storage implementation. |
 | 2026-11-14 | Record the batch/FIFO and source-task historical timing follow-up. |
 | 2026-11-14 | Add the requested parallel deployment, bottleneck, co-location, and performance-switch investigation. |
@@ -89,3 +90,16 @@ Extend P with inspected batch/admission/selection semantics and a source-task hi
 > 请你比较当前架构的 “teacher hidden states，在 student 训练侧用对应 teacher 的 LM head 重建全词表 logits” 和 /data/ycfeng/steptron/.worktrees/wyx/full_vocab 的全词表压缩方案的异同
 
 Compare the two actual local implementations: captured representation, teacher/head identity, row selection, transport/parallel alignment, projection and distribution memory, backward storage/replay, precision, objective wrappers, and supported configuration. Bind claims to inspected source and distinguish tensor-size arithmetic and primitive tests from paired production GPU throughput. This extends P; it does not substitute a different student/teacher combination, change the formal completion contract, or authorize a large core-interface migration.
+
+## [Original Request] Trainer trajectory FIFO and staleness, 2026-11-15
+
+> 继续主线任务。先修改 trianer集群的获取traj的逻辑，将其与 steptron 的逻辑对齐（fifo取traj，而不是必须等待指定的trajs，只要凑满数量即可，并给定staleness）。对于该需求，优先确认是否存在已有的控制参数来实现，如果没有，请补充该部分的控制参数
+
+> 及时提交和push到 remote github
+
+This is the next E implementation step, before resuming formal training. Inspect existing controls first. Consume complete, training-ready trajectory groups in completion FIFO order across dispatch batches; do not require a particular target_step or a single weight-version cohort to fill the batch. Retain 256 trajectories per optimizer update. Configure staleness explicitly and document whether it bounds admission backlog or actual weight age. Reuse the sampler registry, buffer ownership, and native recovery mechanisms; add only the missing selection control. Commit each verified step and push it to the existing GitHub origin/mopd-sys branch. This explicitly authorizes the branch push.
+
+Initial operational choice: use the existing windowed weight-age policy with max_staleness_versions=5 and add completion_fifo as a selection_order option. Keep max_inflight_prompts=256 and cap unconsumed groups at (5+1)*256=1536. The teacher-enriched publication boundary defines readiness. StepTron's backlog-based staleness does not strictly expire individual stragglers; the NeMo window additionally excludes/evicts groups older than five trainer versions. Preserve the full-vocabulary reverse-KL objective and its existing precision; do not introduce TIS silently.
+
+
+Native recovery decision: allow only in_order -> windowed as a sampler-name migration, with all other authoritative metadata checks intact. Retain historical group target-step stamps for ownership recovery; windowed selection ignores them. Reject migration when the checkpoint has shortfalls or allowed-short steps at or after the restored trainer version. Actual step40 has no such pending state. Unstamped samplers already require max_skipped_prompts=0 and max_consecutive_dropped_prompts=0; the recipe uses on_dropped_prompt=shrink with a full-batch floor and retains existing row retry behavior. No new importance-sampling setting or loss change is introduced.

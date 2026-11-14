@@ -114,7 +114,7 @@ from nemo_rl.algorithms.single_controller_utils.config import (
 from nemo_rl.algorithms.single_controller_utils.setup import SingleControllerActorArgs
 from nemo_rl.data.utils import load_dataloader_state
 from nemo_rl.data_plane import DATA_PLANE_CHECKPOINT_SCHEMA_VERSION, KVBatchMeta
-from nemo_rl.data_plane.schema import GROUP_ID_TAG, ROUTE_PLAN_TAG
+from nemo_rl.data_plane.schema import GROUP_ID_TAG, REPLAY_READY_ORDER, ROUTE_PLAN_TAG
 from nemo_rl.distributed.virtual_cluster import ClusterConfig
 from nemo_rl.environments.checkpointing.interfaces import NoEnvironmentCheckpoint
 from nemo_rl.environments.gym_checkpoint_coordinator import (
@@ -2066,7 +2066,9 @@ class TestPeriodicRolloutCheckpoint:
             )
             == 1
         )
-        assert restored.meta_list == [group["meta"]]
+        expected_meta = group["meta"].with_fields([])
+        expected_meta.extra_info[REPLAY_READY_ORDER] = 0
+        assert restored.meta_list == [expected_meta]
         assert restored.target_step_list == [anchor_step]
         assert restored.start_weight_list == restored.end_weight_list == [anchor_step]
         assert actor._buffer.training_owned_group_ids() == (
@@ -2785,6 +2787,42 @@ class TestPeriodicRolloutCheckpoint:
         }
         assert actor._rollout_runtime.steps_allowed_short == {0}
         assert actor._rollout_runtime.batch_shortfall == {0: 1}
+
+    @pytest.mark.parametrize("pending_shortfall", [False, True])
+    def test_in_order_to_windowed_restore_handles_target_step_state(
+        self, tmp_path: Path, pending_shortfall: bool
+    ) -> None:
+        actor = self._actor(tmp_path)
+        actor._master_config.async_rl.sampler = InOrderSamplerConfig()
+        actor._rollout_runtime.sampler_stamps_target_steps = True
+        if pending_shortfall:
+            actor._rollout_runtime.batch_shortfall = {0: 1}
+        snapshot = self._saved_snapshot(actor, tmp_path)
+        actor._master_config.async_rl.sampler = WindowedSamplerConfig(
+            max_staleness_versions=5, selection_order="completion_fifo"
+        )
+        actor._rollout_runtime.sampler_stamps_target_steps = False
+        actor._rollout_runtime.batch_shortfall = {}
+        actor._resume = ResumeSource(
+            path=str(snapshot),
+            data_plane_metadata=actor._dp_client.save_calls[-1]["metadata"],
+        )
+        attach_rollout_checkpointing(actor)
+        if pending_shortfall:
+            with pytest.raises(ValueError, match="pending target-step shortfalls"):
+                asyncio.run(
+                    actor._rollout_restorer._restore_recovery_ledger(
+                        restored_replay_groups=0
+                    )
+                )
+        else:
+            asyncio.run(
+                actor._rollout_restorer._restore_recovery_ledger(
+                    restored_replay_groups=0
+                )
+            )
+            assert not actor._rollout_runtime.sampler_stamps_target_steps
+            assert actor._rollout_runtime.batch_shortfall == {}
 
     def test_snapshot_reindexes_rows_owned_by_active_streamed_step(
         self, tmp_path: Path

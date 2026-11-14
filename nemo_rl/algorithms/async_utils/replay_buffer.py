@@ -46,6 +46,7 @@ from nemo_rl.algorithms.async_utils.interfaces import ReplayBufferProtocol
 from nemo_rl.data_plane import KVBatchMeta
 from nemo_rl.data_plane.async_utils import call_data_plane
 from nemo_rl.data_plane.schema import (
+    REPLAY_READY_ORDER,
     ROLLOUT_METRICS,
     ROUTE_PLAN_TAG,
     ROUTED_EXPERTS_FIELD,
@@ -1189,6 +1190,7 @@ class TQReplayBuffer:
         # Per-slot target training step (set when force_in_order=True, else None).
         self.target_step_list: list[Optional[int]] = []
         self.ready_list: list[bool] = []
+        self._next_ready_order: int = 0
         self._group_ids: list[str] = []
         # Parallel to the lists above; populated only in token-capture mode.
         self._rollout_ids_list: list[Optional[list[str]]] = []
@@ -1275,6 +1277,13 @@ class TQReplayBuffer:
         )
         self._staging_keys_list.append(None)
         return group_id
+
+    def _publish_ready(self, idx: int, meta: KVBatchMeta) -> None:
+        """Record completion order after all required enrichment has succeeded."""
+        meta.extra_info[REPLAY_READY_ORDER] = self._next_ready_order
+        self._next_ready_order += 1
+        self.meta_list[idx] = meta
+        self.ready_list[idx] = True
 
     async def commit(
         self,
@@ -1373,9 +1382,8 @@ class TQReplayBuffer:
                         f"TQReplayBuffer.commit: group {group_id} was evicted "
                         "during the write; rows cleared"
                     ) from None
-                self.meta_list[idx] = meta
                 self.end_weight_list[idx] = end_weight_version
-                self.ready_list[idx] = True
+                self._publish_ready(idx, meta)
                 return meta
             except BaseException as commit_error:
                 # put_samples may have written rows before raising. Roll back by the
@@ -1528,10 +1536,9 @@ class TQReplayBuffer:
                     f"TQReplayBuffer.commit_finalized: group {group_id} was evicted "
                     "during enrichment"
                 ) from None
-        self.meta_list[idx] = meta
         self.start_weight_list[idx] = group_min_wv
         self.end_weight_list[idx] = group_max_wv
-        self.ready_list[idx] = True
+        self._publish_ready(idx, meta)
         self._staging_keys_list[idx] = (
             list(staging_keys) if staging_keys is not None else None
         )
@@ -1933,6 +1940,7 @@ class TQReplayBuffer:
             "group_id",
         }
         seen_sample_ids: set[str] = set()
+        seen_ready_orders: set[int] = set()
         for group in groups:
             if "fields_data" in group:
                 raise ValueError(
@@ -1944,6 +1952,19 @@ class TQReplayBuffer:
                     f"Replay buffer checkpoint group missing keys: {missing_group_keys}"
                 )
             meta = group["meta"]
+            if REPLAY_READY_ORDER in meta.extra_info:
+                ready_order = meta.extra_info[REPLAY_READY_ORDER]
+                if type(ready_order) is not int or ready_order < 0:
+                    raise ValueError(
+                        "Replay buffer checkpoint has invalid replay_ready_order: "
+                        f"{ready_order!r}"
+                    )
+                if ready_order in seen_ready_orders:
+                    raise ValueError(
+                        "Replay buffer checkpoint has duplicate replay_ready_order: "
+                        f"{ready_order}"
+                    )
+                seen_ready_orders.add(ready_order)
             if meta.partition_id != expected_partition_id:
                 raise ValueError(
                     "Replay buffer checkpoint group partition_id mismatch: "
@@ -1980,6 +2001,12 @@ class TQReplayBuffer:
                     )
                 seen_sample_ids.add(sid)
 
+        if seen_ready_orders and len(seen_ready_orders) != len(groups):
+            raise ValueError(
+                "Replay buffer checkpoint mixes groups with and without "
+                "replay_ready_order"
+            )
+
         actual_digest = replay_manifest_digest(groups)
         if state["manifest_digest"] != actual_digest:
             raise ValueError(
@@ -2008,8 +2035,21 @@ class TQReplayBuffer:
                 "them."
             )
 
-        for group in groups:
-            meta = group["meta"]
+        if groups and not seen_ready_orders:
+            print(
+                "Replay checkpoint predates completion-order metadata; "
+                "restored groups use their serialized order. "
+                "Historical completion order is unavailable.",
+                flush=True,
+            )
+
+        for group_index, group in enumerate(groups):
+            meta = copy.deepcopy(group["meta"])
+            if not seen_ready_orders:
+                meta.extra_info[REPLAY_READY_ORDER] = group_index
+            self._next_ready_order = max(
+                self._next_ready_order, meta.extra_info[REPLAY_READY_ORDER] + 1
+            )
             staging_keys: list[str] = []
             for tag in meta.tags or []:
                 encoded_plan = tag.get(ROUTE_PLAN_TAG)

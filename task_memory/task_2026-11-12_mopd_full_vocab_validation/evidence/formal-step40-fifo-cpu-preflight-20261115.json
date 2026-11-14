@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "CPU configuration and actual native recovery metadata only",
+  "checked_at": "2026-11-14T18:37:41.800025+00:00",
+  "checkpoint": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_40",
+  "retained_checkpoints": [
+    "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_40"
+  ],
+  "checkpoint_sampler": "in_order",
+  "sampler": {
+    "name": "windowed",
+    "max_staleness_versions": 5,
+    "sample_freshest_first": false,
+    "selection_order": "completion_fifo"
+  },
+  "trainer_step": 40,
+  "trainer_version": 40,
+  "native_adam_step_previously_verified": 22,
+  "remaining_successful_updates": 178,
+  "ready_replay_groups": 0,
+  "pending_target_step_shortfalls": {},
+  "pending_steps_allowed_short": [],
+  "max_inflight_prompts": 256,
+  "max_buffered_rollouts": 1536,
+  "trajectories_per_update": 256,
+  "sequence_limit": 65536,
+  "teacher_checkpoints_by_index": [
+    "/mnt/codesign-exp/ycfeng/opd-assets/oneshot-r1distill1p5b/teacher",
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/DeepCoder-1.5B-Preview@103033da",
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Deepseek-R1-Distill-Qwen-1.5B-env-256-1600@2e381f50",
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/Nemotron-Research-Reasoning-Qwen-1.5B@a8e647c7",
+    "/mnt/codesign-exp/ycfeng/steptron/task_2026-09-24_mopd_medium_step3_2teacher/models/UltraData-IF-1.5B@be67d8ba"
+  ],
+  "metadata_bytes_read": 703834,
+  "weight_tensor_payloads_read": 0,
+  "gpu_allocations": 0,
+  "new_checkpoints": 0,
+  "resolved_config": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-step40-fifo-candidate-resolved-config-20261115.json",
+  "candidate_args": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-step40-fifo-candidate-submit-args-20261115.json",
+  "gpu_submission_ready": false,
+  "limits": [
+    "TQ tensor load, GPU model/optimizer resume, graph capture/parity and throughput remain unverified.",
+    "Candidate placement inherits the former 72-H800 layout and must be revised before submission."
+  ],
+  "command": "TMPDIR=/data/ycfeng/tmp HF_HOME=/data/ycfeng/tmp/nemo-mopd-20261112/hf-cache UV_PROJECT_ENVIRONMENT=/data/ycfeng/envs/nemo-mopd-actors/nemo_rl.models.policy.workers.megatron_policy_worker.MegatronPolicyWorker UV_CACHE_DIR=/data/ycfeng/tmp/nemo-mopd-20261112/uv-cache PYTHONPATH=/data/ycfeng/sota-engine/RL PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 LD_LIBRARY_PATH=/data/ycfeng/envs/cuda-compat-13-0-580.178.04/usr/local/cuda-13.0/compat timeout 120s /data/ycfeng/tmp/nemo-mopd-20261112/uv-cli/bin/uv run --offline --no-sync python -c 'import resource, runpy; resource.setrlimit(resource.RLIMIT_AS, (30 * 1024**3, 30 * 1024**3)); runpy.run_path(\"/data/ycfeng/tmp/nemo-mopd-20261112/preflight_formal_step40_fifo_candidate_20261115.py\", run_name=\"__main__\")'",
+  "log": "/data/ycfeng/tmp/nemo-mopd-20261112/fifo-native-preflight-20261115.log",
+  "scheduler": {
+    "restored_consumed_samples": 10240,
+    "next_consumed_samples": 10496,
+    "lr": 1e-06,
+    "weight_decay": 0.01,
+    "native_decay_horizon_updates": 200
+  },
+  "recovery_ledger_groups": 512
+}

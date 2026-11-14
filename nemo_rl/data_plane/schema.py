@@ -31,6 +31,9 @@ GLOBAL_FORWARD_PAD_SEQLEN = "global_forward_pad_seqlen"
 # same string with a flat-dict shape, so this constant is not a drop-in there.
 ROLLOUT_METRICS = "rollout_metrics"
 
+# Controller publication order for a complete, teacher-enriched replay group.
+REPLAY_READY_ORDER = "replay_ready_order"
+
 # Per-row key in `KVBatchMeta.tags` naming the prompt group a row was generated
 # in. The group-relative estimators key their baseline on this rather than on
 # prompt tokens, which two distinct groups can share.

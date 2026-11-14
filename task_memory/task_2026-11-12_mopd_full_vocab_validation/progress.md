@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Verify completion FIFO, native sampler migration, actual step40 metadata and the scoped CPU checks. |
 | 2026-11-15 | Complete the wyx/full_vocab source and primitive storage comparison; retain22/200durable E recovery frontier. |
 | 2026-11-14 | Complete batch/FIFO and historical timing comparison; reconcile platform clean-policy failure and step40/Adam22 recovery. |
 | 2026-11-14 | Complete requested deployment/performance investigation in parallel and verify20 formal successes through step38. |
@@ -3848,3 +3849,78 @@ requirements 与 plan 已补本次原文和结论。E 下一步仍是实际 FP16
 1. 当前隐藏态压缩与StepTron原理相同，但整段vocabularylogits仍保存到backward。
 2. StepTronresponse-only及projection/replaychunk可降低该项显存；额外recompute/H2D成本和端到端提速尚未GPU实测。
 3. 主任务仍22/200durable；本轮无GPU运行或新增权重产物，恢复与最终验证待推进。
+
+### 2026-11-15 — Completion-FIFO implementation started (E in-progress)
+
+User explicitly prioritizes FIFO trajectory acquisition with configured staleness and authorizes GitHub push. Existing WindowedSampler selects all ready in-window groups without target-step or weight-cohort barriers, but preserves reservation/dispatch index order. ReadyFirstSampler only gates lookahead and never expires admitted groups; WeightFifoSampler waits for the oldest version cohort. StepTron FIFOTrainBatchPolicy selects the completion queue head; StalenessManager caps accepted-minus-released-plus-running at (staleness+1)*batch_size and concurrency separately, without individual age eviction.
+
+Chosen minimal implementation: add selection_order=completion_fifo to the existing windowed policy, preserve dispatch_fifo as its default, and retain sample_freshest_first compatibility explicitly. Bind FIFO order to successful teacher-enriched publication and native replay metadata. The formal recipe will use age5,256 trajectories/update,256 in-flight prompts and1536 unconsumed groups. Old step40 contains no completion-order field, so restored historical groups must use their serialized ready-group order with an explicit limitation. No new GPU job/checkpoint is being created in this step.
+
+
+### 2026-11-15 — Completion FIFO and native recovery verified; commit/push next
+
+E 的 FIFO 修改已实现并通过 CPU 验证。新增 windowed.selection_order=completion_fifo；commit/commit_finalized 在 teacher enrichment 完成后赋单调 replay_ready_order，既有 digest、training claims 和 periodic snapshot 保留次序。旧 metadata 全无序号时按保存次序补齐并明确记录无法恢复历史完成顺序；非法、重复和部分缺失序号在 index 变更前拒绝。min=floor=max256 的正式配置不再等待 target_step 或单个 weight cohort。
+
+两个必须修复的原生恢复缺口都有实际 RED→GREEN：setup 原本拒绝 sampler_name=in_order→windowed；sidecar 恢复原 stamped capability 会覆盖新 unstamped 模式。现在只允许该单向切换、保留其他元数据和 teacher 编号检查，并拒绝尚未闭合的 target-step 短缺。真实 step40 sidecar 没有这类待处理短缺。
+
+完整 CPU checks：core609 PASS/73.79s；checkpoint342 PASS/32.17s；shipped7 configs＋35 applicable subtests PASS/17.42s，21不适用checks跳过。首次core缺 HF_HOME，在287个PASS后停止；补 required env 后全量PASS，没有修改行为或屏蔽断言。Ruff0.9.9 lint/format及git diff --check PASS。精确命令、RED、环境、结果和边界见 test_report_2026-11-15_trajectory_fifo.md。
+
+2026-11-15 02:37:41HKT 只读 SSH 核实仍仅 step40；读取703834 metadata/sidecar bytes，无 model/Adam tensor。实际 native metadata/replay manifest/sidecar checksum/schema8/group-count512 及teacher顺序预检PASS：ready replay0、recovery-ledger512，无pending target-step shortfall。native scheduler10240→10496，LR1e-6/WD0.01。旧 buffer capacity512→当前1536接受，无TQ写入。candidate resolved config/args和preflight摘要已保留在 evidence/formal-step40-fifo-*.json。
+
+本窗口没有GPU提交、额外ckpt或HF export。候选仍继承旧72-H800布局，gpu_submission_ready=false；先提交push，再回到graph/parity和teacher placement验证。当前22/200durable、178成功更新待完成，F待E最终checkpoint。用户的latest-only限制保持。
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS 7｜BLOCKED/FAILED/SKIPPED 1｜TODO 1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原 student、五 teacher 和全词表身份已核实。 |
+| Q | PASS | 200次成功更新、H800资源选择与push授权有效。 |
+| B | PASS | 既有输入准备有效；新CPU配置和step40元数据已验证。 |
+| C | PASS | 既有full-loss参考与parity入口可复用。 |
+| D | PASS | 诊断训练及native保存／恢复已有证据。 |
+| P | PASS | batch、历史性能和full-vocab比较已交付。 |
+| E FIFO实现 | PASS | 951个core/recovery tests、7个配置及35项subchecks通过；提交push待执行。 |
+| E正式运行 | FAILED | 上个writer终止；22/200可恢复，尚未启动新writer。 |
+| F | TODO | 最终有限性、三方parity、曲线和archive待E完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进用户指定的先行FIFO修改。
+**检测窗口：** FIFO修改开始至本次CPU验收｜**当前前沿：** E FIFO提交push、graph/parity与teacher placement准备
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用现有tests、native validator和scheduler检查；验证通过后停止扩展。 |
+| D2 细节反复重试 | CLEAR | FIFO缺口、sampler名称拒绝和stamped capability均有实际RED→GREEN；HF_HOME缺失一次修正后全量通过。 |
+| D3 支线问题修补 | CLEAR | sampler切换是实际step40继续训练的必要前提；其他dirty文件保留。 |
+| D4 可并行任务停滞 | CLEAR | 用户明确要求先修改FIFO；F依赖最终checkpoint，原部署不能未经改进直接重提。 |
+| D5 超范围镀金 | CLEAR | 仅增加既有windowed selection control和必要恢复兼容；无新sampler/backend或loss迁移。 |
+| D6 分析空转 | CLEAR | 已形成可验证代码、实际metadata/config PASS及报告；下一步提交push。 |
+| D7 路线违背 | CLEAR | 原modelcomb、256/65536、full-vocab、200成功和latest-only保持。 |
+
+**文档检查：** S5：plan开头的旧Next E frontier仍先做graph，落后于用户最新先做FIFO的决定；已改为FIFO验证/提交push→graph/placement→正式恢复。S1–S4/S6未发现未处理缺陷。
+**归因：** 无执行偏离；S5路线文案已纠正，不改变主任务验收。
+
+## 3. 纠正建议
+
+**分支：** B：已先修正文档，再执行提交push。
+
+**文档更新（先执行）：**
+1. plan.md 的Next E frontier：按用户最新决定先完成FIFO和step40兼容检查/提交push。（可直接执行，已完成）
+2. requirements.md 和guide：记录单向sampler恢复、pending-shortfall拒绝与legacy完成顺序限制。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E FIFO：signed scoped commit并push origin/mopd-sys → 完成标志：remote SHA与本地提交一致。
+2. E：graph/parity与teacher资源分配验证 → 完成标志：同tokens一致性、同工作量计时和可持续placement有证据。
+3. E→F：step40/Adam22恢复到200durable成功及最终检查 → 完成标志：Adam200、latest-only、最终有限性/parity和archive齐全。
+
+## 4. 最值得关注的 3 点
+
+1. FIFO凑数和最多5版本年龄已CPU验证，仍需H800实测端到端耗时。
+2. 真实step40仅一份且没有pending-shortfall阻断；512项recovery-ledger的GPU实际redispatch待验证。
+3. 主任务22/200durable，不能把本轮FIFO PASS视为正式训练和最终检查完成。

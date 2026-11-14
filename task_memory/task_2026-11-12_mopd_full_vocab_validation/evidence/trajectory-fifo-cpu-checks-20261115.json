@@ -1,0 +1,37 @@
+{
+  "fifo-selection-red-profile-20261115.log": [
+    "E   AssertionError: assert ['second_g0',...', 'third_g1'] == ['third_g0', ..., 'second_g1']",
+    "E     ",
+    "E     At index 0 diff: 'second_g0' != 'third_g0'",
+    "E     Use -v to get more diff",
+    "1 failed, 115 deselected, 17 warnings in 15.25s"
+  ],
+  "fifo-selection-green-20261115.log": [
+    "1 passed, 115 deselected, 17 warnings in 16.45s"
+  ],
+  "fifo-resume-red-20261115.log": [
+    "E   ValueError: Native TQ checkpoint metadata does not match the trainer checkpoint: {'sampler_name': {'checkpoint': 'in_order', 'expected': 'windowed'}}",
+    "1 failed, 339 deselected in 12.19s"
+  ],
+  "fifo-ledger-resume-red-20261115.log": [
+    "E   assert not True",
+    "E    +  where True = RolloutRuntimeState(replacement_reserve=deque([]), filtered_reserve=deque([]), steps_allowed_short=set(), batch_shortfall={}, sampler_stamps_target_steps=True, finalizer_metrics_by_group={}, finalizer_rewards_by_group={}).sampler_stamps_target_steps",
+    "E    +    where RolloutRuntimeState(replacement_reserve=deque([]), filtered_reserve=deque([]), steps_allowed_short=set(), batch_shortfall={}, sampler_stamps_target_steps=True, finalizer_metrics_by_group={}, finalizer_rewards_by_group={}) = <nemo_rl.algorithms.single_controller._modify_class.<locals>.Class object at 0x7f48c8a78980>._rollout_runtime",
+    "1 failed, 189 deselected in 13.39s"
+  ],
+  "fifo-core-tests-with-hf-home-20261115.log": [
+    "609 passed in 73.79s (0:01:13)"
+  ],
+  "fifo-checkpoint-tests-20261115.log": [
+    "342 passed in 32.17s"
+  ],
+  "fifo-shipped-config-tests-20261115.log": [
+    "7 passed, 21 skipped, 431 deselected, 35 subtests passed in 17.42s"
+  ],
+  "fifo-native-preflight-20261115.log": [
+    "MOPD_NATIVE_SCHEDULER_BEFORE_RESTORE {\"configured\": {\"max_lr\": 1e-06, \"lr_warmup_steps\": 0, \"num_steps\": 0, \"lr_decay_style\": \"constant\", \"lr_decay_steps\": 51200, \"min_lr\": 1e-06, \"start_wd\": 0.01, \"end_wd\": 0.01, \"wd_incr_style\": \"constant\", \"wd_incr_steps\": 55808}, \"saved\": {\"max_lr\": 1e-06, \"lr_warmup_steps\": 0, \"num_steps\": 10240, \"lr_decay_style\": \"constant\", \"lr_decay_steps\": 51200, \"min_lr\": 1e-06, \"start_wd\": 0.01, \"end_wd\": 0.01, \"wd_incr_style\": \"constant\", \"wd_incr_steps\": 51200}}",
+    "MOPD_NATIVE_SCHEDULER_RESTORE_AND_NEXT_STEP_PASS {\"native_checkpoint\": \"/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_40\", \"saved_copies\": 1, \"restored_num_steps\": 10240, \"next_num_steps\": 10496, \"lr_decay_steps\": 51200, \"wd_incr_steps\": 51200, \"parameter_group_lr_wd\": [[1e-06, 0.01], [1e-06, 0.0]], \"tensor_payloads_read\": 0}",
+    "STEP40_GRAPH_CANDIDATE_CPU_CONFIG_PASS_NOT_GPU_PARITY",
+    "STEP40_ACTUAL_METADATA_FIFO_RESTORE_PREFLIGHT_PASS ready_groups 0 unfinished_groups 512"
+  ]
+}

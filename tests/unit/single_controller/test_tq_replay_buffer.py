@@ -17,6 +17,7 @@
 from __future__ import annotations
 
 import asyncio
+import copy
 import io
 import threading
 from pathlib import Path
@@ -36,9 +37,17 @@ from nemo_rl.algorithms.async_utils.replay_buffer import (
     TQReplayBuffer,
     replay_manifest_digest,
 )
-from nemo_rl.algorithms.async_utils.staleness_sampler import InOrderSampler
+from nemo_rl.algorithms.async_utils.staleness_sampler import (
+    InOrderSampler,
+    WindowedSamplerConfig,
+    create_sampler,
+)
 from nemo_rl.data_plane import KVBatchMeta
-from nemo_rl.data_plane.schema import ROLLOUT_METRICS, ROUTE_PLAN_TAG
+from nemo_rl.data_plane.schema import (
+    REPLAY_READY_ORDER,
+    ROLLOUT_METRICS,
+    ROUTE_PLAN_TAG,
+)
 from nemo_rl.distributed.batched_data_dict import BatchedDataDict
 from nemo_rl.experience.interfaces import Completion, PromptGroupRecord
 from nemo_rl.experience.rollout_manager import AsyncNemoGymRolloutImpl
@@ -505,6 +514,257 @@ class TestDataPlaneCheckpointBarrier:
                     pytest.fail("unknown mutation kind unexpectedly admitted")
 
         asyncio.run(exercise())
+
+
+class TestCompletionFifoSelection:
+    def test_selects_publication_order_across_dispatch_batches(self) -> None:
+        async def exercise() -> None:
+            dp = FakeDataPlaneClient()
+            buffer = _make_buffer(dp)
+            for group_id, weight, target in (
+                ("slow", 2, 3),
+                ("second", 2, 3),
+                ("third", 3, 9),
+            ):
+                buffer.reserve(
+                    weight_version=weight, target_step=target, group_id=group_id
+                )
+            for group_id, weight in (("third", 3), ("second", 2)):
+                await buffer.commit(group_id, _make_record(), weight, weight)
+            sampler = create_sampler(
+                buffer,
+                WindowedSamplerConfig(
+                    max_staleness_versions=5, selection_order="completion_fifo"
+                ),
+            )
+
+            selected, count = await sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            )
+
+            assert count == 2
+            assert selected is not None
+            assert selected.sample_ids == [
+                f"{group}_g{generation}"
+                for group in ("third", "second")
+                for generation in range(_N_GENS)
+            ]
+            assert buffer.group_ids == ("slow",)
+            assert buffer.ready_list == [False]
+            assert buffer.training_owned_group_ids() == {"third", "second"}
+            assert dp.depth() == 2 * _N_GENS
+
+        asyncio.run(exercise())
+
+    def test_waits_for_full_count_then_leaves_fifo_tail_for_next_batch(self) -> None:
+        async def exercise() -> None:
+            dp = FakeDataPlaneClient()
+            buffer = _make_buffer(dp)
+            sampler = create_sampler(
+                buffer,
+                WindowedSamplerConfig(
+                    max_staleness_versions=5, selection_order="completion_fifo"
+                ),
+            )
+            for group_id in ("first", "second", "third"):
+                buffer.reserve(weight_version=3, group_id=group_id)
+            await buffer.commit("third", _make_record(), 3, 3)
+            assert await sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            ) == (None, 0)
+            assert buffer.training_owned_group_ids() == set()
+            for group_id in ("second", "first"):
+                await buffer.commit(group_id, _make_record(), 3, 3)
+            selected, count = await sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            )
+            assert count == 2 and selected is not None
+            assert selected.sample_ids == [
+                f"{group}_g{i}" for group in ("third", "second") for i in range(_N_GENS)
+            ]
+            assert buffer.group_ids == ("first",)
+            assert buffer.ready_list == [True]
+            remaining, count = await sampler.select(
+                current_train_weight=3, min_prompt_groups=1, max_prompt_groups=1
+            )
+            assert count == 1 and remaining is not None
+            assert remaining.sample_ids == [f"first_g{i}" for i in range(_N_GENS)]
+            assert dp.depth() == 3 * _N_GENS
+
+        asyncio.run(exercise())
+
+    def test_staleness_boundary_future_exclusion_and_row_ownership(self) -> None:
+        async def exercise() -> None:
+            dp = FakeDataPlaneClient()
+            buffer = _make_buffer(dp)
+            for group_id, weight in (
+                ("stale", 0),
+                ("boundary", 1),
+                ("current", 6),
+                ("future", 7),
+            ):
+                buffer.reserve(weight_version=weight, group_id=group_id)
+                await buffer.commit(group_id, _make_record(), weight, weight)
+            sampler = create_sampler(
+                buffer,
+                WindowedSamplerConfig(
+                    max_staleness_versions=5, selection_order="completion_fifo"
+                ),
+            )
+            selected, count = await sampler.select(
+                current_train_weight=6, min_prompt_groups=2, max_prompt_groups=2
+            )
+            assert count == 2 and selected is not None
+            assert selected.sample_ids == [
+                f"{group}_g{i}"
+                for group in ("boundary", "current")
+                for i in range(_N_GENS)
+            ]
+            assert await sampler.evict(current_train_weight=6) == 1
+            assert dp.clear_calls == [[f"stale_g{i}" for i in range(_N_GENS)]]
+            assert buffer.group_ids == ("future",)
+            assert buffer.training_owned_group_ids() == {"boundary", "current"}
+            assert dp.depth() == 3 * _N_GENS
+            assert sampler.should_abort_inflight(
+                start_weight_version=0, current_train_weight=6
+            )
+            assert not sampler.should_abort_inflight(
+                start_weight_version=1, current_train_weight=6
+            )
+
+        asyncio.run(exercise())
+
+    @pytest.mark.parametrize("finalized", [False, True])
+    def test_publication_waits_for_teacher_enrichment(self, finalized: bool) -> None:
+        async def exercise() -> None:
+            buffer = _make_buffer(FakeDataPlaneClient())
+            for group_id in ("teacher-slow", "teacher-fast"):
+                buffer.reserve(weight_version=3, group_id=group_id)
+            enriching = asyncio.Event()
+            release_teacher = asyncio.Event()
+
+            async def enrich(meta: KVBatchMeta, extra_env_info: Any) -> KVBatchMeta:
+                del extra_env_info
+                if meta.sample_ids[0].startswith("teacher-slow_"):
+                    enriching.set()
+                    await release_teacher.wait()
+                return meta
+
+            buffer.set_post_write_enricher(enrich)
+
+            async def commit(group_id: str) -> KVBatchMeta:
+                if finalized:
+                    meta = _make_group_entry(group_id, weight=3)["meta"]
+                    return await _commit_finalized(buffer, group_id, meta, 3, 3)
+                return await buffer.commit(group_id, _make_record(), 3, 3)
+
+            slow = asyncio.create_task(commit("teacher-slow"))
+            await asyncio.wait_for(enriching.wait(), timeout=5)
+            fast = await commit("teacher-fast")
+            sampler = create_sampler(
+                buffer,
+                WindowedSamplerConfig(
+                    max_staleness_versions=5, selection_order="completion_fifo"
+                ),
+            )
+            assert buffer.ready_list == [False, True]
+            assert await sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            ) == (None, 0)
+            release_teacher.set()
+            completed_slow = await asyncio.wait_for(slow, timeout=5)
+            assert (
+                fast.extra_info[REPLAY_READY_ORDER]
+                < completed_slow.extra_info[REPLAY_READY_ORDER]
+            )
+            selected, count = await sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            )
+            assert count == 2 and selected is not None
+            assert selected.sample_ids == fast.sample_ids + completed_slow.sample_ids
+
+        asyncio.run(exercise())
+
+    def test_snapshot_claims_restore_fifo_and_append_new_completions(self) -> None:
+        async def exercise() -> None:
+            dp = FakeDataPlaneClient()
+            original = _make_buffer(dp)
+            for group_id in ("first", "second", "third"):
+                original.reserve(weight_version=3, group_id=group_id)
+            for group_id in ("third", "second", "first"):
+                await original.commit(group_id, _make_record(), 3, 3)
+            config = WindowedSamplerConfig(
+                max_staleness_versions=5, selection_order="completion_fifo"
+            )
+            selected, count = await create_sampler(original, config).select(
+                current_train_weight=3, min_prompt_groups=1, max_prompt_groups=1
+            )
+            assert count == 1 and selected is not None
+            state = original.metadata_state_dict(
+                saved_capacity=8,
+                additional_groups=original.training_owned_replay_groups(),
+            )
+            payload = io.BytesIO()
+            torch.save(state, payload)
+            payload.seek(0)
+            state = torch.load(payload, weights_only=False)
+            restored = _make_buffer(dp)
+            assert (
+                await restored.load_state_dict(
+                    state,
+                    max_groups=8,
+                    expected_partition_id="rollout_data",
+                    expected_group_size=_N_GENS,
+                    expected_manifest_digest=state["manifest_digest"],
+                )
+                == 3
+            )
+            restored.reserve(weight_version=3, group_id="new")
+            await restored.commit("new", _make_record(), 3, 3)
+            selected, count = await create_sampler(restored, config).select(
+                current_train_weight=3, min_prompt_groups=4, max_prompt_groups=4
+            )
+            assert count == 4 and selected is not None
+            assert selected.sample_ids == [
+                f"{group}_g{i}"
+                for group in ("third", "second", "first", "new")
+                for i in range(_N_GENS)
+            ]
+            assert restored.training_owned_group_ids() == {
+                "first",
+                "second",
+                "third",
+                "new",
+            }
+            assert dp.depth() == 4 * _N_GENS
+
+        asyncio.run(exercise())
+
+    def test_legacy_restore_uses_serialized_order_without_mutating_input(
+        self, capsys
+    ) -> None:
+        groups = [_make_group_entry(name, weight=3) for name in ("second", "first")]
+        state = _make_metadata_envelope(groups)
+        original_state = copy.deepcopy(state)
+        buffer = _make_buffer(FakeDataPlaneClient())
+        assert _load(buffer, state) == 2
+        assert state == original_state
+        assert "Historical completion order is unavailable" in capsys.readouterr().out
+        sampler = create_sampler(
+            buffer,
+            WindowedSamplerConfig(
+                max_staleness_versions=5, selection_order="completion_fifo"
+            ),
+        )
+        selected, count = _run(
+            sampler.select(
+                current_train_weight=3, min_prompt_groups=2, max_prompt_groups=2
+            )
+        )
+        assert count == 2 and selected is not None
+        assert selected.sample_ids == [
+            f"{group}_g{i}" for group in ("second", "first") for i in range(_N_GENS)
+        ]
 
 
 class TestTQReplayBufferReserveCommit:
@@ -1665,6 +1925,36 @@ class TestTQReplayBufferLoadPreflight:
             expected_manifest_digest="wrong-digest",
         )
 
+    @pytest.mark.parametrize("order", [-1, True, "0", 1.0])
+    def test_rejects_invalid_completion_order(self, order: Any) -> None:
+        group = _make_group_entry("g0", weight=1)
+        group["meta"].extra_info[REPLAY_READY_ORDER] = order
+        self._assert_rejected(
+            _make_metadata_envelope([group]), match="invalid replay_ready_order"
+        )
+
+    @pytest.mark.parametrize("second_order", [None, 0])
+    def test_rejects_mixed_or_duplicate_completion_order(
+        self, second_order: int | None
+    ) -> None:
+        groups = [_make_group_entry(name, weight=1) for name in ("g0", "g1")]
+        groups[0]["meta"].extra_info[REPLAY_READY_ORDER] = 0
+        if second_order is not None:
+            groups[1]["meta"].extra_info[REPLAY_READY_ORDER] = second_order
+        self._assert_rejected(
+            _make_metadata_envelope(groups),
+            match="mixes groups"
+            if second_order is None
+            else "duplicate replay_ready_order",
+        )
+
+    def test_completion_order_is_bound_to_native_manifest_digest(self) -> None:
+        group = _make_group_entry("g0", weight=1)
+        group["meta"].extra_info[REPLAY_READY_ORDER] = 0
+        state = _make_metadata_envelope([group])
+        state["groups"][0]["meta"].extra_info[REPLAY_READY_ORDER] = 1
+        self._assert_rejected(state, match="digest does not match its contents")
+
     def test_metadata_only_restore_rejects_capacity_truncation(self):
         state = _make_metadata_envelope(
             [_make_group_entry(f"g{w}", weight=w) for w in (1, 2, 3)]
@@ -1755,8 +2045,11 @@ class TestForestReplayRestore:
         assert restored.end_weight_list == [3, 3]
         assert restored.target_step_list == [4, 4]
         assert restored.count_for_target_step(4) == 2
-        assert restored.meta_list == [group["meta"] for group in groups]
-        assert restored.metadata_state_dict(saved_capacity=2) == state
+        assert all(
+            REPLAY_READY_ORDER not in group["meta"].extra_info for group in groups
+        )
+        assert restored.meta_list == source.meta_list
+        assert restored.metadata_state_dict(saved_capacity=2) == restored_state
         assert dp.put_calls == dp.get_calls == dp.clear_calls == []
 
     @pytest.mark.parametrize(

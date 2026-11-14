@@ -3823,6 +3823,78 @@ class TestNativeTQRecoverySetup:
             checkpoint_path / DATA_PLANE_CHECKPOINT_DIR
         )
 
+    def test_restores_in_order_checkpoint_into_windowed_sampler(
+        self, tmp_path, capsys
+    ) -> None:
+        checkpoint_path = tmp_path / "step_3"
+        (checkpoint_path / DATA_PLANE_CHECKPOINT_DIR).mkdir(parents=True)
+        (checkpoint_path / REPLAY_BUFFER_METADATA_FILENAME).touch()
+        metadata = _native_tq_metadata()
+        metadata["opd_full_teacher_checkpoints"] = ["ckpt-a", "ckpt-b"]
+        restored = sc_setup_mod._maybe_restore_native_data_plane_checkpoint(
+            load_checkpoint=MagicMock(return_value=metadata),
+            last_checkpoint_path=str(checkpoint_path),
+            save_state=_save_state(),
+            partition_id="rollout_data",
+            sampler_name="windowed",
+            opd_full_teacher_checkpoints=["ckpt-a", "ckpt-b"],
+        )
+        assert restored == metadata
+        assert restored["sampler_name"] == "in_order"
+        assert "in_order -> windowed" in capsys.readouterr().out
+
+    @pytest.mark.parametrize(
+        "field,value",
+        [
+            ("single_controller_train_steps", 2),
+            ("single_controller_trainer_version", 2),
+            ("single_controller_epoch", 2),
+            ("partition_id", "other"),
+            ("mode", "other"),
+            ("replay_metadata_schema_version", -1),
+        ],
+    )
+    def test_sampler_switch_preserves_other_checkpoint_checks(
+        self, tmp_path, field, value
+    ) -> None:
+        checkpoint_path = tmp_path / "step_3"
+        (checkpoint_path / DATA_PLANE_CHECKPOINT_DIR).mkdir(parents=True)
+        (checkpoint_path / REPLAY_BUFFER_METADATA_FILENAME).touch()
+        metadata = _native_tq_metadata()
+        metadata[field] = value
+        with pytest.raises(ValueError, match="does not match the trainer checkpoint"):
+            sc_setup_mod._maybe_restore_native_data_plane_checkpoint(
+                load_checkpoint=MagicMock(return_value=metadata),
+                last_checkpoint_path=str(checkpoint_path),
+                save_state=_save_state(),
+                partition_id="rollout_data",
+                sampler_name="windowed",
+            )
+
+    @pytest.mark.parametrize(
+        "saved,current",
+        [
+            ("windowed", "in_order"),
+            ("in_order", "ready_first"),
+            ("weight_fifo", "windowed"),
+            ("custom", "windowed"),
+        ],
+    )
+    def test_rejects_other_sampler_switches(self, tmp_path, saved, current) -> None:
+        checkpoint_path = tmp_path / "step_3"
+        (checkpoint_path / DATA_PLANE_CHECKPOINT_DIR).mkdir(parents=True)
+        (checkpoint_path / REPLAY_BUFFER_METADATA_FILENAME).touch()
+        metadata = _native_tq_metadata()
+        metadata["sampler_name"] = saved
+        with pytest.raises(ValueError, match="sampler_name"):
+            sc_setup_mod._maybe_restore_native_data_plane_checkpoint(
+                load_checkpoint=MagicMock(return_value=metadata),
+                last_checkpoint_path=str(checkpoint_path),
+                save_state=_save_state(),
+                partition_id="rollout_data",
+                sampler_name=current,
+            )
+
     def test_validates_trainer_version_independently_from_train_step(self, tmp_path):
         checkpoint_path = tmp_path / "step_3"
         (checkpoint_path / DATA_PLANE_CHECKPOINT_DIR).mkdir(parents=True)

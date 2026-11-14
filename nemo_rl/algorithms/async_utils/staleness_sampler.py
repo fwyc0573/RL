@@ -49,6 +49,7 @@ from typing import (
     Optional,
     Protocol,
     Union,
+    cast,
     runtime_checkable,
 )
 
@@ -59,7 +60,7 @@ from nemo_rl.algorithms.async_utils.replay_buffer import (
     TQReplayBuffer,
 )
 from nemo_rl.data_plane import KVBatchMeta
-from nemo_rl.data_plane.schema import ROLLOUT_METRICS
+from nemo_rl.data_plane.schema import REPLAY_READY_ORDER, ROLLOUT_METRICS
 
 # Poll interval for the rollout-pump admission gate.
 _GATE_POLL_SECONDS = 0.005
@@ -369,7 +370,8 @@ class WindowedSampler(BaseSampler):
     Rollout never gates on the trainer version — the pump keeps producing and
     samples aged past the window are evicted. ``select`` takes any ready group
     within ``[train_weight - max_staleness_versions, train_weight]``, optionally
-    freshest-first.
+    freshest-first. ``selection_order="completion_fifo"`` consumes the oldest
+    training-ready publication first across dispatch batches and weight versions.
     """
 
     # Ungated restored groups are ordinary in-window candidates.
@@ -382,6 +384,7 @@ class WindowedSampler(BaseSampler):
         max_staleness_versions: int,
         sample_freshest_first: bool = False,
         min_groups_for_streaming_train: Optional[int] = None,
+        selection_order: Optional[Literal["dispatch_fifo", "completion_fifo"]] = None,
     ) -> None:
         super().__init__(buffer)
         if max_staleness_versions < 0:
@@ -391,6 +394,11 @@ class WindowedSampler(BaseSampler):
             )
         self.max_staleness_versions = max_staleness_versions
         self.sample_freshest_first = sample_freshest_first
+        self.selection_order = (
+            WindowedSamplerConfig().selection_order
+            if selection_order is None
+            else selection_order
+        )
         # Unordered: any full buffer is selectable, so the minimum capacity is the streaming floor.
         self.min_groups_for_streaming_train = min_groups_for_streaming_train
 
@@ -448,7 +456,13 @@ class WindowedSampler(BaseSampler):
             if min_valid_version <= weight <= current_train_weight
             and self._buffer.ready_list[i]
         ]
-        if self.sample_freshest_first:
+        if self.selection_order == "completion_fifo":
+            valid_idxs.sort(
+                key=lambda i: cast(KVBatchMeta, self._buffer.meta_list[i]).extra_info[
+                    REPLAY_READY_ORDER
+                ]
+            )
+        elif self.sample_freshest_first:
             valid_idxs.sort(
                 key=lambda i: (
                     current_train_weight - self._buffer.start_weight_list[i],
@@ -730,6 +744,17 @@ class WindowedSamplerConfig(BaseModel, extra="allow"):
     max_staleness_versions: NonNegativeInt = 1
     # Prefer smallest lag when picking from the in-window set.
     sample_freshest_first: bool = False
+    # FIFO by reserve order (default) or by successful ready publication order.
+    selection_order: Literal["dispatch_fifo", "completion_fifo"] = "dispatch_fifo"
+
+    @model_validator(mode="after")
+    def validate_selection_order(self) -> "WindowedSamplerConfig":
+        if self.selection_order == "completion_fifo" and self.sample_freshest_first:
+            raise ValueError(
+                "completion_fifo requires sample_freshest_first=false; "
+                "freshness priority would change completion FIFO order"
+            )
+        return self
 
 
 class ReadyFirstSamplerConfig(BaseModel, extra="allow"):
@@ -916,6 +941,7 @@ def create_sampler(
             max_staleness_versions=cfg.max_staleness_versions,
             sample_freshest_first=cfg.sample_freshest_first,
             min_groups_for_streaming_train=min_groups_for_streaming_train,
+            selection_order=cfg.selection_order,
         )
     elif isinstance(cfg, ReadyFirstSamplerConfig):
         sampler = sampler_cls(

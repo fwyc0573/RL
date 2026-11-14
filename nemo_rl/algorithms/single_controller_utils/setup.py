@@ -290,6 +290,10 @@ def _maybe_restore_native_data_plane_checkpoint(
         for key, expected in expected_values.items()
         if metadata.get(key) != expected
     }
+    # Windowed selection ignores target-step stamps and can retain the same
+    # canonical rows and unfinished ownership from an in-order checkpoint.
+    if metadata.get("sampler_name") == "in_order" and sampler_name == "windowed":
+        mismatches.pop("sampler_name", None)
     if mismatches:
         raise ValueError(
             "Native TQ checkpoint metadata does not match the trainer "
@@ -315,6 +319,13 @@ def _maybe_restore_native_data_plane_checkpoint(
         raise ValueError(
             "Native TQ checkpoint metadata has invalid replay_group_count: "
             f"{group_count!r}"
+        )
+    if metadata["sampler_name"] != sampler_name:
+        print(
+            "Native replay sampler switch: in_order -> windowed; "
+            "restored target-step stamps are retained but selection uses "
+            "the configured weight-age window and order.",
+            flush=True,
         )
     print(
         f"📦 Native TQ checkpoint restored and validated: groups={group_count}",

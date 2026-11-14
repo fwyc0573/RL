@@ -1161,3 +1161,11 @@ class PropertyCapabilitySampler:
 
 
 NOT_A_SAMPLER_CLASS = object()
+
+
+class TestWindowedCompletionOrderConfig:
+    def test_rejects_freshness_priority_with_completion_fifo(self) -> None:
+        with pytest.raises(ValidationError, match="freshness priority"):
+            WindowedSamplerConfig(
+                selection_order="completion_fifo", sample_freshest_first=True
+            )

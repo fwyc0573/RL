@@ -392,6 +392,24 @@ class RolloutRestorer(_UsesRolloutParts):
         parsed_state = await read_recovery_sidecar(
             recovery_path, metadata, master_config=self._master_config
         )
+        switching_to_windowed = (
+            metadata.get("sampler_name") == "in_order"
+            and self._async_cfg.sampler.name == "windowed"
+        )
+        if switching_to_windowed:
+            trainer_version = self._read_progress().trainer_version
+            pending_shortfalls = any(
+                step >= trainer_version and count > 0
+                for step, count in parsed_state.batch_shortfall.items()
+            ) or any(
+                step >= trainer_version for step in parsed_state.steps_allowed_short
+            )
+            if pending_shortfalls:
+                raise ValueError(
+                    "Cannot switch in_order -> windowed with pending target-step "
+                    "shortfalls; resume with in_order to finish that pending state "
+                    "before switching to an unstamped sampler."
+                )
 
         recovery_ledger = self._rollout_manager.recovery_ledger
         async with self._data_plane_checkpoint_barrier.mutation(
@@ -475,17 +493,20 @@ class RolloutRestorer(_UsesRolloutParts):
                     )
                 await self._rehydrate_prompts(cut)
                 await self._queue_replay_groups_for_regeneration(cut)
-        self._rollout_runtime.sampler_stamps_target_steps = (
-            parsed_state.sampler_stamps_target_steps
-            if parsed_state.sampler_stamps_target_steps is not None
-            else any(
-                group.target_step is not None for group in recovery_ledger.groups()
+        if switching_to_windowed:
+            self._rollout_runtime.sampler_stamps_target_steps = False
+        else:
+            self._rollout_runtime.sampler_stamps_target_steps = (
+                parsed_state.sampler_stamps_target_steps
+                if parsed_state.sampler_stamps_target_steps is not None
+                else any(
+                    group.target_step is not None for group in recovery_ledger.groups()
+                )
+                or any(
+                    group.get("target_step") is not None
+                    for group in canonical_state["groups"]
+                )
             )
-            or any(
-                group.get("target_step") is not None
-                for group in canonical_state["groups"]
-            )
-        )
 
         groups_to_recover = recovery_ledger.groups()
         if groups_to_recover:
