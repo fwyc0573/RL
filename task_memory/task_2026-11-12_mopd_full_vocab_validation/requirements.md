@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Add exact comparison against the wyx/full_vocab hidden-state and full-vocabulary storage implementation. |
 | 2026-11-14 | Record the batch/FIFO and source-task historical timing follow-up. |
 | 2026-11-14 | Add the requested parallel deployment, bottleneck, co-location, and performance-switch investigation. |
 | 2026-11-14 | Require only the latest checkpoint to remain, with timely deletion of older checkpoints. |
@@ -80,3 +81,11 @@ Deliver the actual role placement and parallelism, measured wall-time attributio
 > 2. yc-mopd-learning-dynamics-s4-branch 下是否留存 当前student+teacher comb的mopd运行记录，是否记录了相关rollout侧耗时？我希望你比较已有的数据记录，找到系统性能耗时差异的关键点。我认为当前架构的单步耗时明显过慢
 
 Extend P with inspected batch/admission/selection semantics and a source-task historical comparison aligned by successful update ordinals. Distinguish the historical fresh-data mode from full-vocabulary loss, exposed consumer waiting from GPU decode time, and observations from causal hypotheses. Preserve E/F and the original dimensions/checkpoint storage decisions.
+
+## [Original Request] Hidden-state mechanism and exact branch comparison, 2026-11-15
+
+> 我们在过去是否确认了 当前架构 使用的全词表处理方案是否和 ds-v4一致？即引入了load hidden state，然后再通过lm head还原？
+
+> 请你比较当前架构的 “teacher hidden states，在 student 训练侧用对应 teacher 的 LM head 重建全词表 logits” 和 /data/ycfeng/steptron/.worktrees/wyx/full_vocab 的全词表压缩方案的异同
+
+Compare the two actual local implementations: captured representation, teacher/head identity, row selection, transport/parallel alignment, projection and distribution memory, backward storage/replay, precision, objective wrappers, and supported configuration. Bind claims to inspected source and distinguish tensor-size arithmetic and primitive tests from paired production GPU throughput. This extends P; it does not substitute a different student/teacher combination, change the formal completion contract, or authorize a large core-interface migration.

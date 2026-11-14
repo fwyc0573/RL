@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Complete the wyx/full_vocab source and primitive storage comparison; retain22/200durable E recovery frontier. |
 | 2026-11-14 | Complete batch/FIFO and historical timing comparison; reconcile platform clean-policy failure and step40/Adam22 recovery. |
 | 2026-11-14 | Complete requested deployment/performance investigation in parallel and verify20 formal successes through step38. |
 | 2026-11-14 | Verify step36/formal18/200 and the reusable metric curves; preserve the historical FA4 event timestamp. |
@@ -3783,3 +3784,67 @@ No production optimizer/configuration change, GPU submission, checkpoint copy, d
 3. P已完成；200次正式成功及最终有限性/parity仍未完成，禁止增加checkpoint副本或重复无效部署。
 
 CPU follow-through: `preflight_formal_step40_graph_candidate_20261114.py` PASS under offline UV0.13.7/Python3.13.14/Torch2.13.0+cu130 (60s timeout). Existing native validator accepts the original256/65536/full-vocabulary/latest-only dimensions with enforce_eager=false and compilation_config.backend=eager. Native step40 scheduler restore/next tick passes10240→10496 samples, LR1e-6 and WD0.01; no checkpoint tensors read. `evidence/formal-step40-graph-candidate-cpu-preflight-20261114.json` records exact command and limits. GPU capture/parity/timing and improved teacher placement remain unverified; no candidate submission was executed. This advances E preparation without replaying the known inefficient deployment.
+
+### 2026-11-15 — Exact full-vocabulary comparison completed; E/F remain outstanding
+
+用户要求直接比较当前方案与 `/data/ycfeng/steptron/.worktrees/wyx/full_vocab`。先读取两个 repository 的 AGENTS、当前 task requirements/plan/progress 和源码，再使用 diagnosing-bugs 的差分与存储观察方法，按 testing/contributing 约束验证。当前 NeMo-RL 检查前 HEAD 为 a2fca0c2，StepTron 为 a94dc8c98df。StepTron worktree 只读；本轮未调用 GPU 平台，也没有新的 checkpoint。
+
+两者都保存 teacher 已完成最后 norm 的输出投影输入，再用对应 teacher head 恢复 full-vocabulary logits。当前 NeMo-RL 将完整 trajectory 的 hidden states 写入 TransferQueue simple backend，训练时先生成整段 vocabulary logits；KL kernel 的 chunk_size=128 只限制分布计算的临时量。StepTron 只保存 response rows，按 student CP owner 路由到 TP0 的 pinned CPU cache；student head 和 teacher head 的投影、分布计算都位于 checkpoint block 内，并在 backward 重新执行。StepTron 保留实验配置五个 BF16 head、FP32 输出常驻；当前任务把五个 FP32 head 分片在训练阶段移到 GPU，结束后 offload。两者当前配置都没有每次只驻留一个 GPU head。不同的并行契约和 TIS 外层 loss 也已记录。
+
+初次用 Python3.13/Torch2.13 完整 import 两个 repo 时超过60秒，exit124，没有数值结果。随后缩小为 exact NeMo source AST primitives 和实际 StepTron distillation_block，在现有 d3 CPU environment（Python3.10.6/Torch2.1.0+cu121/CUDA unavailable）中完成。使用真实 one-rank Gloo、FP32 Linear、seed7、7个 input rows、5个 response rows、H5、V17、chunk3。完整命令见 `test_report_2026-11-15_full_vocab_comparison.md`；脚本位于 task tmp，RLIMIT_AS=30 GiB。一次对照 PASS 后停止扩展测试。
+
+两端 mean loss 均为0.1903374940，per-response KL 差为0；dense oracle 误差2.6077032e-7，hidden gradient 最大差5.5879354e-9，head gradient 最大差1.4901161e-8。当前 KL 保存两张完整 [1,7,17] logits；StepTron 保存 [3,1,5] 与 [2,1,5] hidden blocks，没有 vocabulary activation matrix，两个块共读取 teacher hidden 四次，覆盖 forward 和 backward。teacher gradient 为None，prompt gradient 为0。证据：`evidence/full-vocab-nemo-steptron-storage-20261115.json`。这不是生产模型、完整 optimizer、TP2/CP8 或 H800 kernel 的比较。
+
+按当前 V151936/H1536/TP2/CP1 算术，一个65536-row FP32 teacher logits 分片为18.546875 GiB，一个128-row logits 块为37.09375 MiB，全序列 FP16 hidden 为192 MiB，五个 FP32 teacher head 分片合计为2.173462 GiB／output-stage TP rank。报告明确区分张量大小和实际峰值。已有计时仍为627.8369秒/update，其中540.1195秒 ready wait、66.3933秒 student training，因此不能声称此存储差异已经解释全部9–11分钟耗时。
+
+requirements 与 plan 已补本次原文和结论。E 下一步仍是实际 FP16 graph/eager 对照、teacher placement/utilization 检查，然后从 step40/Adam22 恢复。正式进度仍为22/200可恢复，6次未保存更新需重算；200次成功更新、final Adam200 和 latest-only checkpoint 约束保持。F 最终检查和 English archive 未完成。
+
+## 1. 规划完成情况
+
+**汇总：** PASS 6｜BLOCKED/FAILED/SKIPPED 1｜TODO 1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A | PASS | 原 student、五教师与全词表身份已有验收。 |
+| Q | PASS | 200次成功更新与资源选择授权有效。 |
+| B | PASS | 原输入与环境准备有效；下一恢复配置仍需实际预检。 |
+| C | PASS | 全词表参考、指标与parity入口已验证。 |
+| D | PASS | 诊断训练和native保存／恢复已验证。 |
+| P | PASS | 本次两个实际实现的源码、存储、数值与限制比较完成。 |
+| E | FAILED | 前writer被clean-policy关闭；22/200可恢复，恢复尚未执行。 |
+| F | TODO | final finite、三方parity、最终曲线与archive待E完成。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，已完成用户追加的P比较；E仍需恢复。
+**检测窗口：** 上次batch/history检查点至本次对照｜**当前前沿：** E恢复、用户指定P比较
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 一个小型源码primitive对照在PASS后停止；没有扩建验证框架。 |
+| D2 细节反复重试 | CLEAR | 完整import一次timeout，最小化为纯数学/storage对照一次PASS；没有重复重提作业。 |
+| D3 支线问题修补 | CLEAR | exact wyx/full_vocab对照是用户明确要求。 |
+| D4 可并行任务停滞 | CLEAR | F最终检查真实依赖E的最终checkpoint；本窗口完成用户指定对照，E下一配置仍有已记录placement/graph验证前提。 |
+| D5 超范围镀金 | CLEAR | 源码读取与报告，没有移植模型接口、TIS、codec或新backend。 |
+| D6 分析空转 | CLEAR | 得到response-only与projection/backwardchunking的具体缺口及直接saved-tensor验证。 |
+| D7 路线违背 | CLEAR | 原modelcomb、256/65536/fullvocab/200-success与latest-only保持。 |
+
+**文档检查：** S1–S6均未发现未处理缺陷。requirements/plan已补本次follow-up；原E失败和22/200durable没有被对照PASS覆盖。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec与plan合理，无需更改验收。
+
+**需停止的偏离行为：** 无；不要把局部压缩机制一致当作完整内存实现一致，也不要把CPUprimitivePASS当作H800性能PASS。
+
+**接下去的路线：**
+1. E：回到已准备的FP16graph/eager GPU对照与teacherplacement验证 → 完成标志：实际capture、相同tokenparity、同工作量计时和可持续资源分配有证据。
+2. E：从step40/Adam22继续正式训练 → 完成标志：200durable成功、finalAdam200、latest-onlycheckpoint与逐步健康记录。
+3. E→F：finalfinite、无额外checkpoint的三方parity、曲线与Englisharchive → 完成标志：完整主任务业务和平台终态验收。
+
+## 4. 最值得关注的 3 点
+
+1. 当前隐藏态压缩与StepTron原理相同，但整段vocabularylogits仍保存到backward。
+2. StepTronresponse-only及projection/replaychunk可降低该项显存；额外recompute/H2D成本和端到端提速尚未GPU实测。
+3. 主任务仍22/200durable；本轮无GPU运行或新增权重产物，恢复与最终验证待推进。

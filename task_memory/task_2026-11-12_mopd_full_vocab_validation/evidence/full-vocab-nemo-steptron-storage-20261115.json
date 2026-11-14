@@ -1,0 +1,136 @@
+{
+  "verdict": "PASS",
+  "python": "3.10.6",
+  "torch": "2.1.0+cu121",
+  "cuda_available": false,
+  "seed": 7,
+  "scope": "Exact NeMo source slices; native StepTron distillation_block; one-rank CPU Gloo; small FP32 Linear heads. No model or optimizer replay.",
+  "geometry": {
+    "sequence_rows": 7,
+    "response_rows": 5,
+    "hidden": 5,
+    "vocabulary": 17,
+    "chunk": 3
+  },
+  "loss_current": 0.19033749401569366,
+  "loss_steptron": 0.19033749401569366,
+  "errors": {
+    "loss_max_abs": 0.0,
+    "dense_loss_max_abs": 2.60770320892334e-07,
+    "hidden_gradient_max_abs": 5.587935447692871e-09,
+    "student_head_gradient_max_abs": 1.4901161193847656e-08
+  },
+  "saved_current": [
+    {
+      "shape": [
+        5,
+        17
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        7,
+        5
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        1,
+        7,
+        17
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        1,
+        7,
+        17
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        5
+      ],
+      "dtype": "torch.int64"
+    },
+    {
+      "shape": [
+        5
+      ],
+      "dtype": "torch.float32"
+    }
+  ],
+  "saved_steptron": [
+    {
+      "shape": [
+        3
+      ],
+      "dtype": "torch.int64"
+    },
+    {
+      "shape": [
+        0
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        3,
+        1,
+        5
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        2
+      ],
+      "dtype": "torch.int64"
+    },
+    {
+      "shape": [
+        0
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        2,
+        1,
+        5
+      ],
+      "dtype": "torch.float32"
+    },
+    {
+      "shape": [
+        5
+      ],
+      "dtype": "torch.float32"
+    }
+  ],
+  "steptron_teacher_fetches_forward_and_backward": [
+    [
+      2,
+      3,
+      4
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      5,
+      6
+    ],
+    [
+      2,
+      3,
+      4
+    ]
+  ],
+  "teacher_has_gradient": false
+}

@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Complete the exact wyx/full_vocab implementation comparison and CPU saved-tensor verification; keep E/F outstanding. |
 | 2026-11-14 | Complete batch/FIFO and historical timing comparison; replace stale live status with clean-policy failure and step40/Adam22 durable progress. |
 | 2026-11-14 | Verify20/200 through step38 and complete the requested parallel deployment/performance investigation. |
 | 2026-11-14 | Verify18/200 through step36 and add the reproducible intermediate metric curves. |
@@ -136,4 +137,6 @@ Final checkpoint verification preparation: replay_checkpoint_logprobs.py now use
 
 ## P: Requested parallel performance investigation
 
-P is complete, including the batch/FIFO and historical-timing follow-up; its read-only investigation ran alongside E until the clean-policy failure. Acceptance: current job/actor/config role counts reconcile; recent complete steps have measured wall-time attribution; timer overlap and missing GPU profiling are explicit; current SingleController co-location guards are inspected; performance-switch findings distinguish current logs, historical parity constraints, source-derived behavior and untested changes. A single performance test report references selected evidence and the official-source research. No production configuration change or extra checkpoint is required to complete P.
+P is complete, including the batch/FIFO, historical-timing follow-up, and exact wyx/full_vocab implementation comparison; its read-only investigation ran alongside E until the clean-policy failure. Acceptance: current job/actor/config role counts reconcile; recent complete steps have measured wall-time attribution; timer overlap and missing GPU profiling are explicit; current SingleController co-location guards are inspected; performance-switch findings distinguish current logs, historical parity constraints, source-derived behavior and untested changes. A single performance test report references selected evidence and the official-source research. No production configuration change or extra checkpoint is required to complete P.
+
+P implementation comparison: `test_report_2026-11-15_full_vocab_comparison.md` confirms common teacher-projection-input compression but different end-to-end memory handling. StepTron selects response rows and checkpoints both projections plus distribution loss; NeMo currently reconstructs/saves full sequence vocabulary logits and chunks only distribution working sets. The scoped CPU primitive comparison passes (loss maxerror0, head gradient1.49e-8) and directly observes the distinct saved tensors. Actual paired H800 throughput/peak-memory remains unmeasured. E next actions and22/200durable progress remain unchanged; this comparison creates no new checkpoint or GPU job.
