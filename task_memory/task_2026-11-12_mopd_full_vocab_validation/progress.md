@@ -4474,7 +4474,7 @@ Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.
 
 ## 1. 规划完成情况
 
-**汇总：** PASS11｜BLOCKED/FAILED/SKIPPED2｜TODO1
+**汇总：** PASS12｜BLOCKED/FAILED/SKIPPED2｜TODO0
 
 | 子任务 | 状态 | 简要依据 |
 | --- | --- | --- |
@@ -4491,12 +4491,12 @@ Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.
 | S3 报告与归档 | PASS | datedreport/Englishsummary/requirements/plan已更新。 |
 | 继续训练至200 | SKIPPED | 用户最新明确取消，不标为通过。 |
 | 最终GPU三方检查 | SKIPPED | waiter已停，未执行项目仍unverified。 |
-| S3 scoped提交/push | TODO | 报告已准备，待本次提交和远端SHA核验。 |
+| S3 scoped提交/push | PASS | signedcommit7c275034已推送，git ls-remote独立核验完整SHA一致。 |
 
 ## 2. 偏离检测
 
 **结论：** 未偏移，正常推进。
-**检测窗口：** a420992f至本次暂停分析｜**当前前沿：** S3 scoped交付
+**检测窗口：** a420992f至本次暂停分析｜**当前前沿：** 自包含结论交付，训练继续暂停
 
 | 模式 | 判定 | 依据 |
 | --- | --- | --- |
@@ -4518,7 +4518,7 @@ Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.
 **需停止的偏离行为：** 无。
 
 **接下去的路线：**
-1. S3仅提交本轮报告、curve/CSV、compact末步证据和终态摘要 → 完成标志：signedcommit及origin/mopd-sys完整SHA一致。
+1. 交付本轮结论和报告链接 → 完成标志：明确最新健康指标、采样/格式问题及unverified边界；已推送分析交付仅包含20个本轮文件。
 2. 保持训练暂停 → 完成标志：不启动writer/replay，不额外保存checkpoint，最终回复明确问题和未验证边界。
 
 **暂缓事项：** 等组消费公平性、thinking原文RCA与最终actual-train parity → 已记录在本轮report/summary的remaining limits，不新建支线任务。
@@ -4528,3 +4528,10 @@ Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.
 1. 最新loss/grad/update有效性正常，但logic训练样本占比12.86%，最近20步11.15%，不等同于20%admission。
 2. malformed-thinking最近20步7.17%，原文未留存；不能把格式标记当正确率，也不能只看loss宣称无问题。
 3. writer/observer均Stopped，158次观察成功与152次checkpoint成功必须区分；没有额外保存或GPU检查。
+
+
+### 2026-11-16 01:05 HKT — Analysis delivered to GitHub; training remains paused
+
+Signed scoped analysis commit7c2750343121dbe6b2417bf0f81f415dd3af407c pushed toorigin/mopd-sys. Independentgit ls-remotereturns theidenticalfullSHA. All20committedfilesbelongtothispausedanalysis,includingcompact171–176evidence;tests/manual/mopd/layer_output_worker.pyremainsunmodifiedbythisphasewithitsprior19additions/4deletionsunstaged. gitdiff--checkandcachedcheckpass. requirementsre-readbeforeclosing;no200/replay/extra-saveactionisscheduled.
+
+The phase-checktableabovewasrefreshedfromTODOtoPASSusingtheactualpushreceipt. Thisfollow-uprecordonlyclosesdeliverymetadata;theanalysisbundleisalreadyremote. Finalplatformandnativeevidencecontinue toshowStoppedallreplicasandsole170/Adam152. Allrequestedpausedanalysisscopeiscomplete;broaderfinaltensor/parityandindividualformatRCAareexplicitlydeferred.

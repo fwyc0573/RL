@@ -44,3 +44,7 @@ Historical age0 scorer/vLLM pooled MAE0.00123753 passes the existing0.02 mean cr
 ## Remaining limits and deferred work
 
 Final model/Adam tensor scanning, actual model.train()/scorer/vLLM final three-way parity, per-group full-RKL and gradient curves, fixed-set accuracy, and the RCA of individual malformed outputs were not executed or not recorded. The user superseded200 updates and final GPU replay for this phase; neither is claimed passed. Training must remain paused unless the user requests resumption. Future equal-mixture selection should preserve group-local FIFO and age semantics and measure the cost of slow-group waiting.
+
+## Git delivery
+
+The analysis bundle was signed and pushed as `7c2750343121dbe6b2417bf0f81f415dd3af407c` to `origin/mopd-sys`; `git ls-remote` independently returned the same full SHA. The subsequent metadata-only record closes the plan/progress delivery status. Unrelated repository edits and old untracked evidence were preserved.

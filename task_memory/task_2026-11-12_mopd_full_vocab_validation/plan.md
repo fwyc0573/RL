@@ -55,7 +55,7 @@ Formal writer `exp-1115-193456-282702` was stopped by `i-fengyicheng` at 00:50 H
 
 The sole durable checkpoint remains step170/Adam152 (31 files, 55,182,356,048 bytes). The six observed updates171–176 were not checkpointed; do not write an extra checkpoint to close this gap. Preserve the existing latest checkpoint and native recovery inputs.
 
-Current progress: S1 PASS — writer/observer terminal replicas and step176 TensorBoard/sample/trace frontier reconciled; S2 PASS — curves/CSV and metric diagnosis verified; S3 in-progress — dated report and archive written, task self-check and signed scoped commit/push remain. Analysis is read-only with respect to model weights and runtime behavior. Completion requires a self-contained report distinguishing normal indicators, observed issues and unverified items; it does not require new GPU measurements.
+Current progress: S1 PASS — writer/observer terminal replicas and step176 TensorBoard/sample/trace frontier reconciled; S2 PASS — curves/CSV and metric diagnosis verified; S3 PASS — dated report/archive/self-check completed; analysis commit7c2750343121dbe6b2417bf0f81f415dd3af407c pushed and independently verified atorigin/mopd-sys. Analysis is read-only with respect to model weights and runtime behavior. Completion requires a self-contained report distinguishing normal indicators, observed issues and unverified items; it does not require new GPU measurements.
 
 ## Dependency graph
 
