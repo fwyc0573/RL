@@ -4095,3 +4095,7 @@ One formal replacement exp-1115-193456-282702 was created at19:34:56HKT, with lo
 3. 主任务还差178次durable成功；新FIFO的same-weight parity须与stale-weight漂移分别解释。
 
 19:38:42HKT follow-up: exact formal72GPU job remains Pending, quota42 and zero replicas; observer0GPU job is Running and producing mounted-reader receipts. Local launchers1579154/1591600 remain responsible for lifecycle. No training or checkpoint progress has occurred. Native cleanup container confirms Completed/exit0/restart0. The scoped staging includes135 current records/compact evidence files and excludes prior unrelated experimental edits; credentials checked absent before staging.
+
+### 2026-11-15 — Cleanup/resource correction progress pushed
+
+Signed commit `663b9143f868364ab4d0104a1a5cc68718555803` (`docs(mopd): verify OSS cleanup and restore72-GPU FIFO continuation`) pushed successfully to origin/mopd-sys. A fresh git ls-remote query returns the identical SHA.135 scoped task records/config/preflight/cleanup/status/compact numerical evidence files are delivered; FIFO implementation2f828a95 remains reachable on the same branch. No experimental worker code or pre-existing unrelated artifact change was staged. Current progress-push milestone is completed; this delivery receipt is committed separately. Mainline remains the queued72GPU job and its Running0GPU observer, with durableAdam22/200 and no new checkpoint.

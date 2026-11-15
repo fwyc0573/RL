@@ -45,3 +45,5 @@ A separate0GPU mounted observer, exp-1115-193548-376103, follows the new formal 
 The formal local launcher PID1579154 and observer launcher PID1591600 are detached on this host and must stay alive through queueing/workload. They are not remote launchers. The prior teacher utilization clean-policy event remains a measured operational risk. Native200-success accounting, final tensor finiteness, final three-way parity, curves and English completion archive remain open.
 
 Latest personal API observation at19:38:42HKT: formal72GPU job Pending, quota42, rank annotation2, no replicas. Observer0GPU job Running at19:38:43HKT. The annotation is the queue service's reported rank, not a promised start time. Selected status and local launcher receipts are in evidence/formal-step40-fifo-72gpu-current-status-20261115.json.
+
+Git delivery PASS: signed commit `663b9143f868364ab4d0104a1a5cc68718555803` was pushed to origin/mopd-sys and independently matched by `git ls-remote --heads origin refs/heads/mopd-sys`. The delivery contains135 scoped current-task records and compact evidence files; the prior FIFO implementation is already present in remote ancestry.
