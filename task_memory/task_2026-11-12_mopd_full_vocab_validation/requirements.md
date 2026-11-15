@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Supersede the 200-update target with user-requested pause and analysis through the last completed step. |
 | 2026-11-15 | Record the user correction to the prior 72-H800 scale and renewed OSS cleanup/push authorization. |
 | 2026-11-15 | Record the superseded agent-selected 128-H800 allocation and exact FIFO CPU preflight. |
 | 2026-11-15 | Record completion-FIFO trajectory selection, explicit staleness, and GitHub push authorization. |
@@ -53,7 +54,7 @@ This answers the immediately preceding question about proceeding with 200 succes
 - Reusable NeMo-RL recipe and minimal launch/verification additions using existing mechanisms.
 - Any required root-cause fixes, with affected regression checks and signed commits.
 - Exact model/data/config/runtime identities, job identities, artifact paths, metric curves, numerical comparisons, and a test report distinguishing PASS, FAIL, and unverified items.
-- English `summary.md` at overall completion. The task remains incomplete until execution and verification finish.
+- English `summary.md` at overall completion. The acceptance scope follows the latest explicit user decision. Superseded checks must be listed as skipped or unverified, never as passed.
 
 ## [Original Request] Cleanup authorization, 2026-11-13
 
@@ -121,3 +122,10 @@ The agent selected a non-preemptible 128-H800 `codesign` RJob to continue from `
 Restore the previously measured 72-H800 scale: student8 (TP2/PP4), rollout48 (24 TP2 engines), five TP2 teachers10 and six unused GPUs. Stop and verify the exact unallocated 128-H800 job before submitting one replacement. Use concurrency256, completion FIFO, weight-age5, buffer1536 and the original full-vocabulary/256/65536 workload. Keep the selected graph configuration as a GPU-verification item; scaling beyond the prior layout requires measured benefit. The 128-GPU capacity statement does not imply a target allocation.
 
 Delete current-task obsolete trajectory payloads, completed diagnostic tensor captures and unused conversion caches after exact terminal-job and unchanged-inventory checks. Preserve compact numerical/sample metadata evidence, the six source models, current conversion inputs, prepared dataset and the sole complete step40 recovery checkpoint. Do not delete other tasks' assets or a shared trash namespace. Namespace deletion and physical OSS reclamation are separate verification claims. Push the scoped latest task progress and verified deliverables to origin/mopd-sys.
+
+
+## [Original Request] Pause and analyze the completed training record, 2026-11-16
+
+> 暂停当前任务。我认为没有必要跑完200steps.以当前最后step为准进行训练数据的分析（分析记录的指标，是否存在指标明显有问题的情况）
+
+Stop the current training allocation and its automatic final-validation waiter. After collecting the last completed step, stop the observer. Do not resume training, target 200 updates, or launch the prepared final GPU replay. Analyze the authoritative recorded chain through the actual last complete step: loss/full-RKL, pre-clipping gradient norm, skips, valid sample/token coverage, five-teacher mixture, staleness, response lengths, malformed-thinking flags, scorer/vLLM differences and timing. Distinguish metric definitions, measured anomalies and verification limits. Keep only the already published latest complete checkpoint; do not save a new checkpoint on pause. Prior scoped commit/push authorization remains in force. The original 200-update and final-GPU completion criteria are superseded for this phase, not recorded as passed.

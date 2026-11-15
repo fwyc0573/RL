@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Apply the user pause, verify step176, analyze all recorded metrics and archive observed data-mixture/format issues. |
 | 2026-11-16 | Verify native step170/Adam152,130 successful FIFO updates and post-approval three-hour current replica state. |
 | 2026-11-16 | Verify native step160/Adam142,120 FIFO successes and clean-policy labels; preserve ongoing formal writer. |
 | 2026-11-16 | Prepare final replay inputs and waiter; verify native step140/Adam122 and continued health throughstep143. |
@@ -4451,3 +4452,79 @@ Personal RJob/replicaAPI00:41:31HKTstillRunningall9replicas/nonpreemptible/no st
 1.152成功已保存，200仍未完成。
 2.当前九replica运行正常，未以当前标签推断完整利用率窗口。
 3.最终数值检查仍依赖最终checkpoint；准备、中间曲线和过程成功都不替代它。
+
+
+### 2026-11-16 00:54 HKT — User pause applied; analysis frontier fixed at step176
+
+The user superseded the 200-update target with a pause and recorded-metric analysis. Verified and SIGTERM-terminated final waiter PID2019267, then stopped writer exp-1115-193456-282702 with the required rjob_stop.sh and personal creator check. Platform finishTime16:50:39Z; all nine replicas Stopped, stopped-by=i-fengyicheng. Observer published 136 completed FIFO summaries through176, zero collection failures, no remaining raw trajectory dumps, and was stopped with the same script at00:51:21HKT. Latest complete metrics and step_trained trace agree on176; no177 completion is counted.
+
+Completed: resource stop requests, authoritative frontier, latest-only metadata read. In-progress: terminal observer confirmation and full metric analysis. Pending: refreshed curves, dated report, check-progress, scoped signed commit/push. Latest native step170/Adam152 remains the sole31-file55,182,356,048-byte checkpoint; no additional checkpoint was saved. Updates171–176 are observed only. Requirements and active plan now reflect the user's latest instruction; no automatic training continuation or final16GPU replay will run.
+
+
+### 2026-11-16 01:03 HKT — Paused analysis verified through176
+
+Completed: writer and observer terminal replicas independently re-read as Stopped, all three launcher PIDs absent; no automatic replay or extra save. The final completeness check reconciles159 authoritative attempts/158successes,136FIFOsuccesses,40704distinct sample IDs,243350200attempted response tokens and241266002successful response tokens. Plot/CSV through176 passed independent scalar/group/sample/mask/age checks inPython3.13.14 and actualPNG inspection. All8optimizer shards have2param groups each, all16Adam counters152; solecheckpoint170unchanged.
+
+Analysis scans282tags within18–176. There are210historicalNaNevents, confined to35stddevtags18–23 and already fixed in native pooled summaries from24. No other nonfinite scalar found. Latestloss0.0243255217/grad0.0819471106;last20meanloss0.02506212/grad0.09537221/total70.167365s/wait0.581097s/policy53.167988s. FullFIFOstaleevictions6229;85.36%samplesage5. Admissionfivegroups~20%each,trainedlogic12.86%,last20logic11.15%;last20IF23.63%samplesbut4.28%tokens. Malformedflagsrise1.05%in51–70to7.17%in157–176. These are observed issues, not repaired or hidden; exact causes of per-group evictions and individual thinking flags remain unverified.
+
+CPU analysis iterations: an overbroad finite-all assertion revealed historicalstddevNaNs; inspected prior fix and retained theirtag/step list rather than replacing values. A trace join initially assumed all current training IDs had current admission events; checked restore_finished512groups, validated the256already-admitted restored samples against native summaries. A counter assertion confused8optimizer shards with16param groups; inspected actualmetadata and validated both counts. These changed only analysis assumptions, no production code. The final runs pass without relaxed numerical tolerances. Timer source inspection confirmscheckpointingisinside total_step_time;dumpserializationismostlynestedinsideadvantageandteacherrequesttimersoverlap.
+
+Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.md written. Currentrequirements/plan andcurves/live-report clarify pause andsuperceded200/replay. Pending: check-progress, whitespace/source-boundary checks andsignedscopedcommit/push. No trainingresumption is scheduled.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS11｜BLOCKED/FAILED/SKIPPED2｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 原模型与输入 | PASS | 原student和五教师/full-vocab来源已核验并保持。 |
+| Q 最新验收决定 | PASS | requirements记录用户暂停、取消200目标并分析末步。 |
+| B 准备 | PASS | 既有runtime/数据/原生配置准备。 |
+| C 数值参考 | PASS | 既有full-loss和gradient参考证据。 |
+| D 原缺陷修复 | PASS | 已验证的数值/allocator/native恢复修复未改动。 |
+| P 性能调查 | PASS | 同72卡实测及源实现比较已交付。 |
+| E FIFO实现 | PASS | 已推送且当前136次连续成功验证。 |
+| 授权清理/retention | PASS | 唯一step170，完整trajectory dumps为空，无额外保存。 |
+| S1 暂停与末步 | PASS | writer九replicas/observerStopped；TB/sample/trace一致176。 |
+| S2 指标分析 | PASS | 全282tags、40704samples和当前曲线实际核对。 |
+| S3 报告与归档 | PASS | datedreport/Englishsummary/requirements/plan已更新。 |
+| 继续训练至200 | SKIPPED | 用户最新明确取消，不标为通过。 |
+| 最终GPU三方检查 | SKIPPED | waiter已停，未执行项目仍unverified。 |
+| S3 scoped提交/push | TODO | 报告已准备，待本次提交和远端SHA核验。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** a420992f至本次暂停分析｜**当前前沿：** S3 scoped交付
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用plot/reader，临时分析仅检查本次真实记录；验证后不扩展harness。 |
+| D2 细节反复重试 | CLEAR | 三次CPU断言分别查明历史stddev、恢复admission和shard/group差异；没有参数试错或GPU重跑。 |
+| D3 支线问题修补 | CLEAR | 本轮只分析用户要求的指标，没有为观察问题改训练行为。 |
+| D4 可并行任务停滞 | CLEAR | 平台terminal、指标导出和native元数据独立检查并行；报告统一由当前agent写。 |
+| D5 超范围镀金 | CLEAR | 无新feature/config/GPU/权重副本。 |
+| D6 分析空转 | CLEAR | 指标分析就是本轮目标，已经产生完整报告和问题判读。 |
+| D7 路线违背 | CLEAR | 最新暂停已执行，200/replay撤出当前验收，latest-only保持。 |
+
+**文档检查：** S1–S6均无当前未纠正缺陷；旧200与Running描述已在requirements/plan/live报告明确标为superseded或历史。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：当前requirements/plan合理，无需改动。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. S3仅提交本轮报告、curve/CSV、compact末步证据和终态摘要 → 完成标志：signedcommit及origin/mopd-sys完整SHA一致。
+2. 保持训练暂停 → 完成标志：不启动writer/replay，不额外保存checkpoint，最终回复明确问题和未验证边界。
+
+**暂缓事项：** 等组消费公平性、thinking原文RCA与最终actual-train parity → 已记录在本轮report/summary的remaining limits，不新建支线任务。
+
+## 4. 最值得关注的 3 点
+
+1. 最新loss/grad/update有效性正常，但logic训练样本占比12.86%，最近20步11.15%，不等同于20%admission。
+2. malformed-thinking最近20步7.17%，原文未留存；不能把格式标记当正确率，也不能只看loss宣称无问题。
+3. writer/observer均Stopped，158次观察成功与152次checkpoint成功必须区分；没有额外保存或GPU检查。

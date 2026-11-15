@@ -1,39 +1,39 @@
 {
-  "checked_at": "2026-11-15T16:17:14.659125+00:00",
+  "checked_at": "2026-11-15T16:54:54.326657+00:00",
   "steps": [
     18,
-    147
+    176
   ],
-  "attempts": 130,
-  "successful_updates": 129,
+  "attempts": 159,
+  "successful_updates": 158,
   "skipped_steps": [
     25
   ],
-  "samples": 33280,
-  "distinct_sample_ids": 33280,
-  "response_tokens": 203270737,
+  "samples": 40704,
+  "distinct_sample_ids": 40704,
+  "response_tokens": 243350200,
   "fifo_steps": [
     41,
-    147
+    176
   ],
-  "fifo_successes": 107,
+  "fifo_successes": 136,
   "weight_age_counts": {
     "0": 6144,
     "1": 256,
     "2": 256,
     "3": 256,
-    "4": 3313,
-    "5": 23055
+    "4": 4073,
+    "5": 29719
   },
   "same_weight_samples": 6144,
   "same_weight_tokens": 46227111,
   "same_weight_pooled_mae": 0.0012375292471864753,
   "loss_first": 0.19038212299346924,
-  "loss_last": 0.029263945296406746,
-  "loss_endpoint_change_percent": -84.6288376049832,
+  "loss_last": 0.024325521662831306,
+  "loss_endpoint_change_percent": -87.2227910476312,
   "grad_first": 1.1475327014923096,
-  "grad_last": 0.08333215862512589,
-  "grad_min": 0.08333215862512589,
+  "grad_last": 0.08194711059331894,
+  "grad_min": 0.07350215315818787,
   "grad_max": 1.1761640310287476,
   "above_clip_steps": [
     18,
@@ -41,16 +41,16 @@
     20,
     21
   ],
-  "fifo_mean_step_seconds": 72.12190349971023,
-  "fifo_mean_wait_seconds": 0.587280231205938,
-  "fifo_mean_policy_seconds": 54.899789293235706,
+  "fifo_mean_step_seconds": 71.62205303416533,
+  "fifo_mean_wait_seconds": 0.573188823675189,
+  "fifo_mean_policy_seconds": 54.457768832936004,
   "last20_steps": [
-    128,
-    147
+    157,
+    176
   ],
-  "last20_mean_step_seconds": 71.30794715881348,
-  "last20_mean_wait_seconds": 0.36097947917878626,
-  "last20_mean_policy_seconds": 54.29877071380615,
+  "last20_mean_step_seconds": 70.16736526489258,
+  "last20_mean_wait_seconds": 0.5810966771095991,
+  "last20_mean_policy_seconds": 53.16798839569092,
   "source_chain": [
     "exp-1114-035754-642199",
     "exp-1114-051900-202756",
@@ -62,6 +62,6 @@
     "The original post-step40 attempts in the older job were not part of the restored chain and are excluded.",
     "Ages above zero contain weight drift; their differences are not same-weight parity failures.",
     "Per-group full-vocabulary loss is not emitted by native metrics.",
-    "Final Adam200, final parameter scan, and actual training/scorer/vLLM parity remain pending."
+    "Training was paused by the user at step176; Adam200 and final replay were superseded. Final parameter scan and actual training/scorer/vLLM parity were not performed."
   ]
 }

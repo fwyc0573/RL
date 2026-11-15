@@ -2,9 +2,12 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Mark the user-requested pause atstep176; preserve earlier live observations as historical evidence. |
 | 2026-11-16 | Extend actual health and latest-only evidence to step170/Adam152; current replicas remain Running after three hours since queue approval. |
 | 2026-11-16 | Extend actual health throughstep160/Adam142, verify latest-only deletion and current non-preemptible replica labels. |
 | 2026-11-15 | Verify actual 72-H800 restore, graph capture, 91 consecutive successful updates, latest-only step130/Adam112, and the measured timing improvement. |
+
+**Current state, November16:** writer and observer were stopped by user request after the complete step176 record.158 observed successes,152 saved in the sole step170checkpoint.200 updates and final GPU replay are superseded for this phase. All live-status and next-run statements below describe earlier snapshots. See test_report_2026-11-16_paused_training_metrics.md for the completed analysis.
 
 # Live FIFO training validation
 
