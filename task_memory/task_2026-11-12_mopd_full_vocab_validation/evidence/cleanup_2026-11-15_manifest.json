@@ -1,0 +1,3174 @@
+{
+  "root": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation",
+  "inventory_at": "2026-11-15T11:27:57.712500+00:00",
+  "entries": [
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498551564313186,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498551561504833,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498520962970453,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498520972084762,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498530302827437,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498530297237455,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794498536697165261,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794498536702922541,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 5753853,
+      "mtime_ns": 1794498543716713787,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 5753853,
+      "mtime_ns": 1794498543723964925,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498560061215510,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498560057549725,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498512915329416,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498512906944155,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498504783317451,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794498504786188062,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498550922329943,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498550915303419,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498520278714305,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498520265185209,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498529616778822,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498529611777538,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794498536025985241,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794498536021349991,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65528-rank-0.pt",
+      "bytes": 5760275,
+      "mtime_ns": 1794498543066335046,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65528-rank-1.pt",
+      "bytes": 5760275,
+      "mtime_ns": 1794498543071565515,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498559373161951,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498559369218884,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498512265779460,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498512257866630,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498503973078697,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794498503967396321,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-234539-001675"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500671330116652,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500671334529510,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500640145922449,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500640141870975,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500648307062362,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500648315160571,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794500654835660182,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794500654838150781,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500662948589119,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500662954240808,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500680032347968,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500680039254702,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500631036357636,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500631031636071,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500621482769311,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794500621481482429,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500670663294695,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500670657457059,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500639487634336,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500639482644781,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500647590073348,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500647583276253,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794500654150179096,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794500654158295425,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500662266885553,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500662263497023,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500679344084176,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500679350511551,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500630339972207,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500630349718960,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500620252536628,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794500620253262829,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1113-002107-537824"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794498862839733656,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794498862835416332,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794498863556419613,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794498863558664032,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794498862110061120,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794498862112611153,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794498857977449949,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794498857976878111,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235130-765032"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499204012862339,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499204006868698,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499137651404746,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499137642826668,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499154262525843,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499154267165263,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794499169386548241,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "mtime_ns": 1794499169378320510,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499187100708219,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499187092307609,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499221069559896,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499221072973242,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499120893425834,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499120890895035,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499104315097835,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794499104316000181,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499203346806262,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499203355078036,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499136950594925,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499136957969208,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499153605611922,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499153608734799,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794499168666445792,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "mtime_ns": 1794499168670309163,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499186452595700,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499186445251196,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499220423017773,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499220414258382,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499120237530534,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499120237450815,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499103587438283,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "mtime_ns": 1794499103580454924,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-235613-448362"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-010116-581403/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 1242995,
+      "mtime_ns": 1794505190929704519,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-010116-581403"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-095147-620678/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242982,
+      "mtime_ns": 1794535369795711516,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-095147-620678"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242612,
+      "mtime_ns": 1794539357688434136,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step10.jsonl",
+      "bytes": 1111549,
+      "mtime_ns": 1794539973336222420,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step11.jsonl",
+      "bytes": 918755,
+      "mtime_ns": 1794539984513214599,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step12.jsonl",
+      "bytes": 1148965,
+      "mtime_ns": 1794539994922892906,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step13.jsonl",
+      "bytes": 1359693,
+      "mtime_ns": 1794540006207617655,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step14.jsonl",
+      "bytes": 1102225,
+      "mtime_ns": 1794540018577757024,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step15.jsonl",
+      "bytes": 1355737,
+      "mtime_ns": 1794540030098594477,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step16.jsonl",
+      "bytes": 915539,
+      "mtime_ns": 1794540039478446828,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 786664,
+      "mtime_ns": 1794539880305050513,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1098977,
+      "mtime_ns": 1794539892101395394,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 982641,
+      "mtime_ns": 1794539904249930936,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1146735,
+      "mtime_ns": 1794539915212748298,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step6.jsonl",
+      "bytes": 1038026,
+      "mtime_ns": 1794539929232196772,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step7.jsonl",
+      "bytes": 927628,
+      "mtime_ns": 1794539939944552467,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step8.jsonl",
+      "bytes": 1029627,
+      "mtime_ns": 1794539950801004653,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step9.jsonl",
+      "bytes": 1105589,
+      "mtime_ns": 1794539961447954921,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-104851-054395"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-112953-201895/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 205786059,
+      "mtime_ns": 1794542576078022325,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-112953-201895"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-121031-998701/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 207313720,
+      "mtime_ns": 1794551405270978977,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-121031-998701"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 207781577,
+      "mtime_ns": 1794570235220382812,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step10.jsonl",
+      "bytes": 209695362,
+      "mtime_ns": 1794576340628483244,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step11.jsonl",
+      "bytes": 222682459,
+      "mtime_ns": 1794577016495589495,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 226112544,
+      "mtime_ns": 1794571388563095189,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 208860380,
+      "mtime_ns": 1794572144549416709,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 223003336,
+      "mtime_ns": 1794572727957197117,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 212699448,
+      "mtime_ns": 1794573317863673539,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step6.jsonl",
+      "bytes": 198063633,
+      "mtime_ns": 1794573893605064806,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step7.jsonl",
+      "bytes": 215849942,
+      "mtime_ns": 1794574521189148523,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step8.jsonl",
+      "bytes": 199666888,
+      "mtime_ns": 1794575163763559719,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step9.jsonl",
+      "bytes": 194701862,
+      "mtime_ns": 1794575701253022591,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-174329-659007"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step11.jsonl",
+      "bytes": 225775487,
+      "mtime_ns": 1794595173529441531,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step12.jsonl",
+      "bytes": 199210656,
+      "mtime_ns": 1794595705562595094,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step13.jsonl",
+      "bytes": 188818749,
+      "mtime_ns": 1794596213456842462,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step14.jsonl",
+      "bytes": 208725042,
+      "mtime_ns": 1794596823388773866,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step15.jsonl",
+      "bytes": 221856004,
+      "mtime_ns": 1794597413670367772,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step16.jsonl",
+      "bytes": 212842748,
+      "mtime_ns": 1794598013535828561,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step17.jsonl",
+      "bytes": 218136613,
+      "mtime_ns": 1794598869967702114,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-021713-015045"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step18.jsonl",
+      "bytes": 200180109,
+      "mtime_ns": 1794601220511133014,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step19.jsonl",
+      "bytes": 221851118,
+      "mtime_ns": 1794601798731958725,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step20.jsonl",
+      "bytes": 217058753,
+      "mtime_ns": 1794602443587901676,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step21.jsonl",
+      "bytes": 204978707,
+      "mtime_ns": 1794603103144421108,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step22.jsonl",
+      "bytes": 214148714,
+      "mtime_ns": 1794603737463438304,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step23.jsonl",
+      "bytes": 193841029,
+      "mtime_ns": 1794604300055789231,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-035754-642199"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step24.jsonl",
+      "bytes": 203587464,
+      "mtime_ns": 1794606120373371981,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step25.jsonl",
+      "bytes": 207064046,
+      "mtime_ns": 1794606693744519614,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step26.jsonl",
+      "bytes": 200670526,
+      "mtime_ns": 1794607283886110097,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step27.jsonl",
+      "bytes": 197038379,
+      "mtime_ns": 1794607836413527495,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step28.jsonl",
+      "bytes": 195883995,
+      "mtime_ns": 1794608500355727277,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step29.jsonl",
+      "bytes": 187494845,
+      "mtime_ns": 1794609064790573728,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step30.jsonl",
+      "bytes": 190096891,
+      "mtime_ns": 1794609758766067892,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step31.jsonl.part-0",
+      "bytes": 195831424,
+      "mtime_ns": 1794610171243401287,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-051900-202756"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step31.jsonl",
+      "bytes": 202468881,
+      "mtime_ns": 1794629927334686971,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step32.jsonl",
+      "bytes": 186846451,
+      "mtime_ns": 1794630549760811178,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step33.jsonl",
+      "bytes": 207209383,
+      "mtime_ns": 1794631207763311989,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step34.jsonl",
+      "bytes": 196777075,
+      "mtime_ns": 1794631815547077177,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step35.jsonl",
+      "bytes": 182474546,
+      "mtime_ns": 1794632367946792353,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step36.jsonl",
+      "bytes": 184438824,
+      "mtime_ns": 1794632978293754549,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step37.jsonl",
+      "bytes": 178470249,
+      "mtime_ns": 1794633651858193728,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step38.jsonl",
+      "bytes": 185250651,
+      "mtime_ns": 1794634523783304801,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step39.jsonl",
+      "bytes": 189439108,
+      "mtime_ns": 1794635162092444471,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step40.jsonl",
+      "bytes": 173598855,
+      "mtime_ns": 1794635764434133673,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step41.jsonl",
+      "bytes": 172616256,
+      "mtime_ns": 1794636486201642813,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step42.jsonl",
+      "bytes": 189891446,
+      "mtime_ns": 1794637111481428546,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step43.jsonl",
+      "bytes": 180218109,
+      "mtime_ns": 1794637627150587356,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step44.jsonl",
+      "bytes": 174101774,
+      "mtime_ns": 1794638192681970265,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step45.jsonl",
+      "bytes": 180068357,
+      "mtime_ns": 1794638788310721852,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step46.jsonl",
+      "bytes": 189458804,
+      "mtime_ns": 1794639441390769357,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1114-115901-508160"
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242379,
+      "mtime_ns": 1794491684842853942,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-213439-246833"
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 786970,
+      "mtime_ns": 1794492258492270800,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-213439-246833"
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1099552,
+      "mtime_ns": 1794492273423790727,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-213439-246833"
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 983111,
+      "mtime_ns": 1794492283010872748,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-213439-246833"
+    },
+    {
+      "path": "final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1146676,
+      "mtime_ns": 1794492292559162256,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-213439-246833"
+    },
+    {
+      "path": "final-head-gradient-reference/exp-1113-005256-166805/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 288416,
+      "mtime_ns": 1794502865144984764,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-005256-166805"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495300071953039,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495300067988786,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495289770996957,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495289777482686,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495292269602159,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495292265047462,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495294864866059,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495294861677100,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495296986708931,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495296981655866,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495302199340541,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495302193085867,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495286848161417,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495286846903414,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495284718186628,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794495284719127986,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-225203-504770"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495869436199714,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495869445328651,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495866601567290,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495866610005846,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495867306434099,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495867314486871,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495868003915064,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495868014230499,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495868717315711,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495868729217205,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495870137245015,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495870146786197,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495865895361020,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495865902364712,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794495861437322370,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794495861411525129,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-230040-904461"
+    },
+    {
+      "path": "final-long-training-3/exp-1112-215539-050439/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35572826,
+      "mtime_ns": 1794492721654276352,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215539-050439"
+    },
+    {
+      "path": "final-long-training-4/exp-1112-222130-343023/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35842042,
+      "mtime_ns": 1794493781612286489,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-222130-343023"
+    },
+    {
+      "path": "final-long-training-fp16/exp-1113-003652-303384/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35532715,
+      "mtime_ns": 1794502426437750054,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-003652-303384"
+    },
+    {
+      "path": "final-long-training-fp16/exp-1113-010116-136916/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35532715,
+      "mtime_ns": 1794503315143868154,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-010116-136916"
+    },
+    {
+      "path": "final-long-training-fp16-pp4/exp-1113-011736-657255/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35532795,
+      "mtime_ns": 1794504778403704265,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-011736-657255"
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/latest_checkpointed_iteration.txt",
+      "bytes": 1,
+      "mtime_ns": 1794504555076545060,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/latest_train_state.pt",
+      "bytes": 3461,
+      "mtime_ns": 1794504555053614878,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/.metadata",
+      "bytes": 79536,
+      "mtime_ns": 1794504554972766897,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__0_0.distcp",
+      "bytes": 561113610,
+      "mtime_ns": 1794504554545466954,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__1_0.distcp",
+      "bytes": 561004771,
+      "mtime_ns": 1794504554534623863,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__2_0.distcp",
+      "bytes": 327736948,
+      "mtime_ns": 1794504554206973970,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__3_0.distcp",
+      "bytes": 327629498,
+      "mtime_ns": 1794504554213494903,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__4_0.distcp",
+      "bytes": 327736948,
+      "mtime_ns": 1794504554209309830,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__5_0.distcp",
+      "bytes": 327629498,
+      "mtime_ns": 1794504554199293556,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__6_0.distcp",
+      "bytes": 561118383,
+      "mtime_ns": 1794504554536632407,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__7_0.distcp",
+      "bytes": 561004771,
+      "mtime_ns": 1794504554541591014,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/metadata.json",
+      "bytes": 63,
+      "mtime_ns": 1794504554990764091,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/run_config.yaml",
+      "bytes": 21075,
+      "mtime_ns": 1794504555043684105,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/train_state.pt",
+      "bytes": 3461,
+      "mtime_ns": 1794504555008612986,
+      "symlink": false,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "job": null
+    },
+    {
+      "path": "final-long-training-no-prefix/exp-1112-231515-172060/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35572882,
+      "mtime_ns": 1794496959696719289,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-231515-172060"
+    },
+    {
+      "path": "final-long-training-pp2/exp-1112-223647-213583/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35572906,
+      "mtime_ns": 1794494743380081211,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-223647-213583"
+    },
+    {
+      "path": "final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1170585,
+      "mtime_ns": 1794492232627238951,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215538-183707"
+    },
+    {
+      "path": "final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790703,
+      "mtime_ns": 1794492246860883655,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215538-183707"
+    },
+    {
+      "path": "final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1103230,
+      "mtime_ns": 1794492262770236843,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215538-183707"
+    },
+    {
+      "path": "final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987563,
+      "mtime_ns": 1794492278192148291,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215538-183707"
+    },
+    {
+      "path": "final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151521,
+      "mtime_ns": 1794492292768353681,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-215538-183707"
+    },
+    {
+      "path": "final-tp4-matched-teacher/exp-1113-001611-128499/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35568804,
+      "mtime_ns": 1794502430972032906,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1113-001611-128499"
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242556,
+      "mtime_ns": 1794481811897898017,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-175309-039353"
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 786086,
+      "mtime_ns": 1794481825359739640,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-175309-039353"
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1100677,
+      "mtime_ns": 1794481834647611943,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-175309-039353"
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 983822,
+      "mtime_ns": 1794481844338748997,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-175309-039353"
+    },
+    {
+      "path": "five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1147281,
+      "mtime_ns": 1794481853685388788,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-175309-039353"
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1243005,
+      "mtime_ns": 1794483155769728396,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-191947-030955"
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 787310,
+      "mtime_ns": 1794483755414990967,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-191947-030955"
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1099853,
+      "mtime_ns": 1794483772048928599,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-191947-030955"
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 983082,
+      "mtime_ns": 1794483783898126685,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-191947-030955"
+    },
+    {
+      "path": "five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1147032,
+      "mtime_ns": 1794483795844793383,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-191947-030955"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485540903359646,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485540897226268,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485544957617292,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485544955418999,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485543199942522,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485543196994246,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485539156533549,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485539153066691,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485547193692748,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3455589,
+      "mtime_ns": 1794485547198357267,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-693626"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487356873645488,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487356877747470,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487361239346520,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487361232989577,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487359318647031,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487359311652954,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487354888054035,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487354886959718,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487363665770938,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794487363769614477,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-677167"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488168537577042,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488168534866063,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488172940525697,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488172930051571,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488171007951206,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488171001079739,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488166597078779,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488166591499270,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488175591226310,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488175586252563,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-205326-305203"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488780993985354,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488780990188875,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488785561473897,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488785558715613,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488783548977541,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488783549056253,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488778986079308,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488778984395193,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488788095329458,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "mtime_ns": 1794488788091529710,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210311-662995"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486011037906233,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486011038187931,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486015340900176,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486015339021798,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486013281674214,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486013284319630,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486009290618017,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486009298650924,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486017543550158,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3463781,
+      "mtime_ns": 1794486017532720644,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-201719-338060"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484931522717552,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484931529316297,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484935231597119,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484935226378897,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484933638979877,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484933635410247,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484929940091465,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484929935290081,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484937311938780,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 2976893,
+      "mtime_ns": 1794484937306479441,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-195948-825359"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489802709452910,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489802706008835,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489807661783159,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489807664938756,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489805333487074,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489805337833970,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489799870752433,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489799863868895,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489810522479957,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "mtime_ns": 1794489810518090778,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-266417"
+    },
+    {
+      "path": "long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3345541,
+      "mtime_ns": 1794485553475020226,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-746577"
+    },
+    {
+      "path": "long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3345541,
+      "mtime_ns": 1794485554941622174,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-746577"
+    },
+    {
+      "path": "long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3345541,
+      "mtime_ns": 1794485554207302290,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-746577"
+    },
+    {
+      "path": "long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3345541,
+      "mtime_ns": 1794485549190574319,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-746577"
+    },
+    {
+      "path": "long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3345541,
+      "mtime_ns": 1794485555679496939,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-200933-746577"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794487339982540173,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794487339981760535,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794487341480350458,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794487341478878368,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794487340753143857,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794487340752538531,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794487335739271265,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794487335713685289,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794487342354549315,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794487342350234172,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-203938-713091"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794489222905636950,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794489222914600506,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794489224307627260,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794489224310358501,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794489223609550720,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794489223608016332,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794489218416722772,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794489218426581713,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794489225004628468,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794489225006386299,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-210903-042205"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794486679593864801,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794486679599749272,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794486681060468888,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794486681056245165,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794486680327420483,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794486680360886403,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794486675416880459,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794486675403360898,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "mtime_ns": 1794486681755813368,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "mtime_ns": 1794486681756900011,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-202910-954148"
+    },
+    {
+      "path": "long-native-layers/exp-1112-194949-717142/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 2976957,
+      "mtime_ns": 1794484346066685103,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-194949-717142"
+    },
+    {
+      "path": "long-native-layers/exp-1112-194949-717142/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 2976957,
+      "mtime_ns": 1794484347540266376,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-194949-717142"
+    },
+    {
+      "path": "long-native-layers/exp-1112-194949-717142/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 2976957,
+      "mtime_ns": 1794484346800896718,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-194949-717142"
+    },
+    {
+      "path": "long-native-layers/exp-1112-194949-717142/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 2976957,
+      "mtime_ns": 1794484341673364081,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-194949-717142"
+    },
+    {
+      "path": "long-native-layers/exp-1112-194949-717142/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 2976957,
+      "mtime_ns": 1794484348278174575,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-194949-717142"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794489816578352398,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794489816582017682,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794489818816698035,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794489818817545532,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794489818112379462,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794489818114864642,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794489812122812752,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794489812137773013,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "mtime_ns": 1794489819519468692,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "mtime_ns": 1794489819521897045,
+      "symlink": false,
+      "reason": "completed_diagnostic_tensor_capture",
+      "job": "exp-1112-212103-283781"
+    },
+    {
+      "path": "native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207323,
+      "mtime_ns": 1794478839121410073,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181156-140223"
+    },
+    {
+      "path": "native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790066,
+      "mtime_ns": 1794478857318274830,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181156-140223"
+    },
+    {
+      "path": "native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1101990,
+      "mtime_ns": 1794478876065050557,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181156-140223"
+    },
+    {
+      "path": "native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987127,
+      "mtime_ns": 1794478898385768149,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181156-140223"
+    },
+    {
+      "path": "native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1150723,
+      "mtime_ns": 1794478920027418750,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181156-140223"
+    },
+    {
+      "path": "native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207155,
+      "mtime_ns": 1794480480956830587,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183916-289473"
+    },
+    {
+      "path": "native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790037,
+      "mtime_ns": 1794480499606864815,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183916-289473"
+    },
+    {
+      "path": "native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1104030,
+      "mtime_ns": 1794480519694971918,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183916-289473"
+    },
+    {
+      "path": "native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987328,
+      "mtime_ns": 1794480539994163639,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183916-289473"
+    },
+    {
+      "path": "native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151134,
+      "mtime_ns": 1794480557173231503,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183916-289473"
+    },
+    {
+      "path": "native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1206759,
+      "mtime_ns": 1794478866430138224,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181232-890845"
+    },
+    {
+      "path": "native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790401,
+      "mtime_ns": 1794478886840360271,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181232-890845"
+    },
+    {
+      "path": "native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1104610,
+      "mtime_ns": 1794478903319206107,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181232-890845"
+    },
+    {
+      "path": "native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987281,
+      "mtime_ns": 1794478922090711102,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181232-890845"
+    },
+    {
+      "path": "native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1152094,
+      "mtime_ns": 1794478940113611265,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181232-890845"
+    },
+    {
+      "path": "native-long-context/exp-1112-181524-408383/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 22233243,
+      "mtime_ns": 1794479438663358759,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-181524-408383"
+    },
+    {
+      "path": "native-long-fp32/exp-1112-183922-688559/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 22231220,
+      "mtime_ns": 1794480702278696474,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-183922-688559"
+    },
+    {
+      "path": "self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207536,
+      "mtime_ns": 1794476548977637765,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-173036-554443"
+    },
+    {
+      "path": "self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 787783,
+      "mtime_ns": 1794476564947714956,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-173036-554443"
+    },
+    {
+      "path": "self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1103568,
+      "mtime_ns": 1794476582670672996,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-173036-554443"
+    },
+    {
+      "path": "self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 985999,
+      "mtime_ns": 1794476602309840303,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-173036-554443"
+    },
+    {
+      "path": "self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151221,
+      "mtime_ns": 1794476619347001022,
+      "symlink": false,
+      "reason": "obsolete_full_trajectory_dump",
+      "job": "exp-1112-173036-554443"
+    }
+  ],
+  "jobs": [
+    "exp-1112-173036-554443",
+    "exp-1112-175309-039353",
+    "exp-1112-181156-140223",
+    "exp-1112-181232-890845",
+    "exp-1112-181524-408383",
+    "exp-1112-183916-289473",
+    "exp-1112-183922-688559",
+    "exp-1112-191947-030955",
+    "exp-1112-194949-717142",
+    "exp-1112-195948-825359",
+    "exp-1112-200933-693626",
+    "exp-1112-200933-746577",
+    "exp-1112-201719-338060",
+    "exp-1112-202910-954148",
+    "exp-1112-203938-677167",
+    "exp-1112-203938-713091",
+    "exp-1112-205326-305203",
+    "exp-1112-210311-662995",
+    "exp-1112-210903-042205",
+    "exp-1112-212103-266417",
+    "exp-1112-212103-283781",
+    "exp-1112-213439-246833",
+    "exp-1112-215538-183707",
+    "exp-1112-215539-050439",
+    "exp-1112-222130-343023",
+    "exp-1112-223647-213583",
+    "exp-1112-225203-504770",
+    "exp-1112-230040-904461",
+    "exp-1112-231515-172060",
+    "exp-1112-234539-001675",
+    "exp-1112-235130-765032",
+    "exp-1112-235613-448362",
+    "exp-1113-001611-128499",
+    "exp-1113-002107-537824",
+    "exp-1113-003652-303384",
+    "exp-1113-005256-166805",
+    "exp-1113-010116-136916",
+    "exp-1113-010116-581403",
+    "exp-1113-011736-657255",
+    "exp-1113-095147-620678",
+    "exp-1113-104851-054395",
+    "exp-1113-112953-201895",
+    "exp-1113-121031-998701",
+    "exp-1113-174329-659007",
+    "exp-1114-021713-015045",
+    "exp-1114-035754-642199",
+    "exp-1114-051900-202756",
+    "exp-1114-115901-508160"
+  ],
+  "protected_paths": [
+    "data",
+    "final-five-teacher-fp16-resume/initial-megatron-checkpoints",
+    "final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints"
+  ],
+  "logical_bytes": 15329381876
+}

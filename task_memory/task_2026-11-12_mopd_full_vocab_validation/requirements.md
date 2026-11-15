@@ -2,6 +2,8 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Record the user correction to the prior 72-H800 scale and renewed OSS cleanup/push authorization. |
+| 2026-11-15 | Record the superseded agent-selected 128-H800 allocation and exact FIFO CPU preflight. |
 | 2026-11-15 | Record completion-FIFO trajectory selection, explicit staleness, and GitHub push authorization. |
 | 2026-11-15 | Add exact comparison against the wyx/full_vocab hidden-state and full-vocabulary storage implementation. |
 | 2026-11-14 | Record the batch/FIFO and source-task historical timing follow-up. |
@@ -103,3 +105,19 @@ Initial operational choice: use the existing windowed weight-age policy with max
 
 
 Native recovery decision: allow only in_order -> windowed as a sampler-name migration, with all other authoritative metadata checks intact. Retain historical group target-step stamps for ownership recovery; windowed selection ignores them. Reject migration when the checkpoint has shortfalls or allowed-short steps at or after the restored trainer version. Actual step40 has no such pending state. Unstamped samplers already require max_skipped_prompts=0 and max_consecutive_dropped_prompts=0; the recipe uses on_dropped_prompt=shrink with a full-batch floor and retains existing row retry behavior. No new importance-sampling setting or loss change is introduced.
+
+## [Agent Operational Choice — Superseded] Step40 continuation, 2026-11-15
+
+The agent selected a non-preemptible 128-H800 `codesign` RJob to continue from `step_40 / Adam22`. This was an agent resource choice, not a user request, and the user subsequently rejected its scale. The resolved role allocation requests 16 eight-GPU nodes: student8 (TP2/PP4), rollout104 (52 TP2 engines across13 nodes), five TP2 teachers10, and six unused GPUs. Use completion FIFO, weight-age staleness5, 512 in-flight prompts and a 1536-group buffer, while retaining 256 trajectories/update, full vocabulary151936, the 65536-token ceiling and latest-only native checkpoint retention. Keep `max_num_steps=218` as a controller-step horizon; completion is determined by actual successful optimizer/Adam updates, not attempted iterations. If any updates skip, resume the latest checkpoint until Adam200. The selected vLLM graph configuration is `enforce_eager=false` with compilation backend `eager`; actual capture, parity, throughput and sustained teacher utilization remain GPU acceptance checks, not preflight assumptions.
+
+## [Original Request] Resource correction and renewed cleanup/delivery, 2026-11-15
+
+> 你为什么要提交128卡？这个量级明显大于原来的卡数需求
+
+> 清理过去在oss保留的大产物和文件；继续当前task；检查是否推送了最新进度，如果没有，推送
+
+> continue
+
+Restore the previously measured 72-H800 scale: student8 (TP2/PP4), rollout48 (24 TP2 engines), five TP2 teachers10 and six unused GPUs. Stop and verify the exact unallocated 128-H800 job before submitting one replacement. Use concurrency256, completion FIFO, weight-age5, buffer1536 and the original full-vocabulary/256/65536 workload. Keep the selected graph configuration as a GPU-verification item; scaling beyond the prior layout requires measured benefit. The 128-GPU capacity statement does not imply a target allocation.
+
+Delete current-task obsolete trajectory payloads, completed diagnostic tensor captures and unused conversion caches after exact terminal-job and unchanged-inventory checks. Preserve compact numerical/sample metadata evidence, the six source models, current conversion inputs, prepared dataset and the sole complete step40 recovery checkpoint. Do not delete other tasks' assets or a shared trash namespace. Namespace deletion and physical OSS reclamation are separate verification claims. Push the scoped latest task progress and verified deliverables to origin/mopd-sys.

@@ -1,0 +1,81 @@
+{
+  "jobs": [
+    {
+      "observed_at": "2026-11-15T11:38:42.744300+00:00",
+      "name": "exp-1115-193456-282702",
+      "uid": "102dc861-ec0d-4fdd-85bc-dc216ff00572",
+      "creator": "i-fengyicheng",
+      "status": {
+        "phase": "Pending",
+        "reason": "RJob is queuing",
+        "message": "RJob is queuing",
+        "taskStatuses": {
+          "default": {
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "taskStage": "stepmind-task-stage-1"
+      },
+      "annotations": {
+        "rjob.brainpp.cn/rjob-queue-approved": "",
+        "stepmind.com/queue-elem-ranking": "2",
+        "stepmind.com/queue-name": "codesign-default",
+        "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 9 replicas = 72 GPU (H800). Queue remaining: H800=42."
+      },
+      "tasks": {
+        "default": {
+          "replicas": 9,
+          "mount": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+        }
+      },
+      "replicas": {}
+    },
+    {
+      "observed_at": "2026-11-15T11:38:43.096745+00:00",
+      "name": "exp-1115-193548-376103",
+      "uid": "3a0f803d-ff74-48e9-93a4-db4f1aff6cdd",
+      "creator": "i-fengyicheng",
+      "status": {
+        "phase": "Running",
+        "reason": "RJobRunning",
+        "message": "Tasks is running: [default]",
+        "taskStatuses": {
+          "default": {
+            "active": 1,
+            "taskStage": "stepmind-task-stage-1"
+          }
+        },
+        "taskStage": "stepmind-task-stage-1"
+      },
+      "annotations": {
+        "rjob.brainpp.cn/rjob-queue-approved": "2026-11-15T11:35:52.757425594Z",
+        "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+        "stepmind.com/queue-name": "codesign-default"
+      },
+      "tasks": {
+        "default": {
+          "replicas": 1,
+          "mount": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+        }
+      },
+      "replicas": {
+        "default": [
+          {
+            "name": "exp-1115-193548-376103-cfcd2084",
+            "ip": "10.191.5.46",
+            "phase": "Running"
+          }
+        ]
+      }
+    }
+  ],
+  "formal_launcher": {
+    "pid": 1579154,
+    "log": "/data/ycfeng/tmp/nemo-mopd-20261112/formal-step40-fifo-72gpu-launch-20261115.log",
+    "source_host": "kun-workspace-vgen2",
+    "detached_local_launcher": true
+  },
+  "observer_launcher": {
+    "pid": 1591600
+  }
+}

@@ -1,0 +1,2709 @@
+{
+  "job": "exp-1115-193120-091174",
+  "started": "2026-11-15T11:31:30.118656+00:00",
+  "status": "completed",
+  "entries": [
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 5753853,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 5753853,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65528-rank-0.pt",
+      "bytes": 5760275,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65528-rank-1.pt",
+      "bytes": 5760275,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-2/exp-1112-234539-001675/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-fp16-2/exp-1113-002107-537824/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-native/exp-1112-235130-765032/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 3777405,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-last-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-0.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-position-65519-rank-1.pt",
+      "bytes": 3779603,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/3975f292-6577-4d89-88f0-4ec81b32a364_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-0.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-actual-decode-triton/exp-1112-235613-448362/logs/prefill-layers/abc1eb33-a180-495d-9092-f598a33b75a6_g0-position-65534-rank-1.pt",
+      "bytes": 7075091,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-010116-581403/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 1242995,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-010116-581403/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 28207,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-095147-620678/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242982,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-095147-620678/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 28184,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242612,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 28186,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step10.jsonl",
+      "bytes": 1111549,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step10.jsonl.summary.json",
+      "summary_bytes": 28237,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step11.jsonl",
+      "bytes": 918755,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step11.jsonl.summary.json",
+      "summary_bytes": 28259,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step12.jsonl",
+      "bytes": 1148965,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step12.jsonl.summary.json",
+      "summary_bytes": 28248,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step13.jsonl",
+      "bytes": 1359693,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step13.jsonl.summary.json",
+      "summary_bytes": 28261,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step14.jsonl",
+      "bytes": 1102225,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step14.jsonl.summary.json",
+      "summary_bytes": 28235,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step15.jsonl",
+      "bytes": 1355737,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step15.jsonl.summary.json",
+      "summary_bytes": 28257,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step16.jsonl",
+      "bytes": 915539,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step16.jsonl.summary.json",
+      "summary_bytes": 28261,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 786664,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 28187,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1098977,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28196,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 982641,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 28179,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1146735,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 28201,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step6.jsonl",
+      "bytes": 1038026,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step6.jsonl.summary.json",
+      "summary_bytes": 28164,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step7.jsonl",
+      "bytes": 927628,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step7.jsonl.summary.json",
+      "summary_bytes": 28188,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step8.jsonl",
+      "bytes": 1029627,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step8.jsonl.summary.json",
+      "summary_bytes": 28205,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step9.jsonl",
+      "bytes": 1105589,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-104851-054395/logs/exp_002/train_data_step9.jsonl.summary.json",
+      "summary_bytes": 28199,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-112953-201895/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 205786059,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-112953-201895/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 224058,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-121031-998701/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 207313720,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-121031-998701/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 224025,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 207781577,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 224034,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step10.jsonl",
+      "bytes": 209695362,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step10.jsonl.summary.json",
+      "summary_bytes": 224326,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step11.jsonl",
+      "bytes": 222682459,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step11.jsonl.summary.json",
+      "summary_bytes": 224603,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 226112544,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 224090,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 208860380,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 224056,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 223003336,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 224045,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 212699448,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 224078,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step6.jsonl",
+      "bytes": 198063633,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step6.jsonl.summary.json",
+      "summary_bytes": 224012,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step7.jsonl",
+      "bytes": 215849942,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step7.jsonl.summary.json",
+      "summary_bytes": 224120,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step8.jsonl",
+      "bytes": 199666888,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step8.jsonl.summary.json",
+      "summary_bytes": 223984,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step9.jsonl",
+      "bytes": 194701862,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1113-174329-659007/logs/exp_002/train_data_step9.jsonl.summary.json",
+      "summary_bytes": 223987,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step11.jsonl",
+      "bytes": 225775487,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step11.jsonl.summary.json",
+      "summary_bytes": 224641,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step12.jsonl",
+      "bytes": 199210656,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step12.jsonl.summary.json",
+      "summary_bytes": 224562,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step13.jsonl",
+      "bytes": 188818749,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step13.jsonl.summary.json",
+      "summary_bytes": 224545,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step14.jsonl",
+      "bytes": 208725042,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step14.jsonl.summary.json",
+      "summary_bytes": 224566,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step15.jsonl",
+      "bytes": 221856004,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step15.jsonl.summary.json",
+      "summary_bytes": 224633,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step16.jsonl",
+      "bytes": 212842748,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step16.jsonl.summary.json",
+      "summary_bytes": 224666,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step17.jsonl",
+      "bytes": 218136613,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-021713-015045/logs/exp_001/train_data_step17.jsonl.summary.json",
+      "summary_bytes": 224591,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step18.jsonl",
+      "bytes": 200180109,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step18.jsonl.summary.json",
+      "summary_bytes": 224475,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step19.jsonl",
+      "bytes": 221851118,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step19.jsonl.summary.json",
+      "summary_bytes": 224605,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step20.jsonl",
+      "bytes": 217058753,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step20.jsonl.summary.json",
+      "summary_bytes": 224613,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step21.jsonl",
+      "bytes": 204978707,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step21.jsonl.summary.json",
+      "summary_bytes": 224601,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step22.jsonl",
+      "bytes": 214148714,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step22.jsonl.summary.json",
+      "summary_bytes": 224657,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step23.jsonl",
+      "bytes": 193841029,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-035754-642199/logs/exp_001/train_data_step23.jsonl.summary.json",
+      "summary_bytes": 224548,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step24.jsonl",
+      "bytes": 203587464,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step24.jsonl.summary.json",
+      "summary_bytes": 224614,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step25.jsonl",
+      "bytes": 207064046,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step25.jsonl.summary.json",
+      "summary_bytes": 224559,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step26.jsonl",
+      "bytes": 200670526,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step26.jsonl.summary.json",
+      "summary_bytes": 224521,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step27.jsonl",
+      "bytes": 197038379,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step27.jsonl.summary.json",
+      "summary_bytes": 224539,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step28.jsonl",
+      "bytes": 195883995,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step28.jsonl.summary.json",
+      "summary_bytes": 224576,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step29.jsonl",
+      "bytes": 187494845,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step29.jsonl.summary.json",
+      "summary_bytes": 224490,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step30.jsonl",
+      "bytes": 190096891,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step30.jsonl.summary.json",
+      "summary_bytes": 224523,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step31.jsonl.part-0",
+      "bytes": 195831424,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-051900-202756/logs/exp_001/train_data_step31.jsonl.part-0.summary.json",
+      "summary_bytes": 224582,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step31.jsonl",
+      "bytes": 202468881,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step31.jsonl.summary.json",
+      "summary_bytes": 224587,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step32.jsonl",
+      "bytes": 186846451,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step32.jsonl.summary.json",
+      "summary_bytes": 224555,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step33.jsonl",
+      "bytes": 207209383,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step33.jsonl.summary.json",
+      "summary_bytes": 224673,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step34.jsonl",
+      "bytes": 196777075,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step34.jsonl.summary.json",
+      "summary_bytes": 224535,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step35.jsonl",
+      "bytes": 182474546,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step35.jsonl.summary.json",
+      "summary_bytes": 224512,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step36.jsonl",
+      "bytes": 184438824,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step36.jsonl.summary.json",
+      "summary_bytes": 224618,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step37.jsonl",
+      "bytes": 178470249,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step37.jsonl.summary.json",
+      "summary_bytes": 224572,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step38.jsonl",
+      "bytes": 185250651,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step38.jsonl.summary.json",
+      "summary_bytes": 224573,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step39.jsonl",
+      "bytes": 189439108,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step39.jsonl.summary.json",
+      "summary_bytes": 224606,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step40.jsonl",
+      "bytes": 173598855,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step40.jsonl.summary.json",
+      "summary_bytes": 224477,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step41.jsonl",
+      "bytes": 172616256,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step41.jsonl.summary.json",
+      "summary_bytes": 224513,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step42.jsonl",
+      "bytes": 189891446,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step42.jsonl.summary.json",
+      "summary_bytes": 224593,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step43.jsonl",
+      "bytes": 180218109,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step43.jsonl.summary.json",
+      "summary_bytes": 224578,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step44.jsonl",
+      "bytes": 174101774,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step44.jsonl.summary.json",
+      "summary_bytes": 224468,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step45.jsonl",
+      "bytes": 180068357,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step45.jsonl.summary.json",
+      "summary_bytes": 224573,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step46.jsonl",
+      "bytes": 189458804,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-fp16-resume/exp-1114-115901-508160/logs/exp_001/train_data_step46.jsonl.summary.json",
+      "summary_bytes": 224538,
+      "samples": 256,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242379,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 28013,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 786970,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 28014,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1099552,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28009,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 983111,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27991,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1146676,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-five-teacher-resume/exp-1112-213439-246833/logs/exp_002/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 27997,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-head-gradient-reference/exp-1113-005256-166805/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 288416,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-head-gradient-reference/exp-1113-005256-166805/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7179,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-generation-prefill/exp-1112-225203-504770/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/022ce379-fc1f-4f69-928d-6cb5bcf6ab83_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/172482ed-110a-4e1a-b6ac-b73537fbd469_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/1b179ba0-745d-4251-a407-c3aa80d7381b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/37cf83ca-56fe-45cb-8f9b-2bc33a0b235b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/3975f292-6577-4d89-88f0-4ec81b32a364_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/45d7ffe6-f989-45c4-90ca-5130eebb1ae4_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/83c1f5bf-9d65-4946-b6b0-d57d9b4e4e60_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-native-prefill-3/exp-1112-230040-904461/logs/layer-outputs/abc1eb33-a180-495d-9092-f598a33b75a6_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-3/exp-1112-215539-050439/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35572826,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-3/exp-1112-215539-050439/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 7136,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-4/exp-1112-222130-343023/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35842042,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-4/exp-1112-222130-343023/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7127,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16/exp-1113-003652-303384/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35532715,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-fp16/exp-1113-003652-303384/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 7198,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16/exp-1113-010116-136916/logs/exp_001/train_data_step1.jsonl.part-0",
+      "bytes": 35532715,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-fp16/exp-1113-010116-136916/logs/exp_001/train_data_step1.jsonl.part-0.summary.json",
+      "summary_bytes": 7198,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/exp-1113-011736-657255/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35532795,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-fp16-pp4/exp-1113-011736-657255/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7194,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/latest_checkpointed_iteration.txt",
+      "bytes": 1,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/latest_train_state.pt",
+      "bytes": 3461,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/.metadata",
+      "bytes": 79536,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__0_0.distcp",
+      "bytes": 561113610,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__1_0.distcp",
+      "bytes": 561004771,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__2_0.distcp",
+      "bytes": 327736948,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__3_0.distcp",
+      "bytes": 327629498,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__4_0.distcp",
+      "bytes": 327736948,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__5_0.distcp",
+      "bytes": 327629498,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__6_0.distcp",
+      "bytes": 561118383,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/__7_0.distcp",
+      "bytes": 561004771,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/metadata.json",
+      "bytes": 63,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/run_config.yaml",
+      "bytes": 21075,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-fp16-pp4/initial-megatron-checkpoints/model__mnt_codesign-exp_ycfeng_opd-assets_oneshot-r1distill1p5b_student/iter_0000000/train_state.pt",
+      "bytes": 3461,
+      "reason": "obsolete_diagnostic_conversion_cache",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-no-prefix/exp-1112-231515-172060/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35572882,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-no-prefix/exp-1112-231515-172060/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7137,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-long-training-pp2/exp-1112-223647-213583/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35572906,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-long-training-pp2/exp-1112-223647-213583/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7130,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1170585,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 28000,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790703,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 28015,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1103230,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28041,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987563,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27975,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151521,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-self-observed-2/exp-1112-215538-183707/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 28003,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-tp4-matched-teacher/exp-1113-001611-128499/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 35568804,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/final-tp4-matched-teacher/exp-1113-001611-128499/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 7131,
+      "samples": 8,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1242556,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 27972,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 786086,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 27977,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1100677,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 27989,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 983822,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27972,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1147281,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-diagnostic/exp-1112-175309-039353/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 27975,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1243005,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 27999,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step2.jsonl",
+      "bytes": 787310,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 28029,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step3.jsonl",
+      "bytes": 1099853,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28022,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step4.jsonl",
+      "bytes": 983082,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 28003,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step5.jsonl",
+      "bytes": 1147032,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/five-teacher-fp32-resume-diagnostic/exp-1112-191947-030955/logs/exp_002/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 28007,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-attention-layers/exp-1112-200933-693626/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3455589,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers/exp-1112-203938-677167/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta/exp-1112-205326-305203/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-core-fp32-layers-theta-fa4/exp-1112-210311-662995/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5584551,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-fp32-rope/exp-1112-201719-338060/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3463781,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-layers-2/exp-1112-195948-825359/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 2976893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-generation-matched-fa4-norm/exp-1112-212103-266417/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 7072893,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 3345541,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 3345541,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 3345541,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 3345541,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-attention-layers/exp-1112-200933-746577/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 3345541,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers/exp-1112-203938-713091/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fp32-head-layers-fa4-2/exp-1112-210903-042205/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2115205,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-fused-swiglu/exp-1112-202910-954148/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 5466309,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/exp-1112-194949-717142/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 2976957,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/exp-1112-194949-717142/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 2976957,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/exp-1112-194949-717142/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 2976957,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/exp-1112-194949-717142/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 2976957,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-layers/exp-1112-194949-717142/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 2976957,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/74ab706e-7ebb-44c2-af6f-9da64228e11c_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/884048b5-35f4-4990-bce2-cc840f1c0593_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/a59823d2-a593-49fd-9822-ff3af97c5f5f_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/cfbc6d08-d5a2-48cc-bef4-6f3697d49f3e_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-0.pt",
+      "bytes": 2120463,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/long-native-matched-fa4-norm/exp-1112-212103-283781/logs/layer-outputs/f4dff239-20de-48a8-9776-d1313c99884b_g0-rank-1.pt",
+      "bytes": 6260047,
+      "reason": "completed_diagnostic_tensor_capture",
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207323,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 27962,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790066,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 27982,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1101990,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 27987,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987127,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27954,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1150723,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-bf16-observed/exp-1112-181156-140223/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 27957,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207155,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 28001,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790037,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 27999,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1104030,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28007,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987328,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27987,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151134,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-corrected/exp-1112-183916-289473/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 28000,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1206759,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 27995,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 790401,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 27998,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1104610,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 28005,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 987281,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27995,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1152094,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-fp32-observed/exp-1112-181232-890845/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 27987,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-context/exp-1112-181524-408383/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 22233243,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-long-context/exp-1112-181524-408383/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 4543,
+      "samples": 5,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/native-long-fp32/exp-1112-183922-688559/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 22231220,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/native-long-fp32/exp-1112-183922-688559/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 4542,
+      "samples": 5,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step1.jsonl",
+      "bytes": 1207536,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step1.jsonl.summary.json",
+      "summary_bytes": 27966,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step2.jsonl",
+      "bytes": 787783,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step2.jsonl.summary.json",
+      "summary_bytes": 27963,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step3.jsonl",
+      "bytes": 1103568,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step3.jsonl.summary.json",
+      "summary_bytes": 27979,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step4.jsonl",
+      "bytes": 985999,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step4.jsonl.summary.json",
+      "summary_bytes": 27958,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    },
+    {
+      "path": "/mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step5.jsonl",
+      "bytes": 1151221,
+      "reason": "obsolete_full_trajectory_dump",
+      "summary": "/data/ycfeng/sota-engine/RL/task_memory/task_2026-11-12_mopd_full_vocab_validation/evidence/cleanup-trajectory-summaries-20261115/self-diagnostic/exp-1112-173036-554443/logs/exp_001/train_data_step5.jsonl.summary.json",
+      "summary_bytes": 27973,
+      "samples": 32,
+      "status": "deleted_and_absent"
+    }
+  ],
+  "logical_bytes_removed": 15329381876,
+  "limits": [
+    "Logical namespace deletion; physical backend reclamation is not measured.",
+    "Removed raw trajectories and diagnostic tensors cannot be replayed directly."
+  ],
+  "finished": "2026-11-15T11:34:16.805535+00:00",
+  "protected_unchanged": true,
+  "source_model_files_unchanged": 41,
+  "latest_checkpoint": "step_40",
+  "new_checkpoints": 0,
+  "remaining_task_logical_bytes": 50501557995
+}
