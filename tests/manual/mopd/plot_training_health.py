@@ -98,6 +98,24 @@ def main() -> None:
         row["source_job"] = summary["job"]
         row["scorer_vllm_mae"] = summary["overall"]["mae"]
         row["scorer_vllm_max"] = summary["overall"]["max"]
+        ages = [step - 1 - sample["weight_version"] for sample in summary["samples"]]
+        assert all(age >= 0 for age in ages)
+        same_weight = [
+            sample
+            for sample, age in zip(summary["samples"], ages, strict=True)
+            if age == 0
+        ]
+        same_weight_tokens = sum(sample["tokens"] for sample in same_weight)
+        row["weight_age_min"] = min(ages)
+        row["weight_age_max"] = max(ages)
+        row["same_weight_samples"] = len(same_weight)
+        row["same_weight_tokens"] = same_weight_tokens
+        row["same_weight_scorer_vllm_mae"] = (
+            sum(sample["mae"] * sample["tokens"] for sample in same_weight)
+            / same_weight_tokens
+            if same_weight_tokens
+            else None
+        )
         for group in groups:
             samples = [s for s in summary["samples"] if s["group"] == group]
             row[f"{group}_mae"] = summary["by_group"][group]["mae"]
@@ -114,7 +132,7 @@ def main() -> None:
         (
             axes[1, 1],
             tuple((f"{group}_mae", group) for group in groups),
-            "Scorer/vLLM MAE (nats/token)",
+            "Scorer/vLLM difference (nats/token; includes weight drift)",
         ),
         (
             axes[2, 0],
@@ -142,11 +160,27 @@ def main() -> None:
         axis.grid(alpha=0.25)
         axis.legend(fontsize=8)
     axes[0, 1].axhline(args.grad_clip, color="black", linestyle="--", linewidth=1)
-    axes[1, 1].axhline(args.mae_limit, color="black", linestyle="--", linewidth=1)
+    axes[1, 1].plot(
+        steps,
+        [row["same_weight_scorer_vllm_mae"] for row in rows],
+        color="black",
+        marker="o",
+        markersize=3,
+        linestyle=":",
+        label="Same-weight pooled MAE",
+    )
+    axes[1, 1].axhline(
+        args.mae_limit,
+        color="black",
+        linestyle="--",
+        linewidth=1,
+        label="Same-weight MAE criterion",
+    )
+    axes[1, 1].legend(fontsize=8)
     axes[1, 1].set_yscale("log")
     figure.suptitle(
         f"MOPD observed training: {successes} successes / {len(steps)} attempts\n"
-        "Native metrics and independent scorer/vLLM comparison"
+        "Native metrics; scorer/vLLM differences include drift when weight age > 0"
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     figure.savefig(args.output, dpi=140)

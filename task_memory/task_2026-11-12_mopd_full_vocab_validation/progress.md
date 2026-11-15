@@ -4249,3 +4249,75 @@ See test_report_2026-11-16_final_replay_preparation.md and selected final-fifo-*
 1.122成功已持久化；125观察成功，仍未完成200。
 2.最终验收输入和脚本已CPU通过；finalwaiter当前未占用GPU。
 3.真实训练/最终GPUparity不能由准备检查代替；teacher清理风险继续监控。
+
+
+### 2026-11-16 00:17 HKT — Progress pushed; authoritative health curves refreshed
+
+Signed commit64ed95801ba5ec3efa341bbd7fd8d8141ea5b735 pushed toorigin/mopd-sys; independentgitls-remote matches. It delivers the prior00:08 preparation and122durable/125observed evidence in22scoped files. Fresh personal API00:11:58HKT confirms the exact writer and observer Running; nine/allreplicas, creator and100.96.128.195 local NFS unchanged; allthree local launchers remain alive.
+
+The curve/CSV now covers the actual restored chain18–147:130attempts,129successes,skip25 only,107consecutive FIFO successes. Older discarded post40 attempts are excluded using23symlinks to compact existing legacy summaries. The current accepted33,280sample IDs are distinct; all256batches,fivegroups,masks,finite metrics/logprobs andweightage0–5 pass. Sameweight6144samples/46,227,111tokens pooledMAE0.00123752925. loss0.190382123→0.0292639453(-84.6288%); grad1.14753270→0.0833321586. Last20steps128–147 average71.30795s, wait0.36098s, policy54.29877s.
+
+The existing plot script needed a narrow semantic correction after FIFO: group differences include weight drift, while the0.02threshold applies only to sameweightMAE. Gain: the delivered curve accurately separates model-version differences from backend errors. Existing native metadata providesgeneration weight_version andstep-1 scoringversion; no alternate logprob mechanism or config schema is needed. AddCSVage/sameweight counts and label the panel/threshold accordingly; preserve empty observations. Run the real authoritative input and verify every row/group/count, then scoped Ruff/format. No training code/config/resource change or extra checkpoint/export.
+
+First plot read sawstep147optimizer flags beforetimingpublication; refreshing the actual snapshot supplies the events and strict checks pass. Initial hostPython3.10 pooled-sum comparison differed at≤1.301e-18; running exact plottingPython3.13 produces equality. Both are CPUinspection failures, not training failures; no production tolerance change. Actual PNG inspection confirms readable panels. Full commands/results/limits update test_report_2026-11-14_training_health_curves.md; independent checks in evidence/formal-training-health-verification-20261116.json. Current native metadata stillstep140/Adam122; formal200andfinalGPUparity remainunfinished.
+
+Next: signed scoped curve/code/report commitandpush; continueexact72GPUwriter and latest-onlyretention; monitor completion/teacher clean-policy window; finalAdam200→fullscan→unsaved16GPUthreeway→finalcurves/archive.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS11｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 原输入身份 | PASS | 六模型与原数据保留。 |
+| Q 200成功验收合同 | PASS | 原合同/latest-only保持。 |
+| B CPU/worker准备 | PASS | 已有准确输入及运行证据。 |
+| C full-vocab参考 | PASS | 已有loss/gradient数值结果。 |
+| D 修复与恢复 | PASS | 既有修复及native实际恢复。 |
+| P 性能调查 | PASS | 相同72卡实测与代码/手册比较已交付。 |
+| E FIFO实现 | PASS | 2f828a95已推送，实际批次检查通过。 |
+| 授权清理 | PASS | 389文件清理与latest-only；未扩写权重。 |
+| 当前训练健康 | PASS | 107连续成功至step147，实际样本/数值通过。 |
+| F CPU准备 | PASS | 现有五prompt/contract/waiter通过。 |
+| F 中间曲线 | PASS | 129成功权威链及每一CSV字段检查通过。 |
+| E 正式200成功 | TODO | 最近122durable/129observed，writer继续。 |
+| F 最终GPU与归档 | BLOCKED | 依赖最终Adam200publication。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 64ed9580交付至00:18HKT｜**当前前沿：** E持续训练和F中间曲线交付
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 仅纠正FIFO后图表的权重语义；实际输入验证后停止扩展。 |
+| D2 细节反复重试 | CLEAR | 缺失event实际刷新、精确Python运行均一次验证明确原因。 |
+| D3 支线问题修补 | CLEAR | 曲线是F既有要求。 |
+| D4 可并行任务停滞 | CLEAR | writer/observer/waiter继续；CPU曲线并行完成。 |
+| D5 超范围镀金 | CLEAR | 未改变算法、config schema、资源或保存策略。 |
+| D6 分析空转 | CLEAR | 实际新增四成功及130行核验曲线。 |
+| D7 路线违背 | CLEAR | 原模型/vocab/256/65536/72卡/latest-only保持。 |
+
+**文档检查：** S5：旧曲线是step35快照，且旧标签将所有组差异称为parity；已更新当前快照及实际权重年龄语义。S1–S4/S6未发现明显缺陷。
+**归因：** 无执行偏离；S5是FIFO后旧观测文档的过期状态。
+
+## 3. 纠正建议
+
+**分支：** B：先更新过期曲线/文档，已执行。
+
+**文档更新（先执行）：**
+1. plan.md与test_report_2026-11-14_training_health_curves.md：记录step147权威链、sameweight区分及最终待验项。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. 交付已验证曲线/代码：signed scoped commit+push → 完成标志：远端SHA相符。
+2. E继续唯一当前writer，observer/waiter并行 → 完成标志：nativeAdam200、latest-only及正确终态。
+3. F执行最终finite/三方parity和archive → 完成标志：实际数值和完整交付，不能以中间曲线代替。
+
+## 4. 最值得关注的 3 点
+
+1.129成功已观察、122已保存；正式200仍未完成。
+2.最近20步71.31秒，等待0.36秒；含旧权重差异与同权重错误已分清。
+3.无额外GPU或权重写入；当前teacher clean-policy及最终三方检查继续监控。

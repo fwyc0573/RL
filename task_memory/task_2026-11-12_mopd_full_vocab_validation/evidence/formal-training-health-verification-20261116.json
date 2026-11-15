@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-11-15T16:17:14.659125+00:00",
+  "steps": [
+    18,
+    147
+  ],
+  "attempts": 130,
+  "successful_updates": 129,
+  "skipped_steps": [
+    25
+  ],
+  "samples": 33280,
+  "distinct_sample_ids": 33280,
+  "response_tokens": 203270737,
+  "fifo_steps": [
+    41,
+    147
+  ],
+  "fifo_successes": 107,
+  "weight_age_counts": {
+    "0": 6144,
+    "1": 256,
+    "2": 256,
+    "3": 256,
+    "4": 3313,
+    "5": 23055
+  },
+  "same_weight_samples": 6144,
+  "same_weight_tokens": 46227111,
+  "same_weight_pooled_mae": 0.0012375292471864753,
+  "loss_first": 0.19038212299346924,
+  "loss_last": 0.029263945296406746,
+  "loss_endpoint_change_percent": -84.6288376049832,
+  "grad_first": 1.1475327014923096,
+  "grad_last": 0.08333215862512589,
+  "grad_min": 0.08333215862512589,
+  "grad_max": 1.1761640310287476,
+  "above_clip_steps": [
+    18,
+    19,
+    20,
+    21
+  ],
+  "fifo_mean_step_seconds": 72.12190349971023,
+  "fifo_mean_wait_seconds": 0.587280231205938,
+  "fifo_mean_policy_seconds": 54.899789293235706,
+  "last20_steps": [
+    128,
+    147
+  ],
+  "last20_mean_step_seconds": 71.30794715881348,
+  "last20_mean_wait_seconds": 0.36097947917878626,
+  "last20_mean_policy_seconds": 54.29877071380615,
+  "source_chain": [
+    "exp-1114-035754-642199",
+    "exp-1114-051900-202756",
+    "exp-1114-115901-508160",
+    "exp-1115-193456-282702"
+  ],
+  "status": "PASS_AUTHORITATIVE_COMPLETED_ATTEMPT_SNAPSHOT",
+  "limits": [
+    "The original post-step40 attempts in the older job were not part of the restored chain and are excluded.",
+    "Ages above zero contain weight drift; their differences are not same-weight parity failures.",
+    "Per-group full-vocabulary loss is not emitted by native metrics.",
+    "Final Adam200, final parameter scan, and actual training/scorer/vLLM parity remain pending."
+  ]
+}
