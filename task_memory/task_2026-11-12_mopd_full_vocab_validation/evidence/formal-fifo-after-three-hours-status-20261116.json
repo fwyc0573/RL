@@ -1,0 +1,108 @@
+{
+  "checked_at": "2026-11-15T16:41:31.394081+00:00",
+  "job": "exp-1115-193456-282702",
+  "phase": "Running",
+  "job_preemptible": "no",
+  "replicas": [
+    {
+      "replica": "exp-1115-193456-282702-1679091c",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-c81e728d",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-a87ff679",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-8f14e45f",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-e4da3b7f",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-c9f0f895",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-cfcd2084",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-c4ca4238",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    },
+    {
+      "replica": "exp-1115-193456-282702-eccbc87e",
+      "phase": "Running",
+      "labels": {
+        "quotagroup.brainpp.cn/preemptible": "no",
+        "rjob.brainpp.cn/is-critical-task": "yes"
+      },
+      "annotations": {
+        "kubebrain.brainpp.cn/preemptible.job": "no"
+      }
+    }
+  ],
+  "limit": "Current annotations and phase only; not a complete utilization/power window."
+}

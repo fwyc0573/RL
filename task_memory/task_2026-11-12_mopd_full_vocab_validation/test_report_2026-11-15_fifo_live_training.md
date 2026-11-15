@@ -2,18 +2,19 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Extend actual health and latest-only evidence to step170/Adam152; current replicas remain Running after three hours since queue approval. |
 | 2026-11-16 | Extend actual health throughstep160/Adam142, verify latest-only deletion and current non-preemptible replica labels. |
 | 2026-11-15 | Verify actual 72-H800 restore, graph capture, 91 consecutive successful updates, latest-only step130/Adam112, and the measured timing improvement. |
 
 # Live FIFO training validation
 
-The formal continuation is running on the original72-H800 scale. The latest read at00:31HKT on November16 verifies step160/Adam142 on all eight optimizer shards, one complete checkpoint/31files/55,490,555,924bytes, and removal of oldstep150. Native state reads5,595,404bytes of metadata/scalars/replay metadata and zero model/Adam tensor payloads. Current recoverable progress is142/200.
+The formal continuation is running on the original72-H800 scale. The latest native read at00:43HKT on November16 verifies step170/Adam152 on all eight optimizer shards, one complete checkpoint/31files/55,182,356,048bytes, and removal of oldstep160. Native state reads5,605,452bytes of metadata/scalars/replay metadata and zero model/Adam tensor payloads. Current recoverable progress is152/200.
 
-Inspected steps41–160 show120consecutive successful FIFO updates with no skips. All additional steps132–160 have finite loss/gradients, full-RKL equal toloss, scale1,256valid samples, distinct IDs, five-group coverage, correct masks and weightages0–5. Step160:loss0.0253324918,gradnorm0.131342724,1,495,720response tokens;total82.10650s,readywait0.41234s,policy53.84398s. It includes the native periodic save boundary. Final200andthreewayparity remainunfinished.
+Inspected steps41–170 show130consecutive successful FIFO updates with no skips. All additional steps132–170 have finite loss/gradients, full-RKL equal toloss, scale1,256valid samples, distinct IDs, five-group coverage, correct masks and weightages0–5. Step170:loss0.0236318968,gradnorm0.0830308422,1,422,693response tokens;total82.89971s,readywait0.81280s,policy57.04141s. It includes the native periodic save boundary. Final200andthreewayparity remainunfinished.
 
-Personal API00:26:19HKT confirms the writer and all nine replicas Running, each preemptible=no; no stop/clean reason annotation is present. A direct Kubernetes Pod read was403Forbidden. The documented personal RJob replica API successfully supplies current labels. Those labels do not establish a full three-hour utilization or power window, or prove exemption from automatic cleanup. No job/resource/permission change was made.
+Personal API00:41:31HKT confirms the writer and all nine replicas Running, each preemptible=no; no stop/clean reason annotation is present. This is more than three hours after queue approval21:39:39HKT; it is not a measured three-hour GPU utilization/power window. A direct Kubernetes Pod read earlier returned403Forbidden. The documented personal RJob replica API successfully supplies current labels. No job/resource/permission change was made; the prior clean-policy failure remains a risk rather than the current observed outcome.
 
-Updated evidence: evidence/formal-fifo-latest-native-state-20261116.json, formal-fifo-continued-health-20261116.json and formal-fifo-clean-policy-status-20261116.json. The native/current-health files are updated in place; earlier readbacks remain at their signed commits. Original restore/graph/performance observations below refer to the November15window and remain historical measurements.
+Updated evidence: evidence/formal-fifo-latest-native-state-20261116.json, formal-fifo-continued-health-20261116.json, formal-fifo-clean-policy-status-20261116.json and formal-fifo-after-three-hours-status-20261116.json. The native/current-health files are updated in place; earlier readbacks remain at their signed commits. Original restore/graph/performance observations below refer to the November15window and remain historical measurements.
 
 ## Actual environment and restore
 

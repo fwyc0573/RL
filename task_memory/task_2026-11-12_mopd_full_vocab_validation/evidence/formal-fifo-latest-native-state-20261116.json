@@ -1,22 +1,22 @@
 {
-  "checked_at": "2026-11-15T16:30:53.139612+00:00",
-  "step": 160,
-  "checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160",
+  "checked_at": "2026-11-15T16:43:51.263358+00:00",
+  "step": 170,
+  "checkpoint": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170",
   "publication": {
-    "last_successful_ckpt_save_completion": 1794760180.2661605,
-    "last_checkpoint_step": 160
+    "last_successful_ckpt_save_completion": 1794760947.6076758,
+    "last_checkpoint_step": 170
   },
   "inventory": [
     {
-      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160",
+      "path": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170",
       "files": 31,
-      "bytes": 55490555924
+      "bytes": 55182356048
     }
   ],
   "native_state": [
     {
       "key": "optimizer.distributed.dp_group_idx_0.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__0_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__0_0.distcp",
       "offset": 42364,
       "length": 1645,
       "state": [
@@ -38,7 +38,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -56,7 +56,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -64,7 +64,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_0.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__0_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__0_0.distcp",
       "offset": 44009,
       "length": 1641,
       "state": [
@@ -72,14 +72,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_0.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__0_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__0_0.distcp",
       "offset": 45650,
       "length": 1325,
       "state": [
@@ -97,7 +97,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_0.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__0_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__0_0.distcp",
       "offset": 46975,
       "length": 1325,
       "state": [
@@ -115,7 +115,7 @@
     },
     {
       "key": "common_state/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__0_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__0_0.distcp",
       "offset": 63749,
       "length": 1773,
       "state": [
@@ -128,7 +128,7 @@
           "opt_param_scheduler": {
             "max_lr": 1e-06,
             "lr_warmup_steps": 0,
-            "num_steps": 40960,
+            "num_steps": 43520,
             "lr_decay_style": "constant",
             "lr_decay_steps": 51200,
             "min_lr": 1e-06,
@@ -147,7 +147,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_1.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__1_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__1_0.distcp",
       "offset": 0,
       "length": 1645,
       "state": [
@@ -169,7 +169,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -187,7 +187,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -195,7 +195,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_1.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__1_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__1_0.distcp",
       "offset": 1645,
       "length": 1641,
       "state": [
@@ -203,14 +203,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_1.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__1_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__1_0.distcp",
       "offset": 3286,
       "length": 1325,
       "state": [
@@ -228,7 +228,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_1.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__1_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__1_0.distcp",
       "offset": 4611,
       "length": 1325,
       "state": [
@@ -246,7 +246,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_2.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__2_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__2_0.distcp",
       "offset": 42364,
       "length": 1645,
       "state": [
@@ -268,7 +268,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -286,7 +286,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -294,7 +294,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_2.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__2_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__2_0.distcp",
       "offset": 44009,
       "length": 1641,
       "state": [
@@ -302,14 +302,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_2.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__2_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__2_0.distcp",
       "offset": 45650,
       "length": 1261,
       "state": [
@@ -324,7 +324,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_2.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__2_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__2_0.distcp",
       "offset": 46911,
       "length": 1261,
       "state": [
@@ -339,7 +339,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_3.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__3_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__3_0.distcp",
       "offset": 0,
       "length": 1645,
       "state": [
@@ -361,7 +361,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -379,7 +379,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -387,7 +387,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_3.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__3_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__3_0.distcp",
       "offset": 1645,
       "length": 1641,
       "state": [
@@ -395,14 +395,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_3.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__3_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__3_0.distcp",
       "offset": 3286,
       "length": 1261,
       "state": [
@@ -417,7 +417,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_3.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__3_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__3_0.distcp",
       "offset": 4547,
       "length": 1261,
       "state": [
@@ -432,7 +432,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_4.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__4_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__4_0.distcp",
       "offset": 42364,
       "length": 1645,
       "state": [
@@ -454,7 +454,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -472,7 +472,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -480,7 +480,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_4.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__4_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__4_0.distcp",
       "offset": 44009,
       "length": 1641,
       "state": [
@@ -488,14 +488,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_4.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__4_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__4_0.distcp",
       "offset": 45650,
       "length": 1261,
       "state": [
@@ -510,7 +510,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_4.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__4_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__4_0.distcp",
       "offset": 46911,
       "length": 1261,
       "state": [
@@ -525,7 +525,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_5.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__5_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__5_0.distcp",
       "offset": 0,
       "length": 1645,
       "state": [
@@ -547,7 +547,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -565,7 +565,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -573,7 +573,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_5.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__5_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__5_0.distcp",
       "offset": 1645,
       "length": 1641,
       "state": [
@@ -581,14 +581,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_5.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__5_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__5_0.distcp",
       "offset": 3286,
       "length": 1261,
       "state": [
@@ -603,7 +603,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_5.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__5_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__5_0.distcp",
       "offset": 4547,
       "length": 1261,
       "state": [
@@ -618,7 +618,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_6.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__6_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__6_0.distcp",
       "offset": 43877,
       "length": 1645,
       "state": [
@@ -640,7 +640,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -658,7 +658,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -666,7 +666,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_6.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__6_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__6_0.distcp",
       "offset": 45522,
       "length": 1641,
       "state": [
@@ -674,14 +674,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_6.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__6_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__6_0.distcp",
       "offset": 47163,
       "length": 1261,
       "state": [
@@ -696,7 +696,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_6.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__6_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__6_0.distcp",
       "offset": 48424,
       "length": 1261,
       "state": [
@@ -711,7 +711,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_7.optimizer/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__7_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__7_0.distcp",
       "offset": 0,
       "length": 1645,
       "state": [
@@ -733,7 +733,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.01,
-              "step": 142
+              "step": 152
             },
             {
               "is_expert_parallel": false,
@@ -751,7 +751,7 @@
               ],
               "eps": 1e-08,
               "weight_decay": 0.0,
-              "step": 142
+              "step": 152
             }
           ]
         }
@@ -759,7 +759,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_7.grad_scaler/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__7_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__7_0.distcp",
       "offset": 1645,
       "length": 1641,
       "state": [
@@ -767,14 +767,14 @@
           "scale": [
             1.0
           ],
-          "growth_tracker": 135,
+          "growth_tracker": 145,
           "hysteresis_tracker": -16
         }
       ]
     },
     {
       "key": "optimizer.distributed.dp_group_idx_7.per_bucket_numel/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__7_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__7_0.distcp",
       "offset": 3286,
       "length": 1261,
       "state": [
@@ -789,7 +789,7 @@
     },
     {
       "key": "optimizer.distributed.dp_group_idx_7.per_bucket_numel_unpadded/shard_0_1",
-      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_160/policy/weights/iter_0000000/__7_0.distcp",
+      "file": "/mnt/ws-jfs/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_170/policy/weights/iter_0000000/__7_0.distcp",
       "offset": 4547,
       "length": 1261,
       "state": [
@@ -804,20 +804,20 @@
     }
   ],
   "training_info": {
-    "consumed_samples": 40960,
-    "current_step": 160,
+    "consumed_samples": 43520,
+    "current_step": 170,
     "current_epoch": 0,
-    "total_steps": 160,
-    "total_valid_tokens": 256995750.0,
-    "trainer_version": 160,
+    "total_steps": 170,
+    "total_valid_tokens": 271091742.0,
+    "trainer_version": 170,
     "sampler_name": "windowed",
     "sampler_dispatch_index": 40,
     "cur_adaptive_ppo_clip_k": null,
-    "next_nemo_gym_task_index": 49520
+    "next_nemo_gym_task_index": 52547
   },
   "train_state": {
     "step": 0,
-    "consumed_train_samples": 40960,
+    "consumed_train_samples": 43520,
     "skipped_train_samples": 0,
     "consumed_valid_samples": 0,
     "floating_point_operations_so_far": 0.0,
@@ -859,7 +859,7 @@
       "storage_unit_id": "TQ_STORAGE_UNIT_667b250d"
     }
   ],
-  "bytes_read": 5595404,
+  "bytes_read": 5605452,
   "tensor_payloads_read": 0,
   "python": "3.13.14 (main, Aug  5 2026, 15:44:26) [Clang 22.1.3 ]",
   "torch": "2.13.0+cu130"

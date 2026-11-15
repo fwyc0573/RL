@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Verify native step170/Adam152,130 successful FIFO updates and post-approval three-hour current replica state. |
 | 2026-11-16 | Verify native step160/Adam142,120 FIFO successes and clean-policy labels; preserve ongoing formal writer. |
 | 2026-11-16 | Prepare final replay inputs and waiter; verify native step140/Adam122 and continued health throughstep143. |
 | 2026-11-15 | Verify actual FIFO restore/graph,91 successful updates, step130/Adam112 and the70.4-second measured performance interval. |
@@ -4333,3 +4334,120 @@ The existing metric reader plus real per-step summaries validates steps132–160
 Auxiliary Pod-label read throughKubernetesCoreAPI failed403Forbidden at00:24; preserve this as an inspection limitation, not a training failure. Inspected installedbrainppclient confirms native replicas resource endpoint. Existing personalRJobAPI then succeeds:00:26:19HKT,writerplus9replicasRunning,allpreemptible=no,no stop/cleanannotation. No auth/permission/resource bypass; no manufactured GPUwork. Current labels are not a full3hour utilization/powerwindow. Compactreceipt archived in formal-fifo-clean-policy-status-20261116.json.
 
 Native/current-health evidence updated in place; currentplan and live-report now show142durable. Intermediatecurve remains its explicitly verified129successsnapshot through147. CPUmonitor performs only actualnew-step checks and never controls the writer. Three original launchers remain active; final waiter has not started finite/replay. Next:scopedpushofthismilestone,continueexact72GPUtoAdam200,verifyfinalexecutionandarchive.
+
+
+## 1. 规划完成情况
+
+**汇总：** PASS11｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 输入身份 | PASS | 原六模型、五类数据保持。 |
+| Q 合同 | PASS | 原200成功/full-vocab/latest-only约束。 |
+| B 准备 | PASS | 既有准确CPU/worker准备。 |
+| C 全词表参考 | PASS | 已有数值参考结果。 |
+| D 修复/恢复 | PASS | 既有原生恢复与连续成功。 |
+| P 性能 | PASS | 既有测量和代码/手册对照已交付。 |
+| E FIFO实现 | PASS | 已推送实现及实际批次。 |
+| 授权清理 | PASS | 唯一step160；旧step150已删除。 |
+| E 当前健康 | PASS | 120连续成功至160，142保存。 |
+| F CPU准备 | PASS | 既有准备链持续等待精确writer。 |
+| F 中间曲线 | PASS | 权威129成功快照已推送。 |
+| E 200成功 | TODO | 142durable/143observed，尚未达到目标。 |
+| F 最终GPU/归档 | BLOCKED | 等待最终200原生publication。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** a21cda45至00:33HKT｜**当前前沿：** E正式更新/保存及证据交付
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用reader及临时实际更新检查，无扩展正式工具。 |
+| D2 细节反复重试 | CLEAR | Pod403后查SDK并用已支持replica资源读到标记，立即停止权限调查。 |
+| D3 支线问题修补 | CLEAR | 清理标记是既有实际失败风险；仅检查，不改平台。 |
+| D4 可并行任务停滞 | CLEAR | writer/observer/waiter继续并行。 |
+| D5 超范围镀金 | CLEAR | 无新增训练功能、GPU或权重副本。 |
+| D6 分析空转 | CLEAR | 原生新增20保存成功，实际142/200。 |
+| D7 路线违背 | CLEAR | 原模型、vocab、256、65536、72卡、latest-only保持。 |
+
+**文档检查：** S1–S6均未发现明显缺陷；plan当前更新为142durable，中间曲线明确保持129快照。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/plan合理，无需改动。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E继续当前精确72GPUwriter → 完成标志：nativeAdam200且唯一完整checkpoint。
+2. 并行：observer保持业务证据发布/旧rawdump删除 ‖ finalwaiter跟踪当前writer/reader。
+3. F按已有链执行fullfinite/unsaved16GPU三方，然后最终曲线/报告/archive/push → 完成标志：所有实际验收结果齐全。
+
+## 4. 最值得关注的 3 点
+
+1.142成功已保存、143观察，正式目标尚未完成。
+2.当前标签全为nonpreemptible，仍无完整3小时利用率窗口；不推断未来清理结果。
+3.dc97256bf4d138f1f59fffd9ebcd1cc932612b34已推送并独立核验；最终scan/replay仍未执行。
+
+
+### 2026-11-16 00:44 HKT — Native152/200,130 FIFO successes, ongoing replicas unchanged
+
+Latest native publication step170/Adam152 on all eight optimizer shards, onecheckpoint/31files/55,182,356,048bytes; oldstep160deleted. Read5,605,452bytes of small metadata/scalar/replay metadata and no model/Adam tensors. Per-step132–170andnativeflags41–170pass:130consecutiveFIFOsuccesses,no skips,finitefull-loss/grad,correct256samples/fivegroups/masks/ages0–5. Step170loss0.0236318968,grad0.0830308422,1,422,693tokens,total82.89971s,wait0.81280s,policy57.04141s. Formaldurable152/200;48durableupdatesremain.
+
+Personal RJob/replicaAPI00:41:31HKTstillRunningall9replicas/nonpreemptible/no stopannotation. This exceeds3hoursfromqueueapproval21:39:39,notanactualcompleteGPUutilizationwindow;noclean-policyexemptionorfuturepredictionclaimed. Exactlateststate/currenthealth/currentplatformreceiptsandplan/live-reportareupdated. Localwriter/observer/waitercontinue;finalscan/replayremainpending. Intermediatecurveremains147/129snapshot. Next:pushthisscope,continuecurrentwriter→nativeAdam200→existingfinalscan/unsaved16GPUthreeway→finalcurves/archive.
+
+## 1. 规划完成情况
+
+**汇总：** PASS11｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 原输入 | PASS | 原六模型/数据未改。 |
+| Q 合同 | PASS | 200成功、full-vocab和latest-only保持。 |
+| B 准备 | PASS | 既有CPU/worker证据。 |
+| C 全词表参考 | PASS | 既有数值结果。 |
+| D 修复恢复 | PASS | 当前原生连续成功。 |
+| P 性能 | PASS | 既有相同72卡实测与手册比较。 |
+| E FIFO实现 | PASS | 已提交推送并实际运行。 |
+| 授权清理 | PASS | 唯一step170，旧160删除。 |
+| E 当前健康 | PASS | 130连续成功和152保存。 |
+| F CPU准备 | PASS | 最终等待器保持准确前置条件。 |
+| F 中间曲线 | PASS | 已交付step147权威曲线。 |
+| E 200成功 | TODO | 152durable，48仍待训练。 |
+| F 最终GPU/归档 | BLOCKED | 依赖最终200publication。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** dc97256b至00:44HKT｜**当前前沿：** E连续训练与最新保存
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 仅复用现有reader/实际更新检查。 |
+| D2 细节反复重试 | CLEAR | 无失败重试或重提训练。 |
+| D3 支线问题修补 | CLEAR | 当前标记检查直接针对既有清理风险。 |
+| D4 可并行任务停滞 | CLEAR | writer/observer/waiter同步继续。 |
+| D5 超范围镀金 | CLEAR | 无新增配置、GPU、checkpoint副本。 |
+| D6 分析空转 | CLEAR | 实际新增10保存成功。 |
+| D7 路线违背 | CLEAR | 原路线与约束完整保持。 |
+
+**文档检查：** S1–S6均未发现明显缺陷；当前计划更新为152durable，中间曲线注明旧观察窗口。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/plan合理，无需改动。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. E维持当前writer/observer/waiter → 完成标志：nativeAdam200和latest-only完整publication。
+2. F按既有链执行最终finite/三方parity/曲线/archive/push → 完成标志：实际业务验收和最终远端SHA齐全。
+
+## 4. 最值得关注的 3 点
+
+1.152成功已保存，200仍未完成。
+2.当前九replica运行正常，未以当前标签推断完整利用率窗口。
+3.最终数值检查仍依赖最终checkpoint；准备、中间曲线和过程成功都不替代它。
