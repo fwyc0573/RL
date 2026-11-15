@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Verify native step160/Adam142,120 FIFO successes and clean-policy labels; preserve ongoing formal writer. |
 | 2026-11-16 | Prepare final replay inputs and waiter; verify native step140/Adam122 and continued health throughstep143. |
 | 2026-11-15 | Verify actual FIFO restore/graph,91 successful updates, step130/Adam112 and the70.4-second measured performance interval. |
 | 2026-11-15 | Correct the unsupported128-GPU expansion and resume current-task cleanup/72-GPU continuation. |
@@ -4321,3 +4322,14 @@ Next: signed scoped curve/code/report commitandpush; continueexact72GPUwriter an
 1.129成功已观察、122已保存；正式200仍未完成。
 2.最近20步71.31秒，等待0.36秒；含旧权重差异与同权重错误已分清。
 3.无额外GPU或权重写入；当前teacher clean-policy及最终三方检查继续监控。
+
+
+### 2026-11-16 00:32 HKT — Native142/200 saved,120 FIFO successes, current cleanup labels inspected
+
+Curve correction signed commita21cda45dd16c2dab2bfd01f1cf0d52837681925 pushed toorigin/mopd-sys; independent remoteSHA agrees. Exact latest publication step160 contains Adam142 on all eight optimizer shards, onecheckpoint/31files/55,490,555,924bytes. Oldstep150 is absent. Read5,595,404metadata/scalar/replay-metadata bytes and zero model/Adam tensor payloads; no extra checkpoint/HFexport.
+
+The existing metric reader plus real per-step summaries validates steps132–160(29additional-batchchecks) and all120FIFOsuccessflags41–160. No skip, nonfinite metric, invalid mask, teacher-route/sample-count/weight-age violation. Step160loss0.0253324918,grad0.131342724,1,495,720tokens;total82.10650s,wait0.41234s,policy53.84398s. Formaldurable142/200,58successfulupdatesremain; current exactwriter/observer/waiter continue.
+
+Auxiliary Pod-label read throughKubernetesCoreAPI failed403Forbidden at00:24; preserve this as an inspection limitation, not a training failure. Inspected installedbrainppclient confirms native replicas resource endpoint. Existing personalRJobAPI then succeeds:00:26:19HKT,writerplus9replicasRunning,allpreemptible=no,no stop/cleanannotation. No auth/permission/resource bypass; no manufactured GPUwork. Current labels are not a full3hour utilization/powerwindow. Compactreceipt archived in formal-fifo-clean-policy-status-20261116.json.
+
+Native/current-health evidence updated in place; currentplan and live-report now show142durable. Intermediatecurve remains its explicitly verified129successsnapshot through147. CPUmonitor performs only actualnew-step checks and never controls the writer. Three original launchers remain active; final waiter has not started finite/replay. Next:scopedpushofthismilestone,continueexact72GPUtoAdam200,verifyfinalexecutionandarchive.
