@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "checked_at": "2026-11-15T16:05:45.274967+00:00",
+  "prompts_bytes": 7771,
+  "source_step": 139,
+  "samples": [
+    {
+      "source_group": "code",
+      "prompt_idx": 31386,
+      "source_sample_id": "a4612c7f-dd45-4c5b-b388-6a0367643c85_g0",
+      "source_length": 13492
+    },
+    {
+      "source_group": "if",
+      "prompt_idx": 32814,
+      "source_sample_id": "0403dbb2-212b-4048-80cb-683023d90615_g0",
+      "source_length": 4877
+    },
+    {
+      "source_group": "logic",
+      "prompt_idx": 53203,
+      "source_sample_id": "cfc73eac-0651-4897-ab58-7cb4e6d5ff3f_g0",
+      "source_length": 24965
+    },
+    {
+      "source_group": "math",
+      "prompt_idx": 2200,
+      "source_sample_id": "05fafcfa-3131-43c9-b633-00431fc22370_g0",
+      "source_length": 13143
+    },
+    {
+      "source_group": "stem",
+      "prompt_idx": 39827,
+      "source_sample_id": "a7e3eb93-8d36-4f89-89f1-1e3cb1926fb1_g0",
+      "source_length": 10010
+    }
+  ],
+  "nodes": 2,
+  "gpus_per_node": 8,
+  "checkpointing_enabled": false,
+  "enforce_eager": false,
+  "compilation_backend": "eager",
+  "limits": [
+    "Metadata-only group index fixture; no final weights or GPU forwards loaded.",
+    "Source token records were read from actual formal step139 and will seed fresh final-weight responses.",
+    "Final submission waits for nativeAdam200 and completed writer/observer."
+  ]
+}

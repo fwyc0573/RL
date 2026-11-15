@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-15T16:05:56.822610+00:00",
+  "status": "CPU_PASS_AWAITING_FORMAL_COMPLETION",
+  "exact_writer": "exp-1115-193456-282702",
+  "writer_uid": "102dc861-ec0d-4fdd-85bc-dc216ff00572",
+  "exact_reader": "exp-1115-193548-376103",
+  "reader_uid": "3a0f803d-ff74-48e9-93a4-db4f1aff6cdd",
+  "native_progress_reconciled": {
+    "step": 130,
+    "attempts": 113,
+    "successful_updates": 112,
+    "overflow_steps": [
+      25
+    ],
+    "remaining_updates": 88,
+    "next_controller_horizon": 218,
+    "native_adam_steps": 112
+  },
+  "checkpoint_state": "step130/Adam112",
+  "sampler_dispatch_index": 40,
+  "sampler_name": "windowed",
+  "no_gpu_submitted": true,
+  "source_script": "/data/ycfeng/tmp/nemo-mopd-20261112/continue_fifo_to_final_native_parity_20261116.py",
+  "limits": [
+    "Reconciles actual step130 native counters with historical <=40 plus current FIFO metrics.",
+    "Final metrics and checkpoint will be read after native completion; GPU final replay is not executed here.",
+    "On training failure or a remaining success deficit, stop only this waiter and require exact-job RCA/latest native continuation."
+  ]
+}

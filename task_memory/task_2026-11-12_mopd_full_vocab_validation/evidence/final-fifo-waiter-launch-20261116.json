@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-11-15T16:07:00.679870+00:00",
+  "launcher_pid": 2019267,
+  "host": "kun-workspace-vgen2",
+  "script": "/data/ycfeng/tmp/nemo-mopd-20261112/continue_fifo_to_final_native_parity_20261116.py",
+  "log": "/data/ycfeng/tmp/nemo-mopd-20261112/continue-fifo-to-final-native-parity-20261116.log",
+  "writer": "exp-1115-193456-282702",
+  "writer_uid": "102dc861-ec0d-4fdd-85bc-dc216ff00572",
+  "status": "WAITING_FOR_FORMAL_COMPLETION",
+  "new_gpus_allocated": 0,
+  "final_replay_gpus": 16,
+  "checkpointing_enabled": false,
+  "parity_prompts_bytes": 7771,
+  "scope": "Wait for native writer/observer completion andAdam200, then existing CPU finite scan and final unsaved replay. No automatic training resubmission on failures or deficit."
+}

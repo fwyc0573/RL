@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Prepare final replay inputs and waiter; verify native step140/Adam122 and continued health throughstep143. |
 | 2026-11-15 | Verify actual FIFO restore/graph,91 successful updates, step130/Adam112 and the70.4-second measured performance interval. |
 | 2026-11-15 | Correct the unsupported128-GPU expansion and resume current-task cleanup/72-GPU continuation. |
 | 2026-11-15 | Record the submitted step40 FIFO RJob and current codesign queue receipt. |
@@ -4173,3 +4174,78 @@ Exact commands, checks, source paths, remaining limits and selected small eviden
 1.112成功已恢复到唯一最新checkpoint；113已观察到，尚未完成200。
 2.相同72GPU实测70.4秒/步，等待仅0.32秒；加速含多个开关和token差异。
 3.同权重MAE通过；stale-weight差异和teacher3小时清理风险仍需分别解释与监控。
+
+
+### 2026-11-16 00:08 HKT — Final replay prerequisites prepared; current native progress122/200
+
+The verified FIFO/runtime/throughput milestone was signed and pushed as eb22a546dfd0e4e30507ab2439f09c5744ed665c. Independent git ls-remote matched the SHA.That112-file commit's health window was91 resumed successes throughstep131, nativeAdam112. This later entry records additional measured progress, not a retroactive change to that receipt.
+
+The ongoing observer's timely raw-dump deletion made the old final-waiter assumption of a retained last-step dump invalid. A42second bounded SSH read saw no completed dump; a subsequent48second read aligned with the next publication captured five exact original-domain prompt token sequences fromstep139, total7771bytes. No raw response/logprob/teacher tensor payload was retained. The native select_prompts function reads this compact native-shaped record unchanged. Final replies will be freshly generated after loading final weights, so final parity does not depend on an earlier response's generation version.
+
+CPU final configuration checks verify five exact prompt IDs/locators/source samples, studentTP2/PP4,2×8H800, current enforce_eager=False/backend eager, generation separate and checkpointing.enabled=false. First check used attribute syntax on the actual dictionary-valued checkpointing config and failed; correcting the read to its dictionary interface passes. No production config or training was changed. Final16GPU submitter dry-run passes with the existing native loader/refit/observer and no submission.
+
+The old native final waiter also incorrectly required sampler_dispatch_index==train_step. Windowed FIFO retains restored dispatch index40 while trainstep increases; the prepared waiter now checks the actual windowed sampler and reconciles native counters. Real step130 state plus historical<=40 and current FIFO metrics resolves112 successes, onlyoverflowstep25, and horizon218. This is a CPU operational correction, not a core sampler change. Failures or a remaining success deficit end only the waiter and require exact-job investigation/prepared native continuation; no automatic duplicate GPU training job is submitted.
+
+Local detached final waiter PID2019267 started at00:07:00HKT, exactwriterexp-1115-193456-282702/UID102dc861-ec0d-4fdd-85bc-dc216ff00572 and observerexp-1115-193548-376103/UID3a0f803d-ff74-48e9-93a4-db4f1aff6cdd. Its first log confirms Running; no new GPU allocation. After successful writer/observer completion andAdam200, it uses existing CPU full-tensor scan and unsaved16GPU native-training/scorer/vLLM replay. Current native progress and final acceptance remain incomplete; no extra checkpoint/HF export is created by this path.
+
+Fresh native metadata read confirms step140/Adam122, eight identical optimizer shards, one checkpoint/31files/57,126,362,986bytes. Only5,630,220 metadata/scalar/replay-metadata bytes were read, no tensors. Current per-step checks through143 establish103 consecutive resumed successes, no skips,125observed total; loss/full-RKL0.02980142, gradnorm0.11130781, scale1,256valid samples,1,449,000response tokens. Step143 took75.75275s, exposed wait0.87193s and policy57.15583s. All twelve additional steps132–143 pass finite metrics, five-group coverage, distinct256samples, masks and age0–5. All three local processes are alive. Durable frontier is122/200;78durable successes remain.
+
+See test_report_2026-11-16_final_replay_preparation.md and selected final-fifo-* /formal-fifo-* evidence. Next: push this prepared-input/current-progress receipt; preserve the current72GPU writer; monitor native updates/latest-only and teacher clean-policy risk; verify final scan/replay outputs and refresh curves/archive after actual completion.
+
+## 1. 规划完成情况
+
+**汇总：** PASS10｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 输入身份 | PASS | 原模型和五类来源保持。 |
+| Q 验收合同 | PASS |200成功/full-vocab/latest-only保持。 |
+| B 运行准备 | PASS |既有CPU/worker身份验收。 |
+| C 全词表参考 | PASS |既有原生数值参考。 |
+| D 修复与恢复 | PASS |实际native续跑到Adam122。 |
+| P 性能调查 | PASS |相同72GPU的9.234倍组合加速已交付。 |
+| E FIFO实现 | PASS |既有实现与真实年龄/批次检查通过。 |
+| 授权清理 | PASS |旧checkpoint及时删除；唯一step140。 |
+| 实际启动/健康 | PASS |103连续成功，当前数值/覆盖通过。 |
+| F 最终CPU准备 | PASS |实际prompttokens、原工具/config/count、dry-run和等待器准备通过。 |
+| E 正式200成功 | TODO |122durable/125observed，当前writer继续。 |
+| F GPU与最终归档 | BLOCKED |等待最终Adam200checkpoint及实际业务输出。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** eb22a546里程碑至今｜**当前前沿：** E正式更新与F依赖准备
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR |修正已失效的rawdump/dispatch前提是现有F验收所需；到CPU验证即停止扩展。 |
+| D2 细节反复重试 | CLEAR |读取窗口小于更新周期；下一次抓到实际数据；dict读法一次修正后PASS。 |
+| D3 支线问题修补 | CLEAR |五prompt与countchecks服务F明确验收。 |
+| D4 可并行任务停滞 | CLEAR |正式writer、observer和finalwaiter并行；未额外占GPU。 |
+| D5 超范围镀金 | CLEAR |仍72GPU；仅既有16GPU最终replay模板，未扩展训练特性。 |
+| D6 分析空转 | CLEAR |实际输入7771bytes、nativeAdam122和准备验收已落地。 |
+| D7 路线违背 | CLEAR |保存约束、原模型、原维度与同权重验收保持。 |
+
+**文档检查：** S1：原F模板依赖保留最后rawdump，但最新清理策略不保留；改为实际五prompttokens后仍生成fresh final responses。S5：旧waiter仍要求sampler_dispatch_index==train_step；改为实际windowed/count证据。S2–S4/S6无明显缺陷。
+**归因：** 无执行偏离；S1/S5是FIFO/cleanup后旧运营模板的过期假设。
+
+## 3. 纠正建议
+
+**分支：** B：已更新必要依赖和实际配置前提。
+
+**文档更新（先执行）：**
+1. plan.md的F路线：引用准备好的实际prompttokens和最终等待器，不再依赖已删除rawdump。（可直接执行，已完成）
+2. final-checkpoint-three-way-launch-contract-20261116.json：记录当前graph、16GPU和nativeAdam200前置条件。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. 当前prepared/current-progress签名提交push → 完成标志：remoteSHA一致。
+2. E维持当前writer/observer → 完成标志：nativeAdam200和最新完整publication。
+3. F使用已准备链执行最终finite/三方parity，再更新曲线/archive → 完成标志：实际数值、终态和最终文件齐全。
+
+## 4. 最值得关注的 3 点
+
+1.122成功已持久化；125观察成功，仍未完成200。
+2.最终验收输入和脚本已CPU通过；finalwaiter当前未占用GPU。
+3.真实训练/最终GPUparity不能由准备检查代替；teacher清理风险继续监控。
