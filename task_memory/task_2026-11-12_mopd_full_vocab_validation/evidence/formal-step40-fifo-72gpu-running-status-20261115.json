@@ -1,0 +1,120 @@
+[
+  {
+    "observed_at": "2026-11-15T15:57:01.769561+00:00",
+    "name": "exp-1115-193456-282702",
+    "uid": "102dc861-ec0d-4fdd-85bc-dc216ff00572",
+    "creator": "i-fengyicheng",
+    "status": {
+      "phase": "Running",
+      "reason": "RJobRunning",
+      "message": "Tasks is running: [default]",
+      "taskStatuses": {
+        "default": {
+          "active": 9,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "annotations": {
+      "rjob.brainpp.cn/rjob-queue-approved": "2026-11-15T13:39:39.271447212Z",
+      "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+      "stepmind.com/queue-elem-ranking": "2",
+      "stepmind.com/queue-name": "codesign-default",
+      "stepmind.com/queue-reason": "Waiting in queue \"codesign-default\". Insufficient GPU quota. Request: task \"default\" 8 GPU/replica x 9 replicas = 72 GPU (H800). Queue remaining: H800=70."
+    },
+    "tasks": {
+      "default": {
+        "replicas": 9,
+        "mount": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+      }
+    },
+    "replicas": {
+      "default": [
+        {
+          "name": "exp-1115-193456-282702-1679091c",
+          "ip": "10.191.24.20",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-c81e728d",
+          "ip": "10.191.0.41",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-a87ff679",
+          "ip": "10.191.1.46",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-8f14e45f",
+          "ip": "10.191.5.54",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-e4da3b7f",
+          "ip": "10.191.6.29",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-c9f0f895",
+          "ip": "10.191.7.16",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-cfcd2084",
+          "ip": "10.191.7.40",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-c4ca4238",
+          "ip": "10.191.9.35",
+          "phase": "Running"
+        },
+        {
+          "name": "exp-1115-193456-282702-eccbc87e",
+          "ip": "10.191.19.5",
+          "phase": "Running"
+        }
+      ]
+    }
+  },
+  {
+    "observed_at": "2026-11-15T15:57:02.631850+00:00",
+    "name": "exp-1115-193548-376103",
+    "uid": "3a0f803d-ff74-48e9-93a4-db4f1aff6cdd",
+    "creator": "i-fengyicheng",
+    "status": {
+      "phase": "Running",
+      "reason": "RJobRunning",
+      "message": "Tasks is running: [default]",
+      "taskStatuses": {
+        "default": {
+          "active": 1,
+          "taskStage": "stepmind-task-stage-1"
+        }
+      },
+      "taskStage": "stepmind-task-stage-1"
+    },
+    "annotations": {
+      "rjob.brainpp.cn/rjob-queue-approved": "2026-11-15T11:35:52.757425594Z",
+      "stepmind.com/queue-approved-stage": "stepmind-task-stage-1",
+      "stepmind.com/queue-name": "codesign-default"
+    },
+    "tasks": {
+      "default": {
+        "replicas": 1,
+        "mount": "100.96.128.195:/data/ycfeng:/data/ycfeng"
+      }
+    },
+    "replicas": {
+      "default": [
+        {
+          "name": "exp-1115-193548-376103-cfcd2084",
+          "ip": "10.191.5.46",
+          "phase": "Running"
+        }
+      ]
+    }
+  }
+]

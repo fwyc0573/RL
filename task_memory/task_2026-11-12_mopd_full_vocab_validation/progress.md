@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-15 | Verify actual FIFO restore/graph,91 successful updates, step130/Adam112 and the70.4-second measured performance interval. |
 | 2026-11-15 | Correct the unsupported128-GPU expansion and resume current-task cleanup/72-GPU continuation. |
 | 2026-11-15 | Record the submitted step40 FIFO RJob and current codesign queue receipt. |
 | 2026-11-15 | Record exact128-H800 step40 CPU preflight and proceed to one formal writer. |
@@ -4101,3 +4102,74 @@ One formal replacement exp-1115-193456-282702 was created at19:34:56HKT, with lo
 Signed commit `663b9143f868364ab4d0104a1a5cc68718555803` (`docs(mopd): verify OSS cleanup and restore72-GPU FIFO continuation`) pushed successfully to origin/mopd-sys. A fresh git ls-remote query returns the identical SHA.135 scoped task records/config/preflight/cleanup/status/compact numerical evidence files are delivered; FIFO implementation2f828a95 remains reachable on the same branch. No experimental worker code or pre-existing unrelated artifact change was staged. Current progress-push milestone is completed; this delivery receipt is committed separately. Mainline remains the queued72GPU job and its Running0GPU observer, with durableAdam22/200 and no new checkpoint.
 
 19:41:49HKT final queue observation: exact72GPU job exp-1115-193456-282702 remains Pending with zero replicas; quota33. The source mount and personal creator remain unchanged. Local writer/observer launchers are alive. No new metric, checkpoint or durable success is observed; keep this single queued job.
+
+
+### 2026-11-15 23:57 HKT — Actual FIFO training advances beyond the recovery anchor
+
+Personal API at23:49:58HKT confirms exp-1115-193456-282702 Running with nine replicas; approval21:39:39HKT, personal creator and local100.96.128.195 NFS source unchanged. Both local launchers1579154/1591600 remain alive; observer Running and no collection failures. All nine workers report eight H800/driver570.124.06/basePython3.13.14/Torch2.13.0+cu130. Actual Ray placement reconciles student8, rollout48, teachers10 and spare6. The mounted generation runtime is vLLM0.29.0; the image tag does not define this venv version.
+
+Native step40 telemetry confirms zero ready groups,512 unfinished siblings rerun/restarted,6.609s total recovery loading and27.643s redispatch scheduling. Two generation engines show enforce_eager=False/backendeager, FlashAttention4 and completed FULL/PIECEWISE graph capture on both TP ranks. A first-use topk logsoftmax JIT warning is recorded; no persistent JIT bottleneck is claimed. Initial HTTP-dashboard address passed to the installed get_log failed; using its actual GCS address10.191.7.40:9457 resolved this read-only invocation.
+
+Inspected step41–131:91/91 native optimizer successes and no overflow; every metric finite, full-RKL equals loss, scale1,256 samples, no masked sequence, allfivegroups.23,296 unique samples and135,210,664 response tokens have valid prompt/mask/age/length evidence. Ages0–3 each256, age4=2835, age5=19437. The256 same-weight samples/856388tokens have pooledMAE0.00118336 and per-groupMAE≤0.00223202. Older samples are drift comparisons. Native model.train() final parity and an independent production completion-ordinal audit are not established by these summaries.
+
+Native publication read at23:51HKT confirms step130/Adam112, eight identical saved optimizer shards, one checkpoint/31files/56,842,080,650bytes. Only5,609,356 metadata/scalar/replay-metadata bytes were read; no model/Adam tensors. Previous step120 removal is logged. Additional size versus step40 comes from approximately31.95GB of active TQ recovery contents. These are required latest-checkpoint contents, not extra copies; no diagnostic checkpoint/HF export was created. Recoverable progress112/200;113successes observed throughstep131.
+
+Same72GPU timing: oldstep32–38 mean650.300s (561.854s wait); newstep51–130 mean70.424s (0.320s wait,53.910s policy,5.526s scorer). Observed9.234× step speedup,7.09× effective response-token throughput,23.23% fewer mean response tokens. This combines FIFO/staleness/graph and different fresh batches, so it is not an isolated FIFO or graph A/B. New primary observed bottleneck is policy training76.55%. Actual snapshot generation utilization mostly89–100%; teacher snapshot idle/partially busy is not a full3-hour platform utilization window. Keep the clean-policy risk open and do not manufacture busy work.
+
+Exact commands, checks, source paths, remaining limits and selected small evidence are recorded in test_report_2026-11-15_fifo_live_training.md. Analysis scripts reused existing native metadata/scalar readers; no new GPU writer, code/backend migration or checkpoint was created. plan.md now records actual Running/progress rather than its stale Pending22/200 frontier. Next: signed scoped progress commit/push; continue this exact writer to Adam200; run existing finalfinite/unsaved16GPUthree-wayparity/curves/archive.
+
+## 1. 规划完成情况
+
+**汇总：** PASS9｜BLOCKED/FAILED/SKIPPED1｜TODO1
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| A 输入身份 | PASS | 原student和五teacher保留。 |
+| Q 验收合同 | PASS |200成功/full-vocab/latest-only仍适用。 |
+| B 运行准备 | PASS | 九worker均通过41文件身份检查。 |
+| C 全词表参考 | PASS | 原loss/gradient参考验证已记录。 |
+| D 修复与恢复 | PASS | 原诊断及正式step40模型/optimizer/data-plane恢复通过。 |
+| P 性能调查 | PASS | 相同72GPU实测等待650→70秒主因有计时证据。 |
+| E FIFO实现 | PASS |2f828a95已推送；实测跨年龄凑满256。 |
+| 用户授权清理 | PASS |389文件逻辑清理完成；latest-only自动删除旧checkpoint。 |
+| 实际启动/健康里程碑 | PASS |9replicas、graphcapture、91连续成功、Adam112durable。 |
+| E 正式200成功 | TODO | 正在运行；当前112durable/113observed。 |
+| F 最终验收 | BLOCKED | 等待最终Adam200checkpoint。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 上次资源纠正/清理checkpoint至今｜**当前前沿：** E持续训练与本轮证据交付
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 复用reader完成当前GPU验收证据，未扩展core harness。 |
+| D2 细节反复重试 | CLEAR | Ray日志地址纠正一次后成功；无训练重提。 |
+| D3 支线问题修补 | CLEAR | 工作均对应恢复/健康/计时/latest-only。 |
+| D4 可并行任务停滞 | CLEAR | 正式训练与0GPUobserver并行；F依赖最终publication。 |
+| D5 超范围镀金 | CLEAR | 保持72GPU；未增加训练功能或GPU试验。 |
+| D6 分析空转 | CLEAR | 新增91成功和Adam112的实际证据，性能结论已形成。 |
+| D7 路线违背 | CLEAR | 原模型/full-vocab/256/65536/latest-only保持。 |
+
+**文档检查：** S5：plan.md开头仍称Pending22/200，落后于实际Running/Adam112；本轮已更正。S1–S4/S6未发现明显缺陷。
+**归因：** 无执行偏离；S5是续接前的过期状态。
+
+## 3. 纠正建议
+
+**分支：** B：先更新过期状态，已执行。
+
+**文档更新（先执行）：**
+1. plan.md当前前沿：更新为单份Running72GPU、step130/Adam112和剩余最终验收。（可直接执行，已完成）
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. 已验证进度签名提交并push → 完成标志：远端SHA核验一致。
+2. E持续当前正式writer与observer并行 → 完成标志：nativeAdam200、latest-only、原配置完整业务输出。
+3. F最终finite/parity/curves/archive → 完成标志：数值与完整终态验收，不以中间训练代替完成。
+
+## 4. 最值得关注的 3 点
+
+1.112成功已恢复到唯一最新checkpoint；113已观察到，尚未完成200。
+2.相同72GPU实测70.4秒/步，等待仅0.32秒；加速含多个开关和token差异。
+3.同权重MAE通过；stale-weight差异和teacher3小时清理风险仍需分别解释与监控。

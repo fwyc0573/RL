@@ -1,0 +1,167 @@
+{
+  "queried_at": "2026-11-15T15:51:24.217587+00:00",
+  "job": "exp-1115-193456-282702",
+  "replicas": [
+    {
+      "replica": "exp-1115-193456-282702-1679091c",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:41:06 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-c81e728d",
+      "returned_messages": 50,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:53 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-a87ff679",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:53 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-8f14e45f",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:58 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-e4da3b7f",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:59 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-c9f0f895",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:52 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-cfcd2084",
+      "returned_messages": 600,
+      "selected_messages": [
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m \u25b6\ufe0f Requesting generation resume after refit",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m Saving checkpoint for step 130...",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m data-plane checkpoint save started: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/tmp_step_130/data_plane",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m data-plane checkpoint save completed: /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/tmp_step_130/data_plane (7.68s)",
+        "\u001b[36m(MegatronPolicyWorker[rank=0] pid=1869, ip=10.191.24.20)\u001b[0m saving checkpoint at iteration       0 to /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/tmp_step_130/policy/weights in torch_dist format",
+        "\u001b[36m(MegatronPolicyWorker[rank=0] pid=1869, ip=10.191.24.20)\u001b[0m   scheduled an async checkpoint save at iteration       0 to /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/tmp_step_130/policy/weights",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m   \u2022 checkpointing: 9.36s (12.0%)",
+        "\u001b[36m(MegatronPolicyWorker[rank=0] pid=1869, ip=10.191.24.20)\u001b[0m Unfinalized async checkpoint saves. Finalizing them synchronously now.",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m Removing checkpoint /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_120 (step 120)",
+        "\u001b[36m(MegatronPolicyWorker[rank=0] pid=1869, ip=10.191.24.20)\u001b[0m   successfully saved checkpoint from iteration       0 to /mnt/codesign-exp/ycfeng/nemo-rl/task_2026-11-12_mopd_full_vocab_validation/final-five-teacher-fp16-resume/exp-1113-174329-659007/checkpoints/step_40/policy/weights [ t 1/2, p 1/4 ]",
+        "\u001b[36m(SingleControllerActor pid=9542)\u001b[0m train step 130/218  trainer_v=130  lag=5  "
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-c4ca4238",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:52 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    },
+    {
+      "replica": "exp-1115-193456-282702-eccbc87e",
+      "returned_messages": 49,
+      "selected_messages": [
+        "GPU_TYPE=H800",
+        "GPU_VENDOR=NVIDIA",
+        "2026/11/15 21:40:53 [DEBUG] packaging-url , packaging-dir /workdir/src/rjob, Starting packaging server",
+        "MOPD_PREPARED_INPUTS_CHECK_PASS 41",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB",
+        "NVIDIA H800, 570.124.06, 81559 MiB"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1262 @@
+[
+  {
+    "hostname": "gpu-h800-0285.host.platform.shaipower.com",
+    "ip": "10.191.7.40",
+    "observed_unix": 1794757983.588992,
+    "snapshot_age_s": 18.180729627609253,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 97,
+        "memoryUsed": 71061,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71061,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71035,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71035,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71063,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71063,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "0fc3134f68398479711fdf1d02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp0-1",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4717
+      },
+      {
+        "actor_id": "3129e4f8822a1d16422ab18f02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp2-1",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4721
+      },
+      {
+        "actor_id": "9f5c0f71ca52cb8894e8543b02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp0-0",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4716
+      },
+      {
+        "actor_id": "ba89841f36c53b03a5072e0202000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp2-0",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4720
+      },
+      {
+        "actor_id": "c177588e7023442602565eb002000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp1-1",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4719
+      },
+      {
+        "actor_id": "c7b91c64774ffdfd96bf4bfa02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp3-1",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4723
+      },
+      {
+        "actor_id": "fc67e7f321df8060f8b4dcae02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp1-0",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4718
+      },
+      {
+        "actor_id": "fd4eb83df3cd8e9a5ead2c6b02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp3-0",
+        "node_id": "d801f4afa08de64f6a6b452f31a2c8f061c8a16cdd392401eb233932",
+        "pid": 4722
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0474.host.platform.shaipower.com",
+    "ip": "10.191.19.5",
+    "observed_unix": 1794757984.417152,
+    "snapshot_age_s": 17.352620363235474,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 13406,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 13406,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 10063,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 10063,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 13375,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 13375,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "2383427fee23acf9558f3e5b02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_math-0-0",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 1317
+      },
+      {
+        "actor_id": "2bf9ea8fde64981d636aa23702000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_if-0-0",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 2517
+      },
+      {
+        "actor_id": "55c37fffa9c9b7b2e7c29c4d02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_stem-0-1",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 1917
+      },
+      {
+        "actor_id": "57f870d70d2ca6072d8d0f2d02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_stem-0-0",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 1916
+      },
+      {
+        "actor_id": "a9b1bb54754d91e2d982e75302000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_math-0-1",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 1318
+      },
+      {
+        "actor_id": "ab1ff4fc558365d8b6dec27d02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_if-0-1",
+        "node_id": "19c84df633c9b4501f19bf895481604962c65c2071d4c64167226068",
+        "pid": 2518
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0211.host.platform.shaipower.com",
+    "ip": "10.191.9.35",
+    "observed_unix": 1794757980.572248,
+    "snapshot_age_s": 21.197564601898193,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71059,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71059,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71027,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71027,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 97,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "19af43ad3250dca9876bb9fb02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp21-0",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1870
+      },
+      {
+        "actor_id": "31429320598589649957b3f802000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp22-1",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1873
+      },
+      {
+        "actor_id": "5afd0b285f8cf5dd7718784b02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp20-0",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1868
+      },
+      {
+        "actor_id": "8d044a0df4357f31f4de6bc102000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp21-1",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1871
+      },
+      {
+        "actor_id": "90417eec1aaace09c2d4ae9c02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp23-0",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1874
+      },
+      {
+        "actor_id": "be6d607b01a0764d54eb4c9f02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp20-1",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1869
+      },
+      {
+        "actor_id": "dd256934ae8e72e331ef3dd202000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp22-0",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1872
+      },
+      {
+        "actor_id": "f8accfc3eab2ab1859f9ea9f02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp23-1",
+        "node_id": "5b8d188aa95a793833a666614562c6dde809dcc455c3f3989a50351f",
+        "pid": 1875
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0025.host.platform.shaipower.com",
+    "ip": "10.191.6.29",
+    "observed_unix": 1794757984.557451,
+    "snapshot_age_s": 17.212400674819946,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 99,
+        "memoryUsed": 71011,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71011,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71029,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 89,
+        "memoryUsed": 71029,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "0c5a8cc21c1ca3b358548c7502000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp19-1",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2137
+      },
+      {
+        "actor_id": "0dc2a9f3d9ca39ae5bbb2fd502000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp18-1",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2135
+      },
+      {
+        "actor_id": "3e62d3c47894cd40054d360102000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp16-0",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2130
+      },
+      {
+        "actor_id": "55f32025d668af39e8921f6d02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp18-0",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2134
+      },
+      {
+        "actor_id": "56ed8c7e015fa2b231db8f3802000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp17-0",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2132
+      },
+      {
+        "actor_id": "7fc9c2c5f6c891ce36ca2c0b02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp17-1",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2133
+      },
+      {
+        "actor_id": "8e72a962dd68c6fc8705e2e202000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp16-1",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2131
+      },
+      {
+        "actor_id": "9cce17ec17c10ab06573f1f302000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp19-0",
+        "node_id": "f937328bc3a2a59cdfe160a0d4a202a65794335a25a7b34b6c3409ad",
+        "pid": 2136
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0457.host.platform.shaipower.com",
+    "ip": "10.191.1.46",
+    "observed_unix": 1794757982.44068,
+    "snapshot_age_s": 19.329249620437622,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71025,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71025,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 99,
+        "memoryUsed": 71053,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71053,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 92,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 99,
+        "memoryUsed": 71031,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "05606fa1bbec2f6c14bdb92d02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp6-1",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1676
+      },
+      {
+        "actor_id": "214fd4bf17e45056d3ff956e02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp7-0",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1677
+      },
+      {
+        "actor_id": "3eaed565ff5b3984926dc75f02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp6-0",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1675
+      },
+      {
+        "actor_id": "6cd88733ad8af25785df96a502000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp4-0",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1671
+      },
+      {
+        "actor_id": "7dd77ae5d03cfba6c3168eba02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp5-0",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1673
+      },
+      {
+        "actor_id": "9d76b2e8c13dbbefc2e705a702000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp4-1",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1672
+      },
+      {
+        "actor_id": "a907c73f9789f378d48b8f5302000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp7-1",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1678
+      },
+      {
+        "actor_id": "fb64f92c582e308e6a1d10c202000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp5-1",
+        "node_id": "a2f8d5ac24a2cd3e99906cabd4dcaa4abafb23085b520a2513284206",
+        "pid": 1674
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0256.host.platform.shaipower.com",
+    "ip": "10.191.7.16",
+    "observed_unix": 1794757983.196603,
+    "snapshot_age_s": 18.57336664199829,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71027,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71027,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 96,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71065,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71011,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71011,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "30401a5ba6fcffdf31cd8cf002000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp13-0",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2335
+      },
+      {
+        "actor_id": "41c582a338cc98317c315b0702000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp14-0",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2337
+      },
+      {
+        "actor_id": "6bad9119329d4b3c6339d6d402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp15-1",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2340
+      },
+      {
+        "actor_id": "92a6f6aa88f7f7d1a62bf61902000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp13-1",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2336
+      },
+      {
+        "actor_id": "9318a77ccb4504aa3617109102000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp12-1",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2334
+      },
+      {
+        "actor_id": "93ffbf29e379acc831cf759402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp12-0",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2333
+      },
+      {
+        "actor_id": "d1a7e7fa0befdfcaa87137d202000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp15-0",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2339
+      },
+      {
+        "actor_id": "e2654767396f61946db9cd4c02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp14-1",
+        "node_id": "33934cb1f29c21b1b8f1535e9315915907e62472bd0fda89dbce6c22",
+        "pid": 2338
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0108.host.platform.shaipower.com",
+    "ip": "10.191.5.54",
+    "observed_unix": 1794757981.648195,
+    "snapshot_age_s": 20.12181329727173,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 42,
+        "memoryUsed": 12777,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 29,
+        "memoryUsed": 12777,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 24617,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 24617,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 472,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "49b87bbc5009693425bf820a02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_logic-0-1",
+        "node_id": "0e2f52b1f850cc990e63a940c2c3e58373c07918392fea8feab86850",
+        "pid": 1900
+      },
+      {
+        "actor_id": "940d25d8e1bce5937009f26002000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_code-0-1",
+        "node_id": "0e2f52b1f850cc990e63a940c2c3e58373c07918392fea8feab86850",
+        "pid": 1313
+      },
+      {
+        "actor_id": "dec89c08dc5b78722ecae7ee02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_code-0-0",
+        "node_id": "0e2f52b1f850cc990e63a940c2c3e58373c07918392fea8feab86850",
+        "pid": 1312
+      },
+      {
+        "actor_id": "f6176efc18ff954d8998ddcb02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "teacher_logic-0-0",
+        "node_id": "0e2f52b1f850cc990e63a940c2c3e58373c07918392fea8feab86850",
+        "pid": 1899
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0582.host.platform.shaipower.com",
+    "ip": "10.191.24.20",
+    "observed_unix": 1794757983.176417,
+    "snapshot_age_s": 18.59363031387329,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 14419,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 13331,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 11759,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 11759,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 11479,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 11479,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 31177,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 0,
+        "memoryUsed": 31177,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "1457c93e5132beea75005ecb02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-1",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1870
+      },
+      {
+        "actor_id": "180a8da9e9e0d49312f56a9002000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-0",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1869
+      },
+      {
+        "actor_id": "a78e7ed586eb504109f898ae02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-5",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1884
+      },
+      {
+        "actor_id": "d242fccfa9b67b37df3084be02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-6",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1885
+      },
+      {
+        "actor_id": "de2b32f65ccddbb3b7528fd402000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-4",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1879
+      },
+      {
+        "actor_id": "ded7ef42a098b91160fb8e8c02000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-7",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1886
+      },
+      {
+        "actor_id": "e7b8bc59249cb0bbf9c6421602000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-2",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1871
+      },
+      {
+        "actor_id": "fa1310e366d12ae078c8553202000000",
+        "class_name": "MegatronPolicyWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "lm_policy-0-3",
+        "node_id": "c880b613312e08c9c0b5290e2f5a8b1d87b50902c94a7ce1884f713a",
+        "pid": 1872
+      }
+    ]
+  },
+  {
+    "hostname": "gpu-h800-0368.host.platform.shaipower.com",
+    "ip": "10.191.0.41",
+    "observed_unix": 1794757982.909532,
+    "snapshot_age_s": 18.860553979873657,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71012,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 1,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71012,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 2,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71026,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 3,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71026,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 4,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71016,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 5,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71016,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 6,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 96,
+        "memoryUsed": 71022,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      },
+      {
+        "index": 7,
+        "name": "NVIDIA H800",
+        "utilizationGpu": 100,
+        "memoryUsed": 71022,
+        "memoryTotal": 81559,
+        "powerDraw": null
+      }
+    ],
+    "model_actors": [
+      {
+        "actor_id": "20a838d9cf5dd651ebe9d84f02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp9-0",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2184
+      },
+      {
+        "actor_id": "27f91aae124711ec6b9b60fb02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp11-1",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2189
+      },
+      {
+        "actor_id": "7d89456fa1fc6c6bfa57d2cb02000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp8-0",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2182
+      },
+      {
+        "actor_id": "7e306994a40e2cc5ba975b2402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp11-0",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2188
+      },
+      {
+        "actor_id": "94153a32defbc56ecf2f322402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp8-1",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2183
+      },
+      {
+        "actor_id": "97acdad90939de069038fc2402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp10-1",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2187
+      },
+      {
+        "actor_id": "c24895f50763747d50e880a302000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp9-1",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2185
+      },
+      {
+        "actor_id": "da27c016f7897b3d836f8a8402000000",
+        "class_name": "VllmAsyncGenerationWorker",
+        "state": "ALIVE",
+        "job_id": "02000000",
+        "name": "vllm_policy-grp10-0",
+        "node_id": "fea1700460ced1255fdf9df17e811a89b9fe902f0aa590f9f03a1565",
+        "pid": 2186
+      }
+    ]
+  }
+]
