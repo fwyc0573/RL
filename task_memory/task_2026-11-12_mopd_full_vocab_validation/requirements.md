@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Add the current role-engine and entrypoint-specific co-location support investigation; training remains paused. |
 | 2026-11-16 | Supersede the 200-update target with user-requested pause and analysis through the last completed step. |
 | 2026-11-15 | Record the user correction to the prior 72-H800 scale and renewed OSS cleanup/push authorization. |
 | 2026-11-15 | Record the superseded agent-selected 128-H800 allocation and exact FIFO CPU preflight. |
@@ -129,3 +130,11 @@ Delete current-task obsolete trajectory payloads, completed diagnostic tensor ca
 > 暂停当前任务。我认为没有必要跑完200steps.以当前最后step为准进行训练数据的分析（分析记录的指标，是否存在指标明显有问题的情况）
 
 Stop the current training allocation and its automatic final-validation waiter. After collecting the last completed step, stop the observer. Do not resume training, target 200 updates, or launch the prepared final GPU replay. Analyze the authoritative recorded chain through the actual last complete step: loss/full-RKL, pre-clipping gradient norm, skips, valid sample/token coverage, five-teacher mixture, staleness, response lengths, malformed-thinking flags, scorer/vLLM differences and timing. Distinguish metric definitions, measured anomalies and verification limits. Keep only the already published latest complete checkpoint; do not save a new checkpoint on pause. Prior scoped commit/push authorization remains in force. The original 200-update and final-GPU completion criteria are superseded for this phase, not recorded as passed.
+
+
+## [Original Request] Role engines and co-location support, 2026-11-16
+
+> 在当前分离模式下，rollout集群、teacher集群、training集群分别使用的引擎是什么？
+> 回顾该rl的参数和模块支持，存在哪几种 co-located 部署方案？在这些方案下开启 co-located时，使用的训推引擎分别是什么？
+
+Investigate the current fork and actual last-run recipe/overrides. Identify rollout, teacher-scoring and student-training engines, then distinguish shared-model Megatron generation, dedicated-model Megatron generation and independent serving-engine time multiplexing. Report the training/generation combinations, controlling parameters, teacher placement and entrypoint restrictions. Distinguish repository implementation support, current SingleController five-teacher full-vocabulary MOPD support, checked-in functional coverage and this task's measured GPU validation. Keep training paused; no GPU submission, deployment change or additional checkpoint is authorized by this question. Preserve prior scoped commit/push authorization.

@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Investigate actual role engines and the current fork co-location support matrix without resuming training. |
 | 2026-11-16 | Apply the user pause, verify step176, analyze all recorded metrics and archive observed data-mixture/format issues. |
 | 2026-11-16 | Verify native step170/Adam152,130 successful FIFO updates and post-approval three-hour current replica state. |
 | 2026-11-16 | Verify native step160/Adam142,120 FIFO successes and clean-policy labels; preserve ongoing formal writer. |
@@ -4535,3 +4536,67 @@ Datedreport test_report_2026-11-16_paused_training_metrics.md andEnglishsummary.
 Signed scoped analysis commit7c2750343121dbe6b2417bf0f81f415dd3af407c pushed toorigin/mopd-sys. Independentgit ls-remotereturns theidenticalfullSHA. All20committedfilesbelongtothispausedanalysis,includingcompact171–176evidence;tests/manual/mopd/layer_output_worker.pyremainsunmodifiedbythisphasewithitsprior19additions/4deletionsunstaged. gitdiff--checkandcachedcheckpass. requirementsre-readbeforeclosing;no200/replay/extra-saveactionisscheduled.
 
 The phase-checktableabovewasrefreshedfromTODOtoPASSusingtheactualpushreceipt. Thisfollow-uprecordonlyclosesdeliverymetadata;theanalysisbundleisalreadyremote. Finalplatformandnativeevidencecontinue toshowStoppedallreplicasandsole170/Adam152. Allrequestedpausedanalysisscopeiscomplete;broaderfinaltensor/parityandindividualformatRCAareexplicitlydeferred.
+
+
+### 2026-11-16 — P2 role-engine and co-location source investigation
+
+Completed: inspected actual writer command.json and the recipe inheritance chain; confirmed vLLM rollout, Megatron student training and five inference-only MegatronPolicyWorker teachers. Inspected generation backend dispatch, SingleController validation/setup, GRPO setup, dedicated Megatron inference configuration, serving-engine sleep/wakeup and standard distillation teacher placement.
+
+Key findings: SingleController rejects colocated generation unless backend=megatron (config.py1400), requires whole-update streaming chunks, and requires non_colocated_teachers.enabled=true for MOPD (config.py2077). Megatron colocation either shares the training model or builds a separate inference model when resolved layout/transformer_impl differs. Standard GRPO constructs vLLM, SGLang and TRT-LLM on the shared cluster and accepts either policy training backend, subject to feature-specific guards. Standard distillation shares its teacher with the student training cluster and is a separate top-k objective, not the current five-teacher opd_full implementation.
+
+In-progress: corroborate support with checked-in functional tests and source-linked research report. Pending: record CPU/source verification limits, run check-progress, scoped signed commit/push and final matrix. No GPU submission, configuration mutation, checkpoint save or cleanup was performed. Existing unrelated changes remain unstaged.
+
+
+### 2026-11-16 — P2 source and CPU checks completed
+
+Completed: actual YAML plus writer overrides resolved independently on /usr/bin/python3 3.10.6/PyYAML5.4.1. Existing isolated SC guards rejected colocated vLLM/SGLang/TRT-LLM, accepted Megatron256groups/update, rejected128chunks, and required separated teachers. Existing pure Megatron config functions correctly distinguished matching shared models from PP/implementation/CP-dependent dedicated models. The exact consolidated command embedded in test_report_2026-11-16_colocated_engine_support.md was re-executed successfully. All55absolute source links in co_located_engine_support.md exist and their line numbers are valid. GenericGRPO full-config rejection and async-Megatron-only guard were independently inspected.
+
+P2 findings report and dated verification report are complete. Current requirements re-read, whitespace check passed. The CPU checks bypass fullcontroller/model/GPUinitialization; no throughput/parity improvement is claimed. Small inspection-harness errors are recorded in the test report and corrected without production changes. Pending: scoped signed commit/push and self-contained answer. Training stays paused.
+
+## 1. 规划完成情况
+
+**汇总：** PASS5｜BLOCKED/FAILED/SKIPPED0｜TODO2
+
+| 子任务 | 状态 | 简要依据 |
+| --- | --- | --- |
+| P2 实际三角色引擎 | PASS | recipe继承和实际command一致，train/teachers Megatron，rollout vLLM。 |
+| P2 Megatron共卡两种模型方案 | PASS | inspectedconfig和原函数CPU检查一致。 |
+| P2 serving引擎共卡组合 | PASS | GRPOsetup/factory/lifecycle和functional脚本核验。 |
+| P2 当前MOPD与teacher边界 | PASS | SCguards要求Megatronrollout/独立teacher，通用GRPO拒绝full。 |
+| P2 报告与验证记录 | PASS | source报告、datedreport和55源码链接已核验。 |
+| P2 scoped提交/push | TODO | 待提交本轮5文件并确认远端SHA。 |
+| P2 用户答复 | TODO | 待交付角色表和当前入口支持矩阵。 |
+
+## 2. 偏离检测
+
+**结论：** 未偏移，正常推进。
+**检测窗口：** 用户提出角色/共卡问题至本次source检查完成｜**当前前沿：** scoped提交/push及结论交付
+
+| 模式 | 判定 | 依据 |
+| --- | --- | --- |
+| D1 工具打磨 | CLEAR | 只读源代码与孤立CPU配置函数，验证后停止扩展。 |
+| D2 细节反复重试 | CLEAR | 两个CPUharness错误分别定位AST作用域和typing类型，没有GPU重试或生产改动。 |
+| D3 支线问题修补 | CLEAR | 全部工作回答用户最新架构问题。 |
+| D4 可并行任务停滞 | CLEAR | researchagent与root读取独立支持证据，统一报告现已完成。 |
+| D5 超范围镀金 | CLEAR | 无新feature、backend、GPU配置或checkpoint。 |
+| D6 分析空转 | CLEAR | 已生成具体五方案矩阵及当前入口限制，不继续拓展研究。 |
+| D7 路线违背 | CLEAR | 训练维持暂停，用户latest-only约束未改变。 |
+
+**文档检查：** S1–S6均未发现当前缺陷；requirements/plan已追加明确P2调查，旧训练验收继续superseded。
+**归因：** 无。
+
+## 3. 纠正建议
+
+**分支：** A：spec/plan合理，无需改动。
+
+**需停止的偏离行为：** 无。
+
+**接下去的路线：**
+1. P2 scoped提交/push：仅包含本轮requirements/plan/progress和两份报告 → 完成标志：签署提交且origin/mopd-sys SHA一致。
+2. P2答复：交付三角色引擎、五方案及teacher共卡边界 → 完成标志：明确代码支持与本任务GPU验证的区别。
+
+## 4. 最值得关注的 3 点
+
+1. 当前MOPD共卡只能使用Megatron训推，且五个teacher仍必须独立GPU。
+2. 通用vLLM/TRT-LLM/SGLang共卡支持不意味着当前SingleController full-vocab可用；换run_grpo.py也会拒绝full。
+3. 已有CPU和源码证据充分，本任务尚无co-located吞吐/parity结果，训练不恢复。

@@ -2,6 +2,7 @@
 
 | Date | Change |
 | --- | --- |
+| 2026-11-16 | Add a bounded role-engine and co-location support investigation after the completed paused analysis. |
 | 2026-11-16 | Stop training at completed step176 and replace the remaining 200-update route with recorded metric analysis. |
 | 2026-11-16 | Verify step170/Adam152,130 successful FIFO updates and the current replica state after three hours since approval. |
 | 2026-11-16 | Verify step160/Adam142,120 consecutive successful FIFO updates and latest-only retention. |
@@ -160,3 +161,12 @@ Acceptance:
 
 
 FIFO validation: 609 core sampler/replay/setup tests, 342 checkpoint/recovery tests, and seven shipped inherited configurations with 35 applicable subchecks pass. Exact step40 metadata validation reads 703,834 bytes and no model/optimizer tensor payloads; it confirms zero ready replay groups, 512 recovery-ledger groups and no pending target-step shortfalls. The formal candidate uses completion FIFO, age5, full batch256, in-flight256, buffer1536, FP16/TP2/PP4, original five teacher identities and eight TQ storage units. Native scheduler restore passes10240→10496 samples with LR1e-6/WD0.01. The former128-H800 request `exp-1115-143203-969279` is Stopped with zero replicas. Restore the previous72-H800 scale; GPU execution remains unverified. Final acceptance stays22/200durable and F outstanding. See test_report_2026-11-15_trajectory_fifo.md, test_report_2026-11-15_step40_fifo_gpu_preflight.md and evidence/formal-step40-fifo-cpu-preflight-20261115.json.
+
+
+## P2: Role engines and co-location support investigation
+
+Dependency: actual run recipe/overrides -> {generation factory/setup/guards, policy and teacher worker implementations} -> supported engine/placement matrix -> source-linked report and answer -> scoped commit/push. The research agent reads independent support evidence; the main agent verifies the actual run and reachable configuration guards.
+
+Acceptance: report the current three role engines, all implemented student train/rollout co-location mechanisms, controlling parameters, teacher arrangements and current SingleController full-vocabulary restrictions with exact source paths. Clearly separate implementation support from GPU-tested behavior. Keep training paused and checkpoint retention unchanged.
+
+Status: source investigation and CPU guard checks completed; scoped push and user-facing delivery pending. No deployment or production-code change is planned.
