@@ -169,4 +169,4 @@ Dependency: actual run recipe/overrides -> {generation factory/setup/guards, pol
 
 Acceptance: report the current three role engines, all implemented student train/rollout co-location mechanisms, controlling parameters, teacher arrangements and current SingleController full-vocabulary restrictions with exact source paths. Clearly separate implementation support from GPU-tested behavior. Keep training paused and checkpoint retention unchanged.
 
-Status: source investigation and CPU guard checks completed; scoped push and user-facing delivery pending. No deployment or production-code change is planned.
+Status: completed. Source report and CPU verification delivered in signed commit08b34168de7daae1772791bb199a7812ee8a9d04; origin/mopd-sys independently confirmed at the same SHA. No deployment or production-code change was performed.

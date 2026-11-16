@@ -4600,3 +4600,8 @@ P2 findings report and dated verification report are complete. Current requireme
 1. 当前MOPD共卡只能使用Megatron训推，且五个teacher仍必须独立GPU。
 2. 通用vLLM/TRT-LLM/SGLang共卡支持不意味着当前SingleController full-vocab可用；换run_grpo.py也会拒绝full。
 3. 已有CPU和源码证据充分，本任务尚无co-located吞吐/parity结果，训练不恢复。
+
+
+### 2026-11-16 — P2 investigation delivered
+
+Completed: signed scoped commit08b34168de7daae1772791bb199a7812ee8a9d04 includes only the five P2 documents. Push to origin/mopd-sys succeeded; git ls-remote independently returned the identical fullSHA. The previous P2 checkpoint's commit/push TODO is now PASS. The self-contained role/support answer is prepared from the verified report. No P2 implementation or GPU work remains; co-location production throughput/parity is outside this read-only question and remains unverified. This closing update records delivery only. Existing unrelated modifications remain unstaged and training stays paused.
